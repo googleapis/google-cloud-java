@@ -39,6 +39,9 @@
             },
             "UpdateTunnelDestGroup": {
               "methods": ["updateTunnelDestGroup", "updateTunnelDestGroup", "updateTunnelDestGroupCallable"]
+            },
+            "ValidateIapAttributeExpression": {
+              "methods": ["validateIapAttributeExpression", "validateIapAttributeExpressionCallable"]
             }
           }
         }

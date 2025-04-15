@@ -95,7 +95,8 @@ public interface EndpointOrBuilder
    * A forwarding rule and its corresponding IP address represent the frontend
    * configuration of a Google Cloud load balancer. Forwarding rules are also
    * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
+   * services to provide forwarding information in the control plane. Applicable
+   * only to destination endpoint. Format:
    *  projects/{project}/global/forwardingRules/{id} or
    *  projects/{project}/regions/{region}/forwardingRules/{id}
    * </pre>
@@ -112,7 +113,8 @@ public interface EndpointOrBuilder
    * A forwarding rule and its corresponding IP address represent the frontend
    * configuration of a Google Cloud load balancer. Forwarding rules are also
    * used for protocol forwarding, Private Service Connect and other network
-   * services to provide forwarding information in the control plane. Format:
+   * services to provide forwarding information in the control plane. Applicable
+   * only to destination endpoint. Format:
    *  projects/{project}/global/forwardingRules/{id} or
    *  projects/{project}/regions/{region}/forwardingRules/{id}
    * </pre>
@@ -339,8 +341,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-   * URI.
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_instance = 17;</code>
@@ -352,8 +354,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis)
-   * URI.
+   * A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_instance = 17;</code>
@@ -366,8 +368,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-   * URI.
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_cluster = 18;</code>
@@ -379,8 +381,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster)
-   * URI.
+   * A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+   * Applicable only to destination endpoint.
    * </pre>
    *
    * <code>string redis_cluster = 18;</code>
@@ -393,7 +395,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
@@ -406,7 +409,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
@@ -419,7 +423,8 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A [Cloud Function](https://cloud.google.com/functions).
+   * A [Cloud Function](https://cloud.google.com/functions). Applicable only to
+   * source endpoint.
    * </pre>
    *
    * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
@@ -434,6 +439,7 @@ public interface EndpointOrBuilder
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -449,6 +455,7 @@ public interface EndpointOrBuilder
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -464,6 +471,7 @@ public interface EndpointOrBuilder
    * <pre>
    * An [App Engine](https://cloud.google.com/appengine) [service
    * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -479,6 +487,7 @@ public interface EndpointOrBuilder
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -494,6 +503,7 @@ public interface EndpointOrBuilder
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -509,6 +519,7 @@ public interface EndpointOrBuilder
    * <pre>
    * A [Cloud Run](https://cloud.google.com/run)
    * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * Applicable only to source endpoint.
    * </pre>
    *
    * <code>
@@ -522,7 +533,7 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A Compute Engine network URI.
+   * A VPC network URI.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -534,7 +545,7 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
-   * A Compute Engine network URI.
+   * A VPC network URI.
    * </pre>
    *
    * <code>string network = 4;</code>
@@ -577,9 +588,9 @@ public interface EndpointOrBuilder
    *
    * <pre>
    * Project ID where the endpoint is located.
-   * The Project ID can be derived from the URI if you provide a VM instance or
+   * The project ID can be derived from the URI if you provide a endpoint or
    * network URI.
-   * The following are two cases where you must provide the project ID:
+   * The following are two cases where you may need to provide the project ID:
    * 1. Only the IP address is specified, and the IP address is within a Google
    * Cloud project.
    * 2. When you are using Shared VPC and the IP address that you provide is
@@ -597,9 +608,9 @@ public interface EndpointOrBuilder
    *
    * <pre>
    * Project ID where the endpoint is located.
-   * The Project ID can be derived from the URI if you provide a VM instance or
+   * The project ID can be derived from the URI if you provide a endpoint or
    * network URI.
-   * The following are two cases where you must provide the project ID:
+   * The following are two cases where you may need to provide the project ID:
    * 1. Only the IP address is specified, and the IP address is within a Google
    * Cloud project.
    * 2. When you are using Shared VPC and the IP address that you provide is

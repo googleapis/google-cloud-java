@@ -24,26 +24,26 @@ package com.google.shopping.merchant.products.v1beta;
  *
  * <pre>
  * This resource represents input data you submit for a product, not the
- * processed product that you see in Merchant Center, in Shopping ads, or across
- * Google surfaces. Product inputs, rules and supplemental data source data are
- * combined to create the processed
- * [Product][google.shopping.merchant.products.v1beta.Product].
+ *  processed product that you see in Merchant Center, in Shopping ads, or
+ *  across Google surfaces. Product inputs, rules and supplemental data source
+ *  data are combined to create the processed
+ *  [Product][google.shopping.merchant.products.v1beta.Product].
  *
- * Required product input attributes to pass data validation checks are
- * primarily defined in the [Products Data
- * Specification](https://support.google.com/merchants/answer/188494).
+ *  Required product input attributes to pass data validation checks are
+ *  primarily defined in the [Products Data
+ *  Specification](https://support.google.com/merchants/answer/188494).
  *
- * The following attributes are required:
- * [feedLabel][google.shopping.merchant.products.v1beta.Product.feed_label],
- * [contentLanguage][google.shopping.merchant.products.v1beta.Product.content_language]
- * and [offerId][google.shopping.merchant.products.v1beta.Product.offer_id].
+ *  The following attributes are required:
+ *  [feedLabel][google.shopping.merchant.products.v1beta.Product.feed_label],
+ *  [contentLanguage][google.shopping.merchant.products.v1beta.Product.content_language]
+ *  and [offerId][google.shopping.merchant.products.v1beta.Product.offer_id].
  *
- * After inserting, updating, or deleting a product input, it may take several
- * minutes before the processed product can be retrieved.
+ *  After inserting, updating, or deleting a product input, it may take several
+ *  minutes before the processed product can be retrieved.
  *
- * All fields in the product input and its sub-messages match the English name
- * of their corresponding attribute in the vertical spec with [some
- * exceptions](https://support.google.com/merchants/answer/7052112).
+ *  All fields in the product input and its sub-messages match the English name
+ *  of their corresponding attribute in the vertical spec with [some
+ *  exceptions](https://support.google.com/merchants/answer/7052112).
  * </pre>
  *
  * Protobuf type {@code google.shopping.merchant.products.v1beta.ProductInput}
@@ -99,8 +99,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -128,8 +127,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Identifier. The name of the product input.
-   * Format:
-   * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+   * Format: accounts/{account}/productInputs/{productinput}
    * where the last section `productinput` consists of 4 parts:
    * channel~content_language~feed_label~offer_id
    * example for product input name is
@@ -214,13 +212,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for channel.
@@ -233,13 +231,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The
+   * Immutable. The
    * [channel](https://support.google.com/merchants/answer/7361332) of the
    * product.
    * </pre>
    *
    * <code>
-   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The channel.
@@ -929,26 +927,26 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This resource represents input data you submit for a product, not the
-   * processed product that you see in Merchant Center, in Shopping ads, or across
-   * Google surfaces. Product inputs, rules and supplemental data source data are
-   * combined to create the processed
-   * [Product][google.shopping.merchant.products.v1beta.Product].
+   *  processed product that you see in Merchant Center, in Shopping ads, or
+   *  across Google surfaces. Product inputs, rules and supplemental data source
+   *  data are combined to create the processed
+   *  [Product][google.shopping.merchant.products.v1beta.Product].
    *
-   * Required product input attributes to pass data validation checks are
-   * primarily defined in the [Products Data
-   * Specification](https://support.google.com/merchants/answer/188494).
+   *  Required product input attributes to pass data validation checks are
+   *  primarily defined in the [Products Data
+   *  Specification](https://support.google.com/merchants/answer/188494).
    *
-   * The following attributes are required:
-   * [feedLabel][google.shopping.merchant.products.v1beta.Product.feed_label],
-   * [contentLanguage][google.shopping.merchant.products.v1beta.Product.content_language]
-   * and [offerId][google.shopping.merchant.products.v1beta.Product.offer_id].
+   *  The following attributes are required:
+   *  [feedLabel][google.shopping.merchant.products.v1beta.Product.feed_label],
+   *  [contentLanguage][google.shopping.merchant.products.v1beta.Product.content_language]
+   *  and [offerId][google.shopping.merchant.products.v1beta.Product.offer_id].
    *
-   * After inserting, updating, or deleting a product input, it may take several
-   * minutes before the processed product can be retrieved.
+   *  After inserting, updating, or deleting a product input, it may take several
+   *  minutes before the processed product can be retrieved.
    *
-   * All fields in the product input and its sub-messages match the English name
-   * of their corresponding attribute in the vertical spec with [some
-   * exceptions](https://support.google.com/merchants/answer/7052112).
+   *  All fields in the product input and its sub-messages match the English name
+   *  of their corresponding attribute in the vertical spec with [some
+   *  exceptions](https://support.google.com/merchants/answer/7052112).
    * </pre>
    *
    * Protobuf type {@code google.shopping.merchant.products.v1beta.ProductInput}
@@ -1311,8 +1309,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The name of the product input.
-     * Format:
-     * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+     * Format: accounts/{account}/productInputs/{productinput}
      * where the last section `productinput` consists of 4 parts:
      * channel~content_language~feed_label~offer_id
      * example for product input name is
@@ -1339,8 +1336,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The name of the product input.
-     * Format:
-     * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+     * Format: accounts/{account}/productInputs/{productinput}
      * where the last section `productinput` consists of 4 parts:
      * channel~content_language~feed_label~offer_id
      * example for product input name is
@@ -1367,8 +1363,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The name of the product input.
-     * Format:
-     * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+     * Format: accounts/{account}/productInputs/{productinput}
      * where the last section `productinput` consists of 4 parts:
      * channel~content_language~feed_label~offer_id
      * example for product input name is
@@ -1394,8 +1389,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The name of the product input.
-     * Format:
-     * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+     * Format: accounts/{account}/productInputs/{productinput}
      * where the last section `productinput` consists of 4 parts:
      * channel~content_language~feed_label~offer_id
      * example for product input name is
@@ -1417,8 +1411,7 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Identifier. The name of the product input.
-     * Format:
-     * `"{productinput.name=accounts/{account}/productInputs/{productinput}}"`
+     * Format: accounts/{account}/productInputs/{productinput}
      * where the last section `productinput` consists of 4 parts:
      * channel~content_language~feed_label~offer_id
      * example for product input name is
@@ -1562,13 +1555,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The
+     * Immutable. The
      * [channel](https://support.google.com/merchants/answer/7361332) of the
      * product.
      * </pre>
      *
      * <code>
-     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The enum numeric value on the wire for channel.
@@ -1581,13 +1574,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The
+     * Immutable. The
      * [channel](https://support.google.com/merchants/answer/7361332) of the
      * product.
      * </pre>
      *
      * <code>
-     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The enum numeric value on the wire for channel to set.
@@ -1603,13 +1596,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The
+     * Immutable. The
      * [channel](https://support.google.com/merchants/answer/7361332) of the
      * product.
      * </pre>
      *
      * <code>
-     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return The channel.
@@ -1624,13 +1617,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The
+     * Immutable. The
      * [channel](https://support.google.com/merchants/answer/7361332) of the
      * product.
      * </pre>
      *
      * <code>
-     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @param value The channel to set.
@@ -1649,13 +1642,13 @@ public final class ProductInput extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The
+     * Immutable. The
      * [channel](https://support.google.com/merchants/answer/7361332) of the
      * product.
      * </pre>
      *
      * <code>
-     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+     * .google.shopping.type.Channel.ChannelEnum channel = 3 [(.google.api.field_behavior) = IMMUTABLE];
      * </code>
      *
      * @return This builder for chaining.

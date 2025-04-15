@@ -204,6 +204,65 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateSitemap</td>
+ *      <td><p> Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createSitemapAsync(CreateSitemapRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> createSitemapAsync(SiteSearchEngineName parent, Sitemap sitemap)
+ *           <li><p> createSitemapAsync(String parent, Sitemap sitemap)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createSitemapOperationCallable()
+ *           <li><p> createSitemapCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteSitemap</td>
+ *      <td><p> Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteSitemapAsync(DeleteSitemapRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteSitemapAsync(SitemapName name)
+ *           <li><p> deleteSitemapAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteSitemapOperationCallable()
+ *           <li><p> deleteSitemapCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> FetchSitemaps</td>
+ *      <td><p> Fetch [Sitemap][google.cloud.discoveryengine.v1.Sitemap]s in a [DataStore][google.cloud.discoveryengine.v1.DataStore].</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> fetchSitemaps(FetchSitemapsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> fetchSitemaps(SiteSearchEngineName parent)
+ *           <li><p> fetchSitemaps(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> fetchSitemapsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> EnableAdvancedSiteSearch</td>
  *      <td><p> Upgrade from basic site search to advanced site search.</td>
  *      <td>
@@ -1460,6 +1519,489 @@ public class SiteSearchEngineServiceClient implements BackgroundResource {
   public final UnaryCallable<ListTargetSitesRequest, ListTargetSitesResponse>
       listTargetSitesCallable() {
     return stub.listTargetSitesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SiteSearchEngineName parent =
+   *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   Sitemap sitemap = Sitemap.newBuilder().build();
+   *   Sitemap response = siteSearchEngineServiceClient.createSitemapAsync(parent, sitemap).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name of the
+   *     [SiteSearchEngine][google.cloud.discoveryengine.v1.SiteSearchEngine], such as
+   *     `projects/&#42;/locations/&#42;/collections/&#42;/dataStores/&#42;/siteSearchEngine`.
+   * @param sitemap Required. The [Sitemap][google.cloud.discoveryengine.v1.Sitemap] to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Sitemap, CreateSitemapMetadata> createSitemapAsync(
+      SiteSearchEngineName parent, Sitemap sitemap) {
+    CreateSitemapRequest request =
+        CreateSitemapRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSitemap(sitemap)
+            .build();
+    return createSitemapAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   String parent =
+   *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   Sitemap sitemap = Sitemap.newBuilder().build();
+   *   Sitemap response = siteSearchEngineServiceClient.createSitemapAsync(parent, sitemap).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name of the
+   *     [SiteSearchEngine][google.cloud.discoveryengine.v1.SiteSearchEngine], such as
+   *     `projects/&#42;/locations/&#42;/collections/&#42;/dataStores/&#42;/siteSearchEngine`.
+   * @param sitemap Required. The [Sitemap][google.cloud.discoveryengine.v1.Sitemap] to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Sitemap, CreateSitemapMetadata> createSitemapAsync(
+      String parent, Sitemap sitemap) {
+    CreateSitemapRequest request =
+        CreateSitemapRequest.newBuilder().setParent(parent).setSitemap(sitemap).build();
+    return createSitemapAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   CreateSitemapRequest request =
+   *       CreateSitemapRequest.newBuilder()
+   *           .setParent(
+   *               SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setSitemap(Sitemap.newBuilder().build())
+   *           .build();
+   *   Sitemap response = siteSearchEngineServiceClient.createSitemapAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Sitemap, CreateSitemapMetadata> createSitemapAsync(
+      CreateSitemapRequest request) {
+    return createSitemapOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   CreateSitemapRequest request =
+   *       CreateSitemapRequest.newBuilder()
+   *           .setParent(
+   *               SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setSitemap(Sitemap.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Sitemap, CreateSitemapMetadata> future =
+   *       siteSearchEngineServiceClient.createSitemapOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Sitemap response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CreateSitemapRequest, Sitemap, CreateSitemapMetadata>
+      createSitemapOperationCallable() {
+    return stub.createSitemapOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   CreateSitemapRequest request =
+   *       CreateSitemapRequest.newBuilder()
+   *           .setParent(
+   *               SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setSitemap(Sitemap.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       siteSearchEngineServiceClient.createSitemapCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSitemapRequest, Operation> createSitemapCallable() {
+    return stub.createSitemapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SitemapName name =
+   *       SitemapName.ofProjectLocationDataStoreSitemapName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]");
+   *   siteSearchEngineServiceClient.deleteSitemapAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full resource name of [Sitemap][google.cloud.discoveryengine.v1.Sitemap],
+   *     such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/sitemaps/{sitemap}`.
+   *     <p>If the caller does not have permission to access the
+   *     [Sitemap][google.cloud.discoveryengine.v1.Sitemap], regardless of whether or not it exists,
+   *     a PERMISSION_DENIED error is returned.
+   *     <p>If the requested [Sitemap][google.cloud.discoveryengine.v1.Sitemap] does not exist, a
+   *     NOT_FOUND error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteSitemapMetadata> deleteSitemapAsync(SitemapName name) {
+    DeleteSitemapRequest request =
+        DeleteSitemapRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSitemapAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   String name =
+   *       SitemapName.ofProjectLocationDataStoreSitemapName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+   *           .toString();
+   *   siteSearchEngineServiceClient.deleteSitemapAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. Full resource name of [Sitemap][google.cloud.discoveryengine.v1.Sitemap],
+   *     such as
+   *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/sitemaps/{sitemap}`.
+   *     <p>If the caller does not have permission to access the
+   *     [Sitemap][google.cloud.discoveryengine.v1.Sitemap], regardless of whether or not it exists,
+   *     a PERMISSION_DENIED error is returned.
+   *     <p>If the requested [Sitemap][google.cloud.discoveryengine.v1.Sitemap] does not exist, a
+   *     NOT_FOUND error is returned.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteSitemapMetadata> deleteSitemapAsync(String name) {
+    DeleteSitemapRequest request = DeleteSitemapRequest.newBuilder().setName(name).build();
+    return deleteSitemapAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   DeleteSitemapRequest request =
+   *       DeleteSitemapRequest.newBuilder()
+   *           .setName(
+   *               SitemapName.ofProjectLocationDataStoreSitemapName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+   *                   .toString())
+   *           .build();
+   *   siteSearchEngineServiceClient.deleteSitemapAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteSitemapMetadata> deleteSitemapAsync(
+      DeleteSitemapRequest request) {
+    return deleteSitemapOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   DeleteSitemapRequest request =
+   *       DeleteSitemapRequest.newBuilder()
+   *           .setName(
+   *               SitemapName.ofProjectLocationDataStoreSitemapName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteSitemapMetadata> future =
+   *       siteSearchEngineServiceClient.deleteSitemapOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSitemapRequest, Empty, DeleteSitemapMetadata>
+      deleteSitemapOperationCallable() {
+    return stub.deleteSitemapOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a [Sitemap][google.cloud.discoveryengine.v1.Sitemap].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   DeleteSitemapRequest request =
+   *       DeleteSitemapRequest.newBuilder()
+   *           .setName(
+   *               SitemapName.ofProjectLocationDataStoreSitemapName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[SITEMAP]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       siteSearchEngineServiceClient.deleteSitemapCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSitemapRequest, Operation> deleteSitemapCallable() {
+    return stub.deleteSitemapCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch [Sitemap][google.cloud.discoveryengine.v1.Sitemap]s in a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   SiteSearchEngineName parent =
+   *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]");
+   *   FetchSitemapsResponse response = siteSearchEngineServiceClient.fetchSitemaps(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name of the
+   *     [SiteSearchEngine][google.cloud.discoveryengine.v1.SiteSearchEngine], such as
+   *     `projects/&#42;/locations/&#42;/collections/&#42;/dataStores/&#42;/siteSearchEngine`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchSitemapsResponse fetchSitemaps(SiteSearchEngineName parent) {
+    FetchSitemapsRequest request =
+        FetchSitemapsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return fetchSitemaps(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch [Sitemap][google.cloud.discoveryengine.v1.Sitemap]s in a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   String parent =
+   *       SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *               "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *           .toString();
+   *   FetchSitemapsResponse response = siteSearchEngineServiceClient.fetchSitemaps(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Parent resource name of the
+   *     [SiteSearchEngine][google.cloud.discoveryengine.v1.SiteSearchEngine], such as
+   *     `projects/&#42;/locations/&#42;/collections/&#42;/dataStores/&#42;/siteSearchEngine`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchSitemapsResponse fetchSitemaps(String parent) {
+    FetchSitemapsRequest request = FetchSitemapsRequest.newBuilder().setParent(parent).build();
+    return fetchSitemaps(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch [Sitemap][google.cloud.discoveryengine.v1.Sitemap]s in a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   FetchSitemapsRequest request =
+   *       FetchSitemapsRequest.newBuilder()
+   *           .setParent(
+   *               SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setMatcher(FetchSitemapsRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   FetchSitemapsResponse response = siteSearchEngineServiceClient.fetchSitemaps(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final FetchSitemapsResponse fetchSitemaps(FetchSitemapsRequest request) {
+    return fetchSitemapsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Fetch [Sitemap][google.cloud.discoveryengine.v1.Sitemap]s in a
+   * [DataStore][google.cloud.discoveryengine.v1.DataStore].
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (SiteSearchEngineServiceClient siteSearchEngineServiceClient =
+   *     SiteSearchEngineServiceClient.create()) {
+   *   FetchSitemapsRequest request =
+   *       FetchSitemapsRequest.newBuilder()
+   *           .setParent(
+   *               SiteSearchEngineName.ofProjectLocationDataStoreName(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]")
+   *                   .toString())
+   *           .setMatcher(FetchSitemapsRequest.Matcher.newBuilder().build())
+   *           .build();
+   *   ApiFuture<FetchSitemapsResponse> future =
+   *       siteSearchEngineServiceClient.fetchSitemapsCallable().futureCall(request);
+   *   // Do something.
+   *   FetchSitemapsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<FetchSitemapsRequest, FetchSitemapsResponse> fetchSitemapsCallable() {
+    return stub.fetchSitemapsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

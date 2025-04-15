@@ -80,7 +80,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListPolicyBasedRoutes</td>
- *      <td><p> Lists PolicyBasedRoutes in a given project and location.</td>
+ *      <td><p> Lists policy-based routes in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -100,7 +100,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetPolicyBasedRoute</td>
- *      <td><p> Gets details of a single PolicyBasedRoute.</td>
+ *      <td><p> Gets details of a single policy-based route.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -119,7 +119,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreatePolicyBasedRoute</td>
- *      <td><p> Creates a new PolicyBasedRoute in a given project and location.</td>
+ *      <td><p> Creates a new policy-based route in a given project and location.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -139,7 +139,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeletePolicyBasedRoute</td>
- *      <td><p> Deletes a single PolicyBasedRoute.</td>
+ *      <td><p> Deletes a single policy-based route.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -338,7 +338,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -371,7 +371,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -402,7 +402,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -439,7 +439,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -475,7 +475,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists PolicyBasedRoutes in a given project and location.
+   * Lists policy-based routes in a given project and location.
    *
    * <p>Sample code:
    *
@@ -518,7 +518,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -548,7 +548,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -576,7 +576,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -605,7 +605,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single PolicyBasedRoute.
+   * Gets details of a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -635,7 +635,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -658,8 +658,14 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource's name of the PolicyBasedRoute.
-   * @param policyBasedRoute Required. Initial values for a new Policy Based Route.
-   * @param policyBasedRouteId Required. Unique id for the Policy Based Route to create.
+   * @param policyBasedRoute Required. Initial values for a new policy-based route.
+   * @param policyBasedRouteId Required. Unique id for the policy-based route to create. Provided by
+   *     the client when the resource is created. The name must comply with
+   *     https://google.aip.dev/122#resource-id-segments. Specifically, the name must be 1-63
+   *     characters long and match the regular expression [a-z]([a-z0-9-]&#42;[a-z0-9])?. The first
+   *     character must be a lowercase letter, and all following characters (except for the last
+   *     character) must be a dash, lowercase letter, or digit. The last character must be a
+   *     lowercase letter or digit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBasedRoute, OperationMetadata> createPolicyBasedRouteAsync(
@@ -675,7 +681,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -698,8 +704,14 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource's name of the PolicyBasedRoute.
-   * @param policyBasedRoute Required. Initial values for a new Policy Based Route.
-   * @param policyBasedRouteId Required. Unique id for the Policy Based Route to create.
+   * @param policyBasedRoute Required. Initial values for a new policy-based route.
+   * @param policyBasedRouteId Required. Unique id for the policy-based route to create. Provided by
+   *     the client when the resource is created. The name must comply with
+   *     https://google.aip.dev/122#resource-id-segments. Specifically, the name must be 1-63
+   *     characters long and match the regular expression [a-z]([a-z0-9-]&#42;[a-z0-9])?. The first
+   *     character must be a lowercase letter, and all following characters (except for the last
+   *     character) must be a dash, lowercase letter, or digit. The last character must be a
+   *     lowercase letter or digit.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PolicyBasedRoute, OperationMetadata> createPolicyBasedRouteAsync(
@@ -715,7 +727,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -749,7 +761,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -784,7 +796,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new PolicyBasedRoute in a given project and location.
+   * Creates a new policy-based route in a given project and location.
    *
    * <p>Sample code:
    *
@@ -817,7 +829,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -834,7 +846,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the PolicyBasedRoute resource to delete.
+   * @param name Required. Name of the policy-based route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBasedRouteAsync(
@@ -848,7 +860,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -865,7 +877,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the PolicyBasedRoute resource to delete.
+   * @param name Required. Name of the policy-based route resource to delete.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deletePolicyBasedRouteAsync(String name) {
@@ -876,7 +888,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -907,7 +919,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *
@@ -940,7 +952,7 @@ public class PolicyBasedRoutingServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single PolicyBasedRoute.
+   * Deletes a single policy-based route.
    *
    * <p>Sample code:
    *

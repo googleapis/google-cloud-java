@@ -743,8 +743,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The render operation did not complete successfully because the custom
-       * action required for predeploy or postdeploy was not found in the
-       * Skaffold configuration. See failure_message for additional details.
+       * action(s) required for Rollout jobs were not found in the Skaffold
+       * configuration. See failure_message for additional details.
        * </pre>
        *
        * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
@@ -835,8 +835,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * The render operation did not complete successfully because the custom
-       * action required for predeploy or postdeploy was not found in the
-       * Skaffold configuration. See failure_message for additional details.
+       * action(s) required for Rollout jobs were not found in the Skaffold
+       * configuration. See failure_message for additional details.
        * </pre>
        *
        * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>

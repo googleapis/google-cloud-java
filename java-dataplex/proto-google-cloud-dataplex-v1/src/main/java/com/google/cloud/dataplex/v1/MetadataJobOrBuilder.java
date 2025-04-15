@@ -292,6 +292,41 @@ public interface MetadataJobOrBuilder
    *
    *
    * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   *
+   * @return Whether the exportSpec field is set.
+   */
+  boolean hasExportSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   *
+   * @return The exportSpec.
+   */
+  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec getExportSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Export job specification.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.MetadataJob.ExportJobSpec export_spec = 101;</code>
+   */
+  com.google.cloud.dataplex.v1.MetadataJob.ExportJobSpecOrBuilder getExportSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Import job result.
    * </pre>
    *
@@ -328,6 +363,47 @@ public interface MetadataJobOrBuilder
    * </code>
    */
   com.google.cloud.dataplex.v1.MetadataJob.ImportJobResultOrBuilder getImportResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the exportResult field is set.
+   */
+  boolean hasExportResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The exportResult.
+   */
+  com.google.cloud.dataplex.v1.MetadataJob.ExportJobResult getExportResult();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Export job result.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.MetadataJob.ExportJobResult export_result = 201 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.MetadataJob.ExportJobResultOrBuilder getExportResultOrBuilder();
 
   /**
    *

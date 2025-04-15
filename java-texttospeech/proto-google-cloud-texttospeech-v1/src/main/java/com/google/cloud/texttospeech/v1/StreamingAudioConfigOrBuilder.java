@@ -29,8 +29,8 @@ public interface StreamingAudioConfigOrBuilder
    *
    * <pre>
    * Required. The format of the audio byte stream.
-   * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-   * will return an error.
+   * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+   * return an error.
    * </pre>
    *
    * <code>
@@ -45,8 +45,8 @@ public interface StreamingAudioConfigOrBuilder
    *
    * <pre>
    * Required. The format of the audio byte stream.
-   * For now, streaming only supports PCM and OGG_OPUS. All other encodings
-   * will return an error.
+   * Streaming supports PCM, ALAW, MULAW and OGG_OPUS. All other encodings
+   * return an error.
    * </pre>
    *
    * <code>
@@ -69,4 +69,22 @@ public interface StreamingAudioConfigOrBuilder
    * @return The sampleRateHertz.
    */
   int getSampleRateHertz();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. Speaking rate/speed, in the range [0.25, 2.0]. 1.0 is
+   * the normal native speed supported by the specific voice. 2.0 is twice as
+   * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+   * speed. Any other values &lt; 0.25 or &gt; 2.0 will return an error.
+   * </pre>
+   *
+   * <code>
+   * double speaking_rate = 3 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speakingRate.
+   */
+  double getSpeakingRate();
 }

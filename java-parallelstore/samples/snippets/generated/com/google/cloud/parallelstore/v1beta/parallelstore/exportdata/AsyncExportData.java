@@ -22,6 +22,7 @@ import com.google.cloud.parallelstore.v1beta.ExportDataRequest;
 import com.google.cloud.parallelstore.v1beta.InstanceName;
 import com.google.cloud.parallelstore.v1beta.ParallelstoreClient;
 import com.google.cloud.parallelstore.v1beta.ServiceAccountName;
+import com.google.cloud.parallelstore.v1beta.TransferMetadataOptions;
 import com.google.longrunning.Operation;
 
 public class AsyncExportData {
@@ -42,6 +43,7 @@ public class AsyncExportData {
               .setName(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setRequestId("requestId693933066")
               .setServiceAccount(ServiceAccountName.of("[PROJECT]", "[SERVICE_ACCOUNT]").toString())
+              .setMetadataOptions(TransferMetadataOptions.newBuilder().build())
               .build();
       ApiFuture<Operation> future = parallelstoreClient.exportDataCallable().futureCall(request);
       // Do something.

@@ -990,6 +990,132 @@ public class VertexRagDataServiceClientTest {
   }
 
   @Test
+  public void updateRagEngineConfigTest() throws Exception {
+    RagEngineConfig expectedResponse =
+        RagEngineConfig.newBuilder()
+            .setName(RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setRagManagedDbConfig(RagManagedDbConfig.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateRagEngineConfigTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVertexRagDataService.addResponse(resultOperation);
+
+    RagEngineConfig ragEngineConfig = RagEngineConfig.newBuilder().build();
+
+    RagEngineConfig actualResponse = client.updateRagEngineConfigAsync(ragEngineConfig).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateRagEngineConfigRequest actualRequest =
+        ((UpdateRagEngineConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(ragEngineConfig, actualRequest.getRagEngineConfig());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateRagEngineConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagEngineConfig ragEngineConfig = RagEngineConfig.newBuilder().build();
+      client.updateRagEngineConfigAsync(ragEngineConfig).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getRagEngineConfigTest() throws Exception {
+    RagEngineConfig expectedResponse =
+        RagEngineConfig.newBuilder()
+            .setName(RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setRagManagedDbConfig(RagManagedDbConfig.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    RagEngineConfigName name = RagEngineConfigName.of("[PROJECT]", "[LOCATION]");
+
+    RagEngineConfig actualResponse = client.getRagEngineConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagEngineConfigRequest actualRequest = ((GetRagEngineConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagEngineConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      RagEngineConfigName name = RagEngineConfigName.of("[PROJECT]", "[LOCATION]");
+      client.getRagEngineConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getRagEngineConfigTest2() throws Exception {
+    RagEngineConfig expectedResponse =
+        RagEngineConfig.newBuilder()
+            .setName(RagEngineConfigName.of("[PROJECT]", "[LOCATION]").toString())
+            .setRagManagedDbConfig(RagManagedDbConfig.newBuilder().build())
+            .build();
+    mockVertexRagDataService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    RagEngineConfig actualResponse = client.getRagEngineConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVertexRagDataService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetRagEngineConfigRequest actualRequest = ((GetRagEngineConfigRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getRagEngineConfigExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVertexRagDataService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getRagEngineConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

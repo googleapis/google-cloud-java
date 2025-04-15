@@ -337,6 +337,53 @@ public class IdentityAwareProxyAdminServiceClientTest {
   }
 
   @Test
+  public void validateIapAttributeExpressionTest() throws Exception {
+    ValidateIapAttributeExpressionResponse expectedResponse =
+        ValidateIapAttributeExpressionResponse.newBuilder().build();
+    mockIdentityAwareProxyAdminService.addResponse(expectedResponse);
+
+    ValidateIapAttributeExpressionRequest request =
+        ValidateIapAttributeExpressionRequest.newBuilder()
+            .setName("name3373707")
+            .setExpression("expression-1795452264")
+            .build();
+
+    ValidateIapAttributeExpressionResponse actualResponse =
+        client.validateIapAttributeExpression(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIdentityAwareProxyAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ValidateIapAttributeExpressionRequest actualRequest =
+        ((ValidateIapAttributeExpressionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getExpression(), actualRequest.getExpression());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void validateIapAttributeExpressionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIdentityAwareProxyAdminService.addException(exception);
+
+    try {
+      ValidateIapAttributeExpressionRequest request =
+          ValidateIapAttributeExpressionRequest.newBuilder()
+              .setName("name3373707")
+              .setExpression("expression-1795452264")
+              .build();
+      client.validateIapAttributeExpression(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listTunnelDestGroupsTest() throws Exception {
     TunnelDestGroup responsesElement = TunnelDestGroup.newBuilder().build();
     ListTunnelDestGroupsResponse expectedResponse =

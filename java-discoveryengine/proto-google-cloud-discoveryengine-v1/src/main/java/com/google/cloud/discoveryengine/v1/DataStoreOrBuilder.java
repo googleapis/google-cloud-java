@@ -212,7 +212,7 @@ public interface DataStoreOrBuilder
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -226,7 +226,7 @@ public interface DataStoreOrBuilder
    *
    * <pre>
    * Output only. The id of the default
-   * [Schema][google.cloud.discoveryengine.v1.Schema] asscociated to this data
+   * [Schema][google.cloud.discoveryengine.v1.Schema] associated to this data
    * store.
    * </pre>
    *
@@ -309,6 +309,48 @@ public interface DataStoreOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the advancedSiteSearchConfig field is set.
+   */
+  boolean hasAdvancedSiteSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The advancedSiteSearchConfig.
+   */
+  com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig getAdvancedSiteSearchConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for advanced site search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.AdvancedSiteSearchConfig advanced_site_search_config = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.AdvancedSiteSearchConfigOrBuilder
+      getAdvancedSiteSearchConfigOrBuilder();
 
   /**
    *
@@ -449,9 +491,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -474,9 +519,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.
@@ -499,9 +547,12 @@ public interface DataStoreOrBuilder
    * [DataStore][google.cloud.discoveryengine.v1.DataStore] when provisioning
    * it. If unset, a default vertical specialized schema will be used.
    *
-   * This field is only used by [CreateDataStore][] API, and will be ignored if
-   * used in other APIs. This field will be omitted from all API responses
-   * including [CreateDataStore][] API. To retrieve a schema of a
+   * This field is only used by
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API, and will be ignored if used in other APIs. This field will be omitted
+   * from all API responses including
+   * [CreateDataStore][google.cloud.discoveryengine.v1.DataStoreService.CreateDataStore]
+   * API. To retrieve a schema of a
    * [DataStore][google.cloud.discoveryengine.v1.DataStore], use
    * [SchemaService.GetSchema][google.cloud.discoveryengine.v1.SchemaService.GetSchema]
    * API instead.

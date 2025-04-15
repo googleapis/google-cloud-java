@@ -28,10 +28,13 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the gcipSettings field is set.
    */
@@ -40,10 +43,13 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The gcipSettings.
    */
@@ -52,10 +58,13 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * GCIP claims and endpoint configurations for 3p identity providers.
+   * Optional. GCIP claims and endpoint configurations for 3p identity
+   * providers.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.GcipSettings gcip_settings = 1;</code>
+   * <code>
+   * .google.cloud.iap.v1.GcipSettings gcip_settings = 1 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.GcipSettingsOrBuilder getGcipSettingsOrBuilder();
 
@@ -63,10 +72,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the corsSettings field is set.
    */
@@ -75,10 +86,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The corsSettings.
    */
@@ -87,10 +100,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Configuration to allow cross-origin requests via IAP.
+   * Optional. Configuration to allow cross-origin requests via IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.CorsSettings cors_settings = 2;</code>
+   * <code>
+   * .google.cloud.iap.v1.CorsSettings cors_settings = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.CorsSettingsOrBuilder getCorsSettingsOrBuilder();
 
@@ -98,10 +113,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the oauthSettings field is set.
    */
@@ -110,10 +127,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The oauthSettings.
    */
@@ -122,10 +141,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure IAP's OAuth behavior.
+   * Optional. Settings to configure IAP's OAuth behavior.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.OAuthSettings oauth_settings = 3;</code>
+   * <code>
+   * .google.cloud.iap.v1.OAuthSettings oauth_settings = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.OAuthSettingsOrBuilder getOauthSettingsOrBuilder();
 
@@ -133,10 +154,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the reauthSettings field is set.
    */
@@ -145,10 +168,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The reauthSettings.
    */
@@ -157,10 +182,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure reauthentication policies in IAP.
+   * Optional. Settings to configure reauthentication policies in IAP.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.ReauthSettings reauth_settings = 6;</code>
+   * <code>
+   * .google.cloud.iap.v1.ReauthSettings reauth_settings = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.ReauthSettingsOrBuilder getReauthSettingsOrBuilder();
 
@@ -168,10 +195,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the allowedDomainsSettings field is set.
    */
@@ -180,10 +209,12 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The allowedDomainsSettings.
    */
@@ -192,10 +223,135 @@ public interface AccessSettingsOrBuilder
    *
    *
    * <pre>
-   * Settings to configure and enable allowed domains.
+   * Optional. Settings to configure and enable allowed domains.
    * </pre>
    *
-   * <code>.google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7;</code>
+   * <code>
+   * .google.cloud.iap.v1.AllowedDomainsSettings allowed_domains_settings = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   com.google.cloud.iap.v1.AllowedDomainsSettingsOrBuilder getAllowedDomainsSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the workforceIdentitySettings field is set.
+   */
+  boolean hasWorkforceIdentitySettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The workforceIdentitySettings.
+   */
+  com.google.cloud.iap.v1.WorkforceIdentitySettings getWorkforceIdentitySettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Settings to configure the workforce identity federation,
+   * including workforce pools and OAuth 2.0 settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.iap.v1.WorkforceIdentitySettings workforce_identity_settings = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.iap.v1.WorkforceIdentitySettingsOrBuilder
+      getWorkforceIdentitySettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the identitySources.
+   */
+  java.util.List<com.google.cloud.iap.v1.AccessSettings.IdentitySource> getIdentitySourcesList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of identitySources.
+   */
+  int getIdentitySourcesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The identitySources at the given index.
+   */
+  com.google.cloud.iap.v1.AccessSettings.IdentitySource getIdentitySources(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for identitySources.
+   */
+  java.util.List<java.lang.Integer> getIdentitySourcesValueList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Identity sources that IAP can use to authenticate the end user.
+   * Only one identity source can be configured.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.iap.v1.AccessSettings.IdentitySource identity_sources = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of identitySources at the given index.
+   */
+  int getIdentitySourcesValue(int index);
 }

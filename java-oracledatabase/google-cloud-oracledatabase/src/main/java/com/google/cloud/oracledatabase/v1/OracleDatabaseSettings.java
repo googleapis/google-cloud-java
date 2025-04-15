@@ -335,6 +335,47 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
     return ((OracleDatabaseStubSettings) getStubSettings()).listAutonomousDatabaseBackupsSettings();
   }
 
+  /** Returns the object with the settings used for calls to stopAutonomousDatabase. */
+  public UnaryCallSettings<StopAutonomousDatabaseRequest, Operation>
+      stopAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).stopAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to stopAutonomousDatabase. */
+  public OperationCallSettings<StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      stopAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .stopAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startAutonomousDatabase. */
+  public UnaryCallSettings<StartAutonomousDatabaseRequest, Operation>
+      startAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).startAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to startAutonomousDatabase. */
+  public OperationCallSettings<
+          StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      startAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .startAutonomousDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restartAutonomousDatabase. */
+  public UnaryCallSettings<RestartAutonomousDatabaseRequest, Operation>
+      restartAutonomousDatabaseSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings()).restartAutonomousDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restartAutonomousDatabase. */
+  public OperationCallSettings<
+          RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+      restartAutonomousDatabaseOperationSettings() {
+    return ((OracleDatabaseStubSettings) getStubSettings())
+        .restartAutonomousDatabaseOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -647,6 +688,45 @@ public class OracleDatabaseSettings extends ClientSettings<OracleDatabaseSetting
             ListAutonomousDatabaseBackupsPagedResponse>
         listAutonomousDatabaseBackupsSettings() {
       return getStubSettingsBuilder().listAutonomousDatabaseBackupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopAutonomousDatabase. */
+    public UnaryCallSettings.Builder<StopAutonomousDatabaseRequest, Operation>
+        stopAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().stopAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to stopAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            StopAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        stopAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().stopAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startAutonomousDatabase. */
+    public UnaryCallSettings.Builder<StartAutonomousDatabaseRequest, Operation>
+        startAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().startAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to startAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            StartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        startAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().startAutonomousDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restartAutonomousDatabase. */
+    public UnaryCallSettings.Builder<RestartAutonomousDatabaseRequest, Operation>
+        restartAutonomousDatabaseSettings() {
+      return getStubSettingsBuilder().restartAutonomousDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restartAutonomousDatabase. */
+    public OperationCallSettings.Builder<
+            RestartAutonomousDatabaseRequest, AutonomousDatabase, OperationMetadata>
+        restartAutonomousDatabaseOperationSettings() {
+      return getStubSettingsBuilder().restartAutonomousDatabaseOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

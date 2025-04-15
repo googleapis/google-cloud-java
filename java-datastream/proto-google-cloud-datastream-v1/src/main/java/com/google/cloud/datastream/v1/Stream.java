@@ -521,6 +521,41 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerExcludedObjectsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     *
+     * @return Whether the salesforceExcludedObjects field is set.
+     */
+    boolean hasSalesforceExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     *
+     * @return The salesforceExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.SalesforceOrg getSalesforceExcludedObjects();
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     */
+    com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceExcludedObjectsOrBuilder();
+
     com.google.cloud.datastream.v1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
@@ -580,6 +615,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       MYSQL_EXCLUDED_OBJECTS(2),
       POSTGRESQL_EXCLUDED_OBJECTS(3),
       SQL_SERVER_EXCLUDED_OBJECTS(4),
+      SALESFORCE_EXCLUDED_OBJECTS(5),
       EXCLUDEDOBJECTS_NOT_SET(0);
       private final int value;
 
@@ -606,6 +642,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             return POSTGRESQL_EXCLUDED_OBJECTS;
           case 4:
             return SQL_SERVER_EXCLUDED_OBJECTS;
+          case 5:
+            return SALESFORCE_EXCLUDED_OBJECTS;
           case 0:
             return EXCLUDEDOBJECTS_NOT_SET;
           default:
@@ -828,6 +866,58 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
     }
 
+    public static final int SALESFORCE_EXCLUDED_OBJECTS_FIELD_NUMBER = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     *
+     * @return Whether the salesforceExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceExcludedObjects() {
+      return excludedObjectsCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     *
+     * @return The salesforceExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceOrg getSalesforceExcludedObjects() {
+      if (excludedObjectsCase_ == 5) {
+        return (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceOrgOrBuilder
+        getSalesforceExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 5) {
+        return (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -853,6 +943,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       if (excludedObjectsCase_ == 4) {
         output.writeMessage(4, (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 5) {
+        output.writeMessage(5, (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -882,6 +975,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 4, (com.google.cloud.datastream.v1.SqlServerRdbms) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 5) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -915,6 +1013,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           if (!getSqlServerExcludedObjects().equals(other.getSqlServerExcludedObjects()))
             return false;
           break;
+        case 5:
+          if (!getSalesforceExcludedObjects().equals(other.getSalesforceExcludedObjects()))
+            return false;
+          break;
         case 0:
         default:
       }
@@ -945,6 +1047,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         case 4:
           hash = (37 * hash) + SQL_SERVER_EXCLUDED_OBJECTS_FIELD_NUMBER;
           hash = (53 * hash) + getSqlServerExcludedObjects().hashCode();
+          break;
+        case 5:
+          hash = (37 * hash) + SALESFORCE_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getSalesforceExcludedObjects().hashCode();
           break;
         case 0:
         default:
@@ -1104,6 +1210,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         if (sqlServerExcludedObjectsBuilder_ != null) {
           sqlServerExcludedObjectsBuilder_.clear();
         }
+        if (salesforceExcludedObjectsBuilder_ != null) {
+          salesforceExcludedObjectsBuilder_.clear();
+        }
         excludedObjectsCase_ = 0;
         excludedObjects_ = null;
         return this;
@@ -1160,6 +1269,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         if (excludedObjectsCase_ == 4 && sqlServerExcludedObjectsBuilder_ != null) {
           result.excludedObjects_ = sqlServerExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 5 && salesforceExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = salesforceExcludedObjectsBuilder_.build();
         }
       }
 
@@ -1232,6 +1344,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
               mergeSqlServerExcludedObjects(other.getSqlServerExcludedObjects());
               break;
             }
+          case SALESFORCE_EXCLUDED_OBJECTS:
+            {
+              mergeSalesforceExcludedObjects(other.getSalesforceExcludedObjects());
+              break;
+            }
           case EXCLUDEDOBJECTS_NOT_SET:
             {
               break;
@@ -1291,6 +1408,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                   excludedObjectsCase_ = 4;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getSalesforceExcludedObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                  excludedObjectsCase_ = 5;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2171,6 +2295,220 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 4;
         onChanged();
         return sqlServerExcludedObjectsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.SalesforceOrg,
+              com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+              com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
+          salesforceExcludedObjectsBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       *
+       * @return Whether the salesforceExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasSalesforceExcludedObjects() {
+        return excludedObjectsCase_ == 5;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       *
+       * @return The salesforceExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SalesforceOrg getSalesforceExcludedObjects() {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 5) {
+            return (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 5) {
+            return salesforceExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      public Builder setSalesforceExcludedObjects(
+          com.google.cloud.datastream.v1.SalesforceOrg value) {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          salesforceExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      public Builder setSalesforceExcludedObjects(
+          com.google.cloud.datastream.v1.SalesforceOrg.Builder builderForValue) {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          salesforceExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      public Builder mergeSalesforceExcludedObjects(
+          com.google.cloud.datastream.v1.SalesforceOrg value) {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 5
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.SalesforceOrg.newBuilder(
+                        (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 5) {
+            salesforceExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            salesforceExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 5;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      public Builder clearSalesforceExcludedObjects() {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 5) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 5) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          salesforceExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      public com.google.cloud.datastream.v1.SalesforceOrg.Builder
+          getSalesforceExcludedObjectsBuilder() {
+        return getSalesforceExcludedObjectsFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.SalesforceOrgOrBuilder
+          getSalesforceExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 5) && (salesforceExcludedObjectsBuilder_ != null)) {
+          return salesforceExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 5) {
+            return (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Salesforce data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_excluded_objects = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.SalesforceOrg,
+              com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+              com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
+          getSalesforceExcludedObjectsFieldBuilder() {
+        if (salesforceExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 5)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+          }
+          salesforceExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.SalesforceOrg,
+                  com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+                  com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>(
+                  (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 5;
+        onChanged();
+        return salesforceExcludedObjectsBuilder_;
       }
 
       @java.lang.Override
@@ -3494,6 +3832,72 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         : lastRecoveryTime_;
   }
 
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 15;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzs field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzs() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 16;
+  private boolean satisfiesPzi_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the satisfiesPzi field is set.
+   */
+  @java.lang.Override
+  public boolean hasSatisfiesPzi() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3539,6 +3943,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(13, getLastRecoveryTime());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeBool(15, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(16, satisfiesPzi_);
     }
     if (backfillStrategyCase_ == 101) {
       output.writeMessage(
@@ -3599,6 +4009,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getLastRecoveryTime());
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(15, satisfiesPzs_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, satisfiesPzi_);
+    }
     if (backfillStrategyCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3653,6 +4069,14 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     if (hasLastRecoveryTime() != other.hasLastRecoveryTime()) return false;
     if (hasLastRecoveryTime()) {
       if (!getLastRecoveryTime().equals(other.getLastRecoveryTime())) return false;
+    }
+    if (hasSatisfiesPzs() != other.hasSatisfiesPzs()) return false;
+    if (hasSatisfiesPzs()) {
+      if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    }
+    if (hasSatisfiesPzi() != other.hasSatisfiesPzi()) return false;
+    if (hasSatisfiesPzi()) {
+      if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     }
     if (!getBackfillStrategyCase().equals(other.getBackfillStrategyCase())) return false;
     switch (backfillStrategyCase_) {
@@ -3713,6 +4137,14 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
     if (hasLastRecoveryTime()) {
       hash = (37 * hash) + LAST_RECOVERY_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastRecoveryTime().hashCode();
+    }
+    if (hasSatisfiesPzs()) {
+      hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    }
+    if (hasSatisfiesPzi()) {
+      hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     }
     switch (backfillStrategyCase_) {
       case 101:
@@ -3943,6 +4375,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         lastRecoveryTimeBuilder_.dispose();
         lastRecoveryTimeBuilder_ = null;
       }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       backfillStrategyCase_ = 0;
       backfillStrategy_ = null;
       return this;
@@ -4037,6 +4471,14 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         result.lastRecoveryTime_ =
             lastRecoveryTimeBuilder_ == null ? lastRecoveryTime_ : lastRecoveryTimeBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4158,6 +4600,12 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLastRecoveryTime()) {
         mergeLastRecoveryTime(other.getLastRecoveryTime());
+      }
+      if (other.hasSatisfiesPzs()) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.hasSatisfiesPzi()) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
       }
       switch (other.getBackfillStrategyCase()) {
         case BACKFILL_ALL:
@@ -4282,6 +4730,18 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 120:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 120
+            case 128:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 128
             case 810:
               {
                 input.readMessage(getBackfillAllFieldBuilder().getBuilder(), extensionRegistry);
@@ -6802,6 +7262,142 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         lastRecoveryTime_ = null;
       }
       return lastRecoveryTimeBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzs field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzs() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzs = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the satisfiesPzi field is set.
+     */
+    @java.lang.Override
+    public boolean hasSatisfiesPzi() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>optional bool satisfies_pzi = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      satisfiesPzi_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

@@ -25,7 +25,6 @@ package com.google.webrisk.v1;
  * <pre>
  * Context about the submission including the type of abuse found on the URI and
  * supporting details.
- * option (google.api.message_visibility).restriction = "TRUSTED_TESTER";
  * </pre>
  *
  * Protobuf type {@code google.cloud.webrisk.v1.ThreatInfo}
@@ -3144,7 +3143,6 @@ public final class ThreatInfo extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Context about the submission including the type of abuse found on the URI and
    * supporting details.
-   * option (google.api.message_visibility).restriction = "TRUSTED_TESTER";
    * </pre>
    *
    * Protobuf type {@code google.cloud.webrisk.v1.ThreatInfo}

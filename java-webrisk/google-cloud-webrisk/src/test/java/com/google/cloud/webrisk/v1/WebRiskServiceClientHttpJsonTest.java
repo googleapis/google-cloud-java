@@ -36,11 +36,8 @@ import com.google.webrisk.v1.ProjectName;
 import com.google.webrisk.v1.SearchHashesResponse;
 import com.google.webrisk.v1.SearchUrisResponse;
 import com.google.webrisk.v1.Submission;
-import com.google.webrisk.v1.SubmitUriRequest;
-import com.google.webrisk.v1.ThreatDiscovery;
 import com.google.webrisk.v1.ThreatEntryAdditions;
 import com.google.webrisk.v1.ThreatEntryRemovals;
-import com.google.webrisk.v1.ThreatInfo;
 import com.google.webrisk.v1.ThreatType;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -346,15 +343,10 @@ public class WebRiskServiceClientHttpJsonTest {
             .build();
     mockService.addResponse(resultOperation);
 
-    SubmitUriRequest request =
-        SubmitUriRequest.newBuilder()
-            .setParent(ProjectName.of("[PROJECT]").toString())
-            .setSubmission(Submission.newBuilder().build())
-            .setThreatInfo(ThreatInfo.newBuilder().build())
-            .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
-            .build();
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    Submission submission = Submission.newBuilder().build();
 
-    Submission actualResponse = client.submitUriAsync(request).get();
+    Submission actualResponse = client.submitUriAsync(parent, submission).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -380,14 +372,61 @@ public class WebRiskServiceClientHttpJsonTest {
     mockService.addException(exception);
 
     try {
-      SubmitUriRequest request =
-          SubmitUriRequest.newBuilder()
-              .setParent(ProjectName.of("[PROJECT]").toString())
-              .setSubmission(Submission.newBuilder().build())
-              .setThreatInfo(ThreatInfo.newBuilder().build())
-              .setThreatDiscovery(ThreatDiscovery.newBuilder().build())
-              .build();
-      client.submitUriAsync(request).get();
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      Submission submission = Submission.newBuilder().build();
+      client.submitUriAsync(parent, submission).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void submitUriTest2() throws Exception {
+    Submission expectedResponse =
+        Submission.newBuilder()
+            .setUri("uri116076")
+            .addAllThreatTypes(new ArrayList<ThreatType>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("submitUriTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String parent = "projects/project-2353";
+    Submission submission = Submission.newBuilder().build();
+
+    Submission actualResponse = client.submitUriAsync(parent, submission).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void submitUriExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-2353";
+      Submission submission = Submission.newBuilder().build();
+      client.submitUriAsync(parent, submission).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

@@ -28,7 +28,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -56,7 +56,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. VM instances to which this policy based route applies to.
+   * Optional. VM instances that this policy-based route applies to.
    * </pre>
    *
    * <code>
@@ -70,7 +70,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -84,7 +85,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -99,7 +101,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The interconnect attachments to which this route applies to.
+   * Optional. The interconnect attachments that this policy-based route
+   * applies to.
    * </pre>
    *
    * <code>
@@ -113,9 +116,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -127,9 +130,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -141,9 +144,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The IP of a global access enabled L4 ILB that should be the
-   * next hop to handle matching packets. For this version, only
-   * next_hop_ilb_ip is supported.
+   * Optional. The IP address of a global-access-enabled L4 ILB that is the
+   * next hop for matching packets. For this version, only nextHopIlbIp is
+   * supported.
    * </pre>
    *
    * <code>string next_hop_ilb_ip = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -229,7 +232,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -242,7 +245,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -255,7 +258,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was created.
+   * Output only. Time when the policy-based route was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -267,7 +270,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -280,7 +283,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -293,7 +296,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when the PolicyBasedRoute was updated.
+   * Output only. Time when the policy-based route was updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -390,8 +393,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -405,8 +408,8 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Required. Fully-qualified URL of the network that this route applies to.
-   * e.g. projects/my-project/global/networks/my-network.
+   * Required. Fully-qualified URL of the network that this route applies to,
+   * for example: projects/my-project/global/networks/my-network.
    * </pre>
    *
    * <code>
@@ -462,9 +465,9 @@ public interface PolicyBasedRouteOrBuilder
    *
    *
    * <pre>
-   * Optional. The priority of this policy based route. Priority is used to
-   * break ties in cases where there are more than one matching policy based
-   * routes found. In cases where multiple policy based routes are matched, the
+   * Optional. The priority of this policy-based route. Priority is used to
+   * break ties in cases where there are more than one matching policy-based
+   * routes found. In cases where multiple policy-based routes are matched, the
    * one with the lowest-numbered priority value wins. The default value is
    * 1000. The priority value must be from 1 to 65535, inclusive.
    * </pre>
@@ -575,7 +578,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -588,7 +591,7 @@ public interface PolicyBasedRouteOrBuilder
    *
    * <pre>
    * Output only. Type of this resource. Always
-   * networkconnectivity#policyBasedRoute for Policy Based Route resources.
+   * networkconnectivity#policyBasedRoute for policy-based Route resources.
    * </pre>
    *
    * <code>string kind = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

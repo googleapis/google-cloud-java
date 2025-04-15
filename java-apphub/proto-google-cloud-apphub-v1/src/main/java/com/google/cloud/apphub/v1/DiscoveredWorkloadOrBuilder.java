@@ -29,7 +29,7 @@ public interface DiscoveredWorkloadOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -42,7 +42,7 @@ public interface DiscoveredWorkloadOrBuilder
    *
    * <pre>
    * Identifier. The resource name of the discovered workload. Format:
-   * "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+   * `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>

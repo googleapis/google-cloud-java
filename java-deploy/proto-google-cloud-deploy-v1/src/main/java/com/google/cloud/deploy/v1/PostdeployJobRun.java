@@ -112,7 +112,7 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The postdeploy job run did not complete within the alloted time.
+     * The postdeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>
@@ -169,7 +169,7 @@ public final class PostdeployJobRun extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The postdeploy job run did not complete within the alloted time.
+     * The postdeploy job run did not complete within the allotted time.
      * </pre>
      *
      * <code>DEADLINE_EXCEEDED = 3;</code>

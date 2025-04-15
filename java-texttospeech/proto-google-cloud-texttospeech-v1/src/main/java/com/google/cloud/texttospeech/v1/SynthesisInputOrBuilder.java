@@ -152,18 +152,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -177,18 +175,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -202,18 +198,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>

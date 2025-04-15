@@ -29,6 +29,18 @@ public final class Containeranalysis {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_CloudStorageLocation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_CloudStorageLocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_containeranalysis_v1_ExportSBOMResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_fieldAccessorTable;
@@ -56,50 +68,75 @@ public final class Containeranalysis {
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\032\036google/iam/v1/iam_polic"
           + "y.proto\032\032google/iam/v1/policy.proto\032\031gra"
-          + "feas/v1/severity.proto\"\200\001\n)GetVulnerabil"
-          + "ityOccurrencesSummaryRequest\022C\n\006parent\030\001"
-          + " \001(\tB3\340A\002\372A-\n+cloudresourcemanager.googl"
-          + "eapis.com/Project\022\016\n\006filter\030\002 \001(\t\"\220\002\n\037Vu"
-          + "lnerabilityOccurrencesSummary\022j\n\006counts\030"
-          + "\001 \003(\0132Z.google.devtools.containeranalysi"
-          + "s.v1.VulnerabilityOccurrencesSummary.Fix"
-          + "ableTotalByDigest\032\200\001\n\024FixableTotalByDige"
-          + "st\022\024\n\014resource_uri\030\001 \001(\t\022&\n\010severity\030\002 \001"
-          + "(\0162\024.grafeas.v1.Severity\022\025\n\rfixable_coun"
-          + "t\030\003 \001(\003\022\023\n\013total_count\030\004 \001(\0032\242\010\n\021Contain"
-          + "erAnalysis\022\322\001\n\014SetIamPolicy\022\".google.iam"
-          + ".v1.SetIamPolicyRequest\032\025.google.iam.v1."
-          + "Policy\"\206\001\332A\017resource,policy\202\323\344\223\002n\"./v1/{"
-          + "resource=projects/*/notes/*}:setIamPolic"
-          + "y:\001*Z9\"4/v1/{resource=projects/*/occurre"
-          + "nces/*}:setIamPolicy:\001*\022\312\001\n\014GetIamPolicy"
-          + "\022\".google.iam.v1.GetIamPolicyRequest\032\025.g"
-          + "oogle.iam.v1.Policy\"\177\332A\010resource\202\323\344\223\002n\"."
-          + "/v1/{resource=projects/*/notes/*}:getIam"
+          + "feas/v1/severity.proto\"\275\001\n\021ExportSBOMReq"
+          + "uest\022\021\n\004name\030\001 \001(\tB\003\340A\002\022s\n\026cloud_storage"
+          + "_location\030\002 \001(\0132L.google.devtools.contai"
+          + "neranalysis.v1.ExportSBOMRequest.CloudSt"
+          + "orageLocationB\003\340A\001H\000\032\026\n\024CloudStorageLoca"
+          + "tionB\010\n\006target\"2\n\022ExportSBOMResponse\022\034\n\024"
+          + "discovery_occurrence\030\001 \001(\t\"\200\001\n)GetVulner"
+          + "abilityOccurrencesSummaryRequest\022C\n\006pare"
+          + "nt\030\001 \001(\tB3\340A\002\372A-\n+cloudresourcemanager.g"
+          + "oogleapis.com/Project\022\016\n\006filter\030\002 \001(\t\"\220\002"
+          + "\n\037VulnerabilityOccurrencesSummary\022j\n\006cou"
+          + "nts\030\001 \003(\0132Z.google.devtools.containerana"
+          + "lysis.v1.VulnerabilityOccurrencesSummary"
+          + ".FixableTotalByDigest\032\200\001\n\024FixableTotalBy"
+          + "Digest\022\024\n\014resource_uri\030\001 \001(\t\022&\n\010severity"
+          + "\030\002 \001(\0162\024.grafeas.v1.Severity\022\025\n\rfixable_"
+          + "count\030\003 \001(\003\022\023\n\013total_count\030\004 \001(\0032\220\016\n\021Con"
+          + "tainerAnalysis\022\333\002\n\014SetIamPolicy\022\".google"
+          + ".iam.v1.SetIamPolicyRequest\032\025.google.iam"
+          + ".v1.Policy\"\217\002\332A\017resource,policy\202\323\344\223\002\366\001\"."
+          + "/v1/{resource=projects/*/notes/*}:setIam"
           + "Policy:\001*Z9\"4/v1/{resource=projects/*/oc"
-          + "currences/*}:getIamPolicy:\001*\022\203\002\n\022TestIam"
-          + "Permissions\022(.google.iam.v1.TestIamPermi"
-          + "ssionsRequest\032).google.iam.v1.TestIamPer"
-          + "missionsResponse\"\227\001\332A\024resource,permissio"
-          + "ns\202\323\344\223\002z\"4/v1/{resource=projects/*/notes"
+          + "currences/*}:setIamPolicy:\001*Z?\":/v1/{res"
+          + "ource=projects/*/locations/*/notes/*}:se"
+          + "tIamPolicy:\001*ZE\"@/v1/{resource=projects/"
+          + "*/locations/*/occurrences/*}:setIamPolic"
+          + "y:\001*\022\324\002\n\014GetIamPolicy\022\".google.iam.v1.Ge"
+          + "tIamPolicyRequest\032\025.google.iam.v1.Policy"
+          + "\"\210\002\332A\010resource\202\323\344\223\002\366\001\"./v1/{resource=pro"
+          + "jects/*/notes/*}:getIamPolicy:\001*Z9\"4/v1/"
+          + "{resource=projects/*/occurrences/*}:getI"
+          + "amPolicy:\001*Z?\":/v1/{resource=projects/*/"
+          + "locations/*/notes/*}:getIamPolicy:\001*ZE\"@"
+          + "/v1/{resource=projects/*/locations/*/occ"
+          + "urrences/*}:getIamPolicy:\001*\022\230\003\n\022TestIamP"
+          + "ermissions\022(.google.iam.v1.TestIamPermis"
+          + "sionsRequest\032).google.iam.v1.TestIamPerm"
+          + "issionsResponse\"\254\002\332A\024resource,permission"
+          + "s\202\323\344\223\002\216\002\"4/v1/{resource=projects/*/notes"
           + "/*}:testIamPermissions:\001*Z?\":/v1/{resour"
           + "ce=projects/*/occurrences/*}:testIamPerm"
-          + "issions:\001*\022\216\002\n\"GetVulnerabilityOccurrenc"
-          + "esSummary\022O.google.devtools.containerana"
-          + "lysis.v1.GetVulnerabilityOccurrencesSumm"
-          + "aryRequest\032E.google.devtools.containeran"
-          + "alysis.v1.VulnerabilityOccurrencesSummar"
-          + "y\"P\332A\rparent,filter\202\323\344\223\002:\0228/v1/{parent=p"
-          + "rojects/*}/occurrences:vulnerabilitySumm"
-          + "ary\032T\312A containeranalysis.googleapis.com"
-          + "\322A.https://www.googleapis.com/auth/cloud"
-          + "-platformB\366\001\n\037com.google.containeranalys"
-          + "is.v1P\001ZScloud.google.com/go/containeran"
-          + "alysis/apiv1/containeranalysispb;contain"
-          + "eranalysispb\242\002\003GCA\252\002*Google.Cloud.DevToo"
-          + "ls.ContainerAnalysis.V1\312\002!Google\\Cloud\\C"
-          + "ontainerAnalysis\\V1\352\002$Google::Cloud::Con"
-          + "tainerAnalysis::V1b\006proto3"
+          + "issions:\001*ZE\"@/v1/{resource=projects/*/l"
+          + "ocations/*/notes/*}:testIamPermissions:\001"
+          + "*ZK\"F/v1/{resource=projects/*/locations/"
+          + "*/occurrences/*}:testIamPermissions:\001*\022\330"
+          + "\002\n\"GetVulnerabilityOccurrencesSummary\022O."
+          + "google.devtools.containeranalysis.v1.Get"
+          + "VulnerabilityOccurrencesSummaryRequest\032E"
+          + ".google.devtools.containeranalysis.v1.Vu"
+          + "lnerabilityOccurrencesSummary\"\231\001\332A\rparen"
+          + "t,filter\202\323\344\223\002\202\001\0228/v1/{parent=projects/*}"
+          + "/occurrences:vulnerabilitySummaryZF\022D/v1"
+          + "/{parent=projects/*/locations/*}/occurre"
+          + "nces:vulnerabilitySummary\022\371\001\n\nExportSBOM"
+          + "\0227.google.devtools.containeranalysis.v1."
+          + "ExportSBOMRequest\0328.google.devtools.cont"
+          + "aineranalysis.v1.ExportSBOMResponse\"x\202\323\344"
+          + "\223\002r\"-/v1/{name=projects/*/resources/**}:"
+          + "exportSBOM:\001*Z>\"9/v1/{name=projects/*/lo"
+          + "cations/*/resources/**}:exportSBOM:\001*\032T\312"
+          + "A containeranalysis.googleapis.com\322A.htt"
+          + "ps://www.googleapis.com/auth/cloud-platf"
+          + "ormB\366\001\n\037com.google.containeranalysis.v1P"
+          + "\001ZScloud.google.com/go/containeranalysis"
+          + "/apiv1/containeranalysispb;containeranal"
+          + "ysispb\242\002\003GCA\252\002*Google.Cloud.DevTools.Con"
+          + "tainerAnalysis.V1\312\002!Google\\Cloud\\Contain"
+          + "erAnalysis\\V1\352\002$Google::Cloud::Container"
+          + "Analysis::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,8 +150,32 @@ public final class Containeranalysis {
               com.google.iam.v1.PolicyProto.getDescriptor(),
               io.grafeas.v1.SeverityOuterClass.getDescriptor(),
             });
-    internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor =
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "CloudStorageLocation", "Target",
+            });
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_CloudStorageLocation_descriptor =
+        internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_CloudStorageLocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_ExportSBOMRequest_CloudStorageLocation_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMResponse_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_devtools_containeranalysis_v1_ExportSBOMResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_containeranalysis_v1_ExportSBOMResponse_descriptor,
+            new java.lang.String[] {
+              "DiscoveryOccurrence",
+            });
+    internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_containeranalysis_v1_GetVulnerabilityOccurrencesSummaryRequest_descriptor,
@@ -122,7 +183,7 @@ public final class Containeranalysis {
               "Parent", "Filter",
             });
     internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_containeranalysis_v1_VulnerabilityOccurrencesSummary_descriptor,

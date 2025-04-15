@@ -195,7 +195,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
    * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
-   *     google/shopping/css/v1/css_product_inputs.proto;l=175
+   *     google/shopping/css/v1/css_product_inputs.proto;l=178
    * @return The feedId.
    */
   @java.lang.Override
@@ -956,7 +956,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
      * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
-     *     google/shopping/css/v1/css_product_inputs.proto;l=175
+     *     google/shopping/css/v1/css_product_inputs.proto;l=178
      * @return The feedId.
      */
     @java.lang.Override
@@ -980,7 +980,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
      * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
-     *     google/shopping/css/v1/css_product_inputs.proto;l=175
+     *     google/shopping/css/v1/css_product_inputs.proto;l=178
      * @param value The feedId to set.
      * @return This builder for chaining.
      */
@@ -1008,7 +1008,7 @@ public final class InsertCssProductInputRequest extends com.google.protobuf.Gene
      * <code>int64 feed_id = 3 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @deprecated google.shopping.css.v1.InsertCssProductInputRequest.feed_id is deprecated. See
-     *     google/shopping/css/v1/css_product_inputs.proto;l=175
+     *     google/shopping/css/v1/css_product_inputs.proto;l=178
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

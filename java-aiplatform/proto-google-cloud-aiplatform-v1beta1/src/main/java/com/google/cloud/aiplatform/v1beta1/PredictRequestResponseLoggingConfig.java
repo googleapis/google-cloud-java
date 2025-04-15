@@ -40,7 +40,9 @@ public final class PredictRequestResponseLoggingConfig
     super(builder);
   }
 
-  private PredictRequestResponseLoggingConfig() {}
+  private PredictRequestResponseLoggingConfig() {
+    requestResponseLoggingSchemaVersion_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -167,6 +169,85 @@ public final class PredictRequestResponseLoggingConfig
         : bigqueryDestination_;
   }
 
+  public static final int REQUEST_RESPONSE_LOGGING_SCHEMA_VERSION_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestResponseLoggingSchemaVersion_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version used in creating the BigQuery table for the
+   * request response logging. The versions are "v1" and "v2". The current
+   * default version is "v1".
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestResponseLoggingSchemaVersion.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestResponseLoggingSchemaVersion() {
+    java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestResponseLoggingSchemaVersion_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The schema version used in creating the BigQuery table for the
+   * request response logging. The versions are "v1" and "v2". The current
+   * default version is "v1".
+   * </pre>
+   *
+   * <code>
+   * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for requestResponseLoggingSchemaVersion.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes() {
+    java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestResponseLoggingSchemaVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ENABLE_OTEL_LOGGING_FIELD_NUMBER = 6;
+  private boolean enableOtelLogging_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * This field is used for large models. If true, in addition to the
+   * original large model logs, logs will be converted in OTel schema format,
+   * and saved in otel_log column. Default value is false.
+   * </pre>
+   *
+   * <code>bool enable_otel_logging = 6;</code>
+   *
+   * @return The enableOtelLogging.
+   */
+  @java.lang.Override
+  public boolean getEnableOtelLogging() {
+    return enableOtelLogging_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -190,6 +271,14 @@ public final class PredictRequestResponseLoggingConfig
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getBigqueryDestination());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        requestResponseLoggingSchemaVersion_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 4, requestResponseLoggingSchemaVersion_);
+    }
+    if (enableOtelLogging_ != false) {
+      output.writeBool(6, enableOtelLogging_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -207,6 +296,15 @@ public final class PredictRequestResponseLoggingConfig
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getBigqueryDestination());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(
+        requestResponseLoggingSchemaVersion_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              4, requestResponseLoggingSchemaVersion_);
+    }
+    if (enableOtelLogging_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, enableOtelLogging_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -231,6 +329,9 @@ public final class PredictRequestResponseLoggingConfig
     if (hasBigqueryDestination()) {
       if (!getBigqueryDestination().equals(other.getBigqueryDestination())) return false;
     }
+    if (!getRequestResponseLoggingSchemaVersion()
+        .equals(other.getRequestResponseLoggingSchemaVersion())) return false;
+    if (getEnableOtelLogging() != other.getEnableOtelLogging()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -253,6 +354,10 @@ public final class PredictRequestResponseLoggingConfig
       hash = (37 * hash) + BIGQUERY_DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getBigqueryDestination().hashCode();
     }
+    hash = (37 * hash) + REQUEST_RESPONSE_LOGGING_SCHEMA_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestResponseLoggingSchemaVersion().hashCode();
+    hash = (37 * hash) + ENABLE_OTEL_LOGGING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableOtelLogging());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -412,6 +517,8 @@ public final class PredictRequestResponseLoggingConfig
         bigqueryDestinationBuilder_.dispose();
         bigqueryDestinationBuilder_ = null;
       }
+      requestResponseLoggingSchemaVersion_ = "";
+      enableOtelLogging_ = false;
       return this;
     }
 
@@ -465,6 +572,12 @@ public final class PredictRequestResponseLoggingConfig
                 ? bigqueryDestination_
                 : bigqueryDestinationBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.requestResponseLoggingSchemaVersion_ = requestResponseLoggingSchemaVersion_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableOtelLogging_ = enableOtelLogging_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -528,6 +641,14 @@ public final class PredictRequestResponseLoggingConfig
       if (other.hasBigqueryDestination()) {
         mergeBigqueryDestination(other.getBigqueryDestination());
       }
+      if (!other.getRequestResponseLoggingSchemaVersion().isEmpty()) {
+        requestResponseLoggingSchemaVersion_ = other.requestResponseLoggingSchemaVersion_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (other.getEnableOtelLogging() != false) {
+        setEnableOtelLogging(other.getEnableOtelLogging());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -573,6 +694,18 @@ public final class PredictRequestResponseLoggingConfig
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                requestResponseLoggingSchemaVersion_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 48:
+              {
+                enableOtelLogging_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -935,6 +1068,193 @@ public final class PredictRequestResponseLoggingConfig
         bigqueryDestination_ = null;
       }
       return bigqueryDestinationBuilder_;
+    }
+
+    private java.lang.Object requestResponseLoggingSchemaVersion_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version used in creating the BigQuery table for the
+     * request response logging. The versions are "v1" and "v2". The current
+     * default version is "v1".
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The requestResponseLoggingSchemaVersion.
+     */
+    public java.lang.String getRequestResponseLoggingSchemaVersion() {
+      java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestResponseLoggingSchemaVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version used in creating the BigQuery table for the
+     * request response logging. The versions are "v1" and "v2". The current
+     * default version is "v1".
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for requestResponseLoggingSchemaVersion.
+     */
+    public com.google.protobuf.ByteString getRequestResponseLoggingSchemaVersionBytes() {
+      java.lang.Object ref = requestResponseLoggingSchemaVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestResponseLoggingSchemaVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version used in creating the BigQuery table for the
+     * request response logging. The versions are "v1" and "v2". The current
+     * default version is "v1".
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The requestResponseLoggingSchemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestResponseLoggingSchemaVersion(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestResponseLoggingSchemaVersion_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version used in creating the BigQuery table for the
+     * request response logging. The versions are "v1" and "v2". The current
+     * default version is "v1".
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestResponseLoggingSchemaVersion() {
+      requestResponseLoggingSchemaVersion_ =
+          getDefaultInstance().getRequestResponseLoggingSchemaVersion();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The schema version used in creating the BigQuery table for the
+     * request response logging. The versions are "v1" and "v2". The current
+     * default version is "v1".
+     * </pre>
+     *
+     * <code>
+     * string request_response_logging_schema_version = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for requestResponseLoggingSchemaVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestResponseLoggingSchemaVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestResponseLoggingSchemaVersion_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableOtelLogging_;
+    /**
+     *
+     *
+     * <pre>
+     * This field is used for large models. If true, in addition to the
+     * original large model logs, logs will be converted in OTel schema format,
+     * and saved in otel_log column. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_otel_logging = 6;</code>
+     *
+     * @return The enableOtelLogging.
+     */
+    @java.lang.Override
+    public boolean getEnableOtelLogging() {
+      return enableOtelLogging_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used for large models. If true, in addition to the
+     * original large model logs, logs will be converted in OTel schema format,
+     * and saved in otel_log column. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_otel_logging = 6;</code>
+     *
+     * @param value The enableOtelLogging to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableOtelLogging(boolean value) {
+
+      enableOtelLogging_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field is used for large models. If true, in addition to the
+     * original large model logs, logs will be converted in OTel schema format,
+     * and saved in otel_log column. Default value is false.
+     * </pre>
+     *
+     * <code>bool enable_otel_logging = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableOtelLogging() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableOtelLogging_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

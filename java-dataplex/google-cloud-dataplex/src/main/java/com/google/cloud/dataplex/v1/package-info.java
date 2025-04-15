@@ -40,6 +40,25 @@
  * }
  * }</pre>
  *
+ * <p>======================= CmekServiceClient =======================
+ *
+ * <p>Service Description: Dataplex Cmek Service
+ *
+ * <p>Sample for CmekServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (CmekServiceClient cmekServiceClient = CmekServiceClient.create()) {
+ *   EncryptionConfigName name =
+ *       EncryptionConfigName.of("[ORGANIZATION]", "[LOCATION]", "[ENCRYPTION_CONFIG]");
+ *   EncryptionConfig response = cmekServiceClient.getEncryptionConfig(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= ContentServiceClient =======================
  *
  * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.

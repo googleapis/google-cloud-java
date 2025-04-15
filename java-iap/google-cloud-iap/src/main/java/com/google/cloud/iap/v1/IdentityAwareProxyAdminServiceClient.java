@@ -147,6 +147,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> ValidateIapAttributeExpression</td>
+ *      <td><p> Validates that a given CEL expression conforms to IAP restrictions.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> validateIapAttributeExpression(ValidateIapAttributeExpressionRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> validateIapAttributeExpressionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> ListTunnelDestGroups</td>
  *      <td><p> Lists the existing TunnelDestGroups. To group across all locations, use a `-` as the location ID. For example: `/v1/projects/123/iap_tunnel/locations/-/destGroups`</td>
  *      <td>
@@ -670,6 +684,72 @@ public class IdentityAwareProxyAdminServiceClient implements BackgroundResource 
    */
   public final UnaryCallable<UpdateIapSettingsRequest, IapSettings> updateIapSettingsCallable() {
     return stub.updateIapSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates that a given CEL expression conforms to IAP restrictions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IdentityAwareProxyAdminServiceClient identityAwareProxyAdminServiceClient =
+   *     IdentityAwareProxyAdminServiceClient.create()) {
+   *   ValidateIapAttributeExpressionRequest request =
+   *       ValidateIapAttributeExpressionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setExpression("expression-1795452264")
+   *           .build();
+   *   ValidateIapAttributeExpressionResponse response =
+   *       identityAwareProxyAdminServiceClient.validateIapAttributeExpression(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ValidateIapAttributeExpressionResponse validateIapAttributeExpression(
+      ValidateIapAttributeExpressionRequest request) {
+    return validateIapAttributeExpressionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Validates that a given CEL expression conforms to IAP restrictions.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (IdentityAwareProxyAdminServiceClient identityAwareProxyAdminServiceClient =
+   *     IdentityAwareProxyAdminServiceClient.create()) {
+   *   ValidateIapAttributeExpressionRequest request =
+   *       ValidateIapAttributeExpressionRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setExpression("expression-1795452264")
+   *           .build();
+   *   ApiFuture<ValidateIapAttributeExpressionResponse> future =
+   *       identityAwareProxyAdminServiceClient
+   *           .validateIapAttributeExpressionCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   ValidateIapAttributeExpressionResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ValidateIapAttributeExpressionRequest, ValidateIapAttributeExpressionResponse>
+      validateIapAttributeExpressionCallable() {
+    return stub.validateIapAttributeExpressionCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

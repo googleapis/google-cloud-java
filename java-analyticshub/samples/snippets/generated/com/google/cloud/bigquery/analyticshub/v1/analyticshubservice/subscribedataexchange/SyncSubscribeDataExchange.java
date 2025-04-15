@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1.samples;
 // [START analyticshub_v1_generated_AnalyticsHubService_SubscribeDataExchange_sync]
 import com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchangeName;
+import com.google.cloud.bigquery.analyticshub.v1.DestinationDataset;
 import com.google.cloud.bigquery.analyticshub.v1.LocationName;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
@@ -40,6 +41,7 @@ public class SyncSubscribeDataExchange {
           SubscribeDataExchangeRequest.newBuilder()
               .setName(DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
               .setDestination(LocationName.of("[PROJECT]", "[LOCATION]").toString())
+              .setDestinationDataset(DestinationDataset.newBuilder().build())
               .setSubscription("subscription341203229")
               .setSubscriberContact("subscriberContact-847205736")
               .build();

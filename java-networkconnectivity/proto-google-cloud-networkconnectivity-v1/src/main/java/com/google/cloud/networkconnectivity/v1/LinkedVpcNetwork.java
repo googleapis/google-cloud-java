@@ -42,6 +42,8 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     uri_ = "";
     excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
     producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
@@ -257,6 +259,158 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     return includeExportRanges_.getByteString(index);
   }
 
+  public static final int PROPOSED_INCLUDE_EXPORT_RANGES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList proposedIncludeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the proposedIncludeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getProposedIncludeExportRangesList() {
+    return proposedIncludeExportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of proposedIncludeExportRanges.
+   */
+  public int getProposedIncludeExportRangesCount() {
+    return proposedIncludeExportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedIncludeExportRanges at the given index.
+   */
+  public java.lang.String getProposedIncludeExportRanges(int index) {
+    return proposedIncludeExportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The proposed include export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedIncludeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index) {
+    return proposedIncludeExportRanges_.getByteString(index);
+  }
+
+  public static final int PROPOSED_EXCLUDE_EXPORT_RANGES_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList proposedExcludeExportRanges_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the proposedExcludeExportRanges.
+   */
+  public com.google.protobuf.ProtocolStringList getProposedExcludeExportRangesList() {
+    return proposedExcludeExportRanges_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of proposedExcludeExportRanges.
+   */
+  public int getProposedExcludeExportRangesCount() {
+    return proposedExcludeExportRanges_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The proposedExcludeExportRanges at the given index.
+   */
+  public java.lang.String getProposedExcludeExportRanges(int index) {
+    return proposedExcludeExportRanges_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The proposed exclude export IP ranges waiting for hub
+   * administration's approval.
+   * </pre>
+   *
+   * <code>
+   * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the proposedExcludeExportRanges at the given index.
+   */
+  public com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index) {
+    return proposedExcludeExportRanges_.getByteString(index);
+  }
+
   public static final int PRODUCER_VPC_SPOKES_FIELD_NUMBER = 4;
 
   @SuppressWarnings("serial")
@@ -268,7 +422,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
-   * VPC peering to this spoke's backing VPC network.
+   * VPC peering to this spoke's backing VPC network. Because they are directly
+   * connected throuh VPC peering, NCC export filters do not apply between the
+   * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+   * spoke cannot be deleted as long as any of these producer VPC spokes are
+   * connected to the NCC Hub.
    * </pre>
    *
    * <code>
@@ -286,7 +444,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
-   * VPC peering to this spoke's backing VPC network.
+   * VPC peering to this spoke's backing VPC network. Because they are directly
+   * connected throuh VPC peering, NCC export filters do not apply between the
+   * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+   * spoke cannot be deleted as long as any of these producer VPC spokes are
+   * connected to the NCC Hub.
    * </pre>
    *
    * <code>
@@ -304,7 +466,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
-   * VPC peering to this spoke's backing VPC network.
+   * VPC peering to this spoke's backing VPC network. Because they are directly
+   * connected throuh VPC peering, NCC export filters do not apply between the
+   * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+   * spoke cannot be deleted as long as any of these producer VPC spokes are
+   * connected to the NCC Hub.
    * </pre>
    *
    * <code>
@@ -323,7 +489,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
    * <pre>
    * Output only. The list of Producer VPC spokes that this VPC spoke is a
    * service consumer VPC spoke for. These producer VPCs are connected through
-   * VPC peering to this spoke's backing VPC network.
+   * VPC peering to this spoke's backing VPC network. Because they are directly
+   * connected throuh VPC peering, NCC export filters do not apply between the
+   * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+   * spoke cannot be deleted as long as any of these producer VPC spokes are
+   * connected to the NCC Hub.
    * </pre>
    *
    * <code>
@@ -363,6 +533,14 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < producerVpcSpokes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, producerVpcSpokes_.getRaw(i));
     }
+    for (int i = 0; i < proposedIncludeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 5, proposedIncludeExportRanges_.getRaw(i));
+    }
+    for (int i = 0; i < proposedExcludeExportRanges_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 6, proposedExcludeExportRanges_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -399,6 +577,22 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       size += dataSize;
       size += 1 * getProducerVpcSpokesList().size();
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < proposedIncludeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(proposedIncludeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProposedIncludeExportRangesList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < proposedExcludeExportRanges_.size(); i++) {
+        dataSize += computeStringSizeNoTag(proposedExcludeExportRanges_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getProposedExcludeExportRangesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -418,6 +612,10 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     if (!getUri().equals(other.getUri())) return false;
     if (!getExcludeExportRangesList().equals(other.getExcludeExportRangesList())) return false;
     if (!getIncludeExportRangesList().equals(other.getIncludeExportRangesList())) return false;
+    if (!getProposedIncludeExportRangesList().equals(other.getProposedIncludeExportRangesList()))
+      return false;
+    if (!getProposedExcludeExportRangesList().equals(other.getProposedExcludeExportRangesList()))
+      return false;
     if (!getProducerVpcSpokesList().equals(other.getProducerVpcSpokesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -439,6 +637,14 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     if (getIncludeExportRangesCount() > 0) {
       hash = (37 * hash) + INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getIncludeExportRangesList().hashCode();
+    }
+    if (getProposedIncludeExportRangesCount() > 0) {
+      hash = (37 * hash) + PROPOSED_INCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getProposedIncludeExportRangesList().hashCode();
+    }
+    if (getProposedExcludeExportRangesCount() > 0) {
+      hash = (37 * hash) + PROPOSED_EXCLUDE_EXPORT_RANGES_FIELD_NUMBER;
+      hash = (53 * hash) + getProposedExcludeExportRangesList().hashCode();
     }
     if (getProducerVpcSpokesCount() > 0) {
       hash = (37 * hash) + PRODUCER_VPC_SPOKES_FIELD_NUMBER;
@@ -587,6 +793,8 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       uri_ = "";
       excludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       includeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
@@ -636,6 +844,14 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
         result.includeExportRanges_ = includeExportRanges_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        proposedIncludeExportRanges_.makeImmutable();
+        result.proposedIncludeExportRanges_ = proposedIncludeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        proposedExcludeExportRanges_.makeImmutable();
+        result.proposedExcludeExportRanges_ = proposedExcludeExportRanges_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         producerVpcSpokes_.makeImmutable();
         result.producerVpcSpokes_ = producerVpcSpokes_;
       }
@@ -712,10 +928,30 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (!other.proposedIncludeExportRanges_.isEmpty()) {
+        if (proposedIncludeExportRanges_.isEmpty()) {
+          proposedIncludeExportRanges_ = other.proposedIncludeExportRanges_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureProposedIncludeExportRangesIsMutable();
+          proposedIncludeExportRanges_.addAll(other.proposedIncludeExportRanges_);
+        }
+        onChanged();
+      }
+      if (!other.proposedExcludeExportRanges_.isEmpty()) {
+        if (proposedExcludeExportRanges_.isEmpty()) {
+          proposedExcludeExportRanges_ = other.proposedExcludeExportRanges_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureProposedExcludeExportRangesIsMutable();
+          proposedExcludeExportRanges_.addAll(other.proposedExcludeExportRanges_);
+        }
+        onChanged();
+      }
       if (!other.producerVpcSpokes_.isEmpty()) {
         if (producerVpcSpokes_.isEmpty()) {
           producerVpcSpokes_ = other.producerVpcSpokes_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000020;
         } else {
           ensureProducerVpcSpokesIsMutable();
           producerVpcSpokes_.addAll(other.producerVpcSpokes_);
@@ -775,6 +1011,20 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
                 producerVpcSpokes_.add(s);
                 break;
               } // case 34
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProposedIncludeExportRangesIsMutable();
+                proposedIncludeExportRanges_.add(s);
+                break;
+              } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureProposedExcludeExportRangesIsMutable();
+                proposedExcludeExportRanges_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1276,12 +1526,13 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       return this;
     }
 
-    private com.google.protobuf.LazyStringArrayList producerVpcSpokes_ =
+    private com.google.protobuf.LazyStringArrayList proposedIncludeExportRanges_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
-    private void ensureProducerVpcSpokesIsMutable() {
-      if (!producerVpcSpokes_.isModifiable()) {
-        producerVpcSpokes_ = new com.google.protobuf.LazyStringArrayList(producerVpcSpokes_);
+    private void ensureProposedIncludeExportRangesIsMutable() {
+      if (!proposedIncludeExportRanges_.isModifiable()) {
+        proposedIncludeExportRanges_ =
+            new com.google.protobuf.LazyStringArrayList(proposedIncludeExportRanges_);
       }
       bitField0_ |= 0x00000008;
     }
@@ -1289,9 +1540,416 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the proposedIncludeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getProposedIncludeExportRangesList() {
+      proposedIncludeExportRanges_.makeImmutable();
+      return proposedIncludeExportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of proposedIncludeExportRanges.
+     */
+    public int getProposedIncludeExportRangesCount() {
+      return proposedIncludeExportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The proposedIncludeExportRanges at the given index.
+     */
+    public java.lang.String getProposedIncludeExportRanges(int index) {
+      return proposedIncludeExportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the proposedIncludeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getProposedIncludeExportRangesBytes(int index) {
+      return proposedIncludeExportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The proposedIncludeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProposedIncludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedIncludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProposedIncludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureProposedIncludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, proposedIncludeExportRanges_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProposedIncludeExportRanges() {
+      proposedIncludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The proposed include export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_include_export_ranges = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the proposedIncludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedIncludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProposedIncludeExportRangesIsMutable();
+      proposedIncludeExportRanges_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList proposedExcludeExportRanges_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProposedExcludeExportRangesIsMutable() {
+      if (!proposedExcludeExportRanges_.isModifiable()) {
+        proposedExcludeExportRanges_ =
+            new com.google.protobuf.LazyStringArrayList(proposedExcludeExportRanges_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the proposedExcludeExportRanges.
+     */
+    public com.google.protobuf.ProtocolStringList getProposedExcludeExportRangesList() {
+      proposedExcludeExportRanges_.makeImmutable();
+      return proposedExcludeExportRanges_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of proposedExcludeExportRanges.
+     */
+    public int getProposedExcludeExportRangesCount() {
+      return proposedExcludeExportRanges_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The proposedExcludeExportRanges at the given index.
+     */
+    public java.lang.String getProposedExcludeExportRanges(int index) {
+      return proposedExcludeExportRanges_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the proposedExcludeExportRanges at the given index.
+     */
+    public com.google.protobuf.ByteString getProposedExcludeExportRangesBytes(int index) {
+      return proposedExcludeExportRanges_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The proposedExcludeExportRanges to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProposedExcludeExportRanges(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedExcludeExportRanges(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllProposedExcludeExportRanges(java.lang.Iterable<java.lang.String> values) {
+      ensureProposedExcludeExportRangesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, proposedExcludeExportRanges_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProposedExcludeExportRanges() {
+      proposedExcludeExportRanges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The proposed exclude export IP ranges waiting for hub
+     * administration's approval.
+     * </pre>
+     *
+     * <code>
+     * repeated string proposed_exclude_export_ranges = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes of the proposedExcludeExportRanges to add.
+     * @return This builder for chaining.
+     */
+    public Builder addProposedExcludeExportRangesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureProposedExcludeExportRangesIsMutable();
+      proposedExcludeExportRanges_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList producerVpcSpokes_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureProducerVpcSpokesIsMutable() {
+      if (!producerVpcSpokes_.isModifiable()) {
+        producerVpcSpokes_ = new com.google.protobuf.LazyStringArrayList(producerVpcSpokes_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+    /**
+     *
+     *
+     * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1310,7 +1968,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1328,7 +1990,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1347,7 +2013,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1366,7 +2036,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1383,7 +2057,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureProducerVpcSpokesIsMutable();
       producerVpcSpokes_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1393,7 +2067,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1409,7 +2087,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       }
       ensureProducerVpcSpokesIsMutable();
       producerVpcSpokes_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1419,7 +2097,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1432,7 +2114,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
     public Builder addAllProducerVpcSpokes(java.lang.Iterable<java.lang.String> values) {
       ensureProducerVpcSpokesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, producerVpcSpokes_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1442,7 +2124,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1453,7 +2139,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      */
     public Builder clearProducerVpcSpokes() {
       producerVpcSpokes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       ;
       onChanged();
       return this;
@@ -1464,7 +2150,11 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
      * <pre>
      * Output only. The list of Producer VPC spokes that this VPC spoke is a
      * service consumer VPC spoke for. These producer VPCs are connected through
-     * VPC peering to this spoke's backing VPC network.
+     * VPC peering to this spoke's backing VPC network. Because they are directly
+     * connected throuh VPC peering, NCC export filters do not apply between the
+     * service consumer VPC spoke and any of its producer VPC spokes. This VPC
+     * spoke cannot be deleted as long as any of these producer VPC spokes are
+     * connected to the NCC Hub.
      * </pre>
      *
      * <code>
@@ -1481,7 +2171,7 @@ public final class LinkedVpcNetwork extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       ensureProducerVpcSpokesIsMutable();
       producerVpcSpokes_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

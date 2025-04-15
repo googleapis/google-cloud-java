@@ -29,6 +29,12 @@ import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssembleDataResponse;
+import com.google.cloud.aiplatform.v1beta1.AssessDataOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.AssessDataRequest;
+import com.google.cloud.aiplatform.v1beta1.AssessDataResponse;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
@@ -242,6 +248,24 @@ public abstract class DatasetServiceStub implements BackgroundResource {
 
   public UnaryCallable<ListAnnotationsRequest, ListAnnotationsResponse> listAnnotationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listAnnotationsCallable()");
+  }
+
+  public OperationCallable<AssessDataRequest, AssessDataResponse, AssessDataOperationMetadata>
+      assessDataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: assessDataOperationCallable()");
+  }
+
+  public UnaryCallable<AssessDataRequest, Operation> assessDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: assessDataCallable()");
+  }
+
+  public OperationCallable<AssembleDataRequest, AssembleDataResponse, AssembleDataOperationMetadata>
+      assembleDataOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: assembleDataOperationCallable()");
+  }
+
+  public UnaryCallable<AssembleDataRequest, Operation> assembleDataCallable() {
+    throw new UnsupportedOperationException("Not implemented: assembleDataCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

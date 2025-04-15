@@ -628,6 +628,98 @@ public final class HubServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest,
+          com.google.longrunning.Operation>
+      getAcceptSpokeUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AcceptSpokeUpdate",
+      requestType = com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest,
+          com.google.longrunning.Operation>
+      getAcceptSpokeUpdateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest,
+            com.google.longrunning.Operation>
+        getAcceptSpokeUpdateMethod;
+    if ((getAcceptSpokeUpdateMethod = HubServiceGrpc.getAcceptSpokeUpdateMethod) == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getAcceptSpokeUpdateMethod = HubServiceGrpc.getAcceptSpokeUpdateMethod) == null) {
+          HubServiceGrpc.getAcceptSpokeUpdateMethod =
+              getAcceptSpokeUpdateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AcceptSpokeUpdate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("AcceptSpokeUpdate"))
+                      .build();
+        }
+      }
+    }
+    return getAcceptSpokeUpdateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest,
+          com.google.longrunning.Operation>
+      getRejectSpokeUpdateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RejectSpokeUpdate",
+      requestType = com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest,
+          com.google.longrunning.Operation>
+      getRejectSpokeUpdateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest,
+            com.google.longrunning.Operation>
+        getRejectSpokeUpdateMethod;
+    if ((getRejectSpokeUpdateMethod = HubServiceGrpc.getRejectSpokeUpdateMethod) == null) {
+      synchronized (HubServiceGrpc.class) {
+        if ((getRejectSpokeUpdateMethod = HubServiceGrpc.getRejectSpokeUpdateMethod) == null) {
+          HubServiceGrpc.getRejectSpokeUpdateMethod =
+              getRejectSpokeUpdateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RejectSpokeUpdate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new HubServiceMethodDescriptorSupplier("RejectSpokeUpdate"))
+                      .build();
+        }
+      }
+    }
+    return getRejectSpokeUpdateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.networkconnectivity.v1.DeleteSpokeRequest,
           com.google.longrunning.Operation>
       getDeleteSpokeMethod;
@@ -1236,6 +1328,34 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
+     * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    default void acceptSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getAcceptSpokeUpdateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    default void rejectSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRejectSpokeUpdateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
@@ -1595,6 +1715,38 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
+     * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public void acceptSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAcceptSpokeUpdateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public void rejectSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRejectSpokeUpdateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
@@ -1921,6 +2073,32 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
+     * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public com.google.longrunning.Operation acceptSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcceptSpokeUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rejectSpokeUpdate(
+        com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRejectSpokeUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
@@ -2230,6 +2408,34 @@ public final class HubServiceGrpc {
      *
      *
      * <pre>
+     * Accepts a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        acceptSpokeUpdate(
+            com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAcceptSpokeUpdateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rejects a proposal to update a Network Connectivity Center spoke in a hub.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        rejectSpokeUpdate(
+            com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRejectSpokeUpdateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a Network Connectivity Center spoke.
      * </pre>
      */
@@ -2350,14 +2556,16 @@ public final class HubServiceGrpc {
   private static final int METHODID_UPDATE_SPOKE = 10;
   private static final int METHODID_REJECT_HUB_SPOKE = 11;
   private static final int METHODID_ACCEPT_HUB_SPOKE = 12;
-  private static final int METHODID_DELETE_SPOKE = 13;
-  private static final int METHODID_GET_ROUTE_TABLE = 14;
-  private static final int METHODID_GET_ROUTE = 15;
-  private static final int METHODID_LIST_ROUTES = 16;
-  private static final int METHODID_LIST_ROUTE_TABLES = 17;
-  private static final int METHODID_GET_GROUP = 18;
-  private static final int METHODID_LIST_GROUPS = 19;
-  private static final int METHODID_UPDATE_GROUP = 20;
+  private static final int METHODID_ACCEPT_SPOKE_UPDATE = 13;
+  private static final int METHODID_REJECT_SPOKE_UPDATE = 14;
+  private static final int METHODID_DELETE_SPOKE = 15;
+  private static final int METHODID_GET_ROUTE_TABLE = 16;
+  private static final int METHODID_GET_ROUTE = 17;
+  private static final int METHODID_LIST_ROUTES = 18;
+  private static final int METHODID_LIST_ROUTE_TABLES = 19;
+  private static final int METHODID_GET_GROUP = 20;
+  private static final int METHODID_LIST_GROUPS = 21;
+  private static final int METHODID_UPDATE_GROUP = 22;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2449,6 +2657,16 @@ public final class HubServiceGrpc {
         case METHODID_ACCEPT_HUB_SPOKE:
           serviceImpl.acceptHubSpoke(
               (com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_ACCEPT_SPOKE_UPDATE:
+          serviceImpl.acceptSpokeUpdate(
+              (com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REJECT_SPOKE_UPDATE:
+          serviceImpl.rejectSpokeUpdate(
+              (com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_DELETE_SPOKE:
@@ -2601,6 +2819,18 @@ public final class HubServiceGrpc {
                     com.google.cloud.networkconnectivity.v1.AcceptHubSpokeRequest,
                     com.google.longrunning.Operation>(service, METHODID_ACCEPT_HUB_SPOKE)))
         .addMethod(
+            getAcceptSpokeUpdateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.AcceptSpokeUpdateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_ACCEPT_SPOKE_UPDATE)))
+        .addMethod(
+            getRejectSpokeUpdateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.networkconnectivity.v1.RejectSpokeUpdateRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REJECT_SPOKE_UPDATE)))
+        .addMethod(
             getDeleteSpokeMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -2716,6 +2946,8 @@ public final class HubServiceGrpc {
                       .addMethod(getUpdateSpokeMethod())
                       .addMethod(getRejectHubSpokeMethod())
                       .addMethod(getAcceptHubSpokeMethod())
+                      .addMethod(getAcceptSpokeUpdateMethod())
+                      .addMethod(getRejectSpokeUpdateMethod())
                       .addMethod(getDeleteSpokeMethod())
                       .addMethod(getGetRouteTableMethod())
                       .addMethod(getGetRouteMethod())

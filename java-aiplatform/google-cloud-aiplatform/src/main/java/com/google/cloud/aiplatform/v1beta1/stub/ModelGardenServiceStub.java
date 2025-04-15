@@ -29,6 +29,9 @@ import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.DeployRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployResponse;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ExportPublisherModelResponse;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
@@ -96,6 +99,19 @@ public abstract class ModelGardenServiceStub implements BackgroundResource {
   @Deprecated
   public UnaryCallable<DeployPublisherModelRequest, Operation> deployPublisherModelCallable() {
     throw new UnsupportedOperationException("Not implemented: deployPublisherModelCallable()");
+  }
+
+  public OperationCallable<
+          ExportPublisherModelRequest,
+          ExportPublisherModelResponse,
+          ExportPublisherModelOperationMetadata>
+      exportPublisherModelOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: exportPublisherModelOperationCallable()");
+  }
+
+  public UnaryCallable<ExportPublisherModelRequest, Operation> exportPublisherModelCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportPublisherModelCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

@@ -1046,6 +1046,41 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1.SqlServerLsnPositionOrBuilder getSqlServerLsnPositionOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     *
+     * @return Whether the mysqlGtidPosition field is set.
+     */
+    boolean hasMysqlGtidPosition();
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     *
+     * @return The mysqlGtidPosition.
+     */
+    com.google.cloud.datastream.v1.MysqlGtidPosition getMysqlGtidPosition();
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     */
+    com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder getMysqlGtidPositionOrBuilder();
+
     com.google.cloud.datastream.v1.CdcStrategy.SpecificStartPosition.PositionCase getPositionCase();
   }
   /**
@@ -1102,6 +1137,7 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       MYSQL_LOG_POSITION(101),
       ORACLE_SCN_POSITION(102),
       SQL_SERVER_LSN_POSITION(103),
+      MYSQL_GTID_POSITION(104),
       POSITION_NOT_SET(0);
       private final int value;
 
@@ -1126,6 +1162,8 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
             return ORACLE_SCN_POSITION;
           case 103:
             return SQL_SERVER_LSN_POSITION;
+          case 104:
+            return MYSQL_GTID_POSITION;
           case 0:
             return POSITION_NOT_SET;
           default:
@@ -1297,6 +1335,58 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datastream.v1.SqlServerLsnPosition.getDefaultInstance();
     }
 
+    public static final int MYSQL_GTID_POSITION_FIELD_NUMBER = 104;
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     *
+     * @return Whether the mysqlGtidPosition field is set.
+     */
+    @java.lang.Override
+    public boolean hasMysqlGtidPosition() {
+      return positionCase_ == 104;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     *
+     * @return The mysqlGtidPosition.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlGtidPosition getMysqlGtidPosition() {
+      if (positionCase_ == 104) {
+        return (com.google.cloud.datastream.v1.MysqlGtidPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * MySQL GTID set to start replicating from.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder
+        getMysqlGtidPositionOrBuilder() {
+      if (positionCase_ == 104) {
+        return (com.google.cloud.datastream.v1.MysqlGtidPosition) position_;
+      }
+      return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1319,6 +1409,9 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
       }
       if (positionCase_ == 103) {
         output.writeMessage(103, (com.google.cloud.datastream.v1.SqlServerLsnPosition) position_);
+      }
+      if (positionCase_ == 104) {
+        output.writeMessage(104, (com.google.cloud.datastream.v1.MysqlGtidPosition) position_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1343,6 +1436,11 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 103, (com.google.cloud.datastream.v1.SqlServerLsnPosition) position_);
+      }
+      if (positionCase_ == 104) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                104, (com.google.cloud.datastream.v1.MysqlGtidPosition) position_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1371,6 +1469,9 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         case 103:
           if (!getSqlServerLsnPosition().equals(other.getSqlServerLsnPosition())) return false;
           break;
+        case 104:
+          if (!getMysqlGtidPosition().equals(other.getMysqlGtidPosition())) return false;
+          break;
         case 0:
         default:
       }
@@ -1397,6 +1498,10 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         case 103:
           hash = (37 * hash) + SQL_SERVER_LSN_POSITION_FIELD_NUMBER;
           hash = (53 * hash) + getSqlServerLsnPosition().hashCode();
+          break;
+        case 104:
+          hash = (37 * hash) + MYSQL_GTID_POSITION_FIELD_NUMBER;
+          hash = (53 * hash) + getMysqlGtidPosition().hashCode();
           break;
         case 0:
         default:
@@ -1554,6 +1659,9 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         if (sqlServerLsnPositionBuilder_ != null) {
           sqlServerLsnPositionBuilder_.clear();
         }
+        if (mysqlGtidPositionBuilder_ != null) {
+          mysqlGtidPositionBuilder_.clear();
+        }
         positionCase_ = 0;
         position_ = null;
         return this;
@@ -1610,6 +1718,9 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         }
         if (positionCase_ == 103 && sqlServerLsnPositionBuilder_ != null) {
           result.position_ = sqlServerLsnPositionBuilder_.build();
+        }
+        if (positionCase_ == 104 && mysqlGtidPositionBuilder_ != null) {
+          result.position_ = mysqlGtidPositionBuilder_.build();
         }
       }
 
@@ -1680,6 +1791,11 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
               mergeSqlServerLsnPosition(other.getSqlServerLsnPosition());
               break;
             }
+          case MYSQL_GTID_POSITION:
+            {
+              mergeMysqlGtidPosition(other.getMysqlGtidPosition());
+              break;
+            }
           case POSITION_NOT_SET:
             {
               break;
@@ -1732,6 +1848,13 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
                   positionCase_ = 103;
                   break;
                 } // case 826
+              case 834:
+                {
+                  input.readMessage(
+                      getMysqlGtidPositionFieldBuilder().getBuilder(), extensionRegistry);
+                  positionCase_ = 104;
+                  break;
+                } // case 834
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2410,6 +2533,219 @@ public final class CdcStrategy extends com.google.protobuf.GeneratedMessageV3
         positionCase_ = 103;
         onChanged();
         return sqlServerLsnPositionBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.MysqlGtidPosition,
+              com.google.cloud.datastream.v1.MysqlGtidPosition.Builder,
+              com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder>
+          mysqlGtidPositionBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       *
+       * @return Whether the mysqlGtidPosition field is set.
+       */
+      @java.lang.Override
+      public boolean hasMysqlGtidPosition() {
+        return positionCase_ == 104;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       *
+       * @return The mysqlGtidPosition.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlGtidPosition getMysqlGtidPosition() {
+        if (mysqlGtidPositionBuilder_ == null) {
+          if (positionCase_ == 104) {
+            return (com.google.cloud.datastream.v1.MysqlGtidPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+        } else {
+          if (positionCase_ == 104) {
+            return mysqlGtidPositionBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      public Builder setMysqlGtidPosition(com.google.cloud.datastream.v1.MysqlGtidPosition value) {
+        if (mysqlGtidPositionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          position_ = value;
+          onChanged();
+        } else {
+          mysqlGtidPositionBuilder_.setMessage(value);
+        }
+        positionCase_ = 104;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      public Builder setMysqlGtidPosition(
+          com.google.cloud.datastream.v1.MysqlGtidPosition.Builder builderForValue) {
+        if (mysqlGtidPositionBuilder_ == null) {
+          position_ = builderForValue.build();
+          onChanged();
+        } else {
+          mysqlGtidPositionBuilder_.setMessage(builderForValue.build());
+        }
+        positionCase_ = 104;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      public Builder mergeMysqlGtidPosition(
+          com.google.cloud.datastream.v1.MysqlGtidPosition value) {
+        if (mysqlGtidPositionBuilder_ == null) {
+          if (positionCase_ == 104
+              && position_
+                  != com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance()) {
+            position_ =
+                com.google.cloud.datastream.v1.MysqlGtidPosition.newBuilder(
+                        (com.google.cloud.datastream.v1.MysqlGtidPosition) position_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            position_ = value;
+          }
+          onChanged();
+        } else {
+          if (positionCase_ == 104) {
+            mysqlGtidPositionBuilder_.mergeFrom(value);
+          } else {
+            mysqlGtidPositionBuilder_.setMessage(value);
+          }
+        }
+        positionCase_ = 104;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      public Builder clearMysqlGtidPosition() {
+        if (mysqlGtidPositionBuilder_ == null) {
+          if (positionCase_ == 104) {
+            positionCase_ = 0;
+            position_ = null;
+            onChanged();
+          }
+        } else {
+          if (positionCase_ == 104) {
+            positionCase_ = 0;
+            position_ = null;
+          }
+          mysqlGtidPositionBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      public com.google.cloud.datastream.v1.MysqlGtidPosition.Builder
+          getMysqlGtidPositionBuilder() {
+        return getMysqlGtidPositionFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder
+          getMysqlGtidPositionOrBuilder() {
+        if ((positionCase_ == 104) && (mysqlGtidPositionBuilder_ != null)) {
+          return mysqlGtidPositionBuilder_.getMessageOrBuilder();
+        } else {
+          if (positionCase_ == 104) {
+            return (com.google.cloud.datastream.v1.MysqlGtidPosition) position_;
+          }
+          return com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * MySQL GTID set to start replicating from.
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MysqlGtidPosition mysql_gtid_position = 104;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.MysqlGtidPosition,
+              com.google.cloud.datastream.v1.MysqlGtidPosition.Builder,
+              com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder>
+          getMysqlGtidPositionFieldBuilder() {
+        if (mysqlGtidPositionBuilder_ == null) {
+          if (!(positionCase_ == 104)) {
+            position_ = com.google.cloud.datastream.v1.MysqlGtidPosition.getDefaultInstance();
+          }
+          mysqlGtidPositionBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.MysqlGtidPosition,
+                  com.google.cloud.datastream.v1.MysqlGtidPosition.Builder,
+                  com.google.cloud.datastream.v1.MysqlGtidPositionOrBuilder>(
+                  (com.google.cloud.datastream.v1.MysqlGtidPosition) position_,
+                  getParentForChildren(),
+                  isClean());
+          position_ = null;
+        }
+        positionCase_ = 104;
+        onChanged();
+        return mysqlGtidPositionBuilder_;
       }
 
       @java.lang.Override

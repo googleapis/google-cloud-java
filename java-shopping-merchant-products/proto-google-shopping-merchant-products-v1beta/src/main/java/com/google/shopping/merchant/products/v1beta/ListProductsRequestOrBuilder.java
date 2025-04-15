@@ -29,7 +29,7 @@ public interface ListProductsRequestOrBuilder
    *
    * <pre>
    * Required. The account to list processed products for.
-   * Format: accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ListProductsRequestOrBuilder
    *
    * <pre>
    * Required. The account to list processed products for.
-   * Format: accounts/{account}
+   * Format: `accounts/{account}`
    * </pre>
    *
    * <code>

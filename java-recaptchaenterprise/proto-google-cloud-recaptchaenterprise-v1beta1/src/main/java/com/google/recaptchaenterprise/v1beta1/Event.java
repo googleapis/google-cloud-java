@@ -98,8 +98,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
-     * console settings.
+     * Disable Fraud Prevention for this assessment, regardless of the Google
+     * Cloud console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>
@@ -135,8 +135,8 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Disable Fraud Prevention for this assessment, regardless of Google Cloud
-     * console settings.
+     * Disable Fraud Prevention for this assessment, regardless of the Google
+     * Cloud console settings.
      * </pre>
      *
      * <code>DISABLED = 2;</code>

@@ -24,7 +24,6 @@ package com.google.webrisk.v1;
  *
  * <pre>
  * Metadata for the Submit URI long-running operation.
- * option (google.api.message_visibility).restriction = "TRUSTED_TESTER";
  * </pre>
  *
  * Protobuf type {@code google.cloud.webrisk.v1.SubmitUriMetadata}
@@ -606,7 +605,6 @@ public final class SubmitUriMetadata extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Metadata for the Submit URI long-running operation.
-   * option (google.api.message_visibility).restriction = "TRUSTED_TESTER";
    * </pre>
    *
    * Protobuf type {@code google.cloud.webrisk.v1.SubmitUriMetadata}

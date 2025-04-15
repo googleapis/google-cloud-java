@@ -48,6 +48,10 @@ public final class SiteSearchEngineProto {
       internal_static_google_cloud_discoveryengine_v1_SiteVerificationInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_SiteVerificationInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Sitemap_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Sitemap_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -72,7 +76,7 @@ public final class SiteSearchEngineProto {
           + "\021\n\004name\030\001 \001(\tB\003\340A\003\022$\n\024provided_uri_patte"
           + "rn\030\002 \001(\tB\006\340A\002\340A\004\022>\n\004type\030\003 \001(\01620.google."
           + "cloud.discoveryengine.v1.TargetSite.Type"
-          + "\022\030\n\013exact_match\030\006 \001(\010B\003\340A\004\022\"\n\025generated_"
+          + "\022\030\n\013exact_match\030\006 \001(\010B\003\340A\005\022\"\n\025generated_"
           + "uri_pattern\030\004 \001(\tB\003\340A\003\022\034\n\017root_domain_ur"
           + "i\030\n \001(\tB\003\340A\003\022Z\n\026site_verification_info\030\007"
           + " \001(\01325.google.cloud.discoveryengine.v1.S"
@@ -105,14 +109,23 @@ public final class SiteSearchEngineProto {
           + "google.protobuf.Timestamp\"l\n\025SiteVerific"
           + "ationState\022\'\n#SITE_VERIFICATION_STATE_UN"
           + "SPECIFIED\020\000\022\014\n\010VERIFIED\020\001\022\016\n\nUNVERIFIED\020"
-          + "\002\022\014\n\010EXEMPTED\020\003B\210\002\n#com.google.cloud.dis"
-          + "coveryengine.v1B\025SiteSearchEngineProtoP\001"
-          + "ZMcloud.google.com/go/discoveryengine/ap"
-          + "iv1/discoveryenginepb;discoveryenginepb\242"
-          + "\002\017DISCOVERYENGINE\252\002\037Google.Cloud.Discove"
-          + "ryEngine.V1\312\002\037Google\\Cloud\\DiscoveryEngi"
-          + "ne\\V1\352\002\"Google::Cloud::DiscoveryEngine::"
-          + "V1b\006proto3"
+          + "\002\022\014\n\010EXEMPTED\020\003\"\373\002\n\007Sitemap\022\r\n\003uri\030\002 \001(\t"
+          + "H\000\022\021\n\004name\030\001 \001(\tB\003\340A\003\0224\n\013create_time\030\003 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003:\217\002\352A"
+          + "\213\002\n&discoveryengine.googleapis.com/Sitem"
+          + "ap\022cprojects/{project}/locations/{locati"
+          + "on}/dataStores/{data_store}/siteSearchEn"
+          + "gine/sitemaps/{sitemap}\022|projects/{proje"
+          + "ct}/locations/{location}/collections/{co"
+          + "llection}/dataStores/{data_store}/siteSe"
+          + "archEngine/sitemaps/{sitemap}B\006\n\004feedB\210\002"
+          + "\n#com.google.cloud.discoveryengine.v1B\025S"
+          + "iteSearchEngineProtoP\001ZMcloud.google.com"
+          + "/go/discoveryengine/apiv1/discoveryengin"
+          + "epb;discoveryenginepb\242\002\017DISCOVERYENGINE\252"
+          + "\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037Goog"
+          + "le\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::Cl"
+          + "oud::DiscoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -174,6 +187,14 @@ public final class SiteSearchEngineProto {
             internal_static_google_cloud_discoveryengine_v1_SiteVerificationInfo_descriptor,
             new java.lang.String[] {
               "SiteVerificationState", "VerifyTime",
+            });
+    internal_static_google_cloud_discoveryengine_v1_Sitemap_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_discoveryengine_v1_Sitemap_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Sitemap_descriptor,
+            new java.lang.String[] {
+              "Uri", "Name", "CreateTime", "Feed",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

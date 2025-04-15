@@ -92,6 +92,16 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
      * <code>REGIONAL = 1;</code>
      */
     REGIONAL(1),
+    /**
+     *
+     *
+     * <pre>
+     * Global type.
+     * </pre>
+     *
+     * <code>GLOBAL = 2;</code>
+     */
+    GLOBAL(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -115,6 +125,16 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
      * <code>REGIONAL = 1;</code>
      */
     public static final int REGIONAL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Global type.
+     * </pre>
+     *
+     * <code>GLOBAL = 2;</code>
+     */
+    public static final int GLOBAL_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -144,6 +164,8 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
           return TYPE_UNSPECIFIED;
         case 1:
           return REGIONAL;
+        case 2:
+          return GLOBAL;
         default:
           return null;
       }

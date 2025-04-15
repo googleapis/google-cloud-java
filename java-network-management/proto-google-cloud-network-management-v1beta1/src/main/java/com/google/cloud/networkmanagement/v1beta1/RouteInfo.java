@@ -57,6 +57,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     nccSpokeUri_ = "";
     advertisedRouteSourceRouterUri_ = "";
     advertisedRouteNextHopUri_ = "";
+    nextHopUri_ = "";
+    nextHopNetworkUri_ = "";
+    originatingRouteUri_ = "";
+    originatingRouteDisplayName_ = "";
+    nccHubRouteUri_ = "";
   }
 
   @java.lang.Override
@@ -135,7 +140,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A subnet route received from peering network.
+     * A subnet route received from peering network or NCC Hub.
      * </pre>
      *
      * <code>PEERING_SUBNET = 4;</code>
@@ -155,7 +160,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A dynamic route received from peering network.
+     * A dynamic route received from peering network or NCC Hub.
      * </pre>
      *
      * <code>PEERING_DYNAMIC = 6;</code>
@@ -230,7 +235,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A subnet route received from peering network.
+     * A subnet route received from peering network or NCC Hub.
      * </pre>
      *
      * <code>PEERING_SUBNET = 4;</code>
@@ -250,7 +255,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A dynamic route received from peering network.
+     * A dynamic route received from peering network or NCC Hub.
      * </pre>
      *
      * <code>PEERING_DYNAMIC = 6;</code>
@@ -429,7 +434,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop is a peering VPC.
+     * Next hop is a peering VPC. This scenario only happens when the user
+     * doesn't have permissions to the project where the next hop resource is
+     * located.
      * </pre>
      *
      * <code>NEXT_HOP_PEERING = 4;</code>
@@ -483,7 +490,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Next hop is blackhole; that is, the next hop either does not exist or is
-     * not running.
+     * unusable.
      * </pre>
      *
      * <code>NEXT_HOP_BLACKHOLE = 9;</code>
@@ -515,7 +522,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop is an NCC hub.
+     * Next hop is an NCC hub. This scenario only happens when the user doesn't
+     * have permissions to the project where the next hop resource is located.
      * </pre>
      *
      * <code>NEXT_HOP_NCC_HUB = 12;</code>
@@ -568,7 +576,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop is a peering VPC.
+     * Next hop is a peering VPC. This scenario only happens when the user
+     * doesn't have permissions to the project where the next hop resource is
+     * located.
      * </pre>
      *
      * <code>NEXT_HOP_PEERING = 4;</code>
@@ -622,7 +632,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Next hop is blackhole; that is, the next hop either does not exist or is
-     * not running.
+     * unusable.
      * </pre>
      *
      * <code>NEXT_HOP_BLACKHOLE = 9;</code>
@@ -654,7 +664,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop is an NCC hub.
+     * Next hop is an NCC hub. This scenario only happens when the user doesn't
+     * have permissions to the project where the next hop resource is located.
      * </pre>
      *
      * <code>NEXT_HOP_NCC_HUB = 12;</code>
@@ -1006,14 +1017,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates where route is applicable.
+   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+   * are not included in the trace in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
    * @return The enum numeric value on the wire for routeScope.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getRouteScopeValue() {
     return routeScope_;
   }
@@ -1021,14 +1038,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Indicates where route is applicable.
+   * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+   * are not included in the trace in new tests.
    * </pre>
    *
-   * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+   * <code>
+   * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
    * @return The routeScope.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope getRouteScope() {
     com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope result =
         com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope.forNumber(routeScope_);
@@ -1096,7 +1119,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a route (if applicable).
+   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+   * and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1119,7 +1143,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a route (if applicable).
+   * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+   * and POLICY_BASED routes only.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -1147,7 +1172,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Region of the route (if applicable).
+   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+   * routes only. If set for POLICY_BASED route, this is a region of VLAN
+   * attachments for Cloud Interconnect the route applies to.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -1170,7 +1197,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Region of the route (if applicable).
+   * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+   * routes only. If set for POLICY_BASED route, this is a region of VLAN
+   * attachments for Cloud Interconnect the route applies to.
    * </pre>
    *
    * <code>string region = 19;</code>
@@ -1249,14 +1278,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Next hop of the route.
+   * String type of the next hop of the route (for example, "VPN tunnel").
+   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+   * in new tests.
    * </pre>
    *
-   * <code>string next_hop = 4;</code>
+   * <code>string next_hop = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
    * @return The nextHop.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getNextHop() {
     java.lang.Object ref = nextHop_;
     if (ref instanceof java.lang.String) {
@@ -1272,14 +1306,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Next hop of the route.
+   * String type of the next hop of the route (for example, "VPN tunnel").
+   * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+   * in new tests.
    * </pre>
    *
-   * <code>string next_hop = 4;</code>
+   * <code>string next_hop = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+   *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
    * @return The bytes for nextHop.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getNextHopBytes() {
     java.lang.Object ref = nextHop_;
     if (ref instanceof java.lang.String) {
@@ -1300,7 +1339,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine network. NETWORK routes only.
+   * URI of a VPC network where route is located.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1323,7 +1362,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a Compute Engine network. NETWORK routes only.
+   * URI of a VPC network where route is located.
    * </pre>
    *
    * <code>string network_uri = 5;</code>
@@ -1433,7 +1472,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source IP address range of the route. Policy based routes only.
+   * Source IP address range of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>string src_ip_range = 10;</code>
@@ -1456,7 +1495,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source IP address range of the route. Policy based routes only.
+   * Source IP address range of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>string src_ip_range = 10;</code>
@@ -1485,7 +1524,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -1499,7 +1538,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -1513,7 +1552,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -1528,7 +1567,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destination port ranges of the route. Policy based routes only.
+   * Destination port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string dest_port_ranges = 11;</code>
@@ -1549,7 +1588,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -1563,7 +1602,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -1577,7 +1616,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -1592,7 +1631,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Source port ranges of the route. Policy based routes only.
+   * Source port ranges of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string src_port_ranges = 12;</code>
@@ -1613,7 +1652,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -1627,7 +1666,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -1641,7 +1680,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -1656,7 +1695,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Protocols of the route. Policy based routes only.
+   * Protocols of the route. POLICY_BASED routes only.
    * </pre>
    *
    * <code>repeated string protocols = 13;</code>
@@ -1676,7 +1715,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -1691,7 +1731,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -1714,7 +1755,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Hub. NCC_HUB routes only.
+   * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+   * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_hub_uri = 15;</code>
@@ -1742,7 +1784,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1757,7 +1800,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1780,7 +1824,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * URI of a NCC Spoke. NCC_HUB routes only.
+   * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+   * that are advertised by NCC Hub only.
    * </pre>
    *
    * <code>optional string ncc_spoke_uri = 16;</code>
@@ -1808,7 +1853,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -1824,7 +1869,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -1848,7 +1893,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised dynamic routes, the URI of the Cloud Router that advertised
+   * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
    * the corresponding IP prefix.
    * </pre>
    *
@@ -1877,17 +1922,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return Whether the advertisedRouteNextHopUri field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasAdvertisedRouteNextHopUri() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -1895,17 +1944,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return The advertisedRouteNextHopUri.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getAdvertisedRouteNextHopUri() {
     java.lang.Object ref = advertisedRouteNextHopUri_;
     if (ref instanceof java.lang.String) {
@@ -1921,23 +1974,288 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * For advertised routes, the URI of their next hop, i.e. the URI of the
+   * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
    * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
    * the advertised prefix is advertised through, or URI of the source peered
-   * network.
+   * network. Deprecated in favor of the next_hop_uri field, not used in new
+   * tests.
    * </pre>
    *
-   * <code>optional string advertised_route_next_hop_uri = 18;</code>
+   * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+   *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
    * @return The bytes for advertisedRouteNextHopUri.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes() {
     java.lang.Object ref = advertisedRouteNextHopUri_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       advertisedRouteNextHopUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NEXT_HOP_URI_FIELD_NUMBER = 20;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextHopUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of the next hop resource.
+   * </pre>
+   *
+   * <code>string next_hop_uri = 20;</code>
+   *
+   * @return The nextHopUri.
+   */
+  @java.lang.Override
+  public java.lang.String getNextHopUri() {
+    java.lang.Object ref = nextHopUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextHopUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of the next hop resource.
+   * </pre>
+   *
+   * <code>string next_hop_uri = 20;</code>
+   *
+   * @return The bytes for nextHopUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextHopUriBytes() {
+    java.lang.Object ref = nextHopUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextHopUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NEXT_HOP_NETWORK_URI_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nextHopNetworkUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * URI of a VPC network where the next hop resource is located.
+   * </pre>
+   *
+   * <code>string next_hop_network_uri = 21;</code>
+   *
+   * @return The nextHopNetworkUri.
+   */
+  @java.lang.Override
+  public java.lang.String getNextHopNetworkUri() {
+    java.lang.Object ref = nextHopNetworkUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nextHopNetworkUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * URI of a VPC network where the next hop resource is located.
+   * </pre>
+   *
+   * <code>string next_hop_network_uri = 21;</code>
+   *
+   * @return The bytes for nextHopNetworkUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNextHopNetworkUriBytes() {
+    java.lang.Object ref = nextHopNetworkUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nextHopNetworkUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORIGINATING_ROUTE_URI_FIELD_NUMBER = 22;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object originatingRouteUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+   * SUBNET/STATIC route.
+   * </pre>
+   *
+   * <code>string originating_route_uri = 22;</code>
+   *
+   * @return The originatingRouteUri.
+   */
+  @java.lang.Override
+  public java.lang.String getOriginatingRouteUri() {
+    java.lang.Object ref = originatingRouteUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      originatingRouteUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+   * SUBNET/STATIC route.
+   * </pre>
+   *
+   * <code>string originating_route_uri = 22;</code>
+   *
+   * @return The bytes for originatingRouteUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOriginatingRouteUriBytes() {
+    java.lang.Object ref = originatingRouteUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      originatingRouteUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ORIGINATING_ROUTE_DISPLAY_NAME_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object originatingRouteDisplayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+   * the originating SUBNET/STATIC/DYNAMIC route.
+   * </pre>
+   *
+   * <code>string originating_route_display_name = 23;</code>
+   *
+   * @return The originatingRouteDisplayName.
+   */
+  @java.lang.Override
+  public java.lang.String getOriginatingRouteDisplayName() {
+    java.lang.Object ref = originatingRouteDisplayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      originatingRouteDisplayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+   * the originating SUBNET/STATIC/DYNAMIC route.
+   * </pre>
+   *
+   * <code>string originating_route_display_name = 23;</code>
+   *
+   * @return The bytes for originatingRouteDisplayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOriginatingRouteDisplayNameBytes() {
+    java.lang.Object ref = originatingRouteDisplayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      originatingRouteDisplayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NCC_HUB_ROUTE_URI_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object nccHubRouteUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+   * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * </pre>
+   *
+   * <code>string ncc_hub_route_uri = 24;</code>
+   *
+   * @return The nccHubRouteUri.
+   */
+  @java.lang.Override
+  public java.lang.String getNccHubRouteUri() {
+    java.lang.Object ref = nccHubRouteUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nccHubRouteUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+   * Hub, the URI of the corresponding route in NCC Hub's routing table.
+   * </pre>
+   *
+   * <code>string ncc_hub_route_uri = 24;</code>
+   *
+   * @return The bytes for nccHubRouteUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNccHubRouteUriBytes() {
+    java.lang.Object ref = nccHubRouteUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      nccHubRouteUri_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -2022,6 +2340,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, region_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHopUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 20, nextHopUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHopNetworkUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, nextHopNetworkUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originatingRouteUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 22, originatingRouteUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originatingRouteDisplayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, originatingRouteDisplayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nccHubRouteUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, nccHubRouteUri_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2119,6 +2452,23 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(region_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, region_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHopUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, nextHopUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextHopNetworkUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, nextHopNetworkUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originatingRouteUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, originatingRouteUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(originatingRouteDisplayName_)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              23, originatingRouteDisplayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nccHubRouteUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, nccHubRouteUri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2169,6 +2519,12 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (!getAdvertisedRouteNextHopUri().equals(other.getAdvertisedRouteNextHopUri()))
         return false;
     }
+    if (!getNextHopUri().equals(other.getNextHopUri())) return false;
+    if (!getNextHopNetworkUri().equals(other.getNextHopNetworkUri())) return false;
+    if (!getOriginatingRouteUri().equals(other.getOriginatingRouteUri())) return false;
+    if (!getOriginatingRouteDisplayName().equals(other.getOriginatingRouteDisplayName()))
+      return false;
+    if (!getNccHubRouteUri().equals(other.getNccHubRouteUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2234,6 +2590,16 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ADVERTISED_ROUTE_NEXT_HOP_URI_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertisedRouteNextHopUri().hashCode();
     }
+    hash = (37 * hash) + NEXT_HOP_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getNextHopUri().hashCode();
+    hash = (37 * hash) + NEXT_HOP_NETWORK_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getNextHopNetworkUri().hashCode();
+    hash = (37 * hash) + ORIGINATING_ROUTE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginatingRouteUri().hashCode();
+    hash = (37 * hash) + ORIGINATING_ROUTE_DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginatingRouteDisplayName().hashCode();
+    hash = (37 * hash) + NCC_HUB_ROUTE_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getNccHubRouteUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2392,6 +2758,11 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       nccSpokeUri_ = "";
       advertisedRouteSourceRouterUri_ = "";
       advertisedRouteNextHopUri_ = "";
+      nextHopUri_ = "";
+      nextHopNetworkUri_ = "";
+      originatingRouteUri_ = "";
+      originatingRouteDisplayName_ = "";
+      nccHubRouteUri_ = "";
       return this;
     }
 
@@ -2493,6 +2864,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.advertisedRouteNextHopUri_ = advertisedRouteNextHopUri_;
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.nextHopUri_ = nextHopUri_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.nextHopNetworkUri_ = nextHopNetworkUri_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.originatingRouteUri_ = originatingRouteUri_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.originatingRouteDisplayName_ = originatingRouteDisplayName_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.nccHubRouteUri_ = nccHubRouteUri_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2650,6 +3036,31 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00040000;
         onChanged();
       }
+      if (!other.getNextHopUri().isEmpty()) {
+        nextHopUri_ = other.nextHopUri_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (!other.getNextHopNetworkUri().isEmpty()) {
+        nextHopNetworkUri_ = other.nextHopNetworkUri_;
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      if (!other.getOriginatingRouteUri().isEmpty()) {
+        originatingRouteUri_ = other.originatingRouteUri_;
+        bitField0_ |= 0x00200000;
+        onChanged();
+      }
+      if (!other.getOriginatingRouteDisplayName().isEmpty()) {
+        originatingRouteDisplayName_ = other.originatingRouteDisplayName_;
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      if (!other.getNccHubRouteUri().isEmpty()) {
+        nccHubRouteUri_ = other.nccHubRouteUri_;
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2794,6 +3205,36 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 154
+            case 162:
+              {
+                nextHopUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+            case 170:
+              {
+                nextHopNetworkUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 170
+            case 178:
+              {
+                originatingRouteUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
+            case 186:
+              {
+                originatingRouteDisplayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 186
+            case 194:
+              {
+                nccHubRouteUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3004,14 +3445,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates where route is applicable.
+     * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+     * are not included in the trace in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
      * @return The enum numeric value on the wire for routeScope.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getRouteScopeValue() {
       return routeScope_;
     }
@@ -3019,14 +3466,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates where route is applicable.
+     * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+     * are not included in the trace in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
      * @param value The enum numeric value on the wire for routeScope to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRouteScopeValue(int value) {
       routeScope_ = value;
       bitField0_ |= 0x00000004;
@@ -3037,14 +3490,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates where route is applicable.
+     * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+     * are not included in the trace in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
      * @return The routeScope.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope getRouteScope() {
       com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope result =
           com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope.forNumber(routeScope_);
@@ -3056,14 +3515,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates where route is applicable.
+     * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+     * are not included in the trace in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
      * @param value The routeScope to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setRouteScope(
         com.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope value) {
       if (value == null) {
@@ -3078,13 +3543,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Indicates where route is applicable.
+     * Indicates where route is applicable. Deprecated, routes with NCC_HUB scope
+     * are not included in the trace in new tests.
      * </pre>
      *
-     * <code>.google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14;</code>
+     * <code>
+     * .google.cloud.networkmanagement.v1beta1.RouteInfo.RouteScope route_scope = 14 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.route_scope is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=568
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearRouteScope() {
       bitField0_ = (bitField0_ & ~0x00000004);
       routeScope_ = 0;
@@ -3203,7 +3674,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route (if applicable).
+     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+     * and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3225,7 +3697,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route (if applicable).
+     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+     * and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3247,7 +3720,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route (if applicable).
+     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+     * and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3268,7 +3742,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route (if applicable).
+     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+     * and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3285,7 +3760,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a route (if applicable).
+     * URI of a route. SUBNET, STATIC, PEERING_SUBNET (only for peering network)
+     * and POLICY_BASED routes only.
      * </pre>
      *
      * <code>string uri = 2;</code>
@@ -3309,7 +3785,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Region of the route (if applicable).
+     * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+     * routes only. If set for POLICY_BASED route, this is a region of VLAN
+     * attachments for Cloud Interconnect the route applies to.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3331,7 +3809,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Region of the route (if applicable).
+     * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+     * routes only. If set for POLICY_BASED route, this is a region of VLAN
+     * attachments for Cloud Interconnect the route applies to.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3353,7 +3833,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Region of the route (if applicable).
+     * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+     * routes only. If set for POLICY_BASED route, this is a region of VLAN
+     * attachments for Cloud Interconnect the route applies to.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3374,7 +3856,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Region of the route (if applicable).
+     * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+     * routes only. If set for POLICY_BASED route, this is a region of VLAN
+     * attachments for Cloud Interconnect the route applies to.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3391,7 +3875,9 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Region of the route (if applicable).
+     * Region of the route. DYNAMIC, PEERING_DYNAMIC, POLICY_BASED and ADVERTISED
+     * routes only. If set for POLICY_BASED route, this is a region of VLAN
+     * attachments for Cloud Interconnect the route applies to.
      * </pre>
      *
      * <code>string region = 19;</code>
@@ -3521,13 +4007,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop of the route.
+     * String type of the next hop of the route (for example, "VPN tunnel").
+     * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+     * in new tests.
      * </pre>
      *
-     * <code>string next_hop = 4;</code>
+     * <code>string next_hop = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
      * @return The nextHop.
      */
+    @java.lang.Deprecated
     public java.lang.String getNextHop() {
       java.lang.Object ref = nextHop_;
       if (!(ref instanceof java.lang.String)) {
@@ -3543,13 +4034,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop of the route.
+     * String type of the next hop of the route (for example, "VPN tunnel").
+     * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+     * in new tests.
      * </pre>
      *
-     * <code>string next_hop = 4;</code>
+     * <code>string next_hop = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
      * @return The bytes for nextHop.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getNextHopBytes() {
       java.lang.Object ref = nextHop_;
       if (ref instanceof String) {
@@ -3565,14 +4061,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop of the route.
+     * String type of the next hop of the route (for example, "VPN tunnel").
+     * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+     * in new tests.
      * </pre>
      *
-     * <code>string next_hop = 4;</code>
+     * <code>string next_hop = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
      * @param value The nextHop to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNextHop(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3586,13 +4087,18 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop of the route.
+     * String type of the next hop of the route (for example, "VPN tunnel").
+     * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+     * in new tests.
      * </pre>
      *
-     * <code>string next_hop = 4;</code>
+     * <code>string next_hop = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearNextHop() {
       nextHop_ = getDefaultInstance().getNextHop();
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -3603,14 +4109,19 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Next hop of the route.
+     * String type of the next hop of the route (for example, "VPN tunnel").
+     * Deprecated in favor of the next_hop_type and next_hop_uri fields, not used
+     * in new tests.
      * </pre>
      *
-     * <code>string next_hop = 4;</code>
+     * <code>string next_hop = 4 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.next_hop is deprecated. See
+     *     google/cloud/networkmanagement/v1beta1/trace.proto;l=588
      * @param value The bytes for nextHop to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setNextHopBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -3627,7 +4138,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network. NETWORK routes only.
+     * URI of a VPC network where route is located.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -3649,7 +4160,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network. NETWORK routes only.
+     * URI of a VPC network where route is located.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -3671,7 +4182,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network. NETWORK routes only.
+     * URI of a VPC network where route is located.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -3692,7 +4203,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network. NETWORK routes only.
+     * URI of a VPC network where route is located.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -3709,7 +4220,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a Compute Engine network. NETWORK routes only.
+     * URI of a VPC network where route is located.
      * </pre>
      *
      * <code>string network_uri = 5;</code>
@@ -3960,7 +4471,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source IP address range of the route. Policy based routes only.
+     * Source IP address range of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>string src_ip_range = 10;</code>
@@ -3982,7 +4493,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source IP address range of the route. Policy based routes only.
+     * Source IP address range of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>string src_ip_range = 10;</code>
@@ -4004,7 +4515,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source IP address range of the route. Policy based routes only.
+     * Source IP address range of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>string src_ip_range = 10;</code>
@@ -4025,7 +4536,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source IP address range of the route. Policy based routes only.
+     * Source IP address range of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>string src_ip_range = 10;</code>
@@ -4042,7 +4553,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source IP address range of the route. Policy based routes only.
+     * Source IP address range of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>string src_ip_range = 10;</code>
@@ -4074,7 +4585,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4089,7 +4600,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4103,7 +4614,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4118,7 +4629,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4133,7 +4644,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4156,7 +4667,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4178,7 +4689,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4197,7 +4708,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4215,7 +4726,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Destination port ranges of the route. Policy based routes only.
+     * Destination port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string dest_port_ranges = 11;</code>
@@ -4248,7 +4759,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4263,7 +4774,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4277,7 +4788,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4292,7 +4803,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4307,7 +4818,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4330,7 +4841,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4352,7 +4863,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4371,7 +4882,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4389,7 +4900,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Source port ranges of the route. Policy based routes only.
+     * Source port ranges of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string src_port_ranges = 12;</code>
@@ -4422,7 +4933,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4437,7 +4948,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4451,7 +4962,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4466,7 +4977,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4481,7 +4992,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4504,7 +5015,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4526,7 +5037,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4545,7 +5056,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4563,7 +5074,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Protocols of the route. Policy based routes only.
+     * Protocols of the route. POLICY_BASED routes only.
      * </pre>
      *
      * <code>repeated string protocols = 13;</code>
@@ -4588,7 +5099,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4602,7 +5114,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4624,7 +5137,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4646,7 +5160,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4667,7 +5182,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4684,7 +5200,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Hub. NCC_HUB routes only.
+     * URI of the NCC Hub the route is advertised by. PEERING_SUBNET and
+     * PEERING_DYNAMIC routes that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_hub_uri = 15;</code>
@@ -4708,7 +5225,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4722,7 +5240,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4744,7 +5263,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4766,7 +5286,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4787,7 +5308,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4804,7 +5326,8 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * URI of a NCC Spoke. NCC_HUB routes only.
+     * URI of the destination NCC Spoke. PEERING_SUBNET and PEERING_DYNAMIC routes
+     * that are advertised by NCC Hub only.
      * </pre>
      *
      * <code>optional string ncc_spoke_uri = 16;</code>
@@ -4828,7 +5351,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4843,7 +5366,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4866,7 +5389,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4889,7 +5412,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4911,7 +5434,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4929,7 +5452,7 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised dynamic routes, the URI of the Cloud Router that advertised
+     * For ADVERTISED dynamic routes, the URI of the Cloud Router that advertised
      * the corresponding IP prefix.
      * </pre>
      *
@@ -4954,16 +5477,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @return Whether the advertisedRouteNextHopUri field is set.
      */
+    @java.lang.Deprecated
     public boolean hasAdvertisedRouteNextHopUri() {
       return ((bitField0_ & 0x00040000) != 0);
     }
@@ -4971,16 +5498,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @return The advertisedRouteNextHopUri.
      */
+    @java.lang.Deprecated
     public java.lang.String getAdvertisedRouteNextHopUri() {
       java.lang.Object ref = advertisedRouteNextHopUri_;
       if (!(ref instanceof java.lang.String)) {
@@ -4996,16 +5527,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @return The bytes for advertisedRouteNextHopUri.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getAdvertisedRouteNextHopUriBytes() {
       java.lang.Object ref = advertisedRouteNextHopUri_;
       if (ref instanceof String) {
@@ -5021,17 +5556,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @param value The advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAdvertisedRouteNextHopUri(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -5045,16 +5584,20 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearAdvertisedRouteNextHopUri() {
       advertisedRouteNextHopUri_ = getDefaultInstance().getAdvertisedRouteNextHopUri();
       bitField0_ = (bitField0_ & ~0x00040000);
@@ -5065,17 +5608,21 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * For advertised routes, the URI of their next hop, i.e. the URI of the
+     * For ADVERTISED routes, the URI of their next hop, i.e. the URI of the
      * hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance)
      * the advertised prefix is advertised through, or URI of the source peered
-     * network.
+     * network. Deprecated in favor of the next_hop_uri field, not used in new
+     * tests.
      * </pre>
      *
-     * <code>optional string advertised_route_next_hop_uri = 18;</code>
+     * <code>optional string advertised_route_next_hop_uri = 18 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.networkmanagement.v1beta1.RouteInfo.advertised_route_next_hop_uri is
+     *     deprecated. See google/cloud/networkmanagement/v1beta1/trace.proto;l=628
      * @param value The bytes for advertisedRouteNextHopUri to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setAdvertisedRouteNextHopUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
@@ -5083,6 +5630,551 @@ public final class RouteInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       advertisedRouteNextHopUri_ = value;
       bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nextHopUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of the next hop resource.
+     * </pre>
+     *
+     * <code>string next_hop_uri = 20;</code>
+     *
+     * @return The nextHopUri.
+     */
+    public java.lang.String getNextHopUri() {
+      java.lang.Object ref = nextHopUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextHopUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the next hop resource.
+     * </pre>
+     *
+     * <code>string next_hop_uri = 20;</code>
+     *
+     * @return The bytes for nextHopUri.
+     */
+    public com.google.protobuf.ByteString getNextHopUriBytes() {
+      java.lang.Object ref = nextHopUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextHopUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the next hop resource.
+     * </pre>
+     *
+     * <code>string next_hop_uri = 20;</code>
+     *
+     * @param value The nextHopUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nextHopUri_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the next hop resource.
+     * </pre>
+     *
+     * <code>string next_hop_uri = 20;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextHopUri() {
+      nextHopUri_ = getDefaultInstance().getNextHopUri();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of the next hop resource.
+     * </pre>
+     *
+     * <code>string next_hop_uri = 20;</code>
+     *
+     * @param value The bytes for nextHopUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nextHopUri_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nextHopNetworkUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * URI of a VPC network where the next hop resource is located.
+     * </pre>
+     *
+     * <code>string next_hop_network_uri = 21;</code>
+     *
+     * @return The nextHopNetworkUri.
+     */
+    public java.lang.String getNextHopNetworkUri() {
+      java.lang.Object ref = nextHopNetworkUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nextHopNetworkUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a VPC network where the next hop resource is located.
+     * </pre>
+     *
+     * <code>string next_hop_network_uri = 21;</code>
+     *
+     * @return The bytes for nextHopNetworkUri.
+     */
+    public com.google.protobuf.ByteString getNextHopNetworkUriBytes() {
+      java.lang.Object ref = nextHopNetworkUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nextHopNetworkUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a VPC network where the next hop resource is located.
+     * </pre>
+     *
+     * <code>string next_hop_network_uri = 21;</code>
+     *
+     * @param value The nextHopNetworkUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopNetworkUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nextHopNetworkUri_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a VPC network where the next hop resource is located.
+     * </pre>
+     *
+     * <code>string next_hop_network_uri = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNextHopNetworkUri() {
+      nextHopNetworkUri_ = getDefaultInstance().getNextHopNetworkUri();
+      bitField0_ = (bitField0_ & ~0x00100000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * URI of a VPC network where the next hop resource is located.
+     * </pre>
+     *
+     * <code>string next_hop_network_uri = 21;</code>
+     *
+     * @param value The bytes for nextHopNetworkUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNextHopNetworkUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nextHopNetworkUri_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object originatingRouteUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+     * SUBNET/STATIC route.
+     * </pre>
+     *
+     * <code>string originating_route_uri = 22;</code>
+     *
+     * @return The originatingRouteUri.
+     */
+    public java.lang.String getOriginatingRouteUri() {
+      java.lang.Object ref = originatingRouteUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originatingRouteUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+     * SUBNET/STATIC route.
+     * </pre>
+     *
+     * <code>string originating_route_uri = 22;</code>
+     *
+     * @return The bytes for originatingRouteUri.
+     */
+    public com.google.protobuf.ByteString getOriginatingRouteUriBytes() {
+      java.lang.Object ref = originatingRouteUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        originatingRouteUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+     * SUBNET/STATIC route.
+     * </pre>
+     *
+     * <code>string originating_route_uri = 22;</code>
+     *
+     * @param value The originatingRouteUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginatingRouteUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      originatingRouteUri_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+     * SUBNET/STATIC route.
+     * </pre>
+     *
+     * <code>string originating_route_uri = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginatingRouteUri() {
+      originatingRouteUri_ = getDefaultInstance().getOriginatingRouteUri();
+      bitField0_ = (bitField0_ & ~0x00200000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_STATIC routes, the URI of the originating
+     * SUBNET/STATIC route.
+     * </pre>
+     *
+     * <code>string originating_route_uri = 22;</code>
+     *
+     * @param value The bytes for originatingRouteUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginatingRouteUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      originatingRouteUri_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object originatingRouteDisplayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+     * the originating SUBNET/STATIC/DYNAMIC route.
+     * </pre>
+     *
+     * <code>string originating_route_display_name = 23;</code>
+     *
+     * @return The originatingRouteDisplayName.
+     */
+    public java.lang.String getOriginatingRouteDisplayName() {
+      java.lang.Object ref = originatingRouteDisplayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originatingRouteDisplayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+     * the originating SUBNET/STATIC/DYNAMIC route.
+     * </pre>
+     *
+     * <code>string originating_route_display_name = 23;</code>
+     *
+     * @return The bytes for originatingRouteDisplayName.
+     */
+    public com.google.protobuf.ByteString getOriginatingRouteDisplayNameBytes() {
+      java.lang.Object ref = originatingRouteDisplayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        originatingRouteDisplayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+     * the originating SUBNET/STATIC/DYNAMIC route.
+     * </pre>
+     *
+     * <code>string originating_route_display_name = 23;</code>
+     *
+     * @param value The originatingRouteDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginatingRouteDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      originatingRouteDisplayName_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+     * the originating SUBNET/STATIC/DYNAMIC route.
+     * </pre>
+     *
+     * <code>string originating_route_display_name = 23;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginatingRouteDisplayName() {
+      originatingRouteDisplayName_ = getDefaultInstance().getOriginatingRouteDisplayName();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET, PEERING_STATIC and PEERING_DYNAMIC routes, the name of
+     * the originating SUBNET/STATIC/DYNAMIC route.
+     * </pre>
+     *
+     * <code>string originating_route_display_name = 23;</code>
+     *
+     * @param value The bytes for originatingRouteDisplayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginatingRouteDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      originatingRouteDisplayName_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object nccHubRouteUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+     * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>string ncc_hub_route_uri = 24;</code>
+     *
+     * @return The nccHubRouteUri.
+     */
+    public java.lang.String getNccHubRouteUri() {
+      java.lang.Object ref = nccHubRouteUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nccHubRouteUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+     * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>string ncc_hub_route_uri = 24;</code>
+     *
+     * @return The bytes for nccHubRouteUri.
+     */
+    public com.google.protobuf.ByteString getNccHubRouteUriBytes() {
+      java.lang.Object ref = nccHubRouteUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nccHubRouteUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+     * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>string ncc_hub_route_uri = 24;</code>
+     *
+     * @param value The nccHubRouteUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccHubRouteUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      nccHubRouteUri_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+     * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>string ncc_hub_route_uri = 24;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNccHubRouteUri() {
+      nccHubRouteUri_ = getDefaultInstance().getNccHubRouteUri();
+      bitField0_ = (bitField0_ & ~0x00800000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * For PEERING_SUBNET and PEERING_DYNAMIC routes that are advertised by NCC
+     * Hub, the URI of the corresponding route in NCC Hub's routing table.
+     * </pre>
+     *
+     * <code>string ncc_hub_route_uri = 24;</code>
+     *
+     * @param value The bytes for nccHubRouteUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNccHubRouteUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      nccHubRouteUri_ = value;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
