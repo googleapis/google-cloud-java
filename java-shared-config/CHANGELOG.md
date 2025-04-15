@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.4](https://github.com/googleapis/java-shared-config/compare/v1.15.3...v1.15.4) (2025-04-15)
+
+
+### Bug Fixes
+
+* Use recommended variable expansion syntax ([#1016](https://github.com/googleapis/java-shared-config/issues/1016)) ([6ff6dc4](https://github.com/googleapis/java-shared-config/commit/6ff6dc48b8d92604164da7c68e268476b5a16578))
+
 ## [1.15.3](https://github.com/googleapis/java-shared-config/compare/v1.15.2...v1.15.3) (2025-04-15)
 
 
