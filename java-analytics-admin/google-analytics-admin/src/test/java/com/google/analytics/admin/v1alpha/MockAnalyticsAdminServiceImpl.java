@@ -3265,4 +3265,135 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void createReportingDataAnnotation(
+      CreateReportingDataAnnotationRequest request,
+      StreamObserver<ReportingDataAnnotation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingDataAnnotation) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingDataAnnotation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateReportingDataAnnotation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingDataAnnotation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getReportingDataAnnotation(
+      GetReportingDataAnnotationRequest request,
+      StreamObserver<ReportingDataAnnotation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingDataAnnotation) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingDataAnnotation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReportingDataAnnotation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingDataAnnotation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listReportingDataAnnotations(
+      ListReportingDataAnnotationsRequest request,
+      StreamObserver<ListReportingDataAnnotationsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListReportingDataAnnotationsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListReportingDataAnnotationsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListReportingDataAnnotations, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListReportingDataAnnotationsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateReportingDataAnnotation(
+      UpdateReportingDataAnnotationRequest request,
+      StreamObserver<ReportingDataAnnotation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingDataAnnotation) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingDataAnnotation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateReportingDataAnnotation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingDataAnnotation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteReportingDataAnnotation(
+      DeleteReportingDataAnnotationRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteReportingDataAnnotation, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void submitUserDeletion(
+      SubmitUserDeletionRequest request,
+      StreamObserver<SubmitUserDeletionResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubmitUserDeletionResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SubmitUserDeletionResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SubmitUserDeletion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubmitUserDeletionResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

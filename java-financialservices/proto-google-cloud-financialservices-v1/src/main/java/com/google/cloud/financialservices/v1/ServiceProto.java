@@ -301,11 +301,14 @@ public final class ServiceProto {
           + "/{name=projects/*/locations/*/instances/"
           + "*/backtestResults/*}\032T\312A financialservic"
           + "es.googleapis.com\322A.https://www.googleap"
-          + "is.com/auth/cloud-platformB\214\001\n%com.googl"
+          + "is.com/auth/cloud-platformB\373\001\n%com.googl"
           + "e.cloud.financialservices.v1B\014ServicePro"
           + "toP\001ZScloud.google.com/go/financialservi"
           + "ces/apiv1/financialservicespb;financials"
-          + "ervicespbb\006proto3"
+          + "ervicespb\252\002!Google.Cloud.FinancialServic"
+          + "es.V1\312\002!Google\\Cloud\\FinancialServices\\V"
+          + "1\352\002$Google::Cloud::FinancialServices::V1"
+          + "b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

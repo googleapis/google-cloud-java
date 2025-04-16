@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
+ * Request message for
+ * [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.EnableSecretVersionRequest}
@@ -71,8 +72,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -97,8 +99,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Required. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+   * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    * </pre>
    *
    * <code>
@@ -285,7 +288,8 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
+   * Request message for
+   * [SecretManagerService.EnableSecretVersion][google.cloud.secrets.v1beta1.SecretManagerService.EnableSecretVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.EnableSecretVersionRequest}
@@ -474,8 +478,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -499,8 +504,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -524,8 +530,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -548,8 +555,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>
@@ -568,8 +576,9 @@ public final class EnableSecretVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in the format
-     * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+     * Required. The resource name of the
+     * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] to enable in
+     * the format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
      * </pre>
      *
      * <code>

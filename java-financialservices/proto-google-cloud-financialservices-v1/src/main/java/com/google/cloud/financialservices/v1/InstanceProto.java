@@ -152,10 +152,13 @@ public final class InstanceProto {
           + "\003\340A\002\022P\n\020line_of_business\030\003 \001(\01621.google."
           + "cloud.financialservices.v1.LineOfBusines"
           + "sB\003\340A\002\"!\n\037ExportRegisteredPartiesRespons"
-          + "eB\215\001\n%com.google.cloud.financialservices"
+          + "eB\374\001\n%com.google.cloud.financialservices"
           + ".v1B\rInstanceProtoP\001ZScloud.google.com/g"
           + "o/financialservices/apiv1/financialservi"
-          + "cespb;financialservicespbb\006proto3"
+          + "cespb;financialservicespb\252\002!Google.Cloud"
+          + ".FinancialServices.V1\312\002!Google\\Cloud\\Fin"
+          + "ancialServices\\V1\352\002$Google::Cloud::Finan"
+          + "cialServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

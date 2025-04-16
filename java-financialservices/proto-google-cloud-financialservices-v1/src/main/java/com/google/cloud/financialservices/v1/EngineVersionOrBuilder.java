@@ -30,7 +30,7 @@ public interface EngineVersionOrBuilder
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -46,7 +46,7 @@ public interface EngineVersionOrBuilder
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>

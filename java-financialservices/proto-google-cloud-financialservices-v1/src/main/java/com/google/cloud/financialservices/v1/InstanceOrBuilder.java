@@ -29,7 +29,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -42,7 +42,7 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -228,7 +228,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Required. The KMS key name used for CMEK (encryption-at-rest).
    * format:
-   * "projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}"
+   * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}`
    * VPC-SC restrictions apply.
    * </pre>
    *
@@ -243,7 +243,7 @@ public interface InstanceOrBuilder
    * <pre>
    * Required. The KMS key name used for CMEK (encryption-at-rest).
    * format:
-   * "projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}"
+   * `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}`
    * VPC-SC restrictions apply.
    * </pre>
    *

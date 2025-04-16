@@ -46,6 +46,8 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest;
+import com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest;
 import com.google.cloud.aiplatform.v1beta1.DeployOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest;
@@ -59,6 +61,7 @@ import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
+import com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -184,6 +187,11 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
           ExportPublisherModelResponse,
           ExportPublisherModelOperationMetadata>
       exportPublisherModelOperationSettings;
+  private final UnaryCallSettings<
+          CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceSettings;
+  private final UnaryCallSettings<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -359,6 +367,18 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     return exportPublisherModelOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to checkPublisherModelEulaAcceptance. */
+  public UnaryCallSettings<CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+      checkPublisherModelEulaAcceptanceSettings() {
+    return checkPublisherModelEulaAcceptanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to acceptPublisherModelEula. */
+  public UnaryCallSettings<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+      acceptPublisherModelEulaSettings() {
+    return acceptPublisherModelEulaSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -477,6 +497,9 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
     exportPublisherModelSettings = settingsBuilder.exportPublisherModelSettings().build();
     exportPublisherModelOperationSettings =
         settingsBuilder.exportPublisherModelOperationSettings().build();
+    checkPublisherModelEulaAcceptanceSettings =
+        settingsBuilder.checkPublisherModelEulaAcceptanceSettings().build();
+    acceptPublisherModelEulaSettings = settingsBuilder.acceptPublisherModelEulaSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
@@ -513,6 +536,12 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
             ExportPublisherModelResponse,
             ExportPublisherModelOperationMetadata>
         exportPublisherModelOperationSettings;
+    private final UnaryCallSettings.Builder<
+            CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+        checkPublisherModelEulaAcceptanceSettings;
+    private final UnaryCallSettings.Builder<
+            AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+        acceptPublisherModelEulaSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -557,6 +586,8 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       deployPublisherModelOperationSettings = OperationCallSettings.newBuilder();
       exportPublisherModelSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       exportPublisherModelOperationSettings = OperationCallSettings.newBuilder();
+      checkPublisherModelEulaAcceptanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      acceptPublisherModelEulaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -570,6 +601,8 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
               deploySettings,
               deployPublisherModelSettings,
               exportPublisherModelSettings,
+              checkPublisherModelEulaAcceptanceSettings,
+              acceptPublisherModelEulaSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -591,6 +624,9 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
       exportPublisherModelSettings = settings.exportPublisherModelSettings.toBuilder();
       exportPublisherModelOperationSettings =
           settings.exportPublisherModelOperationSettings.toBuilder();
+      checkPublisherModelEulaAcceptanceSettings =
+          settings.checkPublisherModelEulaAcceptanceSettings.toBuilder();
+      acceptPublisherModelEulaSettings = settings.acceptPublisherModelEulaSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
@@ -604,6 +640,8 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
               deploySettings,
               deployPublisherModelSettings,
               exportPublisherModelSettings,
+              checkPublisherModelEulaAcceptanceSettings,
+              acceptPublisherModelEulaSettings,
               listLocationsSettings,
               getLocationSettings,
               setIamPolicySettings,
@@ -646,6 +684,16 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
 
       builder
           .exportPublisherModelSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .checkPublisherModelEulaAcceptanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .acceptPublisherModelEulaSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -826,6 +874,19 @@ public class ModelGardenServiceStubSettings extends StubSettings<ModelGardenServ
             ExportPublisherModelOperationMetadata>
         exportPublisherModelOperationSettings() {
       return exportPublisherModelOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to checkPublisherModelEulaAcceptance. */
+    public UnaryCallSettings.Builder<
+            CheckPublisherModelEulaAcceptanceRequest, PublisherModelEulaAcceptance>
+        checkPublisherModelEulaAcceptanceSettings() {
+      return checkPublisherModelEulaAcceptanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to acceptPublisherModelEula. */
+    public UnaryCallSettings.Builder<AcceptPublisherModelEulaRequest, PublisherModelEulaAcceptance>
+        acceptPublisherModelEulaSettings() {
+      return acceptPublisherModelEulaSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

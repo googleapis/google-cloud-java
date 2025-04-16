@@ -214,6 +214,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * or
+       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -228,6 +230,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * or
+       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -292,6 +296,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * or
+       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -317,6 +323,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataQualityScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+       * or
+       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -715,6 +723,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * or
+         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -739,6 +749,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * or
+         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -763,6 +775,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * or
+         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -786,6 +800,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * or
+         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -805,6 +821,8 @@ public final class DataQualitySpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataQualityScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
+         * or
+         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>

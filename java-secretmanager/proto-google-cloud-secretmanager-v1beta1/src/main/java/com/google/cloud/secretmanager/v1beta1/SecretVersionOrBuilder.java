@@ -28,11 +28,13 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    *
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -44,11 +46,13 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the
-   * format `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
+   * Output only. The resource name of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] in the format
+   * `projects/&#42;&#47;secrets/&#42;&#47;versions/&#42;`.
    *
-   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and
-   * are incremented for each subsequent version of the secret.
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] IDs in a
+   * [Secret][google.cloud.secrets.v1beta1.Secret] start at 1 and are
+   * incremented for each subsequent version of the secret.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -61,7 +65,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -74,7 +79,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -87,7 +93,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
+   * Output only. The time at which the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -99,9 +106,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
-   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
+   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -114,9 +122,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
-   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
+   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -129,9 +138,10 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
-   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state] is
-   * [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
+   * Output only. The time this
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion] was destroyed.
+   * Only present if [state][google.cloud.secrets.v1beta1.SecretVersion.state]
+   * is [DESTROYED][google.cloud.secrets.v1beta1.SecretVersion.State.DESTROYED].
    * </pre>
    *
    * <code>.google.protobuf.Timestamp destroy_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -143,7 +153,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>
@@ -157,7 +168,8 @@ public interface SecretVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The current state of the [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
+   * Output only. The current state of the
+   * [SecretVersion][google.cloud.secrets.v1beta1.SecretVersion].
    * </pre>
    *
    * <code>

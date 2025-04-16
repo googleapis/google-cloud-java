@@ -283,6 +283,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * KeyEvent resource
+   * </pre>
+   *
+   * <code>KEY_EVENT = 30;</code>
+   */
+  KEY_EVENT(30),
+  /**
+   *
+   *
+   * <pre>
    * CalculatedMetric resource
    * </pre>
    *
@@ -293,12 +303,12 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
-   * KeyEvent resource
+   * ReportingDataAnnotation resource
    * </pre>
    *
-   * <code>KEY_EVENT = 32;</code>
+   * <code>REPORTING_DATA_ANNOTATION = 32;</code>
    */
-  KEY_EVENT(32),
+  REPORTING_DATA_ANNOTATION(32),
   UNRECOGNIZED(-1),
   ;
 
@@ -556,6 +566,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * KeyEvent resource
+   * </pre>
+   *
+   * <code>KEY_EVENT = 30;</code>
+   */
+  public static final int KEY_EVENT_VALUE = 30;
+  /**
+   *
+   *
+   * <pre>
    * CalculatedMetric resource
    * </pre>
    *
@@ -566,12 +586,12 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
-   * KeyEvent resource
+   * ReportingDataAnnotation resource
    * </pre>
    *
-   * <code>KEY_EVENT = 32;</code>
+   * <code>REPORTING_DATA_ANNOTATION = 32;</code>
    */
-  public static final int KEY_EVENT_VALUE = 32;
+  public static final int REPORTING_DATA_ANNOTATION_VALUE = 32;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -647,10 +667,12 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return AUDIENCE;
       case 29:
         return EVENT_CREATE_RULE;
+      case 30:
+        return KEY_EVENT;
       case 31:
         return CALCULATED_METRIC;
       case 32:
-        return KEY_EVENT;
+        return REPORTING_DATA_ANNOTATION;
       default:
         return null;
     }

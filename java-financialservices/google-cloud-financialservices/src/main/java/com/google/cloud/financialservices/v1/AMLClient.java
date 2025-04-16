@@ -1712,12 +1712,12 @@ public class AMLClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full path to the Instance resource in this API. format:
-   *     "projects/{project}/locations/{location}/instances/{instance}"
+   *     `projects/{project}/locations/{location}/instances/{instance}`
    * @param mode Required. Mode of the request.
    * @param lineOfBusiness Required. LineOfBusiness for the specified registered parties.
    * @param partyTables Optional. List of BigQuery tables. Union of tables will be taken if there is
    *     more than one table. VPC-SC restrictions apply. format:
-   *     "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred over the latter
+   *     `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred over the latter
    *     due to its simplicity and the reduced risk of errors `party_tables` and `datasets` must not
    *     be provided at the same time
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1764,12 +1764,12 @@ public class AMLClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full path to the Instance resource in this API. format:
-   *     "projects/{project}/locations/{location}/instances/{instance}"
+   *     `projects/{project}/locations/{location}/instances/{instance}`
    * @param mode Required. Mode of the request.
    * @param lineOfBusiness Required. LineOfBusiness for the specified registered parties.
    * @param partyTables Optional. List of BigQuery tables. Union of tables will be taken if there is
    *     more than one table. VPC-SC restrictions apply. format:
-   *     "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred over the latter
+   *     `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred over the latter
    *     due to its simplicity and the reduced risk of errors `party_tables` and `datasets` must not
    *     be provided at the same time
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1917,7 +1917,7 @@ public class AMLClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full path to the Instance resource in this API. format:
-   *     "projects/{project}/locations/{location}/instances/{instance}"
+   *     `projects/{project}/locations/{location}/instances/{instance}`
    * @param dataset Required. The location to output the RegisteredParties.
    * @param lineOfBusiness Required. LineOfBusiness to get RegisteredParties from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -1958,7 +1958,7 @@ public class AMLClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The full path to the Instance resource in this API. format:
-   *     "projects/{project}/locations/{location}/instances/{instance}"
+   *     `projects/{project}/locations/{location}/instances/{instance}`
    * @param dataset Required. The location to output the RegisteredParties.
    * @param lineOfBusiness Required. LineOfBusiness to get RegisteredParties from.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

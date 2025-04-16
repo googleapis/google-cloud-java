@@ -290,7 +290,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Dataset.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -315,7 +315,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Dataset.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1425,7 +1425,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Dataset.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1449,7 +1449,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Dataset.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1473,7 +1473,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Dataset.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1496,7 +1496,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Dataset.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1515,7 +1515,7 @@ public final class Dataset extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Dataset.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

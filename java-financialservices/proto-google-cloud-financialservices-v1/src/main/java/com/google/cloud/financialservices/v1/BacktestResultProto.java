@@ -147,10 +147,13 @@ public final class BacktestResultProto {
           + "_destination\030\002 \001(\01326.google.cloud.financ"
           + "ialservices.v1.BigQueryDestinationB\003\340A\002\""
           + "&\n$ExportBacktestResultMetadataResponseB"
-          + "\223\001\n%com.google.cloud.financialservices.v"
+          + "\202\002\n%com.google.cloud.financialservices.v"
           + "1B\023BacktestResultProtoP\001ZScloud.google.c"
           + "om/go/financialservices/apiv1/financials"
-          + "ervicespb;financialservicespbb\006proto3"
+          + "ervicespb;financialservicespb\252\002!Google.C"
+          + "loud.FinancialServices.V1\312\002!Google\\Cloud"
+          + "\\FinancialServices\\V1\352\002$Google::Cloud::F"
+          + "inancialServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

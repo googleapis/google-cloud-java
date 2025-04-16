@@ -84,11 +84,13 @@ public final class EngineVersionProto {
           + "e_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"_\n\027Ge"
           + "tEngineVersionRequest\022D\n\004name\030\001 \001(\tB6\340A\002"
           + "\372A0\n.financialservices.googleapis.com/En"
-          + "gineVersionB\222\001\n%com.google.cloud.financi"
+          + "gineVersionB\201\002\n%com.google.cloud.financi"
           + "alservices.v1B\022EngineVersionProtoP\001ZSclo"
           + "ud.google.com/go/financialservices/apiv1"
           + "/financialservicespb;financialservicespb"
-          + "b\006proto3"
+          + "\252\002!Google.Cloud.FinancialServices.V1\312\002!G"
+          + "oogle\\Cloud\\FinancialServices\\V1\352\002$Googl"
+          + "e::Cloud::FinancialServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

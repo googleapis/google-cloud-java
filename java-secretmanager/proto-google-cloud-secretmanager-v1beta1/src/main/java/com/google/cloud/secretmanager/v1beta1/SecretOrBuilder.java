@@ -28,7 +28,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -40,7 +42,9 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -53,7 +57,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -69,7 +74,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -85,7 +91,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -100,7 +107,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -113,7 +121,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -126,7 +135,8 @@ public interface SecretOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];

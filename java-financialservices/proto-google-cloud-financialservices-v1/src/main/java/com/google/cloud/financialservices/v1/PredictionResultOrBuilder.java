@@ -30,7 +30,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Output only. The resource name of the PredictionResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/predictionResults/{prediction_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/predictionResults/{prediction_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -44,7 +44,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Output only. The resource name of the PredictionResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/predictionResults/{prediction_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/predictionResults/{prediction_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -224,7 +224,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Required. The resource name of the Dataset to do predictions on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/dataset/{dataset_id}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/dataset/{dataset_id}`
    * </pre>
    *
    * <code>
@@ -240,7 +240,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Required. The resource name of the Dataset to do predictions on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/dataset/{dataset_id}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/dataset/{dataset_id}`
    * </pre>
    *
    * <code>
@@ -257,7 +257,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Required. The resource name of the Model to use to use to make predictions
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>
@@ -273,7 +273,7 @@ public interface PredictionResultOrBuilder
    * <pre>
    * Required. The resource name of the Model to use to use to make predictions
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>

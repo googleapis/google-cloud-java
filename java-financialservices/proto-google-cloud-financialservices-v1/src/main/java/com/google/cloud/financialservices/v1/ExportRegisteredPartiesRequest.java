@@ -75,7 +75,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>
@@ -101,7 +101,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>
@@ -646,7 +646,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -671,7 +671,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -696,7 +696,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -720,7 +720,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class ExportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>

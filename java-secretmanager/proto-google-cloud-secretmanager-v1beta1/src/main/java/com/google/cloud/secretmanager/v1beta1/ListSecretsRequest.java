@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
+ * Request message for
+ * [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretsRequest}
@@ -376,7 +377,8 @@ public final class ListSecretsRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
+   * Request message for
+   * [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretsRequest}

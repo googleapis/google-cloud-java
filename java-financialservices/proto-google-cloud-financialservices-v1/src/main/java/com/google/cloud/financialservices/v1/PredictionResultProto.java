@@ -151,10 +151,13 @@ public final class PredictionResultProto {
           + "destination\030\002 \001(\01326.google.cloud.financi"
           + "alservices.v1.BigQueryDestinationB\003\340A\002\"("
           + "\n&ExportPredictionResultMetadataResponse"
-          + "B\225\001\n%com.google.cloud.financialservices."
+          + "B\204\002\n%com.google.cloud.financialservices."
           + "v1B\025PredictionResultProtoP\001ZScloud.googl"
           + "e.com/go/financialservices/apiv1/financi"
-          + "alservicespb;financialservicespbb\006proto3"
+          + "alservicespb;financialservicespb\252\002!Googl"
+          + "e.Cloud.FinancialServices.V1\312\002!Google\\Cl"
+          + "oud\\FinancialServices\\V1\352\002$Google::Cloud"
+          + "::FinancialServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

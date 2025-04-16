@@ -7646,6 +7646,319 @@ public final class AnalyticsAdminServiceGrpc {
     return getDeleteSubpropertyEventFilterMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getCreateReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getCreateReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getCreateReportingDataAnnotationMethod;
+    if ((getCreateReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateReportingDataAnnotationMethod =
+              getCreateReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getCreateReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getGetReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getGetReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getGetReportingDataAnnotationMethod;
+    if ((getGetReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetReportingDataAnnotationMethod =
+              getGetReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getGetReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+      getListReportingDataAnnotationsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListReportingDataAnnotations",
+      requestType = com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+      getListReportingDataAnnotationsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+        getListReportingDataAnnotationsMethod;
+    if ((getListReportingDataAnnotationsMethod =
+            AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListReportingDataAnnotationsMethod =
+                AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListReportingDataAnnotationsMethod =
+              getListReportingDataAnnotationsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+                          com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListReportingDataAnnotations"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListReportingDataAnnotationsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListReportingDataAnnotations"))
+                      .build();
+        }
+      }
+    }
+    return getListReportingDataAnnotationsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getUpdateReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingDataAnnotation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+      getUpdateReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getUpdateReportingDataAnnotationMethod;
+    if ((getUpdateReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateReportingDataAnnotationMethod =
+              getUpdateReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+                          com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingDataAnnotation
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+          com.google.protobuf.Empty>
+      getDeleteReportingDataAnnotationMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteReportingDataAnnotation",
+      requestType = com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+          com.google.protobuf.Empty>
+      getDeleteReportingDataAnnotationMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+            com.google.protobuf.Empty>
+        getDeleteReportingDataAnnotationMethod;
+    if ((getDeleteReportingDataAnnotationMethod =
+            AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteReportingDataAnnotationMethod =
+                AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteReportingDataAnnotationMethod =
+              getDeleteReportingDataAnnotationMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteReportingDataAnnotation"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteReportingDataAnnotationRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteReportingDataAnnotation"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteReportingDataAnnotationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+      getSubmitUserDeletionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubmitUserDeletion",
+      requestType = com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+      getSubmitUserDeletionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+        getSubmitUserDeletionMethod;
+    if ((getSubmitUserDeletionMethod = AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getSubmitUserDeletionMethod = AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getSubmitUserDeletionMethod =
+              getSubmitUserDeletionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+                          com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SubmitUserDeletion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier("SubmitUserDeletion"))
+                      .build();
+        }
+      }
+    }
+    return getSubmitUserDeletionMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -10043,6 +10356,96 @@ public final class AnalyticsAdminServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteSubpropertyEventFilterMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    default void createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    default void getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    default void listReportingDataAnnotations(
+        com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListReportingDataAnnotationsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    default void updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    default void deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteReportingDataAnnotationMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    default void submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubmitUserDeletionMethod(), responseObserver);
     }
   }
 
@@ -12734,6 +13137,108 @@ public final class AnalyticsAdminServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public void createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public void getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public void listReportingDataAnnotations(
+        com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListReportingDataAnnotationsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public void updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public void deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteReportingDataAnnotationMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public void submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -14876,6 +15381,85 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteSubpropertyEventFilterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation createReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse
+        listReportingDataAnnotations(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReportingDataAnnotationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingDataAnnotation updateReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteReportingDataAnnotation(
+        com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteReportingDataAnnotationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse submitUserDeletion(
+        com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
     }
   }
 
@@ -17202,6 +17786,97 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteSubpropertyEventFilterMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        createReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup a single Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        getReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportingDataAnnotationMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all Reporting Data Annotations on a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>
+        listReportingDataAnnotations(
+            com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListReportingDataAnnotationsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
+        updateReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Reporting Data Annotation.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteReportingDataAnnotation(
+            com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteReportingDataAnnotationMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Submits a request for user deletion for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>
+        submitUserDeletion(com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -17354,6 +18029,12 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 147;
   private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 148;
   private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 149;
+  private static final int METHODID_CREATE_REPORTING_DATA_ANNOTATION = 150;
+  private static final int METHODID_GET_REPORTING_DATA_ANNOTATION = 151;
+  private static final int METHODID_LIST_REPORTING_DATA_ANNOTATIONS = 152;
+  private static final int METHODID_UPDATE_REPORTING_DATA_ANNOTATION = 153;
+  private static final int METHODID_DELETE_REPORTING_DATA_ANNOTATION = 154;
+  private static final int METHODID_SUBMIT_USER_DELETION = 155;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -18336,6 +19017,46 @@ public final class AnalyticsAdminServiceGrpc {
           serviceImpl.deleteSubpropertyEventFilter(
               (com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CREATE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.createReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPORTING_DATA_ANNOTATION:
+          serviceImpl.getReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_REPORTING_DATA_ANNOTATIONS:
+          serviceImpl.listReportingDataAnnotations(
+              (com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.updateReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingDataAnnotation>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_REPORTING_DATA_ANNOTATION:
+          serviceImpl.deleteReportingDataAnnotation(
+              (com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_SUBMIT_USER_DELETION:
+          serviceImpl.submitUserDeletion(
+              (com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -19391,6 +20112,47 @@ public final class AnalyticsAdminServiceGrpc {
                 new MethodHandlers<
                     com.google.analytics.admin.v1alpha.DeleteSubpropertyEventFilterRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_SUBPROPERTY_EVENT_FILTER)))
+        .addMethod(
+            getCreateReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_CREATE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getGetReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_GET_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getListReportingDataAnnotationsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsRequest,
+                    com.google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse>(
+                    service, METHODID_LIST_REPORTING_DATA_ANNOTATIONS)))
+        .addMethod(
+            getUpdateReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest,
+                    com.google.analytics.admin.v1alpha.ReportingDataAnnotation>(
+                    service, METHODID_UPDATE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getDeleteReportingDataAnnotationMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_REPORTING_DATA_ANNOTATION)))
+        .addMethod(
+            getSubmitUserDeletionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
+                    com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>(
+                    service, METHODID_SUBMIT_USER_DELETION)))
         .build();
   }
 
@@ -19592,6 +20354,12 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getListSubpropertyEventFiltersMethod())
                       .addMethod(getUpdateSubpropertyEventFilterMethod())
                       .addMethod(getDeleteSubpropertyEventFilterMethod())
+                      .addMethod(getCreateReportingDataAnnotationMethod())
+                      .addMethod(getGetReportingDataAnnotationMethod())
+                      .addMethod(getListReportingDataAnnotationsMethod())
+                      .addMethod(getUpdateReportingDataAnnotationMethod())
+                      .addMethod(getDeleteReportingDataAnnotationMethod())
+                      .addMethod(getSubmitUserDeletionMethod())
                       .build();
         }
       }

@@ -29,7 +29,7 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>
@@ -44,7 +44,7 @@ public interface ExportRegisteredPartiesRequestOrBuilder
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>

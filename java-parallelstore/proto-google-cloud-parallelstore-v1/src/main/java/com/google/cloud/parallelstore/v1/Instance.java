@@ -718,7 +718,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated 'daos_version' field.
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
@@ -746,7 +746,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Deprecated 'daos_version' field.
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
@@ -2902,7 +2902,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated 'daos_version' field.
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
@@ -2930,7 +2930,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated 'daos_version' field.
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
@@ -2958,7 +2958,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated 'daos_version' field.
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
@@ -2985,7 +2985,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated 'daos_version' field.
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *
@@ -3008,7 +3008,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Deprecated 'daos_version' field.
+     * Output only. Deprecated 'daos_version' field.
      * Output only. The version of DAOS software running in the instance.
      * </pre>
      *

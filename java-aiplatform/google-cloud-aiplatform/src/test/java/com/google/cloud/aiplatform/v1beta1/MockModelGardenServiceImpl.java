@@ -163,4 +163,48 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void checkPublisherModelEulaAcceptance(
+      CheckPublisherModelEulaAcceptanceRequest request,
+      StreamObserver<PublisherModelEulaAcceptance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PublisherModelEulaAcceptance) {
+      requests.add(request);
+      responseObserver.onNext(((PublisherModelEulaAcceptance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CheckPublisherModelEulaAcceptance, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PublisherModelEulaAcceptance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void acceptPublisherModelEula(
+      AcceptPublisherModelEulaRequest request,
+      StreamObserver<PublisherModelEulaAcceptance> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof PublisherModelEulaAcceptance) {
+      requests.add(request);
+      responseObserver.onNext(((PublisherModelEulaAcceptance) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method AcceptPublisherModelEula, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  PublisherModelEulaAcceptance.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

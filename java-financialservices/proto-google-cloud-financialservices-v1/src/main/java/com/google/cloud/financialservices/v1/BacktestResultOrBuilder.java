@@ -30,7 +30,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Output only. The resource name of the BacktestResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -44,7 +44,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Output only. The resource name of the BacktestResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -222,7 +222,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Dataset to backtest on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -238,7 +238,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Dataset to backtest on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -255,7 +255,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Model to use or to backtest.
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>
@@ -271,7 +271,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Model to use or to backtest.
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>

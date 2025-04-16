@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Response message for [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
+ * Response message for
+ * [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretsResponse}
@@ -72,8 +73,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -86,8 +87,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -101,8 +102,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -115,8 +116,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -129,8 +130,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-   * first).
+   * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+   * reverse by create_time (newest first).
    * </pre>
    *
    * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -149,7 +150,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -173,7 +175,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * A token to retrieve the next page of results. Pass this value in
-   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+   * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+   * to retrieve the next page.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -395,7 +398,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Response message for [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
+   * Response message for
+   * [SecretManagerService.ListSecrets][google.cloud.secrets.v1beta1.SecretManagerService.ListSecrets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.ListSecretsResponse}
@@ -668,8 +672,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -685,8 +689,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -702,8 +706,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -719,8 +723,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -742,8 +746,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -763,8 +767,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -786,8 +790,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -809,8 +813,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -830,8 +834,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -851,8 +855,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -872,8 +876,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -892,8 +896,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -912,8 +916,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -925,8 +929,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -942,8 +946,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -960,8 +964,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -974,8 +978,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -988,8 +992,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in reverse by create_time (newest
-     * first).
+     * The list of [Secrets][google.cloud.secrets.v1beta1.Secret] sorted in
+     * reverse by create_time (newest first).
      * </pre>
      *
      * <code>repeated .google.cloud.secrets.v1beta1.Secret secrets = 1;</code>
@@ -1022,7 +1026,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+     * to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1045,7 +1050,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+     * to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1068,7 +1074,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+     * to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1090,7 +1097,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+     * to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1108,7 +1116,8 @@ public final class ListSecretsResponse extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * A token to retrieve the next page of results. Pass this value in
-     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token] to retrieve the next page.
+     * [ListSecretsRequest.page_token][google.cloud.secrets.v1beta1.ListSecretsRequest.page_token]
+     * to retrieve the next page.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

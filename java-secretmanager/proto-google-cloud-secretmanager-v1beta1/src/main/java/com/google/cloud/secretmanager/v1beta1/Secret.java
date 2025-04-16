@@ -23,11 +23,12 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose value and versions can
- * be accessed.
+ * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose
+ * value and versions can be accessed.
  *
- * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that
- * represent the secret data.
+ * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more
+ * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that represent
+ * the secret data.
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.Secret}
@@ -88,7 +89,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -111,7 +114,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Output only. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -137,7 +142,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -156,7 +162,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -177,7 +184,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+   * Required. Immutable. The replication policy of the secret data attached to
+   * the [Secret][google.cloud.secrets.v1beta1.Secret].
    *
    * The replication policy cannot be changed after the Secret has been created.
    * </pre>
@@ -199,7 +207,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -215,7 +224,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -231,7 +241,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+   * Output only. The time at which the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -592,11 +603,12 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose value and versions can
-   * be accessed.
+   * A [Secret][google.cloud.secrets.v1beta1.Secret] is a logical secret whose
+   * value and versions can be accessed.
    *
-   * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that
-   * represent the secret data.
+   * A [Secret][google.cloud.secrets.v1beta1.Secret] is made up of zero or more
+   * [SecretVersions][google.cloud.secrets.v1beta1.SecretVersion] that represent
+   * the secret data.
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.Secret}
@@ -869,7 +881,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -891,7 +905,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -913,7 +929,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -934,7 +952,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -951,7 +971,9 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret] in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Output only. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -980,7 +1002,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -998,7 +1021,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1022,7 +1046,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1048,7 +1073,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1072,7 +1098,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1104,7 +1131,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1127,7 +1155,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1145,7 +1174,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1167,7 +1197,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Immutable. The replication policy of the secret data attached to the [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. Immutable. The replication policy of the secret data attached to
+     * the [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * The replication policy cannot be changed after the Secret has been created.
      * </pre>
@@ -1203,7 +1234,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1219,7 +1251,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1241,7 +1274,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1265,7 +1299,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1286,7 +1321,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1315,7 +1351,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1336,7 +1373,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1352,7 +1390,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>
@@ -1372,7 +1411,8 @@ public final class Secret extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The time at which the [Secret][google.cloud.secrets.v1beta1.Secret] was created.
+     * Output only. The time at which the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] was created.
      * </pre>
      *
      * <code>

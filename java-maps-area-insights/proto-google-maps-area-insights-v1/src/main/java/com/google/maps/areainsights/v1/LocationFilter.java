@@ -1303,7 +1303,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1315,7 +1315,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1327,7 +1327,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1432,7 +1432,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1446,7 +1446,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1473,7 +1473,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The Place resource name of a region.
+     * The unique identifier of a specific geographic region.
      * </pre>
      *
      * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1890,7 +1890,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1905,7 +1905,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1933,7 +1933,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1961,7 +1961,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -1982,7 +1982,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -2001,7 +2001,7 @@ public final class LocationFilter extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The Place resource name of a region.
+       * The unique identifier of a specific geographic region.
        * </pre>
        *
        * <code>string place = 1 [(.google.api.resource_reference) = { ... }</code>

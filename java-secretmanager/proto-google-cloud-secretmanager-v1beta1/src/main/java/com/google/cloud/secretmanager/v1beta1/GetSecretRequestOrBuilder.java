@@ -28,7 +28,9 @@ public interface GetSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -42,7 +44,9 @@ public interface GetSecretRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>

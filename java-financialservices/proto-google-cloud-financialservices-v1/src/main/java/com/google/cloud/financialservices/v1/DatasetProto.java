@@ -120,11 +120,14 @@ public final class DatasetProto {
           + ".v1.DatasetB\003\340A\002\022\027\n\nrequest_id\030\003 \001(\tB\003\340A"
           + "\001\"o\n\024DeleteDatasetRequest\022>\n\004name\030\001 \001(\tB"
           + "0\340A\002\372A*\n(financialservices.googleapis.co"
-          + "m/Dataset\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001B\214\001\n%c"
+          + "m/Dataset\022\027\n\nrequest_id\030\002 \001(\tB\003\340A\001B\373\001\n%c"
           + "om.google.cloud.financialservices.v1B\014Da"
           + "tasetProtoP\001ZScloud.google.com/go/financ"
           + "ialservices/apiv1/financialservicespb;fi"
-          + "nancialservicespbb\006proto3"
+          + "nancialservicespb\252\002!Google.Cloud.Financi"
+          + "alServices.V1\312\002!Google\\Cloud\\FinancialSe"
+          + "rvices\\V1\352\002$Google::Cloud::FinancialServ"
+          + "ices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

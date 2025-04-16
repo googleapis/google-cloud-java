@@ -28,8 +28,8 @@ public interface PlaceInsightOrBuilder
    *
    *
    * <pre>
-   * The resource name of a place. This resource name can be used to retrieve
-   * details about the place using the [Places
+   * The unique identifier of the place. This resource name can be used to
+   * retrieve details about the place using the [Places
    * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
    * </pre>
    *
@@ -42,8 +42,8 @@ public interface PlaceInsightOrBuilder
    *
    *
    * <pre>
-   * The resource name of a place. This resource name can be used to retrieve
-   * details about the place using the [Places
+   * The unique identifier of the place. This resource name can be used to
+   * retrieve details about the place using the [Places
    * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
    * </pre>
    *

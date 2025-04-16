@@ -292,7 +292,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Model.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -317,7 +317,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. The resource name of the Model.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -643,7 +643,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the EngineConfig the model training will be
    * based on. Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
    * </pre>
    *
    * <code>
@@ -670,7 +670,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The resource name of the EngineConfig the model training will be
    * based on. Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
    * </pre>
    *
    * <code>
@@ -703,7 +703,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource name of the Primary Dataset used in this model
    * training. For information about how primary and auxiliary datasets are
    * used, refer to the engine version's documentation.  Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -731,7 +731,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    * Required. The resource name of the Primary Dataset used in this model
    * training. For information about how primary and auxiliary datasets are
    * used, refer to the engine version's documentation.  Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -1486,7 +1486,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Model.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1510,7 +1510,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Model.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1534,7 +1534,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Model.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1557,7 +1557,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Model.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1576,7 +1576,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. The resource name of the Model.
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2394,7 +2394,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the EngineConfig the model training will be
      * based on. Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
      * </pre>
      *
      * <code>
@@ -2420,7 +2420,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the EngineConfig the model training will be
      * based on. Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
      * </pre>
      *
      * <code>
@@ -2446,7 +2446,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the EngineConfig the model training will be
      * based on. Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
      * </pre>
      *
      * <code>
@@ -2471,7 +2471,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the EngineConfig the model training will be
      * based on. Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
      * </pre>
      *
      * <code>
@@ -2492,7 +2492,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The resource name of the EngineConfig the model training will be
      * based on. Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engineConfig}`
      * </pre>
      *
      * <code>
@@ -2521,7 +2521,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource name of the Primary Dataset used in this model
      * training. For information about how primary and auxiliary datasets are
      * used, refer to the engine version's documentation.  Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>
@@ -2548,7 +2548,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource name of the Primary Dataset used in this model
      * training. For information about how primary and auxiliary datasets are
      * used, refer to the engine version's documentation.  Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>
@@ -2575,7 +2575,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource name of the Primary Dataset used in this model
      * training. For information about how primary and auxiliary datasets are
      * used, refer to the engine version's documentation.  Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>
@@ -2601,7 +2601,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource name of the Primary Dataset used in this model
      * training. For information about how primary and auxiliary datasets are
      * used, refer to the engine version's documentation.  Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>
@@ -2623,7 +2623,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      * Required. The resource name of the Primary Dataset used in this model
      * training. For information about how primary and auxiliary datasets are
      * used, refer to the engine version's documentation.  Format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
      * </pre>
      *
      * <code>

@@ -134,11 +134,13 @@ public final class ModelProto {
           + "Model\022d\n\037structured_metadata_destination"
           + "\030\002 \001(\01326.google.cloud.financialservices."
           + "v1.BigQueryDestinationB\003\340A\002\"\035\n\033ExportMod"
-          + "elMetadataResponseB\212\001\n%com.google.cloud."
+          + "elMetadataResponseB\371\001\n%com.google.cloud."
           + "financialservices.v1B\nModelProtoP\001ZSclou"
           + "d.google.com/go/financialservices/apiv1/"
-          + "financialservicespb;financialservicespbb"
-          + "\006proto3"
+          + "financialservicespb;financialservicespb\252"
+          + "\002!Google.Cloud.FinancialServices.V1\312\002!Go"
+          + "ogle\\Cloud\\FinancialServices\\V1\352\002$Google"
+          + "::Cloud::FinancialServices::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

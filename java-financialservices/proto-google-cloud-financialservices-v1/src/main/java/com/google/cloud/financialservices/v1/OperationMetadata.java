@@ -331,10 +331,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
    * Output only. Identifies whether the user has requested cancellation of the
    * operation.
    *
-   * Successfully cancelled operations have a
-   * [google.longrunning.Operation.error][] value with a
-   * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-   * `Code.CANCELLED`.
+   * Successfully cancelled operations have a [Operation.error][] value
+   * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+   * to `Code.CANCELLED`.
    * </pre>
    *
    * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1639,10 +1638,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Identifies whether the user has requested cancellation of the
      * operation.
      *
-     * Successfully cancelled operations have a
-     * [google.longrunning.Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Successfully cancelled operations have a [Operation.error][] value
+     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+     * to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1660,10 +1658,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Identifies whether the user has requested cancellation of the
      * operation.
      *
-     * Successfully cancelled operations have a
-     * [google.longrunning.Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Successfully cancelled operations have a [Operation.error][] value
+     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+     * to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1685,10 +1682,9 @@ public final class OperationMetadata extends com.google.protobuf.GeneratedMessag
      * Output only. Identifies whether the user has requested cancellation of the
      * operation.
      *
-     * Successfully cancelled operations have a
-     * [google.longrunning.Operation.error][] value with a
-     * [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding to
-     * `Code.CANCELLED`.
+     * Successfully cancelled operations have a [Operation.error][] value
+     * with a [google.rpc.Status.code][google.rpc.Status.code] of 1, corresponding
+     * to `Code.CANCELLED`.
      * </pre>
      *
      * <code>bool requested_cancellation = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

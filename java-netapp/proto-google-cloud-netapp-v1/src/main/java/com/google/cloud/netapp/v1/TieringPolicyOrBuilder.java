@@ -75,7 +75,7 @@ public interface TieringPolicyOrBuilder
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 7-183. Default is 31.
+   * eligible for tiering, can be range from 2-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];
@@ -89,7 +89,7 @@ public interface TieringPolicyOrBuilder
    *
    * <pre>
    * Optional. Time in days to mark the volume's data block as cold and make it
-   * eligible for tiering, can be range from 7-183. Default is 31.
+   * eligible for tiering, can be range from 2-183. Default is 31.
    * </pre>
    *
    * <code>optional int32 cooling_threshold_days = 2 [(.google.api.field_behavior) = OPTIONAL];

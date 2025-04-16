@@ -23,7 +23,8 @@ package com.google.cloud.secretmanager.v1beta1;
  *
  *
  * <pre>
- * Request message for [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
+ * Request message for
+ * [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
  * </pre>
  *
  * Protobuf type {@code google.cloud.secrets.v1beta1.GetSecretRequest}
@@ -71,7 +72,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -96,7 +99,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+   * Required. The resource name of the
+   * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+   * `projects/&#42;&#47;secrets/&#42;`.
    * </pre>
    *
    * <code>
@@ -282,7 +287,8 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
+   * Request message for
+   * [SecretManagerService.GetSecret][google.cloud.secrets.v1beta1.SecretManagerService.GetSecret].
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.GetSecretRequest}
@@ -466,7 +472,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>
@@ -490,7 +498,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>
@@ -514,7 +524,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>
@@ -537,7 +549,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>
@@ -556,7 +570,9 @@ public final class GetSecretRequest extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Required. The resource name of the [Secret][google.cloud.secrets.v1beta1.Secret], in the format `projects/&#42;&#47;secrets/&#42;`.
+     * Required. The resource name of the
+     * [Secret][google.cloud.secrets.v1beta1.Secret], in the format
+     * `projects/&#42;&#47;secrets/&#42;`.
      * </pre>
      *
      * <code>

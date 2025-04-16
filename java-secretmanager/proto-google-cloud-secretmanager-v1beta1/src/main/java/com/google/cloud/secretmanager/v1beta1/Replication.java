@@ -69,7 +69,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A replication policy that replicates the [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
+   * A replication policy that replicates the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
    * restrictions.
    * </pre>
    *
@@ -264,7 +265,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A replication policy that replicates the [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
+     * A replication policy that replicates the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] payload without any
      * restrictions.
      * </pre>
      *
@@ -500,7 +502,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -515,7 +518,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -529,7 +533,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -543,7 +548,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -560,7 +566,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -576,8 +583,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A replication policy that replicates the [Secret][google.cloud.secrets.v1beta1.Secret] payload into the
-   * locations specified in [Secret.replication.user_managed.replicas][]
+   * A replication policy that replicates the
+   * [Secret][google.cloud.secrets.v1beta1.Secret] payload into the locations
+   * specified in
+   * [Replication.UserManaged.replicas][google.cloud.secrets.v1beta1.Replication.UserManaged.replicas]
    * </pre>
    *
    * Protobuf type {@code google.cloud.secrets.v1beta1.Replication.UserManaged}
@@ -653,7 +662,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Represents a Replica for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Represents a Replica for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      * </pre>
      *
      * Protobuf type {@code google.cloud.secrets.v1beta1.Replication.UserManaged.Replica}
@@ -921,7 +931,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Represents a Replica for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Represents a Replica for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        * </pre>
        *
        * Protobuf type {@code google.cloud.secrets.v1beta1.Replication.UserManaged.Replica}
@@ -1302,7 +1313,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -1320,7 +1332,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -1340,7 +1353,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -1357,7 +1371,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -1375,7 +1390,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+     * Required. The list of Replicas for this
+     * [Secret][google.cloud.secrets.v1beta1.Secret].
      *
      * Cannot be empty.
      * </pre>
@@ -1557,8 +1573,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A replication policy that replicates the [Secret][google.cloud.secrets.v1beta1.Secret] payload into the
-     * locations specified in [Secret.replication.user_managed.replicas][]
+     * A replication policy that replicates the
+     * [Secret][google.cloud.secrets.v1beta1.Secret] payload into the locations
+     * specified in
+     * [Replication.UserManaged.replicas][google.cloud.secrets.v1beta1.Replication.UserManaged.replicas]
      * </pre>
      *
      * Protobuf type {@code google.cloud.secrets.v1beta1.Replication.UserManaged}
@@ -1815,7 +1833,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1836,7 +1855,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1856,7 +1876,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1877,7 +1898,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1904,7 +1926,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1930,7 +1953,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1957,7 +1981,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -1984,7 +2009,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2009,7 +2035,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2035,7 +2062,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2061,7 +2089,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2084,7 +2113,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2107,7 +2137,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2124,7 +2155,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2145,7 +2177,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2168,7 +2201,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2188,7 +2222,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2209,7 +2244,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The list of Replicas for this [Secret][google.cloud.secrets.v1beta1.Secret].
+       * Required. The list of Replicas for this
+       * [Secret][google.cloud.secrets.v1beta1.Secret].
        *
        * Cannot be empty.
        * </pre>
@@ -2362,7 +2398,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2377,7 +2414,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2395,7 +2433,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+   * replicated without any restrictions.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2414,7 +2453,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+   * into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -2429,7 +2469,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+   * into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -2447,7 +2488,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+   * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+   * into the locations specified.
    * </pre>
    *
    * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -2891,7 +2933,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2906,7 +2949,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2931,7 +2975,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2954,7 +2999,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -2974,7 +3020,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -3009,7 +3056,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -3034,7 +3082,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -3047,7 +3096,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -3068,7 +3118,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be replicated without any restrictions.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will automatically be
+     * replicated without any restrictions.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.Automatic automatic = 1;</code>
@@ -3107,7 +3158,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3122,7 +3174,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3147,7 +3200,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3170,7 +3224,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3190,7 +3245,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3225,7 +3281,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3250,7 +3307,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3263,7 +3321,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>
@@ -3284,7 +3343,8 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated into the locations specified.
+     * The [Secret][google.cloud.secrets.v1beta1.Secret] will only be replicated
+     * into the locations specified.
      * </pre>
      *
      * <code>.google.cloud.secrets.v1beta1.Replication.UserManaged user_managed = 2;</code>

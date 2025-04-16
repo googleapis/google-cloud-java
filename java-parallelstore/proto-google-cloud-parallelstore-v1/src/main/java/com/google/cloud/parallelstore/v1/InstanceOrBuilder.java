@@ -275,7 +275,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Deprecated 'daos_version' field.
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *
@@ -292,7 +292,7 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Deprecated 'daos_version' field.
+   * Output only. Deprecated 'daos_version' field.
    * Output only. The version of DAOS software running in the instance.
    * </pre>
    *

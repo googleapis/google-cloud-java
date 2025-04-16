@@ -261,7 +261,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -288,7 +288,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Output only. Identifier. The resource name of the EngineVersion
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -1006,7 +1006,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
      * </pre>
      *
      * <code>
@@ -1032,7 +1032,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
      * </pre>
      *
      * <code>
@@ -1058,7 +1058,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
      * </pre>
      *
      * <code>
@@ -1083,7 +1083,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
      * </pre>
      *
      * <code>
@@ -1104,7 +1104,7 @@ public final class EngineVersion extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Output only. Identifier. The resource name of the EngineVersion
      * format:
-     * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+     * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
      * </pre>
      *
      * <code>

@@ -237,7 +237,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>
@@ -263,7 +263,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The full path to the Instance resource in this API.
-   * format: "projects/{project}/locations/{location}/instances/{instance}"
+   * format: `projects/{project}/locations/{location}/instances/{instance}`
    * </pre>
    *
    * <code>
@@ -296,7 +296,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -315,7 +315,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -334,7 +334,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -354,7 +354,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    * <pre>
    * Optional. List of BigQuery tables. Union of tables will be taken if there
    * is more than one table. VPC-SC restrictions apply. format:
-   * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+   * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
    * over the latter due to its simplicity and the reduced risk of errors
    * `party_tables` and `datasets` must not be provided at the
    * same time
@@ -418,8 +418,8 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Optional. Is the request will not register the parties, just determine what
-   * woud happen.
+   * Optional. If the request will not register the parties, just determine what
+   * would happen.
    * </pre>
    *
    * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -944,7 +944,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -969,7 +969,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -994,7 +994,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -1018,7 +1018,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -1038,7 +1038,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The full path to the Instance resource in this API.
-     * format: "projects/{project}/locations/{location}/instances/{instance}"
+     * format: `projects/{project}/locations/{location}/instances/{instance}`
      * </pre>
      *
      * <code>
@@ -1074,7 +1074,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1094,7 +1094,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1113,7 +1113,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1133,7 +1133,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1153,7 +1153,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1181,7 +1181,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1208,7 +1208,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1232,7 +1232,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1255,7 +1255,7 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      * <pre>
      * Optional. List of BigQuery tables. Union of tables will be taken if there
      * is more than one table. VPC-SC restrictions apply. format:
-     * "bq://{project}.{bqDatasetID}.{bqTableID}" Use of `datasets` is preferred
+     * `bq://{project}.{bqDatasetID}.{bqTableID}` Use of `datasets` is preferred
      * over the latter due to its simplicity and the reduced risk of errors
      * `party_tables` and `datasets` must not be provided at the
      * same time
@@ -1389,8 +1389,8 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Is the request will not register the parties, just determine what
-     * woud happen.
+     * Optional. If the request will not register the parties, just determine what
+     * would happen.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1405,8 +1405,8 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Is the request will not register the parties, just determine what
-     * woud happen.
+     * Optional. If the request will not register the parties, just determine what
+     * would happen.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1425,8 +1425,8 @@ public final class ImportRegisteredPartiesRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * Optional. Is the request will not register the parties, just determine what
-     * woud happen.
+     * Optional. If the request will not register the parties, just determine what
+     * would happen.
      * </pre>
      *
      * <code>bool validate_only = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -30,7 +30,7 @@ public interface EngineConfigOrBuilder
    * <pre>
    * Output only. The resource name of the EngineConfig.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engine_config}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engine_config}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -44,7 +44,7 @@ public interface EngineConfigOrBuilder
    * <pre>
    * Output only. The resource name of the EngineConfig.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engine_config}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineConfigs/{engine_config}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -222,7 +222,7 @@ public interface EngineConfigOrBuilder
    * <pre>
    * Required. The resource name of the EngineVersion used in this model tuning.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
@@ -238,7 +238,7 @@ public interface EngineConfigOrBuilder
    * <pre>
    * Required. The resource name of the EngineVersion used in this model tuning.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/engineVersions/{engine_version}`
    * </pre>
    *
    * <code>
