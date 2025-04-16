@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.productstudio.v1alpha",
+  "libraryPackage": "com.google.shopping.merchant.productstudio.v1alpha",
+  "services": {
+    "TextSuggestionsService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "TextSuggestionsServiceClient",
+          "rpcs": {
+            "GenerateProductTextSuggestions": {
+              "methods": ["generateProductTextSuggestions", "generateProductTextSuggestions", "generateProductTextSuggestionsCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
