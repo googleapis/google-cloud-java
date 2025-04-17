@@ -144,6 +144,46 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return Whether the deploymentType field is set.
+   */
+  boolean hasDeploymentType();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return The deploymentType.
+   */
+  java.lang.String getDeploymentType();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the deployment strategy for this reservation.
+   * Check the DeploymentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string deployment_type = 396722292;</code>
+   *
+   * @return The bytes for deploymentType.
+   */
+  com.google.protobuf.ByteString getDeploymentTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An optional description of this resource. Provide this property when you create the resource.
    * </pre>
    *
@@ -238,6 +278,57 @@ public interface ReservationOrBuilder
    * @return The bytes for kind.
    */
   com.google.protobuf.ByteString getKindBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @return A list containing the linkedCommitments.
+   */
+  java.util.List<java.lang.String> getLinkedCommitmentsList();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @return The count of linkedCommitments.
+   */
+  int getLinkedCommitmentsCount();
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The linkedCommitments at the given index.
+   */
+  java.lang.String getLinkedCommitments(int index);
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
+   * </pre>
+   *
+   * <code>repeated string linked_commitments = 470957784;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the linkedCommitments at the given index.
+   */
+  com.google.protobuf.ByteString getLinkedCommitmentsBytes(int index);
 
   /**
    *

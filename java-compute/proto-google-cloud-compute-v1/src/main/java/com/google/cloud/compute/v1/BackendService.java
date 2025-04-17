@@ -47,6 +47,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     customResponseHeaders_ = com.google.protobuf.LazyStringArrayList.emptyList();
     description_ = "";
     edgeSecurityPolicy_ = "";
+    externalManagedMigrationState_ = "";
     fingerprint_ = "";
     healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
     ipAddressSelectionPolicy_ = "";
@@ -263,6 +264,140 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.BackendService.ExternalManagedMigrationState}
+   */
+  public enum ExternalManagedMigrationState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_EXTERNAL_MANAGED_MIGRATION_STATE = 0;</code>
+     */
+    UNDEFINED_EXTERNAL_MANAGED_MIGRATION_STATE(0),
+    /** <code>PREPARE = 399612135;</code> */
+    PREPARE(399612135),
+    /** <code>TEST_ALL_TRAFFIC = 79728882;</code> */
+    TEST_ALL_TRAFFIC(79728882),
+    /** <code>TEST_BY_PERCENTAGE = 513738389;</code> */
+    TEST_BY_PERCENTAGE(513738389),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_EXTERNAL_MANAGED_MIGRATION_STATE = 0;</code>
+     */
+    public static final int UNDEFINED_EXTERNAL_MANAGED_MIGRATION_STATE_VALUE = 0;
+    /** <code>PREPARE = 399612135;</code> */
+    public static final int PREPARE_VALUE = 399612135;
+    /** <code>TEST_ALL_TRAFFIC = 79728882;</code> */
+    public static final int TEST_ALL_TRAFFIC_VALUE = 79728882;
+    /** <code>TEST_BY_PERCENTAGE = 513738389;</code> */
+    public static final int TEST_BY_PERCENTAGE_VALUE = 513738389;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ExternalManagedMigrationState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ExternalManagedMigrationState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_EXTERNAL_MANAGED_MIGRATION_STATE;
+        case 399612135:
+          return PREPARE;
+        case 79728882:
+          return TEST_ALL_TRAFFIC;
+        case 513738389:
+          return TEST_BY_PERCENTAGE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ExternalManagedMigrationState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ExternalManagedMigrationState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ExternalManagedMigrationState>() {
+              public ExternalManagedMigrationState findValueByNumber(int number) {
+                return ExternalManagedMigrationState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ExternalManagedMigrationState[] VALUES = values();
+
+    public static ExternalManagedMigrationState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ExternalManagedMigrationState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.BackendService.ExternalManagedMigrationState)
+  }
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies a preference for traffic sent from the proxy to the backend (or from the client to the backend for proxyless gRPC). The possible values are: - IPV4_ONLY: Only send IPv4 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv4 health checks are used to check the health of the backends. This is the default setting. - PREFER_IPV6: Prioritize the connection to the endpoint's IPv6 address over its IPv4 address (provided there is a healthy IPv6 address). - IPV6_ONLY: Only send IPv6 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv6 health checks are used to check the health of the backends. This field is applicable to either: - Advanced global external Application Load Balancer (load balancing scheme EXTERNAL_MANAGED), - Regional external Application Load Balancer, - Internal proxy Network Load Balancer (load balancing scheme INTERNAL_MANAGED), - Regional internal Application Load Balancer (load balancing scheme INTERNAL_MANAGED), - Traffic Director with Envoy proxies and proxyless gRPC (load balancing scheme INTERNAL_SELF_MANAGED).
    * </pre>
    *
@@ -438,7 +573,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(1);
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(2);
     }
 
     private static final IpAddressSelectionPolicy[] VALUES = values();
@@ -670,7 +805,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(2);
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(3);
     }
 
     private static final LoadBalancingScheme[] VALUES = values();
@@ -967,7 +1102,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(3);
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(4);
     }
 
     private static final LocalityLbPolicy[] VALUES = values();
@@ -1225,7 +1360,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(4);
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(5);
     }
 
     private static final Protocol[] VALUES = values();
@@ -1537,7 +1672,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(5);
+      return com.google.cloud.compute.v1.BackendService.getDescriptor().getEnumTypes().get(6);
     }
 
     private static final SessionAffinity[] VALUES = values();
@@ -2425,6 +2560,108 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     return enableCDN_;
   }
 
+  public static final int EXTERNAL_MANAGED_MIGRATION_STATE_FIELD_NUMBER = 66947020;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object externalManagedMigrationState_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+   * Check the ExternalManagedMigrationState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string external_managed_migration_state = 66947020;</code>
+   *
+   * @return Whether the externalManagedMigrationState field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalManagedMigrationState() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+   * Check the ExternalManagedMigrationState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string external_managed_migration_state = 66947020;</code>
+   *
+   * @return The externalManagedMigrationState.
+   */
+  @java.lang.Override
+  public java.lang.String getExternalManagedMigrationState() {
+    java.lang.Object ref = externalManagedMigrationState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      externalManagedMigrationState_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+   * Check the ExternalManagedMigrationState enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string external_managed_migration_state = 66947020;</code>
+   *
+   * @return The bytes for externalManagedMigrationState.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getExternalManagedMigrationStateBytes() {
+    java.lang.Object ref = externalManagedMigrationState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      externalManagedMigrationState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int EXTERNAL_MANAGED_MIGRATION_TESTING_PERCENTAGE_FIELD_NUMBER = 507232462;
+  private float externalManagedMigrationTestingPercentage_ = 0F;
+  /**
+   *
+   *
+   * <pre>
+   * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+   * </pre>
+   *
+   * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+   *
+   * @return Whether the externalManagedMigrationTestingPercentage field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalManagedMigrationTestingPercentage() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+   * </pre>
+   *
+   * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+   *
+   * @return The externalManagedMigrationTestingPercentage.
+   */
+  @java.lang.Override
+  public float getExternalManagedMigrationTestingPercentage() {
+    return externalManagedMigrationTestingPercentage_;
+  }
+
   public static final int FAILOVER_POLICY_FIELD_NUMBER = 105658655;
   private com.google.cloud.compute.v1.BackendServiceFailoverPolicy failoverPolicy_;
   /**
@@ -2442,7 +2679,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFailoverPolicy() {
-    return ((bitField0_ & 0x00000800) != 0);
+    return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    *
@@ -2499,7 +2736,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasFingerprint() {
-    return ((bitField0_ & 0x00001000) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    *
@@ -2563,7 +2800,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasHaPolicy() {
-    return ((bitField0_ & 0x00002000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    *
@@ -2677,7 +2914,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIap() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    *
@@ -2723,7 +2960,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasId() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    *
@@ -2759,7 +2996,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasIpAddressSelectionPolicy() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    *
@@ -2827,7 +3064,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasKind() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    *
@@ -2894,7 +3131,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLoadBalancingScheme() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    *
@@ -3051,7 +3288,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocalityLbPolicy() {
-    return ((bitField0_ & 0x00080000) != 0);
+    return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    *
@@ -3117,7 +3354,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLogConfig() {
-    return ((bitField0_ & 0x00100000) != 0);
+    return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    *
@@ -3167,7 +3404,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMaxStreamDuration() {
-    return ((bitField0_ & 0x00200000) != 0);
+    return ((bitField0_ & 0x00800000) != 0);
   }
   /**
    *
@@ -3321,7 +3558,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00400000) != 0);
+    return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    *
@@ -3387,7 +3624,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasNetwork() {
-    return ((bitField0_ & 0x00800000) != 0);
+    return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    *
@@ -3451,7 +3688,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOutlierDetection() {
-    return ((bitField0_ & 0x01000000) != 0);
+    return ((bitField0_ & 0x04000000) != 0);
   }
   /**
    *
@@ -3501,7 +3738,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPort() {
-    return ((bitField0_ & 0x02000000) != 0);
+    return ((bitField0_ & 0x08000000) != 0);
   }
   /**
    *
@@ -3536,7 +3773,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPortName() {
-    return ((bitField0_ & 0x04000000) != 0);
+    return ((bitField0_ & 0x10000000) != 0);
   }
   /**
    *
@@ -3603,7 +3840,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProtocol() {
-    return ((bitField0_ & 0x08000000) != 0);
+    return ((bitField0_ & 0x20000000) != 0);
   }
   /**
    *
@@ -3671,7 +3908,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasRegion() {
-    return ((bitField0_ & 0x10000000) != 0);
+    return ((bitField0_ & 0x40000000) != 0);
   }
   /**
    *
@@ -3737,7 +3974,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSecurityPolicy() {
-    return ((bitField0_ & 0x20000000) != 0);
+    return ((bitField0_ & 0x80000000) != 0);
   }
   /**
    *
@@ -3801,7 +4038,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSecuritySettings() {
-    return ((bitField0_ & 0x40000000) != 0);
+    return ((bitField1_ & 0x00000001) != 0);
   }
   /**
    *
@@ -3853,7 +4090,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x80000000) != 0);
+    return ((bitField1_ & 0x00000002) != 0);
   }
   /**
    *
@@ -3983,7 +4220,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasServiceLbPolicy() {
-    return ((bitField1_ & 0x00000001) != 0);
+    return ((bitField1_ & 0x00000004) != 0);
   }
   /**
    *
@@ -4050,7 +4287,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSessionAffinity() {
-    return ((bitField1_ & 0x00000002) != 0);
+    return ((bitField1_ & 0x00000008) != 0);
   }
   /**
    *
@@ -4118,7 +4355,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasStrongSessionAffinityCookie() {
-    return ((bitField1_ & 0x00000004) != 0);
+    return ((bitField1_ & 0x00000010) != 0);
   }
   /**
    *
@@ -4173,7 +4410,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasSubsetting() {
-    return ((bitField1_ & 0x00000008) != 0);
+    return ((bitField1_ & 0x00000020) != 0);
   }
   /**
    *
@@ -4223,7 +4460,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTimeoutSec() {
-    return ((bitField1_ & 0x00000010) != 0);
+    return ((bitField1_ & 0x00000040) != 0);
   }
   /**
    *
@@ -4326,22 +4563,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeUInt64(3355, id_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       output.writeMessage(104024, getIap());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(905883, getConsistentHash());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       output.writeInt32(3446913, port_);
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
@@ -4356,39 +4593,43 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000200) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41036943, edgeSecurityPolicy_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       output.writeMessage(61428376, getMaxStreamDuration());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 66947020, externalManagedMigrationState_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 77600840, ipAddressSelectionPolicy_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       output.writeInt32(79994995, timeoutSec_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 84577944, protocol_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 94848785, serviceLbPolicy_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 95520988, compressionMode_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       output.writeMessage(105658655, getFailoverPolicy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 131431487, localityLbPolicy_);
     }
     for (int i = 0; i < serviceBindings_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 133581016, serviceBindings_.getRaw(i));
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     for (int i = 0; i < localityLbPolicies_.size(); i++) {
@@ -4397,31 +4638,31 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(143994969, getConnectionTrackingPolicy());
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 171082513, securityPolicy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(213976452, getCdnPolicy());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       output.writeMessage(238195722, getStrongSessionAffinityCookie());
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(250733499, enableCDN_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       output.writeMessage(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       output.writeMessage(354625086, getOutlierDetection());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -4447,25 +4688,28 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 448370606, healthChecks_.getRaw(i));
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       output.writeMessage(450283536, getSubsetting());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(461096747, getConnectionDraining());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 463888561, sessionAffinity_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       output.writeMessage(478649922, getSecuritySettings());
+    }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      output.writeFloat(507232462, externalManagedMigrationTestingPercentage_);
     }
     for (int i = 0; i < backends_.size(); i++) {
       output.writeMessage(510839903, backends_.get(i));
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       output.writeMessage(519879480, getHaPolicy());
     }
     getUnknownFields().writeTo(output);
@@ -4477,22 +4721,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3355, id_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(104024, getIap());
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(905883, getConsistentHash());
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
-    if (((bitField0_ & 0x00400000) != 0)) {
+    if (((bitField0_ & 0x01000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
-    if (((bitField0_ & 0x02000000) != 0)) {
+    if (((bitField0_ & 0x08000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(3446913, port_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -4521,36 +4765,41 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(41036943, edgeSecurityPolicy_);
     }
-    if (((bitField0_ & 0x04000000) != 0)) {
+    if (((bitField0_ & 0x10000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
-    if (((bitField0_ & 0x00200000) != 0)) {
+    if (((bitField0_ & 0x00800000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               61428376, getMaxStreamDuration());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(
+              66947020, externalManagedMigrationState_);
+    }
+    if (((bitField0_ & 0x00040000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               77600840, ipAddressSelectionPolicy_);
     }
-    if (((bitField1_ & 0x00000010) != 0)) {
+    if (((bitField1_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(79994995, timeoutSec_);
     }
-    if (((bitField0_ & 0x08000000) != 0)) {
+    if (((bitField0_ & 0x20000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(84577944, protocol_);
     }
-    if (((bitField1_ & 0x00000001) != 0)) {
+    if (((bitField1_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(94848785, serviceLbPolicy_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(95520988, compressionMode_);
     }
-    if (((bitField0_ & 0x00000800) != 0)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(105658655, getFailoverPolicy());
     }
-    if (((bitField0_ & 0x00080000) != 0)) {
+    if (((bitField0_ & 0x00200000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(131431487, localityLbPolicy_);
     }
@@ -4562,7 +4811,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getServiceBindingsList().size();
     }
-    if (((bitField0_ & 0x10000000) != 0)) {
+    if (((bitField0_ & 0x40000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     for (int i = 0; i < localityLbPolicies_.size(); i++) {
@@ -4575,19 +4824,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               143994969, getConnectionTrackingPolicy());
     }
-    if (((bitField0_ & 0x20000000) != 0)) {
+    if (((bitField0_ & 0x80000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(171082513, securityPolicy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(213976452, getCdnPolicy());
     }
-    if (((bitField0_ & 0x00800000) != 0)) {
+    if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
-    if (((bitField0_ & 0x00001000) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
-    if (((bitField1_ & 0x00000004) != 0)) {
+    if (((bitField1_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               238195722, getStrongSessionAffinityCookie());
@@ -4595,15 +4844,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(250733499, enableCDN_);
     }
-    if (((bitField0_ & 0x00100000) != 0)) {
+    if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(351299741, getLogConfig());
     }
-    if (((bitField0_ & 0x01000000) != 0)) {
+    if (((bitField0_ & 0x04000000) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               354625086, getOutlierDetection());
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00100000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
@@ -4642,10 +4891,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 5 * getHealthChecksList().size();
     }
-    if (((bitField1_ & 0x00000008) != 0)) {
+    if (((bitField1_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(450283536, getSubsetting());
     }
-    if (((bitField0_ & 0x80000000) != 0)) {
+    if (((bitField1_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
@@ -4653,18 +4902,23 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               461096747, getConnectionDraining());
     }
-    if (((bitField1_ & 0x00000002) != 0)) {
+    if (((bitField1_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(463888561, sessionAffinity_);
     }
-    if (((bitField0_ & 0x40000000) != 0)) {
+    if (((bitField1_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               478649922, getSecuritySettings());
     }
+    if (((bitField0_ & 0x00001000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeFloatSize(
+              507232462, externalManagedMigrationTestingPercentage_);
+    }
     for (int i = 0; i < backends_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(510839903, backends_.get(i));
     }
-    if (((bitField0_ & 0x00002000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(519879480, getHaPolicy());
     }
     size += getUnknownFields().getSerializedSize();
@@ -4730,6 +4984,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableCDN() != other.hasEnableCDN()) return false;
     if (hasEnableCDN()) {
       if (getEnableCDN() != other.getEnableCDN()) return false;
+    }
+    if (hasExternalManagedMigrationState() != other.hasExternalManagedMigrationState())
+      return false;
+    if (hasExternalManagedMigrationState()) {
+      if (!getExternalManagedMigrationState().equals(other.getExternalManagedMigrationState()))
+        return false;
+    }
+    if (hasExternalManagedMigrationTestingPercentage()
+        != other.hasExternalManagedMigrationTestingPercentage()) return false;
+    if (hasExternalManagedMigrationTestingPercentage()) {
+      if (java.lang.Float.floatToIntBits(getExternalManagedMigrationTestingPercentage())
+          != java.lang.Float.floatToIntBits(other.getExternalManagedMigrationTestingPercentage()))
+        return false;
     }
     if (hasFailoverPolicy() != other.hasFailoverPolicy()) return false;
     if (hasFailoverPolicy()) {
@@ -4911,6 +5178,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     if (hasEnableCDN()) {
       hash = (37 * hash) + ENABLE_C_D_N_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableCDN());
+    }
+    if (hasExternalManagedMigrationState()) {
+      hash = (37 * hash) + EXTERNAL_MANAGED_MIGRATION_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalManagedMigrationState().hashCode();
+    }
+    if (hasExternalManagedMigrationTestingPercentage()) {
+      hash = (37 * hash) + EXTERNAL_MANAGED_MIGRATION_TESTING_PERCENTAGE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + java.lang.Float.floatToIntBits(getExternalManagedMigrationTestingPercentage());
     }
     if (hasFailoverPolicy()) {
       hash = (37 * hash) + FAILOVER_POLICY_FIELD_NUMBER;
@@ -5271,6 +5548,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       description_ = "";
       edgeSecurityPolicy_ = "";
       enableCDN_ = false;
+      externalManagedMigrationState_ = "";
+      externalManagedMigrationTestingPercentage_ = 0F;
       failoverPolicy_ = null;
       if (failoverPolicyBuilder_ != null) {
         failoverPolicyBuilder_.dispose();
@@ -5298,7 +5577,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         localityLbPolicies_ = null;
         localityLbPoliciesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       localityLbPolicy_ = "";
       logConfig_ = null;
       if (logConfigBuilder_ != null) {
@@ -5349,7 +5628,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         usedBy_ = null;
         usedByBuilder_.clear();
       }
-      bitField1_ = (bitField1_ & ~0x00002000);
+      bitField1_ = (bitField1_ & ~0x00008000);
       return this;
     }
 
@@ -5408,18 +5687,18 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         result.customMetrics_ = customMetricsBuilder_.build();
       }
       if (localityLbPoliciesBuilder_ == null) {
-        if (((bitField0_ & 0x01000000) != 0)) {
+        if (((bitField0_ & 0x04000000) != 0)) {
           localityLbPolicies_ = java.util.Collections.unmodifiableList(localityLbPolicies_);
-          bitField0_ = (bitField0_ & ~0x01000000);
+          bitField0_ = (bitField0_ & ~0x04000000);
         }
         result.localityLbPolicies_ = localityLbPolicies_;
       } else {
         result.localityLbPolicies_ = localityLbPoliciesBuilder_.build();
       }
       if (usedByBuilder_ == null) {
-        if (((bitField1_ & 0x00002000) != 0)) {
+        if (((bitField1_ & 0x00008000) != 0)) {
           usedBy_ = java.util.Collections.unmodifiableList(usedBy_);
-          bitField1_ = (bitField1_ & ~0x00002000);
+          bitField1_ = (bitField1_ & ~0x00008000);
         }
         result.usedBy_ = usedBy_;
       } else {
@@ -5491,72 +5770,72 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.failoverPolicy_ =
-            failoverPolicyBuilder_ == null ? failoverPolicy_ : failoverPolicyBuilder_.build();
+        result.externalManagedMigrationState_ = externalManagedMigrationState_;
         to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
-        result.fingerprint_ = fingerprint_;
+        result.externalManagedMigrationTestingPercentage_ =
+            externalManagedMigrationTestingPercentage_;
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.haPolicy_ = haPolicyBuilder_ == null ? haPolicy_ : haPolicyBuilder_.build();
+        result.failoverPolicy_ =
+            failoverPolicyBuilder_ == null ? failoverPolicy_ : failoverPolicyBuilder_.build();
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.fingerprint_ = fingerprint_;
+        to_bitField0_ |= 0x00004000;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.haPolicy_ = haPolicyBuilder_ == null ? haPolicy_ : haPolicyBuilder_.build();
+        to_bitField0_ |= 0x00008000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         healthChecks_.makeImmutable();
         result.healthChecks_ = healthChecks_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.iap_ = iapBuilder_ == null ? iap_ : iapBuilder_.build();
-        to_bitField0_ |= 0x00004000;
-      }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
-        result.id_ = id_;
-        to_bitField0_ |= 0x00008000;
-      }
       if (((from_bitField0_ & 0x00200000) != 0)) {
-        result.ipAddressSelectionPolicy_ = ipAddressSelectionPolicy_;
+        result.iap_ = iapBuilder_ == null ? iap_ : iapBuilder_.build();
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
-        result.kind_ = kind_;
+        result.id_ = id_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
-        result.loadBalancingScheme_ = loadBalancingScheme_;
+        result.ipAddressSelectionPolicy_ = ipAddressSelectionPolicy_;
         to_bitField0_ |= 0x00040000;
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
-        result.localityLbPolicy_ = localityLbPolicy_;
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.kind_ = kind_;
         to_bitField0_ |= 0x00080000;
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
-        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.loadBalancingScheme_ = loadBalancingScheme_;
         to_bitField0_ |= 0x00100000;
       }
       if (((from_bitField0_ & 0x08000000) != 0)) {
+        result.localityLbPolicy_ = localityLbPolicy_;
+        to_bitField0_ |= 0x00200000;
+      }
+      if (((from_bitField0_ & 0x10000000) != 0)) {
+        result.logConfig_ = logConfigBuilder_ == null ? logConfig_ : logConfigBuilder_.build();
+        to_bitField0_ |= 0x00400000;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
         result.maxStreamDuration_ =
             maxStreamDurationBuilder_ == null
                 ? maxStreamDuration_
                 : maxStreamDurationBuilder_.build();
-        to_bitField0_ |= 0x00200000;
+        to_bitField0_ |= 0x00800000;
       }
-      if (((from_bitField0_ & 0x10000000) != 0)) {
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.metadatas_ = internalGetMetadatas();
         result.metadatas_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x20000000) != 0)) {
-        result.name_ = name_;
-        to_bitField0_ |= 0x00400000;
-      }
-      if (((from_bitField0_ & 0x40000000) != 0)) {
-        result.network_ = network_;
-        to_bitField0_ |= 0x00800000;
-      }
       if (((from_bitField0_ & 0x80000000) != 0)) {
-        result.outlierDetection_ =
-            outlierDetectionBuilder_ == null ? outlierDetection_ : outlierDetectionBuilder_.build();
+        result.name_ = name_;
         to_bitField0_ |= 0x01000000;
       }
       result.bitField0_ |= to_bitField0_;
@@ -5566,61 +5845,70 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       int from_bitField1_ = bitField1_;
       int to_bitField0_ = 0;
       if (((from_bitField1_ & 0x00000001) != 0)) {
-        result.port_ = port_;
+        result.network_ = network_;
         to_bitField0_ |= 0x02000000;
       }
       if (((from_bitField1_ & 0x00000002) != 0)) {
-        result.portName_ = portName_;
+        result.outlierDetection_ =
+            outlierDetectionBuilder_ == null ? outlierDetection_ : outlierDetectionBuilder_.build();
         to_bitField0_ |= 0x04000000;
       }
       if (((from_bitField1_ & 0x00000004) != 0)) {
-        result.protocol_ = protocol_;
+        result.port_ = port_;
         to_bitField0_ |= 0x08000000;
       }
       if (((from_bitField1_ & 0x00000008) != 0)) {
-        result.region_ = region_;
+        result.portName_ = portName_;
         to_bitField0_ |= 0x10000000;
       }
       if (((from_bitField1_ & 0x00000010) != 0)) {
-        result.securityPolicy_ = securityPolicy_;
+        result.protocol_ = protocol_;
         to_bitField0_ |= 0x20000000;
       }
       if (((from_bitField1_ & 0x00000020) != 0)) {
-        result.securitySettings_ =
-            securitySettingsBuilder_ == null ? securitySettings_ : securitySettingsBuilder_.build();
+        result.region_ = region_;
         to_bitField0_ |= 0x40000000;
       }
       if (((from_bitField1_ & 0x00000040) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.securityPolicy_ = securityPolicy_;
         to_bitField0_ |= 0x80000000;
       }
+      int to_bitField1_ = 0;
       if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.securitySettings_ =
+            securitySettingsBuilder_ == null ? securitySettings_ : securitySettingsBuilder_.build();
+        to_bitField1_ |= 0x00000001;
+      }
+      if (((from_bitField1_ & 0x00000100) != 0)) {
+        result.selfLink_ = selfLink_;
+        to_bitField1_ |= 0x00000002;
+      }
+      if (((from_bitField1_ & 0x00000200) != 0)) {
         serviceBindings_.makeImmutable();
         result.serviceBindings_ = serviceBindings_;
       }
-      int to_bitField1_ = 0;
-      if (((from_bitField1_ & 0x00000100) != 0)) {
-        result.serviceLbPolicy_ = serviceLbPolicy_;
-        to_bitField1_ |= 0x00000001;
-      }
-      if (((from_bitField1_ & 0x00000200) != 0)) {
-        result.sessionAffinity_ = sessionAffinity_;
-        to_bitField1_ |= 0x00000002;
-      }
       if (((from_bitField1_ & 0x00000400) != 0)) {
+        result.serviceLbPolicy_ = serviceLbPolicy_;
+        to_bitField1_ |= 0x00000004;
+      }
+      if (((from_bitField1_ & 0x00000800) != 0)) {
+        result.sessionAffinity_ = sessionAffinity_;
+        to_bitField1_ |= 0x00000008;
+      }
+      if (((from_bitField1_ & 0x00001000) != 0)) {
         result.strongSessionAffinityCookie_ =
             strongSessionAffinityCookieBuilder_ == null
                 ? strongSessionAffinityCookie_
                 : strongSessionAffinityCookieBuilder_.build();
-        to_bitField1_ |= 0x00000004;
-      }
-      if (((from_bitField1_ & 0x00000800) != 0)) {
-        result.subsetting_ = subsettingBuilder_ == null ? subsetting_ : subsettingBuilder_.build();
-        to_bitField1_ |= 0x00000008;
-      }
-      if (((from_bitField1_ & 0x00001000) != 0)) {
-        result.timeoutSec_ = timeoutSec_;
         to_bitField1_ |= 0x00000010;
+      }
+      if (((from_bitField1_ & 0x00002000) != 0)) {
+        result.subsetting_ = subsettingBuilder_ == null ? subsetting_ : subsettingBuilder_.build();
+        to_bitField1_ |= 0x00000020;
+      }
+      if (((from_bitField1_ & 0x00004000) != 0)) {
+        result.timeoutSec_ = timeoutSec_;
+        to_bitField1_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
       result.bitField1_ |= to_bitField1_;
@@ -5786,12 +6074,21 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEnableCDN()) {
         setEnableCDN(other.getEnableCDN());
       }
+      if (other.hasExternalManagedMigrationState()) {
+        externalManagedMigrationState_ = other.externalManagedMigrationState_;
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      if (other.hasExternalManagedMigrationTestingPercentage()) {
+        setExternalManagedMigrationTestingPercentage(
+            other.getExternalManagedMigrationTestingPercentage());
+      }
       if (other.hasFailoverPolicy()) {
         mergeFailoverPolicy(other.getFailoverPolicy());
       }
       if (other.hasFingerprint()) {
         fingerprint_ = other.fingerprint_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasHaPolicy()) {
@@ -5800,7 +6097,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!other.healthChecks_.isEmpty()) {
         if (healthChecks_.isEmpty()) {
           healthChecks_ = other.healthChecks_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00100000;
         } else {
           ensureHealthChecksIsMutable();
           healthChecks_.addAll(other.healthChecks_);
@@ -5815,24 +6112,24 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasIpAddressSelectionPolicy()) {
         ipAddressSelectionPolicy_ = other.ipAddressSelectionPolicy_;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
       }
       if (other.hasKind()) {
         kind_ = other.kind_;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         onChanged();
       }
       if (other.hasLoadBalancingScheme()) {
         loadBalancingScheme_ = other.loadBalancingScheme_;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
       }
       if (localityLbPoliciesBuilder_ == null) {
         if (!other.localityLbPolicies_.isEmpty()) {
           if (localityLbPolicies_.isEmpty()) {
             localityLbPolicies_ = other.localityLbPolicies_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
           } else {
             ensureLocalityLbPoliciesIsMutable();
             localityLbPolicies_.addAll(other.localityLbPolicies_);
@@ -5845,7 +6142,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             localityLbPoliciesBuilder_.dispose();
             localityLbPoliciesBuilder_ = null;
             localityLbPolicies_ = other.localityLbPolicies_;
-            bitField0_ = (bitField0_ & ~0x01000000);
+            bitField0_ = (bitField0_ & ~0x04000000);
             localityLbPoliciesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getLocalityLbPoliciesFieldBuilder()
@@ -5857,7 +6154,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasLocalityLbPolicy()) {
         localityLbPolicy_ = other.localityLbPolicy_;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x08000000;
         onChanged();
       }
       if (other.hasLogConfig()) {
@@ -5867,15 +6164,15 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         mergeMaxStreamDuration(other.getMaxStreamDuration());
       }
       internalGetMutableMetadatas().mergeFrom(other.internalGetMetadatas());
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x80000000;
         onChanged();
       }
       if (other.hasNetwork()) {
         network_ = other.network_;
-        bitField0_ |= 0x40000000;
+        bitField1_ |= 0x00000001;
         onChanged();
       }
       if (other.hasOutlierDetection()) {
@@ -5886,22 +6183,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPortName()) {
         portName_ = other.portName_;
-        bitField1_ |= 0x00000002;
+        bitField1_ |= 0x00000008;
         onChanged();
       }
       if (other.hasProtocol()) {
         protocol_ = other.protocol_;
-        bitField1_ |= 0x00000004;
+        bitField1_ |= 0x00000010;
         onChanged();
       }
       if (other.hasRegion()) {
         region_ = other.region_;
-        bitField1_ |= 0x00000008;
+        bitField1_ |= 0x00000020;
         onChanged();
       }
       if (other.hasSecurityPolicy()) {
         securityPolicy_ = other.securityPolicy_;
-        bitField1_ |= 0x00000010;
+        bitField1_ |= 0x00000040;
         onChanged();
       }
       if (other.hasSecuritySettings()) {
@@ -5909,13 +6206,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField1_ |= 0x00000040;
+        bitField1_ |= 0x00000100;
         onChanged();
       }
       if (!other.serviceBindings_.isEmpty()) {
         if (serviceBindings_.isEmpty()) {
           serviceBindings_ = other.serviceBindings_;
-          bitField1_ |= 0x00000080;
+          bitField1_ |= 0x00000200;
         } else {
           ensureServiceBindingsIsMutable();
           serviceBindings_.addAll(other.serviceBindings_);
@@ -5924,12 +6221,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasServiceLbPolicy()) {
         serviceLbPolicy_ = other.serviceLbPolicy_;
-        bitField1_ |= 0x00000100;
+        bitField1_ |= 0x00000400;
         onChanged();
       }
       if (other.hasSessionAffinity()) {
         sessionAffinity_ = other.sessionAffinity_;
-        bitField1_ |= 0x00000200;
+        bitField1_ |= 0x00000800;
         onChanged();
       }
       if (other.hasStrongSessionAffinityCookie()) {
@@ -5945,7 +6242,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         if (!other.usedBy_.isEmpty()) {
           if (usedBy_.isEmpty()) {
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00002000);
+            bitField1_ = (bitField1_ & ~0x00008000);
           } else {
             ensureUsedByIsMutable();
             usedBy_.addAll(other.usedBy_);
@@ -5958,7 +6255,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             usedByBuilder_.dispose();
             usedByBuilder_ = null;
             usedBy_ = other.usedBy_;
-            bitField1_ = (bitField1_ & ~0x00002000);
+            bitField1_ = (bitField1_ & ~0x00008000);
             usedByBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getUsedByFieldBuilder()
@@ -5997,13 +6294,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 26840:
               {
                 id_ = input.readUInt64();
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 26840
             case 832194:
               {
                 input.readMessage(getIapFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 832194
             case 7247066:
@@ -6015,19 +6312,19 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 26336418:
               {
                 kind_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 26336418
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x80000000;
                 break;
               } // case 26989658
             case 27575304:
               {
                 port_ = input.readInt32();
-                bitField1_ |= 0x00000001;
+                bitField1_ |= 0x00000004;
                 break;
               } // case 27575304
             case 68114722:
@@ -6039,7 +6336,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableMetadatas()
                     .getMutableMap()
                     .put(metadatas__.getKey(), metadatas__.getValue());
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 68114722
             case 223823938:
@@ -6064,38 +6361,44 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 332274762:
               {
                 portName_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000002;
+                bitField1_ |= 0x00000008;
                 break;
               } // case 332274762
             case 491427010:
               {
                 input.readMessage(
                     getMaxStreamDurationFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x08000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 491427010
+            case 535576162:
+              {
+                externalManagedMigrationState_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 535576162
             case 620806722:
               {
                 ipAddressSelectionPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 620806722
             case 639959960:
               {
                 timeoutSec_ = input.readInt32();
-                bitField1_ |= 0x00001000;
+                bitField1_ |= 0x00004000;
                 break;
               } // case 639959960
             case 676623554:
               {
                 protocol_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000004;
+                bitField1_ |= 0x00000010;
                 break;
               } // case 676623554
             case 758790282:
               {
                 serviceLbPolicy_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000100;
+                bitField1_ |= 0x00000400;
                 break;
               } // case 758790282
             case 764167906:
@@ -6107,13 +6410,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 845269242:
               {
                 input.readMessage(getFailoverPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 845269242
             case 1051451898:
               {
                 localityLbPolicy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 1051451898
             case 1068648130:
@@ -6126,7 +6429,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 1111570338:
               {
                 region_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000008;
+                bitField1_ |= 0x00000020;
                 break;
               } // case 1111570338
             case 1127860458:
@@ -6154,7 +6457,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 1368660106:
               {
                 securityPolicy_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000010;
+                bitField1_ |= 0x00000040;
                 break;
               } // case 1368660106
             case 1711811618:
@@ -6166,20 +6469,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case 1862979954:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x40000000;
+                bitField1_ |= 0x00000001;
                 break;
               } // case 1862979954
             case 1877428002:
               {
                 fingerprint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 1877428002
             case 1905565778:
               {
                 input.readMessage(
                     getStrongSessionAffinityCookieFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000400;
+                bitField1_ |= 0x00001000;
                 break;
               } // case 1905565778
             case 2005867992:
@@ -6191,20 +6494,20 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -1484569366:
               {
                 input.readMessage(getLogConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case -1484569366
             case -1457966606:
               {
                 input.readMessage(
                     getOutlierDetectionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x80000000;
+                bitField1_ |= 0x00000002;
                 break;
               } // case -1457966606
             case -1383845342:
               {
                 loadBalancingScheme_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case -1383845342
             case -1334991664:
@@ -6270,13 +6573,13 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -692699006:
               {
                 input.readMessage(getSubsettingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000800;
+                bitField1_ |= 0x00002000;
                 break;
               } // case -692699006
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000040;
+                bitField1_ |= 0x00000100;
                 break;
               } // case -645248918
             case -606193318:
@@ -6289,16 +6592,22 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -583858806:
               {
                 sessionAffinity_ = input.readStringRequireUtf8();
-                bitField1_ |= 0x00000200;
+                bitField1_ |= 0x00000800;
                 break;
               } // case -583858806
             case -465767918:
               {
                 input.readMessage(
                     getSecuritySettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField1_ |= 0x00000020;
+                bitField1_ |= 0x00000080;
                 break;
               } // case -465767918
+            case -237107595:
+              {
+                externalManagedMigrationTestingPercentage_ = input.readFloat();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case -237107595
             case -208248070:
               {
                 com.google.cloud.compute.v1.Backend m =
@@ -6315,7 +6624,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
             case -135931454:
               {
                 input.readMessage(getHaPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -135931454
             default:
@@ -9008,6 +9317,200 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object externalManagedMigrationState_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @return Whether the externalManagedMigrationState field is set.
+     */
+    public boolean hasExternalManagedMigrationState() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @return The externalManagedMigrationState.
+     */
+    public java.lang.String getExternalManagedMigrationState() {
+      java.lang.Object ref = externalManagedMigrationState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        externalManagedMigrationState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @return The bytes for externalManagedMigrationState.
+     */
+    public com.google.protobuf.ByteString getExternalManagedMigrationStateBytes() {
+      java.lang.Object ref = externalManagedMigrationState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        externalManagedMigrationState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @param value The externalManagedMigrationState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalManagedMigrationState(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      externalManagedMigrationState_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalManagedMigrationState() {
+      externalManagedMigrationState_ = getDefaultInstance().getExternalManagedMigrationState();
+      bitField0_ = (bitField0_ & ~0x00008000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the canary migration state. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic by percentage using externalManagedMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
+     * Check the ExternalManagedMigrationState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string external_managed_migration_state = 66947020;</code>
+     *
+     * @param value The bytes for externalManagedMigrationState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalManagedMigrationStateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      externalManagedMigrationState_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private float externalManagedMigrationTestingPercentage_;
+    /**
+     *
+     *
+     * <pre>
+     * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+     * </pre>
+     *
+     * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+     *
+     * @return Whether the externalManagedMigrationTestingPercentage field is set.
+     */
+    @java.lang.Override
+    public boolean hasExternalManagedMigrationTestingPercentage() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+     * </pre>
+     *
+     * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+     *
+     * @return The externalManagedMigrationTestingPercentage.
+     */
+    @java.lang.Override
+    public float getExternalManagedMigrationTestingPercentage() {
+      return externalManagedMigrationTestingPercentage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+     * </pre>
+     *
+     * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+     *
+     * @param value The externalManagedMigrationTestingPercentage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExternalManagedMigrationTestingPercentage(float value) {
+
+      externalManagedMigrationTestingPercentage_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Determines the fraction of requests that should be processed by the Global external Application Load Balancer. The value of this field must be in the range [0, 100]. Session affinity options will slightly affect this routing behavior, for more details, see: Session Affinity. This value can only be set if the loadBalancingScheme in the BackendService is set to EXTERNAL (when using the classic Application Load Balancer) and the migration state is TEST_BY_PERCENTAGE.
+     * </pre>
+     *
+     * <code>optional float external_managed_migration_testing_percentage = 507232462;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExternalManagedMigrationTestingPercentage() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      externalManagedMigrationTestingPercentage_ = 0F;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.compute.v1.BackendServiceFailoverPolicy failoverPolicy_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.BackendServiceFailoverPolicy,
@@ -9028,7 +9531,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the failoverPolicy field is set.
      */
     public boolean hasFailoverPolicy() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -9073,7 +9576,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         failoverPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9095,7 +9598,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         failoverPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -9113,7 +9616,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFailoverPolicy(
         com.google.cloud.compute.v1.BackendServiceFailoverPolicy value) {
       if (failoverPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && failoverPolicy_ != null
             && failoverPolicy_
                 != com.google.cloud.compute.v1.BackendServiceFailoverPolicy.getDefaultInstance()) {
@@ -9125,7 +9628,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         failoverPolicyBuilder_.mergeFrom(value);
       }
       if (failoverPolicy_ != null) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       return this;
@@ -9142,7 +9645,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFailoverPolicy() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       failoverPolicy_ = null;
       if (failoverPolicyBuilder_ != null) {
         failoverPolicyBuilder_.dispose();
@@ -9164,7 +9667,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.BackendServiceFailoverPolicy.Builder
         getFailoverPolicyBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getFailoverPolicyFieldBuilder().getBuilder();
     }
@@ -9230,7 +9733,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fingerprint field is set.
      */
     public boolean hasFingerprint() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      *
@@ -9293,7 +9796,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       fingerprint_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9310,7 +9813,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearFingerprint() {
       fingerprint_ = getDefaultInstance().getFingerprint();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -9332,7 +9835,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       fingerprint_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -9355,7 +9858,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the haPolicy field is set.
      */
     public boolean hasHaPolicy() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      *
@@ -9395,7 +9898,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         haPolicyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9415,7 +9918,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         haPolicyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -9430,7 +9933,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeHaPolicy(com.google.cloud.compute.v1.BackendServiceHAPolicy value) {
       if (haPolicyBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)
+        if (((bitField0_ & 0x00080000) != 0)
             && haPolicy_ != null
             && haPolicy_
                 != com.google.cloud.compute.v1.BackendServiceHAPolicy.getDefaultInstance()) {
@@ -9442,7 +9945,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         haPolicyBuilder_.mergeFrom(value);
       }
       if (haPolicy_ != null) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       return this;
@@ -9457,7 +9960,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BackendServiceHAPolicy ha_policy = 519879480;</code>
      */
     public Builder clearHaPolicy() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       haPolicy_ = null;
       if (haPolicyBuilder_ != null) {
         haPolicyBuilder_.dispose();
@@ -9476,7 +9979,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BackendServiceHAPolicy ha_policy = 519879480;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceHAPolicy.Builder getHaPolicyBuilder() {
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return getHaPolicyFieldBuilder().getBuilder();
     }
@@ -9531,7 +10034,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!healthChecks_.isModifiable()) {
         healthChecks_ = new com.google.protobuf.LazyStringArrayList(healthChecks_);
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
     }
     /**
      *
@@ -9611,7 +10114,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.set(index, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9633,7 +10136,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9652,7 +10155,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllHealthChecks(java.lang.Iterable<java.lang.String> values) {
       ensureHealthChecksIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, healthChecks_);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9669,7 +10172,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearHealthChecks() {
       healthChecks_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       ;
       onChanged();
       return this;
@@ -9693,7 +10196,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureHealthChecksIsMutable();
       healthChecks_.add(value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -9716,7 +10219,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the iap field is set.
      */
     public boolean hasIap() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      *
@@ -9756,7 +10259,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         iapBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9775,7 +10278,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         iapBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -9790,7 +10293,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeIap(com.google.cloud.compute.v1.BackendServiceIAP value) {
       if (iapBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00200000) != 0)
             && iap_ != null
             && iap_ != com.google.cloud.compute.v1.BackendServiceIAP.getDefaultInstance()) {
           getIapBuilder().mergeFrom(value);
@@ -9801,7 +10304,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         iapBuilder_.mergeFrom(value);
       }
       if (iap_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       return this;
@@ -9816,7 +10319,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public Builder clearIap() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       iap_ = null;
       if (iapBuilder_ != null) {
         iapBuilder_.dispose();
@@ -9835,7 +10338,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.BackendServiceIAP iap = 104024;</code>
      */
     public com.google.cloud.compute.v1.BackendServiceIAP.Builder getIapBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return getIapFieldBuilder().getBuilder();
     }
@@ -9897,7 +10400,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasId() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -9929,7 +10432,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder setId(long value) {
 
       id_ = value;
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -9945,7 +10448,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       id_ = 0L;
       onChanged();
       return this;
@@ -9965,7 +10468,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the ipAddressSelectionPolicy field is set.
      */
     public boolean hasIpAddressSelectionPolicy() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -10031,7 +10534,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       ipAddressSelectionPolicy_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -10049,7 +10552,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearIpAddressSelectionPolicy() {
       ipAddressSelectionPolicy_ = getDefaultInstance().getIpAddressSelectionPolicy();
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       onChanged();
       return this;
     }
@@ -10072,7 +10575,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       ipAddressSelectionPolicy_ = value;
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -10090,7 +10593,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the kind field is set.
      */
     public boolean hasKind() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -10153,7 +10656,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kind_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -10170,7 +10673,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKind() {
       kind_ = getDefaultInstance().getKind();
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       onChanged();
       return this;
     }
@@ -10192,7 +10695,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kind_ = value;
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -10211,7 +10714,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the loadBalancingScheme field is set.
      */
     public boolean hasLoadBalancingScheme() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -10277,7 +10780,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       loadBalancingScheme_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10295,7 +10798,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLoadBalancingScheme() {
       loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       onChanged();
       return this;
     }
@@ -10318,7 +10821,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       loadBalancingScheme_ = value;
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -10328,12 +10831,12 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         localityLbPolicies_ = java.util.Collections.emptyList();
 
     private void ensureLocalityLbPoliciesIsMutable() {
-      if (!((bitField0_ & 0x01000000) != 0)) {
+      if (!((bitField0_ & 0x04000000) != 0)) {
         localityLbPolicies_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.BackendServiceLocalityLoadBalancingPolicyConfig>(
                 localityLbPolicies_);
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
       }
     }
 
@@ -10587,7 +11090,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder clearLocalityLbPolicies() {
       if (localityLbPoliciesBuilder_ == null) {
         localityLbPolicies_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         onChanged();
       } else {
         localityLbPoliciesBuilder_.clear();
@@ -10738,7 +11241,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1
                     .BackendServiceLocalityLoadBalancingPolicyConfigOrBuilder>(
                 localityLbPolicies_,
-                ((bitField0_ & 0x01000000) != 0),
+                ((bitField0_ & 0x04000000) != 0),
                 getParentForChildren(),
                 isClean());
         localityLbPolicies_ = null;
@@ -10760,7 +11263,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the localityLbPolicy field is set.
      */
     public boolean hasLocalityLbPolicy() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -10826,7 +11329,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       localityLbPolicy_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10844,7 +11347,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocalityLbPolicy() {
       localityLbPolicy_ = getDefaultInstance().getLocalityLbPolicy();
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       onChanged();
       return this;
     }
@@ -10867,7 +11370,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       localityLbPolicy_ = value;
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -10891,7 +11394,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the logConfig field is set.
      */
     public boolean hasLogConfig() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -10933,7 +11436,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10954,7 +11457,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         logConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -10970,7 +11473,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLogConfig(com.google.cloud.compute.v1.BackendServiceLogConfig value) {
       if (logConfigBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && logConfig_ != null
             && logConfig_
                 != com.google.cloud.compute.v1.BackendServiceLogConfig.getDefaultInstance()) {
@@ -10982,7 +11485,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         logConfigBuilder_.mergeFrom(value);
       }
       if (logConfig_ != null) {
-        bitField0_ |= 0x04000000;
+        bitField0_ |= 0x10000000;
         onChanged();
       }
       return this;
@@ -10998,7 +11501,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLogConfig() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       logConfig_ = null;
       if (logConfigBuilder_ != null) {
         logConfigBuilder_.dispose();
@@ -11018,7 +11521,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.BackendServiceLogConfig.Builder getLogConfigBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getLogConfigFieldBuilder().getBuilder();
     }
@@ -11086,7 +11589,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the maxStreamDuration field is set.
      */
     public boolean hasMaxStreamDuration() {
-      return ((bitField0_ & 0x08000000) != 0);
+      return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      *
@@ -11126,7 +11629,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11146,7 +11649,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         maxStreamDurationBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -11161,7 +11664,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeMaxStreamDuration(com.google.cloud.compute.v1.Duration value) {
       if (maxStreamDurationBuilder_ == null) {
-        if (((bitField0_ & 0x08000000) != 0)
+        if (((bitField0_ & 0x20000000) != 0)
             && maxStreamDuration_ != null
             && maxStreamDuration_ != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
           getMaxStreamDurationBuilder().mergeFrom(value);
@@ -11172,7 +11675,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         maxStreamDurationBuilder_.mergeFrom(value);
       }
       if (maxStreamDuration_ != null) {
-        bitField0_ |= 0x08000000;
+        bitField0_ |= 0x20000000;
         onChanged();
       }
       return this;
@@ -11187,7 +11690,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public Builder clearMaxStreamDuration() {
-      bitField0_ = (bitField0_ & ~0x08000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       maxStreamDuration_ = null;
       if (maxStreamDurationBuilder_ != null) {
         maxStreamDurationBuilder_.dispose();
@@ -11206,7 +11709,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Duration max_stream_duration = 61428376;</code>
      */
     public com.google.cloud.compute.v1.Duration.Builder getMaxStreamDurationBuilder() {
-      bitField0_ |= 0x08000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return getMaxStreamDurationFieldBuilder().getBuilder();
     }
@@ -11273,7 +11776,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!metadatas_.isMutable()) {
         metadatas_ = metadatas_.copy();
       }
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return metadatas_;
     }
@@ -11358,7 +11861,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearMetadatas() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       internalGetMutableMetadatas().getMutableMap().clear();
       return this;
     }
@@ -11381,7 +11884,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadatas() {
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       return internalGetMutableMetadatas().getMutableMap();
     }
     /**
@@ -11401,7 +11904,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableMetadatas().getMutableMap().put(key, value);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       return this;
     }
     /**
@@ -11415,7 +11918,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllMetadatas(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadatas().getMutableMap().putAll(values);
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x40000000;
       return this;
     }
 
@@ -11432,7 +11935,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x20000000) != 0);
+      return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      *
@@ -11495,7 +11998,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11512,7 +12015,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x80000000);
       onChanged();
       return this;
     }
@@ -11534,7 +12037,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x80000000;
       onChanged();
       return this;
     }
@@ -11552,7 +12055,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the network field is set.
      */
     public boolean hasNetwork() {
-      return ((bitField0_ & 0x40000000) != 0);
+      return ((bitField1_ & 0x00000001) != 0);
     }
     /**
      *
@@ -11615,7 +12118,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11632,7 +12135,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x40000000);
+      bitField1_ = (bitField1_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -11654,7 +12157,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x40000000;
+      bitField1_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -11678,7 +12181,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the outlierDetection field is set.
      */
     public boolean hasOutlierDetection() {
-      return ((bitField0_ & 0x80000000) != 0);
+      return ((bitField1_ & 0x00000002) != 0);
     }
     /**
      *
@@ -11720,7 +12223,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11741,7 +12244,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         outlierDetectionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -11757,7 +12260,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeOutlierDetection(com.google.cloud.compute.v1.OutlierDetection value) {
       if (outlierDetectionBuilder_ == null) {
-        if (((bitField0_ & 0x80000000) != 0)
+        if (((bitField1_ & 0x00000002) != 0)
             && outlierDetection_ != null
             && outlierDetection_
                 != com.google.cloud.compute.v1.OutlierDetection.getDefaultInstance()) {
@@ -11769,7 +12272,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         outlierDetectionBuilder_.mergeFrom(value);
       }
       if (outlierDetection_ != null) {
-        bitField0_ |= 0x80000000;
+        bitField1_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -11785,7 +12288,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearOutlierDetection() {
-      bitField0_ = (bitField0_ & ~0x80000000);
+      bitField1_ = (bitField1_ & ~0x00000002);
       outlierDetection_ = null;
       if (outlierDetectionBuilder_ != null) {
         outlierDetectionBuilder_.dispose();
@@ -11805,7 +12308,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.OutlierDetection.Builder getOutlierDetectionBuilder() {
-      bitField0_ |= 0x80000000;
+      bitField1_ |= 0x00000002;
       onChanged();
       return getOutlierDetectionFieldBuilder().getBuilder();
     }
@@ -11869,7 +12372,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPort() {
-      return ((bitField1_ & 0x00000001) != 0);
+      return ((bitField1_ & 0x00000004) != 0);
     }
     /**
      *
@@ -11901,7 +12404,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder setPort(int value) {
 
       port_ = value;
-      bitField1_ |= 0x00000001;
+      bitField1_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -11917,7 +12420,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPort() {
-      bitField1_ = (bitField1_ & ~0x00000001);
+      bitField1_ = (bitField1_ & ~0x00000004);
       port_ = 0;
       onChanged();
       return this;
@@ -11936,7 +12439,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the portName field is set.
      */
     public boolean hasPortName() {
-      return ((bitField1_ & 0x00000002) != 0);
+      return ((bitField1_ & 0x00000008) != 0);
     }
     /**
      *
@@ -11999,7 +12502,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       portName_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12016,7 +12519,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPortName() {
       portName_ = getDefaultInstance().getPortName();
-      bitField1_ = (bitField1_ & ~0x00000002);
+      bitField1_ = (bitField1_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -12038,7 +12541,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       portName_ = value;
-      bitField1_ |= 0x00000002;
+      bitField1_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -12057,7 +12560,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the protocol field is set.
      */
     public boolean hasProtocol() {
-      return ((bitField1_ & 0x00000004) != 0);
+      return ((bitField1_ & 0x00000010) != 0);
     }
     /**
      *
@@ -12123,7 +12626,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       protocol_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12141,7 +12644,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProtocol() {
       protocol_ = getDefaultInstance().getProtocol();
-      bitField1_ = (bitField1_ & ~0x00000004);
+      bitField1_ = (bitField1_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -12164,7 +12667,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       protocol_ = value;
-      bitField1_ |= 0x00000004;
+      bitField1_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -12182,7 +12685,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the region field is set.
      */
     public boolean hasRegion() {
-      return ((bitField1_ & 0x00000008) != 0);
+      return ((bitField1_ & 0x00000020) != 0);
     }
     /**
      *
@@ -12245,7 +12748,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       region_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12262,7 +12765,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearRegion() {
       region_ = getDefaultInstance().getRegion();
-      bitField1_ = (bitField1_ & ~0x00000008);
+      bitField1_ = (bitField1_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -12284,7 +12787,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       region_ = value;
-      bitField1_ |= 0x00000008;
+      bitField1_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -12302,7 +12805,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securityPolicy field is set.
      */
     public boolean hasSecurityPolicy() {
-      return ((bitField1_ & 0x00000010) != 0);
+      return ((bitField1_ & 0x00000040) != 0);
     }
     /**
      *
@@ -12365,7 +12868,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       securityPolicy_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -12382,7 +12885,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSecurityPolicy() {
       securityPolicy_ = getDefaultInstance().getSecurityPolicy();
-      bitField1_ = (bitField1_ & ~0x00000010);
+      bitField1_ = (bitField1_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -12404,7 +12907,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       securityPolicy_ = value;
-      bitField1_ |= 0x00000010;
+      bitField1_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -12428,7 +12931,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the securitySettings field is set.
      */
     public boolean hasSecuritySettings() {
-      return ((bitField1_ & 0x00000020) != 0);
+      return ((bitField1_ & 0x00000080) != 0);
     }
     /**
      *
@@ -12470,7 +12973,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12491,7 +12994,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         securitySettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -12507,7 +13010,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSecuritySettings(com.google.cloud.compute.v1.SecuritySettings value) {
       if (securitySettingsBuilder_ == null) {
-        if (((bitField1_ & 0x00000020) != 0)
+        if (((bitField1_ & 0x00000080) != 0)
             && securitySettings_ != null
             && securitySettings_
                 != com.google.cloud.compute.v1.SecuritySettings.getDefaultInstance()) {
@@ -12519,7 +13022,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         securitySettingsBuilder_.mergeFrom(value);
       }
       if (securitySettings_ != null) {
-        bitField1_ |= 0x00000020;
+        bitField1_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -12535,7 +13038,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSecuritySettings() {
-      bitField1_ = (bitField1_ & ~0x00000020);
+      bitField1_ = (bitField1_ & ~0x00000080);
       securitySettings_ = null;
       if (securitySettingsBuilder_ != null) {
         securitySettingsBuilder_.dispose();
@@ -12555,7 +13058,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.SecuritySettings.Builder getSecuritySettingsBuilder() {
-      bitField1_ |= 0x00000020;
+      bitField1_ |= 0x00000080;
       onChanged();
       return getSecuritySettingsFieldBuilder().getBuilder();
     }
@@ -12618,7 +13121,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField1_ & 0x00000040) != 0);
+      return ((bitField1_ & 0x00000100) != 0);
     }
     /**
      *
@@ -12681,7 +13184,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -12698,7 +13201,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField1_ = (bitField1_ & ~0x00000040);
+      bitField1_ = (bitField1_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -12720,7 +13223,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField1_ |= 0x00000040;
+      bitField1_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -12732,7 +13235,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       if (!serviceBindings_.isModifiable()) {
         serviceBindings_ = new com.google.protobuf.LazyStringArrayList(serviceBindings_);
       }
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
     }
     /**
      *
@@ -12812,7 +13315,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceBindingsIsMutable();
       serviceBindings_.set(index, value);
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12834,7 +13337,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       ensureServiceBindingsIsMutable();
       serviceBindings_.add(value);
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12853,7 +13356,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllServiceBindings(java.lang.Iterable<java.lang.String> values) {
       ensureServiceBindingsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceBindings_);
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12870,7 +13373,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceBindings() {
       serviceBindings_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField1_ = (bitField1_ & ~0x00000080);
+      bitField1_ = (bitField1_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -12894,7 +13397,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureServiceBindingsIsMutable();
       serviceBindings_.add(value);
-      bitField1_ |= 0x00000080;
+      bitField1_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -12912,7 +13415,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the serviceLbPolicy field is set.
      */
     public boolean hasServiceLbPolicy() {
-      return ((bitField1_ & 0x00000100) != 0);
+      return ((bitField1_ & 0x00000400) != 0);
     }
     /**
      *
@@ -12975,7 +13478,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       serviceLbPolicy_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -12992,7 +13495,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearServiceLbPolicy() {
       serviceLbPolicy_ = getDefaultInstance().getServiceLbPolicy();
-      bitField1_ = (bitField1_ & ~0x00000100);
+      bitField1_ = (bitField1_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -13014,7 +13517,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       serviceLbPolicy_ = value;
-      bitField1_ |= 0x00000100;
+      bitField1_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -13033,7 +13536,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sessionAffinity field is set.
      */
     public boolean hasSessionAffinity() {
-      return ((bitField1_ & 0x00000200) != 0);
+      return ((bitField1_ & 0x00000800) != 0);
     }
     /**
      *
@@ -13099,7 +13602,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sessionAffinity_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13117,7 +13620,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSessionAffinity() {
       sessionAffinity_ = getDefaultInstance().getSessionAffinity();
-      bitField1_ = (bitField1_ & ~0x00000200);
+      bitField1_ = (bitField1_ & ~0x00000800);
       onChanged();
       return this;
     }
@@ -13140,7 +13643,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sessionAffinity_ = value;
-      bitField1_ |= 0x00000200;
+      bitField1_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -13165,7 +13668,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the strongSessionAffinityCookie field is set.
      */
     public boolean hasStrongSessionAffinityCookie() {
-      return ((bitField1_ & 0x00000400) != 0);
+      return ((bitField1_ & 0x00001000) != 0);
     }
     /**
      *
@@ -13210,7 +13713,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         strongSessionAffinityCookieBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13232,7 +13735,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         strongSessionAffinityCookieBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -13250,7 +13753,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeStrongSessionAffinityCookie(
         com.google.cloud.compute.v1.BackendServiceHttpCookie value) {
       if (strongSessionAffinityCookieBuilder_ == null) {
-        if (((bitField1_ & 0x00000400) != 0)
+        if (((bitField1_ & 0x00001000) != 0)
             && strongSessionAffinityCookie_ != null
             && strongSessionAffinityCookie_
                 != com.google.cloud.compute.v1.BackendServiceHttpCookie.getDefaultInstance()) {
@@ -13262,7 +13765,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         strongSessionAffinityCookieBuilder_.mergeFrom(value);
       }
       if (strongSessionAffinityCookie_ != null) {
-        bitField1_ |= 0x00000400;
+        bitField1_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -13279,7 +13782,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStrongSessionAffinityCookie() {
-      bitField1_ = (bitField1_ & ~0x00000400);
+      bitField1_ = (bitField1_ & ~0x00001000);
       strongSessionAffinityCookie_ = null;
       if (strongSessionAffinityCookieBuilder_ != null) {
         strongSessionAffinityCookieBuilder_.dispose();
@@ -13301,7 +13804,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.BackendServiceHttpCookie.Builder
         getStrongSessionAffinityCookieBuilder() {
-      bitField1_ |= 0x00000400;
+      bitField1_ |= 0x00001000;
       onChanged();
       return getStrongSessionAffinityCookieFieldBuilder().getBuilder();
     }
@@ -13372,7 +13875,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the subsetting field is set.
      */
     public boolean hasSubsetting() {
-      return ((bitField1_ & 0x00000800) != 0);
+      return ((bitField1_ & 0x00002000) != 0);
     }
     /**
      *
@@ -13412,7 +13915,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(value);
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -13431,7 +13934,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
       } else {
         subsettingBuilder_.setMessage(builderForValue.build());
       }
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -13446,7 +13949,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSubsetting(com.google.cloud.compute.v1.Subsetting value) {
       if (subsettingBuilder_ == null) {
-        if (((bitField1_ & 0x00000800) != 0)
+        if (((bitField1_ & 0x00002000) != 0)
             && subsetting_ != null
             && subsetting_ != com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) {
           getSubsettingBuilder().mergeFrom(value);
@@ -13457,7 +13960,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         subsettingBuilder_.mergeFrom(value);
       }
       if (subsetting_ != null) {
-        bitField1_ |= 0x00000800;
+        bitField1_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -13472,7 +13975,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
      */
     public Builder clearSubsetting() {
-      bitField1_ = (bitField1_ & ~0x00000800);
+      bitField1_ = (bitField1_ & ~0x00002000);
       subsetting_ = null;
       if (subsettingBuilder_ != null) {
         subsettingBuilder_.dispose();
@@ -13491,7 +13994,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>
      */
     public com.google.cloud.compute.v1.Subsetting.Builder getSubsettingBuilder() {
-      bitField1_ |= 0x00000800;
+      bitField1_ |= 0x00002000;
       onChanged();
       return getSubsettingFieldBuilder().getBuilder();
     }
@@ -13553,7 +14056,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasTimeoutSec() {
-      return ((bitField1_ & 0x00001000) != 0);
+      return ((bitField1_ & 0x00004000) != 0);
     }
     /**
      *
@@ -13585,7 +14088,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder setTimeoutSec(int value) {
 
       timeoutSec_ = value;
-      bitField1_ |= 0x00001000;
+      bitField1_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -13601,7 +14104,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTimeoutSec() {
-      bitField1_ = (bitField1_ & ~0x00001000);
+      bitField1_ = (bitField1_ & ~0x00004000);
       timeoutSec_ = 0;
       onChanged();
       return this;
@@ -13611,10 +14114,10 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureUsedByIsMutable() {
-      if (!((bitField1_ & 0x00002000) != 0)) {
+      if (!((bitField1_ & 0x00008000) != 0)) {
         usedBy_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.BackendServiceUsedBy>(usedBy_);
-        bitField1_ |= 0x00002000;
+        bitField1_ |= 0x00008000;
       }
     }
 
@@ -13830,7 +14333,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
     public Builder clearUsedBy() {
       if (usedByBuilder_ == null) {
         usedBy_ = java.util.Collections.emptyList();
-        bitField1_ = (bitField1_ & ~0x00002000);
+        bitField1_ = (bitField1_ & ~0x00008000);
         onChanged();
       } else {
         usedByBuilder_.clear();
@@ -13952,7 +14455,7 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.BackendServiceUsedBy,
                 com.google.cloud.compute.v1.BackendServiceUsedBy.Builder,
                 com.google.cloud.compute.v1.BackendServiceUsedByOrBuilder>(
-                usedBy_, ((bitField1_ & 0x00002000) != 0), getParentForChildren(), isClean());
+                usedBy_, ((bitField1_ & 0x00008000) != 0), getParentForChildren(), isClean());
         usedBy_ = null;
       }
       return usedByBuilder_;

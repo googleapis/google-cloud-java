@@ -304,6 +304,31 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
+   * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process.
+   * </pre>
+   *
+   * <code>optional bool guest_flush = 385550813;</code>
+   *
+   * @return Whether the guestFlush field is set.
+   */
+  boolean hasGuestFlush();
+  /**
+   *
+   *
+   * <pre>
+   * [Input Only] Whether to attempt an application consistent snapshot by informing the OS to prepare for the snapshot process.
+   * </pre>
+   *
+   * <code>optional bool guest_flush = 385550813;</code>
+   *
+   * @return The guestFlush.
+   */
+  boolean getGuestFlush();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
    * </pre>
    *

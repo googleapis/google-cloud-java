@@ -157,7 +157,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -170,7 +170,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -183,7 +183,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *
@@ -197,7 +197,7 @@ public interface InterconnectLocationOrBuilder
    *
    *
    * <pre>
-   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR
+   * [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR - LINK_TYPE_ETHERNET_400G_LR4
    * Check the AvailableLinkTypes enum for the list of possible values.
    * </pre>
    *

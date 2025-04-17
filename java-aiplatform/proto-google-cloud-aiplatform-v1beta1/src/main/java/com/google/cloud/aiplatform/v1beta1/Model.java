@@ -56,6 +56,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     deployedModels_ = java.util.Collections.emptyList();
     etag_ = "";
     metadataArtifact_ = "";
+    checkpoints_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -6172,6 +6173,88 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzi_;
   }
 
+  public static final int CHECKPOINTS_FIELD_NUMBER = 57;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.aiplatform.v1beta1.Checkpoint> checkpoints_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.aiplatform.v1beta1.Checkpoint> getCheckpointsList() {
+    return checkpoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder>
+      getCheckpointsOrBuilderList() {
+    return checkpoints_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getCheckpointsCount() {
+    return checkpoints_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.Checkpoint getCheckpoints(int index) {
+    return checkpoints_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder getCheckpointsOrBuilder(
+      int index) {
+    return checkpoints_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -6287,6 +6370,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultCheckpointId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 53, defaultCheckpointId_);
+    }
+    for (int i = 0; i < checkpoints_.size(); i++) {
+      output.writeMessage(57, checkpoints_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -6428,6 +6514,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultCheckpointId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(53, defaultCheckpointId_);
     }
+    for (int i = 0; i < checkpoints_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(57, checkpoints_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -6516,6 +6605,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
     if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
+    if (!getCheckpointsList().equals(other.getCheckpointsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -6629,6 +6719,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
     hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
+    if (getCheckpointsCount() > 0) {
+      hash = (37 * hash) + CHECKPOINTS_FIELD_NUMBER;
+      hash = (53 * hash) + getCheckpointsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -6805,6 +6899,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         getModelSourceInfoFieldBuilder();
         getOriginalModelInfoFieldBuilder();
         getBaseModelSourceFieldBuilder();
+        getCheckpointsFieldBuilder();
       }
     }
 
@@ -6812,6 +6907,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      bitField1_ = 0;
       name_ = "";
       versionId_ = "";
       versionAliases_ = com.google.protobuf.LazyStringArrayList.emptyList();
@@ -6905,6 +7001,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       satisfiesPzs_ = false;
       satisfiesPzi_ = false;
+      if (checkpointsBuilder_ == null) {
+        checkpoints_ = java.util.Collections.emptyList();
+      } else {
+        checkpoints_ = null;
+        checkpointsBuilder_.clear();
+      }
+      bitField1_ = (bitField1_ & ~0x00000001);
       return this;
     }
 
@@ -6936,6 +7039,9 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      if (bitField1_ != 0) {
+        buildPartial1(result);
+      }
       onBuilt();
       return result;
     }
@@ -6964,6 +7070,15 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.deployedModels_ = deployedModels_;
       } else {
         result.deployedModels_ = deployedModelsBuilder_.build();
+      }
+      if (checkpointsBuilder_ == null) {
+        if (((bitField1_ & 0x00000001) != 0)) {
+          checkpoints_ = java.util.Collections.unmodifiableList(checkpoints_);
+          bitField1_ = (bitField1_ & ~0x00000001);
+        }
+        result.checkpoints_ = checkpoints_;
+      } else {
+        result.checkpoints_ = checkpointsBuilder_.build();
       }
     }
 
@@ -7089,6 +7204,10 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
         result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartial1(com.google.cloud.aiplatform.v1beta1.Model result) {
+      int from_bitField1_ = bitField1_;
     }
 
     @java.lang.Override
@@ -7328,6 +7447,33 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzi() != false) {
         setSatisfiesPzi(other.getSatisfiesPzi());
+      }
+      if (checkpointsBuilder_ == null) {
+        if (!other.checkpoints_.isEmpty()) {
+          if (checkpoints_.isEmpty()) {
+            checkpoints_ = other.checkpoints_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+          } else {
+            ensureCheckpointsIsMutable();
+            checkpoints_.addAll(other.checkpoints_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.checkpoints_.isEmpty()) {
+          if (checkpointsBuilder_.isEmpty()) {
+            checkpointsBuilder_.dispose();
+            checkpointsBuilder_ = null;
+            checkpoints_ = other.checkpoints_;
+            bitField1_ = (bitField1_ & ~0x00000001);
+            checkpointsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCheckpointsFieldBuilder()
+                    : null;
+          } else {
+            checkpointsBuilder_.addAllMessages(other.checkpoints_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -7588,6 +7734,19 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 426
+            case 458:
+              {
+                com.google.cloud.aiplatform.v1beta1.Checkpoint m =
+                    input.readMessage(
+                        com.google.cloud.aiplatform.v1beta1.Checkpoint.parser(), extensionRegistry);
+                if (checkpointsBuilder_ == null) {
+                  ensureCheckpointsIsMutable();
+                  checkpoints_.add(m);
+                } else {
+                  checkpointsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 458
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7606,6 +7765,7 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int bitField0_;
+    private int bitField1_;
 
     private java.lang.Object name_ = "";
     /**
@@ -14691,6 +14851,394 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
       satisfiesPzi_ = false;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.aiplatform.v1beta1.Checkpoint> checkpoints_ =
+        java.util.Collections.emptyList();
+
+    private void ensureCheckpointsIsMutable() {
+      if (!((bitField1_ & 0x00000001) != 0)) {
+        checkpoints_ =
+            new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Checkpoint>(checkpoints_);
+        bitField1_ |= 0x00000001;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Checkpoint,
+            com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder>
+        checkpointsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Checkpoint> getCheckpointsList() {
+      if (checkpointsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(checkpoints_);
+      } else {
+        return checkpointsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getCheckpointsCount() {
+      if (checkpointsBuilder_ == null) {
+        return checkpoints_.size();
+      } else {
+        return checkpointsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Checkpoint getCheckpoints(int index) {
+      if (checkpointsBuilder_ == null) {
+        return checkpoints_.get(index);
+      } else {
+        return checkpointsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCheckpoints(int index, com.google.cloud.aiplatform.v1beta1.Checkpoint value) {
+      if (checkpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCheckpointsIsMutable();
+        checkpoints_.set(index, value);
+        onChanged();
+      } else {
+        checkpointsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setCheckpoints(
+        int index, com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder builderForValue) {
+      if (checkpointsBuilder_ == null) {
+        ensureCheckpointsIsMutable();
+        checkpoints_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        checkpointsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCheckpoints(com.google.cloud.aiplatform.v1beta1.Checkpoint value) {
+      if (checkpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCheckpointsIsMutable();
+        checkpoints_.add(value);
+        onChanged();
+      } else {
+        checkpointsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCheckpoints(int index, com.google.cloud.aiplatform.v1beta1.Checkpoint value) {
+      if (checkpointsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCheckpointsIsMutable();
+        checkpoints_.add(index, value);
+        onChanged();
+      } else {
+        checkpointsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCheckpoints(
+        com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder builderForValue) {
+      if (checkpointsBuilder_ == null) {
+        ensureCheckpointsIsMutable();
+        checkpoints_.add(builderForValue.build());
+        onChanged();
+      } else {
+        checkpointsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addCheckpoints(
+        int index, com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder builderForValue) {
+      if (checkpointsBuilder_ == null) {
+        ensureCheckpointsIsMutable();
+        checkpoints_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        checkpointsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllCheckpoints(
+        java.lang.Iterable<? extends com.google.cloud.aiplatform.v1beta1.Checkpoint> values) {
+      if (checkpointsBuilder_ == null) {
+        ensureCheckpointsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, checkpoints_);
+        onChanged();
+      } else {
+        checkpointsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearCheckpoints() {
+      if (checkpointsBuilder_ == null) {
+        checkpoints_ = java.util.Collections.emptyList();
+        bitField1_ = (bitField1_ & ~0x00000001);
+        onChanged();
+      } else {
+        checkpointsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeCheckpoints(int index) {
+      if (checkpointsBuilder_ == null) {
+        ensureCheckpointsIsMutable();
+        checkpoints_.remove(index);
+        onChanged();
+      } else {
+        checkpointsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder getCheckpointsBuilder(int index) {
+      return getCheckpointsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder getCheckpointsOrBuilder(
+        int index) {
+      if (checkpointsBuilder_ == null) {
+        return checkpoints_.get(index);
+      } else {
+        return checkpointsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder>
+        getCheckpointsOrBuilderList() {
+      if (checkpointsBuilder_ != null) {
+        return checkpointsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(checkpoints_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder addCheckpointsBuilder() {
+      return getCheckpointsFieldBuilder()
+          .addBuilder(com.google.cloud.aiplatform.v1beta1.Checkpoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder addCheckpointsBuilder(int index) {
+      return getCheckpointsFieldBuilder()
+          .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Checkpoint.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Output only. The checkpoints of the model.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.aiplatform.v1beta1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder>
+        getCheckpointsBuilderList() {
+      return getCheckpointsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.Checkpoint,
+            com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder>
+        getCheckpointsFieldBuilder() {
+      if (checkpointsBuilder_ == null) {
+        checkpointsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.Checkpoint,
+                com.google.cloud.aiplatform.v1beta1.Checkpoint.Builder,
+                com.google.cloud.aiplatform.v1beta1.CheckpointOrBuilder>(
+                checkpoints_, ((bitField1_ & 0x00000001) != 0), getParentForChildren(), isClean());
+        checkpoints_ = null;
+      }
+      return checkpointsBuilder_;
     }
 
     @java.lang.Override

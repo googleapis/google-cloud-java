@@ -28,7 +28,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    *
    *
    * <pre>
-   * The disruption schedule for the VM. Default to IMMEDIATE.
+   * The disruption schedule for the VM. Required field, only allows IMMEDIATE.
    * Check the DisruptionSchedule enum for the list of possible values.
    * </pre>
    *
@@ -41,7 +41,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    *
    *
    * <pre>
-   * The disruption schedule for the VM. Default to IMMEDIATE.
+   * The disruption schedule for the VM. Required field, only allows IMMEDIATE.
    * Check the DisruptionSchedule enum for the list of possible values.
    * </pre>
    *
@@ -54,7 +54,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    *
    *
    * <pre>
-   * The disruption schedule for the VM. Default to IMMEDIATE.
+   * The disruption schedule for the VM. Required field, only allows IMMEDIATE.
    * Check the DisruptionSchedule enum for the list of possible values.
    * </pre>
    *

@@ -23,7 +23,7 @@ package com.google.cloud.compute.v1;
  *
  *
  * <pre>
- * [Output Only] Informational warning message.
+ * Informational warning message.
  * </pre>
  *
  * Protobuf type {@code google.cloud.compute.v1.Warning}
@@ -1214,7 +1214,7 @@ public final class Warning extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * [Output Only] Informational warning message.
+   * Informational warning message.
    * </pre>
    *
    * Protobuf type {@code google.cloud.compute.v1.Warning}

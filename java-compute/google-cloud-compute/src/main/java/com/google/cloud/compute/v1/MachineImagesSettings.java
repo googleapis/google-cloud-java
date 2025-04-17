@@ -154,6 +154,17 @@ public class MachineImagesSettings extends ClientSettings<MachineImagesSettings>
     return ((MachineImagesStubSettings) getStubSettings()).setIamPolicySettings();
   }
 
+  /** Returns the object with the settings used for calls to setLabels. */
+  public UnaryCallSettings<SetLabelsMachineImageRequest, Operation> setLabelsSettings() {
+    return ((MachineImagesStubSettings) getStubSettings()).setLabelsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setLabels. */
+  public OperationCallSettings<SetLabelsMachineImageRequest, Operation, Operation>
+      setLabelsOperationSettings() {
+    return ((MachineImagesStubSettings) getStubSettings()).setLabelsOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to testIamPermissions. */
   public UnaryCallSettings<TestIamPermissionsMachineImageRequest, TestPermissionsResponse>
       testIamPermissionsSettings() {
@@ -300,6 +311,17 @@ public class MachineImagesSettings extends ClientSettings<MachineImagesSettings>
     public UnaryCallSettings.Builder<SetIamPolicyMachineImageRequest, Policy>
         setIamPolicySettings() {
       return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public UnaryCallSettings.Builder<SetLabelsMachineImageRequest, Operation> setLabelsSettings() {
+      return getStubSettingsBuilder().setLabelsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setLabels. */
+    public OperationCallSettings.Builder<SetLabelsMachineImageRequest, Operation, Operation>
+        setLabelsOperationSettings() {
+      return getStubSettingsBuilder().setLabelsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to testIamPermissions. */

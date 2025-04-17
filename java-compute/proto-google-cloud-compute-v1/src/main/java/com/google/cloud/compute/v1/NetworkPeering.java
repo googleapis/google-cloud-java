@@ -718,7 +718,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes.
+   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -733,7 +733,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes.
+   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -2280,7 +2280,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum Transmission Unit in bytes.
+     * [Output Only] Maximum Transmission Unit in bytes of the peer network.
      * </pre>
      *
      * <code>optional int32 peer_mtu = 69584721;</code>
@@ -2295,7 +2295,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum Transmission Unit in bytes.
+     * [Output Only] Maximum Transmission Unit in bytes of the peer network.
      * </pre>
      *
      * <code>optional int32 peer_mtu = 69584721;</code>
@@ -2310,7 +2310,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum Transmission Unit in bytes.
+     * [Output Only] Maximum Transmission Unit in bytes of the peer network.
      * </pre>
      *
      * <code>optional int32 peer_mtu = 69584721;</code>
@@ -2329,7 +2329,7 @@ public final class NetworkPeering extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Maximum Transmission Unit in bytes.
+     * [Output Only] Maximum Transmission Unit in bytes of the peer network.
      * </pre>
      *
      * <code>optional int32 peer_mtu = 69584721;</code>

@@ -252,7 +252,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes.
+   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
@@ -264,7 +264,7 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
-   * Maximum Transmission Unit in bytes.
+   * [Output Only] Maximum Transmission Unit in bytes of the peer network.
    * </pre>
    *
    * <code>optional int32 peer_mtu = 69584721;</code>
