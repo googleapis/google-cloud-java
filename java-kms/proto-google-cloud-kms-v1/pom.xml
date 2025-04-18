@@ -177,7 +177,6 @@
                     <exclude>com.google.protobuf.NewInstanceSchema</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemaLite</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemas</exclude>
-                    <exclude>com.google.protobuf.NioByteString</exclude>
                     <exclude>com.google.protobuf.NullValue</exclude>
                     <exclude>com.google.protobuf.OneofInfo</exclude>
                     <exclude>com.google.protobuf.Option</exclude>
@@ -353,7 +352,6 @@
                     <exclude>com.google.protobuf.NewInstanceSchema$*</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemaLite$*</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemas$*</exclude>
-                    <exclude>com.google.protobuf.NioByteString$*</exclude>
                     <exclude>com.google.protobuf.NullValue$*</exclude>
                     <exclude>com.google.protobuf.OneofInfo$*</exclude>
                     <exclude>com.google.protobuf.Option$*</exclude>
