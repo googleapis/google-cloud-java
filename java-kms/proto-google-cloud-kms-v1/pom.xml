@@ -20,7 +20,7 @@
     <dependency>
       <groupId>org.example</groupId>
       <artifactId>protobuf-sdk</artifactId>
-      <version>1.0-SNAPSHOT</version>
+      <version>latest-1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
@@ -60,7 +60,6 @@
                   <pattern>com.google.protobuf</pattern>
                   <shadedPattern>com.shaded.google.protobuf.proto.${library.name}</shadedPattern>
                   <excludes>
-                    <exclude>com.google.protobuf.AbstractMessage</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite</exclude>
                     <exclude>com.google.protobuf.AbstractParser</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList</exclude>
@@ -125,7 +124,6 @@
                     <exclude>com.google.protobuf.FloatArrayList</exclude>
                     <exclude>com.google.protobuf.FloatValue</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder</exclude>
-                    <exclude>com.google.protobuf.GeneratedMessage</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite</exclude>
                     <exclude>com.google.protobuf.InlineMe</exclude>
@@ -143,6 +141,7 @@
                     <exclude>com.google.protobuf.LazyFieldLite</exclude>
                     <exclude>com.google.protobuf.LazyStringArrayList</exclude>
                     <exclude>com.google.protobuf.LazyStringList</exclude>
+                    <exclude>com.google.protobuf.LimitedInputStream</exclude>
                     <exclude>com.google.protobuf.ListFieldSchema</exclude>
                     <exclude>com.google.protobuf.ListValue</exclude>
                     <exclude>com.google.protobuf.ListValueOrBuilder</exclude>
@@ -175,7 +174,6 @@
                     <exclude>com.google.protobuf.NewInstanceSchema</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemaLite</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemas</exclude>
-                    <exclude>com.google.protobuf.NioByteString</exclude>
                     <exclude>com.google.protobuf.NullValue</exclude>
                     <exclude>com.google.protobuf.OneofInfo</exclude>
                     <exclude>com.google.protobuf.Option</exclude>
@@ -190,10 +188,10 @@
                     <exclude>com.google.protobuf.RawMessageInfo</exclude>
                     <exclude>com.google.protobuf.Reader</exclude>
                     <exclude>com.google.protobuf.RepeatedFieldBuilderV3</exclude>
-                    <exclude>com.google.protobuf.RopeByteString</exclude>
                     <exclude>com.google.protobuf.Schema</exclude>
                     <exclude>com.google.protobuf.SchemaFactory</exclude>
                     <exclude>com.google.protobuf.SchemaUtil</exclude>
+                    <exclude>com.google.protobuf.SerializedForm</exclude>
                     <exclude>com.google.protobuf.SingleFieldBuilderV3</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap</exclude>
                     <exclude>com.google.protobuf.SourceContext</exclude>
@@ -227,7 +225,6 @@
                     <exclude>com.google.protobuf.UnknownFieldSetLite</exclude>
                     <exclude>com.google.protobuf.UnknownFieldSetLiteSchema</exclude>
                     <exclude>com.google.protobuf.UnmodifiableLazyStringList</exclude>
-                    <exclude>com.google.protobuf.UnsafeByteOperations</exclude>
                     <exclude>com.google.protobuf.UnsafeUtil</exclude>
                     <exclude>com.google.protobuf.Utf8</exclude>
                     <exclude>com.google.protobuf.Value</exclude>
@@ -236,7 +233,6 @@
                     <exclude>com.google.protobuf.WrappersProto</exclude>
                     <exclude>com.google.protobuf.Writer</exclude>
 
-                    <exclude>com.google.protobuf.AbstractMessage$*</exclude>
                     <exclude>com.google.protobuf.AbstractMessageLite$*</exclude>
                     <exclude>com.google.protobuf.AbstractParser$*</exclude>
                     <exclude>com.google.protobuf.AbstractProtobufList$*</exclude>
@@ -301,7 +297,6 @@
                     <exclude>com.google.protobuf.FloatArrayList$*</exclude>
                     <exclude>com.google.protobuf.FloatValue$*</exclude>
                     <exclude>com.google.protobuf.FloatValueOrBuilder$*</exclude>
-                    <exclude>com.google.protobuf.GeneratedMessage$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageInfoFactory$*</exclude>
                     <exclude>com.google.protobuf.GeneratedMessageLite$*</exclude>
                     <exclude>com.google.protobuf.InlineMe$*</exclude>
@@ -319,6 +314,7 @@
                     <exclude>com.google.protobuf.LazyFieldLite$*</exclude>
                     <exclude>com.google.protobuf.LazyStringArrayList$*</exclude>
                     <exclude>com.google.protobuf.LazyStringList$*</exclude>
+                    <exclude>com.google.protobuf.LimitedInputStream$*</exclude>
                     <exclude>com.google.protobuf.ListFieldSchema$*</exclude>
                     <exclude>com.google.protobuf.ListValue$*</exclude>
                     <exclude>com.google.protobuf.ListValueOrBuilder$*</exclude>
@@ -351,7 +347,6 @@
                     <exclude>com.google.protobuf.NewInstanceSchema$*</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemaLite$*</exclude>
                     <exclude>com.google.protobuf.NewInstanceSchemas$*</exclude>
-                    <exclude>com.google.protobuf.NioByteString$*</exclude>
                     <exclude>com.google.protobuf.NullValue$*</exclude>
                     <exclude>com.google.protobuf.OneofInfo$*</exclude>
                     <exclude>com.google.protobuf.Option$*</exclude>
@@ -366,10 +361,10 @@
                     <exclude>com.google.protobuf.RawMessageInfo$*</exclude>
                     <exclude>com.google.protobuf.Reader$*</exclude>
                     <exclude>com.google.protobuf.RepeatedFieldBuilderV3$*</exclude>
-                    <exclude>com.google.protobuf.RopeByteString$*</exclude>
                     <exclude>com.google.protobuf.Schema$*</exclude>
                     <exclude>com.google.protobuf.SchemaFactory$*</exclude>
                     <exclude>com.google.protobuf.SchemaUtil$*</exclude>
+                    <exclude>com.google.protobuf.SerializedForm$*</exclude>
                     <exclude>com.google.protobuf.SingleFieldBuilderV3$*</exclude>
                     <exclude>com.google.protobuf.SmallSortedMap$*</exclude>
                     <exclude>com.google.protobuf.SourceContext$*</exclude>
@@ -403,7 +398,6 @@
                     <exclude>com.google.protobuf.UnknownFieldSetLite$*</exclude>
                     <exclude>com.google.protobuf.UnknownFieldSetLiteSchema$*</exclude>
                     <exclude>com.google.protobuf.UnmodifiableLazyStringList$*</exclude>
-                    <exclude>com.google.protobuf.UnsafeByteOperations$*</exclude>
                     <exclude>com.google.protobuf.UnsafeUtil$*</exclude>
                     <exclude>com.google.protobuf.Utf8$*</exclude>
                     <exclude>com.google.protobuf.Value$*</exclude>
