@@ -70,7 +70,7 @@ public interface CustomConstraintOrBuilder
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -85,7 +85,7 @@ public interface CustomConstraintOrBuilder
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -100,7 +100,7 @@ public interface CustomConstraintOrBuilder
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -116,7 +116,7 @@ public interface CustomConstraintOrBuilder
    *
    * <pre>
    * Immutable. The resource instance type on which this policy applies. Format
-   * will be of the form : `&lt;canonical service name&gt;/&lt;type&gt;` Example:
+   * will be of the form : `&lt;service name&gt;/&lt;type&gt;` Example:
    *
    *  * `compute.googleapis.com/Instance`.
    * </pre>
@@ -195,7 +195,8 @@ public interface CustomConstraintOrBuilder
    *
    *
    * <pre>
-   * Org policy condition/expression. For example:
+   * A Common Expression Language (CEL) condition which is used in the
+   * evaluation of the constraint. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -211,7 +212,8 @@ public interface CustomConstraintOrBuilder
    *
    *
    * <pre>
-   * Org policy condition/expression. For example:
+   * A Common Expression Language (CEL) condition which is used in the
+   * evaluation of the constraint. For example:
    * `resource.instanceName.matches("[production|test]_.*_(&#92;d)+")` or,
    * `resource.management.auto_upgrade == true`
    *
@@ -309,7 +311,7 @@ public interface CustomConstraintOrBuilder
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -324,7 +326,7 @@ public interface CustomConstraintOrBuilder
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,7 +341,7 @@ public interface CustomConstraintOrBuilder
    * <pre>
    * Output only. The last time this custom constraint was updated. This
    * represents the last time that the `CreateCustomConstraint` or
-   * `UpdateCustomConstraint` RPC was called
+   * `UpdateCustomConstraint` methods were called.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];

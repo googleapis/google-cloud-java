@@ -72,8 +72,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Resource name of the custom constraint. See the custom constraint
-   * entry for naming requirements.
+   * Required. Resource name of the custom or managed constraint. See the custom
+   * constraint entry for naming requirements.
    * </pre>
    *
    * <code>
@@ -98,8 +98,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Required. Resource name of the custom constraint. See the custom constraint
-   * entry for naming requirements.
+   * Required. Resource name of the custom or managed constraint. See the custom
+   * constraint entry for naming requirements.
    * </pre>
    *
    * <code>
@@ -470,8 +470,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the custom constraint. See the custom constraint
-     * entry for naming requirements.
+     * Required. Resource name of the custom or managed constraint. See the custom
+     * constraint entry for naming requirements.
      * </pre>
      *
      * <code>
@@ -495,8 +495,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the custom constraint. See the custom constraint
-     * entry for naming requirements.
+     * Required. Resource name of the custom or managed constraint. See the custom
+     * constraint entry for naming requirements.
      * </pre>
      *
      * <code>
@@ -520,8 +520,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the custom constraint. See the custom constraint
-     * entry for naming requirements.
+     * Required. Resource name of the custom or managed constraint. See the custom
+     * constraint entry for naming requirements.
      * </pre>
      *
      * <code>
@@ -544,8 +544,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the custom constraint. See the custom constraint
-     * entry for naming requirements.
+     * Required. Resource name of the custom or managed constraint. See the custom
+     * constraint entry for naming requirements.
      * </pre>
      *
      * <code>
@@ -564,8 +564,8 @@ public final class GetCustomConstraintRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * Required. Resource name of the custom constraint. See the custom constraint
-     * entry for naming requirements.
+     * Required. Resource name of the custom or managed constraint. See the custom
+     * constraint entry for naming requirements.
      * </pre>
      *
      * <code>

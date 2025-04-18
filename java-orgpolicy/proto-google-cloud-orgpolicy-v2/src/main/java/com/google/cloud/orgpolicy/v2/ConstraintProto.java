@@ -37,6 +37,22 @@ public final class ConstraintProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orgpolicy_v2_Constraint_ListConstraint_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_fieldAccessorTable;
@@ -56,47 +72,81 @@ public final class ConstraintProto {
       "\n*google/cloud/orgpolicy/v2/constraint.p"
           + "roto\022\031google.cloud.orgpolicy.v2\032\037google/"
           + "api/field_behavior.proto\032\031google/api/res"
-          + "ource.proto\032\037google/protobuf/timestamp.p"
-          + "roto\"\321\005\n\nConstraint\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024"
-          + "\n\014display_name\030\002 \001(\t\022\023\n\013description\030\003 \001("
-          + "\t\022S\n\022constraint_default\030\004 \001(\01627.google.c"
-          + "loud.orgpolicy.v2.Constraint.ConstraintD"
-          + "efault\022O\n\017list_constraint\030\005 \001(\01324.google"
-          + ".cloud.orgpolicy.v2.Constraint.ListConst"
-          + "raintH\000\022U\n\022boolean_constraint\030\006 \001(\01327.go"
-          + "ogle.cloud.orgpolicy.v2.Constraint.Boole"
-          + "anConstraintH\000\022\030\n\020supports_dry_run\030\007 \001(\010"
-          + "\032=\n\016ListConstraint\022\023\n\013supports_in\030\001 \001(\010\022"
-          + "\026\n\016supports_under\030\002 \001(\010\032\023\n\021BooleanConstr"
-          + "aint\"L\n\021ConstraintDefault\022\"\n\036CONSTRAINT_"
-          + "DEFAULT_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY"
-          + "\020\002:\270\001\352A\264\001\n#orgpolicy.googleapis.com/Cons"
-          + "traint\022+projects/{project}/constraints/{"
-          + "constraint}\022)folders/{folder}/constraint"
-          + "s/{constraint}\0225organizations/{organizat"
-          + "ion}/constraints/{constraint}B\021\n\017constra"
-          + "int_type\"\367\004\n\020CustomConstraint\022\021\n\004name\030\001 "
-          + "\001(\tB\003\340A\005\022\033\n\016resource_types\030\002 \003(\tB\003\340A\005\022L\n"
-          + "\014method_types\030\003 \003(\01626.google.cloud.orgpo"
-          + "licy.v2.CustomConstraint.MethodType\022\021\n\tc"
-          + "ondition\030\004 \001(\t\022K\n\013action_type\030\005 \001(\01626.go"
-          + "ogle.cloud.orgpolicy.v2.CustomConstraint"
-          + ".ActionType\022\024\n\014display_name\030\006 \001(\t\022\023\n\013des"
-          + "cription\030\007 \001(\t\0224\n\013update_time\030\010 \001(\0132\032.go"
-          + "ogle.protobuf.TimestampB\003\340A\003\"p\n\nMethodTy"
-          + "pe\022\033\n\027METHOD_TYPE_UNSPECIFIED\020\000\022\n\n\006CREAT"
-          + "E\020\001\022\n\n\006UPDATE\020\002\022\n\n\006DELETE\020\003\022\020\n\014REMOVE_GR"
-          + "ANT\020\004\022\017\n\013GOVERN_TAGS\020\005\">\n\nActionType\022\033\n\027"
-          + "ACTION_TYPE_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004"
-          + "DENY\020\002:r\352Ao\n)orgpolicy.googleapis.com/Cu"
-          + "stomConstraint\022Borganizations/{organizat"
-          + "ion}/customConstraints/{custom_constrain"
-          + "t}B\306\001\n\035com.google.cloud.orgpolicy.v2B\017Co"
-          + "nstraintProtoP\001Z;cloud.google.com/go/org"
-          + "policy/apiv2/orgpolicypb;orgpolicypb\252\002\031G"
-          + "oogle.Cloud.OrgPolicy.V2\312\002\031Google\\Cloud\\"
-          + "OrgPolicy\\V2\352\002\034Google::Cloud::OrgPolicy:"
-          + ":V2b\006proto3"
+          + "ource.proto\032\034google/protobuf/struct.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"\372\017\n\nC"
+          + "onstraint\022\021\n\004name\030\001 \001(\tB\003\340A\005\022\024\n\014display_"
+          + "name\030\002 \001(\t\022\023\n\013description\030\003 \001(\t\022S\n\022const"
+          + "raint_default\030\004 \001(\01627.google.cloud.orgpo"
+          + "licy.v2.Constraint.ConstraintDefault\022O\n\017"
+          + "list_constraint\030\005 \001(\01324.google.cloud.org"
+          + "policy.v2.Constraint.ListConstraintH\000\022U\n"
+          + "\022boolean_constraint\030\006 \001(\01327.google.cloud"
+          + ".orgpolicy.v2.Constraint.BooleanConstrai"
+          + "ntH\000\022\030\n\020supports_dry_run\030\007 \001(\010\022\035\n\025equiva"
+          + "lent_constraint\030\010 \001(\t\022\033\n\023supports_simula"
+          + "tion\030\t \001(\010\032=\n\016ListConstraint\022\023\n\013supports"
+          + "_in\030\001 \001(\010\022\026\n\016supports_under\030\002 \001(\010\032\202\t\n\032Cu"
+          + "stomConstraintDefinition\022\026\n\016resource_typ"
+          + "es\030\001 \003(\t\022a\n\014method_types\030\002 \003(\0162K.google."
+          + "cloud.orgpolicy.v2.Constraint.CustomCons"
+          + "traintDefinition.MethodType\022\021\n\tcondition"
+          + "\030\003 \001(\t\022`\n\013action_type\030\004 \001(\0162K.google.clo"
+          + "ud.orgpolicy.v2.Constraint.CustomConstra"
+          + "intDefinition.ActionType\022d\n\nparameters\030\005"
+          + " \003(\0132P.google.cloud.orgpolicy.v2.Constra"
+          + "int.CustomConstraintDefinition.Parameter"
+          + "sEntry\032\334\003\n\tParameter\022]\n\004type\030\001 \001(\0162O.goo"
+          + "gle.cloud.orgpolicy.v2.Constraint.Custom"
+          + "ConstraintDefinition.Parameter.Type\022-\n\rd"
+          + "efault_value\030\002 \001(\0132\026.google.protobuf.Val"
+          + "ue\022\031\n\021valid_values_expr\030\003 \001(\t\022e\n\010metadat"
+          + "a\030\004 \001(\0132S.google.cloud.orgpolicy.v2.Cons"
+          + "traint.CustomConstraintDefinition.Parame"
+          + "ter.Metadata\022]\n\004item\030\005 \001(\0162O.google.clou"
+          + "d.orgpolicy.v2.Constraint.CustomConstrai"
+          + "ntDefinition.Parameter.Type\032\037\n\010Metadata\022"
+          + "\023\n\013description\030\001 \001(\t\"?\n\004Type\022\024\n\020TYPE_UNS"
+          + "PECIFIED\020\000\022\010\n\004LIST\020\001\022\n\n\006STRING\020\002\022\013\n\007BOOL"
+          + "EAN\020\003\032}\n\017ParametersEntry\022\013\n\003key\030\001 \001(\t\022Y\n"
+          + "\005value\030\002 \001(\0132J.google.cloud.orgpolicy.v2"
+          + ".Constraint.CustomConstraintDefinition.P"
+          + "arameter:\0028\001\"p\n\nMethodType\022\033\n\027METHOD_TYP"
+          + "E_UNSPECIFIED\020\000\022\n\n\006CREATE\020\001\022\n\n\006UPDATE\020\002\022"
+          + "\n\n\006DELETE\020\003\022\020\n\014REMOVE_GRANT\020\004\022\017\n\013GOVERN_"
+          + "TAGS\020\005\">\n\nActionType\022\033\n\027ACTION_TYPE_UNSP"
+          + "ECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002\032{\n\021Boolea"
+          + "nConstraint\022f\n\034custom_constraint_definit"
+          + "ion\030\001 \001(\0132@.google.cloud.orgpolicy.v2.Co"
+          + "nstraint.CustomConstraintDefinition\"L\n\021C"
+          + "onstraintDefault\022\"\n\036CONSTRAINT_DEFAULT_U"
+          + "NSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002:\270\001\352A\264\001"
+          + "\n#orgpolicy.googleapis.com/Constraint\022+p"
+          + "rojects/{project}/constraints/{constrain"
+          + "t}\022)folders/{folder}/constraints/{constr"
+          + "aint}\0225organizations/{organization}/cons"
+          + "traints/{constraint}B\021\n\017constraint_type\""
+          + "\367\004\n\020CustomConstraint\022\021\n\004name\030\001 \001(\tB\003\340A\005\022"
+          + "\033\n\016resource_types\030\002 \003(\tB\003\340A\005\022L\n\014method_t"
+          + "ypes\030\003 \003(\01626.google.cloud.orgpolicy.v2.C"
+          + "ustomConstraint.MethodType\022\021\n\tcondition\030"
+          + "\004 \001(\t\022K\n\013action_type\030\005 \001(\01626.google.clou"
+          + "d.orgpolicy.v2.CustomConstraint.ActionTy"
+          + "pe\022\024\n\014display_name\030\006 \001(\t\022\023\n\013description\030"
+          + "\007 \001(\t\0224\n\013update_time\030\010 \001(\0132\032.google.prot"
+          + "obuf.TimestampB\003\340A\003\"p\n\nMethodType\022\033\n\027MET"
+          + "HOD_TYPE_UNSPECIFIED\020\000\022\n\n\006CREATE\020\001\022\n\n\006UP"
+          + "DATE\020\002\022\n\n\006DELETE\020\003\022\020\n\014REMOVE_GRANT\020\004\022\017\n\013"
+          + "GOVERN_TAGS\020\005\">\n\nActionType\022\033\n\027ACTION_TY"
+          + "PE_UNSPECIFIED\020\000\022\t\n\005ALLOW\020\001\022\010\n\004DENY\020\002:r\352"
+          + "Ao\n)orgpolicy.googleapis.com/CustomConst"
+          + "raint\022Borganizations/{organization}/cust"
+          + "omConstraints/{custom_constraint}B\306\001\n\035co"
+          + "m.google.cloud.orgpolicy.v2B\017ConstraintP"
+          + "rotoP\001Z;cloud.google.com/go/orgpolicy/ap"
+          + "iv2/orgpolicypb;orgpolicypb\252\002\031Google.Clo"
+          + "ud.OrgPolicy.V2\312\002\031Google\\Cloud\\OrgPolicy"
+          + "\\V2\352\002\034Google::Cloud::OrgPolicy::V2b\006prot"
+          + "o3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -104,6 +154,7 @@ public final class ConstraintProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_orgpolicy_v2_Constraint_descriptor =
@@ -119,6 +170,8 @@ public final class ConstraintProto {
               "ListConstraint",
               "BooleanConstraint",
               "SupportsDryRun",
+              "EquivalentConstraint",
+              "SupportsSimulation",
               "ConstraintType",
             });
     internal_static_google_cloud_orgpolicy_v2_Constraint_ListConstraint_descriptor =
@@ -129,12 +182,52 @@ public final class ConstraintProto {
             new java.lang.String[] {
               "SupportsIn", "SupportsUnder",
             });
-    internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_descriptor =
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor =
         internal_static_google_cloud_orgpolicy_v2_Constraint_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor,
+            new java.lang.String[] {
+              "ResourceTypes", "MethodTypes", "Condition", "ActionType", "Parameters",
+            });
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor =
+        internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor,
+            new java.lang.String[] {
+              "Type", "DefaultValue", "ValidValuesExpr", "Metadata", "Item",
+            });
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor =
+        internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_Parameter_Metadata_descriptor,
+            new java.lang.String[] {
+              "Description",
+            });
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_descriptor =
+        internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_orgpolicy_v2_Constraint_CustomConstraintDefinition_ParametersEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_descriptor =
+        internal_static_google_cloud_orgpolicy_v2_Constraint_descriptor.getNestedTypes().get(2);
     internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orgpolicy_v2_Constraint_BooleanConstraint_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "CustomConstraintDefinition",
+            });
     internal_static_google_cloud_orgpolicy_v2_CustomConstraint_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_orgpolicy_v2_CustomConstraint_fieldAccessorTable =
@@ -158,6 +251,7 @@ public final class ConstraintProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

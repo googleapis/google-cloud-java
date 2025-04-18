@@ -28,8 +28,8 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom constraints that exist on the organization resource. It will be
-   * empty if no custom constraints are set.
+   * All custom and managed constraints that exist on the organization resource.
+   * It will be empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -39,8 +39,8 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom constraints that exist on the organization resource. It will be
-   * empty if no custom constraints are set.
+   * All custom and managed constraints that exist on the organization resource.
+   * It will be empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -50,8 +50,8 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom constraints that exist on the organization resource. It will be
-   * empty if no custom constraints are set.
+   * All custom and managed constraints that exist on the organization resource.
+   * It will be empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -61,8 +61,8 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom constraints that exist on the organization resource. It will be
-   * empty if no custom constraints are set.
+   * All custom and managed constraints that exist on the organization resource.
+   * It will be empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>
@@ -73,8 +73,8 @@ public interface ListCustomConstraintsResponseOrBuilder
    *
    *
    * <pre>
-   * All custom constraints that exist on the organization resource. It will be
-   * empty if no custom constraints are set.
+   * All custom and managed constraints that exist on the organization resource.
+   * It will be empty if no custom constraints are set.
    * </pre>
    *
    * <code>repeated .google.cloud.orgpolicy.v2.CustomConstraint custom_constraints = 1;</code>

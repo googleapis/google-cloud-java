@@ -817,9 +817,9 @@ public final class OrgPolicyGrpc {
      *
      *
      * <pre>
-     * Gets a custom constraint.
+     * Gets a custom or managed constraint.
      * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
-     * custom constraint does not exist.
+     * custom or managed constraint does not exist.
      * </pre>
      */
     default void getCustomConstraint(
@@ -1103,9 +1103,9 @@ public final class OrgPolicyGrpc {
      *
      *
      * <pre>
-     * Gets a custom constraint.
+     * Gets a custom or managed constraint.
      * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
-     * custom constraint does not exist.
+     * custom or managed constraint does not exist.
      * </pre>
      */
     public void getCustomConstraint(
@@ -1338,9 +1338,9 @@ public final class OrgPolicyGrpc {
      *
      *
      * <pre>
-     * Gets a custom constraint.
+     * Gets a custom or managed constraint.
      * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
-     * custom constraint does not exist.
+     * custom or managed constraint does not exist.
      * </pre>
      */
     public com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraint(
@@ -1567,9 +1567,9 @@ public final class OrgPolicyGrpc {
      *
      *
      * <pre>
-     * Gets a custom constraint.
+     * Gets a custom or managed constraint.
      * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
-     * custom constraint does not exist.
+     * custom or managed constraint does not exist.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

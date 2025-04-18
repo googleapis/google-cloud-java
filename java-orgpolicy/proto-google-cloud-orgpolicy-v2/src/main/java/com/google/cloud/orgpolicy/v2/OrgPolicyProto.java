@@ -124,30 +124,32 @@ public final class OrgPolicyProto {
           + "google/api/resource.proto\032*google/cloud/"
           + "orgpolicy/v2/constraint.proto\032\033google/pr"
           + "otobuf/empty.proto\032 google/protobuf/fiel"
-          + "d_mask.proto\032\037google/protobuf/timestamp."
-          + "proto\032\026google/type/expr.proto\"\211\003\n\006Policy"
-          + "\022\021\n\004name\030\001 \001(\tB\003\340A\005\0223\n\004spec\030\002 \001(\0132%.goog"
-          + "le.cloud.orgpolicy.v2.PolicySpec\022E\n\talte"
-          + "rnate\030\003 \001(\0132..google.cloud.orgpolicy.v2."
-          + "AlternatePolicySpecB\002\030\001\022;\n\014dry_run_spec\030"
-          + "\004 \001(\0132%.google.cloud.orgpolicy.v2.Policy"
-          + "Spec\022\021\n\004etag\030\005 \001(\tB\003\340A\001:\237\001\352A\233\001\n\037orgpolic"
-          + "y.googleapis.com/Policy\022$projects/{proje"
-          + "ct}/policies/{policy}\022\"folders/{folder}/"
-          + "policies/{policy}\022.organizations/{organi"
-          + "zation}/policies/{policy}\"Z\n\023AlternatePo"
-          + "licySpec\022\016\n\006launch\030\001 \001(\t\0223\n\004spec\030\002 \001(\0132%"
-          + ".google.cloud.orgpolicy.v2.PolicySpec\"\306\003"
-          + "\n\nPolicySpec\022\014\n\004etag\030\001 \001(\t\0224\n\013update_tim"
-          + "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003"
-          + "\022?\n\005rules\030\003 \003(\01320.google.cloud.orgpolicy"
-          + ".v2.PolicySpec.PolicyRule\022\033\n\023inherit_fro"
-          + "m_parent\030\004 \001(\010\022\r\n\005reset\030\005 \001(\010\032\206\002\n\nPolicy"
-          + "Rule\022O\n\006values\030\001 \001(\0132=.google.cloud.orgp"
-          + "olicy.v2.PolicySpec.PolicyRule.StringVal"
-          + "uesH\000\022\023\n\tallow_all\030\002 \001(\010H\000\022\022\n\010deny_all\030\003"
-          + " \001(\010H\000\022\021\n\007enforce\030\004 \001(\010H\000\022$\n\tcondition\030\005"
-          + " \001(\0132\021.google.type.Expr\032=\n\014StringValues\022"
+          + "d_mask.proto\032\034google/protobuf/struct.pro"
+          + "to\032\037google/protobuf/timestamp.proto\032\026goo"
+          + "gle/type/expr.proto\"\211\003\n\006Policy\022\021\n\004name\030\001"
+          + " \001(\tB\003\340A\005\0223\n\004spec\030\002 \001(\0132%.google.cloud.o"
+          + "rgpolicy.v2.PolicySpec\022E\n\talternate\030\003 \001("
+          + "\0132..google.cloud.orgpolicy.v2.AlternateP"
+          + "olicySpecB\002\030\001\022;\n\014dry_run_spec\030\004 \001(\0132%.go"
+          + "ogle.cloud.orgpolicy.v2.PolicySpec\022\021\n\004et"
+          + "ag\030\005 \001(\tB\003\340A\001:\237\001\352A\233\001\n\037orgpolicy.googleap"
+          + "is.com/Policy\022$projects/{project}/polici"
+          + "es/{policy}\022\"folders/{folder}/policies/{"
+          + "policy}\022.organizations/{organization}/po"
+          + "licies/{policy}\"Z\n\023AlternatePolicySpec\022\016"
+          + "\n\006launch\030\001 \001(\t\0223\n\004spec\030\002 \001(\0132%.google.cl"
+          + "oud.orgpolicy.v2.PolicySpec\"\370\003\n\nPolicySp"
+          + "ec\022\014\n\004etag\030\001 \001(\t\0224\n\013update_time\030\002 \001(\0132\032."
+          + "google.protobuf.TimestampB\003\340A\003\022?\n\005rules\030"
+          + "\003 \003(\01320.google.cloud.orgpolicy.v2.Policy"
+          + "Spec.PolicyRule\022\033\n\023inherit_from_parent\030\004"
+          + " \001(\010\022\r\n\005reset\030\005 \001(\010\032\270\002\n\nPolicyRule\022O\n\006va"
+          + "lues\030\001 \001(\0132=.google.cloud.orgpolicy.v2.P"
+          + "olicySpec.PolicyRule.StringValuesH\000\022\023\n\ta"
+          + "llow_all\030\002 \001(\010H\000\022\022\n\010deny_all\030\003 \001(\010H\000\022\021\n\007"
+          + "enforce\030\004 \001(\010H\000\022$\n\tcondition\030\005 \001(\0132\021.goo"
+          + "gle.type.Expr\0220\n\nparameters\030\006 \001(\0132\027.goog"
+          + "le.protobuf.StructB\003\340A\001\032=\n\014StringValues\022"
           + "\026\n\016allowed_values\030\001 \003(\t\022\025\n\rdenied_values"
           + "\030\002 \003(\tB\006\n\004kind\"|\n\026ListConstraintsRequest"
           + "\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\022#orgpolicy.goog"
@@ -283,6 +285,7 @@ public final class OrgPolicyProto {
               com.google.cloud.orgpolicy.v2.ConstraintProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.type.ExprProto.getDescriptor(),
             });
@@ -316,7 +319,7 @@ public final class OrgPolicyProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_orgpolicy_v2_PolicySpec_PolicyRule_descriptor,
             new java.lang.String[] {
-              "Values", "AllowAll", "DenyAll", "Enforce", "Condition", "Kind",
+              "Values", "AllowAll", "DenyAll", "Enforce", "Condition", "Parameters", "Kind",
             });
     internal_static_google_cloud_orgpolicy_v2_PolicySpec_PolicyRule_StringValues_descriptor =
         internal_static_google_cloud_orgpolicy_v2_PolicySpec_PolicyRule_descriptor
@@ -466,6 +469,7 @@ public final class OrgPolicyProto {
     com.google.cloud.orgpolicy.v2.ConstraintProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.type.ExprProto.getDescriptor();
   }

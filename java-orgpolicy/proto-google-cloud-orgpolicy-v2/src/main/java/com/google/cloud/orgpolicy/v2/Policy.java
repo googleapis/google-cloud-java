@@ -147,7 +147,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -162,7 +162,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -177,7 +177,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -199,7 +199,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
    * @return Whether the alternate field is set.
    */
   @java.lang.Override
@@ -217,7 +217,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
    * @return The alternate.
    */
   @java.lang.Override
@@ -1005,7 +1005,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1019,7 +1019,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1039,7 +1039,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1061,7 +1061,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1080,7 +1080,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1107,7 +1107,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1126,7 +1126,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1140,7 +1140,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1158,7 +1158,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Basic information about the Organization Policy.
+     * Basic information about the organization policy.
      * </pre>
      *
      * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -1197,7 +1197,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
      * @return Whether the alternate field is set.
      */
     @java.lang.Deprecated
@@ -1215,7 +1215,7 @@ public final class Policy extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+     *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
      * @return The alternate.
      */
     @java.lang.Deprecated

@@ -259,6 +259,65 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.type.ExprOrBuilder getConditionOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the parameters field is set.
+     */
+    boolean hasParameters();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The parameters.
+     */
+    com.google.protobuf.Struct getParameters();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.StructOrBuilder getParametersOrBuilder();
+
     com.google.cloud.orgpolicy.v2.PolicySpec.PolicyRule.KindCase getKindCase();
   }
   /**
@@ -1741,6 +1800,76 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       return condition_ == null ? com.google.type.Expr.getDefaultInstance() : condition_;
     }
 
+    public static final int PARAMETERS_FIELD_NUMBER = 6;
+    private com.google.protobuf.Struct parameters_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the parameters field is set.
+     */
+    @java.lang.Override
+    public boolean hasParameters() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The parameters.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Struct getParameters() {
+      return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Required for managed constraints if parameters are defined.
+     * Passes parameter values when policy enforcement is enabled. Ensure that
+     * parameter value types match those defined in the constraint definition.
+     * For example:
+     * {
+     *   "allowedLocations" : ["us-east1", "us-west1"],
+     *   "allowAll" : true
+     * }
+     * </pre>
+     *
+     * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+      return parameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : parameters_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1770,6 +1899,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(5, getCondition());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getParameters());
       }
       getUnknownFields().writeTo(output);
     }
@@ -1803,6 +1935,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getCondition());
       }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getParameters());
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1822,6 +1957,10 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       if (hasCondition() != other.hasCondition()) return false;
       if (hasCondition()) {
         if (!getCondition().equals(other.getCondition())) return false;
+      }
+      if (hasParameters() != other.hasParameters()) return false;
+      if (hasParameters()) {
+        if (!getParameters().equals(other.getParameters())) return false;
       }
       if (!getKindCase().equals(other.getKindCase())) return false;
       switch (kindCase_) {
@@ -1854,6 +1993,10 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       if (hasCondition()) {
         hash = (37 * hash) + CONDITION_FIELD_NUMBER;
         hash = (53 * hash) + getCondition().hashCode();
+      }
+      if (hasParameters()) {
+        hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
+        hash = (53 * hash) + getParameters().hashCode();
       }
       switch (kindCase_) {
         case 1:
@@ -2019,6 +2162,7 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getConditionFieldBuilder();
+          getParametersFieldBuilder();
         }
       }
 
@@ -2033,6 +2177,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         if (conditionBuilder_ != null) {
           conditionBuilder_.dispose();
           conditionBuilder_ = null;
+        }
+        parameters_ = null;
+        if (parametersBuilder_ != null) {
+          parametersBuilder_.dispose();
+          parametersBuilder_ = null;
         }
         kindCase_ = 0;
         kind_ = null;
@@ -2077,6 +2226,11 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.condition_ = conditionBuilder_ == null ? condition_ : conditionBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.parameters_ =
+              parametersBuilder_ == null ? parameters_ : parametersBuilder_.build();
+          to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2139,6 +2293,9 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           return this;
         if (other.hasCondition()) {
           mergeCondition(other.getCondition());
+        }
+        if (other.hasParameters()) {
+          mergeParameters(other.getParameters());
         }
         switch (other.getKindCase()) {
           case VALUES:
@@ -2222,6 +2379,12 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(getParametersFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2984,6 +3147,263 @@ public final class PolicySpec extends com.google.protobuf.GeneratedMessageV3
           condition_ = null;
         }
         return conditionBuilder_;
+      }
+
+      private com.google.protobuf.Struct parameters_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          parametersBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the parameters field is set.
+       */
+      public boolean hasParameters() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The parameters.
+       */
+      public com.google.protobuf.Struct getParameters() {
+        if (parametersBuilder_ == null) {
+          return parameters_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : parameters_;
+        } else {
+          return parametersBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setParameters(com.google.protobuf.Struct value) {
+        if (parametersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          parameters_ = value;
+        } else {
+          parametersBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setParameters(com.google.protobuf.Struct.Builder builderForValue) {
+        if (parametersBuilder_ == null) {
+          parameters_ = builderForValue.build();
+        } else {
+          parametersBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeParameters(com.google.protobuf.Struct value) {
+        if (parametersBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)
+              && parameters_ != null
+              && parameters_ != com.google.protobuf.Struct.getDefaultInstance()) {
+            getParametersBuilder().mergeFrom(value);
+          } else {
+            parameters_ = value;
+          }
+        } else {
+          parametersBuilder_.mergeFrom(value);
+        }
+        if (parameters_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearParameters() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        parameters_ = null;
+        if (parametersBuilder_ != null) {
+          parametersBuilder_.dispose();
+          parametersBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Struct.Builder getParametersBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return getParametersFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.StructOrBuilder getParametersOrBuilder() {
+        if (parametersBuilder_ != null) {
+          return parametersBuilder_.getMessageOrBuilder();
+        } else {
+          return parameters_ == null
+              ? com.google.protobuf.Struct.getDefaultInstance()
+              : parameters_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Required for managed constraints if parameters are defined.
+       * Passes parameter values when policy enforcement is enabled. Ensure that
+       * parameter value types match those defined in the constraint definition.
+       * For example:
+       * {
+       *   "allowedLocations" : ["us-east1", "us-west1"],
+       *   "allowAll" : true
+       * }
+       * </pre>
+       *
+       * <code>.google.protobuf.Struct parameters = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Struct,
+              com.google.protobuf.Struct.Builder,
+              com.google.protobuf.StructOrBuilder>
+          getParametersFieldBuilder() {
+        if (parametersBuilder_ == null) {
+          parametersBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Struct,
+                  com.google.protobuf.Struct.Builder,
+                  com.google.protobuf.StructOrBuilder>(
+                  getParameters(), getParentForChildren(), isClean());
+          parameters_ = null;
+        }
+        return parametersBuilder_;
       }
 
       @java.lang.Override
