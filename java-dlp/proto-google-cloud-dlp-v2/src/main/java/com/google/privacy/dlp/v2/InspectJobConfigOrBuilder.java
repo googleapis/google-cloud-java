@@ -36,6 +36,7 @@ public interface InspectJobConfigOrBuilder
    * @return Whether the storageConfig field is set.
    */
   boolean hasStorageConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InspectJobConfigOrBuilder
    * @return The storageConfig.
    */
   com.google.privacy.dlp.v2.StorageConfig getStorageConfig();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface InspectJobConfigOrBuilder
    * @return Whether the inspectConfig field is set.
    */
   boolean hasInspectConfig();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface InspectJobConfigOrBuilder
    * @return The inspectConfig.
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface InspectJobConfigOrBuilder
    * @return The inspectTemplateName.
    */
   java.lang.String getInspectTemplateName();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface InspectJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
   java.util.List<com.google.privacy.dlp.v2.Action> getActionsList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface InspectJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
   com.google.privacy.dlp.v2.Action getActions(int index);
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface InspectJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
   int getActionsCount();
+
   /**
    *
    *
@@ -163,6 +171,7 @@ public interface InspectJobConfigOrBuilder
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
   java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> getActionsOrBuilderList();
+
   /**
    *
    *

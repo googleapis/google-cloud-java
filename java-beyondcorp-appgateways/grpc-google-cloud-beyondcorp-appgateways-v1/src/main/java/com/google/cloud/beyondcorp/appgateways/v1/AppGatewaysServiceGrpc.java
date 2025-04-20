@@ -245,6 +245,19 @@ public final class AppGatewaysServiceGrpc {
     return AppGatewaysServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AppGatewaysServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AppGatewaysServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AppGatewaysServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AppGatewaysServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AppGatewaysServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AppGatewaysServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -471,6 +484,87 @@ public final class AppGatewaysServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AppGatewaysService.
+   *
+   * <pre>
+   * API Overview:
+   * The `beyondcorp.googleapis.com` service implements the Google Cloud
+   * BeyondCorp API.
+   * Data Model:
+   * The AppGatewaysService exposes the following resources:
+   * * AppGateways, named as follows:
+   *   `projects/{project_id}/locations/{location_id}/appGateways/{app_gateway_id}`.
+   * The AppGatewaysService service provides methods to manage
+   * (create/read/update/delete) BeyondCorp AppGateways.
+   * </pre>
+   */
+  public static final class AppGatewaysServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AppGatewaysServiceBlockingV2Stub> {
+    private AppGatewaysServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AppGatewaysServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AppGatewaysServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AppGateways in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysResponse listAppGateways(
+        com.google.cloud.beyondcorp.appgateways.v1.ListAppGatewaysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAppGatewaysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AppGateway.
+     * </pre>
+     */
+    public com.google.cloud.beyondcorp.appgateways.v1.AppGateway getAppGateway(
+        com.google.cloud.beyondcorp.appgateways.v1.GetAppGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAppGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AppGateway in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAppGateway(
+        com.google.cloud.beyondcorp.appgateways.v1.CreateAppGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAppGatewayMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single AppGateway.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAppGateway(
+        com.google.cloud.beyondcorp.appgateways.v1.DeleteAppGatewayRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAppGatewayMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AppGatewaysService.
    *
    * <pre>
    * API Overview:

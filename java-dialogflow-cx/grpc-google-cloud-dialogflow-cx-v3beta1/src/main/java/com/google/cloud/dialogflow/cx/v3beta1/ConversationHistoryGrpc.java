@@ -192,6 +192,19 @@ public final class ConversationHistoryGrpc {
     return ConversationHistoryStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationHistoryBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationHistoryBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationHistoryBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationHistoryBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationHistoryBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationHistoryBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -364,6 +377,66 @@ public final class ConversationHistoryGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConversationHistory.
+   *
+   * <pre>
+   * Service for managing conversation history.
+   * </pre>
+   */
+  public static final class ConversationHistoryBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationHistoryBlockingV2Stub> {
+    private ConversationHistoryBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationHistoryBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationHistoryBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all conversations.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListConversationsResponse listConversations(
+        com.google.cloud.dialogflow.cx.v3beta1.ListConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Conversation getConversation(
+        com.google.cloud.dialogflow.cx.v3beta1.GetConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified conversation.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteConversation(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteConversationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConversationHistory.
    *
    * <pre>
    * Service for managing conversation history.

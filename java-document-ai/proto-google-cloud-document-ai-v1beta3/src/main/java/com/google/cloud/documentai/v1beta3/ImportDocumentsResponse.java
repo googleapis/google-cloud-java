@@ -33,6 +33,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.ImportDocumentsResponse)
     ImportDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportDocumentsResponse.newBuilder() to construct.
   private ImportDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ImportDocumentsResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

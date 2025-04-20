@@ -32,6 +32,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceHAPolicy)
     BackendServiceHAPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceHAPolicy.newBuilder() to construct.
   private BackendServiceHAPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,8 +100,10 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
      * <code>UNDEFINED_FAST_I_P_MOVE = 0;</code>
      */
     public static final int UNDEFINED_FAST_I_P_MOVE_VALUE = 0;
+
     /** <code>DISABLED = 516696700;</code> */
     public static final int DISABLED_VALUE = 516696700;
+
     /** <code>GARP_RA = 527352630;</code> */
     public static final int GARP_RA_VALUE = 527352630;
 
@@ -194,6 +197,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fastIPMove_ = "";
+
   /**
    *
    *
@@ -210,6 +214,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
   public boolean hasFastIPMove() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -234,6 +239,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -423,6 +429,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -609,6 +616,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object fastIPMove_ = "";
+
     /**
      *
      *
@@ -624,6 +632,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
     public boolean hasFastIPMove() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -647,6 +656,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -692,6 +703,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class BackendServiceHAPolicy extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

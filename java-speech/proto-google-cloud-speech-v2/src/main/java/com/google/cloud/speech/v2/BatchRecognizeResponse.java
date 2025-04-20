@@ -35,6 +35,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.BatchRecognizeResponse)
     BatchRecognizeResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchRecognizeResponse.newBuilder() to construct.
   private BatchRecognizeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -110,6 +111,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
   public int getResultsCount() {
     return internalGetResults().getMap().size();
   }
+
   /**
    *
    *
@@ -126,6 +128,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     }
     return internalGetResults().getMap().containsKey(key);
   }
+
   /** Use {@link #getResultsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -133,6 +136,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       getResults() {
     return getResultsMap();
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       getResultsMap() {
     return internalGetResults().getMap();
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         internalGetResults().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
 
   public static final int TOTAL_BILLED_DURATION_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration totalBilledDuration_;
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
   public boolean hasTotalBilledDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Duration.getDefaultInstance()
         : totalBilledDuration_;
   }
+
   /**
    *
    *
@@ -424,6 +433,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -689,7 +699,8 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
           defaultEntry() {
         return ResultsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ResultsConverter resultsConverter = new ResultsConverter();
 
@@ -729,6 +740,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     public int getResultsCount() {
       return internalGetResults().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -745,6 +757,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       }
       return internalGetResults().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getResultsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -752,6 +765,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         getResults() {
       return getResultsMap();
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         getResultsMap() {
       return internalGetResults().getImmutableMap();
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
           map = internalGetMutableResults().ensureBuilderMap();
       return map.containsKey(key) ? resultsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -815,6 +831,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       internalGetMutableResults().clear();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +848,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       internalGetMutableResults().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.cloud.speech.v2.BatchRecognizeFileResult>
@@ -838,6 +856,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return internalGetMutableResults().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +934,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         totalBilledDurationBuilder_;
+
     /**
      *
      *
@@ -927,6 +949,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
     public boolean hasTotalBilledDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -947,6 +970,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
         return totalBilledDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1015,6 +1041,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1048,6 +1076,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return getTotalBilledDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1066,6 +1095,7 @@ public final class BatchRecognizeResponse extends com.google.protobuf.GeneratedM
             : totalBilledDuration_;
       }
     }
+
     /**
      *
      *

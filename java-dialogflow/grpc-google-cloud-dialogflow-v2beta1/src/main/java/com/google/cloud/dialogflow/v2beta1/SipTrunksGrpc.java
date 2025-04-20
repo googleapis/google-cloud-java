@@ -270,6 +270,19 @@ public final class SipTrunksGrpc {
     return SipTrunksStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SipTrunksBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SipTrunksBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SipTrunksBlockingV2Stub>() {
+          @java.lang.Override
+          public SipTrunksBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SipTrunksBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SipTrunksBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -501,6 +514,91 @@ public final class SipTrunksGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SipTrunks.
+   *
+   * <pre>
+   * Service for managing [SipTrunks][google.cloud.dialogflow.v2beta1.SipTrunk].
+   * </pre>
+   */
+  public static final class SipTrunksBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SipTrunksBlockingV2Stub> {
+    private SipTrunksBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SipTrunksBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SipTrunksBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SipTrunk for a specified location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipTrunk createSipTrunk(
+        com.google.cloud.dialogflow.v2beta1.CreateSipTrunkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSipTrunkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified SipTrunk.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSipTrunk(
+        com.google.cloud.dialogflow.v2beta1.DeleteSipTrunkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSipTrunkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of SipTrunks in the specified location.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.ListSipTrunksResponse listSipTrunks(
+        com.google.cloud.dialogflow.v2beta1.ListSipTrunksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSipTrunksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified SipTrunk.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipTrunk getSipTrunk(
+        com.google.cloud.dialogflow.v2beta1.GetSipTrunkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSipTrunkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified SipTrunk.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2beta1.SipTrunk updateSipTrunk(
+        com.google.cloud.dialogflow.v2beta1.UpdateSipTrunkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSipTrunkMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SipTrunks.
    *
    * <pre>
    * Service for managing [SipTrunks][google.cloud.dialogflow.v2beta1.SipTrunk].

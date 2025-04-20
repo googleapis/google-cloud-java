@@ -41,6 +41,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Dimension> getDimensionsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   com.google.analytics.data.v1beta.Dimension getDimensions(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Dimension dimensions = 2;</code>
    */
   int getDimensionsCount();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface RunRealtimeReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.DimensionOrBuilder>
       getDimensionsOrBuilderList();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.Metric> getMetricsList();
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   com.google.analytics.data.v1beta.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.Metric metrics = 3;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -152,6 +160,7 @@ public interface RunRealtimeReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -175,6 +184,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return Whether the dimensionFilter field is set.
    */
   boolean hasDimensionFilter();
+
   /**
    *
    *
@@ -187,6 +197,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The dimensionFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getDimensionFilter();
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return Whether the metricFilter field is set.
    */
   boolean hasMetricFilter();
+
   /**
    *
    *
@@ -224,6 +236,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The metricFilter.
    */
   com.google.analytics.data.v1beta.FilterExpression getMetricFilter();
+
   /**
    *
    *
@@ -270,6 +283,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return A list containing the metricAggregations.
    */
   java.util.List<com.google.analytics.data.v1beta.MetricAggregation> getMetricAggregationsList();
+
   /**
    *
    *
@@ -283,6 +297,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The count of metricAggregations.
    */
   int getMetricAggregationsCount();
+
   /**
    *
    *
@@ -297,6 +312,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return The metricAggregations at the given index.
    */
   com.google.analytics.data.v1beta.MetricAggregation getMetricAggregations(int index);
+
   /**
    *
    *
@@ -310,6 +326,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for metricAggregations.
    */
   java.util.List<java.lang.Integer> getMetricAggregationsValueList();
+
   /**
    *
    *
@@ -335,6 +352,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 8;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.OrderBy> getOrderBysList();
+
   /**
    *
    *
@@ -345,6 +363,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 8;</code>
    */
   com.google.analytics.data.v1beta.OrderBy getOrderBys(int index);
+
   /**
    *
    *
@@ -355,6 +374,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.OrderBy order_bys = 8;</code>
    */
   int getOrderBysCount();
+
   /**
    *
    *
@@ -366,6 +386,7 @@ public interface RunRealtimeReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.OrderByOrBuilder>
       getOrderBysOrBuilderList();
+
   /**
    *
    *
@@ -406,6 +427,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
    */
   java.util.List<com.google.analytics.data.v1beta.MinuteRange> getMinuteRangesList();
+
   /**
    *
    *
@@ -420,6 +442,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
    */
   com.google.analytics.data.v1beta.MinuteRange getMinuteRanges(int index);
+
   /**
    *
    *
@@ -434,6 +457,7 @@ public interface RunRealtimeReportRequestOrBuilder
    * <code>repeated .google.analytics.data.v1beta.MinuteRange minute_ranges = 10;</code>
    */
   int getMinuteRangesCount();
+
   /**
    *
    *
@@ -449,6 +473,7 @@ public interface RunRealtimeReportRequestOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1beta.MinuteRangeOrBuilder>
       getMinuteRangesOrBuilderList();
+
   /**
    *
    *

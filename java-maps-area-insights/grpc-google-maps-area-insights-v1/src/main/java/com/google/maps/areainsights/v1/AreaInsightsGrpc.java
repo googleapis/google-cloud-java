@@ -95,6 +95,19 @@ public final class AreaInsightsGrpc {
     return AreaInsightsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AreaInsightsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AreaInsightsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AreaInsightsBlockingV2Stub>() {
+          @java.lang.Override
+          public AreaInsightsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AreaInsightsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AreaInsightsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -220,6 +233,48 @@ public final class AreaInsightsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AreaInsights.
+   *
+   * <pre>
+   * Service definition for the Places Insights API.
+   * </pre>
+   */
+  public static final class AreaInsightsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AreaInsightsBlockingV2Stub> {
+    private AreaInsightsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AreaInsightsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AreaInsightsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Compute Insights RPC
+     * This method lets you retrieve insights about areas using a variaty of
+     * filter such as: area, place type, operating status, price level
+     * and ratings. Currently "count" and "places" insights are supported. With
+     * "count" insights you can answer questions such as "How many restaurant are
+     * located in California that are operational, are inexpensive and have an
+     * average rating of at least 4 stars" (see `insight` enum for more details).
+     * With "places" insights, you can determine which places match the
+     * requested filter. Clients can then use those place resource names to fetch
+     * more details about each individual place using the Places API.
+     * </pre>
+     */
+    public com.google.maps.areainsights.v1.ComputeInsightsResponse computeInsights(
+        com.google.maps.areainsights.v1.ComputeInsightsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getComputeInsightsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AreaInsights.
    *
    * <pre>
    * Service definition for the Places Insights API.

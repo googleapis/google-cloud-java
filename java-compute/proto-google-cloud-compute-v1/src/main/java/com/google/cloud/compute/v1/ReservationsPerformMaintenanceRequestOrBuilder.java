@@ -37,6 +37,7 @@ public interface ReservationsPerformMaintenanceRequestOrBuilder
    * @return Whether the maintenanceScope field is set.
    */
   boolean hasMaintenanceScope();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ReservationsPerformMaintenanceRequestOrBuilder
    * @return The maintenanceScope.
    */
   java.lang.String getMaintenanceScope();
+
   /**
    *
    *

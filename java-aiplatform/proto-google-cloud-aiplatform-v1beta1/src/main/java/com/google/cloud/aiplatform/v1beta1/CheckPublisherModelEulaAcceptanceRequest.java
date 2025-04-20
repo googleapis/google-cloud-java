@@ -35,6 +35,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest)
     CheckPublisherModelEulaAcceptanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckPublisherModelEulaAcceptanceRequest.newBuilder() to construct.
   private CheckPublisherModelEulaAcceptanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publisherModel_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +367,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +579,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -598,6 +605,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +656,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
     }
 
     private java.lang.Object publisherModel_ = "";
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -748,6 +761,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class CheckPublisherModelEulaAcceptanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

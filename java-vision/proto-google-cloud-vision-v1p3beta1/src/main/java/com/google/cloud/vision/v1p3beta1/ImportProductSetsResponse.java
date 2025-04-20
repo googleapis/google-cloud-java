@@ -39,6 +39,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.ImportProductSetsResponse)
     ImportProductSetsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportProductSetsResponse.newBuilder() to construct.
   private ImportProductSetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> referenceImages_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.cloud.vision.v1p3beta1.ReferenceImage> getReferenceImagesList() {
     return referenceImages_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       getReferenceImagesOrBuilderList() {
     return referenceImages_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public int getReferenceImagesCount() {
     return referenceImages_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public com.google.cloud.vision.v1p3beta1.ReferenceImage getReferenceImages(int index) {
     return referenceImages_.get(index);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> statuses_;
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public java.util.List<com.google.rpc.Status> getStatusesList() {
     return statuses_;
   }
+
   /**
    *
    *
@@ -182,6 +190,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusesOrBuilderList() {
     return statuses_;
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public int getStatusesCount() {
     return statuses_.size();
   }
+
   /**
    *
    *
@@ -218,6 +228,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
   public com.google.rpc.Status getStatuses(int index) {
     return statuses_.get(index);
   }
+
   /**
    *
    *
@@ -410,6 +421,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +748,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return referenceImagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return referenceImagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return referenceImagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -856,6 +874,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +916,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +957,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +977,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +991,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         int index) {
       return getReferenceImagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return referenceImagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1027,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(referenceImages_);
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1041,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       return getReferenceImagesFieldBuilder()
           .addBuilder(com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1028,6 +1056,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       return getReferenceImagesFieldBuilder()
           .addBuilder(index, com.google.cloud.vision.v1p3beta1.ReferenceImage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1096,6 +1125,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return statusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return statusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1138,6 +1169,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return statusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1197,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1222,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1250,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1278,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1303,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1328,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1315,6 +1353,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1339,6 +1378,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1403,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1380,6 +1421,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     public com.google.rpc.Status.Builder getStatusesBuilder(int index) {
       return getStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1401,6 +1443,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return statusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1422,6 +1465,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(statuses_);
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1483,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
     public com.google.rpc.Status.Builder addStatusesBuilder() {
       return getStatusesFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1457,6 +1502,7 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
       return getStatusesFieldBuilder()
           .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *

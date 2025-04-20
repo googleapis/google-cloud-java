@@ -33,6 +33,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse)
     ListMessageBusEnrollmentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMessageBusEnrollmentsResponse.newBuilder() to construct.
   private ListMessageBusEnrollmentsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList enrollments_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getEnrollmentsList() {
     return enrollments_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public int getEnrollmentsCount() {
     return enrollments_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public java.lang.String getEnrollments(int index) {
     return enrollments_.get(index);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -439,6 +450,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -678,6 +690,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -693,6 +706,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       enrollments_.makeImmutable();
       return enrollments_;
     }
+
     /**
      *
      *
@@ -707,6 +721,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public int getEnrollmentsCount() {
       return enrollments_.size();
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public java.lang.String getEnrollments(int index) {
       return enrollments_.get(index);
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public com.google.protobuf.ByteString getEnrollmentsBytes(int index) {
       return enrollments_.getByteString(index);
     }
+
     /**
      *
      *
@@ -760,6 +777,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +820,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +839,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +865,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -867,6 +889,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +913,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +936,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +955,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +989,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1007,6 +1036,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1022,6 +1052,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1045,6 +1076,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1067,6 +1099,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1119,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1104,6 +1138,7 @@ public final class ListMessageBusEnrollmentsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

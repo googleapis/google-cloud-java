@@ -33,6 +33,7 @@ public final class ReservationsPerformMaintenanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationsPerformMaintenanceRequest)
     ReservationsPerformMaintenanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationsPerformMaintenanceRequest.newBuilder() to construct.
   private ReservationsPerformMaintenanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -138,6 +139,7 @@ public final class ReservationsPerformMaintenanceRequest
      * <code>UNDEFINED_MAINTENANCE_SCOPE = 0;</code>
      */
     public static final int UNDEFINED_MAINTENANCE_SCOPE_VALUE = 0;
+
     /**
      *
      *
@@ -148,6 +150,7 @@ public final class ReservationsPerformMaintenanceRequest
      * <code>ALL = 64897;</code>
      */
     public static final int ALL_VALUE = 64897;
+
     /**
      *
      *
@@ -158,6 +161,7 @@ public final class ReservationsPerformMaintenanceRequest
      * <code>MAINTENANCE_SCOPE_UNSPECIFIED = 78827328;</code>
      */
     public static final int MAINTENANCE_SCOPE_UNSPECIFIED_VALUE = 78827328;
+
     /**
      *
      *
@@ -168,6 +172,7 @@ public final class ReservationsPerformMaintenanceRequest
      * <code>RUNNING_VMS = 535770588;</code>
      */
     public static final int RUNNING_VMS_VALUE = 535770588;
+
     /**
      *
      *
@@ -275,6 +280,7 @@ public final class ReservationsPerformMaintenanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object maintenanceScope_ = "";
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class ReservationsPerformMaintenanceRequest
   public boolean hasMaintenanceScope() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -315,6 +322,7 @@ public final class ReservationsPerformMaintenanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +515,7 @@ public final class ReservationsPerformMaintenanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +707,7 @@ public final class ReservationsPerformMaintenanceRequest
     private int bitField0_;
 
     private java.lang.Object maintenanceScope_ = "";
+
     /**
      *
      *
@@ -713,6 +723,7 @@ public final class ReservationsPerformMaintenanceRequest
     public boolean hasMaintenanceScope() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -736,6 +747,7 @@ public final class ReservationsPerformMaintenanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +771,7 @@ public final class ReservationsPerformMaintenanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -781,6 +794,7 @@ public final class ReservationsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -799,6 +813,7 @@ public final class ReservationsPerformMaintenanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

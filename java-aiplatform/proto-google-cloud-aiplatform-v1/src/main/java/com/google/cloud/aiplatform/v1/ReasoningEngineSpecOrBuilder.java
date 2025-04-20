@@ -41,6 +41,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return Whether the packageSpec field is set.
    */
   boolean hasPackageSpec();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return The packageSpec.
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.PackageSpec getPackageSpec();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return Whether the deploymentSpec field is set.
    */
   boolean hasDeploymentSpec();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return The deploymentSpec.
    */
   com.google.cloud.aiplatform.v1.ReasoningEngineSpec.DeploymentSpec getDeploymentSpec();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   java.util.List<com.google.protobuf.Struct> getClassMethodsList();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   com.google.protobuf.Struct getClassMethods(int index);
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   int getClassMethodsCount();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface ReasoningEngineSpecOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getClassMethodsOrBuilderList();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface ReasoningEngineSpecOrBuilder
    * @return The agentFramework.
    */
   java.lang.String getAgentFramework();
+
   /**
    *
    *

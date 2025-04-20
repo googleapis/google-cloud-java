@@ -103,6 +103,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPOKE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int SPOKE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -113,6 +114,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPN_TUNNEL = 1;</code>
    */
   public static final int VPN_TUNNEL_VALUE = 1;
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INTERCONNECT_ATTACHMENT = 2;</code>
    */
   public static final int INTERCONNECT_ATTACHMENT_VALUE = 2;
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ROUTER_APPLIANCE = 3;</code>
    */
   public static final int ROUTER_APPLIANCE_VALUE = 3;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public enum SpokeType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VPC_NETWORK = 4;</code>
    */
   public static final int VPC_NETWORK_VALUE = 4;
+
   /**
    *
    *

@@ -372,6 +372,19 @@ public final class SessionServiceGrpc {
     return SessionServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SessionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SessionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SessionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SessionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SessionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SessionServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -665,6 +678,121 @@ public final class SessionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SessionService.
+   *
+   * <pre>
+   * The service that manages Vertex Session related resources.
+   * </pre>
+   */
+  public static final class SessionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SessionServiceBlockingV2Stub> {
+    private SessionServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SessionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SessionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
+     * project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createSession(
+        com.google.cloud.aiplatform.v1beta1.CreateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of the specific
+     * [Session][google.cloud.aiplatform.v1beta1.Session].
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Session getSession(
+        com.google.cloud.aiplatform.v1beta1.GetSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
+     * project and location.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListSessionsResponse listSessions(
+        com.google.cloud.aiplatform.v1beta1.ListSessionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSessionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specific [Session][google.cloud.aiplatform.v1beta1.Session].
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.Session updateSession(
+        com.google.cloud.aiplatform.v1beta1.UpdateSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes details of the specific
+     * [Session][google.cloud.aiplatform.v1beta1.Session].
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSession(
+        com.google.cloud.aiplatform.v1beta1.DeleteSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists [Events][google.cloud.aiplatform.v1beta1.Event] in a given session.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListEventsResponse listEvents(
+        com.google.cloud.aiplatform.v1beta1.ListEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Appends an event to a given session.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.AppendEventResponse appendEvent(
+        com.google.cloud.aiplatform.v1beta1.AppendEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAppendEventMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SessionService.
    *
    * <pre>
    * The service that manages Vertex Session related resources.

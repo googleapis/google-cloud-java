@@ -72,6 +72,7 @@ public enum GenerateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>GENERATE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int GENERATE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum GenerateType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ALL = 1;</code>
    */
   public static final int ALL_VALUE = 1;
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface IntentMatchDataOrBuilder
    * @return The intentUniqueId.
    */
   java.lang.String getIntentUniqueId();
+
   /**
    *
    *

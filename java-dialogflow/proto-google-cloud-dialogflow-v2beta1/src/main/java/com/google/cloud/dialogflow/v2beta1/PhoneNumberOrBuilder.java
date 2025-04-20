@@ -41,6 +41,7 @@ public interface PhoneNumberOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface PhoneNumberOrBuilder
    * @return The phoneNumber.
    */
   java.lang.String getPhoneNumber();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface PhoneNumberOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface PhoneNumberOrBuilder
    * @return The enum numeric value on the wire for lifecycleState.
    */
   int getLifecycleStateValue();
+
   /**
    *
    *

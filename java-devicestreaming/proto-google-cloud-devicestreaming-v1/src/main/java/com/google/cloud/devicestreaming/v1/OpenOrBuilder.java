@@ -50,6 +50,7 @@ public interface OpenOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class UpdateReportingDataAnnotationRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateReportingDataAnnotationRequest)
     UpdateReportingDataAnnotationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateReportingDataAnnotationRequest.newBuilder() to construct.
   private UpdateReportingDataAnnotationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -66,6 +67,7 @@ public final class UpdateReportingDataAnnotationRequest
   private int bitField0_;
   public static final int REPORTING_DATA_ANNOTATION_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.ReportingDataAnnotation reportingDataAnnotation_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class UpdateReportingDataAnnotationRequest
   public boolean hasReportingDataAnnotation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class UpdateReportingDataAnnotationRequest
         ? com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance()
         : reportingDataAnnotation_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class UpdateReportingDataAnnotationRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class UpdateReportingDataAnnotationRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class UpdateReportingDataAnnotationRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class UpdateReportingDataAnnotationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -596,6 +604,7 @@ public final class UpdateReportingDataAnnotationRequest
             com.google.analytics.admin.v1alpha.ReportingDataAnnotation.Builder,
             com.google.analytics.admin.v1alpha.ReportingDataAnnotationOrBuilder>
         reportingDataAnnotationBuilder_;
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class UpdateReportingDataAnnotationRequest
     public boolean hasReportingDataAnnotation() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -634,6 +644,7 @@ public final class UpdateReportingDataAnnotationRequest
         return reportingDataAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -659,6 +670,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +726,7 @@ public final class UpdateReportingDataAnnotationRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +766,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return getReportingDataAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -772,6 +788,7 @@ public final class UpdateReportingDataAnnotationRequest
             : reportingDataAnnotation_;
       }
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class UpdateReportingDataAnnotationRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class UpdateReportingDataAnnotationRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class UpdateReportingDataAnnotationRequest
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -874,6 +894,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +918,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class UpdateReportingDataAnnotationRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -951,6 +974,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +993,7 @@ public final class UpdateReportingDataAnnotationRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -991,6 +1016,7 @@ public final class UpdateReportingDataAnnotationRequest
             : updateMask_;
       }
     }
+
     /**
      *
      *

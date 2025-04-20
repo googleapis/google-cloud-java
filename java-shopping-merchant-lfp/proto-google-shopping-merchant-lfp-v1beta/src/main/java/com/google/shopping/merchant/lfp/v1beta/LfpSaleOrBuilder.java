@@ -40,6 +40,7 @@ public interface LfpSaleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface LfpSaleOrBuilder
    * @return The storeCode.
    */
   java.lang.String getStoreCode();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface LfpSaleOrBuilder
    * @return The offerId.
    */
   java.lang.String getOfferId();
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public interface LfpSaleOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface LfpSaleOrBuilder
    * @return The contentLanguage.
    */
   java.lang.String getContentLanguage();
+
   /**
    *
    *
@@ -198,6 +203,7 @@ public interface LfpSaleOrBuilder
    * @return The gtin.
    */
   java.lang.String getGtin();
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface LfpSaleOrBuilder
    * @return Whether the price field is set.
    */
   boolean hasPrice();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface LfpSaleOrBuilder
    * @return The price.
    */
   com.google.shopping.type.Price getPrice();
+
   /**
    *
    *
@@ -273,6 +281,7 @@ public interface LfpSaleOrBuilder
    * @return Whether the saleTime field is set.
    */
   boolean hasSaleTime();
+
   /**
    *
    *
@@ -286,6 +295,7 @@ public interface LfpSaleOrBuilder
    * @return The saleTime.
    */
   com.google.protobuf.Timestamp getSaleTime();
+
   /**
    *
    *
@@ -312,6 +322,7 @@ public interface LfpSaleOrBuilder
    * @return Whether the uid field is set.
    */
   boolean hasUid();
+
   /**
    *
    *
@@ -326,6 +337,7 @@ public interface LfpSaleOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -355,6 +367,7 @@ public interface LfpSaleOrBuilder
    * @return Whether the feedLabel field is set.
    */
   boolean hasFeedLabel();
+
   /**
    *
    *
@@ -369,6 +382,7 @@ public interface LfpSaleOrBuilder
    * @return The feedLabel.
    */
   java.lang.String getFeedLabel();
+
   /**
    *
    *

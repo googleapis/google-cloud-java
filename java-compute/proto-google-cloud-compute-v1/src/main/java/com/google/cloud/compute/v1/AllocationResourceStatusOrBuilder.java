@@ -36,6 +36,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return Whether the reservationBlockCount field is set.
    */
   boolean hasReservationBlockCount();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return Whether the reservationMaintenance field is set.
    */
   boolean hasReservationMaintenance();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return The reservationMaintenance.
    */
   com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationMaintenance();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AllocationResourceStatusOrBuilder
    * @return Whether the specificSkuAllocation field is set.
    */
   boolean hasSpecificSkuAllocation();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface AllocationResourceStatusOrBuilder
    */
   com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       getSpecificSkuAllocation();
+
   /**
    *
    *

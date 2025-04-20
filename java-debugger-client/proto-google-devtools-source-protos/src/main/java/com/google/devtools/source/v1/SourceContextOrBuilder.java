@@ -36,6 +36,7 @@ public interface SourceContextOrBuilder
    * @return Whether the cloudRepo field is set.
    */
   boolean hasCloudRepo();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SourceContextOrBuilder
    * @return The cloudRepo.
    */
   com.google.devtools.source.v1.CloudRepoSourceContext getCloudRepo();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface SourceContextOrBuilder
    * @return Whether the cloudWorkspace field is set.
    */
   boolean hasCloudWorkspace();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface SourceContextOrBuilder
    * @return The cloudWorkspace.
    */
   com.google.devtools.source.v1.CloudWorkspaceSourceContext getCloudWorkspace();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface SourceContextOrBuilder
    * @return Whether the gerrit field is set.
    */
   boolean hasGerrit();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface SourceContextOrBuilder
    * @return The gerrit.
    */
   com.google.devtools.source.v1.GerritSourceContext getGerrit();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface SourceContextOrBuilder
    * @return Whether the git field is set.
    */
   boolean hasGit();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface SourceContextOrBuilder
    * @return The git.
    */
   com.google.devtools.source.v1.GitSourceContext getGit();
+
   /**
    *
    *

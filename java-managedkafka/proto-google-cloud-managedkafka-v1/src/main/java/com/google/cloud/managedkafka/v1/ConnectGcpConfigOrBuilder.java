@@ -38,6 +38,7 @@ public interface ConnectGcpConfigOrBuilder
    * @return Whether the accessConfig field is set.
    */
   boolean hasAccessConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ConnectGcpConfigOrBuilder
    * @return The accessConfig.
    */
   com.google.cloud.managedkafka.v1.ConnectAccessConfig getAccessConfig();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface ConnectGcpConfigOrBuilder
    * @return A list containing the secretPaths.
    */
   java.util.List<java.lang.String> getSecretPathsList();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface ConnectGcpConfigOrBuilder
    * @return The count of secretPaths.
    */
   int getSecretPathsCount();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ConnectGcpConfigOrBuilder
    * @return The secretPaths at the given index.
    */
   java.lang.String getSecretPaths(int index);
+
   /**
    *
    *

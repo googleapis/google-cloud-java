@@ -32,6 +32,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationBlockPhysicalTopology)
     ReservationBlockPhysicalTopologyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationBlockPhysicalTopology.newBuilder() to construct.
   private ReservationBlockPhysicalTopology(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object block_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
   public boolean hasBlock() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cluster_ = "";
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
   public boolean hasCluster() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +383,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +589,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object block_ = "";
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     public boolean hasBlock() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -617,6 +627,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -660,6 +672,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +715,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     }
 
     private java.lang.Object cluster_ = "";
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
     public boolean hasCluster() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +776,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +798,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +816,7 @@ public final class ReservationBlockPhysicalTopology extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

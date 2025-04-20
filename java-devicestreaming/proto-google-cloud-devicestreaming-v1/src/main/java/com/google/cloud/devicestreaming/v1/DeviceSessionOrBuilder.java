@@ -37,6 +37,7 @@ public interface DeviceSessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DeviceSessionOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DeviceSessionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface DeviceSessionOrBuilder
    */
   java.util.List<com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent>
       getStateHistoriesList();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface DeviceSessionOrBuilder
    * </code>
    */
   com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEvent getStateHistories(int index);
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface DeviceSessionOrBuilder
    * </code>
    */
   int getStateHistoriesCount();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface DeviceSessionOrBuilder
   java.util.List<
           ? extends com.google.cloud.devicestreaming.v1.DeviceSession.SessionStateEventOrBuilder>
       getStateHistoriesOrBuilderList();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface DeviceSessionOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface DeviceSessionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the inactivityTimeout field is set.
    */
   boolean hasInactivityTimeout();
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public interface DeviceSessionOrBuilder
    * @return The inactivityTimeout.
    */
   com.google.protobuf.Duration getInactivityTimeout();
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -330,6 +344,7 @@ public interface DeviceSessionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the activeStartTime field is set.
    */
   boolean hasActiveStartTime();
+
   /**
    *
    *
@@ -370,6 +386,7 @@ public interface DeviceSessionOrBuilder
    * @return The activeStartTime.
    */
   com.google.protobuf.Timestamp getActiveStartTime();
+
   /**
    *
    *
@@ -397,6 +414,7 @@ public interface DeviceSessionOrBuilder
    * @return Whether the androidDevice field is set.
    */
   boolean hasAndroidDevice();
+
   /**
    *
    *
@@ -411,6 +429,7 @@ public interface DeviceSessionOrBuilder
    * @return The androidDevice.
    */
   com.google.cloud.devicestreaming.v1.AndroidDevice getAndroidDevice();
+
   /**
    *
    *

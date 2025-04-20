@@ -33,6 +33,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier)
     SourceObjectIdentifierOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SourceObjectIdentifier.newBuilder() to construct.
   private SourceObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -116,6 +119,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier)
       OracleObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use OracleObjectIdentifier.newBuilder() to construct.
     private OracleObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,6 +171,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -189,6 +195,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -217,6 +224,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -240,6 +248,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -442,6 +451,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -679,6 +690,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -701,6 +713,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -722,6 +735,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +753,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -763,6 +778,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -785,6 +801,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -807,6 +824,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -828,6 +846,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -845,6 +864,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -954,6 +974,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -992,6 +1014,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -1008,6 +1031,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier)
       PostgresqlObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use PostgresqlObjectIdentifier.newBuilder() to construct.
     private PostgresqlObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1045,6 +1069,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1096,6 +1122,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -1119,6 +1146,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1322,6 +1350,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1541,6 +1570,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -1563,6 +1593,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1585,6 +1616,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1606,6 +1638,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1623,6 +1656,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1647,6 +1681,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -1669,6 +1704,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1691,6 +1727,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1712,6 +1749,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1729,6 +1767,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1838,6 +1877,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The database.
      */
     java.lang.String getDatabase();
+
     /**
      *
      *
@@ -1863,6 +1903,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -1876,6 +1917,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -1890,6 +1932,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier)
       MysqlObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MysqlObjectIdentifier.newBuilder() to construct.
     private MysqlObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1926,6 +1969,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -1949,6 +1993,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -1977,6 +2022,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -2000,6 +2046,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2201,6 +2248,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2415,6 +2463,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object database_ = "";
+
       /**
        *
        *
@@ -2437,6 +2486,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2459,6 +2509,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2480,6 +2531,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2497,6 +2549,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2521,6 +2574,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -2543,6 +2597,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2565,6 +2620,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2586,6 +2642,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2603,6 +2660,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2711,6 +2769,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -2736,6 +2795,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The table.
      */
     java.lang.String getTable();
+
     /**
      *
      *
@@ -2749,6 +2809,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getTableBytes();
   }
+
   /**
    *
    *
@@ -2764,6 +2825,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier)
       SqlServerObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SqlServerObjectIdentifier.newBuilder() to construct.
     private SqlServerObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2800,6 +2862,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -2823,6 +2886,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -2851,6 +2915,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -2874,6 +2939,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -3076,6 +3142,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3295,6 +3362,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -3317,6 +3385,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3339,6 +3408,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3360,6 +3430,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3377,6 +3448,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3401,6 +3473,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
 
       private java.lang.Object table_ = "";
+
       /**
        *
        *
@@ -3423,6 +3496,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3445,6 +3519,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3466,6 +3541,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3483,6 +3559,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3592,6 +3669,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      * @return The objectName.
      */
     java.lang.String getObjectName();
+
     /**
      *
      *
@@ -3605,6 +3683,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
      */
     com.google.protobuf.ByteString getObjectNameBytes();
   }
+
   /**
    *
    *
@@ -3621,6 +3700,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier)
       SalesforceObjectIdentifierOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SalesforceObjectIdentifier.newBuilder() to construct.
     private SalesforceObjectIdentifier(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3657,6 +3737,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object objectName_ = "";
+
     /**
      *
      *
@@ -3680,6 +3761,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         return s;
       }
     }
+
     /**
      *
      *
@@ -3874,6 +3956,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4078,6 +4161,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private java.lang.Object objectName_ = "";
+
       /**
        *
        *
@@ -4100,6 +4184,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4122,6 +4207,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4143,6 +4229,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4160,6 +4247,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4272,6 +4360,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     private SourceIdentifierCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4311,6 +4400,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int ORACLE_IDENTIFIER_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -4328,6 +4418,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasOracleIdentifier() {
     return sourceIdentifierCase_ == 1;
   }
+
   /**
    *
    *
@@ -4351,6 +4442,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4374,6 +4466,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int MYSQL_IDENTIFIER_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -4391,6 +4484,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasMysqlIdentifier() {
     return sourceIdentifierCase_ == 2;
   }
+
   /**
    *
    *
@@ -4414,6 +4508,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4437,6 +4532,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int POSTGRESQL_IDENTIFIER_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -4454,6 +4550,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasPostgresqlIdentifier() {
     return sourceIdentifierCase_ == 3;
   }
+
   /**
    *
    *
@@ -4477,6 +4574,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.PostgresqlObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4500,6 +4598,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int SQL_SERVER_IDENTIFIER_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -4517,6 +4616,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasSqlServerIdentifier() {
     return sourceIdentifierCase_ == 4;
   }
+
   /**
    *
    *
@@ -4540,6 +4640,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.SqlServerObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4563,6 +4664,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   }
 
   public static final int SALESFORCE_IDENTIFIER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -4580,6 +4682,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
   public boolean hasSalesforceIdentifier() {
     return sourceIdentifierCase_ == 5;
   }
+
   /**
    *
    *
@@ -4603,6 +4706,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     return com.google.cloud.datastream.v1.SourceObjectIdentifier.SalesforceObjectIdentifier
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4885,6 +4989,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5175,6 +5280,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifier.OracleObjectIdentifierOrBuilder>
         oracleIdentifierBuilder_;
+
     /**
      *
      *
@@ -5192,6 +5298,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasOracleIdentifier() {
       return sourceIdentifierCase_ == 1;
     }
+
     /**
      *
      *
@@ -5223,6 +5330,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5248,6 +5356,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5271,6 +5380,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5310,6 +5420,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5337,6 +5448,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5352,6 +5464,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getOracleIdentifierBuilder() {
       return getOracleIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5377,6 +5490,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5422,6 +5536,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifier.MysqlObjectIdentifierOrBuilder>
         mysqlIdentifierBuilder_;
+
     /**
      *
      *
@@ -5439,6 +5554,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasMysqlIdentifier() {
       return sourceIdentifierCase_ == 2;
     }
+
     /**
      *
      *
@@ -5470,6 +5586,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5495,6 +5612,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5518,6 +5636,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5557,6 +5676,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5584,6 +5704,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5599,6 +5720,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getMysqlIdentifierBuilder() {
       return getMysqlIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5624,6 +5746,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5670,6 +5793,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier
                 .PostgresqlObjectIdentifierOrBuilder>
         postgresqlIdentifierBuilder_;
+
     /**
      *
      *
@@ -5687,6 +5811,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasPostgresqlIdentifier() {
       return sourceIdentifierCase_ == 3;
     }
+
     /**
      *
      *
@@ -5718,6 +5843,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5743,6 +5869,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5766,6 +5893,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5806,6 +5934,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -5833,6 +5962,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -5848,6 +5978,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getPostgresqlIdentifierBuilder() {
       return getPostgresqlIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5873,6 +6004,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5921,6 +6053,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier
                 .SqlServerObjectIdentifierOrBuilder>
         sqlServerIdentifierBuilder_;
+
     /**
      *
      *
@@ -5938,6 +6071,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasSqlServerIdentifier() {
       return sourceIdentifierCase_ == 4;
     }
+
     /**
      *
      *
@@ -5969,6 +6103,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5994,6 +6129,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6017,6 +6153,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6057,6 +6194,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -6084,6 +6222,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6099,6 +6238,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getSqlServerIdentifierBuilder() {
       return getSqlServerIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6124,6 +6264,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6172,6 +6313,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             com.google.cloud.datastream.v1.SourceObjectIdentifier
                 .SalesforceObjectIdentifierOrBuilder>
         salesforceIdentifierBuilder_;
+
     /**
      *
      *
@@ -6189,6 +6331,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
     public boolean hasSalesforceIdentifier() {
       return sourceIdentifierCase_ == 5;
     }
+
     /**
      *
      *
@@ -6220,6 +6363,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6245,6 +6389,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6268,6 +6413,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6308,6 +6454,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       sourceIdentifierCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -6335,6 +6482,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -6350,6 +6498,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
         getSalesforceIdentifierBuilder() {
       return getSalesforceIdentifierFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6375,6 +6524,7 @@ public final class SourceObjectIdentifier extends com.google.protobuf.GeneratedM
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

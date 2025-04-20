@@ -34,6 +34,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Hash file_hash = 1;</code>
    */
   java.util.List<com.google.cloudbuild.v1.Hash> getFileHashList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Hash file_hash = 1;</code>
    */
   com.google.cloudbuild.v1.Hash getFileHash(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Hash file_hash = 1;</code>
    */
   int getFileHashCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .google.devtools.cloudbuild.v1.Hash file_hash = 1;</code>
    */
   java.util.List<? extends com.google.cloudbuild.v1.HashOrBuilder> getFileHashOrBuilderList();
+
   /**
    *
    *

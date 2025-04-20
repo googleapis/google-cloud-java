@@ -395,6 +395,19 @@ public final class ModelGardenServiceGrpc {
     return ModelGardenServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ModelGardenServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ModelGardenServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ModelGardenServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ModelGardenServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ModelGardenServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ModelGardenServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -692,6 +705,121 @@ public final class ModelGardenServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ModelGardenService.
+   *
+   * <pre>
+   * The interface of Model Garden Service.
+   * </pre>
+   */
+  public static final class ModelGardenServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ModelGardenServiceBlockingV2Stub> {
+    private ModelGardenServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ModelGardenServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ModelGardenServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Model Garden publisher model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PublisherModel getPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPublisherModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists publisher models in Model Garden.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse listPublisherModels(
+        com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPublisherModelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a model to a new endpoint.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deploy(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys publisher models.
+     * </pre>
+     */
+    @java.lang.Deprecated
+    public com.google.longrunning.Operation deployPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.DeployPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployPublisherModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a publisher model to a user provided Google Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportPublisherModel(
+        com.google.cloud.aiplatform.v1beta1.ExportPublisherModelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportPublisherModelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks the EULA acceptance status of a publisher model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance
+        checkPublisherModelEulaAcceptance(
+            com.google.cloud.aiplatform.v1beta1.CheckPublisherModelEulaAcceptanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckPublisherModelEulaAcceptanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Accepts the EULA acceptance status of a publisher model.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance
+        acceptPublisherModelEula(
+            com.google.cloud.aiplatform.v1beta1.AcceptPublisherModelEulaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcceptPublisherModelEulaMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ModelGardenService.
    *
    * <pre>
    * The interface of Model Garden Service.

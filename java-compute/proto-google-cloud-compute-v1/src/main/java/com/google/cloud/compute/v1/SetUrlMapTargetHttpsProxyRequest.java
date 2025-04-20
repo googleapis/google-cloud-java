@@ -33,6 +33,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetUrlMapTargetHttpsProxyRequest)
     SetUrlMapTargetHttpsProxyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetUrlMapTargetHttpsProxyRequest.newBuilder() to construct.
   private SetUrlMapTargetHttpsProxyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object targetHttpsProxy_ = "";
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
 
   public static final int URL_MAP_REFERENCE_RESOURCE_FIELD_NUMBER = 398701333;
   private com.google.cloud.compute.v1.UrlMapReference urlMapReferenceResource_;
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
   public boolean hasUrlMapReferenceResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         ? com.google.cloud.compute.v1.UrlMapReference.getDefaultInstance()
         : urlMapReferenceResource_;
   }
+
   /**
    *
    *
@@ -495,6 +506,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +832,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -920,6 +940,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -941,6 +962,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +980,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     }
 
     private java.lang.Object targetHttpsProxy_ = "";
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1073,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1121,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
             com.google.cloud.compute.v1.UrlMapReference.Builder,
             com.google.cloud.compute.v1.UrlMapReferenceOrBuilder>
         urlMapReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1109,6 +1138,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
     public boolean hasUrlMapReferenceResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1131,6 +1161,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
         return urlMapReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1155,6 +1186,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1209,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1207,6 +1240,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1262,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1279,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
       onChanged();
       return getUrlMapReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1265,6 +1301,7 @@ public final class SetUrlMapTargetHttpsProxyRequest extends com.google.protobuf.
             : urlMapReferenceResource_;
       }
     }
+
     /**
      *
      *

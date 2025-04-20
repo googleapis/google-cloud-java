@@ -32,6 +32,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationBlocksGetResponse)
     ReservationBlocksGetResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationBlocksGetResponse.newBuilder() to construct.
   private ReservationBlocksGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int RESOURCE_FIELD_NUMBER = 195806222;
   private com.google.cloud.compute.v1.ReservationBlock resource_;
+
   /**
    * <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code>
    *
@@ -72,6 +74,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    * <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code>
    *
@@ -83,6 +86,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
         ? com.google.cloud.compute.v1.ReservationBlock.getDefaultInstance()
         : resource_;
   }
+
   /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
   @java.lang.Override
   public com.google.cloud.compute.v1.ReservationBlockOrBuilder getResourceOrBuilder() {
@@ -256,6 +260,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -458,6 +463,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
             com.google.cloud.compute.v1.ReservationBlock.Builder,
             com.google.cloud.compute.v1.ReservationBlockOrBuilder>
         resourceBuilder_;
+
     /**
      * <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code>
      *
@@ -466,6 +472,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
     public boolean hasResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      * <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code>
      *
@@ -480,6 +487,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
         return resourceBuilder_.getMessage();
       }
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public Builder setResource(com.google.cloud.compute.v1.ReservationBlock value) {
       if (resourceBuilder_ == null) {
@@ -494,6 +502,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public Builder setResource(
         com.google.cloud.compute.v1.ReservationBlock.Builder builderForValue) {
@@ -506,6 +515,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public Builder mergeResource(com.google.cloud.compute.v1.ReservationBlock value) {
       if (resourceBuilder_ == null) {
@@ -525,6 +535,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public Builder clearResource() {
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -536,12 +547,14 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public com.google.cloud.compute.v1.ReservationBlock.Builder getResourceBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     public com.google.cloud.compute.v1.ReservationBlockOrBuilder getResourceOrBuilder() {
       if (resourceBuilder_ != null) {
@@ -552,6 +565,7 @@ public final class ReservationBlocksGetResponse extends com.google.protobuf.Gene
             : resource_;
       }
     }
+
     /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.compute.v1.ReservationBlock,

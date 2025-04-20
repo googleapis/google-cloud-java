@@ -34,6 +34,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.ExportTestCasesResponse)
     ExportTestCasesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportTestCasesResponse.newBuilder() to construct.
   private ExportTestCasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
   }
 
   public static final int GCS_URI_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
   public boolean hasGcsUri() {
     return destinationCase_ == 1;
   }
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
   }
 
   public static final int CONTENT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -203,6 +209,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
   public boolean hasContent() {
     return destinationCase_ == 2;
   }
+
   /**
    *
    *
@@ -410,6 +417,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +658,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     public boolean hasGcsUri() {
       return destinationCase_ == 1;
     }
+
     /**
      *
      *
@@ -680,6 +689,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -710,6 +720,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -733,6 +744,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +766,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +806,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
     public boolean hasContent() {
       return destinationCase_ == 2;
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class ExportTestCasesResponse extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

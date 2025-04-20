@@ -38,6 +38,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return Whether the annotationDate field is set.
    */
   boolean hasAnnotationDate();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The annotationDate.
    */
   com.google.type.Date getAnnotationDate();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return Whether the annotationDateRange field is set.
    */
   boolean hasAnnotationDateRange();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The annotationDateRange.
    */
   com.google.analytics.admin.v1alpha.ReportingDataAnnotation.DateRange getAnnotationDateRange();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface ReportingDataAnnotationOrBuilder
    * @return The enum numeric value on the wire for color.
    */
   int getColorValue();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface AcceptTermsOfServiceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AcceptTermsOfServiceRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface AcceptTermsOfServiceRequestOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface GlossaryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GlossaryOrBuilder
    * @return Whether the languagePair field is set.
    */
   boolean hasLanguagePair();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface GlossaryOrBuilder
    * @return The languagePair.
    */
   com.google.cloud.translate.v3beta1.Glossary.LanguageCodePair getLanguagePair();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface GlossaryOrBuilder
    * @return Whether the languageCodesSet field is set.
    */
   boolean hasLanguageCodesSet();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface GlossaryOrBuilder
    * @return The languageCodesSet.
    */
   com.google.cloud.translate.v3beta1.Glossary.LanguageCodesSet getLanguageCodesSet();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface GlossaryOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface GlossaryOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.translate.v3beta1.GlossaryInputConfig getInputConfig();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface GlossaryOrBuilder
    * @return Whether the submitTime field is set.
    */
   boolean hasSubmitTime();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface GlossaryOrBuilder
    * @return The submitTime.
    */
   com.google.protobuf.Timestamp getSubmitTime();
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public interface GlossaryOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -240,6 +250,7 @@ public interface GlossaryOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

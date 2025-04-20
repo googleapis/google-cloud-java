@@ -36,6 +36,7 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.aiplatform.v1.SlackSource.SlackChannels> getChannelsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1.SlackSource.SlackChannels getChannels(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface SlackSourceOrBuilder
    * </code>
    */
   int getChannelsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface SlackSourceOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.SlackSource.SlackChannelsOrBuilder>
       getChannelsOrBuilderList();
+
   /**
    *
    *

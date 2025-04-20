@@ -39,6 +39,7 @@ public interface ListConnectedSiteTagsRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *

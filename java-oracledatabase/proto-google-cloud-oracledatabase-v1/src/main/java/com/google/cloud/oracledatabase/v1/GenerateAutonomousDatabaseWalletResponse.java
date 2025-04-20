@@ -34,6 +34,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
     // @@protoc_insertion_point(message_implements:google.cloud.oracledatabase.v1.GenerateAutonomousDatabaseWalletResponse)
     GenerateAutonomousDatabaseWalletResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateAutonomousDatabaseWalletResponse.newBuilder() to construct.
   private GenerateAutonomousDatabaseWalletResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
 
   public static final int ARCHIVE_CONTENT_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString archiveContent_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -251,6 +253,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -444,6 +447,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
     private int bitField0_;
 
     private com.google.protobuf.ByteString archiveContent_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -459,6 +463,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
     public com.google.protobuf.ByteString getArchiveContent() {
       return archiveContent_;
     }
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class GenerateAutonomousDatabaseWalletResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

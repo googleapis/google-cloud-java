@@ -33,6 +33,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.ResumeMigrationJobRequest)
     ResumeMigrationJobRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResumeMigrationJobRequest.newBuilder() to construct.
   private ResumeMigrationJobRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +277,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -458,6 +462,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -480,6 +485,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -502,6 +508,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -523,6 +530,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -540,6 +548,7 @@ public final class ResumeMigrationJobRequest extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

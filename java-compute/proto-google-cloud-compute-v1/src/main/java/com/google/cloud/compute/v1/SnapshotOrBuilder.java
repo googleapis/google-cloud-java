@@ -37,6 +37,7 @@ public interface SnapshotOrBuilder
    * @return Whether the architecture field is set.
    */
   boolean hasArchitecture();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SnapshotOrBuilder
    * @return The architecture.
    */
   java.lang.String getArchitecture();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface SnapshotOrBuilder
    * @return Whether the autoCreated field is set.
    */
   boolean hasAutoCreated();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface SnapshotOrBuilder
    * @return Whether the chainName field is set.
    */
   boolean hasChainName();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface SnapshotOrBuilder
    * @return The chainName.
    */
   java.lang.String getChainName();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface SnapshotOrBuilder
    * @return Whether the creationSizeBytes field is set.
    */
   boolean hasCreationSizeBytes();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface SnapshotOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface SnapshotOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface SnapshotOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface SnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface SnapshotOrBuilder
    * @return Whether the diskSizeGb field is set.
    */
   boolean hasDiskSizeGb();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface SnapshotOrBuilder
    * @return Whether the downloadBytes field is set.
    */
   boolean hasDownloadBytes();
+
   /**
    *
    *
@@ -287,6 +299,7 @@ public interface SnapshotOrBuilder
    * @return Whether the enableConfidentialCompute field is set.
    */
   boolean hasEnableConfidentialCompute();
+
   /**
    *
    *
@@ -312,6 +325,7 @@ public interface SnapshotOrBuilder
    * @return Whether the guestFlush field is set.
    */
   boolean hasGuestFlush();
+
   /**
    *
    *
@@ -335,6 +349,7 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   java.util.List<com.google.cloud.compute.v1.GuestOsFeature> getGuestOsFeaturesList();
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   com.google.cloud.compute.v1.GuestOsFeature getGuestOsFeatures(int index);
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface SnapshotOrBuilder
    * <code>repeated .google.cloud.compute.v1.GuestOsFeature guest_os_features = 79294545;</code>
    */
   int getGuestOsFeaturesCount();
+
   /**
    *
    *
@@ -366,6 +383,7 @@ public interface SnapshotOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.GuestOsFeatureOrBuilder>
       getGuestOsFeaturesOrBuilderList();
+
   /**
    *
    *
@@ -389,6 +407,7 @@ public interface SnapshotOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -414,6 +433,7 @@ public interface SnapshotOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -426,6 +446,7 @@ public interface SnapshotOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -451,6 +472,7 @@ public interface SnapshotOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -463,6 +485,7 @@ public interface SnapshotOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -486,6 +509,7 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -496,9 +520,11 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -509,6 +535,7 @@ public interface SnapshotOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -523,6 +550,7 @@ public interface SnapshotOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -546,6 +574,7 @@ public interface SnapshotOrBuilder
    * @return A list containing the licenseCodes.
    */
   java.util.List<java.lang.Long> getLicenseCodesList();
+
   /**
    *
    *
@@ -558,6 +587,7 @@ public interface SnapshotOrBuilder
    * @return The count of licenseCodes.
    */
   int getLicenseCodesCount();
+
   /**
    *
    *
@@ -584,6 +614,7 @@ public interface SnapshotOrBuilder
    * @return A list containing the licenses.
    */
   java.util.List<java.lang.String> getLicensesList();
+
   /**
    *
    *
@@ -596,6 +627,7 @@ public interface SnapshotOrBuilder
    * @return The count of licenses.
    */
   int getLicensesCount();
+
   /**
    *
    *
@@ -609,6 +641,7 @@ public interface SnapshotOrBuilder
    * @return The licenses at the given index.
    */
   java.lang.String getLicenses(int index);
+
   /**
    *
    *
@@ -635,6 +668,7 @@ public interface SnapshotOrBuilder
    * @return Whether the locationHint field is set.
    */
   boolean hasLocationHint();
+
   /**
    *
    *
@@ -647,6 +681,7 @@ public interface SnapshotOrBuilder
    * @return The locationHint.
    */
   java.lang.String getLocationHint();
+
   /**
    *
    *
@@ -672,6 +707,7 @@ public interface SnapshotOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -684,6 +720,7 @@ public interface SnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -709,6 +746,7 @@ public interface SnapshotOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -734,6 +772,7 @@ public interface SnapshotOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -759,6 +798,7 @@ public interface SnapshotOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -771,6 +811,7 @@ public interface SnapshotOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -798,6 +839,7 @@ public interface SnapshotOrBuilder
    * @return Whether the snapshotEncryptionKey field is set.
    */
   boolean hasSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -812,6 +854,7 @@ public interface SnapshotOrBuilder
    * @return The snapshotEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -838,6 +881,7 @@ public interface SnapshotOrBuilder
    * @return Whether the snapshotType field is set.
    */
   boolean hasSnapshotType();
+
   /**
    *
    *
@@ -851,6 +895,7 @@ public interface SnapshotOrBuilder
    * @return The snapshotType.
    */
   java.lang.String getSnapshotType();
+
   /**
    *
    *
@@ -877,6 +922,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceDisk field is set.
    */
   boolean hasSourceDisk();
+
   /**
    *
    *
@@ -889,6 +935,7 @@ public interface SnapshotOrBuilder
    * @return The sourceDisk.
    */
   java.lang.String getSourceDisk();
+
   /**
    *
    *
@@ -916,6 +963,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceDiskEncryptionKey field is set.
    */
   boolean hasSourceDiskEncryptionKey();
+
   /**
    *
    *
@@ -930,6 +978,7 @@ public interface SnapshotOrBuilder
    * @return The sourceDiskEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceDiskEncryptionKey();
+
   /**
    *
    *
@@ -955,6 +1004,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceDiskForRecoveryCheckpoint field is set.
    */
   boolean hasSourceDiskForRecoveryCheckpoint();
+
   /**
    *
    *
@@ -967,6 +1017,7 @@ public interface SnapshotOrBuilder
    * @return The sourceDiskForRecoveryCheckpoint.
    */
   java.lang.String getSourceDiskForRecoveryCheckpoint();
+
   /**
    *
    *
@@ -992,6 +1043,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceDiskId field is set.
    */
   boolean hasSourceDiskId();
+
   /**
    *
    *
@@ -1004,6 +1056,7 @@ public interface SnapshotOrBuilder
    * @return The sourceDiskId.
    */
   java.lang.String getSourceDiskId();
+
   /**
    *
    *
@@ -1029,6 +1082,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceInstantSnapshot field is set.
    */
   boolean hasSourceInstantSnapshot();
+
   /**
    *
    *
@@ -1041,6 +1095,7 @@ public interface SnapshotOrBuilder
    * @return The sourceInstantSnapshot.
    */
   java.lang.String getSourceInstantSnapshot();
+
   /**
    *
    *
@@ -1068,6 +1123,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceInstantSnapshotEncryptionKey field is set.
    */
   boolean hasSourceInstantSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1082,6 +1138,7 @@ public interface SnapshotOrBuilder
    * @return The sourceInstantSnapshotEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getSourceInstantSnapshotEncryptionKey();
+
   /**
    *
    *
@@ -1108,6 +1165,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceInstantSnapshotId field is set.
    */
   boolean hasSourceInstantSnapshotId();
+
   /**
    *
    *
@@ -1120,6 +1178,7 @@ public interface SnapshotOrBuilder
    * @return The sourceInstantSnapshotId.
    */
   java.lang.String getSourceInstantSnapshotId();
+
   /**
    *
    *
@@ -1145,6 +1204,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceSnapshotSchedulePolicy field is set.
    */
   boolean hasSourceSnapshotSchedulePolicy();
+
   /**
    *
    *
@@ -1157,6 +1217,7 @@ public interface SnapshotOrBuilder
    * @return The sourceSnapshotSchedulePolicy.
    */
   java.lang.String getSourceSnapshotSchedulePolicy();
+
   /**
    *
    *
@@ -1182,6 +1243,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceSnapshotSchedulePolicyId field is set.
    */
   boolean hasSourceSnapshotSchedulePolicyId();
+
   /**
    *
    *
@@ -1194,6 +1256,7 @@ public interface SnapshotOrBuilder
    * @return The sourceSnapshotSchedulePolicyId.
    */
   java.lang.String getSourceSnapshotSchedulePolicyId();
+
   /**
    *
    *
@@ -1220,6 +1283,7 @@ public interface SnapshotOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -1233,6 +1297,7 @@ public interface SnapshotOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -1259,6 +1324,7 @@ public interface SnapshotOrBuilder
    * @return Whether the storageBytes field is set.
    */
   boolean hasStorageBytes();
+
   /**
    *
    *
@@ -1285,6 +1351,7 @@ public interface SnapshotOrBuilder
    * @return Whether the storageBytesStatus field is set.
    */
   boolean hasStorageBytesStatus();
+
   /**
    *
    *
@@ -1298,6 +1365,7 @@ public interface SnapshotOrBuilder
    * @return The storageBytesStatus.
    */
   java.lang.String getStorageBytesStatus();
+
   /**
    *
    *
@@ -1324,6 +1392,7 @@ public interface SnapshotOrBuilder
    * @return A list containing the storageLocations.
    */
   java.util.List<java.lang.String> getStorageLocationsList();
+
   /**
    *
    *
@@ -1336,6 +1405,7 @@ public interface SnapshotOrBuilder
    * @return The count of storageLocations.
    */
   int getStorageLocationsCount();
+
   /**
    *
    *
@@ -1349,6 +1419,7 @@ public interface SnapshotOrBuilder
    * @return The storageLocations at the given index.
    */
   java.lang.String getStorageLocations(int index);
+
   /**
    *
    *

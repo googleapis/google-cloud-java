@@ -340,7 +340,8 @@ public class SessionEventName implements ResourceName {
     private Builder(SessionEventName sessionEventName) {
       Preconditions.checkArgument(
           Objects.equals(sessionEventName.pathTemplate, PROJECT_LOCATION_SESSION_EVENT),
-          "toBuilder is only supported when SessionEventName has the pattern of projects/{project}/locations/{location}/sessions/{session}/events/{event}");
+          "toBuilder is only supported when SessionEventName has the pattern of"
+              + " projects/{project}/locations/{location}/sessions/{session}/events/{event}");
       this.project = sessionEventName.project;
       this.location = sessionEventName.location;
       this.session = sessionEventName.session;

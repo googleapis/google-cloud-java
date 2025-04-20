@@ -146,6 +146,19 @@ public final class ExtensionExecutionServiceGrpc {
     return ExtensionExecutionServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExtensionExecutionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExtensionExecutionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExtensionExecutionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public ExtensionExecutionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExtensionExecutionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExtensionExecutionServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -287,6 +300,54 @@ public final class ExtensionExecutionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ExtensionExecutionService.
+   *
+   * <pre>
+   * A service for Extension execution.
+   * </pre>
+   */
+  public static final class ExtensionExecutionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExtensionExecutionServiceBlockingV2Stub> {
+    private ExtensionExecutionServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExtensionExecutionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExtensionExecutionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes the request against a given extension.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ExecuteExtensionResponse executeExtension(
+        com.google.cloud.aiplatform.v1beta1.ExecuteExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExecuteExtensionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Queries an extension with a default controller.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1beta1.QueryExtensionResponse queryExtension(
+        com.google.cloud.aiplatform.v1beta1.QueryExtensionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getQueryExtensionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * ExtensionExecutionService.
    *
    * <pre>
    * A service for Extension execution.

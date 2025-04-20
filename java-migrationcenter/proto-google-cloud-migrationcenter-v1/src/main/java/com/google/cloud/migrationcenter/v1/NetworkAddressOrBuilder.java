@@ -36,6 +36,7 @@ public interface NetworkAddressOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface NetworkAddressOrBuilder
    * @return The subnetMask.
    */
   java.lang.String getSubnetMask();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface NetworkAddressOrBuilder
    * @return The bcast.
    */
   java.lang.String getBcast();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface NetworkAddressOrBuilder
    * @return The fqdn.
    */
   java.lang.String getFqdn();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface NetworkAddressOrBuilder
    * @return The enum numeric value on the wire for assignment.
    */
   int getAssignmentValue();
+
   /**
    *
    *

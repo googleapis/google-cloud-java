@@ -72,6 +72,7 @@ public enum NamespaceView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NAMESPACE_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int NAMESPACE_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum NamespaceView implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NAMESPACE_VIEW_BASIC = 1;</code>
    */
   public static final int NAMESPACE_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *

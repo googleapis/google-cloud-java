@@ -39,6 +39,7 @@ public interface ImportModelEvaluationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ImportModelEvaluationRequestOrBuilder
    * @return Whether the modelEvaluation field is set.
    */
   boolean hasModelEvaluation();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ImportModelEvaluationRequestOrBuilder
    * @return The modelEvaluation.
    */
   com.google.cloud.aiplatform.v1beta1.ModelEvaluation getModelEvaluation();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface GeocodingResultsOrBuilder
    * @return Whether the origin field is set.
    */
   boolean hasOrigin();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GeocodingResultsOrBuilder
    * @return The origin.
    */
   com.google.maps.routing.v2.GeocodedWaypoint getOrigin();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface GeocodingResultsOrBuilder
    * @return Whether the destination field is set.
    */
   boolean hasDestination();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface GeocodingResultsOrBuilder
    * @return The destination.
    */
   com.google.maps.routing.v2.GeocodedWaypoint getDestination();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface GeocodingResultsOrBuilder
    * <code>repeated .google.maps.routing.v2.GeocodedWaypoint intermediates = 3;</code>
    */
   java.util.List<com.google.maps.routing.v2.GeocodedWaypoint> getIntermediatesList();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface GeocodingResultsOrBuilder
    * <code>repeated .google.maps.routing.v2.GeocodedWaypoint intermediates = 3;</code>
    */
   com.google.maps.routing.v2.GeocodedWaypoint getIntermediates(int index);
+
   /**
    *
    *
@@ -130,6 +136,7 @@ public interface GeocodingResultsOrBuilder
    * <code>repeated .google.maps.routing.v2.GeocodedWaypoint intermediates = 3;</code>
    */
   int getIntermediatesCount();
+
   /**
    *
    *
@@ -143,6 +150,7 @@ public interface GeocodingResultsOrBuilder
    */
   java.util.List<? extends com.google.maps.routing.v2.GeocodedWaypointOrBuilder>
       getIntermediatesOrBuilderList();
+
   /**
    *
    *

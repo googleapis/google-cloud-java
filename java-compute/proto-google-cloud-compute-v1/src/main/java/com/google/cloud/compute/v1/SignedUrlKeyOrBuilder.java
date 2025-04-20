@@ -36,6 +36,7 @@ public interface SignedUrlKeyOrBuilder
    * @return Whether the keyName field is set.
    */
   boolean hasKeyName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SignedUrlKeyOrBuilder
    * @return The keyName.
    */
   java.lang.String getKeyName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SignedUrlKeyOrBuilder
    * @return Whether the keyValue field is set.
    */
   boolean hasKeyValue();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SignedUrlKeyOrBuilder
    * @return The keyValue.
    */
   java.lang.String getKeyValue();
+
   /**
    *
    *

@@ -1789,6 +1789,19 @@ public final class EventarcGrpc {
     return EventarcStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static EventarcBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<EventarcBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<EventarcBlockingV2Stub>() {
+          @java.lang.Override
+          public EventarcBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new EventarcBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return EventarcBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3055,6 +3068,534 @@ public final class EventarcGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Eventarc.
+   *
+   * <pre>
+   * Eventarc allows users to subscribe to various events that are provided by
+   * Google Cloud services and forward them to supported destinations.
+   * </pre>
+   */
+  public static final class EventarcBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<EventarcBlockingV2Stub> {
+    private EventarcBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected EventarcBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new EventarcBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single trigger.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Trigger getTrigger(
+        com.google.cloud.eventarc.v1.GetTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List triggers.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListTriggersResponse listTriggers(
+        com.google.cloud.eventarc.v1.ListTriggersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTriggersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new trigger in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTrigger(
+        com.google.cloud.eventarc.v1.CreateTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single trigger.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTrigger(
+        com.google.cloud.eventarc.v1.UpdateTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single trigger.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTrigger(
+        com.google.cloud.eventarc.v1.DeleteTriggerRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTriggerMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Channel.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Channel getChannel(
+        com.google.cloud.eventarc.v1.GetChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channels.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListChannelsResponse listChannels(
+        com.google.cloud.eventarc.v1.ListChannelsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new channel in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannel(
+        com.google.cloud.eventarc.v1.CreateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateChannel(
+        com.google.cloud.eventarc.v1.UpdateChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single channel.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannel(
+        com.google.cloud.eventarc.v1.DeleteChannelRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Provider.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Provider getProvider(
+        com.google.cloud.eventarc.v1.GetProviderRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProviderMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List providers.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListProvidersResponse listProviders(
+        com.google.cloud.eventarc.v1.ListProvidersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProvidersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ChannelConnection getChannelConnection(
+        com.google.cloud.eventarc.v1.GetChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List channel connections.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListChannelConnectionsResponse listChannelConnections(
+        com.google.cloud.eventarc.v1.ListChannelConnectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListChannelConnectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new ChannelConnection in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createChannelConnection(
+        com.google.cloud.eventarc.v1.CreateChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single ChannelConnection.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteChannelConnection(
+        com.google.cloud.eventarc.v1.DeleteChannelConnectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteChannelConnectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.GetGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleChannelConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleChannelConfig
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleChannelConfig updateGoogleChannelConfig(
+        com.google.cloud.eventarc.v1.UpdateGoogleChannelConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleChannelConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single MessageBus.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.MessageBus getMessageBus(
+        com.google.cloud.eventarc.v1.GetMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message buses.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListMessageBusesResponse listMessageBuses(
+        com.google.cloud.eventarc.v1.ListMessageBusesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessageBusesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List message bus enrollments.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsResponse listMessageBusEnrollments(
+        com.google.cloud.eventarc.v1.ListMessageBusEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessageBusEnrollmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new MessageBus in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMessageBus(
+        com.google.cloud.eventarc.v1.CreateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single message bus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMessageBus(
+        com.google.cloud.eventarc.v1.UpdateMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single message bus.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteMessageBus(
+        com.google.cloud.eventarc.v1.DeleteMessageBusRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMessageBusMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Enrollment.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Enrollment getEnrollment(
+        com.google.cloud.eventarc.v1.GetEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List Enrollments.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListEnrollmentsResponse listEnrollments(
+        com.google.cloud.eventarc.v1.ListEnrollmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEnrollmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Enrollment in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createEnrollment(
+        com.google.cloud.eventarc.v1.CreateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single Enrollment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateEnrollment(
+        com.google.cloud.eventarc.v1.UpdateEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single Enrollment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteEnrollment(
+        com.google.cloud.eventarc.v1.DeleteEnrollmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEnrollmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single Pipeline.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.Pipeline getPipeline(
+        com.google.cloud.eventarc.v1.GetPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List pipelines.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListPipelinesResponse listPipelines(
+        com.google.cloud.eventarc.v1.ListPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new Pipeline in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createPipeline(
+        com.google.cloud.eventarc.v1.CreatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single pipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updatePipeline(
+        com.google.cloud.eventarc.v1.UpdatePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single pipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deletePipeline(
+        com.google.cloud.eventarc.v1.DeletePipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.GoogleApiSource getGoogleApiSource(
+        com.google.cloud.eventarc.v1.GetGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List GoogleApiSources.
+     * </pre>
+     */
+    public com.google.cloud.eventarc.v1.ListGoogleApiSourcesResponse listGoogleApiSources(
+        com.google.cloud.eventarc.v1.ListGoogleApiSourcesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGoogleApiSourcesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new GoogleApiSource in a particular project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createGoogleApiSource(
+        com.google.cloud.eventarc.v1.CreateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateGoogleApiSource(
+        com.google.cloud.eventarc.v1.UpdateGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete a single GoogleApiSource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteGoogleApiSource(
+        com.google.cloud.eventarc.v1.DeleteGoogleApiSourceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteGoogleApiSourceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Eventarc.
    *
    * <pre>
    * Eventarc allows users to subscribe to various events that are provided by

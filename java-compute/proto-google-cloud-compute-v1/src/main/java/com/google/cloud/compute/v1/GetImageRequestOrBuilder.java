@@ -36,6 +36,7 @@ public interface GetImageRequestOrBuilder
    * @return The image.
    */
   java.lang.String getImage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetImageRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *

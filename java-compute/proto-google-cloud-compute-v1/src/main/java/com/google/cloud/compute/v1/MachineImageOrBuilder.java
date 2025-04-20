@@ -36,6 +36,7 @@ public interface MachineImageOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MachineImageOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface MachineImageOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface MachineImageOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface MachineImageOrBuilder
    * @return Whether the guestFlush field is set.
    */
   boolean hasGuestFlush();
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public interface MachineImageOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface MachineImageOrBuilder
    * @return Whether the instanceProperties field is set.
    */
   boolean hasInstanceProperties();
+
   /**
    *
    *
@@ -174,6 +181,7 @@ public interface MachineImageOrBuilder
    * @return The instanceProperties.
    */
   com.google.cloud.compute.v1.InstanceProperties getInstanceProperties();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface MachineImageOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface MachineImageOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface MachineImageOrBuilder
    * @return Whether the labelFingerprint field is set.
    */
   boolean hasLabelFingerprint();
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public interface MachineImageOrBuilder
    * @return The labelFingerprint.
    */
   java.lang.String getLabelFingerprint();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface MachineImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -280,9 +293,11 @@ public interface MachineImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -293,6 +308,7 @@ public interface MachineImageOrBuilder
    * <code>map&lt;string, string&gt; labels = 500195327;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -307,6 +323,7 @@ public interface MachineImageOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -332,6 +349,7 @@ public interface MachineImageOrBuilder
    * @return Whether the machineImageEncryptionKey field is set.
    */
   boolean hasMachineImageEncryptionKey();
+
   /**
    *
    *
@@ -346,6 +364,7 @@ public interface MachineImageOrBuilder
    * @return The machineImageEncryptionKey.
    */
   com.google.cloud.compute.v1.CustomerEncryptionKey getMachineImageEncryptionKey();
+
   /**
    *
    *
@@ -372,6 +391,7 @@ public interface MachineImageOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -384,6 +404,7 @@ public interface MachineImageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -409,6 +430,7 @@ public interface MachineImageOrBuilder
    * @return Whether the satisfiesPzi field is set.
    */
   boolean hasSatisfiesPzi();
+
   /**
    *
    *
@@ -434,6 +456,7 @@ public interface MachineImageOrBuilder
    * @return Whether the satisfiesPzs field is set.
    */
   boolean hasSatisfiesPzs();
+
   /**
    *
    *
@@ -457,6 +480,7 @@ public interface MachineImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
    */
   java.util.List<com.google.cloud.compute.v1.SavedDisk> getSavedDisksList();
+
   /**
    *
    *
@@ -467,6 +491,7 @@ public interface MachineImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
    */
   com.google.cloud.compute.v1.SavedDisk getSavedDisks(int index);
+
   /**
    *
    *
@@ -477,6 +502,7 @@ public interface MachineImageOrBuilder
    * <code>repeated .google.cloud.compute.v1.SavedDisk saved_disks = 397424318;</code>
    */
   int getSavedDisksCount();
+
   /**
    *
    *
@@ -488,6 +514,7 @@ public interface MachineImageOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SavedDiskOrBuilder>
       getSavedDisksOrBuilderList();
+
   /**
    *
    *
@@ -511,6 +538,7 @@ public interface MachineImageOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -523,6 +551,7 @@ public interface MachineImageOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -549,6 +578,7 @@ public interface MachineImageOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.SourceDiskEncryptionKey>
       getSourceDiskEncryptionKeysList();
+
   /**
    *
    *
@@ -561,6 +591,7 @@ public interface MachineImageOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.SourceDiskEncryptionKey getSourceDiskEncryptionKeys(int index);
+
   /**
    *
    *
@@ -573,6 +604,7 @@ public interface MachineImageOrBuilder
    * </code>
    */
   int getSourceDiskEncryptionKeysCount();
+
   /**
    *
    *
@@ -586,6 +618,7 @@ public interface MachineImageOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.SourceDiskEncryptionKeyOrBuilder>
       getSourceDiskEncryptionKeysOrBuilderList();
+
   /**
    *
    *
@@ -612,6 +645,7 @@ public interface MachineImageOrBuilder
    * @return Whether the sourceInstance field is set.
    */
   boolean hasSourceInstance();
+
   /**
    *
    *
@@ -624,6 +658,7 @@ public interface MachineImageOrBuilder
    * @return The sourceInstance.
    */
   java.lang.String getSourceInstance();
+
   /**
    *
    *
@@ -651,6 +686,7 @@ public interface MachineImageOrBuilder
    * @return Whether the sourceInstanceProperties field is set.
    */
   boolean hasSourceInstanceProperties();
+
   /**
    *
    *
@@ -665,6 +701,7 @@ public interface MachineImageOrBuilder
    * @return The sourceInstanceProperties.
    */
   com.google.cloud.compute.v1.SourceInstanceProperties getSourceInstanceProperties();
+
   /**
    *
    *
@@ -692,6 +729,7 @@ public interface MachineImageOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -705,6 +743,7 @@ public interface MachineImageOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -731,6 +770,7 @@ public interface MachineImageOrBuilder
    * @return A list containing the storageLocations.
    */
   java.util.List<java.lang.String> getStorageLocationsList();
+
   /**
    *
    *
@@ -743,6 +783,7 @@ public interface MachineImageOrBuilder
    * @return The count of storageLocations.
    */
   int getStorageLocationsCount();
+
   /**
    *
    *
@@ -756,6 +797,7 @@ public interface MachineImageOrBuilder
    * @return The storageLocations at the given index.
    */
   java.lang.String getStorageLocations(int index);
+
   /**
    *
    *
@@ -782,6 +824,7 @@ public interface MachineImageOrBuilder
    * @return Whether the totalStorageBytes field is set.
    */
   boolean hasTotalStorageBytes();
+
   /**
    *
    *

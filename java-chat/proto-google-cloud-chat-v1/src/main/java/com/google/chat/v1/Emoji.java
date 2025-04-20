@@ -33,6 +33,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.chat.v1.Emoji)
     EmojiOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Emoji.newBuilder() to construct.
   private Emoji(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     private ContentCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UNICODE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUnicode() {
     return contentCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CUSTOM_EMOJI_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomEmoji() {
     return contentCase_ == 2;
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.chat.v1.CustomEmoji.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -413,6 +421,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -650,6 +659,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUnicode() {
       return contentCase_ == 1;
     }
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
             com.google.chat.v1.CustomEmoji.Builder,
             com.google.chat.v1.CustomEmojiOrBuilder>
         customEmojiBuilder_;
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomEmoji() {
       return contentCase_ == 2;
     }
+
     /**
      *
      *
@@ -814,6 +830,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.CustomEmoji.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       contentCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -922,6 +943,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
     public com.google.chat.v1.CustomEmoji.Builder getCustomEmojiBuilder() {
       return getCustomEmojiFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class Emoji extends com.google.protobuf.GeneratedMessageV3
         return com.google.chat.v1.CustomEmoji.getDefaultInstance();
       }
     }
+
     /**
      *
      *

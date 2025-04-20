@@ -35,6 +35,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.ReconcileTagsMetadata)
     ReconcileTagsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReconcileTagsMetadata.newBuilder() to construct.
   private ReconcileTagsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,6 +141,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
      * <code>RECONCILIATION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int RECONCILIATION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
      * <code>RECONCILIATION_QUEUED = 1;</code>
      */
     public static final int RECONCILIATION_QUEUED_VALUE = 1;
+
     /**
      *
      *
@@ -160,6 +163,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
      * <code>RECONCILIATION_IN_PROGRESS = 2;</code>
      */
     public static final int RECONCILIATION_IN_PROGRESS_VALUE = 2;
+
     /**
      *
      *
@@ -263,6 +267,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -278,6 +283,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -327,6 +333,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
   public int getErrorsCount() {
     return internalGetErrors().getMap().size();
   }
+
   /**
    *
    *
@@ -344,12 +351,14 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     }
     return internalGetErrors().getMap().containsKey(key);
   }
+
   /** Use {@link #getErrorsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.rpc.Status> getErrors() {
     return getErrorsMap();
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, com.google.rpc.Status> getErrorsMap() {
     return internalGetErrors().getMap();
   }
+
   /**
    *
    *
@@ -385,6 +395,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, com.google.rpc.Status> map = internalGetErrors().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -590,6 +601,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -814,6 +826,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -830,6 +843,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -849,6 +863,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.datacatalog.v1.ReconcileTagsMetadata.ReconciliationState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -893,6 +909,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -927,7 +944,8 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       public com.google.protobuf.MapEntry<java.lang.String, com.google.rpc.Status> defaultEntry() {
         return ErrorsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ErrorsConverter errorsConverter = new ErrorsConverter();
 
@@ -967,6 +985,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     public int getErrorsCount() {
       return internalGetErrors().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -984,12 +1003,14 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       }
       return internalGetErrors().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getErrorsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.rpc.Status> getErrors() {
       return getErrorsMap();
     }
+
     /**
      *
      *
@@ -1004,6 +1025,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, com.google.rpc.Status> getErrorsMap() {
       return internalGetErrors().getImmutableMap();
     }
+
     /**
      *
      *
@@ -1026,6 +1048,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
           internalGetMutableErrors().ensureBuilderMap();
       return map.containsKey(key) ? errorsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutableErrors().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1071,12 +1095,14 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutableErrors().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.rpc.Status> getMutableErrors() {
       bitField0_ |= 0x00000002;
       return internalGetMutableErrors().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1118,6 +1145,7 @@ public final class ReconcileTagsMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

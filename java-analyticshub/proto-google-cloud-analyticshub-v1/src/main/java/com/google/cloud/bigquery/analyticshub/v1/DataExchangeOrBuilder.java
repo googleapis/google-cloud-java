@@ -37,6 +37,7 @@ public interface DataExchangeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DataExchangeOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface DataExchangeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface DataExchangeOrBuilder
    * @return The primaryContact.
    */
   java.lang.String getPrimaryContact();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface DataExchangeOrBuilder
    * @return The documentation.
    */
   java.lang.String getDocumentation();
+
   /**
    *
    *
@@ -211,6 +216,7 @@ public interface DataExchangeOrBuilder
    * @return Whether the sharingEnvironmentConfig field is set.
    */
   boolean hasSharingEnvironmentConfig();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface DataExchangeOrBuilder
    * @return The sharingEnvironmentConfig.
    */
   com.google.cloud.bigquery.analyticshub.v1.SharingEnvironmentConfig getSharingEnvironmentConfig();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface DataExchangeOrBuilder
    * @return Whether the discoveryType field is set.
    */
   boolean hasDiscoveryType();
+
   /**
    *
    *
@@ -271,6 +279,7 @@ public interface DataExchangeOrBuilder
    * @return The enum numeric value on the wire for discoveryType.
    */
   int getDiscoveryTypeValue();
+
   /**
    *
    *
@@ -304,6 +313,7 @@ public interface DataExchangeOrBuilder
    * @return Whether the logLinkedDatasetQueryUserEmail field is set.
    */
   boolean hasLogLinkedDatasetQueryUserEmail();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.DeadLetterPolicy)
     DeadLetterPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeadLetterPolicy.newBuilder() to construct.
   private DeadLetterPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deadLetterTopic_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
 
   public static final int MAX_DELIVERY_ATTEMPTS_FIELD_NUMBER = 2;
   private int maxDeliveryAttempts_ = 0;
+
   /**
    *
    *
@@ -333,6 +337,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,6 +539,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object deadLetterTopic_ = "";
+
     /**
      *
      *
@@ -564,6 +570,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -594,6 +601,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +631,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -648,6 +657,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +690,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     }
 
     private int maxDeliveryAttempts_;
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
     public int getMaxDeliveryAttempts() {
       return maxDeliveryAttempts_;
     }
+
     /**
      *
      *
@@ -738,6 +750,7 @@ public final class DeadLetterPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

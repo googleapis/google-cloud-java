@@ -36,6 +36,7 @@ public interface GeoTaxonomyOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface GeoTaxonomyOrBuilder
    * @return A list containing the regions.
    */
   java.util.List<java.lang.String> getRegionsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface GeoTaxonomyOrBuilder
    * @return The count of regions.
    */
   int getRegionsCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface GeoTaxonomyOrBuilder
    * @return The regions at the given index.
    */
   java.lang.String getRegions(int index);
+
   /**
    *
    *

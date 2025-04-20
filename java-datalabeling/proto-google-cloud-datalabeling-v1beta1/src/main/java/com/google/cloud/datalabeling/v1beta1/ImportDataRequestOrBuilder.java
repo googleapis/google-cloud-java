@@ -39,6 +39,7 @@ public interface ImportDataRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ImportDataRequestOrBuilder
    * @return Whether the inputConfig field is set.
    */
   boolean hasInputConfig();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ImportDataRequestOrBuilder
    * @return The inputConfig.
    */
   com.google.cloud.datalabeling.v1beta1.InputConfig getInputConfig();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface ImportDataRequestOrBuilder
    * @return The userEmailAddress.
    */
   java.lang.String getUserEmailAddress();
+
   /**
    *
    *

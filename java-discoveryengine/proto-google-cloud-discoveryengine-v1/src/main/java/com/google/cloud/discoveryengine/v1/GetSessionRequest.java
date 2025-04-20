@@ -33,6 +33,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.GetSessionRequest)
     GetSessionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetSessionRequest.newBuilder() to construct.
   private GetSessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int INCLUDE_ANSWER_DETAILS_FIELD_NUMBER = 2;
   private boolean includeAnswerDetails_ = false;
+
   /**
    *
    *
@@ -308,6 +312,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -505,6 +510,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -530,6 +536,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -555,6 +562,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -599,6 +608,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean includeAnswerDetails_;
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
     public boolean getIncludeAnswerDetails() {
       return includeAnswerDetails_;
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class GetSessionRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

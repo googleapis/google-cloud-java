@@ -34,6 +34,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Partition)
     PartitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Partition.newBuilder() to construct.
   private Partition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
+
     /**
      *
      *
@@ -91,6 +93,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return The startTime.
      */
     com.google.protobuf.Timestamp getStartTime();
+
     /**
      *
      *
@@ -114,6 +117,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     boolean hasEndTime();
+
     /**
      *
      *
@@ -126,6 +130,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return The endTime.
      */
     com.google.protobuf.Timestamp getEndTime();
+
     /**
      *
      *
@@ -137,6 +142,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Partition.TemporalPartition)
       TemporalPartitionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TemporalPartition.newBuilder() to construct.
     private TemporalPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -183,6 +190,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int START_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp startTime_;
+
     /**
      *
      *
@@ -198,6 +206,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -213,6 +222,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getStartTime() {
       return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
     }
+
     /**
      *
      *
@@ -229,6 +239,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_TIME_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp endTime_;
+
     /**
      *
      *
@@ -244,6 +255,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -259,6 +271,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp getEndTime() {
       return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
     }
+
     /**
      *
      *
@@ -453,6 +466,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -679,6 +693,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           startTimeBuilder_;
+
       /**
        *
        *
@@ -693,6 +708,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -713,6 +729,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           return startTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -735,6 +752,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -754,6 +772,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -781,6 +800,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -800,6 +820,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -814,6 +835,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -832,6 +854,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               : startTime_;
         }
       }
+
       /**
        *
        *
@@ -864,6 +887,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           endTimeBuilder_;
+
       /**
        *
        *
@@ -878,6 +902,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndTime() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -896,6 +921,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           return endTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -918,6 +944,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -937,6 +964,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +992,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -983,6 +1012,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -997,6 +1027,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1013,6 +1044,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
         }
       }
+
       /**
        *
        *
@@ -1120,6 +1152,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xMin field is set.
      */
     boolean hasXMin();
+
     /**
      *
      *
@@ -1145,6 +1178,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the yMin field is set.
      */
     boolean hasYMin();
+
     /**
      *
      *
@@ -1170,6 +1204,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the xMax field is set.
      */
     boolean hasXMax();
+
     /**
      *
      *
@@ -1195,6 +1230,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the yMax field is set.
      */
     boolean hasYMax();
+
     /**
      *
      *
@@ -1208,6 +1244,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      */
     long getYMax();
   }
+
   /**
    *
    *
@@ -1222,6 +1259,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Partition.SpatialPartition)
       SpatialPartitionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SpatialPartition.newBuilder() to construct.
     private SpatialPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1253,6 +1291,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int X_MIN_FIELD_NUMBER = 1;
     private long xMin_ = 0L;
+
     /**
      *
      *
@@ -1268,6 +1307,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXMin() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1286,6 +1326,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int Y_MIN_FIELD_NUMBER = 2;
     private long yMin_ = 0L;
+
     /**
      *
      *
@@ -1301,6 +1342,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasYMin() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1319,6 +1361,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int X_MAX_FIELD_NUMBER = 3;
     private long xMax_ = 0L;
+
     /**
      *
      *
@@ -1334,6 +1377,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasXMax() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1352,6 +1396,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int Y_MAX_FIELD_NUMBER = 4;
     private long yMax_ = 0L;
+
     /**
      *
      *
@@ -1367,6 +1412,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasYMax() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1591,6 +1637,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1821,6 +1868,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private long xMin_;
+
       /**
        *
        *
@@ -1836,6 +1884,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasXMin() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1851,6 +1900,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public long getXMin() {
         return xMin_;
       }
+
       /**
        *
        *
@@ -1870,6 +1920,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1889,6 +1940,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long yMin_;
+
       /**
        *
        *
@@ -1904,6 +1956,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasYMin() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1919,6 +1972,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public long getYMin() {
         return yMin_;
       }
+
       /**
        *
        *
@@ -1938,6 +1992,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1957,6 +2012,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long xMax_;
+
       /**
        *
        *
@@ -1972,6 +2028,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasXMax() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -1987,6 +2044,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public long getXMax() {
         return xMax_;
       }
+
       /**
        *
        *
@@ -2006,6 +2064,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2025,6 +2084,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
 
       private long yMax_;
+
       /**
        *
        *
@@ -2040,6 +2100,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasYMax() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2055,6 +2116,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public long getYMax() {
         return yMax_;
       }
+
       /**
        *
        *
@@ -2074,6 +2136,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2173,6 +2236,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startOffset field is set.
      */
     boolean hasStartOffset();
+
     /**
      *
      *
@@ -2185,6 +2249,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return The startOffset.
      */
     com.google.protobuf.Duration getStartOffset();
+
     /**
      *
      *
@@ -2208,6 +2273,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endOffset field is set.
      */
     boolean hasEndOffset();
+
     /**
      *
      *
@@ -2220,6 +2286,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      * @return The endOffset.
      */
     com.google.protobuf.Duration getEndOffset();
+
     /**
      *
      *
@@ -2231,6 +2298,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getEndOffsetOrBuilder();
   }
+
   /**
    *
    *
@@ -2246,6 +2314,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.Partition.RelativeTemporalPartition)
       RelativeTemporalPartitionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RelativeTemporalPartition.newBuilder() to construct.
     private RelativeTemporalPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2277,6 +2346,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int START_OFFSET_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration startOffset_;
+
     /**
      *
      *
@@ -2292,6 +2362,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2309,6 +2380,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : startOffset_;
     }
+
     /**
      *
      *
@@ -2327,6 +2399,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
     public static final int END_OFFSET_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration endOffset_;
+
     /**
      *
      *
@@ -2342,6 +2415,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2357,6 +2431,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getEndOffset() {
       return endOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endOffset_;
     }
+
     /**
      *
      *
@@ -2552,6 +2627,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2786,6 +2862,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           startOffsetBuilder_;
+
       /**
        *
        *
@@ -2800,6 +2877,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStartOffset() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2820,6 +2898,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           return startOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2842,6 +2921,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2861,6 +2941,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2888,6 +2969,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2907,6 +2989,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2921,6 +3004,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStartOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2939,6 +3023,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               : startOffset_;
         }
       }
+
       /**
        *
        *
@@ -2971,6 +3056,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           endOffsetBuilder_;
+
       /**
        *
        *
@@ -2985,6 +3071,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEndOffset() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -3005,6 +3092,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
           return endOffsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3027,6 +3115,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3046,6 +3135,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3073,6 +3163,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3092,6 +3183,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3106,6 +3198,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEndOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3124,6 +3217,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
               : endOffset_;
         }
       }
+
       /**
        *
        *
@@ -3220,6 +3314,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int TEMPORAL_PARTITION_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.Partition.TemporalPartition temporalPartition_;
+
   /**
    *
    *
@@ -3235,6 +3330,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTemporalPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3252,6 +3348,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.Partition.TemporalPartition.getDefaultInstance()
         : temporalPartition_;
   }
+
   /**
    *
    *
@@ -3271,6 +3368,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SPATIAL_PARTITION_FIELD_NUMBER = 2;
   private com.google.cloud.visionai.v1.Partition.SpatialPartition spatialPartition_;
+
   /**
    *
    *
@@ -3286,6 +3384,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSpatialPartition() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3303,6 +3402,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.Partition.SpatialPartition.getDefaultInstance()
         : spatialPartition_;
   }
+
   /**
    *
    *
@@ -3323,6 +3423,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public static final int RELATIVE_TEMPORAL_PARTITION_FIELD_NUMBER = 3;
   private com.google.cloud.visionai.v1.Partition.RelativeTemporalPartition
       relativeTemporalPartition_;
+
   /**
    *
    *
@@ -3340,6 +3441,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRelativeTemporalPartition() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3360,6 +3462,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.visionai.v1.Partition.RelativeTemporalPartition.getDefaultInstance()
         : relativeTemporalPartition_;
   }
+
   /**
    *
    *
@@ -3573,6 +3676,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3824,6 +3928,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.Partition.TemporalPartition.Builder,
             com.google.cloud.visionai.v1.Partition.TemporalPartitionOrBuilder>
         temporalPartitionBuilder_;
+
     /**
      *
      *
@@ -3838,6 +3943,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTemporalPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3858,6 +3964,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return temporalPartitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3881,6 +3988,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3901,6 +4009,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3930,6 +4039,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3949,6 +4059,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3964,6 +4075,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTemporalPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3983,6 +4095,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             : temporalPartition_;
       }
     }
+
     /**
      *
      *
@@ -4015,6 +4128,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.Partition.SpatialPartition.Builder,
             com.google.cloud.visionai.v1.Partition.SpatialPartitionOrBuilder>
         spatialPartitionBuilder_;
+
     /**
      *
      *
@@ -4029,6 +4143,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSpatialPartition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4049,6 +4164,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return spatialPartitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4072,6 +4188,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4092,6 +4209,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4121,6 +4239,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4140,6 +4259,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4155,6 +4275,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSpatialPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4174,6 +4295,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             : spatialPartition_;
       }
     }
+
     /**
      *
      *
@@ -4207,6 +4329,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.visionai.v1.Partition.RelativeTemporalPartition.Builder,
             com.google.cloud.visionai.v1.Partition.RelativeTemporalPartitionOrBuilder>
         relativeTemporalPartitionBuilder_;
+
     /**
      *
      *
@@ -4223,6 +4346,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRelativeTemporalPartition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -4246,6 +4370,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
         return relativeTemporalPartitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4271,6 +4396,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4293,6 +4419,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4325,6 +4452,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4346,6 +4474,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4363,6 +4492,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRelativeTemporalPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4384,6 +4514,7 @@ public final class Partition extends com.google.protobuf.GeneratedMessageV3
             : relativeTemporalPartition_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class DeleteReportingDataAnnotationRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DeleteReportingDataAnnotationRequest)
     DeleteReportingDataAnnotationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteReportingDataAnnotationRequest.newBuilder() to construct.
   private DeleteReportingDataAnnotationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteReportingDataAnnotationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DeleteReportingDataAnnotationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -287,6 +290,7 @@ public final class DeleteReportingDataAnnotationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -481,6 +485,7 @@ public final class DeleteReportingDataAnnotationRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -508,6 +513,7 @@ public final class DeleteReportingDataAnnotationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -535,6 +541,7 @@ public final class DeleteReportingDataAnnotationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class DeleteReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +591,7 @@ public final class DeleteReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

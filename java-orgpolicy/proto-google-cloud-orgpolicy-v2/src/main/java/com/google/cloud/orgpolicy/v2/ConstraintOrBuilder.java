@@ -43,6 +43,7 @@ public interface ConstraintOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface ConstraintOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface ConstraintOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ConstraintOrBuilder
    * @return The enum numeric value on the wire for constraintDefault.
    */
   int getConstraintDefaultValue();
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public interface ConstraintOrBuilder
    * @return Whether the listConstraint field is set.
    */
   boolean hasListConstraint();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface ConstraintOrBuilder
    * @return The listConstraint.
    */
   com.google.cloud.orgpolicy.v2.Constraint.ListConstraint getListConstraint();
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public interface ConstraintOrBuilder
    * @return Whether the booleanConstraint field is set.
    */
   boolean hasBooleanConstraint();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface ConstraintOrBuilder
    * @return The booleanConstraint.
    */
   com.google.cloud.orgpolicy.v2.Constraint.BooleanConstraint getBooleanConstraint();
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public interface ConstraintOrBuilder
    * @return The equivalentConstraint.
    */
   java.lang.String getEquivalentConstraint();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface MigrationConfigOrBuilder
    * @return The enum numeric value on the wire for tagTemplateMigration.
    */
   int getTagTemplateMigrationValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MigrationConfigOrBuilder
    * @return The enum numeric value on the wire for catalogUiExperience.
    */
   int getCatalogUiExperienceValue();
+
   /**
    *
    *

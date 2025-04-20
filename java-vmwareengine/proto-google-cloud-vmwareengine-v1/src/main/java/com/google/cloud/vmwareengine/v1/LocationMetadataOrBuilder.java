@@ -39,6 +39,7 @@ public interface LocationMetadataOrBuilder
    */
   java.util.List<com.google.cloud.vmwareengine.v1.LocationMetadata.Capability>
       getCapabilitiesList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface LocationMetadataOrBuilder
    * @return The count of capabilities.
    */
   int getCapabilitiesCount();
+
   /**
    *
    *
@@ -68,6 +70,7 @@ public interface LocationMetadataOrBuilder
    * @return The capabilities at the given index.
    */
   com.google.cloud.vmwareengine.v1.LocationMetadata.Capability getCapabilities(int index);
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface LocationMetadataOrBuilder
    * @return A list containing the enum numeric values on the wire for capabilities.
    */
   java.util.List<java.lang.Integer> getCapabilitiesValueList();
+
   /**
    *
    *

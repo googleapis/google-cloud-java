@@ -38,6 +38,7 @@ public interface VertexDatasetRegexesOrBuilder
    * </code>
    */
   java.util.List<com.google.privacy.dlp.v2.VertexDatasetRegex> getPatternsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface VertexDatasetRegexesOrBuilder
    * </code>
    */
   com.google.privacy.dlp.v2.VertexDatasetRegex getPatterns(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface VertexDatasetRegexesOrBuilder
    * </code>
    */
   int getPatternsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface VertexDatasetRegexesOrBuilder
    */
   java.util.List<? extends com.google.privacy.dlp.v2.VertexDatasetRegexOrBuilder>
       getPatternsOrBuilderList();
+
   /**
    *
    *

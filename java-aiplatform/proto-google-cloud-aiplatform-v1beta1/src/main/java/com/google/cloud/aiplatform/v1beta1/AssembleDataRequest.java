@@ -35,6 +35,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssembleDataRequest)
     AssembleDataRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssembleDataRequest.newBuilder() to construct.
   private AssembleDataRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     private ReadConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
   public boolean hasGeminiTemplateConfig() {
     return readConfigCase_ == 2;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     }
     return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int REQUEST_COLUMN_NAME_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
   public boolean hasRequestColumnName() {
     return readConfigCase_ == 5;
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -505,6 +515,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -756,6 +767,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>
         geminiTemplateConfigBuilder_;
+
     /**
      *
      *
@@ -773,6 +785,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     public boolean hasGeminiTemplateConfig() {
       return readConfigCase_ == 2;
     }
+
     /**
      *
      *
@@ -800,6 +813,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       readConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       readConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +899,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       readConfigCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +927,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -925,6 +943,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         getGeminiTemplateConfigBuilder() {
       return getGeminiTemplateConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -948,6 +967,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1021,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     public boolean hasRequestColumnName() {
       return readConfigCase_ == 5;
     }
+
     /**
      *
      *
@@ -1031,6 +1052,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1061,6 +1083,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1107,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1129,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1156,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1183,6 +1210,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1208,6 +1236,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1258,7 @@ public final class AssembleDataRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface ExportClusterRequestOrBuilder
    * @return Whether the gcsDestination field is set.
    */
   boolean hasGcsDestination();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ExportClusterRequestOrBuilder
    * @return The gcsDestination.
    */
   com.google.cloud.alloydb.v1beta.GcsDestination getGcsDestination();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface ExportClusterRequestOrBuilder
    * @return Whether the csvExportOptions field is set.
    */
   boolean hasCsvExportOptions();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ExportClusterRequestOrBuilder
    * @return The csvExportOptions.
    */
   com.google.cloud.alloydb.v1beta.ExportClusterRequest.CsvExportOptions getCsvExportOptions();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ExportClusterRequestOrBuilder
    * @return Whether the sqlExportOptions field is set.
    */
   boolean hasSqlExportOptions();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface ExportClusterRequestOrBuilder
    * @return The sqlExportOptions.
    */
   com.google.cloud.alloydb.v1beta.ExportClusterRequest.SqlExportOptions getSqlExportOptions();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface ExportClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface ExportClusterRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *

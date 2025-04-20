@@ -32,6 +32,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.FileContentBuffer)
     FileContentBufferOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FileContentBuffer.newBuilder() to construct.
   private FileContentBuffer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -102,10 +103,13 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
      * <code>UNDEFINED_FILE_TYPE = 0;</code>
      */
     public static final int UNDEFINED_FILE_TYPE_VALUE = 0;
+
     /** <code>BIN = 65767;</code> */
     public static final int BIN_VALUE = 65767;
+
     /** <code>UNDEFINED = 137851184;</code> */
     public static final int UNDEFINED_VALUE = 137851184;
+
     /** <code>X509 = 2674086;</code> */
     public static final int X509_VALUE = 2674086;
 
@@ -199,6 +203,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object content_ = "";
+
   /**
    *
    *
@@ -214,6 +219,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   public boolean hasContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -237,6 +243,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -265,6 +272,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object fileType_ = "";
+
   /**
    *
    *
@@ -281,6 +289,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
   public boolean hasFileType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -508,6 +518,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -709,6 +720,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object content_ = "";
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public boolean hasContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +781,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object fileType_ = "";
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
     public boolean hasFileType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -912,6 +933,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +952,7 @@ public final class FileContentBuffer extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

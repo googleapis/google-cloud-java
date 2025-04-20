@@ -36,6 +36,7 @@ public interface ParameterDefinitionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ParameterDefinitionOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface ParameterDefinitionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

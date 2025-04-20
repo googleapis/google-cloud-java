@@ -36,6 +36,7 @@ public interface DebuggeeOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DebuggeeOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface DebuggeeOrBuilder
    * @return The uniquifier.
    */
   java.lang.String getUniquifier();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface DebuggeeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface DebuggeeOrBuilder
    * @return The agentVersion.
    */
   java.lang.String getAgentVersion();
+
   /**
    *
    *
@@ -211,6 +216,7 @@ public interface DebuggeeOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public interface DebuggeeOrBuilder
    * @return The status.
    */
   com.google.devtools.clouddebugger.v2.StatusMessage getStatus();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface DebuggeeOrBuilder
    * <code>repeated .google.devtools.source.v1.SourceContext source_contexts = 9;</code>
    */
   java.util.List<com.google.devtools.source.v1.SourceContext> getSourceContextsList();
+
   /**
    *
    *
@@ -260,6 +268,7 @@ public interface DebuggeeOrBuilder
    * <code>repeated .google.devtools.source.v1.SourceContext source_contexts = 9;</code>
    */
   com.google.devtools.source.v1.SourceContext getSourceContexts(int index);
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public interface DebuggeeOrBuilder
    * <code>repeated .google.devtools.source.v1.SourceContext source_contexts = 9;</code>
    */
   int getSourceContextsCount();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface DebuggeeOrBuilder
    */
   java.util.List<? extends com.google.devtools.source.v1.SourceContextOrBuilder>
       getSourceContextsOrBuilderList();
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public interface DebuggeeOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.devtools.source.v1.ExtendedSourceContext> getExtSourceContextsList();
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public interface DebuggeeOrBuilder
    */
   @java.lang.Deprecated
   com.google.devtools.source.v1.ExtendedSourceContext getExtSourceContexts(int index);
+
   /**
    *
    *
@@ -337,6 +350,7 @@ public interface DebuggeeOrBuilder
    */
   @java.lang.Deprecated
   int getExtSourceContextsCount();
+
   /**
    *
    *
@@ -352,6 +366,7 @@ public interface DebuggeeOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.devtools.source.v1.ExtendedSourceContextOrBuilder>
       getExtSourceContextsOrBuilderList();
+
   /**
    *
    *
@@ -379,6 +394,7 @@ public interface DebuggeeOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -390,9 +406,11 @@ public interface DebuggeeOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -404,6 +422,7 @@ public interface DebuggeeOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -419,6 +438,7 @@ public interface DebuggeeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

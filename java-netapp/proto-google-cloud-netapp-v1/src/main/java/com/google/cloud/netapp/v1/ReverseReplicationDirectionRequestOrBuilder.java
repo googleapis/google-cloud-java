@@ -39,6 +39,7 @@ public interface ReverseReplicationDirectionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

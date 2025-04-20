@@ -46,6 +46,7 @@ public interface GetAzureClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

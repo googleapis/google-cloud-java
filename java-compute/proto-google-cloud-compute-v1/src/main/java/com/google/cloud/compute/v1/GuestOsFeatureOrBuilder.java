@@ -37,6 +37,7 @@ public interface GuestOsFeatureOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface GuestOsFeatureOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

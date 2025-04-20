@@ -40,6 +40,7 @@ public interface DestroySecretVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

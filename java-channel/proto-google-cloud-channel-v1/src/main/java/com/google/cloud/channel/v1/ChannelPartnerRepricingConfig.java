@@ -34,6 +34,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.ChannelPartnerRepricingConfig)
     ChannelPartnerRepricingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChannelPartnerRepricingConfig.newBuilder() to construct.
   private ChannelPartnerRepricingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
 
   public static final int REPRICING_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.channel.v1.RepricingConfig repricingConfig_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
   public boolean hasRepricingConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
         ? com.google.cloud.channel.v1.RepricingConfig.getDefaultInstance()
         : repricingConfig_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -425,6 +434,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +669,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -707,6 +719,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +795,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
             com.google.cloud.channel.v1.RepricingConfig.Builder,
             com.google.cloud.channel.v1.RepricingConfigOrBuilder>
         repricingConfigBuilder_;
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
     public boolean hasRepricingConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -820,6 +837,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
         return repricingConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -845,6 +863,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +919,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return getRepricingConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -959,6 +982,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
             : repricingConfig_;
       }
     }
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1065,6 +1092,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1117,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1150,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1164,6 +1195,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1187,6 +1219,7 @@ public final class ChannelPartnerRepricingConfig extends com.google.protobuf.Gen
             : updateTime_;
       }
     }
+
     /**
      *
      *

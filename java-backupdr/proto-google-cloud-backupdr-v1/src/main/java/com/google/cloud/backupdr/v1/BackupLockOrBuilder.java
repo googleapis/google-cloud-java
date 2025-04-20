@@ -38,6 +38,7 @@ public interface BackupLockOrBuilder
    * @return Whether the lockUntilTime field is set.
    */
   boolean hasLockUntilTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BackupLockOrBuilder
    * @return The lockUntilTime.
    */
   com.google.protobuf.Timestamp getLockUntilTime();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface BackupLockOrBuilder
    * @return Whether the backupApplianceLockInfo field is set.
    */
   boolean hasBackupApplianceLockInfo();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface BackupLockOrBuilder
    * @return The backupApplianceLockInfo.
    */
   com.google.cloud.backupdr.v1.BackupApplianceLockInfo getBackupApplianceLockInfo();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface BackupLockOrBuilder
    * @return Whether the serviceLockInfo field is set.
    */
   boolean hasServiceLockInfo();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface BackupLockOrBuilder
    * @return The serviceLockInfo.
    */
   com.google.cloud.backupdr.v1.ServiceLockInfo getServiceLockInfo();
+
   /**
    *
    *

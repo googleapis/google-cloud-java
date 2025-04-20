@@ -36,6 +36,7 @@ public interface ListActiveBreakpointsRequestOrBuilder
    * @return The debuggeeId.
    */
   java.lang.String getDebuggeeId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ListActiveBreakpointsRequestOrBuilder
    * @return The waitToken.
    */
   java.lang.String getWaitToken();
+
   /**
    *
    *

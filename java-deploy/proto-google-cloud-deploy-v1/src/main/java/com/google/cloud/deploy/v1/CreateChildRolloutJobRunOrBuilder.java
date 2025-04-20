@@ -37,6 +37,7 @@ public interface CreateChildRolloutJobRunOrBuilder
    * @return The rollout.
    */
   java.lang.String getRollout();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CreateChildRolloutJobRunOrBuilder
    * @return The rolloutPhaseId.
    */
   java.lang.String getRolloutPhaseId();
+
   /**
    *
    *

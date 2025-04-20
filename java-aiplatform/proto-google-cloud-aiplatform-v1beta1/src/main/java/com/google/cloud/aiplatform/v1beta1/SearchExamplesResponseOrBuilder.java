@@ -37,6 +37,7 @@ public interface SearchExamplesResponseOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample>
       getResultsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface SearchExamplesResponseOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExample getResults(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface SearchExamplesResponseOrBuilder
    * </code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface SearchExamplesResponseOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.SearchExamplesResponse.SimilarExampleOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *

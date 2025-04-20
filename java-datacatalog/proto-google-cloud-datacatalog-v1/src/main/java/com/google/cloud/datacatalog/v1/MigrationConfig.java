@@ -37,6 +37,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1.MigrationConfig)
     MigrationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationConfig.newBuilder() to construct.
   private MigrationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int TAG_TEMPLATE_MIGRATION_FIELD_NUMBER = 1;
   private int tagTemplateMigration_ = 0;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
   public int getTagTemplateMigrationValue() {
     return tagTemplateMigration_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
 
   public static final int CATALOG_UI_EXPERIENCE_FIELD_NUMBER = 2;
   private int catalogUiExperience_ = 0;
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
   public int getCatalogUiExperienceValue() {
     return catalogUiExperience_;
   }
+
   /**
    *
    *
@@ -318,6 +323,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -517,6 +523,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int tagTemplateMigration_ = 0;
+
     /**
      *
      *
@@ -532,6 +539,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     public int getTagTemplateMigrationValue() {
       return tagTemplateMigration_;
     }
+
     /**
      *
      *
@@ -550,6 +558,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +578,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.datacatalog.v1.TagTemplateMigration.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -591,6 +601,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +621,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     }
 
     private int catalogUiExperience_ = 0;
+
     /**
      *
      *
@@ -625,6 +637,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
     public int getCatalogUiExperienceValue() {
       return catalogUiExperience_;
     }
+
     /**
      *
      *
@@ -643,6 +656,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +676,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.datacatalog.v1.CatalogUIExperience.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -684,6 +699,7 @@ public final class MigrationConfig extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

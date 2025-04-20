@@ -33,6 +33,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apphub.v1.Scope)
     ScopeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Scope.newBuilder() to construct.
   private Scope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -115,6 +116,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -125,6 +127,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
      * <code>REGIONAL = 1;</code>
      */
     public static final int REGIONAL_VALUE = 1;
+
     /**
      *
      *
@@ -221,6 +224,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 1;
   private int type_ = 0;
+
   /**
    *
    *
@@ -237,6 +241,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -413,6 +418,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -593,6 +599,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -609,6 +616,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -628,6 +636,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +655,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apphub.v1.Scope.Type.forNumber(type_);
       return result == null ? com.google.cloud.apphub.v1.Scope.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -668,6 +678,7 @@ public final class Scope extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

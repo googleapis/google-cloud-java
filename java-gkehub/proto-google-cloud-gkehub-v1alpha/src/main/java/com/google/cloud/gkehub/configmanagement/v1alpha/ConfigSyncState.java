@@ -33,6 +33,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncState)
     ConfigSyncStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ConfigSyncState.newBuilder() to construct.
   private ConfigSyncState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncVersion version_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncVersion.getDefaultInstance()
         : version_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncDeploymentState
       deploymentState_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   public boolean hasDeploymentState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance()
         : deploymentState_;
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
 
   public static final int SYNC_STATE_FIELD_NUMBER = 3;
   private com.google.cloud.gkehub.configmanagement.v1alpha.SyncState syncState_;
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
   public boolean hasSyncState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.gkehub.configmanagement.v1alpha.SyncState.getDefaultInstance()
         : syncState_;
   }
+
   /**
    *
    *
@@ -421,6 +431,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -667,6 +678,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncVersion.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncVersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -702,6 +715,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +792,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -810,6 +828,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             : version_;
       }
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncDeploymentState.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.ConfigSyncDeploymentStateOrBuilder>
         deploymentStateBuilder_;
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public boolean hasDeploymentState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         return deploymentStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +979,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1036,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1055,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDeploymentStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1051,6 +1079,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             : deploymentState_;
       }
     }
+
     /**
      *
      *
@@ -1087,6 +1116,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.gkehub.configmanagement.v1alpha.SyncState.Builder,
             com.google.cloud.gkehub.configmanagement.v1alpha.SyncStateOrBuilder>
         syncStateBuilder_;
+
     /**
      *
      *
@@ -1101,6 +1131,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
     public boolean hasSyncState() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1121,6 +1152,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
         return syncStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1143,6 +1175,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1196,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1247,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1263,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSyncStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1246,6 +1283,7 @@ public final class ConfigSyncState extends com.google.protobuf.GeneratedMessageV
             : syncState_;
       }
     }
+
     /**
      *
      *

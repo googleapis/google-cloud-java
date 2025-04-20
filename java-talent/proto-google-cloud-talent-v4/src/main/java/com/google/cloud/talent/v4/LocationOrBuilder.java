@@ -41,6 +41,7 @@ public interface LocationOrBuilder
    * @return The enum numeric value on the wire for locationType.
    */
   int getLocationTypeValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface LocationOrBuilder
    * @return Whether the postalAddress field is set.
    */
   boolean hasPostalAddress();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface LocationOrBuilder
    * @return The postalAddress.
    */
   com.google.type.PostalAddress getPostalAddress();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface LocationOrBuilder
    * @return Whether the latLng field is set.
    */
   boolean hasLatLng();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface LocationOrBuilder
    * @return The latLng.
    */
   com.google.type.LatLng getLatLng();
+
   /**
    *
    *

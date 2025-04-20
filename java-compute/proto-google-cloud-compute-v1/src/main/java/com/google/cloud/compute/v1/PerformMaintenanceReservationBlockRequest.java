@@ -34,6 +34,7 @@ public final class PerformMaintenanceReservationBlockRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.PerformMaintenanceReservationBlockRequest)
     PerformMaintenanceReservationBlockRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PerformMaintenanceReservationBlockRequest.newBuilder() to construct.
   private PerformMaintenanceReservationBlockRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class PerformMaintenanceReservationBlockRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class PerformMaintenanceReservationBlockRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PerformMaintenanceReservationBlockRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class PerformMaintenanceReservationBlockRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class PerformMaintenanceReservationBlockRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class PerformMaintenanceReservationBlockRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservation_ = "";
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class PerformMaintenanceReservationBlockRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class PerformMaintenanceReservationBlockRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object reservationBlock_ = "";
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class PerformMaintenanceReservationBlockRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -297,6 +307,7 @@ public final class PerformMaintenanceReservationBlockRequest
       485823625;
   private com.google.cloud.compute.v1.ReservationsBlocksPerformMaintenanceRequest
       reservationsBlocksPerformMaintenanceRequestResource_;
+
   /**
    *
    *
@@ -314,6 +325,7 @@ public final class PerformMaintenanceReservationBlockRequest
   public boolean hasReservationsBlocksPerformMaintenanceRequestResource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +347,7 @@ public final class PerformMaintenanceReservationBlockRequest
             .getDefaultInstance()
         : reservationsBlocksPerformMaintenanceRequestResource_;
   }
+
   /**
    *
    *
@@ -359,6 +372,7 @@ public final class PerformMaintenanceReservationBlockRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -384,6 +398,7 @@ public final class PerformMaintenanceReservationBlockRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -631,6 +646,7 @@ public final class PerformMaintenanceReservationBlockRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -919,6 +935,7 @@ public final class PerformMaintenanceReservationBlockRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -943,6 +960,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -967,6 +985,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1009,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1029,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1056,7 @@ public final class PerformMaintenanceReservationBlockRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1049,6 +1071,7 @@ public final class PerformMaintenanceReservationBlockRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1071,6 +1094,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1093,6 +1117,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1139,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1157,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1155,6 +1182,7 @@ public final class PerformMaintenanceReservationBlockRequest
     }
 
     private java.lang.Object reservation_ = "";
+
     /**
      *
      *
@@ -1177,6 +1205,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1228,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1293,7 @@ public final class PerformMaintenanceReservationBlockRequest
     }
 
     private java.lang.Object reservationBlock_ = "";
+
     /**
      *
      *
@@ -1283,6 +1316,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1339,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1361,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1379,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1373,6 +1410,7 @@ public final class PerformMaintenanceReservationBlockRequest
             com.google.cloud.compute.v1.ReservationsBlocksPerformMaintenanceRequest.Builder,
             com.google.cloud.compute.v1.ReservationsBlocksPerformMaintenanceRequestOrBuilder>
         reservationsBlocksPerformMaintenanceRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1389,6 +1427,7 @@ public final class PerformMaintenanceReservationBlockRequest
     public boolean hasReservationsBlocksPerformMaintenanceRequestResource() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1413,6 +1452,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return reservationsBlocksPerformMaintenanceRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1438,6 +1478,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1462,6 +1503,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1536,7 @@ public final class PerformMaintenanceReservationBlockRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1558,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1576,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return getReservationsBlocksPerformMaintenanceRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1554,6 +1599,7 @@ public final class PerformMaintenanceReservationBlockRequest
             : reservationsBlocksPerformMaintenanceRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1631,7 @@ public final class PerformMaintenanceReservationBlockRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1609,6 +1656,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1633,6 +1681,7 @@ public final class PerformMaintenanceReservationBlockRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1656,6 +1705,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1675,6 +1725,7 @@ public final class PerformMaintenanceReservationBlockRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

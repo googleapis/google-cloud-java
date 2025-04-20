@@ -40,6 +40,7 @@ public interface SuggestionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.Article articles = 2;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion.Article> getArticlesList();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.Article articles = 2;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Suggestion.Article getArticles(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.Article articles = 2;</code>
    */
   int getArticlesCount();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface SuggestionOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Suggestion.ArticleOrBuilder>
       getArticlesOrBuilderList();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer faq_answers = 4;</code>
    */
   java.util.List<com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer> getFaqAnswersList();
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer faq_answers = 4;</code>
    */
   com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer getFaqAnswers(int index);
+
   /**
    *
    *
@@ -138,6 +145,7 @@ public interface SuggestionOrBuilder
    * <code>repeated .google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswer faq_answers = 4;</code>
    */
   int getFaqAnswersCount();
+
   /**
    *
    *
@@ -149,6 +157,7 @@ public interface SuggestionOrBuilder
    */
   java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Suggestion.FaqAnswerOrBuilder>
       getFaqAnswersOrBuilderList();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface SuggestionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -185,6 +195,7 @@ public interface SuggestionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public interface SuggestionOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

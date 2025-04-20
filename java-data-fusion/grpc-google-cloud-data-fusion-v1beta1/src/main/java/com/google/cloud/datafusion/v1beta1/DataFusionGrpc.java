@@ -649,6 +649,19 @@ public final class DataFusionGrpc {
     return DataFusionStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataFusionBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataFusionBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataFusionBlockingV2Stub>() {
+          @java.lang.Override
+          public DataFusionBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataFusionBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataFusionBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1142,6 +1155,200 @@ public final class DataFusionGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataFusion.
+   *
+   * <pre>
+   * Service for creating and managing Data Fusion instances.
+   * Data Fusion enables ETL developers to build code-free, data integration
+   * pipelines via a point-and-click UI.
+   * </pre>
+   */
+  public static final class DataFusionBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataFusionBlockingV2Stub> {
+    private DataFusionBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataFusionBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataFusionBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists possible versions for Data Fusion instances in the specified project
+     * and location.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.ListAvailableVersionsResponse listAvailableVersions(
+        com.google.cloud.datafusion.v1beta1.ListAvailableVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAvailableVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Data Fusion instances in the specified project and location.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.ListInstancesResponse listInstances(
+        com.google.cloud.datafusion.v1beta1.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Data Fusion instance.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.Instance getInstance(
+        com.google.cloud.datafusion.v1beta1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Data Fusion instance in the specified project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.datafusion.v1beta1.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Data Fusion instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.datafusion.v1beta1.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single Data Fusion instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.datafusion.v1beta1.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restart a single Data Fusion instance.
+     * At the end of an operation instance is fully restarted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restartInstance(
+        com.google.cloud.datafusion.v1beta1.RestartInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestartInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Upgrade a single Data Fusion instance.
+     * At the end of an operation instance is fully upgraded.
+     * </pre>
+     */
+    public com.google.longrunning.Operation upgradeInstance(
+        com.google.cloud.datafusion.v1beta1.UpgradeInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpgradeInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove IAM policy that is currently set on the given resource.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.RemoveIamPolicyResponse removeIamPolicy(
+        com.google.cloud.datafusion.v1beta1.RemoveIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List namespaces in a given instance
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.ListNamespacesResponse listNamespaces(
+        com.google.cloud.datafusion.v1beta1.ListNamespacesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListNamespacesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Add DNS peering on the given resource.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.AddDnsPeeringResponse addDnsPeering(
+        com.google.cloud.datafusion.v1beta1.AddDnsPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddDnsPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove DNS peering on the given resource.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringResponse removeDnsPeering(
+        com.google.cloud.datafusion.v1beta1.RemoveDnsPeeringRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveDnsPeeringMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List DNS peering for a given resource.
+     * </pre>
+     */
+    public com.google.cloud.datafusion.v1beta1.ListDnsPeeringsResponse listDnsPeerings(
+        com.google.cloud.datafusion.v1beta1.ListDnsPeeringsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDnsPeeringsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataFusion.
    *
    * <pre>
    * Service for creating and managing Data Fusion instances.

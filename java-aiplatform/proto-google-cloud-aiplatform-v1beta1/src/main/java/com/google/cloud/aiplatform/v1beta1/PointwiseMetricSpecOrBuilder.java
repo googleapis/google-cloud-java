@@ -37,6 +37,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return Whether the metricPromptTemplate field is set.
    */
   boolean hasMetricPromptTemplate();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The metricPromptTemplate.
    */
   java.lang.String getMetricPromptTemplate();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return Whether the systemInstruction field is set.
    */
   boolean hasSystemInstruction();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The systemInstruction.
    */
   java.lang.String getSystemInstruction();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return Whether the customOutputFormatConfig field is set.
    */
   boolean hasCustomOutputFormatConfig();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface PointwiseMetricSpecOrBuilder
    * @return The customOutputFormatConfig.
    */
   com.google.cloud.aiplatform.v1beta1.CustomOutputFormatConfig getCustomOutputFormatConfig();
+
   /**
    *
    *

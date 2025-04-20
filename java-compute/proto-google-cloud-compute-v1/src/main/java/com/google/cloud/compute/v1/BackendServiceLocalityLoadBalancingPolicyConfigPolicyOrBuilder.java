@@ -37,6 +37,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BackendServiceLocalityLoadBalancingPolicyConfigPolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

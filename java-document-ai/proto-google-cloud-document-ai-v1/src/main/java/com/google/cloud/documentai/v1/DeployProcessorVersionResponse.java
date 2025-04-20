@@ -35,6 +35,7 @@ public final class DeployProcessorVersionResponse extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1.DeployProcessorVersionResponse)
     DeployProcessorVersionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeployProcessorVersionResponse.newBuilder() to construct.
   private DeployProcessorVersionResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class DeployProcessorVersionResponse extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

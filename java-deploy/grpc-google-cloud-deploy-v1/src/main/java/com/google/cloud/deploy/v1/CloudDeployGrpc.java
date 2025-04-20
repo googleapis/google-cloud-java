@@ -2063,6 +2063,19 @@ public final class CloudDeployGrpc {
     return CloudDeployStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudDeployBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudDeployBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudDeployBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudDeployBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudDeployBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudDeployBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -3510,6 +3523,615 @@ public final class CloudDeployGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudDeploy.
+   *
+   * <pre>
+   * CloudDeploy service creates and manages Continuous Delivery operations
+   * on Google Cloud Platform via Skaffold (https://skaffold.dev).
+   * </pre>
+   */
+  public static final class CloudDeployBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudDeployBlockingV2Stub> {
+    private CloudDeployBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudDeployBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudDeployBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeliveryPipelines in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListDeliveryPipelinesResponse listDeliveryPipelines(
+        com.google.cloud.deploy.v1.ListDeliveryPipelinesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeliveryPipelinesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.DeliveryPipeline getDeliveryPipeline(
+        com.google.cloud.deploy.v1.GetDeliveryPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeliveryPipeline in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeliveryPipeline(
+        com.google.cloud.deploy.v1.CreateDeliveryPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeliveryPipeline(
+        com.google.cloud.deploy.v1.UpdateDeliveryPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeliveryPipeline.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeliveryPipeline(
+        com.google.cloud.deploy.v1.DeleteDeliveryPipelineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeliveryPipelineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Targets in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListTargetsResponse listTargets(
+        com.google.cloud.deploy.v1.ListTargetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTargetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Rollout` to roll back the specified target.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RollbackTargetResponse rollbackTarget(
+        com.google.cloud.deploy.v1.RollbackTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Target.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Target getTarget(
+        com.google.cloud.deploy.v1.GetTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Target in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTarget(
+        com.google.cloud.deploy.v1.CreateTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Target.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTarget(
+        com.google.cloud.deploy.v1.UpdateTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Target.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteTarget(
+        com.google.cloud.deploy.v1.DeleteTargetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTargetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists CustomTargetTypes in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListCustomTargetTypesResponse listCustomTargetTypes(
+        com.google.cloud.deploy.v1.ListCustomTargetTypesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomTargetTypesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CustomTargetType getCustomTargetType(
+        com.google.cloud.deploy.v1.GetCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new CustomTargetType in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCustomTargetType(
+        com.google.cloud.deploy.v1.CreateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCustomTargetType(
+        com.google.cloud.deploy.v1.UpdateCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single CustomTargetType.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCustomTargetType(
+        com.google.cloud.deploy.v1.DeleteCustomTargetTypeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomTargetTypeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Releases in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListReleasesResponse listReleases(
+        com.google.cloud.deploy.v1.ListReleasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListReleasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Release.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Release getRelease(
+        com.google.cloud.deploy.v1.GetReleaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Release in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRelease(
+        com.google.cloud.deploy.v1.CreateReleaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Abandons a Release in the Delivery Pipeline.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AbandonReleaseResponse abandonRelease(
+        com.google.cloud.deploy.v1.AbandonReleaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAbandonReleaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new DeployPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDeployPolicy(
+        com.google.cloud.deploy.v1.CreateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDeployPolicy(
+        com.google.cloud.deploy.v1.UpdateDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDeployPolicy(
+        com.google.cloud.deploy.v1.DeleteDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DeployPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListDeployPoliciesResponse listDeployPolicies(
+        com.google.cloud.deploy.v1.ListDeployPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDeployPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single DeployPolicy.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.DeployPolicy getDeployPolicy(
+        com.google.cloud.deploy.v1.GetDeployPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDeployPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Approves a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ApproveRolloutResponse approveRollout(
+        com.google.cloud.deploy.v1.ApproveRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApproveRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Advances a Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AdvanceRolloutResponse advanceRollout(
+        com.google.cloud.deploy.v1.AdvanceRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAdvanceRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels a Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CancelRolloutResponse cancelRollout(
+        com.google.cloud.deploy.v1.CancelRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Rollouts in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListRolloutsResponse listRollouts(
+        com.google.cloud.deploy.v1.ListRolloutsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRolloutsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Rollout getRollout(
+        com.google.cloud.deploy.v1.GetRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Rollout in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRollout(
+        com.google.cloud.deploy.v1.CreateRolloutRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRolloutMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Ignores the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.IgnoreJobResponse ignoreJob(
+        com.google.cloud.deploy.v1.IgnoreJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIgnoreJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retries the specified Job in a Rollout.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.RetryJobResponse retryJob(
+        com.google.cloud.deploy.v1.RetryJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetryJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists JobRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListJobRunsResponse listJobRuns(
+        com.google.cloud.deploy.v1.ListJobRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListJobRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single JobRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.JobRun getJobRun(
+        com.google.cloud.deploy.v1.GetJobRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetJobRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Terminates a Job Run in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.TerminateJobRunResponse terminateJobRun(
+        com.google.cloud.deploy.v1.TerminateJobRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTerminateJobRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the configuration for a location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Config getConfig(
+        com.google.cloud.deploy.v1.GetConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Automation in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAutomation(
+        com.google.cloud.deploy.v1.CreateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAutomation(
+        com.google.cloud.deploy.v1.UpdateAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Automation resource.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteAutomation(
+        com.google.cloud.deploy.v1.DeleteAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Automation.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.Automation getAutomation(
+        com.google.cloud.deploy.v1.GetAutomationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutomationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Automations in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationsResponse listAutomations(
+        com.google.cloud.deploy.v1.ListAutomationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutomationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single AutomationRun.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.AutomationRun getAutomationRun(
+        com.google.cloud.deploy.v1.GetAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAutomationRunMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists AutomationRuns in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.ListAutomationRunsResponse listAutomationRuns(
+        com.google.cloud.deploy.v1.ListAutomationRunsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAutomationRunsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Cancels an AutomationRun. The `state` of the `AutomationRun` after
+     * cancelling is `CANCELLED`. `CancelAutomationRun` can be called on
+     * AutomationRun in the state `IN_PROGRESS` and `PENDING`; AutomationRun
+     * in a different state returns an `FAILED_PRECONDITION` error.
+     * </pre>
+     */
+    public com.google.cloud.deploy.v1.CancelAutomationRunResponse cancelAutomationRun(
+        com.google.cloud.deploy.v1.CancelAutomationRunRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCancelAutomationRunMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudDeploy.
    *
    * <pre>
    * CloudDeploy service creates and manages Continuous Delivery operations

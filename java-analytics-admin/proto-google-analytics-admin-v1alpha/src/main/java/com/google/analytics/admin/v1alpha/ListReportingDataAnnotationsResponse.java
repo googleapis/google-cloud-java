@@ -34,6 +34,7 @@ public final class ListReportingDataAnnotationsResponse
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ListReportingDataAnnotationsResponse)
     ListReportingDataAnnotationsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListReportingDataAnnotationsResponse.newBuilder() to construct.
   private ListReportingDataAnnotationsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class ListReportingDataAnnotationsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
       reportingDataAnnotations_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListReportingDataAnnotationsResponse
       getReportingDataAnnotationsList() {
     return reportingDataAnnotations_;
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ListReportingDataAnnotationsResponse
       getReportingDataAnnotationsOrBuilderList() {
     return reportingDataAnnotations_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class ListReportingDataAnnotationsResponse
   public int getReportingDataAnnotationsCount() {
     return reportingDataAnnotations_.size();
   }
+
   /**
    *
    *
@@ -135,6 +140,7 @@ public final class ListReportingDataAnnotationsResponse
       int index) {
     return reportingDataAnnotations_.get(index);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ListReportingDataAnnotationsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public final class ListReportingDataAnnotationsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +388,7 @@ public final class ListReportingDataAnnotationsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +682,7 @@ public final class ListReportingDataAnnotationsResponse
         return reportingDataAnnotationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -691,6 +701,7 @@ public final class ListReportingDataAnnotationsResponse
         return reportingDataAnnotationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -710,6 +721,7 @@ public final class ListReportingDataAnnotationsResponse
         return reportingDataAnnotationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -735,6 +747,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +870,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +894,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class ListReportingDataAnnotationsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +954,7 @@ public final class ListReportingDataAnnotationsResponse
         getReportingDataAnnotationsBuilder(int index) {
       return getReportingDataAnnotationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class ListReportingDataAnnotationsResponse
         return reportingDataAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class ListReportingDataAnnotationsResponse
         return java.util.Collections.unmodifiableList(reportingDataAnnotations_);
       }
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class ListReportingDataAnnotationsResponse
           .addBuilder(
               com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1007,6 +1032,7 @@ public final class ListReportingDataAnnotationsResponse
               index,
               com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class ListReportingDataAnnotationsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1067,6 +1094,7 @@ public final class ListReportingDataAnnotationsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1118,7 @@ public final class ListReportingDataAnnotationsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1141,7 @@ public final class ListReportingDataAnnotationsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1160,7 @@ public final class ListReportingDataAnnotationsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

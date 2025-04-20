@@ -38,6 +38,7 @@ public interface GetMachineRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

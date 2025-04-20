@@ -36,6 +36,7 @@ public interface DataplexConfigOrBuilder
    * <code>map&lt;string, .google.cloud.metastore.v1beta.Lake&gt; lake_resources = 1;</code>
    */
   int getLakeResourcesCount();
+
   /**
    *
    *
@@ -48,9 +49,11 @@ public interface DataplexConfigOrBuilder
    * <code>map&lt;string, .google.cloud.metastore.v1beta.Lake&gt; lake_resources = 1;</code>
    */
   boolean containsLakeResources(java.lang.String key);
+
   /** Use {@link #getLakeResourcesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.metastore.v1beta.Lake> getLakeResources();
+
   /**
    *
    *
@@ -63,6 +66,7 @@ public interface DataplexConfigOrBuilder
    * <code>map&lt;string, .google.cloud.metastore.v1beta.Lake&gt; lake_resources = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.cloud.metastore.v1beta.Lake> getLakeResourcesMap();
+
   /**
    *
    *
@@ -79,6 +83,7 @@ public interface DataplexConfigOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.metastore.v1beta.Lake defaultValue);
+
   /**
    *
    *

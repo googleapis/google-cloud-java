@@ -35,6 +35,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.secrets.v1beta1.SecretPayload)
     SecretPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecretPayload.newBuilder() to construct.
   private SecretPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -242,6 +244,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -426,6 +429,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -441,6 +445,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getData() {
       return data_;
     }
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class SecretPayload extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

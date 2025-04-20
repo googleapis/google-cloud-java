@@ -33,6 +33,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerAutoHealingPolicy)
     InstanceGroupManagerAutoHealingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerAutoHealingPolicy.newBuilder() to construct.
   private InstanceGroupManagerAutoHealingPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object healthCheck_ = "";
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
   public boolean hasHealthCheck() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
 
   public static final int INITIAL_DELAY_SEC_FIELD_NUMBER = 263207002;
   private int initialDelaySec_ = 0;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
   public boolean hasInitialDelaySec() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,6 +556,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     private int bitField0_;
 
     private java.lang.Object healthCheck_ = "";
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public boolean hasHealthCheck() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +682,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     }
 
     private int initialDelaySec_;
+
     /**
      *
      *
@@ -684,6 +698,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public boolean hasInitialDelaySec() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -699,6 +714,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
     public int getInitialDelaySec() {
       return initialDelaySec_;
     }
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class InstanceGroupManagerAutoHealingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

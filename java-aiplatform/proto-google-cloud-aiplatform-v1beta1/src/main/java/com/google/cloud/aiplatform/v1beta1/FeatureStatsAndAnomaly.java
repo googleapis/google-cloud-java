@@ -34,6 +34,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureStatsAndAnomaly)
     FeatureStatsAndAnomalyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureStatsAndAnomaly.newBuilder() to construct.
   private FeatureStatsAndAnomaly(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int FEATURE_STATS_FIELD_NUMBER = 2;
   private com.google.protobuf.Value featureStats_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
   public boolean hasFeatureStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Value getFeatureStats() {
     return featureStats_ == null ? com.google.protobuf.Value.getDefaultInstance() : featureStats_;
   }
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int DISTRIBUTION_DEVIATION_FIELD_NUMBER = 3;
   private double distributionDeviation_ = 0D;
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int DRIFT_DETECTION_THRESHOLD_FIELD_NUMBER = 4;
   private double driftDetectionThreshold_ = 0D;
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int DRIFT_DETECTED_FIELD_NUMBER = 5;
   private boolean driftDetected_ = false;
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int STATS_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp statsTime_;
+
   /**
    *
    *
@@ -243,6 +253,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
   public boolean hasStatsTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStatsTime() {
     return statsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : statsTime_;
   }
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   public static final int FEATURE_MONITOR_JOB_ID_FIELD_NUMBER = 7;
   private long featureMonitorJobId_ = 0L;
+
   /**
    *
    *
@@ -294,6 +307,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object featureMonitorId_ = "";
+
   /**
    *
    *
@@ -318,6 +332,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -584,6 +599,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -885,6 +901,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object featureId_ = "";
+
     /**
      *
      *
@@ -907,6 +924,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +947,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +969,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +987,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
             com.google.protobuf.Value.Builder,
             com.google.protobuf.ValueOrBuilder>
         featureStatsBuilder_;
+
     /**
      *
      *
@@ -1011,6 +1033,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasFeatureStats() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return featureStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1100,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1129,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1166,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return getFeatureStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1157,6 +1186,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
             : featureStats_;
       }
     }
+
     /**
      *
      *
@@ -1185,6 +1215,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private double distributionDeviation_;
+
     /**
      *
      *
@@ -1204,6 +1235,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public double getDistributionDeviation() {
       return distributionDeviation_;
     }
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1250,6 +1283,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private double driftDetectionThreshold_;
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public double getDriftDetectionThreshold() {
       return driftDetectionThreshold_;
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1342,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private boolean driftDetected_;
+
     /**
      *
      *
@@ -1322,6 +1359,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public boolean getDriftDetected() {
       return driftDetected_;
     }
+
     /**
      *
      *
@@ -1342,6 +1380,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1406,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         statsTimeBuilder_;
+
     /**
      *
      *
@@ -1381,6 +1421,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public boolean hasStatsTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1399,6 +1440,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return statsTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1421,6 +1463,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1483,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1467,6 +1511,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1531,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1546,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return getStatsTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1516,6 +1563,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return statsTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : statsTime_;
       }
     }
+
     /**
      *
      *
@@ -1543,6 +1591,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private long featureMonitorJobId_;
+
     /**
      *
      *
@@ -1558,6 +1607,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     public long getFeatureMonitorJobId() {
       return featureMonitorJobId_;
     }
+
     /**
      *
      *
@@ -1577,6 +1627,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1647,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object featureMonitorId_ = "";
+
     /**
      *
      *
@@ -1619,6 +1671,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1642,6 +1695,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1664,6 +1718,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1737,7 @@ public final class FeatureStatsAndAnomaly extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

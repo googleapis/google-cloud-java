@@ -39,6 +39,7 @@ public interface SessionEventOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SessionEventOrBuilder
    * @return The author.
    */
   java.lang.String getAuthor();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface SessionEventOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SessionEventOrBuilder
    * @return The content.
    */
   com.google.cloud.aiplatform.v1beta1.Content getContent();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface SessionEventOrBuilder
    * @return The invocationId.
    */
   java.lang.String getInvocationId();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface SessionEventOrBuilder
    * @return Whether the actions field is set.
    */
   boolean hasActions();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface SessionEventOrBuilder
    * @return The actions.
    */
   com.google.cloud.aiplatform.v1beta1.EventActions getActions();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface SessionEventOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface SessionEventOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
+
   /**
    *
    *
@@ -239,6 +248,7 @@ public interface SessionEventOrBuilder
    * @return The errorCode.
    */
   java.lang.String getErrorCode();
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public interface SessionEventOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public interface SessionEventOrBuilder
    * @return Whether the eventMetadata field is set.
    */
   boolean hasEventMetadata();
+
   /**
    *
    *
@@ -305,6 +317,7 @@ public interface SessionEventOrBuilder
    * @return The eventMetadata.
    */
   com.google.cloud.aiplatform.v1beta1.EventMetadata getEventMetadata();
+
   /**
    *
    *

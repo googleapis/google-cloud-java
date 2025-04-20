@@ -40,6 +40,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * @return Whether the currentTextInput field is set.
    */
   boolean hasCurrentTextInput();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * @return The currentTextInput.
    */
   com.google.cloud.dialogflow.v2beta1.TextInput getCurrentTextInput();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface SuggestSmartRepliesRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *

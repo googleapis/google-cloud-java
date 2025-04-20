@@ -33,6 +33,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.ListBreakpointsRequest)
     ListBreakpointsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListBreakpointsRequest.newBuilder() to construct.
   private ListBreakpointsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for value.
      */
     int getValueValue();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
      */
     com.google.devtools.clouddebugger.v2.Breakpoint.Action getValue();
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.ListBreakpointsRequest.BreakpointActionValue)
       BreakpointActionValueOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BreakpointActionValue.newBuilder() to construct.
     private BreakpointActionValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,6 +149,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
     public static final int VALUE_FIELD_NUMBER = 1;
     private int value_ = 0;
+
     /**
      *
      *
@@ -160,6 +165,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     public int getValueValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -350,6 +356,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -554,6 +561,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int value_ = 0;
+
       /**
        *
        *
@@ -569,6 +577,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       public int getValueValue() {
         return value_;
       }
+
       /**
        *
        *
@@ -587,6 +596,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -606,6 +616,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
             ? com.google.devtools.clouddebugger.v2.Breakpoint.Action.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -627,6 +638,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -719,6 +731,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object debuggeeId_ = "";
+
   /**
    *
    *
@@ -742,6 +755,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -768,6 +782,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   public static final int INCLUDE_ALL_USERS_FIELD_NUMBER = 2;
   private boolean includeAllUsers_ = false;
+
   /**
    *
    *
@@ -787,6 +802,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   public static final int INCLUDE_INACTIVE_FIELD_NUMBER = 3;
   private boolean includeInactive_ = false;
+
   /**
    *
    *
@@ -806,6 +822,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   public static final int ACTION_FIELD_NUMBER = 4;
   private com.google.devtools.clouddebugger.v2.ListBreakpointsRequest.BreakpointActionValue action_;
+
   /**
    *
    *
@@ -823,6 +840,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
   public boolean hasAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -844,6 +862,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
             .getDefaultInstance()
         : action_;
   }
+
   /**
    *
    *
@@ -866,6 +885,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   public static final int STRIP_RESULTS_FIELD_NUMBER = 5;
   private boolean stripResults_ = false;
+
   /**
    *
    *
@@ -890,6 +910,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object waitToken_ = "";
+
   /**
    *
    *
@@ -917,6 +938,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -949,6 +971,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object clientVersion_ = "";
+
   /**
    *
    *
@@ -973,6 +996,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -1217,6 +1241,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1499,6 +1524,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object debuggeeId_ = "";
+
     /**
      *
      *
@@ -1521,6 +1547,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1543,6 +1570,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1592,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1610,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1635,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean includeAllUsers_;
+
     /**
      *
      *
@@ -1621,6 +1652,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     public boolean getIncludeAllUsers() {
       return includeAllUsers_;
     }
+
     /**
      *
      *
@@ -1641,6 +1673,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1661,6 +1694,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean includeInactive_;
+
     /**
      *
      *
@@ -1677,6 +1711,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     public boolean getIncludeInactive() {
       return includeInactive_;
     }
+
     /**
      *
      *
@@ -1697,6 +1732,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1761,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
             com.google.devtools.clouddebugger.v2.ListBreakpointsRequest
                 .BreakpointActionValueOrBuilder>
         actionBuilder_;
+
     /**
      *
      *
@@ -1741,6 +1778,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     public boolean hasAction() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1765,6 +1803,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return actionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1790,6 +1829,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1813,6 +1853,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1886,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1908,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1883,6 +1926,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getActionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1906,6 +1950,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
             : action_;
       }
     }
+
     /**
      *
      *
@@ -1939,6 +1984,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean stripResults_;
+
     /**
      *
      *
@@ -1958,6 +2004,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     public boolean getStripResults() {
       return stripResults_;
     }
+
     /**
      *
      *
@@ -1981,6 +2028,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2004,6 +2052,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object waitToken_ = "";
+
     /**
      *
      *
@@ -2030,6 +2079,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2056,6 +2106,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2081,6 +2132,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2102,6 +2154,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2130,6 +2183,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object clientVersion_ = "";
+
     /**
      *
      *
@@ -2153,6 +2207,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2231,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2198,6 +2254,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2216,6 +2273,7 @@ public final class ListBreakpointsRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

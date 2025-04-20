@@ -51,6 +51,7 @@ public interface PolicyControllerOrBuilder
    * @return Whether the templateLibraryInstalled field is set.
    */
   boolean hasTemplateLibraryInstalled();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface PolicyControllerOrBuilder
    * @return Whether the auditIntervalSeconds field is set.
    */
   boolean hasAuditIntervalSeconds();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface PolicyControllerOrBuilder
    * @return A list containing the exemptableNamespaces.
    */
   java.util.List<java.lang.String> getExemptableNamespacesList();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface PolicyControllerOrBuilder
    * @return The count of exemptableNamespaces.
    */
   int getExemptableNamespacesCount();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface PolicyControllerOrBuilder
    * @return The exemptableNamespaces at the given index.
    */
   java.lang.String getExemptableNamespaces(int index);
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public interface PolicyControllerOrBuilder
    * @return Whether the monitoring field is set.
    */
   boolean hasMonitoring();
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public interface PolicyControllerOrBuilder
    * @return The monitoring.
    */
   com.google.cloud.gkehub.configmanagement.v1beta.PolicyControllerMonitoring getMonitoring();
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public interface PolicyControllerOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public interface PolicyControllerOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

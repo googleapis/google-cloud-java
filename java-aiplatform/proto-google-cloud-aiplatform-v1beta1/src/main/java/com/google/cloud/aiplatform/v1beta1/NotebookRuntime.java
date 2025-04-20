@@ -35,6 +35,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.NotebookRuntime)
     NotebookRuntimeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NotebookRuntime.newBuilder() to construct.
   private NotebookRuntime(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -140,6 +141,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>HEALTH_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int HEALTH_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -150,6 +152,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>HEALTHY = 1;</code>
      */
     public static final int HEALTHY_VALUE = 1;
+
     /**
      *
      *
@@ -351,6 +354,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>RUNTIME_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int RUNTIME_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -361,6 +365,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>RUNNING = 1;</code>
      */
     public static final int RUNNING_VALUE = 1;
+
     /**
      *
      *
@@ -371,6 +376,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>BEING_STARTED = 2;</code>
      */
     public static final int BEING_STARTED_VALUE = 2;
+
     /**
      *
      *
@@ -381,6 +387,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>BEING_STOPPED = 3;</code>
      */
     public static final int BEING_STOPPED_VALUE = 3;
+
     /**
      *
      *
@@ -391,6 +398,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>STOPPED = 4;</code>
      */
     public static final int STOPPED_VALUE = 4;
+
     /**
      *
      *
@@ -402,6 +410,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>BEING_UPGRADED = 5;</code>
      */
     public static final int BEING_UPGRADED_VALUE = 5;
+
     /**
      *
      *
@@ -412,6 +421,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
      * <code>ERROR = 100;</code>
      */
     public static final int ERROR_VALUE = 100;
+
     /**
      *
      *
@@ -523,6 +533,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -546,6 +557,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -574,6 +586,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object runtimeUser_ = "";
+
   /**
    *
    *
@@ -597,6 +610,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -624,6 +638,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public static final int NOTEBOOK_RUNTIME_TEMPLATE_REF_FIELD_NUMBER = 3;
   private com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplateRef
       notebookRuntimeTemplateRef_;
+
   /**
    *
    *
@@ -642,6 +657,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasNotebookRuntimeTemplateRef() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -663,6 +679,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplateRef.getDefaultInstance()
         : notebookRuntimeTemplateRef_;
   }
+
   /**
    *
    *
@@ -687,6 +704,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object proxyUri_ = "";
+
   /**
    *
    *
@@ -710,6 +728,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -736,6 +755,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -752,6 +772,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -768,6 +789,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -785,6 +807,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -801,6 +824,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -817,6 +841,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -834,6 +859,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 8;
   private int healthState_ = 0;
+
   /**
    *
    *
@@ -851,6 +877,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public int getHealthStateValue() {
     return healthState_;
   }
+
   /**
    *
    *
@@ -877,6 +904,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -902,6 +930,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -932,6 +961,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -955,6 +985,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -983,6 +1014,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccount_ = "";
+
   /**
    *
    *
@@ -1014,6 +1046,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1048,6 +1081,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int RUNTIME_STATE_FIELD_NUMBER = 14;
   private int runtimeState_ = 0;
+
   /**
    *
    *
@@ -1065,6 +1099,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public int getRuntimeStateValue() {
     return runtimeState_;
   }
+
   /**
    *
    *
@@ -1089,6 +1124,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int IS_UPGRADABLE_FIELD_NUMBER = 15;
   private boolean isUpgradable_ = false;
+
   /**
    *
    *
@@ -1131,6 +1167,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -1164,12 +1201,14 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -1200,6 +1239,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -1237,6 +1277,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1277,6 +1318,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int EXPIRATION_TIME_FIELD_NUMBER = 17;
   private com.google.protobuf.Timestamp expirationTime_;
+
   /**
    *
    *
@@ -1298,6 +1340,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasExpirationTime() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1321,6 +1364,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : expirationTime_;
   }
+
   /**
    *
    *
@@ -1347,6 +1391,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -1370,6 +1415,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -1396,6 +1442,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int NOTEBOOK_RUNTIME_TYPE_FIELD_NUMBER = 19;
   private int notebookRuntimeType_ = 0;
+
   /**
    *
    *
@@ -1413,6 +1460,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public int getNotebookRuntimeTypeValue() {
     return notebookRuntimeType_;
   }
+
   /**
    *
    *
@@ -1437,6 +1485,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int MACHINE_SPEC_FIELD_NUMBER = 20;
   private com.google.cloud.aiplatform.v1beta1.MachineSpec machineSpec_;
+
   /**
    *
    *
@@ -1455,6 +1504,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasMachineSpec() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1475,6 +1525,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.MachineSpec.getDefaultInstance()
         : machineSpec_;
   }
+
   /**
    *
    *
@@ -1496,6 +1547,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int DATA_PERSISTENT_DISK_SPEC_FIELD_NUMBER = 21;
   private com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec dataPersistentDiskSpec_;
+
   /**
    *
    *
@@ -1515,6 +1567,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasDataPersistentDiskSpec() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -1536,6 +1589,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.getDefaultInstance()
         : dataPersistentDiskSpec_;
   }
+
   /**
    *
    *
@@ -1559,6 +1613,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int NETWORK_SPEC_FIELD_NUMBER = 22;
   private com.google.cloud.aiplatform.v1beta1.NetworkSpec networkSpec_;
+
   /**
    *
    *
@@ -1576,6 +1631,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasNetworkSpec() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -1595,6 +1651,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.NetworkSpec.getDefaultInstance()
         : networkSpec_;
   }
+
   /**
    *
    *
@@ -1615,6 +1672,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int IDLE_SHUTDOWN_CONFIG_FIELD_NUMBER = 23;
   private com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig idleShutdownConfig_;
+
   /**
    *
    *
@@ -1632,6 +1690,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasIdleShutdownConfig() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -1651,6 +1710,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.getDefaultInstance()
         : idleShutdownConfig_;
   }
+
   /**
    *
    *
@@ -1672,6 +1732,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int EUC_CONFIG_FIELD_NUMBER = 24;
   private com.google.cloud.aiplatform.v1beta1.NotebookEucConfig eucConfig_;
+
   /**
    *
    *
@@ -1689,6 +1750,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasEucConfig() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -1708,6 +1770,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.getDefaultInstance()
         : eucConfig_;
   }
+
   /**
    *
    *
@@ -1728,6 +1791,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SHIELDED_VM_CONFIG_FIELD_NUMBER = 32;
   private com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig shieldedVmConfig_;
+
   /**
    *
    *
@@ -1745,6 +1809,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasShieldedVmConfig() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -1764,6 +1829,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.getDefaultInstance()
         : shieldedVmConfig_;
   }
+
   /**
    *
    *
@@ -1788,6 +1854,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList networkTags_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -1803,6 +1870,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getNetworkTagsList() {
     return networkTags_;
   }
+
   /**
    *
    *
@@ -1818,6 +1886,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public int getNetworkTagsCount() {
     return networkTags_.size();
   }
+
   /**
    *
    *
@@ -1834,6 +1903,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getNetworkTags(int index) {
     return networkTags_.get(index);
   }
+
   /**
    *
    *
@@ -1853,6 +1923,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SOFTWARE_CONFIG_FIELD_NUMBER = 31;
   private com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig softwareConfig_;
+
   /**
    *
    *
@@ -1870,6 +1941,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasSoftwareConfig() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -1889,6 +1961,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig.getDefaultInstance()
         : softwareConfig_;
   }
+
   /**
    *
    *
@@ -1910,6 +1983,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 28;
   private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+
   /**
    *
    *
@@ -1927,6 +2001,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
   public boolean hasEncryptionSpec() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -1946,6 +2021,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
         : encryptionSpec_;
   }
+
   /**
    *
    *
@@ -1966,6 +2042,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SATISFIES_PZS_FIELD_NUMBER = 29;
   private boolean satisfiesPzs_ = false;
+
   /**
    *
    *
@@ -1984,6 +2061,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
 
   public static final int SATISFIES_PZI_FIELD_NUMBER = 30;
   private boolean satisfiesPzi_ = false;
+
   /**
    *
    *
@@ -2486,6 +2564,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3160,6 +3239,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3182,6 +3262,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3204,6 +3285,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3225,6 +3307,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3242,6 +3325,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3350,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object runtimeUser_ = "";
+
     /**
      *
      *
@@ -3288,6 +3373,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3310,6 +3396,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3331,6 +3418,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3348,6 +3436,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3378,6 +3467,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplateRef.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookRuntimeTemplateRefOrBuilder>
         notebookRuntimeTemplateRefBuilder_;
+
     /**
      *
      *
@@ -3395,6 +3485,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasNotebookRuntimeTemplateRef() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3419,6 +3510,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return notebookRuntimeTemplateRefBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3445,6 +3537,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3468,6 +3561,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3501,6 +3595,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3523,6 +3618,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3541,6 +3637,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getNotebookRuntimeTemplateRefFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3563,6 +3660,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : notebookRuntimeTemplateRef_;
       }
     }
+
     /**
      *
      *
@@ -3593,6 +3691,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object proxyUri_ = "";
+
     /**
      *
      *
@@ -3615,6 +3714,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3637,6 +3737,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3658,6 +3759,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3675,6 +3777,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3704,6 +3807,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3720,6 +3824,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3742,6 +3847,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3766,6 +3872,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3787,6 +3894,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3816,6 +3924,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3837,6 +3946,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3853,6 +3963,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3873,6 +3984,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3907,6 +4019,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3923,6 +4036,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3945,6 +4059,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3969,6 +4084,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3990,6 +4106,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4019,6 +4136,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -4040,6 +4158,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4056,6 +4175,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4076,6 +4196,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -4105,6 +4226,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private int healthState_ = 0;
+
     /**
      *
      *
@@ -4122,6 +4244,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public int getHealthStateValue() {
       return healthState_;
     }
+
     /**
      *
      *
@@ -4142,6 +4265,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4163,6 +4287,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.aiplatform.v1beta1.NotebookRuntime.HealthState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4187,6 +4312,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4208,6 +4334,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -4232,6 +4359,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4256,6 +4384,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4279,6 +4408,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4298,6 +4428,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4324,6 +4455,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -4346,6 +4478,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4368,6 +4501,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4389,6 +4523,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4406,6 +4541,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4430,6 +4566,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object serviceAccount_ = "";
+
     /**
      *
      *
@@ -4460,6 +4597,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4490,6 +4628,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4519,6 +4658,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4544,6 +4684,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4576,6 +4717,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private int runtimeState_ = 0;
+
     /**
      *
      *
@@ -4593,6 +4735,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public int getRuntimeStateValue() {
       return runtimeState_;
     }
+
     /**
      *
      *
@@ -4613,6 +4756,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4634,6 +4778,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.aiplatform.v1beta1.NotebookRuntime.RuntimeState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4658,6 +4803,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4679,6 +4825,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean isUpgradable_;
+
     /**
      *
      *
@@ -4694,6 +4841,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean getIsUpgradable() {
       return isUpgradable_;
     }
+
     /**
      *
      *
@@ -4713,6 +4861,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4756,6 +4905,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -4789,12 +4939,14 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -4825,6 +4977,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -4862,6 +5015,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -4905,6 +5059,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4938,12 +5093,14 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00001000;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -4981,6 +5138,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00001000;
       return this;
     }
+
     /**
      *
      *
@@ -5019,6 +5177,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expirationTimeBuilder_;
+
     /**
      *
      *
@@ -5039,6 +5198,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasExpirationTime() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -5065,6 +5225,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return expirationTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5093,6 +5254,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5118,6 +5280,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5151,6 +5314,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5176,6 +5340,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5196,6 +5361,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getExpirationTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5220,6 +5386,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : expirationTime_;
       }
     }
+
     /**
      *
      *
@@ -5253,6 +5420,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -5275,6 +5443,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -5297,6 +5466,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -5318,6 +5488,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5335,6 +5506,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5359,6 +5531,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private int notebookRuntimeType_ = 0;
+
     /**
      *
      *
@@ -5376,6 +5549,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public int getNotebookRuntimeTypeValue() {
       return notebookRuntimeType_;
     }
+
     /**
      *
      *
@@ -5396,6 +5570,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5417,6 +5592,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.aiplatform.v1beta1.NotebookRuntimeType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5441,6 +5617,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5467,6 +5644,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.MachineSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.MachineSpecOrBuilder>
         machineSpecBuilder_;
+
     /**
      *
      *
@@ -5484,6 +5662,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasMachineSpec() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -5507,6 +5686,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return machineSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5532,6 +5712,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5555,6 +5736,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5586,6 +5768,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5608,6 +5791,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5625,6 +5809,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMachineSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5646,6 +5831,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : machineSpec_;
       }
     }
+
     /**
      *
      *
@@ -5681,6 +5867,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.PersistentDiskSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.PersistentDiskSpecOrBuilder>
         dataPersistentDiskSpecBuilder_;
+
     /**
      *
      *
@@ -5699,6 +5886,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasDataPersistentDiskSpec() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -5723,6 +5911,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return dataPersistentDiskSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5750,6 +5939,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5774,6 +5964,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5807,6 +5998,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -5830,6 +6022,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5849,6 +6042,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getDataPersistentDiskSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5872,6 +6066,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : dataPersistentDiskSpec_;
       }
     }
+
     /**
      *
      *
@@ -5908,6 +6103,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.NetworkSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.NetworkSpecOrBuilder>
         networkSpecBuilder_;
+
     /**
      *
      *
@@ -5924,6 +6120,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasNetworkSpec() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -5946,6 +6143,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return networkSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5970,6 +6168,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5992,6 +6191,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6022,6 +6222,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6043,6 +6244,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6059,6 +6261,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getNetworkSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6079,6 +6282,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : networkSpec_;
       }
     }
+
     /**
      *
      *
@@ -6113,6 +6317,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookIdleShutdownConfigOrBuilder>
         idleShutdownConfigBuilder_;
+
     /**
      *
      *
@@ -6129,6 +6334,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasIdleShutdownConfig() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -6151,6 +6357,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return idleShutdownConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6176,6 +6383,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6198,6 +6406,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6230,6 +6439,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6251,6 +6461,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6268,6 +6479,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getIdleShutdownConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6289,6 +6501,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : idleShutdownConfig_;
       }
     }
+
     /**
      *
      *
@@ -6323,6 +6536,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.NotebookEucConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookEucConfigOrBuilder>
         eucConfigBuilder_;
+
     /**
      *
      *
@@ -6339,6 +6553,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasEucConfig() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -6361,6 +6576,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return eucConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6385,6 +6601,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6407,6 +6624,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6437,6 +6655,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6458,6 +6677,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6474,6 +6694,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEucConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6494,6 +6715,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : eucConfig_;
       }
     }
+
     /**
      *
      *
@@ -6528,6 +6750,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.ShieldedVmConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.ShieldedVmConfigOrBuilder>
         shieldedVmConfigBuilder_;
+
     /**
      *
      *
@@ -6544,6 +6767,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasShieldedVmConfig() {
       return ((bitField0_ & 0x00200000) != 0);
     }
+
     /**
      *
      *
@@ -6566,6 +6790,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return shieldedVmConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6590,6 +6815,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6612,6 +6838,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6643,6 +6870,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -6664,6 +6892,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6681,6 +6910,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getShieldedVmConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6702,6 +6932,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : shieldedVmConfig_;
       }
     }
+
     /**
      *
      *
@@ -6739,6 +6970,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00400000;
     }
+
     /**
      *
      *
@@ -6755,6 +6987,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       networkTags_.makeImmutable();
       return networkTags_;
     }
+
     /**
      *
      *
@@ -6770,6 +7003,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public int getNetworkTagsCount() {
       return networkTags_.size();
     }
+
     /**
      *
      *
@@ -6786,6 +7020,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getNetworkTags(int index) {
       return networkTags_.get(index);
     }
+
     /**
      *
      *
@@ -6802,6 +7037,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getNetworkTagsBytes(int index) {
       return networkTags_.getByteString(index);
     }
+
     /**
      *
      *
@@ -6826,6 +7062,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6849,6 +7086,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6869,6 +7107,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6888,6 +7127,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6919,6 +7159,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfig.Builder,
             com.google.cloud.aiplatform.v1beta1.NotebookSoftwareConfigOrBuilder>
         softwareConfigBuilder_;
+
     /**
      *
      *
@@ -6935,6 +7176,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasSoftwareConfig() {
       return ((bitField0_ & 0x00800000) != 0);
     }
+
     /**
      *
      *
@@ -6957,6 +7199,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return softwareConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6982,6 +7225,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7004,6 +7248,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7036,6 +7281,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -7057,6 +7303,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7074,6 +7321,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSoftwareConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7095,6 +7343,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : softwareConfig_;
       }
     }
+
     /**
      *
      *
@@ -7129,6 +7378,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
             com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
         encryptionSpecBuilder_;
+
     /**
      *
      *
@@ -7145,6 +7395,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean hasEncryptionSpec() {
       return ((bitField0_ & 0x01000000) != 0);
     }
+
     /**
      *
      *
@@ -7167,6 +7418,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
         return encryptionSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -7191,6 +7443,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7213,6 +7466,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7243,6 +7497,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -7264,6 +7519,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7280,6 +7536,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEncryptionSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -7301,6 +7558,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
             : encryptionSpec_;
       }
     }
+
     /**
      *
      *
@@ -7330,6 +7588,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean satisfiesPzs_;
+
     /**
      *
      *
@@ -7345,6 +7604,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean getSatisfiesPzs() {
       return satisfiesPzs_;
     }
+
     /**
      *
      *
@@ -7364,6 +7624,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7383,6 +7644,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     }
 
     private boolean satisfiesPzi_;
+
     /**
      *
      *
@@ -7398,6 +7660,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
     public boolean getSatisfiesPzi() {
       return satisfiesPzi_;
     }
+
     /**
      *
      *
@@ -7417,6 +7680,7 @@ public final class NotebookRuntime extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

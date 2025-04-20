@@ -37,6 +37,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.clouddebugger.v2.StatusMessage)
     StatusMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StatusMessage.newBuilder() to construct.
   private StatusMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -160,6 +161,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSPECIFIED = 0;</code>
      */
     public static final int UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -170,6 +172,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>BREAKPOINT_SOURCE_LOCATION = 3;</code>
      */
     public static final int BREAKPOINT_SOURCE_LOCATION_VALUE = 3;
+
     /**
      *
      *
@@ -180,6 +183,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>BREAKPOINT_CONDITION = 4;</code>
      */
     public static final int BREAKPOINT_CONDITION_VALUE = 4;
+
     /**
      *
      *
@@ -190,6 +194,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>BREAKPOINT_EXPRESSION = 7;</code>
      */
     public static final int BREAKPOINT_EXPRESSION_VALUE = 7;
+
     /**
      *
      *
@@ -200,6 +205,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>BREAKPOINT_AGE = 8;</code>
      */
     public static final int BREAKPOINT_AGE_VALUE = 8;
+
     /**
      *
      *
@@ -210,6 +216,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
      * <code>VARIABLE_NAME = 5;</code>
      */
     public static final int VARIABLE_NAME_VALUE = 5;
+
     /**
      *
      *
@@ -317,6 +324,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int IS_ERROR_FIELD_NUMBER = 1;
   private boolean isError_ = false;
+
   /**
    *
    *
@@ -335,6 +343,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REFERS_TO_FIELD_NUMBER = 2;
   private int refersTo_ = 0;
+
   /**
    *
    *
@@ -350,6 +359,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
   public int getRefersToValue() {
     return refersTo_;
   }
+
   /**
    *
    *
@@ -372,6 +382,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DESCRIPTION_FIELD_NUMBER = 3;
   private com.google.devtools.clouddebugger.v2.FormatMessage description_;
+
   /**
    *
    *
@@ -387,6 +398,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDescription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -404,6 +416,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
         ? com.google.devtools.clouddebugger.v2.FormatMessage.getDefaultInstance()
         : description_;
   }
+
   /**
    *
    *
@@ -604,6 +617,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -833,6 +847,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean isError_;
+
     /**
      *
      *
@@ -848,6 +863,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean getIsError() {
       return isError_;
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +903,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int refersTo_ = 0;
+
     /**
      *
      *
@@ -901,6 +919,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     public int getRefersToValue() {
       return refersTo_;
     }
+
     /**
      *
      *
@@ -919,6 +938,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +958,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
           ? com.google.devtools.clouddebugger.v2.StatusMessage.Reference.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -959,6 +980,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1005,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
             com.google.devtools.clouddebugger.v2.FormatMessage.Builder,
             com.google.devtools.clouddebugger.v2.FormatMessageOrBuilder>
         descriptionBuilder_;
+
     /**
      *
      *
@@ -997,6 +1020,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDescription() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1017,6 +1041,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
         return descriptionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1064,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1114,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1134,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDescriptionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1138,6 +1168,7 @@ public final class StatusMessage extends com.google.protobuf.GeneratedMessageV3
             : description_;
       }
     }
+
     /**
      *
      *

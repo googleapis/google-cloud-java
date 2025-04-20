@@ -39,6 +39,7 @@ public interface CheckPublisherModelEulaAcceptanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CheckPublisherModelEulaAcceptanceRequestOrBuilder
    * @return The publisherModel.
    */
   java.lang.String getPublisherModel();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateConnectedSiteTagRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateConnectedSiteTagRequestOrBuilder
    * @return Whether the connectedSiteTag field is set.
    */
   boolean hasConnectedSiteTag();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateConnectedSiteTagRequestOrBuilder
    * @return The connectedSiteTag.
    */
   com.google.analytics.admin.v1alpha.ConnectedSiteTag getConnectedSiteTag();
+
   /**
    *
    *

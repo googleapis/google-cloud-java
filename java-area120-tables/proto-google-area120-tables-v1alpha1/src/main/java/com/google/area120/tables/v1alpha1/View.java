@@ -62,6 +62,7 @@ public enum View implements com.google.protobuf.ProtocolMessageEnum {
    * <code>VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

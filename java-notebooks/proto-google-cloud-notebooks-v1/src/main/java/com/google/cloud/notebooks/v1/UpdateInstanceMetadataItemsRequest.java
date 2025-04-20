@@ -33,6 +33,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.UpdateInstanceMetadataItemsRequest)
     UpdateInstanceMetadataItemsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateInstanceMetadataItemsRequest.newBuilder() to construct.
   private UpdateInstanceMetadataItemsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
   public int getItemsCount() {
     return internalGetItems().getMap().size();
   }
+
   /**
    *
    *
@@ -171,12 +175,14 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     }
     return internalGetItems().getMap().containsKey(key);
   }
+
   /** Use {@link #getItemsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getItems() {
     return getItemsMap();
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
   public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
     return internalGetItems().getMap();
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -408,6 +416,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +783,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     public int getItemsCount() {
       return internalGetItems().getMap().size();
     }
+
     /**
      *
      *
@@ -785,12 +800,14 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       }
       return internalGetItems().getMap().containsKey(key);
     }
+
     /** Use {@link #getItemsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getItems() {
       return getItemsMap();
     }
+
     /**
      *
      *
@@ -804,6 +821,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
     public java.util.Map<java.lang.String, java.lang.String> getItemsMap() {
       return internalGetItems().getMap();
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       java.util.Map<java.lang.String, java.lang.String> map = internalGetItems().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       internalGetMutableItems().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -866,12 +886,14 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       internalGetMutableItems().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableItems() {
       bitField0_ |= 0x00000002;
       return internalGetMutableItems().getMutableMap();
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class UpdateInstanceMetadataItemsRequest extends com.google.protobu
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

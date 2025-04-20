@@ -36,6 +36,7 @@ public interface AutomaticShippingImprovementsOrBuilder
    * @return Whether the allowShippingImprovements field is set.
    */
   boolean hasAllowShippingImprovements();
+
   /**
    *
    *

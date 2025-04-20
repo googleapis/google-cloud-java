@@ -39,6 +39,7 @@ public interface BigQueryDestinationOrBuilder
    * @return The tableUri.
    */
   java.lang.String getTableUri();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface BigQueryDestinationOrBuilder
    * @return The enum numeric value on the wire for writeDisposition.
    */
   int getWriteDispositionValue();
+
   /**
    *
    *

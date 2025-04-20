@@ -41,6 +41,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -104,6 +105,7 @@ public interface CreateTaskRequestOrBuilder
    * @return Whether the task field is set.
    */
   boolean hasTask();
+
   /**
    *
    *
@@ -149,6 +151,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The task.
    */
   com.google.cloud.tasks.v2beta3.Task getTask();
+
   /**
    *
    *
@@ -217,6 +220,7 @@ public interface CreateTaskRequestOrBuilder
    * @return The enum numeric value on the wire for responseView.
    */
   int getResponseViewValue();
+
   /**
    *
    *

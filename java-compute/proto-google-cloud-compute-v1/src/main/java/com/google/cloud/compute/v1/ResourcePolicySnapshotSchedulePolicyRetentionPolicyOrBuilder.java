@@ -36,6 +36,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * @return Whether the maxRetentionDays field is set.
    */
   boolean hasMaxRetentionDays();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * @return Whether the onSourceDiskDelete field is set.
    */
   boolean hasOnSourceDiskDelete();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ResourcePolicySnapshotSchedulePolicyRetentionPolicyOrBuilder
    * @return The onSourceDiskDelete.
    */
   java.lang.String getOnSourceDiskDelete();
+
   /**
    *
    *

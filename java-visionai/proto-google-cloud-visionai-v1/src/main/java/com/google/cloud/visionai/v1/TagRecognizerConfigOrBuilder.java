@@ -50,6 +50,7 @@ public interface TagRecognizerConfigOrBuilder
    * @return Whether the tagParsingConfig field is set.
    */
   boolean hasTagParsingConfig();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface TagRecognizerConfigOrBuilder
    * @return The tagParsingConfig.
    */
   com.google.cloud.visionai.v1.TagParsingConfig getTagParsingConfig();
+
   /**
    *
    *

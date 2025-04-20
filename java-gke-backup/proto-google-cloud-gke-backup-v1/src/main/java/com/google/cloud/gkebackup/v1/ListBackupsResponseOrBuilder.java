@@ -34,6 +34,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Backup backups = 1;</code>
    */
   java.util.List<com.google.cloud.gkebackup.v1.Backup> getBackupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Backup backups = 1;</code>
    */
   com.google.cloud.gkebackup.v1.Backup getBackups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Backup backups = 1;</code>
    */
   int getBackupsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.cloud.gkebackup.v1.Backup backups = 1;</code>
    */
   java.util.List<? extends com.google.cloud.gkebackup.v1.BackupOrBuilder> getBackupsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListBackupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

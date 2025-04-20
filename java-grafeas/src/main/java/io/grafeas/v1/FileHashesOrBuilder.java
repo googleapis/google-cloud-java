@@ -35,6 +35,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
   java.util.List<io.grafeas.v1.Hash> getFileHashList();
+
   /**
    *
    *
@@ -45,6 +46,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
   io.grafeas.v1.Hash getFileHash(int index);
+
   /**
    *
    *
@@ -55,6 +57,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
   int getFileHashCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface FileHashesOrBuilder
    * <code>repeated .grafeas.v1.Hash file_hash = 1;</code>
    */
   java.util.List<? extends io.grafeas.v1.HashOrBuilder> getFileHashOrBuilderList();
+
   /**
    *
    *

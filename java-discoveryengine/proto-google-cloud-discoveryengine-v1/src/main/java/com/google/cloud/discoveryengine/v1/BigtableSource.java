@@ -33,6 +33,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.BigtableSource)
     BigtableSourceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigtableSource.newBuilder() to construct.
   private BigtableSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceId_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableId_ = "";
+
   /**
    *
    *
@@ -199,6 +205,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BIGTABLE_OPTIONS_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1.BigtableOptions bigtableOptions_;
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigtableOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1.BigtableOptions.getDefaultInstance()
         : bigtableOptions_;
   }
+
   /**
    *
    *
@@ -474,6 +484,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -718,6 +729,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -766,6 +779,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +823,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +850,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object instanceId_ = "";
+
     /**
      *
      *
@@ -856,6 +873,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -878,6 +896,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -899,6 +918,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +936,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +961,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tableId_ = "";
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1047,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1077,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1.BigtableOptions.Builder,
             com.google.cloud.discoveryengine.v1.BigtableOptionsOrBuilder>
         bigtableOptionsBuilder_;
+
     /**
      *
      *
@@ -1068,6 +1095,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigtableOptions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1091,6 +1119,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
         return bigtableOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1116,6 +1145,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1169,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1201,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1224,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1242,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBigtableOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1231,6 +1265,7 @@ public final class BigtableSource extends com.google.protobuf.GeneratedMessageV3
             : bigtableOptions_;
       }
     }
+
     /**
      *
      *

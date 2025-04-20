@@ -36,6 +36,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryVertexDatasetGenerationCadence)
     DiscoveryVertexDatasetGenerationCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryVertexDatasetGenerationCadence.newBuilder() to construct.
   private DiscoveryVertexDatasetGenerationCadence(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
   private int bitField0_;
   public static final int REFRESH_FREQUENCY_FIELD_NUMBER = 1;
   private int refreshFrequency_ = 0;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
   public int getRefreshFrequencyValue() {
     return refreshFrequency_;
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
   public static final int INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       inspectTemplateModifiedCadence_;
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
   public boolean hasInspectTemplateModifiedCadence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
         ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
         : inspectTemplateModifiedCadence_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -583,6 +590,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
     private int bitField0_;
 
     private int refreshFrequency_ = 0;
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
     public int getRefreshFrequencyValue() {
       return refreshFrequency_;
     }
+
     /**
      *
      *
@@ -620,6 +629,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +703,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
         inspectTemplateModifiedCadenceBuilder_;
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
     public boolean hasInspectTemplateModifiedCadence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
         return inspectTemplateModifiedCadenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +805,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +841,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
       onChanged();
       return getInspectTemplateModifiedCadenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class DiscoveryVertexDatasetGenerationCadence
             : inspectTemplateModifiedCadence_;
       }
     }
+
     /**
      *
      *

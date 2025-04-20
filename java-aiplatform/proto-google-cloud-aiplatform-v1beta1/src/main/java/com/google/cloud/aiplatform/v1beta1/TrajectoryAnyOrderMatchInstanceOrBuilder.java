@@ -38,6 +38,7 @@ public interface TrajectoryAnyOrderMatchInstanceOrBuilder
    * @return Whether the predictedTrajectory field is set.
    */
   boolean hasPredictedTrajectory();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface TrajectoryAnyOrderMatchInstanceOrBuilder
    * @return The predictedTrajectory.
    */
   com.google.cloud.aiplatform.v1beta1.Trajectory getPredictedTrajectory();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface TrajectoryAnyOrderMatchInstanceOrBuilder
    * @return Whether the referenceTrajectory field is set.
    */
   boolean hasReferenceTrajectory();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface TrajectoryAnyOrderMatchInstanceOrBuilder
    * @return The referenceTrajectory.
    */
   com.google.cloud.aiplatform.v1beta1.Trajectory getReferenceTrajectory();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.SessionEvent> getSessionEventsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.SessionEvent getSessionEvents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListEventsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
    */
   int getSessionEventsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SessionEventOrBuilder>
       getSessionEventsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

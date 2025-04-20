@@ -32,6 +32,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AddressesScopedList)
     AddressesScopedListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AddressesScopedList.newBuilder() to construct.
   private AddressesScopedList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.Address> addresses_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.compute.v1.Address> getAddressesList() {
     return addresses_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       getAddressesOrBuilderList() {
     return addresses_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
   public int getAddressesCount() {
     return addresses_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.Address getAddresses(int index) {
     return addresses_.get(index);
   }
+
   /**
    *
    *
@@ -136,6 +142,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +174,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -356,6 +365,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +656,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return addressesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return addressesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return addressesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -700,6 +713,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +780,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +800,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +821,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +862,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +895,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
     public com.google.cloud.compute.v1.Address.Builder getAddressesBuilder(int index) {
       return getAddressesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -889,6 +912,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return addressesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -906,6 +930,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(addresses_);
       }
     }
+
     /**
      *
      *
@@ -919,6 +944,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       return getAddressesFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.Address.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -932,6 +958,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       return getAddressesFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.Address.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -968,6 +995,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -982,6 +1010,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1002,6 +1031,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1054,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1043,6 +1074,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1102,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1089,6 +1122,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1137,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1121,6 +1156,7 @@ public final class AddressesScopedList extends com.google.protobuf.GeneratedMess
             : warning_;
       }
     }
+
     /**
      *
      *

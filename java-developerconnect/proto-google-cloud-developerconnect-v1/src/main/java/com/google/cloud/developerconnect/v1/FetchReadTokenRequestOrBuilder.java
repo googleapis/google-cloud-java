@@ -39,6 +39,7 @@ public interface FetchReadTokenRequestOrBuilder
    * @return The gitRepositoryLink.
    */
   java.lang.String getGitRepositoryLink();
+
   /**
    *
    *

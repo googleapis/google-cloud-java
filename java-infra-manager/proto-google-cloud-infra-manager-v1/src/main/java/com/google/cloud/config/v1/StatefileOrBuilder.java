@@ -37,6 +37,7 @@ public interface StatefileOrBuilder
    * @return The signedUri.
    */
   java.lang.String getSignedUri();
+
   /**
    *
    *

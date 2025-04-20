@@ -33,6 +33,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.EventActions)
     EventActionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EventActions.newBuilder() to construct.
   private EventActions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SKIP_SUMMARIZATION_FIELD_NUMBER = 1;
   private boolean skipSummarization_ = false;
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_DELTA_FIELD_NUMBER = 2;
   private com.google.protobuf.Struct stateDelta_;
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStateDelta() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getStateDelta() {
     return stateDelta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : stateDelta_;
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   public int getArtifactDeltaCount() {
     return internalGetArtifactDelta().getMap().size();
   }
+
   /**
    *
    *
@@ -188,12 +194,14 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetArtifactDelta().getMap().containsKey(key);
   }
+
   /** Use {@link #getArtifactDeltaMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.Integer> getArtifactDelta() {
     return getArtifactDeltaMap();
   }
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.Integer> getArtifactDeltaMap() {
     return internalGetArtifactDelta().getMap();
   }
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.Integer> map = internalGetArtifactDelta().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSFER_TO_AGENT_FIELD_NUMBER = 5;
   private boolean transferToAgent_ = false;
+
   /**
    *
    *
@@ -271,6 +282,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ESCALATE_FIELD_NUMBER = 6;
   private boolean escalate_ = false;
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REQUESTED_AUTH_CONFIGS_FIELD_NUMBER = 7;
   private com.google.protobuf.Struct requestedAuthConfigs_;
+
   /**
    *
    *
@@ -309,6 +322,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRequestedAuthConfigs() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -331,6 +345,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : requestedAuthConfigs_;
   }
+
   /**
    *
    *
@@ -575,6 +590,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -876,6 +892,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean skipSummarization_;
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public boolean getSkipSummarization() {
       return skipSummarization_;
     }
+
     /**
      *
      *
@@ -912,6 +930,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +956,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         stateDeltaBuilder_;
+
     /**
      *
      *
@@ -953,6 +973,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateDelta() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -973,6 +994,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         return stateDeltaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1019,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1071,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1093,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateDeltaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1102,6 +1129,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         return stateDelta_ == null ? com.google.protobuf.Struct.getDefaultInstance() : stateDelta_;
       }
     }
+
     /**
      *
      *
@@ -1158,6 +1186,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public int getArtifactDeltaCount() {
       return internalGetArtifactDelta().getMap().size();
     }
+
     /**
      *
      *
@@ -1176,12 +1205,14 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetArtifactDelta().getMap().containsKey(key);
     }
+
     /** Use {@link #getArtifactDeltaMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getArtifactDelta() {
       return getArtifactDeltaMap();
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.Integer> getArtifactDeltaMap() {
       return internalGetArtifactDelta().getMap();
     }
+
     /**
      *
      *
@@ -1216,6 +1248,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.Integer> map = internalGetArtifactDelta().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1244,6 +1277,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableArtifactDelta().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1262,12 +1296,14 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableArtifactDelta().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Integer> getMutableArtifactDelta() {
       bitField0_ |= 0x00000004;
       return internalGetMutableArtifactDelta().getMutableMap();
     }
+
     /**
      *
      *
@@ -1288,6 +1324,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1343,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean transferToAgent_;
+
     /**
      *
      *
@@ -1321,6 +1359,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public boolean getTransferToAgent() {
       return transferToAgent_;
     }
+
     /**
      *
      *
@@ -1340,6 +1379,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1399,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean escalate_;
+
     /**
      *
      *
@@ -1374,6 +1415,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public boolean getEscalate() {
       return escalate_;
     }
+
     /**
      *
      *
@@ -1393,6 +1435,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1460,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         requestedAuthConfigsBuilder_;
+
     /**
      *
      *
@@ -1436,6 +1480,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRequestedAuthConfigs() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1461,6 +1506,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         return requestedAuthConfigsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1488,6 +1534,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1559,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1592,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1568,6 +1617,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1587,6 +1637,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRequestedAuthConfigsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1610,6 +1661,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
             : requestedAuthConfigs_;
       }
     }
+
     /**
      *
      *

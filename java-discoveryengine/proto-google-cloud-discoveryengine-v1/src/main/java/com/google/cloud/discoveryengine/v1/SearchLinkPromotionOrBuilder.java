@@ -37,6 +37,7 @@ public interface SearchLinkPromotionOrBuilder
    * @return The title.
    */
   java.lang.String getTitle();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface SearchLinkPromotionOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SearchLinkPromotionOrBuilder
    * @return The imageUri.
    */
   java.lang.String getImageUri();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface SearchLinkPromotionOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

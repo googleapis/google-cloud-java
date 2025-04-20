@@ -33,6 +33,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationBlock)
     ReservationBlockOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationBlock.newBuilder() to construct.
   private ReservationBlock(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -134,6 +135,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * <code>UNDEFINED_STATUS = 0;</code>
      */
     public static final int UNDEFINED_STATUS_VALUE = 0;
+
     /**
      *
      *
@@ -144,6 +146,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * <code>CREATING = 455564985;</code>
      */
     public static final int CREATING_VALUE = 455564985;
+
     /**
      *
      *
@@ -154,8 +157,10 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
      * <code>DELETING = 528602024;</code>
      */
     public static final int DELETING_VALUE = 528602024;
+
     /** <code>INVALID = 530283991;</code> */
     public static final int INVALID_VALUE = 530283991;
+
     /**
      *
      *
@@ -257,6 +262,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 94851343;
   private int count_ = 0;
+
   /**
    *
    *
@@ -272,6 +278,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -292,6 +299,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object creationTimestamp_ = "";
+
   /**
    *
    *
@@ -307,6 +315,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasCreationTimestamp() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +339,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -356,6 +366,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   public static final int ID_FIELD_NUMBER = 3355;
   private long id_ = 0L;
+
   /**
    *
    *
@@ -371,6 +382,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasId() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -389,6 +401,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   public static final int IN_USE_COUNT_FIELD_NUMBER = 493458877;
   private int inUseCount_ = 0;
+
   /**
    *
    *
@@ -404,6 +417,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasInUseCount() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -424,6 +438,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -439,6 +454,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasKind() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -462,6 +478,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -490,6 +507,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -505,6 +523,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasName() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -528,6 +547,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -554,6 +574,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   public static final int PHYSICAL_TOPOLOGY_FIELD_NUMBER = 279778519;
   private com.google.cloud.compute.v1.ReservationBlockPhysicalTopology physicalTopology_;
+
   /**
    *
    *
@@ -571,6 +592,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasPhysicalTopology() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -590,6 +612,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.compute.v1.ReservationBlockPhysicalTopology.getDefaultInstance()
         : physicalTopology_;
   }
+
   /**
    *
    *
@@ -611,6 +634,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   public static final int RESERVATION_MAINTENANCE_FIELD_NUMBER = 340607776;
   private com.google.cloud.compute.v1.GroupMaintenanceInfo reservationMaintenance_;
+
   /**
    *
    *
@@ -628,6 +652,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasReservationMaintenance() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -647,6 +672,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
         : reservationMaintenance_;
   }
+
   /**
    *
    *
@@ -670,6 +696,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -685,6 +712,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -708,6 +736,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -736,6 +765,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLinkWithId_ = "";
+
   /**
    *
    *
@@ -751,6 +781,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasSelfLinkWithId() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -774,6 +805,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -802,6 +834,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object status_ = "";
+
   /**
    *
    *
@@ -818,6 +851,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasStatus() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -842,6 +876,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -871,6 +906,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -886,6 +922,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
   public boolean hasZone() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -909,6 +946,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -1256,6 +1294,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1632,6 +1671,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int count_;
+
     /**
      *
      *
@@ -1647,6 +1687,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1662,6 +1703,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public int getCount() {
       return count_;
     }
+
     /**
      *
      *
@@ -1681,6 +1723,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1743,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object creationTimestamp_ = "";
+
     /**
      *
      *
@@ -1714,6 +1758,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasCreationTimestamp() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1736,6 +1781,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1804,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1779,6 +1826,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1796,6 +1844,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1820,6 +1869,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private long id_;
+
     /**
      *
      *
@@ -1835,6 +1885,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1850,6 +1901,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public long getId() {
       return id_;
     }
+
     /**
      *
      *
@@ -1869,6 +1921,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1888,6 +1941,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private int inUseCount_;
+
     /**
      *
      *
@@ -1903,6 +1957,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasInUseCount() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1918,6 +1973,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public int getInUseCount() {
       return inUseCount_;
     }
+
     /**
      *
      *
@@ -1937,6 +1993,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1956,6 +2013,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1970,6 +2028,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasKind() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1992,6 +2051,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2074,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2035,6 +2096,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2114,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2139,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2090,6 +2154,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasName() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2112,6 +2177,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2134,6 +2200,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2155,6 +2222,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2240,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2270,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.ReservationBlockPhysicalTopology.Builder,
             com.google.cloud.compute.v1.ReservationBlockPhysicalTopologyOrBuilder>
         physicalTopologyBuilder_;
+
     /**
      *
      *
@@ -2217,6 +2287,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasPhysicalTopology() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2239,6 +2310,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return physicalTopologyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2264,6 +2336,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2286,6 +2359,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2392,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2414,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2356,6 +2432,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPhysicalTopologyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2377,6 +2454,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             : physicalTopology_;
       }
     }
+
     /**
      *
      *
@@ -2411,6 +2489,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder,
             com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder>
         reservationMaintenanceBuilder_;
+
     /**
      *
      *
@@ -2427,6 +2506,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasReservationMaintenance() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2449,6 +2529,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return reservationMaintenanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2474,6 +2555,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2496,6 +2578,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2527,6 +2610,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2632,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2565,6 +2650,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getReservationMaintenanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2586,6 +2672,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
             : reservationMaintenance_;
       }
     }
+
     /**
      *
      *
@@ -2615,6 +2702,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -2629,6 +2717,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2651,6 +2740,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2673,6 +2763,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2694,6 +2785,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2711,6 +2803,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2735,6 +2828,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object selfLinkWithId_ = "";
+
     /**
      *
      *
@@ -2749,6 +2843,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasSelfLinkWithId() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2771,6 +2866,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2793,6 +2889,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2814,6 +2911,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2831,6 +2929,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2855,6 +2954,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object status_ = "";
+
     /**
      *
      *
@@ -2870,6 +2970,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2893,6 +2994,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2916,6 +3018,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2938,6 +3041,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2956,6 +3060,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2981,6 +3086,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -2995,6 +3101,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
     public boolean hasZone() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3017,6 +3124,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3039,6 +3147,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3060,6 +3169,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3077,6 +3187,7 @@ public final class ReservationBlock extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

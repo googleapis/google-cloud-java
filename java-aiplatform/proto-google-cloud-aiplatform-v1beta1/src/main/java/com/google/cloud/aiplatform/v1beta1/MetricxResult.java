@@ -34,6 +34,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.MetricxResult)
     MetricxResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetricxResult.newBuilder() to construct.
   private MetricxResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -261,6 +264,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -447,6 +451,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -477,6 +483,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -496,6 +503,7 @@ public final class MetricxResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

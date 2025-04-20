@@ -36,6 +36,7 @@ public interface ListDebuggeesRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ListDebuggeesRequestOrBuilder
    * @return The clientVersion.
    */
   java.lang.String getClientVersion();
+
   /**
    *
    *

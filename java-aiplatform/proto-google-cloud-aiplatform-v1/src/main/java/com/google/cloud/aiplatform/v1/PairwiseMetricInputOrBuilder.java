@@ -38,6 +38,7 @@ public interface PairwiseMetricInputOrBuilder
    * @return Whether the metricSpec field is set.
    */
   boolean hasMetricSpec();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PairwiseMetricInputOrBuilder
    * @return The metricSpec.
    */
   com.google.cloud.aiplatform.v1.PairwiseMetricSpec getMetricSpec();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PairwiseMetricInputOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface PairwiseMetricInputOrBuilder
    * @return The instance.
    */
   com.google.cloud.aiplatform.v1.PairwiseMetricInstance getInstance();
+
   /**
    *
    *

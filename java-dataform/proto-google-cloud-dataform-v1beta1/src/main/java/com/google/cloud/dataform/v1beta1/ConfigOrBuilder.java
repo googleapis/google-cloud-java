@@ -36,6 +36,7 @@ public interface ConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ConfigOrBuilder
    * @return The defaultKmsKeyName.
    */
   java.lang.String getDefaultKmsKeyName();
+
   /**
    *
    *

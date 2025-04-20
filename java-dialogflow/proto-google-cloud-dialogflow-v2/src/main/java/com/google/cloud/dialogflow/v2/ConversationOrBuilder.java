@@ -40,6 +40,7 @@ public interface ConversationOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface ConversationOrBuilder
    * @return The enum numeric value on the wire for lifecycleState.
    */
   int getLifecycleStateValue();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface ConversationOrBuilder
    * @return The conversationProfile.
    */
   java.lang.String getConversationProfile();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface ConversationOrBuilder
    * @return Whether the phoneNumber field is set.
    */
   boolean hasPhoneNumber();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface ConversationOrBuilder
    * @return The phoneNumber.
    */
   com.google.cloud.dialogflow.v2.ConversationPhoneNumber getPhoneNumber();
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public interface ConversationOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public interface ConversationOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -216,6 +223,7 @@ public interface ConversationOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface ConversationOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public interface ConversationOrBuilder
    * @return The enum numeric value on the wire for conversationStage.
    */
   int getConversationStageValue();
+
   /**
    *
    *
@@ -314,6 +324,7 @@ public interface ConversationOrBuilder
    * @return Whether the telephonyConnectionInfo field is set.
    */
   boolean hasTelephonyConnectionInfo();
+
   /**
    *
    *
@@ -328,6 +339,7 @@ public interface ConversationOrBuilder
    * @return The telephonyConnectionInfo.
    */
   com.google.cloud.dialogflow.v2.Conversation.TelephonyConnectionInfo getTelephonyConnectionInfo();
+
   /**
    *
    *
@@ -354,6 +366,7 @@ public interface ConversationOrBuilder
    * </code>
    */
   int getIngestedContextReferencesCount();
+
   /**
    *
    *
@@ -366,10 +379,12 @@ public interface ConversationOrBuilder
    * </code>
    */
   boolean containsIngestedContextReferences(java.lang.String key);
+
   /** Use {@link #getIngestedContextReferencesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
       getIngestedContextReferences();
+
   /**
    *
    *
@@ -383,6 +398,7 @@ public interface ConversationOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.dialogflow.v2.Conversation.ContextReference>
       getIngestedContextReferencesMap();
+
   /**
    *
    *
@@ -400,6 +416,7 @@ public interface ConversationOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.dialogflow.v2.Conversation.ContextReference defaultValue);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.AllocationResourceStatus)
     AllocationResourceStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocationResourceStatus.newBuilder() to construct.
   private AllocationResourceStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int RESERVATION_BLOCK_COUNT_FIELD_NUMBER = 161835754;
   private int reservationBlockCount_ = 0;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   public boolean hasReservationBlockCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
 
   public static final int RESERVATION_MAINTENANCE_FIELD_NUMBER = 340607776;
   private com.google.cloud.compute.v1.GroupMaintenanceInfo reservationMaintenance_;
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   public boolean hasReservationMaintenance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.GroupMaintenanceInfo.getDefaultInstance()
         : reservationMaintenance_;
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   public static final int SPECIFIC_SKU_ALLOCATION_FIELD_NUMBER = 196231151;
   private com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation
       specificSkuAllocation_;
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
   public boolean hasSpecificSkuAllocation() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             .getDefaultInstance()
         : specificSkuAllocation_;
   }
+
   /**
    *
    *
@@ -410,6 +419,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +659,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     private int bitField0_;
 
     private int reservationBlockCount_;
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public boolean hasReservationBlockCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -679,6 +691,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public int getReservationBlockCount() {
       return reservationBlockCount_;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.GroupMaintenanceInfo.Builder,
             com.google.cloud.compute.v1.GroupMaintenanceInfoOrBuilder>
         reservationMaintenanceBuilder_;
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public boolean hasReservationMaintenance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -760,6 +776,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         return reservationMaintenanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +825,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +857,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +897,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return getReservationMaintenanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +919,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             : reservationMaintenance_;
       }
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocation.Builder,
             com.google.cloud.compute.v1.AllocationResourceStatusSpecificSKUAllocationOrBuilder>
         specificSkuAllocationBuilder_;
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
     public boolean hasSpecificSkuAllocation() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -972,6 +997,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
         return specificSkuAllocationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -997,6 +1023,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1047,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1080,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1102,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1120,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
       onChanged();
       return getSpecificSkuAllocationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1112,6 +1143,7 @@ public final class AllocationResourceStatus extends com.google.protobuf.Generate
             : specificSkuAllocation_;
       }
     }
+
     /**
      *
      *

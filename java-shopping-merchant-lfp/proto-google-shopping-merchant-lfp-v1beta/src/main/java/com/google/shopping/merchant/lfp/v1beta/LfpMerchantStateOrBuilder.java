@@ -37,6 +37,7 @@ public interface LfpMerchantStateOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface LfpMerchantStateOrBuilder
    */
   java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState>
       getStoreStatesList();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface LfpMerchantStateOrBuilder
    * </code>
    */
   com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreState getStoreStates(int index);
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface LfpMerchantStateOrBuilder
    * </code>
    */
   int getStoreStatesCount();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface LfpMerchantStateOrBuilder
   java.util.List<
           ? extends com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.LfpStoreStateOrBuilder>
       getStoreStatesOrBuilderList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface LfpMerchantStateOrBuilder
    * @return Whether the inventoryStats field is set.
    */
   boolean hasInventoryStats();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface LfpMerchantStateOrBuilder
    * @return The inventoryStats.
    */
   com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.InventoryStats getInventoryStats();
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public interface LfpMerchantStateOrBuilder
    */
   java.util.List<com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings>
       getCountrySettingsList();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface LfpMerchantStateOrBuilder
    */
   com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettings getCountrySettings(
       int index);
+
   /**
    *
    *
@@ -207,6 +216,7 @@ public interface LfpMerchantStateOrBuilder
    * </code>
    */
   int getCountrySettingsCount();
+
   /**
    *
    *
@@ -222,6 +232,7 @@ public interface LfpMerchantStateOrBuilder
           ? extends
               com.google.shopping.merchant.lfp.v1beta.LfpMerchantState.CountrySettingsOrBuilder>
       getCountrySettingsOrBuilderList();
+
   /**
    *
    *

@@ -283,6 +283,19 @@ public final class Debugger2Grpc {
     return Debugger2Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static Debugger2BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<Debugger2BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<Debugger2BlockingV2Stub>() {
+          @java.lang.Override
+          public Debugger2BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new Debugger2BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return Debugger2BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -541,6 +554,100 @@ public final class Debugger2Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Debugger2.
+   *
+   * <pre>
+   * The Debugger service provides the API that allows users to collect run-time
+   * information from a running application, without stopping or slowing it down
+   * and without modifying its state.  An application may include one or
+   * more replicated processes performing the same work.
+   * A debugged application is represented using the Debuggee concept. The
+   * Debugger service provides a way to query for available debuggees, but does
+   * not provide a way to create one.  A debuggee is created using the Controller
+   * service, usually by running a debugger agent with the application.
+   * The Debugger service enables the client to set one or more Breakpoints on a
+   * Debuggee and collect the results of the set Breakpoints.
+   * </pre>
+   */
+  public static final class Debugger2BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<Debugger2BlockingV2Stub> {
+    private Debugger2BlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected Debugger2BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new Debugger2BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the breakpoint to the debuggee.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.SetBreakpointResponse setBreakpoint(
+        com.google.devtools.clouddebugger.v2.SetBreakpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetBreakpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets breakpoint information.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.GetBreakpointResponse getBreakpoint(
+        com.google.devtools.clouddebugger.v2.GetBreakpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBreakpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the breakpoint from the debuggee.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBreakpoint(
+        com.google.devtools.clouddebugger.v2.DeleteBreakpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBreakpointMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all breakpoints for the debuggee.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.ListBreakpointsResponse listBreakpoints(
+        com.google.devtools.clouddebugger.v2.ListBreakpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBreakpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the debuggees that the user has access to.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.ListDebuggeesResponse listDebuggees(
+        com.google.devtools.clouddebugger.v2.ListDebuggeesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDebuggeesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Debugger2.
    *
    * <pre>
    * The Debugger service provides the API that allows users to collect run-time

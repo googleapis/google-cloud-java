@@ -36,6 +36,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The networkUri.
    */
   java.lang.String getNetworkUri();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The internalIp.
    */
   java.lang.String getInternalIp();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The externalIp.
    */
   java.lang.String getExternalIp();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface CloudSQLInstanceInfoOrBuilder
    * @return The region.
    */
   java.lang.String getRegion();
+
   /**
    *
    *

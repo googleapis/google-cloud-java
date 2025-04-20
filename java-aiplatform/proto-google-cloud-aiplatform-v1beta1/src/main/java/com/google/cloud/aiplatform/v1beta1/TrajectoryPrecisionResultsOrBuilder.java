@@ -37,6 +37,7 @@ public interface TrajectoryPrecisionResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionMetricValue>
       getTrajectoryPrecisionMetricValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TrajectoryPrecisionResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionMetricValue
       getTrajectoryPrecisionMetricValues(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface TrajectoryPrecisionResultsOrBuilder
    * </code>
    */
   int getTrajectoryPrecisionMetricValuesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface TrajectoryPrecisionResultsOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectoryPrecisionMetricValueOrBuilder>
       getTrajectoryPrecisionMetricValuesOrBuilderList();
+
   /**
    *
    *

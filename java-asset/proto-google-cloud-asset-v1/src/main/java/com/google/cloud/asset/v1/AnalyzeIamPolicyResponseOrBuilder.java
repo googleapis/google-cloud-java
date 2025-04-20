@@ -37,6 +37,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * @return Whether the mainAnalysis field is set.
    */
   boolean hasMainAnalysis();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * @return The mainAnalysis.
    */
   com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis getMainAnalysis();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    */
   java.util.List<com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis>
       getServiceAccountImpersonationAnalysisList();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    */
   com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysis
       getServiceAccountImpersonationAnalysis(int index);
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
    * </code>
    */
   int getServiceAccountImpersonationAnalysisCount();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface AnalyzeIamPolicyResponseOrBuilder
   java.util.List<
           ? extends com.google.cloud.asset.v1.AnalyzeIamPolicyResponse.IamPolicyAnalysisOrBuilder>
       getServiceAccountImpersonationAnalysisOrBuilderList();
+
   /**
    *
    *

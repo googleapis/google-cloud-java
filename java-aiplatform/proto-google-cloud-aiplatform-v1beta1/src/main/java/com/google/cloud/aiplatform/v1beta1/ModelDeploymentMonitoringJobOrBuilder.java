@@ -36,6 +36,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The enum numeric value on the wire for scheduleState.
    */
   int getScheduleStateValue();
+
   /**
    *
    *
@@ -192,6 +197,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the latestMonitoringPipelineMetadata field is set.
    */
   boolean hasLatestMonitoringPipelineMetadata();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringJob.LatestMonitoringPipelineMetadata
       getLatestMonitoringPipelineMetadata();
+
   /**
    *
    *
@@ -236,6 +243,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig>
       getModelDeploymentMonitoringObjectiveConfigsList();
+
   /**
    *
    *
@@ -250,6 +258,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfig
       getModelDeploymentMonitoringObjectiveConfigs(int index);
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * </code>
    */
   int getModelDeploymentMonitoringObjectiveConfigsCount();
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringObjectiveConfigOrBuilder>
       getModelDeploymentMonitoringObjectiveConfigsOrBuilderList();
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the modelDeploymentMonitoringScheduleConfig field is set.
    */
   boolean hasModelDeploymentMonitoringScheduleConfig();
+
   /**
    *
    *
@@ -323,6 +335,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringScheduleConfig
       getModelDeploymentMonitoringScheduleConfig();
+
   /**
    *
    *
@@ -351,6 +364,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the loggingSamplingStrategy field is set.
    */
   boolean hasLoggingSamplingStrategy();
+
   /**
    *
    *
@@ -365,6 +379,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The loggingSamplingStrategy.
    */
   com.google.cloud.aiplatform.v1beta1.SamplingStrategy getLoggingSamplingStrategy();
+
   /**
    *
    *
@@ -393,6 +408,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the modelMonitoringAlertConfig field is set.
    */
   boolean hasModelMonitoringAlertConfig();
+
   /**
    *
    *
@@ -407,6 +423,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The modelMonitoringAlertConfig.
    */
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig getModelMonitoringAlertConfig();
+
   /**
    *
    *
@@ -436,6 +453,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The predictInstanceSchemaUri.
    */
   java.lang.String getPredictInstanceSchemaUri();
+
   /**
    *
    *
@@ -469,6 +487,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the samplePredictInstance field is set.
    */
   boolean hasSamplePredictInstance();
+
   /**
    *
    *
@@ -486,6 +505,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The samplePredictInstance.
    */
   com.google.protobuf.Value getSamplePredictInstance();
+
   /**
    *
    *
@@ -524,6 +544,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The analysisInstanceSchemaUri.
    */
   java.lang.String getAnalysisInstanceSchemaUri();
+
   /**
    *
    *
@@ -564,6 +585,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable>
       getBigqueryTablesList();
+
   /**
    *
    *
@@ -581,6 +603,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTable getBigqueryTables(
       int index);
+
   /**
    *
    *
@@ -597,6 +620,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * </code>
    */
   int getBigqueryTablesCount();
+
   /**
    *
    *
@@ -616,6 +640,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
           ? extends
               com.google.cloud.aiplatform.v1beta1.ModelDeploymentMonitoringBigQueryTableOrBuilder>
       getBigqueryTablesOrBuilderList();
+
   /**
    *
    *
@@ -648,6 +673,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the logTtl field is set.
    */
   boolean hasLogTtl();
+
   /**
    *
    *
@@ -662,6 +688,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The logTtl.
    */
   com.google.protobuf.Duration getLogTtl();
+
   /**
    *
    *
@@ -692,6 +719,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -709,9 +737,11 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -729,6 +759,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -750,6 +781,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -781,6 +813,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -794,6 +827,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -820,6 +854,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -834,6 +869,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -862,6 +898,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the nextScheduleTime field is set.
    */
   boolean hasNextScheduleTime();
+
   /**
    *
    *
@@ -877,6 +914,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The nextScheduleTime.
    */
   com.google.protobuf.Timestamp getNextScheduleTime();
+
   /**
    *
    *
@@ -904,6 +942,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the statsAnomaliesBaseDirectory field is set.
    */
   boolean hasStatsAnomaliesBaseDirectory();
+
   /**
    *
    *
@@ -917,6 +956,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The statsAnomaliesBaseDirectory.
    */
   com.google.cloud.aiplatform.v1beta1.GcsDestination getStatsAnomaliesBaseDirectory();
+
   /**
    *
    *
@@ -944,6 +984,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the encryptionSpec field is set.
    */
   boolean hasEncryptionSpec();
+
   /**
    *
    *
@@ -958,6 +999,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The encryptionSpec.
    */
   com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+
   /**
    *
    *
@@ -1000,6 +1042,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -1013,6 +1056,7 @@ public interface ModelDeploymentMonitoringJobOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *

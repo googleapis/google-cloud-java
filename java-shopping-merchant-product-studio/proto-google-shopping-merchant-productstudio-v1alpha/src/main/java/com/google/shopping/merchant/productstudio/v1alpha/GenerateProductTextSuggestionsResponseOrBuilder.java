@@ -38,6 +38,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * @return Whether the title field is set.
    */
   boolean hasTitle();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * @return The title.
    */
   com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationSuggestion getTitle();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    */
   com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationSuggestion
       getDescription();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * <code>map&lt;string, string&gt; attributes = 3;</code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -129,9 +134,11 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * <code>map&lt;string, string&gt; attributes = 3;</code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
   /**
    *
    *
@@ -142,6 +149,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * <code>map&lt;string, string&gt; attributes = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
   /**
    *
    *
@@ -156,6 +164,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -181,6 +190,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -195,6 +205,7 @@ public interface GenerateProductTextSuggestionsResponseOrBuilder
    * @return The metadata.
    */
   com.google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationMetadata getMetadata();
+
   /**
    *
    *

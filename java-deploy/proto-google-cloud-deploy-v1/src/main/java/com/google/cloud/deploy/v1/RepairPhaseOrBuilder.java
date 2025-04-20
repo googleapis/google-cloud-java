@@ -38,6 +38,7 @@ public interface RepairPhaseOrBuilder
    * @return Whether the retry field is set.
    */
   boolean hasRetry();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RepairPhaseOrBuilder
    * @return The retry.
    */
   com.google.cloud.deploy.v1.RetryPhase getRetry();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RepairPhaseOrBuilder
    * @return Whether the rollback field is set.
    */
   boolean hasRollback();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface RepairPhaseOrBuilder
    * @return The rollback.
    */
   com.google.cloud.deploy.v1.RollbackAttempt getRollback();
+
   /**
    *
    *

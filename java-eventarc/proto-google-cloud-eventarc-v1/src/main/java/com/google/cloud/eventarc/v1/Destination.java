@@ -33,6 +33,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.eventarc.v1.Destination)
     DestinationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Destination.newBuilder() to construct.
   private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     private DescriptorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,6 +123,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_RUN_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudRun() {
     return descriptorCase_ == 1;
   }
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.eventarc.v1.CloudRun.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLOUD_FUNCTION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCloudFunction() {
     return descriptorCase_ == 2;
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GKE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -279,6 +288,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGke() {
     return descriptorCase_ == 3;
   }
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -317,6 +328,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int WORKFLOW_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasWorkflow() {
     return descriptorCase_ == 4;
   }
+
   /**
    *
    *
@@ -364,6 +377,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int HTTP_ENDPOINT_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -411,6 +426,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasHttpEndpoint() {
     return descriptorCase_ == 5;
   }
+
   /**
    *
    *
@@ -429,6 +445,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -448,6 +465,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NETWORK_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.eventarc.v1.NetworkConfig networkConfig_;
+
   /**
    *
    *
@@ -467,6 +485,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNetworkConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -488,6 +507,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.eventarc.v1.NetworkConfig.getDefaultInstance()
         : networkConfig_;
   }
+
   /**
    *
    *
@@ -751,6 +771,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1060,6 +1081,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.CloudRun.Builder,
             com.google.cloud.eventarc.v1.CloudRunOrBuilder>
         cloudRunBuilder_;
+
     /**
      *
      *
@@ -1076,6 +1098,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudRun() {
       return descriptorCase_ == 1;
     }
+
     /**
      *
      *
@@ -1102,6 +1125,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.CloudRun.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1149,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1170,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1204,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1204,6 +1231,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1217,6 +1245,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.CloudRun.Builder getCloudRunBuilder() {
       return getCloudRunFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1238,6 +1267,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.CloudRun.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1293,6 +1323,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCloudFunction() {
       return descriptorCase_ == 2;
     }
+
     /**
      *
      *
@@ -1327,6 +1358,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1361,6 +1393,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1388,6 +1421,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1447,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1482,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.GKE.Builder,
             com.google.cloud.eventarc.v1.GKEOrBuilder>
         gkeBuilder_;
+
     /**
      *
      *
@@ -1463,6 +1499,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGke() {
       return descriptorCase_ == 3;
     }
+
     /**
      *
      *
@@ -1489,6 +1526,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1512,6 +1550,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1532,6 +1571,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1569,6 +1609,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1595,6 +1636,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1608,6 +1650,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.GKE.Builder getGkeBuilder() {
       return getGkeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1629,6 +1672,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.GKE.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1679,6 +1723,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasWorkflow() {
       return descriptorCase_ == 4;
     }
+
     /**
      *
      *
@@ -1710,6 +1755,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1741,6 +1787,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1765,6 +1812,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1787,6 +1835,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1867,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.HttpEndpoint.Builder,
             com.google.cloud.eventarc.v1.HttpEndpointOrBuilder>
         httpEndpointBuilder_;
+
     /**
      *
      *
@@ -1833,6 +1883,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHttpEndpoint() {
       return descriptorCase_ == 5;
     }
+
     /**
      *
      *
@@ -1858,6 +1909,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1932,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1900,6 +1953,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1932,6 +1986,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       descriptorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1957,6 +2012,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2025,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.eventarc.v1.HttpEndpoint.Builder getHttpEndpointBuilder() {
       return getHttpEndpointFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1989,6 +2046,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.eventarc.v1.HttpEndpoint.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2028,6 +2086,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.eventarc.v1.NetworkConfig.Builder,
             com.google.cloud.eventarc.v1.NetworkConfigOrBuilder>
         networkConfigBuilder_;
+
     /**
      *
      *
@@ -2046,6 +2105,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNetworkConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2070,6 +2130,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         return networkConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2096,6 +2157,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2120,6 +2182,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2151,6 +2214,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2174,6 +2238,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2192,6 +2257,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getNetworkConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2214,6 +2280,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
             : networkConfig_;
       }
     }
+
     /**
      *
      *

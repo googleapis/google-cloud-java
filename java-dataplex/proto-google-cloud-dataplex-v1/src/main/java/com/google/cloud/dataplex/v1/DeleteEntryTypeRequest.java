@@ -33,6 +33,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DeleteEntryTypeRequest)
     DeleteEntryTypeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteEntryTypeRequest.newBuilder() to construct.
   private DeleteEntryTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -342,6 +347,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -541,6 +547,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -591,6 +599,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class DeleteEntryTypeRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

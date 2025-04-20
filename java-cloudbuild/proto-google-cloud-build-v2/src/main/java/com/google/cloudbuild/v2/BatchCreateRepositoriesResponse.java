@@ -33,6 +33,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v2.BatchCreateRepositoriesResponse)
     BatchCreateRepositoriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateRepositoriesResponse.newBuilder() to construct.
   private BatchCreateRepositoriesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v2.Repository> repositories_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloudbuild.v2.Repository> getRepositoriesList() {
     return repositories_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       getRepositoriesOrBuilderList() {
     return repositories_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
   public int getRepositoriesCount() {
     return repositories_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
   public com.google.cloudbuild.v2.Repository getRepositories(int index) {
     return repositories_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
         return repositoriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
         return repositoriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
         return repositoriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +643,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +771,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +791,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +804,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
     public com.google.cloudbuild.v2.Repository.Builder getRepositoriesBuilder(int index) {
       return getRepositoriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
         return repositoriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -818,6 +839,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(repositories_);
       }
     }
+
     /**
      *
      *
@@ -831,6 +853,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       return getRepositoriesFieldBuilder()
           .addBuilder(com.google.cloudbuild.v2.Repository.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -844,6 +867,7 @@ public final class BatchCreateRepositoriesResponse extends com.google.protobuf.G
       return getRepositoriesFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v2.Repository.getDefaultInstance());
     }
+
     /**
      *
      *

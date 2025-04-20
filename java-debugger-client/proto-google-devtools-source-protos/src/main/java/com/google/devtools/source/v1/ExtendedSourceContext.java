@@ -34,6 +34,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.devtools.source.v1.ExtendedSourceContext)
     ExtendedSourceContextOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExtendedSourceContext.newBuilder() to construct.
   private ExtendedSourceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.google.devtools.source.v1.SourceContext context_;
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
   public boolean hasContext() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
         ? com.google.devtools.source.v1.SourceContext.getDefaultInstance()
         : context_;
   }
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -167,12 +172,14 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -408,6 +417,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -653,6 +663,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
             com.google.devtools.source.v1.SourceContext.Builder,
             com.google.devtools.source.v1.SourceContextOrBuilder>
         contextBuilder_;
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     public boolean hasContext() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
         return contextBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -709,6 +722,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +742,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +770,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +790,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +805,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -806,6 +824,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
             : context_;
       }
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -873,12 +893,14 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -892,6 +914,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -912,6 +935,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -954,12 +979,14 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -980,6 +1007,7 @@ public final class ExtendedSourceContext extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *

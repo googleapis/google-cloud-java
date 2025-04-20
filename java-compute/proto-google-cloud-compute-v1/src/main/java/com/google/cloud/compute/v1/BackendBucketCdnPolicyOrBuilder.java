@@ -37,6 +37,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader>
       getBypassCacheOnRequestHeadersList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeader
       getBypassCacheOnRequestHeaders(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * </code>
    */
   int getBypassCacheOnRequestHeadersCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface BackendBucketCdnPolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendBucketCdnPolicyBypassCacheOnRequestHeaderOrBuilder>
       getBypassCacheOnRequestHeadersOrBuilderList();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the cacheKeyPolicy field is set.
    */
   boolean hasCacheKeyPolicy();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The cacheKeyPolicy.
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyCacheKeyPolicy getCacheKeyPolicy();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the cacheMode field is set.
    */
   boolean hasCacheMode();
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The cacheMode.
    */
   java.lang.String getCacheMode();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the clientTtl field is set.
    */
   boolean hasClientTtl();
+
   /**
    *
    *
@@ -210,6 +219,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the defaultTtl field is set.
    */
   boolean hasDefaultTtl();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the maxTtl field is set.
    */
   boolean hasMaxTtl();
+
   /**
    *
    *
@@ -260,6 +271,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the negativeCaching field is set.
    */
   boolean hasNegativeCaching();
+
   /**
    *
    *
@@ -286,6 +298,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy>
       getNegativeCachingPolicyList();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    */
   com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicy getNegativeCachingPolicy(
       int index);
+
   /**
    *
    *
@@ -311,6 +325,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * </code>
    */
   int getNegativeCachingPolicyCount();
+
   /**
    *
    *
@@ -326,6 +341,7 @@ public interface BackendBucketCdnPolicyOrBuilder
           ? extends
               com.google.cloud.compute.v1.BackendBucketCdnPolicyNegativeCachingPolicyOrBuilder>
       getNegativeCachingPolicyOrBuilderList();
+
   /**
    *
    *
@@ -352,6 +368,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the requestCoalescing field is set.
    */
   boolean hasRequestCoalescing();
+
   /**
    *
    *
@@ -377,6 +394,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the serveWhileStale field is set.
    */
   boolean hasServeWhileStale();
+
   /**
    *
    *
@@ -402,6 +420,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return Whether the signedUrlCacheMaxAgeSec field is set.
    */
   boolean hasSignedUrlCacheMaxAgeSec();
+
   /**
    *
    *
@@ -427,6 +446,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return A list containing the signedUrlKeyNames.
    */
   java.util.List<java.lang.String> getSignedUrlKeyNamesList();
+
   /**
    *
    *
@@ -439,6 +459,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The count of signedUrlKeyNames.
    */
   int getSignedUrlKeyNamesCount();
+
   /**
    *
    *
@@ -452,6 +473,7 @@ public interface BackendBucketCdnPolicyOrBuilder
    * @return The signedUrlKeyNames at the given index.
    */
   java.lang.String getSignedUrlKeyNames(int index);
+
   /**
    *
    *

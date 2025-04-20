@@ -220,7 +220,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AddApplicationStreamInput, expected %s or %s",
+                  "Unrecognized response type %s for method AddApplicationStreamInput, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -241,7 +242,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method RemoveApplicationStreamInput, expected %s or %s",
+                  "Unrecognized response type %s for method RemoveApplicationStreamInput, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -262,7 +264,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateApplicationStreamInput, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateApplicationStreamInput, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -324,7 +327,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateApplicationInstances, expected %s or %s",
+                  "Unrecognized response type %s for method CreateApplicationInstances, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -345,7 +349,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteApplicationInstances, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteApplicationInstances, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -366,7 +371,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateApplicationInstances, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateApplicationInstances, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -510,7 +516,8 @@ public class MockAppPlatformImpl extends AppPlatformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPrebuiltProcessors, expected %s or %s",
+                  "Unrecognized response type %s for method ListPrebuiltProcessors, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrebuiltProcessorsResponse.class.getName(),
                   Exception.class.getName())));

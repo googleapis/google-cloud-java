@@ -62,6 +62,7 @@ public enum DirectoryServiceType implements com.google.protobuf.ProtocolMessageE
    * <code>DIRECTORY_SERVICE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DIRECTORY_SERVICE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

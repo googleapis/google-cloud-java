@@ -34,6 +34,7 @@ public final class MoveProjectMetadata extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.MoveProjectMetadata)
     MoveProjectMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MoveProjectMetadata.newBuilder() to construct.
   private MoveProjectMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class MoveProjectMetadata extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

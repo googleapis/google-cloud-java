@@ -210,6 +210,19 @@ public final class Controller2Grpc {
     return Controller2Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static Controller2BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<Controller2BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<Controller2BlockingV2Stub>() {
+          @java.lang.Override
+          public Controller2BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new Controller2BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return Controller2BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -479,6 +492,105 @@ public final class Controller2Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Controller2.
+   *
+   * <pre>
+   * The Controller service provides the API for orchestrating a collection of
+   * debugger agents to perform debugging tasks. These agents are each attached
+   * to a process of an application which may include one or more replicas.
+   * The debugger agents register with the Controller to identify the application
+   * being debugged, the Debuggee. All agents that register with the same data,
+   * represent the same Debuggee, and are assigned the same `debuggee_id`.
+   * The debugger agents call the Controller to retrieve  the list of active
+   * Breakpoints. Agents with the same `debuggee_id` get the same breakpoints
+   * list. An agent that can fulfill the breakpoint request updates the
+   * Controller with the breakpoint result. The controller selects the first
+   * result received and discards the rest of the results.
+   * Agents that poll again for active breakpoints will no longer have
+   * the completed breakpoint in the list and should remove that breakpoint from
+   * their attached process.
+   * The Controller service does not provide a way to retrieve the results of
+   * a completed breakpoint. This functionality is available using the Debugger
+   * service.
+   * </pre>
+   */
+  public static final class Controller2BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<Controller2BlockingV2Stub> {
+    private Controller2BlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected Controller2BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new Controller2BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Registers the debuggee with the controller service.
+     * All agents attached to the same application must call this method with
+     * exactly the same request content to get back the same stable `debuggee_id`.
+     * Agents should call this method again whenever `google.rpc.Code.NOT_FOUND`
+     * is returned from any controller method.
+     * This protocol allows the controller service to disable debuggees, recover
+     * from data loss, or change the `debuggee_id` format. Agents must handle
+     * `debuggee_id` value changing upon re-registration.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.RegisterDebuggeeResponse registerDebuggee(
+        com.google.devtools.clouddebugger.v2.RegisterDebuggeeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRegisterDebuggeeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all active breakpoints for the debuggee.
+     * The breakpoint specification (`location`, `condition`, and `expressions`
+     * fields) is semantically immutable, although the field values may
+     * change. For example, an agent may update the location line number
+     * to reflect the actual line where the breakpoint was set, but this
+     * doesn't change the breakpoint semantics.
+     * This means that an agent does not need to check if a breakpoint has changed
+     * when it encounters the same breakpoint on a successive call.
+     * Moreover, an agent should remember the breakpoints that are completed
+     * until the controller removes them from the active list to avoid
+     * setting those breakpoints again.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.ListActiveBreakpointsResponse listActiveBreakpoints(
+        com.google.devtools.clouddebugger.v2.ListActiveBreakpointsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListActiveBreakpointsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the breakpoint state or mutable fields.
+     * The entire Breakpoint message must be sent back to the controller service.
+     * Updates to active breakpoint fields are only allowed if the new value
+     * does not change the breakpoint specification. Updates to the `location`,
+     * `condition` and `expressions` fields should not alter the breakpoint
+     * semantics. These may only make changes such as canonicalizing a value
+     * or snapping the location to the correct line of code.
+     * </pre>
+     */
+    public com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointResponse
+        updateActiveBreakpoint(
+            com.google.devtools.clouddebugger.v2.UpdateActiveBreakpointRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateActiveBreakpointMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Controller2.
    *
    * <pre>
    * The Controller service provides the API for orchestrating a collection of

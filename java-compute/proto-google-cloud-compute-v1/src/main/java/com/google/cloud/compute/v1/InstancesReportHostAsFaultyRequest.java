@@ -32,6 +32,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesReportHostAsFaultyRequest)
     InstancesReportHostAsFaultyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesReportHostAsFaultyRequest.newBuilder() to construct.
   private InstancesReportHostAsFaultyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -128,6 +129,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
      * <code>UNDEFINED_DISRUPTION_SCHEDULE = 0;</code>
      */
     public static final int UNDEFINED_DISRUPTION_SCHEDULE_VALUE = 0;
+
     /**
      *
      *
@@ -138,6 +140,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
      * <code>DISRUPTION_SCHEDULE_UNSPECIFIED = 332543835;</code>
      */
     public static final int DISRUPTION_SCHEDULE_UNSPECIFIED_VALUE = 332543835;
+
     /**
      *
      *
@@ -148,6 +151,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
      * <code>FUTURE = 474513859;</code>
      */
     public static final int FUTURE_VALUE = 474513859;
+
     /**
      *
      *
@@ -254,6 +258,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object disruptionSchedule_ = "";
+
   /**
    *
    *
@@ -270,6 +275,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
   public boolean hasDisruptionSchedule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -294,6 +300,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       return s;
     }
   }
+
   /**
    *
    *
@@ -324,6 +331,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason>
       faultReasons_;
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -334,6 +342,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       getFaultReasonsList() {
     return faultReasons_;
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -346,6 +355,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       getFaultReasonsOrBuilderList() {
     return faultReasons_;
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -355,6 +365,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
   public int getFaultReasonsCount() {
     return faultReasons_.size();
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -365,6 +376,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       int index) {
     return faultReasons_.get(index);
   }
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -554,6 +566,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -806,6 +819,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
     private int bitField0_;
 
     private java.lang.Object disruptionSchedule_ = "";
+
     /**
      *
      *
@@ -821,6 +835,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
     public boolean hasDisruptionSchedule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +906,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +925,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +983,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return faultReasonsBuilder_.getMessageList();
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -976,6 +996,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return faultReasonsBuilder_.getCount();
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -989,6 +1010,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return faultReasonsBuilder_.getMessage(index);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1009,6 +1031,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1027,6 +1050,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1046,6 +1070,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1066,6 +1091,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1083,6 +1109,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1101,6 +1128,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1119,6 +1147,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1134,6 +1163,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1149,6 +1179,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
       }
       return this;
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1158,6 +1189,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         getFaultReasonsBuilder(int index) {
       return getFaultReasonsFieldBuilder().getBuilder(index);
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1171,6 +1203,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return faultReasonsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1186,6 +1219,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
         return java.util.Collections.unmodifiableList(faultReasons_);
       }
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1198,6 +1232,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
               com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason
                   .getDefaultInstance());
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -1211,6 +1246,7 @@ public final class InstancesReportHostAsFaultyRequest extends com.google.protobu
               com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason
                   .getDefaultInstance());
     }
+
     /**
      * <code>
      * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;

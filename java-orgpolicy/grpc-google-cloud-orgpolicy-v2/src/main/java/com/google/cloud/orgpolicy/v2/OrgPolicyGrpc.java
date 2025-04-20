@@ -604,6 +604,19 @@ public final class OrgPolicyGrpc {
     return OrgPolicyStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static OrgPolicyBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<OrgPolicyBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<OrgPolicyBlockingV2Stub>() {
+          @java.lang.Override
+          public OrgPolicyBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new OrgPolicyBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return OrgPolicyBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1157,6 +1170,230 @@ public final class OrgPolicyGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service OrgPolicy.
+   *
+   * <pre>
+   * An interface for managing organization policies.
+   * The Organization Policy Service provides a simple mechanism for
+   * organizations to restrict the allowed configurations across their entire
+   * resource hierarchy.
+   * You can use a policy to configure restrictions on resources. For
+   * example, you can enforce a policy that restricts which Google
+   * Cloud APIs can be activated in a certain part of your resource
+   * hierarchy, or prevents serial port access to VM instances in a
+   * particular folder.
+   * Policies are inherited down through the resource hierarchy. A policy
+   * applied to a parent resource automatically applies to all its child resources
+   * unless overridden with a policy lower in the hierarchy.
+   * A constraint defines an aspect of a resource's configuration that can be
+   * controlled by an organization's policy administrator. Policies are a
+   * collection of constraints that defines their allowable configuration on a
+   * particular resource and its child resources.
+   * </pre>
+   */
+  public static final class OrgPolicyBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<OrgPolicyBlockingV2Stub> {
+    private OrgPolicyBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected OrgPolicyBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new OrgPolicyBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists constraints that could be applied on the specified resource.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.ListConstraintsResponse listConstraints(
+        com.google.cloud.orgpolicy.v2.ListConstraintsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConstraintsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves all of the policies that exist on a particular resource.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.ListPoliciesResponse listPolicies(
+        com.google.cloud.orgpolicy.v2.ListPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a policy on a resource.
+     * If no policy is set on the resource, `NOT_FOUND` is returned. The
+     * `etag` value can be used with `UpdatePolicy()` to update a
+     * policy during read-modify-write.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.Policy getPolicy(
+        com.google.cloud.orgpolicy.v2.GetPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the effective policy on a resource. This is the result of merging
+     * policies in the resource hierarchy and evaluating conditions. The
+     * returned policy will not have an `etag` or `condition` set because it is
+     * an evaluated policy across multiple resources.
+     * Subtrees of Resource Manager resource hierarchy with 'under:' prefix will
+     * not be expanded.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.Policy getEffectivePolicy(
+        com.google.cloud.orgpolicy.v2.GetEffectivePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEffectivePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a policy.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * constraint does not exist.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the
+     * policy already exists on the given Google Cloud resource.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.Policy createPolicy(
+        com.google.cloud.orgpolicy.v2.CreatePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a policy.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * constraint or the policy do not exist.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag
+     * supplied in the request does not match the persisted etag of the policy
+     * Note: the supplied policy will perform a full overwrite of all
+     * fields.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.Policy updatePolicy(
+        com.google.cloud.orgpolicy.v2.UpdatePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a policy.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * constraint or organization policy does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePolicy(
+        com.google.cloud.orgpolicy.v2.DeletePolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a custom constraint.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * organization does not exist.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the
+     * constraint already exists on the given organization.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.CustomConstraint createCustomConstraint(
+        com.google.cloud.orgpolicy.v2.CreateCustomConstraintRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateCustomConstraintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a custom constraint.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * constraint does not exist.
+     * Note: the supplied policy will perform a full overwrite of all
+     * fields.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.CustomConstraint updateCustomConstraint(
+        com.google.cloud.orgpolicy.v2.UpdateCustomConstraintRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCustomConstraintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a custom or managed constraint.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * custom or managed constraint does not exist.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.CustomConstraint getCustomConstraint(
+        com.google.cloud.orgpolicy.v2.GetCustomConstraintRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCustomConstraintMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves all of the custom constraints that exist on a particular
+     * organization resource.
+     * </pre>
+     */
+    public com.google.cloud.orgpolicy.v2.ListCustomConstraintsResponse listCustomConstraints(
+        com.google.cloud.orgpolicy.v2.ListCustomConstraintsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCustomConstraintsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a custom constraint.
+     * Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the
+     * constraint does not exist.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCustomConstraint(
+        com.google.cloud.orgpolicy.v2.DeleteCustomConstraintRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteCustomConstraintMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service OrgPolicy.
    *
    * <pre>
    * An interface for managing organization policies.

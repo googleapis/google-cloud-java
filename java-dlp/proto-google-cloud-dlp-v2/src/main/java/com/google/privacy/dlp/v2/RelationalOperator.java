@@ -122,6 +122,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>RELATIONAL_OPERATOR_UNSPECIFIED = 0;</code>
    */
   public static final int RELATIONAL_OPERATOR_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -132,6 +133,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>EQUAL_TO = 1;</code>
    */
   public static final int EQUAL_TO_VALUE = 1;
+
   /**
    *
    *
@@ -142,6 +144,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>NOT_EQUAL_TO = 2;</code>
    */
   public static final int NOT_EQUAL_TO_VALUE = 2;
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>GREATER_THAN = 3;</code>
    */
   public static final int GREATER_THAN_VALUE = 3;
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>LESS_THAN = 4;</code>
    */
   public static final int LESS_THAN_VALUE = 4;
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>GREATER_THAN_OR_EQUALS = 5;</code>
    */
   public static final int GREATER_THAN_OR_EQUALS_VALUE = 5;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    * <code>LESS_THAN_OR_EQUALS = 6;</code>
    */
   public static final int LESS_THAN_OR_EQUALS_VALUE = 6;
+
   /**
    *
    *

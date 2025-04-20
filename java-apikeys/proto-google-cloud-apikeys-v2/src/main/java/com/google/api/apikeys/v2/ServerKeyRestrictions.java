@@ -33,6 +33,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.ServerKeyRestrictions)
     ServerKeyRestrictionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServerKeyRestrictions.newBuilder() to construct.
   private ServerKeyRestrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedIps_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getAllowedIpsList() {
     return allowedIps_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   public int getAllowedIpsCount() {
     return allowedIps_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
   public java.lang.String getAllowedIps(int index) {
     return allowedIps_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       allowedIps_.makeImmutable();
       return allowedIps_;
     }
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public int getAllowedIpsCount() {
       return allowedIps_.size();
     }
+
     /**
      *
      *
@@ -543,6 +552,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public java.lang.String getAllowedIps(int index) {
       return allowedIps_.get(index);
     }
+
     /**
      *
      *
@@ -559,6 +569,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getAllowedIpsBytes(int index) {
       return allowedIps_.getByteString(index);
     }
+
     /**
      *
      *
@@ -583,6 +594,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +618,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -626,6 +639,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +659,7 @@ public final class ServerKeyRestrictions extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

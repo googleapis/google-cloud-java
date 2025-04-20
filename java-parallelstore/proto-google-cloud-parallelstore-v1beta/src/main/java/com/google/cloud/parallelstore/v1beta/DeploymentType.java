@@ -74,6 +74,7 @@ public enum DeploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DEPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int DEPLOYMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public enum DeploymentType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SCRATCH = 1;</code>
    */
   public static final int SCRATCH_VALUE = 1;
+
   /**
    *
    *

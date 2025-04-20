@@ -33,6 +33,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ChangeHistoryChange)
     ChangeHistoryChangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChangeHistoryChange.newBuilder() to construct.
   private ChangeHistoryChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the account field is set.
      */
     boolean hasAccount();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The account.
      */
     com.google.analytics.admin.v1alpha.Account getAccount();
+
     /**
      *
      *
@@ -116,6 +119,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the property field is set.
      */
     boolean hasProperty();
+
     /**
      *
      *
@@ -128,6 +132,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The property.
      */
     com.google.analytics.admin.v1alpha.Property getProperty();
+
     /**
      *
      *
@@ -151,6 +156,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the firebaseLink field is set.
      */
     boolean hasFirebaseLink();
+
     /**
      *
      *
@@ -163,6 +169,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The firebaseLink.
      */
     com.google.analytics.admin.v1alpha.FirebaseLink getFirebaseLink();
+
     /**
      *
      *
@@ -186,6 +193,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the googleAdsLink field is set.
      */
     boolean hasGoogleAdsLink();
+
     /**
      *
      *
@@ -198,6 +206,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The googleAdsLink.
      */
     com.google.analytics.admin.v1alpha.GoogleAdsLink getGoogleAdsLink();
+
     /**
      *
      *
@@ -222,6 +231,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the googleSignalsSettings field is set.
      */
     boolean hasGoogleSignalsSettings();
+
     /**
      *
      *
@@ -235,6 +245,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The googleSignalsSettings.
      */
     com.google.analytics.admin.v1alpha.GoogleSignalsSettings getGoogleSignalsSettings();
+
     /**
      *
      *
@@ -263,6 +274,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the displayVideo360AdvertiserLink field is set.
      */
     boolean hasDisplayVideo360AdvertiserLink();
+
     /**
      *
      *
@@ -279,6 +291,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink
         getDisplayVideo360AdvertiserLink();
+
     /**
      *
      *
@@ -309,6 +322,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the displayVideo360AdvertiserLinkProposal field is set.
      */
     boolean hasDisplayVideo360AdvertiserLinkProposal();
+
     /**
      *
      *
@@ -325,6 +339,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
         getDisplayVideo360AdvertiserLinkProposal();
+
     /**
      *
      *
@@ -352,6 +367,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the conversionEvent field is set.
      */
     boolean hasConversionEvent();
+
     /**
      *
      *
@@ -364,6 +380,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The conversionEvent.
      */
     com.google.analytics.admin.v1alpha.ConversionEvent getConversionEvent();
+
     /**
      *
      *
@@ -389,6 +406,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the measurementProtocolSecret field is set.
      */
     boolean hasMeasurementProtocolSecret();
+
     /**
      *
      *
@@ -403,6 +421,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The measurementProtocolSecret.
      */
     com.google.analytics.admin.v1alpha.MeasurementProtocolSecret getMeasurementProtocolSecret();
+
     /**
      *
      *
@@ -429,6 +448,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the customDimension field is set.
      */
     boolean hasCustomDimension();
+
     /**
      *
      *
@@ -441,6 +461,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The customDimension.
      */
     com.google.analytics.admin.v1alpha.CustomDimension getCustomDimension();
+
     /**
      *
      *
@@ -464,6 +485,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the customMetric field is set.
      */
     boolean hasCustomMetric();
+
     /**
      *
      *
@@ -476,6 +498,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The customMetric.
      */
     com.google.analytics.admin.v1alpha.CustomMetric getCustomMetric();
+
     /**
      *
      *
@@ -500,6 +523,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the dataRetentionSettings field is set.
      */
     boolean hasDataRetentionSettings();
+
     /**
      *
      *
@@ -513,6 +537,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The dataRetentionSettings.
      */
     com.google.analytics.admin.v1alpha.DataRetentionSettings getDataRetentionSettings();
+
     /**
      *
      *
@@ -538,6 +563,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the searchAds360Link field is set.
      */
     boolean hasSearchAds360Link();
+
     /**
      *
      *
@@ -550,6 +576,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The searchAds360Link.
      */
     com.google.analytics.admin.v1alpha.SearchAds360Link getSearchAds360Link();
+
     /**
      *
      *
@@ -573,6 +600,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the dataStream field is set.
      */
     boolean hasDataStream();
+
     /**
      *
      *
@@ -585,6 +613,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The dataStream.
      */
     com.google.analytics.admin.v1alpha.DataStream getDataStream();
+
     /**
      *
      *
@@ -608,6 +637,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the attributionSettings field is set.
      */
     boolean hasAttributionSettings();
+
     /**
      *
      *
@@ -620,6 +650,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The attributionSettings.
      */
     com.google.analytics.admin.v1alpha.AttributionSettings getAttributionSettings();
+
     /**
      *
      *
@@ -644,6 +675,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the expandedDataSet field is set.
      */
     boolean hasExpandedDataSet();
+
     /**
      *
      *
@@ -656,6 +688,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The expandedDataSet.
      */
     com.google.analytics.admin.v1alpha.ExpandedDataSet getExpandedDataSet();
+
     /**
      *
      *
@@ -679,6 +712,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the channelGroup field is set.
      */
     boolean hasChannelGroup();
+
     /**
      *
      *
@@ -691,6 +725,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The channelGroup.
      */
     com.google.analytics.admin.v1alpha.ChannelGroup getChannelGroup();
+
     /**
      *
      *
@@ -714,6 +749,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the bigqueryLink field is set.
      */
     boolean hasBigqueryLink();
+
     /**
      *
      *
@@ -726,6 +762,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The bigqueryLink.
      */
     com.google.analytics.admin.v1alpha.BigQueryLink getBigqueryLink();
+
     /**
      *
      *
@@ -751,6 +788,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the enhancedMeasurementSettings field is set.
      */
     boolean hasEnhancedMeasurementSettings();
+
     /**
      *
      *
@@ -765,6 +803,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The enhancedMeasurementSettings.
      */
     com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings getEnhancedMeasurementSettings();
+
     /**
      *
      *
@@ -792,6 +831,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the dataRedactionSettings field is set.
      */
     boolean hasDataRedactionSettings();
+
     /**
      *
      *
@@ -805,6 +845,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The dataRedactionSettings.
      */
     com.google.analytics.admin.v1alpha.DataRedactionSettings getDataRedactionSettings();
+
     /**
      *
      *
@@ -833,6 +874,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the skadnetworkConversionValueSchema field is set.
      */
     boolean hasSkadnetworkConversionValueSchema();
+
     /**
      *
      *
@@ -849,6 +891,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      */
     com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
         getSkadnetworkConversionValueSchema();
+
     /**
      *
      *
@@ -876,6 +919,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the adsenseLink field is set.
      */
     boolean hasAdsenseLink();
+
     /**
      *
      *
@@ -888,6 +932,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The adsenseLink.
      */
     com.google.analytics.admin.v1alpha.AdSenseLink getAdsenseLink();
+
     /**
      *
      *
@@ -911,6 +956,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the audience field is set.
      */
     boolean hasAudience();
+
     /**
      *
      *
@@ -923,6 +969,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The audience.
      */
     com.google.analytics.admin.v1alpha.Audience getAudience();
+
     /**
      *
      *
@@ -946,6 +993,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the eventCreateRule field is set.
      */
     boolean hasEventCreateRule();
+
     /**
      *
      *
@@ -958,6 +1006,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The eventCreateRule.
      */
     com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule();
+
     /**
      *
      *
@@ -981,6 +1030,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the keyEvent field is set.
      */
     boolean hasKeyEvent();
+
     /**
      *
      *
@@ -993,6 +1043,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The keyEvent.
      */
     com.google.analytics.admin.v1alpha.KeyEvent getKeyEvent();
+
     /**
      *
      *
@@ -1016,6 +1067,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the calculatedMetric field is set.
      */
     boolean hasCalculatedMetric();
+
     /**
      *
      *
@@ -1028,6 +1080,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The calculatedMetric.
      */
     com.google.analytics.admin.v1alpha.CalculatedMetric getCalculatedMetric();
+
     /**
      *
      *
@@ -1052,6 +1105,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return Whether the reportingDataAnnotation field is set.
      */
     boolean hasReportingDataAnnotation();
+
     /**
      *
      *
@@ -1065,6 +1119,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      * @return The reportingDataAnnotation.
      */
     com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation();
+
     /**
      *
      *
@@ -1081,6 +1136,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
+
   /**
    *
    *
@@ -1096,6 +1152,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource)
       ChangeHistoryResourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ChangeHistoryResource.newBuilder() to construct.
     private ChangeHistoryResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1167,6 +1224,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       private ResourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1250,6 +1308,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ACCOUNT_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1265,6 +1324,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasAccount() {
       return resourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -1283,6 +1343,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.Account.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1301,6 +1362,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int PROPERTY_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1316,6 +1378,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasProperty() {
       return resourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -1334,6 +1397,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.Property.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1352,6 +1416,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int FIREBASE_LINK_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -1367,6 +1432,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasFirebaseLink() {
       return resourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -1385,6 +1451,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1403,6 +1470,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int GOOGLE_ADS_LINK_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -1418,6 +1486,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasGoogleAdsLink() {
       return resourceCase_ == 7;
     }
+
     /**
      *
      *
@@ -1436,6 +1505,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.GoogleAdsLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1454,6 +1524,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int GOOGLE_SIGNALS_SETTINGS_FIELD_NUMBER = 8;
+
     /**
      *
      *
@@ -1470,6 +1541,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasGoogleSignalsSettings() {
       return resourceCase_ == 8;
     }
+
     /**
      *
      *
@@ -1489,6 +1561,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1509,6 +1582,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_FIELD_NUMBER = 9;
+
     /**
      *
      *
@@ -1527,6 +1601,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasDisplayVideo360AdvertiserLink() {
       return resourceCase_ == 9;
     }
+
     /**
      *
      *
@@ -1549,6 +1624,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1571,6 +1647,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL_FIELD_NUMBER = 10;
+
     /**
      *
      *
@@ -1589,6 +1666,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasDisplayVideo360AdvertiserLinkProposal() {
       return resourceCase_ == 10;
     }
+
     /**
      *
      *
@@ -1612,6 +1690,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1635,6 +1714,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CONVERSION_EVENT_FIELD_NUMBER = 11;
+
     /**
      *
      *
@@ -1650,6 +1730,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasConversionEvent() {
       return resourceCase_ == 11;
     }
+
     /**
      *
      *
@@ -1668,6 +1749,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1687,6 +1769,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int MEASUREMENT_PROTOCOL_SECRET_FIELD_NUMBER = 12;
+
     /**
      *
      *
@@ -1704,6 +1787,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasMeasurementProtocolSecret() {
       return resourceCase_ == 12;
     }
+
     /**
      *
      *
@@ -1725,6 +1809,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1746,6 +1831,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CUSTOM_DIMENSION_FIELD_NUMBER = 13;
+
     /**
      *
      *
@@ -1761,6 +1847,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasCustomDimension() {
       return resourceCase_ == 13;
     }
+
     /**
      *
      *
@@ -1779,6 +1866,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1798,6 +1886,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CUSTOM_METRIC_FIELD_NUMBER = 14;
+
     /**
      *
      *
@@ -1813,6 +1902,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasCustomMetric() {
       return resourceCase_ == 14;
     }
+
     /**
      *
      *
@@ -1831,6 +1921,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1849,6 +1940,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DATA_RETENTION_SETTINGS_FIELD_NUMBER = 15;
+
     /**
      *
      *
@@ -1865,6 +1957,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasDataRetentionSettings() {
       return resourceCase_ == 15;
     }
+
     /**
      *
      *
@@ -1884,6 +1977,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1904,6 +1998,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int SEARCH_ADS_360_LINK_FIELD_NUMBER = 16;
+
     /**
      *
      *
@@ -1919,6 +2014,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasSearchAds360Link() {
       return resourceCase_ == 16;
     }
+
     /**
      *
      *
@@ -1937,6 +2033,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1956,6 +2053,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DATA_STREAM_FIELD_NUMBER = 18;
+
     /**
      *
      *
@@ -1971,6 +2069,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasDataStream() {
       return resourceCase_ == 18;
     }
+
     /**
      *
      *
@@ -1989,6 +2088,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2007,6 +2107,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ATTRIBUTION_SETTINGS_FIELD_NUMBER = 20;
+
     /**
      *
      *
@@ -2022,6 +2123,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasAttributionSettings() {
       return resourceCase_ == 20;
     }
+
     /**
      *
      *
@@ -2040,6 +2142,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2059,6 +2162,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EXPANDED_DATA_SET_FIELD_NUMBER = 21;
+
     /**
      *
      *
@@ -2074,6 +2178,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasExpandedDataSet() {
       return resourceCase_ == 21;
     }
+
     /**
      *
      *
@@ -2092,6 +2197,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2111,6 +2217,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CHANNEL_GROUP_FIELD_NUMBER = 22;
+
     /**
      *
      *
@@ -2126,6 +2233,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasChannelGroup() {
       return resourceCase_ == 22;
     }
+
     /**
      *
      *
@@ -2144,6 +2252,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2162,6 +2271,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int BIGQUERY_LINK_FIELD_NUMBER = 23;
+
     /**
      *
      *
@@ -2177,6 +2287,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasBigqueryLink() {
       return resourceCase_ == 23;
     }
+
     /**
      *
      *
@@ -2195,6 +2306,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2213,6 +2325,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER = 24;
+
     /**
      *
      *
@@ -2230,6 +2343,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasEnhancedMeasurementSettings() {
       return resourceCase_ == 24;
     }
+
     /**
      *
      *
@@ -2251,6 +2365,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2272,6 +2387,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int DATA_REDACTION_SETTINGS_FIELD_NUMBER = 25;
+
     /**
      *
      *
@@ -2288,6 +2404,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasDataRedactionSettings() {
       return resourceCase_ == 25;
     }
+
     /**
      *
      *
@@ -2307,6 +2424,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2327,6 +2445,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_FIELD_NUMBER = 26;
+
     /**
      *
      *
@@ -2345,6 +2464,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasSkadnetworkConversionValueSchema() {
       return resourceCase_ == 26;
     }
+
     /**
      *
      *
@@ -2368,6 +2488,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2391,6 +2512,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int ADSENSE_LINK_FIELD_NUMBER = 27;
+
     /**
      *
      *
@@ -2406,6 +2528,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasAdsenseLink() {
       return resourceCase_ == 27;
     }
+
     /**
      *
      *
@@ -2424,6 +2547,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2442,6 +2566,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int AUDIENCE_FIELD_NUMBER = 28;
+
     /**
      *
      *
@@ -2457,6 +2582,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasAudience() {
       return resourceCase_ == 28;
     }
+
     /**
      *
      *
@@ -2475,6 +2601,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2493,6 +2620,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int EVENT_CREATE_RULE_FIELD_NUMBER = 29;
+
     /**
      *
      *
@@ -2508,6 +2636,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasEventCreateRule() {
       return resourceCase_ == 29;
     }
+
     /**
      *
      *
@@ -2526,6 +2655,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2545,6 +2675,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int KEY_EVENT_FIELD_NUMBER = 30;
+
     /**
      *
      *
@@ -2560,6 +2691,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasKeyEvent() {
       return resourceCase_ == 30;
     }
+
     /**
      *
      *
@@ -2578,6 +2710,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2596,6 +2729,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int CALCULATED_METRIC_FIELD_NUMBER = 31;
+
     /**
      *
      *
@@ -2611,6 +2745,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasCalculatedMetric() {
       return resourceCase_ == 31;
     }
+
     /**
      *
      *
@@ -2629,6 +2764,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.CalculatedMetric.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -2648,6 +2784,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     public static final int REPORTING_DATA_ANNOTATION_FIELD_NUMBER = 32;
+
     /**
      *
      *
@@ -2664,6 +2801,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasReportingDataAnnotation() {
       return resourceCase_ == 32;
     }
+
     /**
      *
      *
@@ -2683,6 +2821,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3295,6 +3434,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3993,6 +4133,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.Account.Builder,
               com.google.analytics.admin.v1alpha.AccountOrBuilder>
           accountBuilder_;
+
       /**
        *
        *
@@ -4008,6 +4149,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasAccount() {
         return resourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -4033,6 +4175,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Account.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4055,6 +4198,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4075,6 +4219,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4107,6 +4252,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -4132,6 +4278,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -4144,6 +4291,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.Account.Builder getAccountBuilder() {
         return getAccountFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4164,6 +4312,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Account.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4202,6 +4351,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.Property.Builder,
               com.google.analytics.admin.v1alpha.PropertyOrBuilder>
           propertyBuilder_;
+
       /**
        *
        *
@@ -4217,6 +4367,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasProperty() {
         return resourceCase_ == 2;
       }
+
       /**
        *
        *
@@ -4242,6 +4393,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Property.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4264,6 +4416,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4284,6 +4437,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4316,6 +4470,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4341,6 +4496,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -4353,6 +4509,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.Property.Builder getPropertyBuilder() {
         return getPropertyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4373,6 +4530,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Property.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4411,6 +4569,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.FirebaseLink.Builder,
               com.google.analytics.admin.v1alpha.FirebaseLinkOrBuilder>
           firebaseLinkBuilder_;
+
       /**
        *
        *
@@ -4426,6 +4585,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasFirebaseLink() {
         return resourceCase_ == 6;
       }
+
       /**
        *
        *
@@ -4451,6 +4611,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4473,6 +4634,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4493,6 +4655,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4526,6 +4689,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -4551,6 +4715,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -4563,6 +4728,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.FirebaseLink.Builder getFirebaseLinkBuilder() {
         return getFirebaseLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4583,6 +4749,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.FirebaseLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4621,6 +4788,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.GoogleAdsLink.Builder,
               com.google.analytics.admin.v1alpha.GoogleAdsLinkOrBuilder>
           googleAdsLinkBuilder_;
+
       /**
        *
        *
@@ -4636,6 +4804,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasGoogleAdsLink() {
         return resourceCase_ == 7;
       }
+
       /**
        *
        *
@@ -4661,6 +4830,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.GoogleAdsLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4683,6 +4853,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -4703,6 +4874,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -4736,6 +4908,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -4761,6 +4934,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -4773,6 +4947,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.GoogleAdsLink.Builder getGoogleAdsLinkBuilder() {
         return getGoogleAdsLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4793,6 +4968,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.GoogleAdsLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4831,6 +5007,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.GoogleSignalsSettings.Builder,
               com.google.analytics.admin.v1alpha.GoogleSignalsSettingsOrBuilder>
           googleSignalsSettingsBuilder_;
+
       /**
        *
        *
@@ -4847,6 +5024,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasGoogleSignalsSettings() {
         return resourceCase_ == 8;
       }
+
       /**
        *
        *
@@ -4873,6 +5051,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4897,6 +5076,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 8;
         return this;
       }
+
       /**
        *
        *
@@ -4918,6 +5098,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 8;
         return this;
       }
+
       /**
        *
        *
@@ -4954,6 +5135,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 8;
         return this;
       }
+
       /**
        *
        *
@@ -4980,6 +5162,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -4994,6 +5177,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getGoogleSignalsSettingsBuilder() {
         return getGoogleSignalsSettingsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5016,6 +5200,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.GoogleSignalsSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5056,6 +5241,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink.Builder,
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkOrBuilder>
           displayVideo360AdvertiserLinkBuilder_;
+
       /**
        *
        *
@@ -5074,6 +5260,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasDisplayVideo360AdvertiserLink() {
         return resourceCase_ == 9;
       }
+
       /**
        *
        *
@@ -5105,6 +5292,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5131,6 +5319,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -5155,6 +5344,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -5194,6 +5384,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -5222,6 +5413,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -5238,6 +5430,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getDisplayVideo360AdvertiserLinkBuilder() {
         return getDisplayVideo360AdvertiserLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5263,6 +5456,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5306,6 +5500,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposal.Builder,
               com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLinkProposalOrBuilder>
           displayVideo360AdvertiserLinkProposalBuilder_;
+
       /**
        *
        *
@@ -5324,6 +5519,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasDisplayVideo360AdvertiserLinkProposal() {
         return resourceCase_ == 10;
       }
+
       /**
        *
        *
@@ -5356,6 +5552,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5382,6 +5579,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -5406,6 +5604,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -5445,6 +5644,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -5473,6 +5673,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -5489,6 +5690,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getDisplayVideo360AdvertiserLinkProposalBuilder() {
         return getDisplayVideo360AdvertiserLinkProposalFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5515,6 +5717,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5560,6 +5763,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.ConversionEvent.Builder,
               com.google.analytics.admin.v1alpha.ConversionEventOrBuilder>
           conversionEventBuilder_;
+
       /**
        *
        *
@@ -5575,6 +5779,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasConversionEvent() {
         return resourceCase_ == 11;
       }
+
       /**
        *
        *
@@ -5600,6 +5805,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5622,6 +5828,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 11;
         return this;
       }
+
       /**
        *
        *
@@ -5642,6 +5849,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 11;
         return this;
       }
+
       /**
        *
        *
@@ -5676,6 +5884,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 11;
         return this;
       }
+
       /**
        *
        *
@@ -5701,6 +5910,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -5714,6 +5924,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getConversionEventBuilder() {
         return getConversionEventFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5735,6 +5946,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ConversionEvent.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5773,6 +5985,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.Builder,
               com.google.analytics.admin.v1alpha.MeasurementProtocolSecretOrBuilder>
           measurementProtocolSecretBuilder_;
+
       /**
        *
        *
@@ -5790,6 +6003,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasMeasurementProtocolSecret() {
         return resourceCase_ == 12;
       }
+
       /**
        *
        *
@@ -5818,6 +6032,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5843,6 +6058,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 12;
         return this;
       }
+
       /**
        *
        *
@@ -5865,6 +6081,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 12;
         return this;
       }
+
       /**
        *
        *
@@ -5902,6 +6119,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 12;
         return this;
       }
+
       /**
        *
        *
@@ -5929,6 +6147,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -5944,6 +6163,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getMeasurementProtocolSecretBuilder() {
         return getMeasurementProtocolSecretFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5967,6 +6187,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.MeasurementProtocolSecret.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6008,6 +6229,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.CustomDimension.Builder,
               com.google.analytics.admin.v1alpha.CustomDimensionOrBuilder>
           customDimensionBuilder_;
+
       /**
        *
        *
@@ -6023,6 +6245,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasCustomDimension() {
         return resourceCase_ == 13;
       }
+
       /**
        *
        *
@@ -6048,6 +6271,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6070,6 +6294,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 13;
         return this;
       }
+
       /**
        *
        *
@@ -6090,6 +6315,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 13;
         return this;
       }
+
       /**
        *
        *
@@ -6124,6 +6350,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 13;
         return this;
       }
+
       /**
        *
        *
@@ -6149,6 +6376,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -6162,6 +6390,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getCustomDimensionBuilder() {
         return getCustomDimensionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6183,6 +6412,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CustomDimension.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6221,6 +6451,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.CustomMetric.Builder,
               com.google.analytics.admin.v1alpha.CustomMetricOrBuilder>
           customMetricBuilder_;
+
       /**
        *
        *
@@ -6236,6 +6467,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasCustomMetric() {
         return resourceCase_ == 14;
       }
+
       /**
        *
        *
@@ -6261,6 +6493,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6283,6 +6516,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 14;
         return this;
       }
+
       /**
        *
        *
@@ -6303,6 +6537,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 14;
         return this;
       }
+
       /**
        *
        *
@@ -6336,6 +6571,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 14;
         return this;
       }
+
       /**
        *
        *
@@ -6361,6 +6597,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -6373,6 +6610,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.CustomMetric.Builder getCustomMetricBuilder() {
         return getCustomMetricFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6393,6 +6631,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CustomMetric.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6431,6 +6670,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.DataRetentionSettings.Builder,
               com.google.analytics.admin.v1alpha.DataRetentionSettingsOrBuilder>
           dataRetentionSettingsBuilder_;
+
       /**
        *
        *
@@ -6447,6 +6687,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasDataRetentionSettings() {
         return resourceCase_ == 15;
       }
+
       /**
        *
        *
@@ -6473,6 +6714,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6497,6 +6739,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 15;
         return this;
       }
+
       /**
        *
        *
@@ -6518,6 +6761,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 15;
         return this;
       }
+
       /**
        *
        *
@@ -6554,6 +6798,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 15;
         return this;
       }
+
       /**
        *
        *
@@ -6580,6 +6825,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -6594,6 +6840,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getDataRetentionSettingsBuilder() {
         return getDataRetentionSettingsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6616,6 +6863,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataRetentionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6656,6 +6904,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.SearchAds360Link.Builder,
               com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>
           searchAds360LinkBuilder_;
+
       /**
        *
        *
@@ -6671,6 +6920,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasSearchAds360Link() {
         return resourceCase_ == 16;
       }
+
       /**
        *
        *
@@ -6696,6 +6946,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6719,6 +6970,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 16;
         return this;
       }
+
       /**
        *
        *
@@ -6739,6 +6991,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 16;
         return this;
       }
+
       /**
        *
        *
@@ -6773,6 +7026,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 16;
         return this;
       }
+
       /**
        *
        *
@@ -6798,6 +7052,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -6811,6 +7066,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getSearchAds360LinkBuilder() {
         return getSearchAds360LinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6832,6 +7088,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6870,6 +7127,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.DataStream.Builder,
               com.google.analytics.admin.v1alpha.DataStreamOrBuilder>
           dataStreamBuilder_;
+
       /**
        *
        *
@@ -6885,6 +7143,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasDataStream() {
         return resourceCase_ == 18;
       }
+
       /**
        *
        *
@@ -6910,6 +7169,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6932,6 +7192,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 18;
         return this;
       }
+
       /**
        *
        *
@@ -6952,6 +7213,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 18;
         return this;
       }
+
       /**
        *
        *
@@ -6984,6 +7246,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 18;
         return this;
       }
+
       /**
        *
        *
@@ -7009,6 +7272,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -7021,6 +7285,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.DataStream.Builder getDataStreamBuilder() {
         return getDataStreamFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7041,6 +7306,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataStream.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7079,6 +7345,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.AttributionSettings.Builder,
               com.google.analytics.admin.v1alpha.AttributionSettingsOrBuilder>
           attributionSettingsBuilder_;
+
       /**
        *
        *
@@ -7094,6 +7361,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasAttributionSettings() {
         return resourceCase_ == 20;
       }
+
       /**
        *
        *
@@ -7119,6 +7387,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7142,6 +7411,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 20;
         return this;
       }
+
       /**
        *
        *
@@ -7162,6 +7432,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 20;
         return this;
       }
+
       /**
        *
        *
@@ -7196,6 +7467,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 20;
         return this;
       }
+
       /**
        *
        *
@@ -7221,6 +7493,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -7234,6 +7507,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getAttributionSettingsBuilder() {
         return getAttributionSettingsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7255,6 +7529,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.AttributionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7293,6 +7568,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.ExpandedDataSet.Builder,
               com.google.analytics.admin.v1alpha.ExpandedDataSetOrBuilder>
           expandedDataSetBuilder_;
+
       /**
        *
        *
@@ -7308,6 +7584,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasExpandedDataSet() {
         return resourceCase_ == 21;
       }
+
       /**
        *
        *
@@ -7333,6 +7610,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7355,6 +7633,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 21;
         return this;
       }
+
       /**
        *
        *
@@ -7375,6 +7654,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 21;
         return this;
       }
+
       /**
        *
        *
@@ -7409,6 +7689,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 21;
         return this;
       }
+
       /**
        *
        *
@@ -7434,6 +7715,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -7447,6 +7729,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getExpandedDataSetBuilder() {
         return getExpandedDataSetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7468,6 +7751,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ExpandedDataSet.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7506,6 +7790,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.ChannelGroup.Builder,
               com.google.analytics.admin.v1alpha.ChannelGroupOrBuilder>
           channelGroupBuilder_;
+
       /**
        *
        *
@@ -7521,6 +7806,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasChannelGroup() {
         return resourceCase_ == 22;
       }
+
       /**
        *
        *
@@ -7546,6 +7832,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7568,6 +7855,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 22;
         return this;
       }
+
       /**
        *
        *
@@ -7588,6 +7876,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 22;
         return this;
       }
+
       /**
        *
        *
@@ -7621,6 +7910,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 22;
         return this;
       }
+
       /**
        *
        *
@@ -7646,6 +7936,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -7658,6 +7949,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.ChannelGroup.Builder getChannelGroupBuilder() {
         return getChannelGroupFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7678,6 +7970,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ChannelGroup.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7716,6 +8009,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.BigQueryLink.Builder,
               com.google.analytics.admin.v1alpha.BigQueryLinkOrBuilder>
           bigqueryLinkBuilder_;
+
       /**
        *
        *
@@ -7731,6 +8025,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasBigqueryLink() {
         return resourceCase_ == 23;
       }
+
       /**
        *
        *
@@ -7756,6 +8051,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7778,6 +8074,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 23;
         return this;
       }
+
       /**
        *
        *
@@ -7798,6 +8095,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 23;
         return this;
       }
+
       /**
        *
        *
@@ -7831,6 +8129,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 23;
         return this;
       }
+
       /**
        *
        *
@@ -7856,6 +8155,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -7868,6 +8168,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.BigQueryLink.Builder getBigqueryLinkBuilder() {
         return getBigqueryLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7888,6 +8189,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.BigQueryLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7926,6 +8228,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.Builder,
               com.google.analytics.admin.v1alpha.EnhancedMeasurementSettingsOrBuilder>
           enhancedMeasurementSettingsBuilder_;
+
       /**
        *
        *
@@ -7943,6 +8246,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasEnhancedMeasurementSettings() {
         return resourceCase_ == 24;
       }
+
       /**
        *
        *
@@ -7973,6 +8277,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7998,6 +8303,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         return this;
       }
+
       /**
        *
        *
@@ -8020,6 +8326,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         return this;
       }
+
       /**
        *
        *
@@ -8057,6 +8364,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         return this;
       }
+
       /**
        *
        *
@@ -8084,6 +8392,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -8099,6 +8408,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getEnhancedMeasurementSettingsBuilder() {
         return getEnhancedMeasurementSettingsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8123,6 +8433,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8164,6 +8475,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.DataRedactionSettings.Builder,
               com.google.analytics.admin.v1alpha.DataRedactionSettingsOrBuilder>
           dataRedactionSettingsBuilder_;
+
       /**
        *
        *
@@ -8180,6 +8492,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasDataRedactionSettings() {
         return resourceCase_ == 25;
       }
+
       /**
        *
        *
@@ -8206,6 +8519,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8230,6 +8544,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 25;
         return this;
       }
+
       /**
        *
        *
@@ -8251,6 +8566,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 25;
         return this;
       }
+
       /**
        *
        *
@@ -8287,6 +8603,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 25;
         return this;
       }
+
       /**
        *
        *
@@ -8313,6 +8630,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -8327,6 +8645,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getDataRedactionSettingsBuilder() {
         return getDataRedactionSettingsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8349,6 +8668,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.DataRedactionSettings.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8389,6 +8709,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder,
               com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder>
           skadnetworkConversionValueSchemaBuilder_;
+
       /**
        *
        *
@@ -8407,6 +8728,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasSkadnetworkConversionValueSchema() {
         return resourceCase_ == 26;
       }
+
       /**
        *
        *
@@ -8438,6 +8760,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8464,6 +8787,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 26;
         return this;
       }
+
       /**
        *
        *
@@ -8488,6 +8812,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 26;
         return this;
       }
+
       /**
        *
        *
@@ -8527,6 +8852,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 26;
         return this;
       }
+
       /**
        *
        *
@@ -8555,6 +8881,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -8571,6 +8898,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getSkadnetworkConversionValueSchemaBuilder() {
         return getSkadnetworkConversionValueSchemaFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8596,6 +8924,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8639,6 +8968,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.AdSenseLink.Builder,
               com.google.analytics.admin.v1alpha.AdSenseLinkOrBuilder>
           adsenseLinkBuilder_;
+
       /**
        *
        *
@@ -8654,6 +8984,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasAdsenseLink() {
         return resourceCase_ == 27;
       }
+
       /**
        *
        *
@@ -8679,6 +9010,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8701,6 +9033,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 27;
         return this;
       }
+
       /**
        *
        *
@@ -8721,6 +9054,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 27;
         return this;
       }
+
       /**
        *
        *
@@ -8753,6 +9087,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 27;
         return this;
       }
+
       /**
        *
        *
@@ -8778,6 +9113,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -8790,6 +9126,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.AdSenseLink.Builder getAdsenseLinkBuilder() {
         return getAdsenseLinkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8810,6 +9147,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.AdSenseLink.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8848,6 +9186,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.Audience.Builder,
               com.google.analytics.admin.v1alpha.AudienceOrBuilder>
           audienceBuilder_;
+
       /**
        *
        *
@@ -8863,6 +9202,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasAudience() {
         return resourceCase_ == 28;
       }
+
       /**
        *
        *
@@ -8888,6 +9228,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -8910,6 +9251,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 28;
         return this;
       }
+
       /**
        *
        *
@@ -8930,6 +9272,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 28;
         return this;
       }
+
       /**
        *
        *
@@ -8962,6 +9305,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 28;
         return this;
       }
+
       /**
        *
        *
@@ -8987,6 +9331,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -8999,6 +9344,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.Audience.Builder getAudienceBuilder() {
         return getAudienceFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9019,6 +9365,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.Audience.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9057,6 +9404,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.EventCreateRule.Builder,
               com.google.analytics.admin.v1alpha.EventCreateRuleOrBuilder>
           eventCreateRuleBuilder_;
+
       /**
        *
        *
@@ -9072,6 +9420,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasEventCreateRule() {
         return resourceCase_ == 29;
       }
+
       /**
        *
        *
@@ -9097,6 +9446,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9119,6 +9469,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 29;
         return this;
       }
+
       /**
        *
        *
@@ -9139,6 +9490,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 29;
         return this;
       }
+
       /**
        *
        *
@@ -9173,6 +9525,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 29;
         return this;
       }
+
       /**
        *
        *
@@ -9198,6 +9551,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -9211,6 +9565,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getEventCreateRuleBuilder() {
         return getEventCreateRuleFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9232,6 +9587,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.EventCreateRule.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9270,6 +9626,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.KeyEvent.Builder,
               com.google.analytics.admin.v1alpha.KeyEventOrBuilder>
           keyEventBuilder_;
+
       /**
        *
        *
@@ -9285,6 +9642,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasKeyEvent() {
         return resourceCase_ == 30;
       }
+
       /**
        *
        *
@@ -9310,6 +9668,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9332,6 +9691,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 30;
         return this;
       }
+
       /**
        *
        *
@@ -9352,6 +9712,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 30;
         return this;
       }
+
       /**
        *
        *
@@ -9384,6 +9745,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 30;
         return this;
       }
+
       /**
        *
        *
@@ -9409,6 +9771,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -9421,6 +9784,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public com.google.analytics.admin.v1alpha.KeyEvent.Builder getKeyEventBuilder() {
         return getKeyEventFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9441,6 +9805,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.KeyEvent.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9479,6 +9844,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.CalculatedMetric.Builder,
               com.google.analytics.admin.v1alpha.CalculatedMetricOrBuilder>
           calculatedMetricBuilder_;
+
       /**
        *
        *
@@ -9494,6 +9860,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasCalculatedMetric() {
         return resourceCase_ == 31;
       }
+
       /**
        *
        *
@@ -9519,6 +9886,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CalculatedMetric.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9542,6 +9910,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 31;
         return this;
       }
+
       /**
        *
        *
@@ -9562,6 +9931,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 31;
         return this;
       }
+
       /**
        *
        *
@@ -9596,6 +9966,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 31;
         return this;
       }
+
       /**
        *
        *
@@ -9621,6 +9992,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -9634,6 +10006,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getCalculatedMetricBuilder() {
         return getCalculatedMetricFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9655,6 +10028,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.CalculatedMetric.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9693,6 +10067,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
               com.google.analytics.admin.v1alpha.ReportingDataAnnotation.Builder,
               com.google.analytics.admin.v1alpha.ReportingDataAnnotationOrBuilder>
           reportingDataAnnotationBuilder_;
+
       /**
        *
        *
@@ -9710,6 +10085,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       public boolean hasReportingDataAnnotation() {
         return resourceCase_ == 32;
       }
+
       /**
        *
        *
@@ -9738,6 +10114,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9763,6 +10140,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 32;
         return this;
       }
+
       /**
        *
        *
@@ -9785,6 +10163,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 32;
         return this;
       }
+
       /**
        *
        *
@@ -9822,6 +10201,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 32;
         return this;
       }
+
       /**
        *
        *
@@ -9849,6 +10229,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         return this;
       }
+
       /**
        *
        *
@@ -9864,6 +10245,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           getReportingDataAnnotationBuilder() {
         return getReportingDataAnnotationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -9887,6 +10269,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           return com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -9997,6 +10380,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -10020,6 +10404,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -10046,6 +10431,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
 
   public static final int ACTION_FIELD_NUMBER = 2;
   private int action_ = 0;
+
   /**
    *
    *
@@ -10061,6 +10447,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   public int getActionValue() {
     return action_;
   }
+
   /**
    *
    *
@@ -10082,6 +10469,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   public static final int RESOURCE_BEFORE_CHANGE_FIELD_NUMBER = 3;
   private com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource
       resourceBeforeChange_;
+
   /**
    *
    *
@@ -10100,6 +10488,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   public boolean hasResourceBeforeChange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -10122,6 +10511,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             .getDefaultInstance()
         : resourceBeforeChange_;
   }
+
   /**
    *
    *
@@ -10146,6 +10536,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   public static final int RESOURCE_AFTER_CHANGE_FIELD_NUMBER = 4;
   private com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource
       resourceAfterChange_;
+
   /**
    *
    *
@@ -10164,6 +10555,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
   public boolean hasResourceAfterChange() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -10186,6 +10578,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             .getDefaultInstance()
         : resourceAfterChange_;
   }
+
   /**
    *
    *
@@ -10407,6 +10800,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -10660,6 +11054,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -10682,6 +11077,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10704,6 +11100,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10725,6 +11122,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10742,6 +11140,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10766,6 +11165,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     }
 
     private int action_ = 0;
+
     /**
      *
      *
@@ -10781,6 +11181,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public int getActionValue() {
       return action_;
     }
+
     /**
      *
      *
@@ -10799,6 +11200,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10816,6 +11218,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           com.google.analytics.admin.v1alpha.ActionType.forNumber(action_);
       return result == null ? com.google.analytics.admin.v1alpha.ActionType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -10837,6 +11240,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10862,6 +11266,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.Builder,
             com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResourceOrBuilder>
         resourceBeforeChangeBuilder_;
+
     /**
      *
      *
@@ -10879,6 +11284,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasResourceBeforeChange() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -10904,6 +11310,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return resourceBeforeChangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10930,6 +11337,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10954,6 +11362,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10987,6 +11396,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -11009,6 +11419,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11027,6 +11438,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResourceBeforeChangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11050,6 +11462,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             : resourceBeforeChange_;
       }
     }
+
     /**
      *
      *
@@ -11088,6 +11501,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.Builder,
             com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResourceOrBuilder>
         resourceAfterChangeBuilder_;
+
     /**
      *
      *
@@ -11105,6 +11519,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     public boolean hasResourceAfterChange() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -11130,6 +11545,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         return resourceAfterChangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11156,6 +11572,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11180,6 +11597,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11213,6 +11631,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -11235,6 +11654,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11253,6 +11673,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       onChanged();
       return getResourceAfterChangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11276,6 +11697,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             : resourceAfterChange_;
       }
     }
+
     /**
      *
      *

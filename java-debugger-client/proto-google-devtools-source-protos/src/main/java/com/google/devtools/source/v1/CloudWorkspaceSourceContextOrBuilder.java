@@ -36,6 +36,7 @@ public interface CloudWorkspaceSourceContextOrBuilder
    * @return Whether the workspaceId field is set.
    */
   boolean hasWorkspaceId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CloudWorkspaceSourceContextOrBuilder
    * @return The workspaceId.
    */
   com.google.devtools.source.v1.CloudWorkspaceId getWorkspaceId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CloudWorkspaceSourceContextOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
+
   /**
    *
    *

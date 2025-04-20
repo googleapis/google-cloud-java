@@ -40,6 +40,7 @@ public interface EnableSecretVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

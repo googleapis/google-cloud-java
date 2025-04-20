@@ -312,6 +312,19 @@ public final class UserEventServiceGrpc {
     return UserEventServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static UserEventServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<UserEventServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public UserEventServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new UserEventServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return UserEventServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -607,6 +620,125 @@ public final class UserEventServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UserEventService.
+   *
+   * <pre>
+   * Service for ingesting end user actions on the customer website.
+   * </pre>
+   */
+  public static final class UserEventServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UserEventServiceBlockingV2Stub> {
+    private UserEventServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UserEventServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UserEventServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.UserEvent writeUserEvent(
+        com.google.cloud.retail.v2beta.WriteUserEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes a single user event from the browser. This uses a GET request to
+     * due to browser restriction of POST-ing to a 3rd party domain.
+     * This method is used only by the Retail API JavaScript pixel and Google Tag
+     * Manager. Users should not call this method directly.
+     * </pre>
+     */
+    public com.google.api.HttpBody collectUserEvent(
+        com.google.cloud.retail.v2beta.CollectUserEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCollectUserEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes permanently all user events specified by the filter provided.
+     * Depending on the number of events specified by the filter, this operation
+     * could take hours or days to complete. To test a filter, use the list
+     * command first.
+     * </pre>
+     */
+    public com.google.longrunning.Operation purgeUserEvents(
+        com.google.cloud.retail.v2beta.PurgeUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPurgeUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk import of User events. Request processing might be
+     * synchronous. Events that already exist are skipped.
+     * Use this method for backfilling historical user events.
+     * `Operation.response` is of type `ImportResponse`. Note that it is
+     * possible for a subset of the items to be successfully inserted.
+     * `Operation.metadata` is of type `ImportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importUserEvents(
+        com.google.cloud.retail.v2beta.ImportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports user events.
+     * `Operation.response` is of type `ExportResponse`.
+     * `Operation.metadata` is of type `ExportMetadata`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportUserEvents(
+        com.google.cloud.retail.v2beta.ExportUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportUserEventsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a user-event rejoin operation with latest product catalog. Events
+     * are not annotated with detailed product information for products that are
+     * missing from the catalog when the user event is ingested. These
+     * events are stored as unjoined events with limited usage on training and
+     * serving. You can use this method to start a join operation on specified
+     * events with the latest version of product catalog. You can also use this
+     * method to correct events joined with the wrong product catalog. A rejoin
+     * operation can take hours or days to complete.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rejoinUserEvents(
+        com.google.cloud.retail.v2beta.RejoinUserEventsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRejoinUserEventsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UserEventService.
    *
    * <pre>
    * Service for ingesting end user actions on the customer website.

@@ -36,6 +36,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    * @return Whether the block field is set.
    */
   boolean hasBlock();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    * @return The block.
    */
   java.lang.String getBlock();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ReservationBlockPhysicalTopologyOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *

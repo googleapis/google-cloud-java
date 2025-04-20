@@ -34,6 +34,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.DataSharingSettings)
     DataSharingSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataSharingSettings.newBuilder() to construct.
   private DataSharingSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_SUPPORT_ENABLED_FIELD_NUMBER = 2;
   private boolean sharingWithGoogleSupportEnabled_ = false;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_ASSIGNED_SALES_ENABLED_FIELD_NUMBER = 3;
   private boolean sharingWithGoogleAssignedSalesEnabled_ = false;
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_ANY_SALES_ENABLED_FIELD_NUMBER = 4;
   private boolean sharingWithGoogleAnySalesEnabled_ = false;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_GOOGLE_PRODUCTS_ENABLED_FIELD_NUMBER = 5;
   private boolean sharingWithGoogleProductsEnabled_ = false;
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
 
   public static final int SHARING_WITH_OTHERS_ENABLED_FIELD_NUMBER = 6;
   private boolean sharingWithOthersEnabled_ = false;
+
   /**
    *
    *
@@ -461,6 +469,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -711,6 +720,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -735,6 +745,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +770,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -782,6 +794,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +814,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +841,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleSupportEnabled_;
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleSupportEnabled() {
       return sharingWithGoogleSupportEnabled_;
     }
+
     /**
      *
      *
@@ -871,6 +887,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +912,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleAssignedSalesEnabled_;
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleAssignedSalesEnabled() {
       return sharingWithGoogleAssignedSalesEnabled_;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleAnySalesEnabled_;
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleAnySalesEnabled() {
       return sharingWithGoogleAnySalesEnabled_;
     }
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithGoogleProductsEnabled_;
+
     /**
      *
      *
@@ -1055,6 +1079,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithGoogleProductsEnabled() {
       return sharingWithGoogleProductsEnabled_;
     }
+
     /**
      *
      *
@@ -1077,6 +1102,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1125,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     }
 
     private boolean sharingWithOthersEnabled_;
+
     /**
      *
      *
@@ -1121,6 +1148,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
     public boolean getSharingWithOthersEnabled() {
       return sharingWithOthersEnabled_;
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class DataSharingSettings extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

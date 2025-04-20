@@ -47,6 +47,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The userEvent.
    */
   java.lang.String getUserEvent();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return Whether the ets field is set.
    */
   boolean hasEts();
+
   /**
    *
    *

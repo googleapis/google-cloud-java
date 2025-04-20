@@ -38,6 +38,7 @@ public interface ExportEngineConfigMetadataRequestOrBuilder
    * @return The engineConfig.
    */
   java.lang.String getEngineConfig();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ExportEngineConfigMetadataRequestOrBuilder
    * @return Whether the structuredMetadataDestination field is set.
    */
   boolean hasStructuredMetadataDestination();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportEngineConfigMetadataRequestOrBuilder
    * @return The structuredMetadataDestination.
    */
   com.google.cloud.financialservices.v1.BigQueryDestination getStructuredMetadataDestination();
+
   /**
    *
    *

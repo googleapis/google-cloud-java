@@ -275,6 +275,19 @@ public final class UserServiceGrpc {
     return UserServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static UserServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<UserServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<UserServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public UserServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new UserServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return UserServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -499,6 +512,94 @@ public final class UserServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service UserService.
+   *
+   * <pre>
+   * Service to support user API.
+   * </pre>
+   */
+  public static final class UserServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<UserServiceBlockingV2Stub> {
+    private UserServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected UserServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new UserServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a Merchant Center account user.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.User getUser(
+        com.google.shopping.merchant.accounts.v1beta.GetUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Merchant Center account user. Executing this method requires
+     * admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.User createUser(
+        com.google.shopping.merchant.accounts.v1beta.CreateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Merchant Center account user. Executing this method requires
+     * admin access.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUser(
+        com.google.shopping.merchant.accounts.v1beta.DeleteUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Merchant Center account user. Executing this method requires
+     * admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.User updateUser(
+        com.google.shopping.merchant.accounts.v1beta.UpdateUserRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateUserMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all users of a Merchant Center account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1beta.ListUsersResponse listUsers(
+        com.google.shopping.merchant.accounts.v1beta.ListUsersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUsersMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service UserService.
    *
    * <pre>
    * Service to support user API.

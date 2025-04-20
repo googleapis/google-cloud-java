@@ -34,6 +34,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.GcpCredentials)
     GcpCredentialsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GcpCredentials.newBuilder() to construct.
   private GcpCredentials(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList serviceAccountIdTokens_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getServiceAccountIdTokensList() {
     return serviceAccountIdTokens_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   public int getServiceAccountIdTokensCount() {
     return serviceAccountIdTokens_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getServiceAccountIdTokens(int index) {
     return serviceAccountIdTokens_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +302,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -498,6 +504,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       serviceAccountIdTokens_.makeImmutable();
       return serviceAccountIdTokens_;
     }
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     public int getServiceAccountIdTokensCount() {
       return serviceAccountIdTokens_.size();
     }
+
     /**
      *
      *
@@ -542,6 +551,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getServiceAccountIdTokens(int index) {
       return serviceAccountIdTokens_.get(index);
     }
+
     /**
      *
      *
@@ -557,6 +567,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getServiceAccountIdTokensBytes(int index) {
       return serviceAccountIdTokens_.getByteString(index);
     }
+
     /**
      *
      *
@@ -580,6 +591,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -602,6 +614,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -621,6 +634,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +653,7 @@ public final class GcpCredentials extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

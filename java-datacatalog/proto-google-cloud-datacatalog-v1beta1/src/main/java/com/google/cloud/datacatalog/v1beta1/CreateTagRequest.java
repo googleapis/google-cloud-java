@@ -34,6 +34,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.datacatalog.v1beta1.CreateTagRequest)
     CreateTagRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateTagRequest.newBuilder() to construct.
   private CreateTagRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int TAG_FIELD_NUMBER = 2;
   private com.google.cloud.datacatalog.v1beta1.Tag tag_;
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasTag() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
   public com.google.cloud.datacatalog.v1beta1.Tag getTag() {
     return tag_ == null ? com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance() : tag_;
   }
+
   /**
    *
    *
@@ -357,6 +363,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -602,6 +610,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -633,6 +642,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
             com.google.cloud.datacatalog.v1beta1.Tag.Builder,
             com.google.cloud.datacatalog.v1beta1.TagOrBuilder>
         tagBuilder_;
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasTag() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -763,6 +777,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         return tagBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -787,6 +802,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +893,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTagFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class CreateTagRequest extends com.google.protobuf.GeneratedMessage
         return tag_ == null ? com.google.cloud.datacatalog.v1beta1.Tag.getDefaultInstance() : tag_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datapolicies.v1.DataPolicy)
     DataPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataPolicy.newBuilder() to construct.
   private DataPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -119,6 +120,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_POLICY_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATA_POLICY_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -130,6 +132,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
      * <code>COLUMN_LEVEL_SECURITY_POLICY = 3;</code>
      */
     public static final int COLUMN_LEVEL_SECURITY_POLICY_VALUE = 3;
+
     /**
      *
      *
@@ -242,6 +245,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     private MatchingLabelCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -288,6 +292,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     private PolicyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -319,6 +324,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int POLICY_TAG_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -334,6 +340,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPolicyTag() {
     return matchingLabelCase_ == 4;
   }
+
   /**
    *
    *
@@ -362,6 +369,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -392,6 +400,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATA_MASKING_POLICY_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -407,6 +416,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDataMaskingPolicy() {
     return policyCase_ == 5;
   }
+
   /**
    *
    *
@@ -425,6 +435,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -447,6 +458,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -471,6 +483,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -498,6 +511,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_POLICY_TYPE_FIELD_NUMBER = 2;
   private int dataPolicyType_ = 0;
+
   /**
    *
    *
@@ -514,6 +528,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
   public int getDataPolicyTypeValue() {
     return dataPolicyType_;
   }
+
   /**
    *
    *
@@ -540,6 +555,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object dataPolicyId_ = "";
+
   /**
    *
    *
@@ -565,6 +581,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -820,6 +837,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1131,6 +1149,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPolicyTag() {
       return matchingLabelCase_ == 4;
     }
+
     /**
      *
      *
@@ -1160,6 +1179,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1209,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1211,6 +1232,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1231,6 +1253,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1283,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.Builder,
             com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicyOrBuilder>
         dataMaskingPolicyBuilder_;
+
     /**
      *
      *
@@ -1276,6 +1300,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDataMaskingPolicy() {
       return policyCase_ == 5;
     }
+
     /**
      *
      *
@@ -1302,6 +1327,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1326,6 +1352,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       policyCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1374,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       policyCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1411,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       policyCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1438,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1423,6 +1453,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         getDataMaskingPolicyBuilder() {
       return getDataMaskingPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1445,6 +1476,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1481,6 +1513,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1504,6 +1537,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1527,6 +1561,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1584,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1603,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1592,6 +1629,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataPolicyType_ = 0;
+
     /**
      *
      *
@@ -1608,6 +1646,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     public int getDataPolicyTypeValue() {
       return dataPolicyType_;
     }
+
     /**
      *
      *
@@ -1627,6 +1666,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1648,6 +1688,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.datapolicies.v1.DataPolicy.DataPolicyType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1671,6 +1712,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1733,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object dataPolicyId_ = "";
+
     /**
      *
      *
@@ -1715,6 +1758,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1739,6 +1783,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1762,6 +1807,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1827,7 @@ public final class DataPolicy extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

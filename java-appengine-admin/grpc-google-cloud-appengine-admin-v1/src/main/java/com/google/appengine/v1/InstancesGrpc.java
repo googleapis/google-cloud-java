@@ -214,6 +214,19 @@ public final class InstancesGrpc {
     return InstancesStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static InstancesBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<InstancesBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<InstancesBlockingV2Stub>() {
+          @java.lang.Override
+          public InstancesBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new InstancesBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return InstancesBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -443,6 +456,95 @@ public final class InstancesGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Instances.
+   *
+   * <pre>
+   * Manages instances of a version.
+   * </pre>
+   */
+  public static final class InstancesBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<InstancesBlockingV2Stub> {
+    private InstancesBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected InstancesBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new InstancesBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the instances of a version.
+     * Tip: To aggregate details about instances over time, see the
+     * [Stackdriver Monitoring API](https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list).
+     * </pre>
+     */
+    public com.google.appengine.v1.ListInstancesResponse listInstances(
+        com.google.appengine.v1.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets instance information.
+     * </pre>
+     */
+    public com.google.appengine.v1.Instance getInstance(
+        com.google.appengine.v1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops a running instance.
+     * The instance might be automatically recreated based on the scaling settings
+     * of the version. For more information, see "How Instances are Managed"
+     * ([standard environment](https://cloud.google.com/appengine/docs/standard/python/how-instances-are-managed) |
+     * [flexible environment](https://cloud.google.com/appengine/docs/flexible/python/how-instances-are-managed)).
+     * To ensure that instances are not re-created and avoid getting billed, you
+     * can stop all instances within the target version by changing the serving
+     * status of the version to `STOPPED` with the
+     * [`apps.services.versions.patch`](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions/patch)
+     * method.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.appengine.v1.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables debugging on a VM instance. This allows you to use the SSH
+     * command to connect to the virtual machine where the instance lives.
+     * While in "debug mode", the instance continues to serve live traffic.
+     * You should delete the instance when you are done debugging and then
+     * allow the system to take over and determine if another instance
+     * should be started.
+     * Only applicable for instances in App Engine flexible environment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation debugInstance(
+        com.google.appengine.v1.DebugInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDebugInstanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Instances.
    *
    * <pre>
    * Manages instances of a version.

@@ -39,6 +39,7 @@ public interface SettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SettingsOrBuilder
    * </code>
    */
   int getNotificationSettingsCount();
+
   /**
    *
    *
@@ -83,10 +85,12 @@ public interface SettingsOrBuilder
    * </code>
    */
   boolean containsNotificationSettings(java.lang.String key);
+
   /** Use {@link #getNotificationSettingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.cloud.advisorynotifications.v1.NotificationSettings>
       getNotificationSettings();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface SettingsOrBuilder
    */
   java.util.Map<java.lang.String, com.google.cloud.advisorynotifications.v1.NotificationSettings>
       getNotificationSettingsMap();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface SettingsOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.cloud.advisorynotifications.v1.NotificationSettings defaultValue);
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface SettingsOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

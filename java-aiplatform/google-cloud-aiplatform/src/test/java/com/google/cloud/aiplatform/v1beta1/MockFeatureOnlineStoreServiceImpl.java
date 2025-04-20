@@ -97,7 +97,8 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingFetchFeatureValues, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingFetchFeatureValues,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingFetchFeatureValuesResponse.class.getName(),
                           Exception.class.getName())));
@@ -132,7 +133,8 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or %s",
+                  "Unrecognized response type %s for method SearchNearestEntities, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   SearchNearestEntitiesResponse.class.getName(),
                   Exception.class.getName())));
@@ -156,7 +158,8 @@ public class MockFeatureOnlineStoreServiceImpl extends FeatureOnlineStoreService
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method FeatureViewDirectWrite, expected %s or %s",
+                          "Unrecognized response type %s for method FeatureViewDirectWrite,"
+                              + " expected %s or %s",
                           response == null ? "null" : response.getClass().getName(),
                           FeatureViewDirectWriteResponse.class.getName(),
                           Exception.class.getName())));

@@ -34,6 +34,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.StartInstancesInstanceGroupManagerRequest)
     StartInstancesInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StartInstancesInstanceGroupManagerRequest.newBuilder() to construct.
   private StartInstancesInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class StartInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       261083819;
   private com.google.cloud.compute.v1.InstanceGroupManagersStartInstancesRequest
       instanceGroupManagersStartInstancesRequestResource_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class StartInstancesInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersStartInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class StartInstancesInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersStartInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class StartInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class StartInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class StartInstancesInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public final class StartInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -573,6 +586,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -846,6 +860,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -869,6 +884,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +908,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -914,6 +931,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +950,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +982,7 @@ public final class StartInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersStartInstancesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersStartInstancesRequestOrBuilder>
         instanceGroupManagersStartInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -979,6 +999,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersStartInstancesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1003,6 +1024,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return instanceGroupManagersStartInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1050,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1108,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1130,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1148,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersStartInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1144,6 +1171,7 @@ public final class StartInstancesInstanceGroupManagerRequest
             : instanceGroupManagersStartInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1203,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1199,6 +1228,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1223,6 +1253,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1246,6 +1277,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1297,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1291,6 +1324,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1305,6 +1339,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1327,6 +1362,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1349,6 +1385,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1387,6 +1425,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1411,6 +1450,7 @@ public final class StartInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1435,6 +1475,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1500,7 @@ public final class StartInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1482,6 +1524,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1501,6 +1544,7 @@ public final class StartInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

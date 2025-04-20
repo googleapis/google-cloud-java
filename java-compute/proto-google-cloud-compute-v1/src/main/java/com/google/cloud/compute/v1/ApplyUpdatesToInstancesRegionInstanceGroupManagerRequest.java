@@ -35,6 +35,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest)
     ApplyUpdatesToInstancesRegionInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.newBuilder() to construct.
   private ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       REGION_INSTANCE_GROUP_MANAGERS_APPLY_UPDATES_REQUEST_RESOURCE_FIELD_NUMBER = 76248318;
   private com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest
       regionInstanceGroupManagersApplyUpdatesRequestResource_;
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
   public boolean hasRegionInstanceGroupManagersApplyUpdatesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
             .getDefaultInstance()
         : regionInstanceGroupManagersApplyUpdatesRequestResource_;
   }
+
   /**
    *
    *
@@ -504,6 +514,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -774,6 +785,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -797,6 +809,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -820,6 +833,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +856,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +901,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -909,6 +926,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -933,6 +951,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -956,6 +975,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +995,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1022,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1025,6 +1047,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1049,6 +1072,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1072,6 +1096,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
             com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequest.Builder,
             com.google.cloud.compute.v1.RegionInstanceGroupManagersApplyUpdatesRequestOrBuilder>
         regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -1139,6 +1166,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
     public boolean hasRegionInstanceGroupManagersApplyUpdatesRequestResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1163,6 +1191,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
         return regionInstanceGroupManagersApplyUpdatesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1217,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1275,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1297,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1315,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
       onChanged();
       return getRegionInstanceGroupManagersApplyUpdatesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1304,6 +1338,7 @@ public final class ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest
             : regionInstanceGroupManagersApplyUpdatesRequestResource_;
       }
     }
+
     /**
      *
      *

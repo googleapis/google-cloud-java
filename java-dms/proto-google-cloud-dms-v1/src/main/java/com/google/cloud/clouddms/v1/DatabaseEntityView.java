@@ -86,6 +86,7 @@ public enum DatabaseEntityView implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_VIEW_UNSPECIFIED = 0;</code>
    */
   public static final int DATABASE_ENTITY_VIEW_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -96,6 +97,7 @@ public enum DatabaseEntityView implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_VIEW_BASIC = 1;</code>
    */
   public static final int DATABASE_ENTITY_VIEW_BASIC_VALUE = 1;
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public enum DatabaseEntityView implements com.google.protobuf.ProtocolMessageEnu
    * <code>DATABASE_ENTITY_VIEW_FULL = 2;</code>
    */
   public static final int DATABASE_ENTITY_VIEW_FULL_VALUE = 2;
+
   /**
    *
    *

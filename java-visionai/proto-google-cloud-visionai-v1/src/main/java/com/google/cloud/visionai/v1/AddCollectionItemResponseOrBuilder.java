@@ -36,6 +36,7 @@ public interface AddCollectionItemResponseOrBuilder
    * @return Whether the item field is set.
    */
   boolean hasItem();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AddCollectionItemResponseOrBuilder
    * @return The item.
    */
   com.google.cloud.visionai.v1.CollectionItem getItem();
+
   /**
    *
    *

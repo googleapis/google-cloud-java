@@ -36,6 +36,7 @@ public interface ClaimOrBuilder
    * @return Whether the startIndex field is set.
    */
   boolean hasStartIndex();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ClaimOrBuilder
    * @return Whether the endIndex field is set.
    */
   boolean hasEndIndex();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ClaimOrBuilder
    * @return A list containing the factIndexes.
    */
   java.util.List<java.lang.Integer> getFactIndexesList();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ClaimOrBuilder
    * @return The count of factIndexes.
    */
   int getFactIndexesCount();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface ClaimOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *

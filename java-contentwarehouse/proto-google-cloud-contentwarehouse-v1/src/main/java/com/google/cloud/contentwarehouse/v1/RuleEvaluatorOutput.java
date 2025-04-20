@@ -33,6 +33,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.contentwarehouse.v1.RuleEvaluatorOutput)
     RuleEvaluatorOutputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuleEvaluatorOutput.newBuilder() to construct.
   private RuleEvaluatorOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Rule> triggeredRules_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getTriggeredRulesList() {
     return triggeredRules_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       getTriggeredRulesOrBuilderList() {
     return triggeredRules_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public int getTriggeredRulesCount() {
     return triggeredRules_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public com.google.cloud.contentwarehouse.v1.Rule getTriggeredRules(int index) {
     return triggeredRules_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.Rule> matchedRules_;
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.contentwarehouse.v1.Rule> getMatchedRulesList() {
     return matchedRules_;
   }
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       getMatchedRulesOrBuilderList() {
     return matchedRules_;
   }
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public int getMatchedRulesCount() {
     return matchedRules_.size();
   }
+
   /**
    *
    *
@@ -193,6 +203,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public com.google.cloud.contentwarehouse.v1.Rule getMatchedRules(int index) {
     return matchedRules_.get(index);
   }
+
   /**
    *
    *
@@ -211,6 +222,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.contentwarehouse.v1.InvalidRule> invalidRules_;
+
   /**
    *
    *
@@ -225,6 +237,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.cloud.contentwarehouse.v1.InvalidRule> getInvalidRulesList() {
     return invalidRules_;
   }
+
   /**
    *
    *
@@ -240,6 +253,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       getInvalidRulesOrBuilderList() {
     return invalidRules_;
   }
+
   /**
    *
    *
@@ -254,6 +268,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public int getInvalidRulesCount() {
     return invalidRules_.size();
   }
+
   /**
    *
    *
@@ -268,6 +283,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
   public com.google.cloud.contentwarehouse.v1.InvalidRule getInvalidRules(int index) {
     return invalidRules_.get(index);
   }
+
   /**
    *
    *
@@ -468,6 +484,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -843,6 +860,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return triggeredRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return triggeredRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -875,6 +894,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return triggeredRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1026,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1047,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1067,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1087,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1100,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     public com.google.cloud.contentwarehouse.v1.Rule.Builder getTriggeredRulesBuilder(int index) {
       return getTriggeredRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1088,6 +1118,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return triggeredRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1136,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(triggeredRules_);
       }
     }
+
     /**
      *
      *
@@ -1118,6 +1150,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getTriggeredRulesFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1131,6 +1164,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getTriggeredRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1198,6 +1232,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return matchedRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return matchedRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1230,6 +1266,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return matchedRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1252,6 +1289,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1272,6 +1310,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1333,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1316,6 +1356,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1336,6 +1377,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1398,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1376,6 +1419,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1395,6 +1439,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1459,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1426,6 +1472,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
     public com.google.cloud.contentwarehouse.v1.Rule.Builder getMatchedRulesBuilder(int index) {
       return getMatchedRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1442,6 +1489,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return matchedRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1507,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(matchedRules_);
       }
     }
+
     /**
      *
      *
@@ -1472,6 +1521,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getMatchedRulesFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1485,6 +1535,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getMatchedRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.Rule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1551,6 +1602,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return invalidRulesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1568,6 +1620,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return invalidRulesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1638,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return invalidRulesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1609,6 +1663,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1630,6 +1685,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1709,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1677,6 +1734,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1698,6 +1756,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1778,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1740,6 +1800,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1821,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1780,6 +1842,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1857,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         int index) {
       return getInvalidRulesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1812,6 +1876,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return invalidRulesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1895,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(invalidRules_);
       }
     }
+
     /**
      *
      *
@@ -1844,6 +1910,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getInvalidRulesFieldBuilder()
           .addBuilder(com.google.cloud.contentwarehouse.v1.InvalidRule.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1859,6 +1926,7 @@ public final class RuleEvaluatorOutput extends com.google.protobuf.GeneratedMess
       return getInvalidRulesFieldBuilder()
           .addBuilder(index, com.google.cloud.contentwarehouse.v1.InvalidRule.getDefaultInstance());
     }
+
     /**
      *
      *

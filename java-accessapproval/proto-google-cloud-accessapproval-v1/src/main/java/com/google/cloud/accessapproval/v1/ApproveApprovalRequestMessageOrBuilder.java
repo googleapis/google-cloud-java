@@ -36,6 +36,7 @@ public interface ApproveApprovalRequestMessageOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ApproveApprovalRequestMessageOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ApproveApprovalRequestMessageOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

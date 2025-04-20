@@ -33,6 +33,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ContentsExample)
     ContentsExampleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ContentsExample.newBuilder() to construct.
   private ContentsExample(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
      * @return Whether the content field is set.
      */
     boolean hasContent();
+
     /**
      *
      *
@@ -97,6 +99,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
      * @return The content.
      */
     com.google.cloud.aiplatform.v1beta1.Content getContent();
+
     /**
      *
      *
@@ -110,6 +113,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
      */
     com.google.cloud.aiplatform.v1beta1.ContentOrBuilder getContentOrBuilder();
   }
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent)
       ExpectedContentOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ExpectedContent.newBuilder() to construct.
     private ExpectedContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -155,6 +160,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int CONTENT_FIELD_NUMBER = 1;
     private com.google.cloud.aiplatform.v1beta1.Content content_;
+
     /**
      *
      *
@@ -172,6 +178,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
     public boolean hasContent() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -191,6 +198,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
           ? com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance()
           : content_;
     }
+
     /**
      *
      *
@@ -376,6 +384,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.aiplatform.v1beta1.Content.Builder,
               com.google.cloud.aiplatform.v1beta1.ContentOrBuilder>
           contentBuilder_;
+
       /**
        *
        *
@@ -605,6 +615,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       public boolean hasContent() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -627,6 +638,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
           return contentBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -651,6 +663,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -673,6 +686,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -702,6 +716,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -723,6 +738,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +755,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getContentFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -759,6 +776,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
               : content_;
         }
       }
+
       /**
        *
        *
@@ -858,6 +876,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.Content> contents_;
+
   /**
    *
    *
@@ -874,6 +893,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.cloud.aiplatform.v1beta1.Content> getContentsList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -891,6 +911,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       getContentsOrBuilderList() {
     return contents_;
   }
+
   /**
    *
    *
@@ -907,6 +928,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
   public int getContentsCount() {
     return contents_.size();
   }
+
   /**
    *
    *
@@ -923,6 +945,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
   public com.google.cloud.aiplatform.v1beta1.Content getContents(int index) {
     return contents_.get(index);
   }
+
   /**
    *
    *
@@ -945,6 +968,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent>
       expectedContents_;
+
   /**
    *
    *
@@ -963,6 +987,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       getExpectedContentsList() {
     return expectedContents_;
   }
+
   /**
    *
    *
@@ -982,6 +1007,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       getExpectedContentsOrBuilderList() {
     return expectedContents_;
   }
+
   /**
    *
    *
@@ -999,6 +1025,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
   public int getExpectedContentsCount() {
     return expectedContents_.size();
   }
+
   /**
    *
    *
@@ -1017,6 +1044,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       int index) {
     return expectedContents_.get(index);
   }
+
   /**
    *
    *
@@ -1208,6 +1236,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1530,6 +1559,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return contentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1549,6 +1579,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return contentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1568,6 +1599,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return contentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1593,6 +1625,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1616,6 +1649,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1675,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1701,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1689,6 +1725,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1749,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1735,6 +1773,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1757,6 +1796,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1779,6 +1819,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1794,6 +1835,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
     public com.google.cloud.aiplatform.v1beta1.Content.Builder getContentsBuilder(int index) {
       return getContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1813,6 +1855,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return contentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1833,6 +1876,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(contents_);
       }
     }
+
     /**
      *
      *
@@ -1849,6 +1893,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       return getContentsFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1865,6 +1910,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       return getContentsFieldBuilder()
           .addBuilder(index, com.google.cloud.aiplatform.v1beta1.Content.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1939,6 +1985,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return expectedContentsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1959,6 +2006,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return expectedContentsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1980,6 +2028,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return expectedContentsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2007,6 +2056,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2033,6 +2083,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2060,6 +2111,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2087,6 +2139,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2112,6 +2165,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2138,6 +2192,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2164,6 +2219,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2187,6 +2243,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2267,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2227,6 +2285,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         getExpectedContentsBuilder(int index) {
       return getExpectedContentsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2248,6 +2307,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return expectedContentsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2330,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(expectedContents_);
       }
     }
+
     /**
      *
      *
@@ -2290,6 +2351,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2311,6 +2373,7 @@ public final class ContentsExample extends com.google.protobuf.GeneratedMessageV
               com.google.cloud.aiplatform.v1beta1.ContentsExample.ExpectedContent
                   .getDefaultInstance());
     }
+
     /**
      *
      *

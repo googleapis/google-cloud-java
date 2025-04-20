@@ -39,6 +39,7 @@ public interface ArticleSuggestionModelMetadataOrBuilder
    * @return The enum numeric value on the wire for trainingModelType.
    */
   int getTrainingModelTypeValue();
+
   /**
    *
    *

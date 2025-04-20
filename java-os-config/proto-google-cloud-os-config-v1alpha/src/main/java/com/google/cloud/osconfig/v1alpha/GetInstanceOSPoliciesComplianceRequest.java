@@ -36,6 +36,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.GetInstanceOSPoliciesComplianceRequest)
     GetInstanceOSPoliciesComplianceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetInstanceOSPoliciesComplianceRequest.newBuilder() to construct.
   private GetInstanceOSPoliciesComplianceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +303,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -495,6 +499,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -527,6 +532,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -559,6 +565,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -590,6 +597,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -617,6 +625,7 @@ public final class GetInstanceOSPoliciesComplianceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

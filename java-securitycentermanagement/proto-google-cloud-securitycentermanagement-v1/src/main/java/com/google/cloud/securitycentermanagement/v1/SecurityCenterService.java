@@ -37,6 +37,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.SecurityCenterService)
     SecurityCenterServiceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityCenterService.newBuilder() to construct.
   private SecurityCenterService(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,6 +160,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>ENABLEMENT_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int ENABLEMENT_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -170,6 +172,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>INHERITED = 1;</code>
      */
     public static final int INHERITED_VALUE = 1;
+
     /**
      *
      *
@@ -180,6 +183,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>ENABLED = 2;</code>
      */
     public static final int ENABLED_VALUE = 2;
+
     /**
      *
      *
@@ -190,6 +194,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 3;</code>
      */
     public static final int DISABLED_VALUE = 3;
+
     /**
      *
      *
@@ -315,6 +320,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for intendedEnablementState.
      */
     int getIntendedEnablementStateValue();
+
     /**
      *
      *
@@ -350,6 +356,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for effectiveEnablementState.
      */
     int getEffectiveEnablementStateValue();
+
     /**
      *
      *
@@ -370,6 +377,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     com.google.cloud.securitycentermanagement.v1.SecurityCenterService.EnablementState
         getEffectiveEnablementState();
   }
+
   /**
    *
    *
@@ -385,6 +393,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.securitycentermanagement.v1.SecurityCenterService.ModuleSettings)
       ModuleSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ModuleSettings.newBuilder() to construct.
     private ModuleSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -420,6 +429,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
     public static final int INTENDED_ENABLEMENT_STATE_FIELD_NUMBER = 1;
     private int intendedEnablementState_ = 0;
+
     /**
      *
      *
@@ -438,6 +448,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public int getIntendedEnablementStateValue() {
       return intendedEnablementState_;
     }
+
     /**
      *
      *
@@ -466,6 +477,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
     public static final int EFFECTIVE_ENABLEMENT_STATE_FIELD_NUMBER = 2;
     private int effectiveEnablementState_ = 0;
+
     /**
      *
      *
@@ -487,6 +499,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public int getEffectiveEnablementStateValue() {
       return effectiveEnablementState_;
     }
+
     /**
      *
      *
@@ -707,6 +720,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -923,6 +937,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private int intendedEnablementState_ = 0;
+
       /**
        *
        *
@@ -941,6 +956,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       public int getIntendedEnablementStateValue() {
         return intendedEnablementState_;
       }
+
       /**
        *
        *
@@ -962,6 +978,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -987,6 +1004,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1013,6 +1031,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1035,6 +1054,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       }
 
       private int effectiveEnablementState_ = 0;
+
       /**
        *
        *
@@ -1056,6 +1076,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       public int getEffectiveEnablementStateValue() {
         return effectiveEnablementState_;
       }
+
       /**
        *
        *
@@ -1080,6 +1101,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1108,6 +1130,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1137,6 +1160,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1235,6 +1259,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1270,6 +1295,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -1308,6 +1334,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
   public static final int INTENDED_ENABLEMENT_STATE_FIELD_NUMBER = 2;
   private int intendedEnablementState_ = 0;
+
   /**
    *
    *
@@ -1327,6 +1354,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public int getIntendedEnablementStateValue() {
     return intendedEnablementState_;
   }
+
   /**
    *
    *
@@ -1356,6 +1384,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
   public static final int EFFECTIVE_ENABLEMENT_STATE_FIELD_NUMBER = 3;
   private int effectiveEnablementState_ = 0;
+
   /**
    *
    *
@@ -1377,6 +1406,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public int getEffectiveEnablementStateValue() {
     return effectiveEnablementState_;
   }
+
   /**
    *
    *
@@ -1446,6 +1476,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public int getModulesCount() {
     return internalGetModules().getMap().size();
   }
+
   /**
    *
    *
@@ -1466,6 +1497,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     }
     return internalGetModules().getMap().containsKey(key);
   }
+
   /** Use {@link #getModulesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1475,6 +1507,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       getModules() {
     return getModulesMap();
   }
+
   /**
    *
    *
@@ -1495,6 +1528,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       getModulesMap() {
     return internalGetModules().getMap();
   }
+
   /**
    *
    *
@@ -1525,6 +1559,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         map = internalGetModules().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1556,6 +1591,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -1574,6 +1610,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1592,6 +1629,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1611,6 +1649,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
 
   public static final int SERVICE_CONFIG_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct serviceConfig_;
+
   /**
    *
    *
@@ -1628,6 +1667,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
   public boolean hasServiceConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1647,6 +1687,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Struct.getDefaultInstance()
         : serviceConfig_;
   }
+
   /**
    *
    *
@@ -1906,6 +1947,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2220,6 +2262,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2254,6 +2297,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2288,6 +2332,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2321,6 +2366,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2350,6 +2396,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2433,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     }
 
     private int intendedEnablementState_ = 0;
+
     /**
      *
      *
@@ -2405,6 +2453,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public int getIntendedEnablementStateValue() {
       return intendedEnablementState_;
     }
+
     /**
      *
      *
@@ -2427,6 +2476,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2503,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2479,6 +2530,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2502,6 +2554,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     }
 
     private int effectiveEnablementState_ = 0;
+
     /**
      *
      *
@@ -2523,6 +2576,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public int getEffectiveEnablementStateValue() {
       return effectiveEnablementState_;
     }
+
     /**
      *
      *
@@ -2547,6 +2601,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2575,6 +2630,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2603,6 +2659,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2658,7 +2715,8 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return ModulesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ModulesConverter modulesConverter = new ModulesConverter();
 
@@ -2704,6 +2762,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public int getModulesCount() {
       return internalGetModules().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2724,6 +2783,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       }
       return internalGetModules().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getModulesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2733,6 +2793,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         getModules() {
       return getModulesMap();
     }
+
     /**
      *
      *
@@ -2753,6 +2814,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         getModulesMap() {
       return internalGetModules().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2784,6 +2846,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
           map = internalGetMutableModules().ensureBuilderMap();
       return map.containsKey(key) ? modulesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2819,6 +2882,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       internalGetMutableModules().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2839,6 +2903,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       internalGetMutableModules().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2848,6 +2913,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return internalGetMutableModules().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2874,6 +2940,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2904,6 +2971,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2952,6 +3020,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -2970,6 +3039,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -2994,6 +3064,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3020,6 +3091,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3043,6 +3115,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3074,6 +3147,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3097,6 +3171,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3115,6 +3190,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3137,6 +3213,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3173,6 +3250,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         serviceConfigBuilder_;
+
     /**
      *
      *
@@ -3189,6 +3267,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
     public boolean hasServiceConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -3211,6 +3290,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
         return serviceConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3235,6 +3315,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3256,6 +3337,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3285,6 +3367,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -3306,6 +3389,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3322,6 +3406,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
       onChanged();
       return getServiceConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3342,6 +3427,7 @@ public final class SecurityCenterService extends com.google.protobuf.GeneratedMe
             : serviceConfig_;
       }
     }
+
     /**
      *
      *

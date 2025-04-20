@@ -36,6 +36,7 @@ public interface MountOptionOrBuilder
    * @return The export.
    */
   java.lang.String getExport();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface MountOptionOrBuilder
    * @return The exportFull.
    */
   java.lang.String getExportFull();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface MountOptionOrBuilder
    * @return The enum numeric value on the wire for protocol.
    */
   int getProtocolValue();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface MountOptionOrBuilder
    * @return The instructions.
    */
   java.lang.String getInstructions();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface MountOptionOrBuilder
    * @return The ipAddress.
    */
   java.lang.String getIpAddress();
+
   /**
    *
    *

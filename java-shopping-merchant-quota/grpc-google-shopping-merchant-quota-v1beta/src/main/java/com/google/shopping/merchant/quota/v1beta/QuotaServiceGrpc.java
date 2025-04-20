@@ -96,6 +96,19 @@ public final class QuotaServiceGrpc {
     return QuotaServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static QuotaServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<QuotaServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<QuotaServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public QuotaServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new QuotaServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return QuotaServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -207,6 +220,40 @@ public final class QuotaServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service QuotaService.
+   *
+   * <pre>
+   * Service to get method call quota information per Merchant API method.
+   * </pre>
+   */
+  public static final class QuotaServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<QuotaServiceBlockingV2Stub> {
+    private QuotaServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected QuotaServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new QuotaServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the daily call quota and usage per group for your Merchant
+     * Center account.
+     * </pre>
+     */
+    public com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsResponse listQuotaGroups(
+        com.google.shopping.merchant.quota.v1beta.ListQuotaGroupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListQuotaGroupsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service QuotaService.
    *
    * <pre>
    * Service to get method call quota information per Merchant API method.

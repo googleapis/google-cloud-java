@@ -33,6 +33,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.products.v1beta.LoyaltyProgram)
     LoyaltyProgramOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LoyaltyProgram.newBuilder() to construct.
   private LoyaltyProgram(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object programLabel_ = "";
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProgramLabel() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tierLabel_ = "";
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTierLabel() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRICE_FIELD_NUMBER = 3;
   private com.google.shopping.type.Price price_;
+
   /**
    *
    *
@@ -231,6 +239,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPrice() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.type.Price getPrice() {
     return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
   }
+
   /**
    *
    *
@@ -264,6 +274,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CASHBACK_FOR_FUTURE_USE_FIELD_NUMBER = 4;
   private com.google.shopping.type.Price cashbackForFutureUse_;
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCashbackForFutureUse() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +308,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         ? com.google.shopping.type.Price.getDefaultInstance()
         : cashbackForFutureUse_;
   }
+
   /**
    *
    *
@@ -314,6 +327,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOYALTY_POINTS_FIELD_NUMBER = 5;
   private long loyaltyPoints_ = 0L;
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLoyaltyPoints() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -347,6 +362,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MEMBER_PRICE_EFFECTIVE_DATE_FIELD_NUMBER = 6;
   private com.google.type.Interval memberPriceEffectiveDate_;
+
   /**
    *
    *
@@ -365,6 +381,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMemberPriceEffectiveDate() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +402,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         ? com.google.type.Interval.getDefaultInstance()
         : memberPriceEffectiveDate_;
   }
+
   /**
    *
    *
@@ -408,6 +426,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object shippingLabel_ = "";
+
   /**
    *
    *
@@ -425,6 +444,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
   public boolean hasShippingLabel() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -450,6 +470,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -728,6 +749,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1034,6 +1056,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object programLabel_ = "";
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProgramLabel() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1129,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1155,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1177,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1206,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object tierLabel_ = "";
+
     /**
      *
      *
@@ -1193,6 +1222,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTierLabel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1216,6 +1246,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1239,6 +1270,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1261,6 +1293,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1312,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1343,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         priceBuilder_;
+
     /**
      *
      *
@@ -1324,6 +1359,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPrice() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1343,6 +1379,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return priceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1366,6 +1403,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1424,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1453,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1474,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1490,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPriceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1466,6 +1508,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return price_ == null ? com.google.shopping.type.Price.getDefaultInstance() : price_;
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1542,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
             com.google.shopping.type.Price.Builder,
             com.google.shopping.type.PriceOrBuilder>
         cashbackForFutureUseBuilder_;
+
     /**
      *
      *
@@ -1513,6 +1557,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCashbackForFutureUse() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1533,6 +1578,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return cashbackForFutureUseBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1601,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1621,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1649,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1620,6 +1669,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1684,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCashbackForFutureUseFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1652,6 +1703,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
             : cashbackForFutureUse_;
       }
     }
+
     /**
      *
      *
@@ -1679,6 +1731,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long loyaltyPoints_;
+
     /**
      *
      *
@@ -1694,6 +1747,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLoyaltyPoints() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1709,6 +1763,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public long getLoyaltyPoints() {
       return loyaltyPoints_;
     }
+
     /**
      *
      *
@@ -1728,6 +1783,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1808,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
             com.google.type.Interval.Builder,
             com.google.type.IntervalOrBuilder>
         memberPriceEffectiveDateBuilder_;
+
     /**
      *
      *
@@ -1769,6 +1826,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMemberPriceEffectiveDate() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1792,6 +1850,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return memberPriceEffectiveDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1876,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1899,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1869,6 +1930,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1953,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1908,6 +1971,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getMemberPriceEffectiveDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1929,6 +1993,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
             : memberPriceEffectiveDate_;
       }
     }
+
     /**
      *
      *
@@ -1959,6 +2024,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object shippingLabel_ = "";
+
     /**
      *
      *
@@ -1975,6 +2041,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
     public boolean hasShippingLabel() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1999,6 +2066,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2023,6 +2091,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2046,6 +2115,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2065,6 +2135,7 @@ public final class LoyaltyProgram extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -49,6 +49,7 @@ public interface PublisherModelEulaAcceptanceOrBuilder
    * @return The publisherModel.
    */
   java.lang.String getPublisherModel();
+
   /**
    *
    *

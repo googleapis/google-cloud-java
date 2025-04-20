@@ -33,6 +33,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.Open)
     OpenOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Open.newBuilder() to construct.
   private Open(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAM_ID_FIELD_NUMBER = 1;
   private int streamId_ = 0;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object service_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -300,6 +304,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +501,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int streamId_;
+
     /**
      *
      *
@@ -512,6 +518,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
     public int getStreamId() {
       return streamId_;
     }
+
     /**
      *
      *
@@ -532,6 +539,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -552,6 +560,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object service_ = "";
+
     /**
      *
      *
@@ -574,6 +583,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -596,6 +606,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +646,7 @@ public final class Open extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

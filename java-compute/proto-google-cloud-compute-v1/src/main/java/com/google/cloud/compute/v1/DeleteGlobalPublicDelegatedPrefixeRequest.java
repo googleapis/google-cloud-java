@@ -34,6 +34,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteGlobalPublicDelegatedPrefixeRequest)
     DeleteGlobalPublicDelegatedPrefixeRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteGlobalPublicDelegatedPrefixeRequest.newBuilder() to construct.
   private DeleteGlobalPublicDelegatedPrefixeRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publicDelegatedPrefix_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +185,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -195,6 +201,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -428,6 +436,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -676,6 +686,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -700,6 +711,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -723,6 +735,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +755,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object publicDelegatedPrefix_ = "";
+
     /**
      *
      *
@@ -791,6 +806,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -814,6 +830,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -893,6 +913,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -915,6 +936,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -958,6 +981,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +999,7 @@ public final class DeleteGlobalPublicDelegatedPrefixeRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

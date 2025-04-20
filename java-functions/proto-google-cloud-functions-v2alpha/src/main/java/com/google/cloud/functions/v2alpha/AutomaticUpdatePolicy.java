@@ -34,6 +34,7 @@ public final class AutomaticUpdatePolicy extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.functions.v2alpha.AutomaticUpdatePolicy)
     AutomaticUpdatePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomaticUpdatePolicy.newBuilder() to construct.
   private AutomaticUpdatePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class AutomaticUpdatePolicy extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

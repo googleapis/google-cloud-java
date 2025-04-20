@@ -38,6 +38,7 @@ public interface PredictionResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface PredictionResultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PredictionResultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PredictionResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface PredictionResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface PredictionResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface PredictionResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface PredictionResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface PredictionResultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -202,6 +212,7 @@ public interface PredictionResultOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -234,6 +245,7 @@ public interface PredictionResultOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public interface PredictionResultOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
@@ -299,6 +312,7 @@ public interface PredictionResultOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -314,6 +328,7 @@ public interface PredictionResultOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -358,6 +373,7 @@ public interface PredictionResultOrBuilder
    * @return Whether the outputs field is set.
    */
   boolean hasOutputs();
+
   /**
    *
    *
@@ -372,6 +388,7 @@ public interface PredictionResultOrBuilder
    * @return The outputs.
    */
   com.google.cloud.financialservices.v1.PredictionResult.Outputs getOutputs();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface PredictionResultOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *

@@ -32,6 +32,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.NetworkProfileNetworkFeatures)
     NetworkProfileNetworkFeaturesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use NetworkProfileNetworkFeatures.newBuilder() to construct.
   private NetworkProfileNetworkFeatures(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -196,6 +197,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ADDRESS_PURPOSES = 0;</code>
      */
     public static final int UNDEFINED_ADDRESS_PURPOSES_VALUE = 0;
+
     /**
      *
      *
@@ -206,6 +208,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>DNS_RESOLVER = 476114556;</code>
      */
     public static final int DNS_RESOLVER_VALUE = 476114556;
+
     /**
      *
      *
@@ -216,6 +219,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>GCE_ENDPOINT = 230515243;</code>
      */
     public static final int GCE_ENDPOINT_VALUE = 230515243;
+
     /**
      *
      *
@@ -226,6 +230,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>IPSEC_INTERCONNECT = 340437251;</code>
      */
     public static final int IPSEC_INTERCONNECT_VALUE = 340437251;
+
     /**
      *
      *
@@ -236,8 +241,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>NAT_AUTO = 163666477;</code>
      */
     public static final int NAT_AUTO_VALUE = 163666477;
+
     /** <code>PRIVATE_SERVICE_CONNECT = 48134724;</code> */
     public static final int PRIVATE_SERVICE_CONNECT_VALUE = 48134724;
+
     /**
      *
      *
@@ -248,6 +255,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>SERVERLESS = 270492508;</code>
      */
     public static final int SERVERLESS_VALUE = 270492508;
+
     /**
      *
      *
@@ -258,6 +266,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>SHARED_LOADBALANCER_VIP = 294447572;</code>
      */
     public static final int SHARED_LOADBALANCER_VIP_VALUE = 294447572;
+
     /**
      *
      *
@@ -405,8 +414,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_ALIAS_IP_RANGES = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_ALIAS_IP_RANGES_VALUE = 0;
+
     /** <code>ALIAS_IP_RANGES_ALLOWED = 464867048;</code> */
     public static final int ALIAS_IP_RANGES_ALLOWED_VALUE = 464867048;
+
     /** <code>ALIAS_IP_RANGES_BLOCKED = 281030444;</code> */
     public static final int ALIAS_IP_RANGES_BLOCKED_VALUE = 281030444;
 
@@ -535,8 +546,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_AUTO_MODE_SUBNET = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_AUTO_MODE_SUBNET_VALUE = 0;
+
     /** <code>AUTO_MODE_SUBNET_ALLOWED = 391042610;</code> */
     public static final int AUTO_MODE_SUBNET_ALLOWED_VALUE = 391042610;
+
     /** <code>AUTO_MODE_SUBNET_BLOCKED = 207206006;</code> */
     public static final int AUTO_MODE_SUBNET_BLOCKED_VALUE = 207206006;
 
@@ -666,8 +679,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_CLASS_D_FIREWALLS = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_CLASS_D_FIREWALLS_VALUE = 0;
+
     /** <code>CLASS_D_FIREWALLS_ALLOWED = 348219386;</code> */
     public static final int CLASS_D_FIREWALLS_ALLOWED_VALUE = 348219386;
+
     /** <code>CLASS_D_FIREWALLS_BLOCKED = 164382782;</code> */
     public static final int CLASS_D_FIREWALLS_BLOCKED_VALUE = 164382782;
 
@@ -796,8 +811,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_CLOUD_NAT = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_CLOUD_NAT_VALUE = 0;
+
     /** <code>CLOUD_NAT_ALLOWED = 245931296;</code> */
     public static final int CLOUD_NAT_ALLOWED_VALUE = 245931296;
+
     /** <code>CLOUD_NAT_BLOCKED = 62094692;</code> */
     public static final int CLOUD_NAT_BLOCKED_VALUE = 62094692;
 
@@ -923,8 +940,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_CLOUD_ROUTER = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_CLOUD_ROUTER_VALUE = 0;
+
     /** <code>CLOUD_ROUTER_ALLOWED = 365388284;</code> */
     public static final int CLOUD_ROUTER_ALLOWED_VALUE = 365388284;
+
     /** <code>CLOUD_ROUTER_BLOCKED = 181551680;</code> */
     public static final int CLOUD_ROUTER_BLOCKED_VALUE = 181551680;
 
@@ -1053,8 +1072,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_DEFAULT_NIC_ATTACHMENT = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_DEFAULT_NIC_ATTACHMENT_VALUE = 0;
+
     /** <code>DEFAULT_NIC_ATTACHMENT_ALLOWED = 11570689;</code> */
     public static final int DEFAULT_NIC_ATTACHMENT_ALLOWED_VALUE = 11570689;
+
     /** <code>DEFAULT_NIC_ATTACHMENT_BLOCKED = 364604997;</code> */
     public static final int DEFAULT_NIC_ATTACHMENT_BLOCKED_VALUE = 364604997;
 
@@ -1184,8 +1205,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_EXTERNAL_IP_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_EXTERNAL_IP_ACCESS_VALUE = 0;
+
     /** <code>EXTERNAL_IP_ACCESS_ALLOWED = 109530193;</code> */
     public static final int EXTERNAL_IP_ACCESS_ALLOWED_VALUE = 109530193;
+
     /** <code>EXTERNAL_IP_ACCESS_BLOCKED = 462564501;</code> */
     public static final int EXTERNAL_IP_ACCESS_BLOCKED_VALUE = 462564501;
 
@@ -1314,8 +1337,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_INTERCONNECT = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_INTERCONNECT_VALUE = 0;
+
     /** <code>INTERCONNECT_ALLOWED = 162845399;</code> */
     public static final int INTERCONNECT_ALLOWED_VALUE = 162845399;
+
     /** <code>INTERCONNECT_BLOCKED = 515879707;</code> */
     public static final int INTERCONNECT_BLOCKED_VALUE = 515879707;
 
@@ -1444,8 +1469,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_IP_FORWARDING = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_IP_FORWARDING_VALUE = 0;
+
     /** <code>IP_FORWARDING_ALLOWED = 152595550;</code> */
     public static final int IP_FORWARDING_ALLOWED_VALUE = 152595550;
+
     /** <code>IP_FORWARDING_BLOCKED = 505629858;</code> */
     public static final int IP_FORWARDING_BLOCKED_VALUE = 505629858;
 
@@ -1574,8 +1601,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_LOAD_BALANCING = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_LOAD_BALANCING_VALUE = 0;
+
     /** <code>LOAD_BALANCING_ALLOWED = 28407977;</code> */
     public static final int LOAD_BALANCING_ALLOWED_VALUE = 28407977;
+
     /** <code>LOAD_BALANCING_BLOCKED = 381442285;</code> */
     public static final int LOAD_BALANCING_BLOCKED_VALUE = 381442285;
 
@@ -1705,8 +1734,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_MULTI_NIC_IN_SAME_NETWORK = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_MULTI_NIC_IN_SAME_NETWORK_VALUE = 0;
+
     /** <code>MULTI_NIC_IN_SAME_NETWORK_ALLOWED = 457555419;</code> */
     public static final int MULTI_NIC_IN_SAME_NETWORK_ALLOWED_VALUE = 457555419;
+
     /** <code>MULTI_NIC_IN_SAME_NETWORK_BLOCKED = 273718815;</code> */
     public static final int MULTI_NIC_IN_SAME_NETWORK_BLOCKED_VALUE = 273718815;
 
@@ -1835,8 +1866,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_NCC = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_NCC_VALUE = 0;
+
     /** <code>NCC_ALLOWED = 467227511;</code> */
     public static final int NCC_ALLOWED_VALUE = 467227511;
+
     /** <code>NCC_BLOCKED = 283390907;</code> */
     public static final int NCC_BLOCKED_VALUE = 283390907;
 
@@ -1963,8 +1996,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_NETWORK_MIGRATION = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_NETWORK_MIGRATION_VALUE = 0;
+
     /** <code>NETWORK_MIGRATION_ALLOWED = 14389766;</code> */
     public static final int NETWORK_MIGRATION_ALLOWED_VALUE = 14389766;
+
     /** <code>NETWORK_MIGRATION_BLOCKED = 367424074;</code> */
     public static final int NETWORK_MIGRATION_BLOCKED_VALUE = 367424074;
 
@@ -2094,8 +2129,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_PACKET_MIRRORING = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_PACKET_MIRRORING_VALUE = 0;
+
     /** <code>PACKET_MIRRORING_ALLOWED = 92416245;</code> */
     public static final int PACKET_MIRRORING_ALLOWED_VALUE = 92416245;
+
     /** <code>PACKET_MIRRORING_BLOCKED = 445450553;</code> */
     public static final int PACKET_MIRRORING_BLOCKED_VALUE = 445450553;
 
@@ -2225,8 +2262,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_PRIVATE_GOOGLE_ACCESS = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_PRIVATE_GOOGLE_ACCESS_VALUE = 0;
+
     /** <code>PRIVATE_GOOGLE_ACCESS_ALLOWED = 220787351;</code> */
     public static final int PRIVATE_GOOGLE_ACCESS_ALLOWED_VALUE = 220787351;
+
     /** <code>PRIVATE_GOOGLE_ACCESS_BLOCKED = 36950747;</code> */
     public static final int PRIVATE_GOOGLE_ACCESS_BLOCKED_VALUE = 36950747;
 
@@ -2355,8 +2394,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_PSC = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_PSC_VALUE = 0;
+
     /** <code>PSC_ALLOWED = 171559657;</code> */
     public static final int PSC_ALLOWED_VALUE = 171559657;
+
     /** <code>PSC_BLOCKED = 524593965;</code> */
     public static final int PSC_BLOCKED_VALUE = 524593965;
 
@@ -2483,8 +2524,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_SAME_NETWORK_UNICAST = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_SAME_NETWORK_UNICAST_VALUE = 0;
+
     /** <code>SAME_NETWORK_UNICAST_ALLOWED = 159732814;</code> */
     public static final int SAME_NETWORK_UNICAST_ALLOWED_VALUE = 159732814;
+
     /** <code>SAME_NETWORK_UNICAST_BLOCKED = 512767122;</code> */
     public static final int SAME_NETWORK_UNICAST_BLOCKED_VALUE = 512767122;
 
@@ -2613,8 +2656,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_STATIC_ROUTES = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_STATIC_ROUTES_VALUE = 0;
+
     /** <code>STATIC_ROUTES_ALLOWED = 409048964;</code> */
     public static final int STATIC_ROUTES_ALLOWED_VALUE = 409048964;
+
     /** <code>STATIC_ROUTES_BLOCKED = 225212360;</code> */
     public static final int STATIC_ROUTES_BLOCKED_VALUE = 225212360;
 
@@ -2743,8 +2788,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_SUB_INTERFACES = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_SUB_INTERFACES_VALUE = 0;
+
     /** <code>SUBINTERFACES_ALLOWED = 158685891;</code> */
     public static final int SUBINTERFACES_ALLOWED_VALUE = 158685891;
+
     /** <code>SUBINTERFACES_BLOCKED = 511720199;</code> */
     public static final int SUBINTERFACES_BLOCKED_VALUE = 511720199;
 
@@ -2873,8 +2920,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_VPC_PEERING = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_VPC_PEERING_VALUE = 0;
+
     /** <code>VPC_PEERING_ALLOWED = 261465075;</code> */
     public static final int VPC_PEERING_ALLOWED_VALUE = 261465075;
+
     /** <code>VPC_PEERING_BLOCKED = 77628471;</code> */
     public static final int VPC_PEERING_BLOCKED_VALUE = 77628471;
 
@@ -3002,8 +3051,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_ALLOW_VPN = 0;</code>
      */
     public static final int UNDEFINED_ALLOW_VPN_VALUE = 0;
+
     /** <code>VPN_ALLOWED = 162163997;</code> */
     public static final int VPN_ALLOWED_VALUE = 162163997;
+
     /** <code>VPN_BLOCKED = 515198305;</code> */
     public static final int VPN_BLOCKED_VALUE = 515198305;
 
@@ -3184,6 +3235,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_INTERFACE_TYPES = 0;</code>
      */
     public static final int UNDEFINED_INTERFACE_TYPES_VALUE = 0;
+
     /**
      *
      *
@@ -3194,6 +3246,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>GVNIC = 68209305;</code>
      */
     public static final int GVNIC_VALUE = 68209305;
+
     /**
      *
      *
@@ -3204,6 +3257,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>IDPF = 2242641;</code>
      */
     public static final int IDPF_VALUE = 2242641;
+
     /**
      *
      *
@@ -3214,6 +3268,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>IRDMA = 69927695;</code>
      */
     public static final int IRDMA_VALUE = 69927695;
+
     /**
      *
      *
@@ -3224,6 +3279,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>MRDMA = 73621779;</code>
      */
     public static final int MRDMA_VALUE = 73621779;
+
     /**
      *
      *
@@ -3234,6 +3290,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNSPECIFIED_NIC_TYPE = 67411801;</code>
      */
     public static final int UNSPECIFIED_NIC_TYPE_VALUE = 67411801;
+
     /**
      *
      *
@@ -3374,8 +3431,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_SUBNET_PURPOSES = 0;</code>
      */
     public static final int UNDEFINED_SUBNET_PURPOSES_VALUE = 0;
+
     /** <code>SUBNET_PURPOSE_CUSTOM_HARDWARE = 283160275;</code> */
     public static final int SUBNET_PURPOSE_CUSTOM_HARDWARE_VALUE = 283160275;
+
     /** <code>SUBNET_PURPOSE_PRIVATE = 404371008;</code> */
     public static final int SUBNET_PURPOSE_PRIVATE_VALUE = 404371008;
 
@@ -3502,10 +3561,13 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_SUBNET_STACK_TYPES = 0;</code>
      */
     public static final int UNDEFINED_SUBNET_STACK_TYPES_VALUE = 0;
+
     /** <code>SUBNET_STACK_TYPE_IPV4_IPV6 = 41454485;</code> */
     public static final int SUBNET_STACK_TYPE_IPV4_IPV6_VALUE = 41454485;
+
     /** <code>SUBNET_STACK_TYPE_IPV4_ONLY = 41631034;</code> */
     public static final int SUBNET_STACK_TYPE_IPV4_ONLY_VALUE = 41631034;
+
     /** <code>SUBNET_STACK_TYPE_IPV6_ONLY = 98889336;</code> */
     public static final int SUBNET_STACK_TYPE_IPV6_ONLY_VALUE = 98889336;
 
@@ -3703,6 +3765,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_SUBNETWORK_PURPOSES = 0;</code>
      */
     public static final int UNDEFINED_SUBNETWORK_PURPOSES_VALUE = 0;
+
     /**
      *
      *
@@ -3713,6 +3776,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>GLOBAL_MANAGED_PROXY = 236463602;</code>
      */
     public static final int GLOBAL_MANAGED_PROXY_VALUE = 236463602;
+
     /**
      *
      *
@@ -3723,6 +3787,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>INTERNAL_HTTPS_LOAD_BALANCER = 248748889;</code>
      */
     public static final int INTERNAL_HTTPS_LOAD_BALANCER_VALUE = 248748889;
+
     /**
      *
      *
@@ -3733,6 +3798,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>PEER_MIGRATION = 491902225;</code>
      */
     public static final int PEER_MIGRATION_VALUE = 491902225;
+
     /**
      *
      *
@@ -3743,6 +3809,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>PRIVATE = 403485027;</code>
      */
     public static final int PRIVATE_VALUE = 403485027;
+
     /**
      *
      *
@@ -3753,6 +3820,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>PRIVATE_NAT = 367764517;</code>
      */
     public static final int PRIVATE_NAT_VALUE = 367764517;
+
     /**
      *
      *
@@ -3763,6 +3831,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>PRIVATE_RFC_1918 = 254902107;</code>
      */
     public static final int PRIVATE_RFC_1918_VALUE = 254902107;
+
     /**
      *
      *
@@ -3935,6 +4004,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_SUBNETWORK_STACK_TYPES = 0;</code>
      */
     public static final int UNDEFINED_SUBNETWORK_STACK_TYPES_VALUE = 0;
+
     /**
      *
      *
@@ -3945,6 +4015,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>IPV4_IPV6 = 22197249;</code>
      */
     public static final int IPV4_IPV6_VALUE = 22197249;
+
     /**
      *
      *
@@ -3955,6 +4026,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>IPV4_ONLY = 22373798;</code>
      */
     public static final int IPV4_ONLY_VALUE = 22373798;
+
     /**
      *
      *
@@ -4093,8 +4165,10 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
      * <code>UNDEFINED_UNICAST = 0;</code>
      */
     public static final int UNDEFINED_UNICAST_VALUE = 0;
+
     /** <code>UNICAST_SDN = 379954157;</code> */
     public static final int UNICAST_SDN_VALUE = 379954157;
+
     /** <code>UNICAST_ULL = 379956325;</code> */
     public static final int UNICAST_ULL_VALUE = 379956325;
 
@@ -4189,6 +4263,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList addressPurposes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -4204,6 +4279,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getAddressPurposesList() {
     return addressPurposes_;
   }
+
   /**
    *
    *
@@ -4219,6 +4295,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getAddressPurposesCount() {
     return addressPurposes_.size();
   }
+
   /**
    *
    *
@@ -4235,6 +4312,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getAddressPurposes(int index) {
     return addressPurposes_.get(index);
   }
+
   /**
    *
    *
@@ -4256,6 +4334,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowAliasIpRanges_ = "";
+
   /**
    *
    *
@@ -4272,6 +4351,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowAliasIpRanges() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -4296,6 +4376,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4325,6 +4406,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowAutoModeSubnet_ = "";
+
   /**
    *
    *
@@ -4341,6 +4423,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowAutoModeSubnet() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -4365,6 +4448,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4394,6 +4478,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowClassDFirewalls_ = "";
+
   /**
    *
    *
@@ -4410,6 +4495,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowClassDFirewalls() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -4434,6 +4520,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4463,6 +4550,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowCloudNat_ = "";
+
   /**
    *
    *
@@ -4479,6 +4567,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowCloudNat() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -4503,6 +4592,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4532,6 +4622,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowCloudRouter_ = "";
+
   /**
    *
    *
@@ -4548,6 +4639,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowCloudRouter() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -4572,6 +4664,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4601,6 +4694,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowDefaultNicAttachment_ = "";
+
   /**
    *
    *
@@ -4617,6 +4711,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowDefaultNicAttachment() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -4641,6 +4736,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4670,6 +4766,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowExternalIpAccess_ = "";
+
   /**
    *
    *
@@ -4686,6 +4783,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowExternalIpAccess() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -4710,6 +4808,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4739,6 +4838,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowInterconnect_ = "";
+
   /**
    *
    *
@@ -4755,6 +4855,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowInterconnect() {
     return ((bitField0_ & 0x00000080) != 0);
   }
+
   /**
    *
    *
@@ -4779,6 +4880,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4808,6 +4910,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowIpForwarding_ = "";
+
   /**
    *
    *
@@ -4824,6 +4927,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowIpForwarding() {
     return ((bitField0_ & 0x00000100) != 0);
   }
+
   /**
    *
    *
@@ -4848,6 +4952,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4877,6 +4982,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowLoadBalancing_ = "";
+
   /**
    *
    *
@@ -4893,6 +4999,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowLoadBalancing() {
     return ((bitField0_ & 0x00000200) != 0);
   }
+
   /**
    *
    *
@@ -4917,6 +5024,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -4946,6 +5054,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowMultiNicInSameNetwork_ = "";
+
   /**
    *
    *
@@ -4962,6 +5071,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowMultiNicInSameNetwork() {
     return ((bitField0_ & 0x00000400) != 0);
   }
+
   /**
    *
    *
@@ -4986,6 +5096,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5015,6 +5126,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowNcc_ = "";
+
   /**
    *
    *
@@ -5031,6 +5143,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowNcc() {
     return ((bitField0_ & 0x00000800) != 0);
   }
+
   /**
    *
    *
@@ -5055,6 +5168,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5084,6 +5198,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowNetworkMigration_ = "";
+
   /**
    *
    *
@@ -5100,6 +5215,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowNetworkMigration() {
     return ((bitField0_ & 0x00001000) != 0);
   }
+
   /**
    *
    *
@@ -5124,6 +5240,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5153,6 +5270,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowPacketMirroring_ = "";
+
   /**
    *
    *
@@ -5169,6 +5287,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowPacketMirroring() {
     return ((bitField0_ & 0x00002000) != 0);
   }
+
   /**
    *
    *
@@ -5193,6 +5312,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5222,6 +5342,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowPrivateGoogleAccess_ = "";
+
   /**
    *
    *
@@ -5238,6 +5359,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowPrivateGoogleAccess() {
     return ((bitField0_ & 0x00004000) != 0);
   }
+
   /**
    *
    *
@@ -5262,6 +5384,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5291,6 +5414,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowPsc_ = "";
+
   /**
    *
    *
@@ -5307,6 +5431,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowPsc() {
     return ((bitField0_ & 0x00008000) != 0);
   }
+
   /**
    *
    *
@@ -5331,6 +5456,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5360,6 +5486,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowSameNetworkUnicast_ = "";
+
   /**
    *
    *
@@ -5376,6 +5503,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowSameNetworkUnicast() {
     return ((bitField0_ & 0x00010000) != 0);
   }
+
   /**
    *
    *
@@ -5400,6 +5528,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5429,6 +5558,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowStaticRoutes_ = "";
+
   /**
    *
    *
@@ -5445,6 +5575,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowStaticRoutes() {
     return ((bitField0_ & 0x00020000) != 0);
   }
+
   /**
    *
    *
@@ -5469,6 +5600,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5498,6 +5630,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowSubInterfaces_ = "";
+
   /**
    *
    *
@@ -5514,6 +5647,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowSubInterfaces() {
     return ((bitField0_ & 0x00040000) != 0);
   }
+
   /**
    *
    *
@@ -5538,6 +5672,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5567,6 +5702,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowVpcPeering_ = "";
+
   /**
    *
    *
@@ -5583,6 +5719,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowVpcPeering() {
     return ((bitField0_ & 0x00080000) != 0);
   }
+
   /**
    *
    *
@@ -5607,6 +5744,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5636,6 +5774,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object allowVpn_ = "";
+
   /**
    *
    *
@@ -5652,6 +5791,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasAllowVpn() {
     return ((bitField0_ & 0x00100000) != 0);
   }
+
   /**
    *
    *
@@ -5676,6 +5816,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -5706,6 +5847,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList interfaceTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5721,6 +5863,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getInterfaceTypesList() {
     return interfaceTypes_;
   }
+
   /**
    *
    *
@@ -5736,6 +5879,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getInterfaceTypesCount() {
     return interfaceTypes_.size();
   }
+
   /**
    *
    *
@@ -5752,6 +5896,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getInterfaceTypes(int index) {
     return interfaceTypes_.get(index);
   }
+
   /**
    *
    *
@@ -5774,6 +5919,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subnetPurposes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5789,6 +5935,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getSubnetPurposesList() {
     return subnetPurposes_;
   }
+
   /**
    *
    *
@@ -5804,6 +5951,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getSubnetPurposesCount() {
     return subnetPurposes_.size();
   }
+
   /**
    *
    *
@@ -5820,6 +5968,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getSubnetPurposes(int index) {
     return subnetPurposes_.get(index);
   }
+
   /**
    *
    *
@@ -5842,6 +5991,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subnetStackTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5857,6 +6007,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getSubnetStackTypesList() {
     return subnetStackTypes_;
   }
+
   /**
    *
    *
@@ -5872,6 +6023,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getSubnetStackTypesCount() {
     return subnetStackTypes_.size();
   }
+
   /**
    *
    *
@@ -5888,6 +6040,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getSubnetStackTypes(int index) {
     return subnetStackTypes_.get(index);
   }
+
   /**
    *
    *
@@ -5910,6 +6063,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subnetworkPurposes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5925,6 +6079,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getSubnetworkPurposesList() {
     return subnetworkPurposes_;
   }
+
   /**
    *
    *
@@ -5940,6 +6095,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getSubnetworkPurposesCount() {
     return subnetworkPurposes_.size();
   }
+
   /**
    *
    *
@@ -5956,6 +6112,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getSubnetworkPurposes(int index) {
     return subnetworkPurposes_.get(index);
   }
+
   /**
    *
    *
@@ -5978,6 +6135,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList subnetworkStackTypes_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -5993,6 +6151,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getSubnetworkStackTypesList() {
     return subnetworkStackTypes_;
   }
+
   /**
    *
    *
@@ -6008,6 +6167,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public int getSubnetworkStackTypesCount() {
     return subnetworkStackTypes_.size();
   }
+
   /**
    *
    *
@@ -6024,6 +6184,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public java.lang.String getSubnetworkStackTypes(int index) {
     return subnetworkStackTypes_.get(index);
   }
+
   /**
    *
    *
@@ -6045,6 +6206,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object unicast_ = "";
+
   /**
    *
    *
@@ -6061,6 +6223,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
   public boolean hasUnicast() {
     return ((bitField0_ & 0x00200000) != 0);
   }
+
   /**
    *
    *
@@ -6085,6 +6248,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -6701,6 +6865,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -7363,6 +7528,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -7379,6 +7545,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       addressPurposes_.makeImmutable();
       return addressPurposes_;
     }
+
     /**
      *
      *
@@ -7394,6 +7561,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getAddressPurposesCount() {
       return addressPurposes_.size();
     }
+
     /**
      *
      *
@@ -7410,6 +7578,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getAddressPurposes(int index) {
       return addressPurposes_.get(index);
     }
+
     /**
      *
      *
@@ -7426,6 +7595,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getAddressPurposesBytes(int index) {
       return addressPurposes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -7450,6 +7620,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7473,6 +7644,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7493,6 +7665,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7512,6 +7685,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7538,6 +7712,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowAliasIpRanges_ = "";
+
     /**
      *
      *
@@ -7553,6 +7728,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowAliasIpRanges() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -7576,6 +7752,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7599,6 +7776,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7621,6 +7799,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7639,6 +7818,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7664,6 +7844,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowAutoModeSubnet_ = "";
+
     /**
      *
      *
@@ -7679,6 +7860,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowAutoModeSubnet() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -7702,6 +7884,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7725,6 +7908,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7747,6 +7931,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7765,6 +7950,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7790,6 +7976,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowClassDFirewalls_ = "";
+
     /**
      *
      *
@@ -7805,6 +7992,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowClassDFirewalls() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -7828,6 +8016,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7851,6 +8040,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7873,6 +8063,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7891,6 +8082,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -7916,6 +8108,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowCloudNat_ = "";
+
     /**
      *
      *
@@ -7931,6 +8124,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowCloudNat() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -7954,6 +8148,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -7977,6 +8172,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -7999,6 +8195,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8017,6 +8214,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8042,6 +8240,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowCloudRouter_ = "";
+
     /**
      *
      *
@@ -8057,6 +8256,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowCloudRouter() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -8080,6 +8280,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8103,6 +8304,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8125,6 +8327,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8143,6 +8346,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8168,6 +8372,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowDefaultNicAttachment_ = "";
+
     /**
      *
      *
@@ -8183,6 +8388,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowDefaultNicAttachment() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -8206,6 +8412,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8229,6 +8436,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8251,6 +8459,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8269,6 +8478,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8294,6 +8504,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowExternalIpAccess_ = "";
+
     /**
      *
      *
@@ -8309,6 +8520,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowExternalIpAccess() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -8332,6 +8544,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8355,6 +8568,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8377,6 +8591,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8395,6 +8610,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8420,6 +8636,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowInterconnect_ = "";
+
     /**
      *
      *
@@ -8435,6 +8652,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowInterconnect() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -8458,6 +8676,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8481,6 +8700,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8503,6 +8723,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8521,6 +8742,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8546,6 +8768,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowIpForwarding_ = "";
+
     /**
      *
      *
@@ -8561,6 +8784,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowIpForwarding() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -8584,6 +8808,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8607,6 +8832,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8629,6 +8855,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8647,6 +8874,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8672,6 +8900,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowLoadBalancing_ = "";
+
     /**
      *
      *
@@ -8687,6 +8916,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowLoadBalancing() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -8710,6 +8940,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8733,6 +8964,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8755,6 +8987,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8773,6 +9006,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8798,6 +9032,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowMultiNicInSameNetwork_ = "";
+
     /**
      *
      *
@@ -8813,6 +9048,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowMultiNicInSameNetwork() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -8836,6 +9072,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8859,6 +9096,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8881,6 +9119,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8899,6 +9138,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8924,6 +9164,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowNcc_ = "";
+
     /**
      *
      *
@@ -8939,6 +9180,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowNcc() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -8962,6 +9204,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8985,6 +9228,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9007,6 +9251,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9025,6 +9270,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9050,6 +9296,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowNetworkMigration_ = "";
+
     /**
      *
      *
@@ -9065,6 +9312,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowNetworkMigration() {
       return ((bitField0_ & 0x00002000) != 0);
     }
+
     /**
      *
      *
@@ -9088,6 +9336,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9111,6 +9360,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9133,6 +9383,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9151,6 +9402,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9176,6 +9428,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowPacketMirroring_ = "";
+
     /**
      *
      *
@@ -9191,6 +9444,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowPacketMirroring() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -9214,6 +9468,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9237,6 +9492,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9259,6 +9515,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9277,6 +9534,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9302,6 +9560,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowPrivateGoogleAccess_ = "";
+
     /**
      *
      *
@@ -9317,6 +9576,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowPrivateGoogleAccess() {
       return ((bitField0_ & 0x00008000) != 0);
     }
+
     /**
      *
      *
@@ -9340,6 +9600,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9363,6 +9624,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9385,6 +9647,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9403,6 +9666,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9428,6 +9692,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowPsc_ = "";
+
     /**
      *
      *
@@ -9443,6 +9708,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowPsc() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -9466,6 +9732,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9489,6 +9756,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9511,6 +9779,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9529,6 +9798,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9554,6 +9824,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowSameNetworkUnicast_ = "";
+
     /**
      *
      *
@@ -9569,6 +9840,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowSameNetworkUnicast() {
       return ((bitField0_ & 0x00020000) != 0);
     }
+
     /**
      *
      *
@@ -9592,6 +9864,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9615,6 +9888,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9637,6 +9911,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9655,6 +9930,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9680,6 +9956,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowStaticRoutes_ = "";
+
     /**
      *
      *
@@ -9695,6 +9972,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowStaticRoutes() {
       return ((bitField0_ & 0x00040000) != 0);
     }
+
     /**
      *
      *
@@ -9718,6 +9996,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9741,6 +10020,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9763,6 +10043,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9781,6 +10062,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9806,6 +10088,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowSubInterfaces_ = "";
+
     /**
      *
      *
@@ -9821,6 +10104,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowSubInterfaces() {
       return ((bitField0_ & 0x00080000) != 0);
     }
+
     /**
      *
      *
@@ -9844,6 +10128,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9867,6 +10152,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9889,6 +10175,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9907,6 +10194,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9932,6 +10220,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowVpcPeering_ = "";
+
     /**
      *
      *
@@ -9947,6 +10236,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowVpcPeering() {
       return ((bitField0_ & 0x00100000) != 0);
     }
+
     /**
      *
      *
@@ -9970,6 +10260,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9993,6 +10284,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10015,6 +10307,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10033,6 +10326,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10058,6 +10352,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object allowVpn_ = "";
+
     /**
      *
      *
@@ -10073,6 +10368,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasAllowVpn() {
       return ((bitField0_ & 0x00200000) != 0);
     }
+
     /**
      *
      *
@@ -10096,6 +10392,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10119,6 +10416,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10141,6 +10439,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10159,6 +10458,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10192,6 +10492,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00400000;
     }
+
     /**
      *
      *
@@ -10208,6 +10509,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       interfaceTypes_.makeImmutable();
       return interfaceTypes_;
     }
+
     /**
      *
      *
@@ -10223,6 +10525,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getInterfaceTypesCount() {
       return interfaceTypes_.size();
     }
+
     /**
      *
      *
@@ -10239,6 +10542,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getInterfaceTypes(int index) {
       return interfaceTypes_.get(index);
     }
+
     /**
      *
      *
@@ -10255,6 +10559,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getInterfaceTypesBytes(int index) {
       return interfaceTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -10279,6 +10584,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10302,6 +10608,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10322,6 +10629,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10341,6 +10649,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10375,6 +10684,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00800000;
     }
+
     /**
      *
      *
@@ -10391,6 +10701,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       subnetPurposes_.makeImmutable();
       return subnetPurposes_;
     }
+
     /**
      *
      *
@@ -10406,6 +10717,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getSubnetPurposesCount() {
       return subnetPurposes_.size();
     }
+
     /**
      *
      *
@@ -10422,6 +10734,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getSubnetPurposes(int index) {
       return subnetPurposes_.get(index);
     }
+
     /**
      *
      *
@@ -10438,6 +10751,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getSubnetPurposesBytes(int index) {
       return subnetPurposes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -10462,6 +10776,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10485,6 +10800,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10505,6 +10821,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10524,6 +10841,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10558,6 +10876,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x01000000;
     }
+
     /**
      *
      *
@@ -10574,6 +10893,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       subnetStackTypes_.makeImmutable();
       return subnetStackTypes_;
     }
+
     /**
      *
      *
@@ -10589,6 +10909,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getSubnetStackTypesCount() {
       return subnetStackTypes_.size();
     }
+
     /**
      *
      *
@@ -10605,6 +10926,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getSubnetStackTypes(int index) {
       return subnetStackTypes_.get(index);
     }
+
     /**
      *
      *
@@ -10621,6 +10943,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getSubnetStackTypesBytes(int index) {
       return subnetStackTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -10645,6 +10968,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10668,6 +10992,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10688,6 +11013,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10707,6 +11033,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10741,6 +11068,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x02000000;
     }
+
     /**
      *
      *
@@ -10757,6 +11085,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       subnetworkPurposes_.makeImmutable();
       return subnetworkPurposes_;
     }
+
     /**
      *
      *
@@ -10772,6 +11101,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getSubnetworkPurposesCount() {
       return subnetworkPurposes_.size();
     }
+
     /**
      *
      *
@@ -10788,6 +11118,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getSubnetworkPurposes(int index) {
       return subnetworkPurposes_.get(index);
     }
+
     /**
      *
      *
@@ -10804,6 +11135,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getSubnetworkPurposesBytes(int index) {
       return subnetworkPurposes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -10828,6 +11160,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10851,6 +11184,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10871,6 +11205,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10890,6 +11225,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10924,6 +11260,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x04000000;
     }
+
     /**
      *
      *
@@ -10940,6 +11277,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       subnetworkStackTypes_.makeImmutable();
       return subnetworkStackTypes_;
     }
+
     /**
      *
      *
@@ -10955,6 +11293,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public int getSubnetworkStackTypesCount() {
       return subnetworkStackTypes_.size();
     }
+
     /**
      *
      *
@@ -10971,6 +11310,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public java.lang.String getSubnetworkStackTypes(int index) {
       return subnetworkStackTypes_.get(index);
     }
+
     /**
      *
      *
@@ -10987,6 +11327,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getSubnetworkStackTypesBytes(int index) {
       return subnetworkStackTypes_.getByteString(index);
     }
+
     /**
      *
      *
@@ -11011,6 +11352,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11034,6 +11376,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11054,6 +11397,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11073,6 +11417,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11099,6 +11444,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     }
 
     private java.lang.Object unicast_ = "";
+
     /**
      *
      *
@@ -11114,6 +11460,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
     public boolean hasUnicast() {
       return ((bitField0_ & 0x08000000) != 0);
     }
+
     /**
      *
      *
@@ -11137,6 +11484,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11160,6 +11508,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11182,6 +11531,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11200,6 +11550,7 @@ public final class NetworkProfileNetworkFeatures extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

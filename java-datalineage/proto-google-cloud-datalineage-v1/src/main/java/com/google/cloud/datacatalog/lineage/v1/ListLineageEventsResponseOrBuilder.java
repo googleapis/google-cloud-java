@@ -34,6 +34,7 @@ public interface ListLineageEventsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.LineageEvent lineage_events = 1;</code>
    */
   java.util.List<com.google.cloud.datacatalog.lineage.v1.LineageEvent> getLineageEventsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListLineageEventsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.LineageEvent lineage_events = 1;</code>
    */
   com.google.cloud.datacatalog.lineage.v1.LineageEvent getLineageEvents(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListLineageEventsResponseOrBuilder
    * <code>repeated .google.cloud.datacatalog.lineage.v1.LineageEvent lineage_events = 1;</code>
    */
   int getLineageEventsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListLineageEventsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.lineage.v1.LineageEventOrBuilder>
       getLineageEventsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListLineageEventsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

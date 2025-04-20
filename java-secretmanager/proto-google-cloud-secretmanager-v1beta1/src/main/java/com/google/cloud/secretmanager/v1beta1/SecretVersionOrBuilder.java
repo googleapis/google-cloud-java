@@ -42,6 +42,7 @@ public interface SecretVersionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface SecretVersionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface SecretVersionOrBuilder
    * @return Whether the destroyTime field is set.
    */
   boolean hasDestroyTime();
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface SecretVersionOrBuilder
    * @return The destroyTime.
    */
   com.google.protobuf.Timestamp getDestroyTime();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface SecretVersionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

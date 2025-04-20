@@ -33,6 +33,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.StreamObject)
     StreamObjectOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamObject.newBuilder() to construct.
   private StreamObject(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -223,6 +232,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object displayName_ = "";
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -274,6 +285,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.datastream.v1.Error> errors_;
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.datastream.v1.Error> getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -320,6 +334,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -335,6 +350,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.datastream.v1.Error getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -353,6 +369,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BACKFILL_JOB_FIELD_NUMBER = 7;
   private com.google.cloud.datastream.v1.BackfillJob backfillJob_;
+
   /**
    *
    *
@@ -368,6 +385,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackfillJob() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +403,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datastream.v1.BackfillJob.getDefaultInstance()
         : backfillJob_;
   }
+
   /**
    *
    *
@@ -403,6 +422,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_OBJECT_FIELD_NUMBER = 8;
   private com.google.cloud.datastream.v1.SourceObjectIdentifier sourceObject_;
+
   /**
    *
    *
@@ -418,6 +438,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceObject() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +456,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.datastream.v1.SourceObjectIdentifier.getDefaultInstance()
         : sourceObject_;
   }
+
   /**
    *
    *
@@ -686,6 +708,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1033,6 +1056,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1106,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1154,6 +1182,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1170,6 +1199,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1192,6 +1222,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1216,6 +1247,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1269,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1299,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1321,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1323,6 +1359,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1357,6 +1394,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1373,6 +1411,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1395,6 +1434,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1419,6 +1459,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1481,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1469,6 +1511,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1490,6 +1533,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1506,6 +1550,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1526,6 +1571,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1555,6 +1601,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object displayName_ = "";
+
     /**
      *
      *
@@ -1577,6 +1624,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1599,6 +1647,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1620,6 +1669,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1687,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1694,6 +1745,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1712,6 +1764,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1730,6 +1783,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1754,6 +1808,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1831,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1856,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1881,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1903,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1867,6 +1926,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1949,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1971,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1931,6 +1993,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1945,6 +2008,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.datastream.v1.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1963,6 +2027,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1982,6 +2047,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -1997,6 +2063,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(com.google.cloud.datastream.v1.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2012,6 +2079,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       return getErrorsFieldBuilder()
           .addBuilder(index, com.google.cloud.datastream.v1.Error.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2050,6 +2118,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.BackfillJob.Builder,
             com.google.cloud.datastream.v1.BackfillJobOrBuilder>
         backfillJobBuilder_;
+
     /**
      *
      *
@@ -2064,6 +2133,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackfillJob() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2084,6 +2154,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return backfillJobBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2106,6 +2177,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2126,6 +2198,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2153,6 +2226,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2172,6 +2246,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2186,6 +2261,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getBackfillJobFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2204,6 +2280,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             : backfillJob_;
       }
     }
+
     /**
      *
      *
@@ -2236,6 +2313,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.datastream.v1.SourceObjectIdentifier.Builder,
             com.google.cloud.datastream.v1.SourceObjectIdentifierOrBuilder>
         sourceObjectBuilder_;
+
     /**
      *
      *
@@ -2250,6 +2328,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceObject() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2270,6 +2349,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
         return sourceObjectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2292,6 +2372,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2312,6 +2393,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2340,6 +2422,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2359,6 +2442,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2373,6 +2457,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceObjectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2392,6 +2477,7 @@ public final class StreamObject extends com.google.protobuf.GeneratedMessageV3
             : sourceObject_;
       }
     }
+
     /**
      *
      *

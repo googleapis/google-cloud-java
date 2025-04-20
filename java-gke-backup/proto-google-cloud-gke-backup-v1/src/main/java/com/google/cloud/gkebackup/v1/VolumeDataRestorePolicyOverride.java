@@ -33,6 +33,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.gkebackup.v1.VolumeDataRestorePolicyOverride)
     VolumeDataRestorePolicyOverrideOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VolumeDataRestorePolicyOverride.newBuilder() to construct.
   private VolumeDataRestorePolicyOverride(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     private ScopeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -112,6 +114,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
 
   public static final int POLICY_FIELD_NUMBER = 1;
   private int policy_ = 0;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
   public int getPolicyValue() {
     return policy_;
   }
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
   }
 
   public static final int SELECTED_PVCS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
   public boolean hasSelectedPvcs() {
     return scopeCase_ == 2;
   }
+
   /**
    *
    *
@@ -187,6 +193,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     }
     return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -394,6 +401,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +633,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     private int bitField0_;
 
     private int policy_ = 0;
+
     /**
      *
      *
@@ -643,6 +652,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     public int getPolicyValue() {
       return policy_;
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
           ? com.google.cloud.gkebackup.v1.RestoreConfig.VolumeDataRestorePolicy.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
             com.google.cloud.gkebackup.v1.NamespacedNames.Builder,
             com.google.cloud.gkebackup.v1.NamespacedNamesOrBuilder>
         selectedPvcsBuilder_;
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     public boolean hasSelectedPvcs() {
       return scopeCase_ == 2;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
         return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -799,6 +815,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       scopeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       scopeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +869,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       scopeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +908,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
     public com.google.cloud.gkebackup.v1.NamespacedNames.Builder getSelectedPvcsBuilder() {
       return getSelectedPvcsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class VolumeDataRestorePolicyOverride extends com.google.protobuf.G
         return com.google.cloud.gkebackup.v1.NamespacedNames.getDefaultInstance();
       }
     }
+
     /**
      *
      *

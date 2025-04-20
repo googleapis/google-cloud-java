@@ -74,6 +74,7 @@ public enum LevelFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LEVEL_FORMAT_UNSPECIFIED = 0;</code>
    */
   public static final int LEVEL_FORMAT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public enum LevelFormat implements com.google.protobuf.ProtocolMessageEnum {
    * <code>AS_DEFINED = 1;</code>
    */
   public static final int AS_DEFINED_VALUE = 1;
+
   /**
    *
    *

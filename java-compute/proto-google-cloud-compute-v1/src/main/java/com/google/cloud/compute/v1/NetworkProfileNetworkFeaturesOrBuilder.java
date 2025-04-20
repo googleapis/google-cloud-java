@@ -37,6 +37,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the addressPurposes.
    */
   java.util.List<java.lang.String> getAddressPurposesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of addressPurposes.
    */
   int getAddressPurposesCount();
+
   /**
    *
    *
@@ -64,6 +66,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The addressPurposes at the given index.
    */
   java.lang.String getAddressPurposes(int index);
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowAliasIpRanges field is set.
    */
   boolean hasAllowAliasIpRanges();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowAliasIpRanges.
    */
   java.lang.String getAllowAliasIpRanges();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowAutoModeSubnet field is set.
    */
   boolean hasAllowAutoModeSubnet();
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowAutoModeSubnet.
    */
   java.lang.String getAllowAutoModeSubnet();
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowClassDFirewalls field is set.
    */
   boolean hasAllowClassDFirewalls();
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowClassDFirewalls.
    */
   java.lang.String getAllowClassDFirewalls();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowCloudNat field is set.
    */
   boolean hasAllowCloudNat();
+
   /**
    *
    *
@@ -225,6 +235,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowCloudNat.
    */
   java.lang.String getAllowCloudNat();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowCloudRouter field is set.
    */
   boolean hasAllowCloudRouter();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowCloudRouter.
    */
   java.lang.String getAllowCloudRouter();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowDefaultNicAttachment field is set.
    */
   boolean hasAllowDefaultNicAttachment();
+
   /**
    *
    *
@@ -305,6 +319,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowDefaultNicAttachment.
    */
   java.lang.String getAllowDefaultNicAttachment();
+
   /**
    *
    *
@@ -332,6 +347,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowExternalIpAccess field is set.
    */
   boolean hasAllowExternalIpAccess();
+
   /**
    *
    *
@@ -345,6 +361,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowExternalIpAccess.
    */
   java.lang.String getAllowExternalIpAccess();
+
   /**
    *
    *
@@ -372,6 +389,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowInterconnect field is set.
    */
   boolean hasAllowInterconnect();
+
   /**
    *
    *
@@ -385,6 +403,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowInterconnect.
    */
   java.lang.String getAllowInterconnect();
+
   /**
    *
    *
@@ -412,6 +431,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowIpForwarding field is set.
    */
   boolean hasAllowIpForwarding();
+
   /**
    *
    *
@@ -425,6 +445,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowIpForwarding.
    */
   java.lang.String getAllowIpForwarding();
+
   /**
    *
    *
@@ -452,6 +473,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowLoadBalancing field is set.
    */
   boolean hasAllowLoadBalancing();
+
   /**
    *
    *
@@ -465,6 +487,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowLoadBalancing.
    */
   java.lang.String getAllowLoadBalancing();
+
   /**
    *
    *
@@ -492,6 +515,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowMultiNicInSameNetwork field is set.
    */
   boolean hasAllowMultiNicInSameNetwork();
+
   /**
    *
    *
@@ -505,6 +529,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowMultiNicInSameNetwork.
    */
   java.lang.String getAllowMultiNicInSameNetwork();
+
   /**
    *
    *
@@ -532,6 +557,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowNcc field is set.
    */
   boolean hasAllowNcc();
+
   /**
    *
    *
@@ -545,6 +571,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowNcc.
    */
   java.lang.String getAllowNcc();
+
   /**
    *
    *
@@ -572,6 +599,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowNetworkMigration field is set.
    */
   boolean hasAllowNetworkMigration();
+
   /**
    *
    *
@@ -585,6 +613,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowNetworkMigration.
    */
   java.lang.String getAllowNetworkMigration();
+
   /**
    *
    *
@@ -612,6 +641,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPacketMirroring field is set.
    */
   boolean hasAllowPacketMirroring();
+
   /**
    *
    *
@@ -625,6 +655,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPacketMirroring.
    */
   java.lang.String getAllowPacketMirroring();
+
   /**
    *
    *
@@ -652,6 +683,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPrivateGoogleAccess field is set.
    */
   boolean hasAllowPrivateGoogleAccess();
+
   /**
    *
    *
@@ -665,6 +697,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPrivateGoogleAccess.
    */
   java.lang.String getAllowPrivateGoogleAccess();
+
   /**
    *
    *
@@ -692,6 +725,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowPsc field is set.
    */
   boolean hasAllowPsc();
+
   /**
    *
    *
@@ -705,6 +739,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowPsc.
    */
   java.lang.String getAllowPsc();
+
   /**
    *
    *
@@ -732,6 +767,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowSameNetworkUnicast field is set.
    */
   boolean hasAllowSameNetworkUnicast();
+
   /**
    *
    *
@@ -745,6 +781,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowSameNetworkUnicast.
    */
   java.lang.String getAllowSameNetworkUnicast();
+
   /**
    *
    *
@@ -772,6 +809,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowStaticRoutes field is set.
    */
   boolean hasAllowStaticRoutes();
+
   /**
    *
    *
@@ -785,6 +823,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowStaticRoutes.
    */
   java.lang.String getAllowStaticRoutes();
+
   /**
    *
    *
@@ -812,6 +851,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowSubInterfaces field is set.
    */
   boolean hasAllowSubInterfaces();
+
   /**
    *
    *
@@ -825,6 +865,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowSubInterfaces.
    */
   java.lang.String getAllowSubInterfaces();
+
   /**
    *
    *
@@ -852,6 +893,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowVpcPeering field is set.
    */
   boolean hasAllowVpcPeering();
+
   /**
    *
    *
@@ -865,6 +907,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowVpcPeering.
    */
   java.lang.String getAllowVpcPeering();
+
   /**
    *
    *
@@ -892,6 +935,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the allowVpn field is set.
    */
   boolean hasAllowVpn();
+
   /**
    *
    *
@@ -905,6 +949,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The allowVpn.
    */
   java.lang.String getAllowVpn();
+
   /**
    *
    *
@@ -932,6 +977,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the interfaceTypes.
    */
   java.util.List<java.lang.String> getInterfaceTypesList();
+
   /**
    *
    *
@@ -945,6 +991,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of interfaceTypes.
    */
   int getInterfaceTypesCount();
+
   /**
    *
    *
@@ -959,6 +1006,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The interfaceTypes at the given index.
    */
   java.lang.String getInterfaceTypes(int index);
+
   /**
    *
    *
@@ -987,6 +1035,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetPurposes.
    */
   java.util.List<java.lang.String> getSubnetPurposesList();
+
   /**
    *
    *
@@ -1000,6 +1049,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetPurposes.
    */
   int getSubnetPurposesCount();
+
   /**
    *
    *
@@ -1014,6 +1064,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetPurposes at the given index.
    */
   java.lang.String getSubnetPurposes(int index);
+
   /**
    *
    *
@@ -1042,6 +1093,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetStackTypes.
    */
   java.util.List<java.lang.String> getSubnetStackTypesList();
+
   /**
    *
    *
@@ -1055,6 +1107,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetStackTypes.
    */
   int getSubnetStackTypesCount();
+
   /**
    *
    *
@@ -1069,6 +1122,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetStackTypes at the given index.
    */
   java.lang.String getSubnetStackTypes(int index);
+
   /**
    *
    *
@@ -1097,6 +1151,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetworkPurposes.
    */
   java.util.List<java.lang.String> getSubnetworkPurposesList();
+
   /**
    *
    *
@@ -1110,6 +1165,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetworkPurposes.
    */
   int getSubnetworkPurposesCount();
+
   /**
    *
    *
@@ -1124,6 +1180,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetworkPurposes at the given index.
    */
   java.lang.String getSubnetworkPurposes(int index);
+
   /**
    *
    *
@@ -1152,6 +1209,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return A list containing the subnetworkStackTypes.
    */
   java.util.List<java.lang.String> getSubnetworkStackTypesList();
+
   /**
    *
    *
@@ -1165,6 +1223,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The count of subnetworkStackTypes.
    */
   int getSubnetworkStackTypesCount();
+
   /**
    *
    *
@@ -1179,6 +1238,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The subnetworkStackTypes at the given index.
    */
   java.lang.String getSubnetworkStackTypes(int index);
+
   /**
    *
    *
@@ -1207,6 +1267,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return Whether the unicast field is set.
    */
   boolean hasUnicast();
+
   /**
    *
    *
@@ -1220,6 +1281,7 @@ public interface NetworkProfileNetworkFeaturesOrBuilder
    * @return The unicast.
    */
   java.lang.String getUnicast();
+
   /**
    *
    *

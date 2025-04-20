@@ -38,6 +38,7 @@ public interface EngineConfigOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface EngineConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface EngineConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface EngineConfigOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface EngineConfigOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface EngineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface EngineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface EngineConfigOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface EngineConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface EngineConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public interface EngineConfigOrBuilder
    * @return The engineVersion.
    */
   java.lang.String getEngineVersion();
+
   /**
    *
    *
@@ -265,6 +277,7 @@ public interface EngineConfigOrBuilder
    * @return Whether the tuning field is set.
    */
   boolean hasTuning();
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public interface EngineConfigOrBuilder
    * @return The tuning.
    */
   com.google.cloud.financialservices.v1.EngineConfig.Tuning getTuning();
+
   /**
    *
    *
@@ -312,6 +326,7 @@ public interface EngineConfigOrBuilder
    * @return Whether the performanceTarget field is set.
    */
   boolean hasPerformanceTarget();
+
   /**
    *
    *
@@ -328,6 +343,7 @@ public interface EngineConfigOrBuilder
    * @return The performanceTarget.
    */
   com.google.cloud.financialservices.v1.EngineConfig.PerformanceTarget getPerformanceTarget();
+
   /**
    *
    *
@@ -359,6 +375,7 @@ public interface EngineConfigOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *
@@ -392,6 +409,7 @@ public interface EngineConfigOrBuilder
    * @return The enum numeric value on the wire for hyperparameterSourceType.
    */
   int getHyperparameterSourceTypeValue();
+
   /**
    *
    *
@@ -425,6 +443,7 @@ public interface EngineConfigOrBuilder
    * @return Whether the hyperparameterSource field is set.
    */
   boolean hasHyperparameterSource();
+
   /**
    *
    *
@@ -439,6 +458,7 @@ public interface EngineConfigOrBuilder
    * @return The hyperparameterSource.
    */
   com.google.cloud.financialservices.v1.EngineConfig.HyperparameterSource getHyperparameterSource();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface EkmConnectionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface EkmConnectionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface EkmConnectionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface EkmConnectionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.kms.v1.EkmConnection.ServiceResolver> getServiceResolversList();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface EkmConnectionOrBuilder
    * </code>
    */
   com.google.cloud.kms.v1.EkmConnection.ServiceResolver getServiceResolvers(int index);
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface EkmConnectionOrBuilder
    * </code>
    */
   int getServiceResolversCount();
+
   /**
    *
    *
@@ -163,6 +169,7 @@ public interface EkmConnectionOrBuilder
    */
   java.util.List<? extends com.google.cloud.kms.v1.EkmConnection.ServiceResolverOrBuilder>
       getServiceResolversOrBuilderList();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface EkmConnectionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -225,6 +233,7 @@ public interface EkmConnectionOrBuilder
    * @return The enum numeric value on the wire for keyManagementMode.
    */
   int getKeyManagementModeValue();
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public interface EkmConnectionOrBuilder
    * @return The cryptoSpacePath.
    */
   java.lang.String getCryptoSpacePath();
+
   /**
    *
    *

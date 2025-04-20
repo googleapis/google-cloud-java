@@ -40,6 +40,7 @@ public interface ListReportingDataAnnotationsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -112,6 +113,7 @@ public interface ListReportingDataAnnotationsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -200,6 +202,7 @@ public interface ListReportingDataAnnotationsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

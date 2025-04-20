@@ -40,6 +40,7 @@ public interface InstallDeploymentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

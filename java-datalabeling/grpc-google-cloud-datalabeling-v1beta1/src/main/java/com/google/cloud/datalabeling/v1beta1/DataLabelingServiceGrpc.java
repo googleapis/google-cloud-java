@@ -1672,6 +1672,19 @@ public final class DataLabelingServiceGrpc {
     return DataLabelingServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DataLabelingServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DataLabelingServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DataLabelingServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public DataLabelingServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DataLabelingServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DataLabelingServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2835,6 +2848,491 @@ public final class DataLabelingServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DataLabelingService.
+   *
+   * <pre>
+   * Service for the AI Platform Data Labeling API.
+   * </pre>
+   */
+  public static final class DataLabelingServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DataLabelingServiceBlockingV2Stub> {
+    private DataLabelingServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DataLabelingServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DataLabelingServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates dataset. If success return a Dataset resource.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.Dataset createDataset(
+        com.google.cloud.datalabeling.v1beta1.CreateDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets dataset by resource name.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.Dataset getDataset(
+        com.google.cloud.datalabeling.v1beta1.GetDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists datasets under a project. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListDatasetsResponse listDatasets(
+        com.google.cloud.datalabeling.v1beta1.ListDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a dataset by resource name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDataset(
+        com.google.cloud.datalabeling.v1beta1.DeleteDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports data into dataset based on source locations defined in request.
+     * It can be called multiple times for the same dataset. Each dataset can
+     * only have one long running operation running on it. For example, no
+     * labeling task (also long running operation) can be started while
+     * importing is still ongoing. Vice versa.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importData(
+        com.google.cloud.datalabeling.v1beta1.ImportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports data and annotations from dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportData(
+        com.google.cloud.datalabeling.v1beta1.ExportDataRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDataMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a data item in a dataset by resource name. This API can be
+     * called after data are imported into dataset.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.DataItem getDataItem(
+        com.google.cloud.datalabeling.v1beta1.GetDataItemRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDataItemMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists data items in a dataset. This API can be called after data
+     * are imported into dataset. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListDataItemsResponse listDataItems(
+        com.google.cloud.datalabeling.v1beta1.ListDataItemsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDataItemsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotated dataset by resource name.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.AnnotatedDataset getAnnotatedDataset(
+        com.google.cloud.datalabeling.v1beta1.GetAnnotatedDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnnotatedDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists annotated datasets for a dataset. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsResponse
+        listAnnotatedDatasets(
+            com.google.cloud.datalabeling.v1beta1.ListAnnotatedDatasetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnnotatedDatasetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an annotated dataset by resource name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAnnotatedDataset(
+        com.google.cloud.datalabeling.v1beta1.DeleteAnnotatedDatasetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAnnotatedDatasetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a labeling task for image. The type of image labeling task is
+     * configured by feature in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation labelImage(
+        com.google.cloud.datalabeling.v1beta1.LabelImageRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLabelImageMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a labeling task for video. The type of video labeling task is
+     * configured by feature in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation labelVideo(
+        com.google.cloud.datalabeling.v1beta1.LabelVideoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLabelVideoMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a labeling task for text. The type of text labeling task is
+     * configured by feature in the request.
+     * </pre>
+     */
+    public com.google.longrunning.Operation labelText(
+        com.google.cloud.datalabeling.v1beta1.LabelTextRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLabelTextMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an example by resource name, including both data and annotation.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.Example getExample(
+        com.google.cloud.datalabeling.v1beta1.GetExampleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExampleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists examples in an annotated dataset. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListExamplesResponse listExamples(
+        com.google.cloud.datalabeling.v1beta1.ListExamplesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExamplesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an annotation spec set by providing a set of labels.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet createAnnotationSpecSet(
+        com.google.cloud.datalabeling.v1beta1.CreateAnnotationSpecSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAnnotationSpecSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an annotation spec set by resource name.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.AnnotationSpecSet getAnnotationSpecSet(
+        com.google.cloud.datalabeling.v1beta1.GetAnnotationSpecSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAnnotationSpecSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists annotation spec sets for a project. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsResponse
+        listAnnotationSpecSets(
+            com.google.cloud.datalabeling.v1beta1.ListAnnotationSpecSetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAnnotationSpecSetsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an annotation spec set by resource name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAnnotationSpecSet(
+        com.google.cloud.datalabeling.v1beta1.DeleteAnnotationSpecSetRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAnnotationSpecSetMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an instruction for how data should be labeled.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstruction(
+        com.google.cloud.datalabeling.v1beta1.CreateInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an instruction by resource name.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.Instruction getInstruction(
+        com.google.cloud.datalabeling.v1beta1.GetInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists instructions for a project. Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListInstructionsResponse listInstructions(
+        com.google.cloud.datalabeling.v1beta1.ListInstructionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstructionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an instruction object by resource name.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteInstruction(
+        com.google.cloud.datalabeling.v1beta1.DeleteInstructionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstructionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an evaluation by resource name (to search, use
+     * [projects.evaluations.search][google.cloud.datalabeling.v1beta1.DataLabelingService.SearchEvaluations]).
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.Evaluation getEvaluation(
+        com.google.cloud.datalabeling.v1beta1.GetEvaluationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEvaluationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches [evaluations][google.cloud.datalabeling.v1beta1.Evaluation] within a project.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.SearchEvaluationsResponse searchEvaluations(
+        com.google.cloud.datalabeling.v1beta1.SearchEvaluationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchEvaluationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Searches example comparisons from an evaluation. The return format is a
+     * list of example comparisons that show ground truth and prediction(s) for
+     * a single input. Search by providing an evaluation ID.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsResponse
+        searchExampleComparisons(
+            com.google.cloud.datalabeling.v1beta1.SearchExampleComparisonsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchExampleComparisonsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an evaluation job.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.EvaluationJob createEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.CreateEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an evaluation job. You can only update certain fields of the job's
+     * [EvaluationJobConfig][google.cloud.datalabeling.v1beta1.EvaluationJobConfig]: `humanAnnotationConfig.instruction`,
+     * `exampleCount`, and `exampleSamplePercentage`.
+     * If you want to change any other aspect of the evaluation job, you must
+     * delete the job and create a new one.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.EvaluationJob updateEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.UpdateEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an evaluation job by resource name.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.EvaluationJob getEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.GetEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pauses an evaluation job. Pausing an evaluation job that is already in a
+     * `PAUSED` state is a no-op.
+     * </pre>
+     */
+    public com.google.protobuf.Empty pauseEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.PauseEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPauseEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resumes a paused evaluation job. A deleted evaluation job can't be resumed.
+     * Resuming a running or scheduled evaluation job is a no-op.
+     * </pre>
+     */
+    public com.google.protobuf.Empty resumeEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.ResumeEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResumeEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops and deletes an evaluation job.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteEvaluationJob(
+        com.google.cloud.datalabeling.v1beta1.DeleteEvaluationJobRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteEvaluationJobMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all evaluation jobs within a project with possible filters.
+     * Pagination is supported.
+     * </pre>
+     */
+    public com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsResponse listEvaluationJobs(
+        com.google.cloud.datalabeling.v1beta1.ListEvaluationJobsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListEvaluationJobsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DataLabelingService.
    *
    * <pre>
    * Service for the AI Platform Data Labeling API.

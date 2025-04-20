@@ -37,6 +37,7 @@ public interface SearchProductsRequestOrBuilder
    * @return The resource.
    */
   java.lang.String getResource();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SearchProductsRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface SearchProductsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

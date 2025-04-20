@@ -40,6 +40,7 @@ public interface CreateReportingDataAnnotationRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateReportingDataAnnotationRequestOrBuilder
    * @return Whether the reportingDataAnnotation field is set.
    */
   boolean hasReportingDataAnnotation();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateReportingDataAnnotationRequestOrBuilder
    * @return The reportingDataAnnotation.
    */
   com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation();
+
   /**
    *
    *

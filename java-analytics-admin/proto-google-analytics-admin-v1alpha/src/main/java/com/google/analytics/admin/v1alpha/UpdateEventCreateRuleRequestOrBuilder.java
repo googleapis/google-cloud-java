@@ -40,6 +40,7 @@ public interface UpdateEventCreateRuleRequestOrBuilder
    * @return Whether the eventCreateRule field is set.
    */
   boolean hasEventCreateRule();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateEventCreateRuleRequestOrBuilder
    * @return The eventCreateRule.
    */
   com.google.analytics.admin.v1alpha.EventCreateRule getEventCreateRule();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateEventCreateRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateEventCreateRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

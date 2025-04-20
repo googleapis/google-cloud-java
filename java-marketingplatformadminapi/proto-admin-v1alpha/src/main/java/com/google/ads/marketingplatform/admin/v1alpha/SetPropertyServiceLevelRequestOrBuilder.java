@@ -38,6 +38,7 @@ public interface SetPropertyServiceLevelRequestOrBuilder
    * @return The analyticsAccountLink.
    */
   java.lang.String getAnalyticsAccountLink();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SetPropertyServiceLevelRequestOrBuilder
    * @return The analyticsProperty.
    */
   java.lang.String getAnalyticsProperty();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface SetPropertyServiceLevelRequestOrBuilder
    * @return The enum numeric value on the wire for serviceLevel.
    */
   int getServiceLevelValue();
+
   /**
    *
    *

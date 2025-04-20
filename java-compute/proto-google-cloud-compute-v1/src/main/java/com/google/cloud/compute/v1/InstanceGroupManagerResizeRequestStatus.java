@@ -33,6 +33,7 @@ public final class InstanceGroupManagerResizeRequestStatus
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatus)
     InstanceGroupManagerResizeRequestStatusOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstanceGroupManagerResizeRequestStatus.newBuilder() to construct.
   private InstanceGroupManagerResizeRequestStatus(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class InstanceGroupManagerResizeRequestStatus
   private int bitField0_;
   public static final int ERROR_FIELD_NUMBER = 96784904;
   private com.google.cloud.compute.v1.Error error_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class InstanceGroupManagerResizeRequestStatus
   public boolean hasError() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class InstanceGroupManagerResizeRequestStatus
   public com.google.cloud.compute.v1.Error getError() {
     return error_ == null ? com.google.cloud.compute.v1.Error.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class InstanceGroupManagerResizeRequestStatus
   public static final int LAST_ATTEMPT_FIELD_NUMBER = 434771492;
   private com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatusLastAttempt
       lastAttempt_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class InstanceGroupManagerResizeRequestStatus
   public boolean hasLastAttempt() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public final class InstanceGroupManagerResizeRequestStatus
             .getDefaultInstance()
         : lastAttempt_;
   }
+
   /**
    *
    *
@@ -350,6 +357,7 @@ public final class InstanceGroupManagerResizeRequestStatus
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class InstanceGroupManagerResizeRequestStatus
             com.google.cloud.compute.v1.Error.Builder,
             com.google.cloud.compute.v1.ErrorOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class InstanceGroupManagerResizeRequestStatus
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class InstanceGroupManagerResizeRequestStatus
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -633,6 +644,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -728,6 +744,7 @@ public final class InstanceGroupManagerResizeRequestStatus
         return error_ == null ? com.google.cloud.compute.v1.Error.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class InstanceGroupManagerResizeRequestStatus
             com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatusLastAttempt.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagerResizeRequestStatusLastAttemptOrBuilder>
         lastAttemptBuilder_;
+
     /**
      *
      *
@@ -777,6 +795,7 @@ public final class InstanceGroupManagerResizeRequestStatus
     public boolean hasLastAttempt() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -801,6 +820,7 @@ public final class InstanceGroupManagerResizeRequestStatus
         return lastAttemptBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -826,6 +846,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +870,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +903,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       }
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +925,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +943,7 @@ public final class InstanceGroupManagerResizeRequestStatus
       onChanged();
       return getLastAttemptFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -941,6 +966,7 @@ public final class InstanceGroupManagerResizeRequestStatus
             : lastAttempt_;
       }
     }
+
     /**
      *
      *

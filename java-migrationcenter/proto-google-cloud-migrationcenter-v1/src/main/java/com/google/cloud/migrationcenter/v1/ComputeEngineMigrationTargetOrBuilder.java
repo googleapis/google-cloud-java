@@ -36,6 +36,7 @@ public interface ComputeEngineMigrationTargetOrBuilder
    * @return Whether the shape field is set.
    */
   boolean hasShape();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ComputeEngineMigrationTargetOrBuilder
    * @return The shape.
    */
   com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor getShape();
+
   /**
    *
    *

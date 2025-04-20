@@ -624,6 +624,19 @@ public final class CatalogServiceGrpc {
     return CatalogServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CatalogServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CatalogServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CatalogServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CatalogServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CatalogServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1189,6 +1202,237 @@ public final class CatalogServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CatalogService.
+   *
+   * <pre>
+   * Service for managing catalog configuration.
+   * </pre>
+   */
+  public static final class CatalogServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CatalogServiceBlockingV2Stub> {
+    private CatalogServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CatalogServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CatalogServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the [Catalog][google.cloud.retail.v2beta.Catalog]s associated
+     * with the project.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.ListCatalogsResponse listCatalogs(
+        com.google.cloud.retail.v2beta.ListCatalogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCatalogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the [Catalog][google.cloud.retail.v2beta.Catalog]s.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.Catalog updateCatalog(
+        com.google.cloud.retail.v2beta.UpdateCatalogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCatalogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Set a specified branch id as default branch. API methods such as
+     * [SearchService.Search][google.cloud.retail.v2beta.SearchService.Search],
+     * [ProductService.GetProduct][google.cloud.retail.v2beta.ProductService.GetProduct],
+     * [ProductService.ListProducts][google.cloud.retail.v2beta.ProductService.ListProducts]
+     * will treat requests using "default_branch" to the actual branch id set as
+     * default.
+     * For example, if `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1` is set as
+     * default, setting
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch` is equivalent
+     * to setting
+     * [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch] to
+     * `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/1`.
+     * Using multiple branches can be useful when developers would like
+     * to have a staging branch to test and verify for future usage. When it
+     * becomes ready, developers switch on the staging branch using this API while
+     * keeping using `projects/&#42;&#47;locations/&#42;&#47;catalogs/&#42;&#47;branches/default_branch`
+     * as [SearchRequest.branch][google.cloud.retail.v2beta.SearchRequest.branch]
+     * to route the traffic to this staging branch.
+     * CAUTION: If you have live predict/search traffic, switching the default
+     * branch could potentially cause outages if the ID space of the new branch is
+     * very different from the old one.
+     * More specifically:
+     * * PredictionService will only return product IDs from branch {newBranch}.
+     * * SearchService will only return product IDs from branch {newBranch}
+     *   (if branch is not explicitly set).
+     * * UserEventService will only join events with products from branch
+     *   {newBranch}.
+     * </pre>
+     */
+    public com.google.protobuf.Empty setDefaultBranch(
+        com.google.cloud.retail.v2beta.SetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetDefaultBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get which branch is currently default branch set by
+     * [CatalogService.SetDefaultBranch][google.cloud.retail.v2beta.CatalogService.SetDefaultBranch]
+     * method under a specified parent catalog.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.GetDefaultBranchResponse getDefaultBranch(
+        com.google.cloud.retail.v2beta.GetDefaultBranchRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDefaultBranchMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.CompletionConfig getCompletionConfig(
+        com.google.cloud.retail.v2beta.GetCompletionConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCompletionConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [CompletionConfig][google.cloud.retail.v2beta.CompletionConfig]s.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.CompletionConfig updateCompletionConfig(
+        com.google.cloud.retail.v2beta.UpdateCompletionConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCompletionConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.AttributesConfig getAttributesConfig(
+        com.google.cloud.retail.v2beta.GetAttributesConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAttributesConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the
+     * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
+     * The catalog attributes in the request will be updated in the catalog, or
+     * inserted if they do not exist. Existing catalog attributes not included in
+     * the request will remain unchanged. Attributes that are assigned to
+     * products, but do not exist at the catalog level, are always included in the
+     * response. The product attribute is assigned default values for missing
+     * catalog attribute fields, e.g., searchable and dynamic facetable options.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.AttributesConfig updateAttributesConfig(
+        com.google.cloud.retail.v2beta.UpdateAttributesConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAttributesConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds the specified
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] to the
+     * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
+     * If the [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] to
+     * add already exists, an ALREADY_EXISTS error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.AttributesConfig addCatalogAttribute(
+        com.google.cloud.retail.v2beta.AddCatalogAttributeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddCatalogAttributeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes the specified
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] from the
+     * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
+     * If the [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] to
+     * remove does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.AttributesConfig removeCatalogAttribute(
+        com.google.cloud.retail.v2beta.RemoveCatalogAttributeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveCatalogAttributeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes all specified
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute]s from the
+     * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig].
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesResponse
+        batchRemoveCatalogAttributes(
+            com.google.cloud.retail.v2beta.BatchRemoveCatalogAttributesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchRemoveCatalogAttributesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Replaces the specified
+     * [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] in the
+     * [AttributesConfig][google.cloud.retail.v2beta.AttributesConfig] by updating
+     * the catalog attribute with the same
+     * [CatalogAttribute.key][google.cloud.retail.v2beta.CatalogAttribute.key].
+     * If the [CatalogAttribute][google.cloud.retail.v2beta.CatalogAttribute] to
+     * replace does not exist, a NOT_FOUND error is returned.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.AttributesConfig replaceCatalogAttribute(
+        com.google.cloud.retail.v2beta.ReplaceCatalogAttributeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReplaceCatalogAttributeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CatalogService.
    *
    * <pre>
    * Service for managing catalog configuration.

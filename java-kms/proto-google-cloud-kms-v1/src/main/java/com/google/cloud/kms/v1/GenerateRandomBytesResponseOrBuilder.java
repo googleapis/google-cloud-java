@@ -61,6 +61,7 @@ public interface GenerateRandomBytesResponseOrBuilder
    * @return Whether the dataCrc32c field is set.
    */
   boolean hasDataCrc32C();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface GenerateRandomBytesResponseOrBuilder
    * @return The dataCrc32c.
    */
   com.google.protobuf.Int64Value getDataCrc32C();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class RubricBasedInstructionFollowingResult
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RubricBasedInstructionFollowingResult)
     RubricBasedInstructionFollowingResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RubricBasedInstructionFollowingResult.newBuilder() to construct.
   private RubricBasedInstructionFollowingResult(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class RubricBasedInstructionFollowingResult
   private int bitField0_;
   public static final int SCORE_FIELD_NUMBER = 1;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RubricBasedInstructionFollowingResult
   public boolean hasScore() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class RubricBasedInstructionFollowingResult
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1beta1.RubricCritiqueResult>
       rubricCritiqueResults_;
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class RubricBasedInstructionFollowingResult
       getRubricCritiqueResultsList() {
     return rubricCritiqueResults_;
   }
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class RubricBasedInstructionFollowingResult
       getRubricCritiqueResultsOrBuilderList() {
     return rubricCritiqueResults_;
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class RubricBasedInstructionFollowingResult
   public int getRubricCritiqueResultsCount() {
     return rubricCritiqueResults_.size();
   }
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public final class RubricBasedInstructionFollowingResult
       int index) {
     return rubricCritiqueResults_.get(index);
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class RubricBasedInstructionFollowingResult
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -624,6 +633,7 @@ public final class RubricBasedInstructionFollowingResult
     private int bitField0_;
 
     private float score_;
+
     /**
      *
      *
@@ -639,6 +649,7 @@ public final class RubricBasedInstructionFollowingResult
     public boolean hasScore() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class RubricBasedInstructionFollowingResult
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class RubricBasedInstructionFollowingResult
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class RubricBasedInstructionFollowingResult
         return rubricCritiqueResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -746,6 +760,7 @@ public final class RubricBasedInstructionFollowingResult
         return rubricCritiqueResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class RubricBasedInstructionFollowingResult
         return rubricCritiqueResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +882,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +905,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +953,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +975,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +997,7 @@ public final class RubricBasedInstructionFollowingResult
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1013,7 @@ public final class RubricBasedInstructionFollowingResult
         getRubricCritiqueResultsBuilder(int index) {
       return getRubricCritiqueResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1007,6 +1033,7 @@ public final class RubricBasedInstructionFollowingResult
         return rubricCritiqueResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1054,7 @@ public final class RubricBasedInstructionFollowingResult
         return java.util.Collections.unmodifiableList(rubricCritiqueResults_);
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1072,7 @@ public final class RubricBasedInstructionFollowingResult
           .addBuilder(
               com.google.cloud.aiplatform.v1beta1.RubricCritiqueResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1061,6 +1090,7 @@ public final class RubricBasedInstructionFollowingResult
           .addBuilder(
               index, com.google.cloud.aiplatform.v1beta1.RubricCritiqueResult.getDefaultInstance());
     }
+
     /**
      *
      *

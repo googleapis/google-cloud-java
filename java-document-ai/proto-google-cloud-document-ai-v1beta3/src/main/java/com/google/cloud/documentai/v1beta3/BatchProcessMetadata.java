@@ -34,6 +34,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchProcessMetadata)
     BatchProcessMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchProcessMetadata.newBuilder() to construct.
   private BatchProcessMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -159,6 +160,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -169,6 +171,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>WAITING = 1;</code>
      */
     public static final int WAITING_VALUE = 1;
+
     /**
      *
      *
@@ -179,6 +182,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>RUNNING = 2;</code>
      */
     public static final int RUNNING_VALUE = 2;
+
     /**
      *
      *
@@ -189,6 +193,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>SUCCEEDED = 3;</code>
      */
     public static final int SUCCEEDED_VALUE = 3;
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>CANCELLING = 4;</code>
      */
     public static final int CANCELLING_VALUE = 4;
+
     /**
      *
      *
@@ -209,6 +215,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * <code>CANCELLED = 5;</code>
      */
     public static final int CANCELLED_VALUE = 5;
+
     /**
      *
      *
@@ -332,6 +339,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return The inputGcsSource.
      */
     java.lang.String getInputGcsSource();
+
     /**
      *
      *
@@ -359,6 +367,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -371,6 +380,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -396,6 +406,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return The outputGcsDestination.
      */
     java.lang.String getOutputGcsDestination();
+
     /**
      *
      *
@@ -432,6 +443,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     java.lang.String getHumanReviewOperation();
+
     /**
      *
      *
@@ -466,6 +478,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return Whether the humanReviewStatus field is set.
      */
     boolean hasHumanReviewStatus();
+
     /**
      *
      *
@@ -478,6 +491,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      * @return The humanReviewStatus.
      */
     com.google.cloud.documentai.v1beta3.HumanReviewStatus getHumanReviewStatus();
+
     /**
      *
      *
@@ -489,6 +503,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder getHumanReviewStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -504,6 +519,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus)
       IndividualProcessStatusOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndividualProcessStatus.newBuilder() to construct.
     private IndividualProcessStatus(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -543,6 +559,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object inputGcsSource_ = "";
+
     /**
      *
      *
@@ -568,6 +585,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -596,6 +614,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -611,6 +630,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -626,6 +646,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -644,6 +665,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object outputGcsDestination_ = "";
+
     /**
      *
      *
@@ -669,6 +691,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -699,6 +722,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object humanReviewOperation_ = "";
+
     /**
      *
      *
@@ -731,6 +755,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -766,6 +791,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
     public static final int HUMAN_REVIEW_STATUS_FIELD_NUMBER = 5;
     private com.google.cloud.documentai.v1beta3.HumanReviewStatus humanReviewStatus_;
+
     /**
      *
      *
@@ -781,6 +807,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasHumanReviewStatus() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -798,6 +825,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.documentai.v1beta3.HumanReviewStatus.getDefaultInstance()
           : humanReviewStatus_;
     }
+
     /**
      *
      *
@@ -1031,6 +1059,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1317,6 +1346,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object inputGcsSource_ = "";
+
       /**
        *
        *
@@ -1341,6 +1371,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1365,6 +1396,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1388,6 +1420,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1407,6 +1440,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1436,6 +1470,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -1450,6 +1485,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1468,6 +1504,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1490,6 +1527,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1509,6 +1547,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1536,6 +1575,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -1555,6 +1595,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1569,6 +1610,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1585,6 +1627,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -1609,6 +1652,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object outputGcsDestination_ = "";
+
       /**
        *
        *
@@ -1633,6 +1677,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1657,6 +1702,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1680,6 +1726,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1699,6 +1746,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1725,6 +1773,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object humanReviewOperation_ = "";
+
       /**
        *
        *
@@ -1757,6 +1806,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1789,6 +1839,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1820,6 +1871,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1847,6 +1899,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1886,6 +1939,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.documentai.v1beta3.HumanReviewStatus.Builder,
               com.google.cloud.documentai.v1beta3.HumanReviewStatusOrBuilder>
           humanReviewStatusBuilder_;
+
       /**
        *
        *
@@ -1900,6 +1954,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       public boolean hasHumanReviewStatus() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -1920,6 +1975,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           return humanReviewStatusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1943,6 +1999,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1963,6 +2020,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1992,6 +2050,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -2011,6 +2070,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2026,6 +2086,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         onChanged();
         return getHumanReviewStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2045,6 +2106,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
               : humanReviewStatus_;
         }
       }
+
       /**
        *
        *
@@ -2143,6 +2205,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2158,6 +2221,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2182,6 +2246,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object stateMessage_ = "";
+
   /**
    *
    *
@@ -2206,6 +2271,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -2233,6 +2299,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -2248,6 +2315,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2263,6 +2331,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -2279,6 +2348,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -2294,6 +2364,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2309,6 +2380,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -2329,6 +2401,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   private java.util.List<
           com.google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus>
       individualProcessStatuses_;
+
   /**
    *
    *
@@ -2346,6 +2419,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       getIndividualProcessStatusesList() {
     return individualProcessStatuses_;
   }
+
   /**
    *
    *
@@ -2365,6 +2439,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       getIndividualProcessStatusesOrBuilderList() {
     return individualProcessStatuses_;
   }
+
   /**
    *
    *
@@ -2380,6 +2455,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
   public int getIndividualProcessStatusesCount() {
     return individualProcessStatuses_.size();
   }
+
   /**
    *
    *
@@ -2396,6 +2472,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       getIndividualProcessStatuses(int index) {
     return individualProcessStatuses_.get(index);
   }
+
   /**
    *
    *
@@ -2628,6 +2705,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2939,6 +3017,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2954,6 +3033,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2972,6 +3052,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2991,6 +3072,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.documentai.v1beta3.BatchProcessMetadata.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3012,6 +3094,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3031,6 +3114,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object stateMessage_ = "";
+
     /**
      *
      *
@@ -3054,6 +3138,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3077,6 +3162,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3099,6 +3185,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3117,6 +3204,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3147,6 +3235,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3161,6 +3250,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -3181,6 +3271,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3203,6 +3294,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3222,6 +3314,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3249,6 +3342,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3268,6 +3362,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3282,6 +3377,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3300,6 +3396,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3332,6 +3429,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3346,6 +3444,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -3366,6 +3465,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3388,6 +3488,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3407,6 +3508,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3434,6 +3536,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3453,6 +3556,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3467,6 +3571,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3485,6 +3590,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -3553,6 +3659,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return individualProcessStatusesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3571,6 +3678,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return individualProcessStatusesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3590,6 +3698,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return individualProcessStatusesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3616,6 +3725,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3640,6 +3750,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3665,6 +3776,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3691,6 +3803,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3714,6 +3827,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3738,6 +3852,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3764,6 +3879,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3785,6 +3901,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3806,6 +3923,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -3821,6 +3939,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         getIndividualProcessStatusesBuilder(int index) {
       return getIndividualProcessStatusesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3840,6 +3959,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return individualProcessStatusesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3862,6 +3982,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(individualProcessStatuses_);
       }
     }
+
     /**
      *
      *
@@ -3880,6 +4001,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3899,6 +4021,7 @@ public final class BatchProcessMetadata extends com.google.protobuf.GeneratedMes
               com.google.cloud.documentai.v1beta3.BatchProcessMetadata.IndividualProcessStatus
                   .getDefaultInstance());
     }
+
     /**
      *
      *

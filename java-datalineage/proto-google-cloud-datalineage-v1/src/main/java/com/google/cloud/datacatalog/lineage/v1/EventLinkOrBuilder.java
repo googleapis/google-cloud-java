@@ -38,6 +38,7 @@ public interface EventLinkOrBuilder
    * @return Whether the source field is set.
    */
   boolean hasSource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface EventLinkOrBuilder
    * @return The source.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getSource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface EventLinkOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface EventLinkOrBuilder
    * @return The target.
    */
   com.google.cloud.datacatalog.lineage.v1.EntityReference getTarget();
+
   /**
    *
    *

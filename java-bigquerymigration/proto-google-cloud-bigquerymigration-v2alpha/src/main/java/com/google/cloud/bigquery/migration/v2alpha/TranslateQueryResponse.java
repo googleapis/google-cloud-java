@@ -33,6 +33,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.migration.v2alpha.TranslateQueryResponse)
     TranslateQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TranslateQueryResponse.newBuilder() to construct.
   private TranslateQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object translationJob_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object translatedQuery_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError> errors_;
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       getErrorsList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       getErrorsOrBuilderList() {
     return errors_;
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
   public int getErrorsCount() {
     return errors_.size();
   }
+
   /**
    *
    *
@@ -233,6 +242,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError getErrors(int index) {
     return errors_.get(index);
   }
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning>
       warnings_;
+
   /**
    *
    *
@@ -269,6 +280,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       getWarningsList() {
     return warnings_;
   }
+
   /**
    *
    *
@@ -286,6 +298,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       getWarningsOrBuilderList() {
     return warnings_;
   }
+
   /**
    *
    *
@@ -301,6 +314,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
   public int getWarningsCount() {
     return warnings_.size();
   }
+
   /**
    *
    *
@@ -316,6 +330,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
   public com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning getWarnings(int index) {
     return warnings_.get(index);
   }
+
   /**
    *
    *
@@ -525,6 +540,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -850,6 +866,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object translationJob_ = "";
+
     /**
      *
      *
@@ -875,6 +892,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -900,6 +918,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -924,6 +943,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +964,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object translatedQuery_ = "";
+
     /**
      *
      *
@@ -993,6 +1015,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1038,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1078,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1112,6 +1138,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return errorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return errorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1146,6 +1174,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return errorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1170,6 +1199,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1222,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1247,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1272,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1294,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1317,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1341,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1326,6 +1362,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1383,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1360,6 +1398,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1378,6 +1417,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1397,6 +1437,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(errors_);
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1454,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1430,6 +1472,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.bigquery.migration.v2alpha.SqlTranslationError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1499,6 +1542,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return warningsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1517,6 +1561,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return warningsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1536,6 +1581,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return warningsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1561,6 +1607,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1584,6 +1631,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1609,6 +1657,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1634,6 +1683,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1656,6 +1706,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1679,6 +1730,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1755,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1724,6 +1777,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1799,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1815,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         getWarningsBuilder(int index) {
       return getWarningsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1779,6 +1835,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return warningsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1799,6 +1856,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(warnings_);
       }
     }
+
     /**
      *
      *
@@ -1817,6 +1875,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1836,6 +1895,7 @@ public final class TranslateQueryResponse extends com.google.protobuf.GeneratedM
               com.google.cloud.bigquery.migration.v2alpha.SqlTranslationWarning
                   .getDefaultInstance());
     }
+
     /**
      *
      *

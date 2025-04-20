@@ -51,6 +51,7 @@ public interface EventActionsOrBuilder
    * @return Whether the stateDelta field is set.
    */
   boolean hasStateDelta();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface EventActionsOrBuilder
    * @return The stateDelta.
    */
   com.google.protobuf.Struct getStateDelta();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface EventActionsOrBuilder
    * </code>
    */
   int getArtifactDeltaCount();
+
   /**
    *
    *
@@ -100,9 +103,11 @@ public interface EventActionsOrBuilder
    * </code>
    */
   boolean containsArtifactDelta(java.lang.String key);
+
   /** Use {@link #getArtifactDeltaMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getArtifactDelta();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface EventActionsOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getArtifactDeltaMap();
+
   /**
    *
    *
@@ -127,6 +133,7 @@ public interface EventActionsOrBuilder
    * </code>
    */
   int getArtifactDeltaOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface EventActionsOrBuilder
    * @return Whether the requestedAuthConfigs field is set.
    */
   boolean hasRequestedAuthConfigs();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface EventActionsOrBuilder
    * @return The requestedAuthConfigs.
    */
   com.google.protobuf.Struct getRequestedAuthConfigs();
+
   /**
    *
    *

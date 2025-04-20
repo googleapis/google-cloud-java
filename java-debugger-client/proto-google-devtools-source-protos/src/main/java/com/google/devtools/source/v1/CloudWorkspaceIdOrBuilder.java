@@ -36,6 +36,7 @@ public interface CloudWorkspaceIdOrBuilder
    * @return Whether the repoId field is set.
    */
   boolean hasRepoId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CloudWorkspaceIdOrBuilder
    * @return The repoId.
    */
   com.google.devtools.source.v1.RepoId getRepoId();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface CloudWorkspaceIdOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

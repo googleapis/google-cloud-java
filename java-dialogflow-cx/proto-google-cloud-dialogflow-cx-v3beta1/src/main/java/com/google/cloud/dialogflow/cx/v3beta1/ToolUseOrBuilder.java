@@ -40,6 +40,7 @@ public interface ToolUseOrBuilder
    * @return The tool.
    */
   java.lang.String getTool();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ToolUseOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface ToolUseOrBuilder
    * @return The action.
    */
   java.lang.String getAction();
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public interface ToolUseOrBuilder
    * @return Whether the inputActionParameters field is set.
    */
   boolean hasInputActionParameters();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface ToolUseOrBuilder
    * @return The inputActionParameters.
    */
   com.google.protobuf.Struct getInputActionParameters();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface ToolUseOrBuilder
    * @return Whether the outputActionParameters field is set.
    */
   boolean hasOutputActionParameters();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface ToolUseOrBuilder
    * @return The outputActionParameters.
    */
   com.google.protobuf.Struct getOutputActionParameters();
+
   /**
    *
    *

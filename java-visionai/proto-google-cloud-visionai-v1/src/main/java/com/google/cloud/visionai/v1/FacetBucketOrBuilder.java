@@ -36,6 +36,7 @@ public interface FacetBucketOrBuilder
    * @return Whether the value field is set.
    */
   boolean hasValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FacetBucketOrBuilder
    * @return The value.
    */
   com.google.cloud.visionai.v1.FacetValue getValue();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface FacetBucketOrBuilder
    * @return Whether the range field is set.
    */
   boolean hasRange();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FacetBucketOrBuilder
    * @return The range.
    */
   com.google.cloud.visionai.v1.FacetBucket.Range getRange();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface BackendServiceHAPolicyOrBuilder
    * @return Whether the fastIPMove field is set.
    */
   boolean hasFastIPMove();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface BackendServiceHAPolicyOrBuilder
    * @return The fastIPMove.
    */
   java.lang.String getFastIPMove();
+
   /**
    *
    *

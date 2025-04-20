@@ -72,6 +72,7 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
    * <code>EXECUTION_ENVIRONMENT_UNSPECIFIED = 0;</code>
    */
   public static final int EXECUTION_ENVIRONMENT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum ExecutionEnvironment implements com.google.protobuf.ProtocolMessageE
    * <code>EXECUTION_ENVIRONMENT_GEN1 = 1;</code>
    */
   public static final int EXECUTION_ENVIRONMENT_GEN1_VALUE = 1;
+
   /**
    *
    *

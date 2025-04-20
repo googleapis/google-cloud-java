@@ -39,6 +39,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return A list containing the partyTables.
    */
   java.util.List<java.lang.String> getPartyTablesList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The count of partyTables.
    */
   int getPartyTablesCount();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The partyTables at the given index.
    */
   java.lang.String getPartyTables(int index);
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface ImportRegisteredPartiesRequestOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *

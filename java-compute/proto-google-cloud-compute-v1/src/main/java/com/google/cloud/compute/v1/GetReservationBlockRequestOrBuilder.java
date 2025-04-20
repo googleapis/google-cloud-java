@@ -36,6 +36,7 @@ public interface GetReservationBlockRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GetReservationBlockRequestOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface GetReservationBlockRequestOrBuilder
    * @return The reservationBlock.
    */
   java.lang.String getReservationBlock();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface GetReservationBlockRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

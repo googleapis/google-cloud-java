@@ -33,6 +33,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.MoveGlobalAddressRequest)
     MoveGlobalAddressRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MoveGlobalAddressRequest.newBuilder() to construct.
   private MoveGlobalAddressRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object address_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
   public static final int GLOBAL_ADDRESSES_MOVE_REQUEST_RESOURCE_FIELD_NUMBER = 302807283;
   private com.google.cloud.compute.v1.GlobalAddressesMoveRequest
       globalAddressesMoveRequestResource_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
   public boolean hasGlobalAddressesMoveRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         ? com.google.cloud.compute.v1.GlobalAddressesMoveRequest.getDefaultInstance()
         : globalAddressesMoveRequestResource_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -250,6 +259,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -497,6 +508,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -746,6 +758,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object address_ = "";
+
     /**
      *
      *
@@ -768,6 +781,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +844,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +875,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
             com.google.cloud.compute.v1.GlobalAddressesMoveRequest.Builder,
             com.google.cloud.compute.v1.GlobalAddressesMoveRequestOrBuilder>
         globalAddressesMoveRequestResourceBuilder_;
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     public boolean hasGlobalAddressesMoveRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -897,6 +916,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return globalAddressesMoveRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -922,6 +942,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +965,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +997,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1037,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return getGlobalAddressesMoveRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1034,6 +1059,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
             : globalAddressesMoveRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1089,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1087,6 +1114,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1139,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1163,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1183,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1179,6 +1210,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1193,6 +1225,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1215,6 +1248,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1271,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1258,6 +1293,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1311,7 @@ public final class MoveGlobalAddressRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

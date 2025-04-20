@@ -35,6 +35,7 @@ public final class ComputeInstanceDataSourceProperties
     // @@protoc_insertion_point(message_implements:google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties)
     ComputeInstanceDataSourcePropertiesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ComputeInstanceDataSourceProperties.newBuilder() to construct.
   private ComputeInstanceDataSourceProperties(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class ComputeInstanceDataSourceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class ComputeInstanceDataSourceProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ComputeInstanceDataSourceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ComputeInstanceDataSourceProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class ComputeInstanceDataSourceProperties
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object machineType_ = "";
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public final class ComputeInstanceDataSourceProperties
       return s;
     }
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class ComputeInstanceDataSourceProperties
 
   public static final int TOTAL_DISK_COUNT_FIELD_NUMBER = 4;
   private long totalDiskCount_ = 0L;
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class ComputeInstanceDataSourceProperties
 
   public static final int TOTAL_DISK_SIZE_GB_FIELD_NUMBER = 5;
   private long totalDiskSizeGb_ = 0L;
+
   /**
    *
    *
@@ -453,6 +462,7 @@ public final class ComputeInstanceDataSourceProperties
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +708,7 @@ public final class ComputeInstanceDataSourceProperties
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -720,6 +731,7 @@ public final class ComputeInstanceDataSourceProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -742,6 +754,7 @@ public final class ComputeInstanceDataSourceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -763,6 +776,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +819,7 @@ public final class ComputeInstanceDataSourceProperties
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -826,6 +842,7 @@ public final class ComputeInstanceDataSourceProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -848,6 +865,7 @@ public final class ComputeInstanceDataSourceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +887,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -886,6 +905,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +930,7 @@ public final class ComputeInstanceDataSourceProperties
     }
 
     private java.lang.Object machineType_ = "";
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class ComputeInstanceDataSourceProperties
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class ComputeInstanceDataSourceProperties
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -975,6 +998,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1016,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1016,6 +1041,7 @@ public final class ComputeInstanceDataSourceProperties
     }
 
     private long totalDiskCount_;
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class ComputeInstanceDataSourceProperties
     public long getTotalDiskCount() {
       return totalDiskCount_;
     }
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1097,7 @@ public final class ComputeInstanceDataSourceProperties
     }
 
     private long totalDiskSizeGb_;
+
     /**
      *
      *
@@ -1084,6 +1113,7 @@ public final class ComputeInstanceDataSourceProperties
     public long getTotalDiskSizeGb() {
       return totalDiskSizeGb_;
     }
+
     /**
      *
      *
@@ -1103,6 +1133,7 @@ public final class ComputeInstanceDataSourceProperties
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface UpdateReportingDataAnnotationRequestOrBuilder
    * @return Whether the reportingDataAnnotation field is set.
    */
   boolean hasReportingDataAnnotation();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateReportingDataAnnotationRequestOrBuilder
    * @return The reportingDataAnnotation.
    */
   com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotation();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface UpdateReportingDataAnnotationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface UpdateReportingDataAnnotationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

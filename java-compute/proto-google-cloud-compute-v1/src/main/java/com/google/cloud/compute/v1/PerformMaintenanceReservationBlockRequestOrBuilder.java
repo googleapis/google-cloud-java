@@ -38,6 +38,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return The reservation.
    */
   java.lang.String getReservation();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return The reservationBlock.
    */
   java.lang.String getReservationBlock();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return Whether the reservationsBlocksPerformMaintenanceRequestResource field is set.
    */
   boolean hasReservationsBlocksPerformMaintenanceRequestResource();
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    */
   com.google.cloud.compute.v1.ReservationsBlocksPerformMaintenanceRequest
       getReservationsBlocksPerformMaintenanceRequestResource();
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public interface PerformMaintenanceReservationBlockRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

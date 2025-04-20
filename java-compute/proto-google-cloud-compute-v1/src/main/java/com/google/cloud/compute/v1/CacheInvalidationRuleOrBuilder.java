@@ -36,6 +36,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return A list containing the cacheTags.
    */
   java.util.List<java.lang.String> getCacheTagsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The count of cacheTags.
    */
   int getCacheTagsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The cacheTags at the given index.
    */
   java.lang.String getCacheTags(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the host field is set.
    */
   boolean hasHost();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface CacheInvalidationRuleOrBuilder
    * @return The host.
    */
   java.lang.String getHost();
+
   /**
    *
    *
@@ -118,12 +123,14 @@ public interface CacheInvalidationRuleOrBuilder
    * @return Whether the path field is set.
    */
   boolean hasPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *
    * @return The path.
    */
   java.lang.String getPath();
+
   /**
    * <code>optional string path = 3433509;</code>
    *

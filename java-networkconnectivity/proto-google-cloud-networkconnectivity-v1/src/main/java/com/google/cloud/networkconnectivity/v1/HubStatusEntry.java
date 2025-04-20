@@ -34,6 +34,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.HubStatusEntry)
     HubStatusEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HubStatusEntry.newBuilder() to construct.
   private HubStatusEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int COUNT_FIELD_NUMBER = 1;
   private int count_ = 0;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object groupBy_ = "";
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PSC_PROPAGATION_STATUS_FIELD_NUMBER = 3;
   private com.google.cloud.networkconnectivity.v1.PscPropagationStatus pscPropagationStatus_;
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPscPropagationStatus() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.networkconnectivity.v1.PscPropagationStatus.getDefaultInstance()
         : pscPropagationStatus_;
   }
+
   /**
    *
    *
@@ -376,6 +383,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -607,6 +615,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int count_;
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     public int getCount() {
       return count_;
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object groupBy_ = "";
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.networkconnectivity.v1.PscPropagationStatus.Builder,
             com.google.cloud.networkconnectivity.v1.PscPropagationStatusOrBuilder>
         pscPropagationStatusBuilder_;
+
     /**
      *
      *
@@ -797,6 +814,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPscPropagationStatus() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -818,6 +836,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
         return pscPropagationStatusBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +915,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +936,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +953,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPscPropagationStatusFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -950,6 +974,7 @@ public final class HubStatusEntry extends com.google.protobuf.GeneratedMessageV3
             : pscPropagationStatus_;
       }
     }
+
     /**
      *
      *

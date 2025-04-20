@@ -37,6 +37,7 @@ public interface RunReportResponseOrBuilder
    * @return The reportResult.
    */
   java.lang.String getReportResult();
+
   /**
    *
    *

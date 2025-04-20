@@ -33,6 +33,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.ReservationBlocksListResponse)
     ReservationBlocksListResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReservationBlocksListResponse.newBuilder() to construct.
   private ReservationBlocksListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -72,6 +73,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object id_ = "";
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public boolean hasId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.compute.v1.ReservationBlock> items_;
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public java.util.List<com.google.cloud.compute.v1.ReservationBlock> getItemsList() {
     return items_;
   }
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       getItemsOrBuilderList() {
     return items_;
   }
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public int getItemsCount() {
     return items_.size();
   }
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public com.google.cloud.compute.v1.ReservationBlock getItems(int index) {
     return items_.get(index);
   }
+
   /**
    *
    *
@@ -209,6 +218,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object kind_ = "";
+
   /**
    *
    *
@@ -224,6 +234,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public boolean hasKind() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +258,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +287,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -290,6 +303,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public boolean hasNextPageToken() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +356,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object selfLink_ = "";
+
   /**
    *
    *
@@ -356,6 +372,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public boolean hasSelfLink() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -379,6 +396,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -405,6 +423,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
 
   public static final int WARNING_FIELD_NUMBER = 50704284;
   private com.google.cloud.compute.v1.Warning warning_;
+
   /**
    *
    *
@@ -420,6 +439,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public boolean hasWarning() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -435,6 +455,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
   public com.google.cloud.compute.v1.Warning getWarning() {
     return warning_ == null ? com.google.cloud.compute.v1.Warning.getDefaultInstance() : warning_;
   }
+
   /**
    *
    *
@@ -681,6 +702,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1005,6 +1027,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -1019,6 +1042,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public boolean hasId() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1041,6 +1065,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1088,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1084,6 +1110,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1101,6 +1128,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return itemsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1172,6 +1201,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return itemsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return itemsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1262,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1308,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1328,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1349,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1333,6 +1370,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1352,6 +1390,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1410,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1423,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public com.google.cloud.compute.v1.ReservationBlock.Builder getItemsBuilder(int index) {
       return getItemsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1399,6 +1440,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return itemsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1416,6 +1458,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return java.util.Collections.unmodifiableList(items_);
       }
     }
+
     /**
      *
      *
@@ -1429,6 +1472,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return getItemsFieldBuilder()
           .addBuilder(com.google.cloud.compute.v1.ReservationBlock.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1442,6 +1486,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       return getItemsFieldBuilder()
           .addBuilder(index, com.google.cloud.compute.v1.ReservationBlock.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1474,6 +1519,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object kind_ = "";
+
     /**
      *
      *
@@ -1488,6 +1534,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public boolean hasKind() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1510,6 +1557,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1580,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1602,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1570,6 +1620,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1594,6 +1645,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1608,6 +1660,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public boolean hasNextPageToken() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1630,6 +1683,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1652,6 +1706,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1673,6 +1728,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1746,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1714,6 +1771,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     }
 
     private java.lang.Object selfLink_ = "";
+
     /**
      *
      *
@@ -1728,6 +1786,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public boolean hasSelfLink() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1750,6 +1809,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1772,6 +1832,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1793,6 +1854,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1872,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1902,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
             com.google.cloud.compute.v1.Warning.Builder,
             com.google.cloud.compute.v1.WarningOrBuilder>
         warningBuilder_;
+
     /**
      *
      *
@@ -1853,6 +1917,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
     public boolean hasWarning() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1873,6 +1938,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
         return warningBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1895,6 +1961,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1914,6 +1981,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1941,6 +2009,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -1960,6 +2029,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1974,6 +2044,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
       onChanged();
       return getWarningFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1992,6 +2063,7 @@ public final class ReservationBlocksListResponse extends com.google.protobuf.Gen
             : warning_;
       }
     }
+
     /**
      *
      *

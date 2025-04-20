@@ -34,6 +34,7 @@ public interface ListColumnSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
   java.util.List<com.google.cloud.automl.v1beta1.ColumnSpec> getColumnSpecsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListColumnSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
   com.google.cloud.automl.v1beta1.ColumnSpec getColumnSpecs(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListColumnSpecsResponseOrBuilder
    * <code>repeated .google.cloud.automl.v1beta1.ColumnSpec column_specs = 1;</code>
    */
   int getColumnSpecsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListColumnSpecsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.automl.v1beta1.ColumnSpecOrBuilder>
       getColumnSpecsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListColumnSpecsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

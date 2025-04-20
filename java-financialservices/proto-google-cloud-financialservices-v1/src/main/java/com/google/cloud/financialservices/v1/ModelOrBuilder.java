@@ -38,6 +38,7 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface ModelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public interface ModelOrBuilder
    * @return The engineVersion.
    */
   java.lang.String getEngineVersion();
+
   /**
    *
    *
@@ -263,6 +275,7 @@ public interface ModelOrBuilder
    * @return The engineConfig.
    */
   java.lang.String getEngineConfig();
+
   /**
    *
    *
@@ -297,6 +310,7 @@ public interface ModelOrBuilder
    * @return The primaryDataset.
    */
   java.lang.String getPrimaryDataset();
+
   /**
    *
    *
@@ -330,6 +344,7 @@ public interface ModelOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public interface ModelOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -374,6 +390,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream)
     VideoStreamOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoStream.newBuilder() to construct.
   private VideoStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -163,6 +164,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The pixelFormat.
      */
     java.lang.String getPixelFormat();
+
     /**
      *
      *
@@ -205,6 +207,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The rateControlMode.
      */
     java.lang.String getRateControlMode();
+
     /**
      *
      *
@@ -264,6 +267,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopFrameCount field is set.
      */
     boolean hasGopFrameCount();
+
     /**
      *
      *
@@ -294,6 +298,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopDuration field is set.
      */
     boolean hasGopDuration();
+
     /**
      *
      *
@@ -310,6 +315,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The gopDuration.
      */
     com.google.protobuf.Duration getGopDuration();
+
     /**
      *
      *
@@ -385,6 +391,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The entropyCoder.
      */
     java.lang.String getEntropyCoder();
+
     /**
      *
      *
@@ -470,6 +477,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The profile.
      */
     java.lang.String getProfile();
+
     /**
      *
      *
@@ -510,6 +518,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The tune.
      */
     java.lang.String getTune();
+
     /**
      *
      *
@@ -544,6 +553,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The preset.
      */
     java.lang.String getPreset();
+
     /**
      *
      *
@@ -564,6 +574,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.GopModeCase getGopModeCase();
   }
+
   /**
    *
    *
@@ -578,6 +589,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings)
       H264CodecSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use H264CodecSettings.newBuilder() to construct.
     private H264CodecSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -630,6 +642,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private GopModeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -664,6 +677,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
+
     /**
      *
      *
@@ -689,6 +703,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HEIGHT_PIXELS_FIELD_NUMBER = 2;
     private int heightPixels_ = 0;
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FRAME_RATE_FIELD_NUMBER = 3;
     private double frameRate_ = 0D;
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
     private int bitrateBps_ = 0;
+
     /**
      *
      *
@@ -759,6 +776,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pixelFormat_ = "";
+
     /**
      *
      *
@@ -794,6 +812,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -834,6 +853,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rateControlMode_ = "";
+
     /**
      *
      *
@@ -862,6 +882,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -893,6 +914,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CRF_LEVEL_FIELD_NUMBER = 7;
     private int crfLevel_ = 0;
+
     /**
      *
      *
@@ -912,6 +934,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOW_OPEN_GOP_FIELD_NUMBER = 8;
     private boolean allowOpenGop_ = false;
+
     /**
      *
      *
@@ -930,6 +953,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_FRAME_COUNT_FIELD_NUMBER = 9;
+
     /**
      *
      *
@@ -946,6 +970,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopFrameCount() {
       return gopModeCase_ == 9;
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_DURATION_FIELD_NUMBER = 10;
+
     /**
      *
      *
@@ -986,6 +1012,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopDuration() {
       return gopModeCase_ == 10;
     }
+
     /**
      *
      *
@@ -1008,6 +1035,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1031,6 +1059,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_TWO_PASS_FIELD_NUMBER = 11;
     private boolean enableTwoPass_ = false;
+
     /**
      *
      *
@@ -1050,6 +1079,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VBV_SIZE_BITS_FIELD_NUMBER = 12;
     private int vbvSizeBits_ = 0;
+
     /**
      *
      *
@@ -1069,6 +1099,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VBV_FULLNESS_BITS_FIELD_NUMBER = 13;
     private int vbvFullnessBits_ = 0;
+
     /**
      *
      *
@@ -1091,6 +1122,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object entropyCoder_ = "";
+
     /**
      *
      *
@@ -1119,6 +1151,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1150,6 +1183,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int B_PYRAMID_FIELD_NUMBER = 15;
     private boolean bPyramid_ = false;
+
     /**
      *
      *
@@ -1169,6 +1203,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int B_FRAME_COUNT_FIELD_NUMBER = 16;
     private int bFrameCount_ = 0;
+
     /**
      *
      *
@@ -1189,6 +1224,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AQ_STRENGTH_FIELD_NUMBER = 17;
     private double aqStrength_ = 0D;
+
     /**
      *
      *
@@ -1211,6 +1247,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object profile_ = "";
+
     /**
      *
      *
@@ -1245,6 +1282,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1284,6 +1322,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tune_ = "";
+
     /**
      *
      *
@@ -1311,6 +1350,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1343,6 +1383,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object preset_ = "";
+
     /**
      *
      *
@@ -1371,6 +1412,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1762,6 +1804,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2244,6 +2287,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int widthPixels_;
+
       /**
        *
        *
@@ -2266,6 +2310,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getWidthPixels() {
         return widthPixels_;
       }
+
       /**
        *
        *
@@ -2292,6 +2337,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2318,6 +2364,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int heightPixels_;
+
       /**
        *
        *
@@ -2340,6 +2387,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getHeightPixels() {
         return heightPixels_;
       }
+
       /**
        *
        *
@@ -2366,6 +2414,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2392,6 +2441,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double frameRate_;
+
       /**
        *
        *
@@ -2413,6 +2463,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public double getFrameRate() {
         return frameRate_;
       }
+
       /**
        *
        *
@@ -2438,6 +2489,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2463,6 +2515,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitrateBps_;
+
       /**
        *
        *
@@ -2479,6 +2532,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getBitrateBps() {
         return bitrateBps_;
       }
+
       /**
        *
        *
@@ -2499,6 +2553,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2519,6 +2574,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pixelFormat_ = "";
+
       /**
        *
        *
@@ -2553,6 +2609,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2587,6 +2644,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2620,6 +2678,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2649,6 +2708,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2685,6 +2745,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object rateControlMode_ = "";
+
       /**
        *
        *
@@ -2712,6 +2773,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2739,6 +2801,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2765,6 +2828,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2787,6 +2851,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2816,6 +2881,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int crfLevel_;
+
       /**
        *
        *
@@ -2832,6 +2898,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getCrfLevel() {
         return crfLevel_;
       }
+
       /**
        *
        *
@@ -2852,6 +2919,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2872,6 +2940,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean allowOpenGop_;
+
       /**
        *
        *
@@ -2888,6 +2957,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllowOpenGop() {
         return allowOpenGop_;
       }
+
       /**
        *
        *
@@ -2908,6 +2978,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2942,6 +3013,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopFrameCount() {
         return gopModeCase_ == 9;
       }
+
       /**
        *
        *
@@ -2960,6 +3032,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -2980,6 +3053,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3006,6 +3080,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           gopDurationBuilder_;
+
       /**
        *
        *
@@ -3025,6 +3100,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopDuration() {
         return gopModeCase_ == 10;
       }
+
       /**
        *
        *
@@ -3054,6 +3130,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3080,6 +3157,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -3103,6 +3181,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -3137,6 +3216,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -3166,6 +3246,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3182,6 +3263,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration.Builder getGopDurationBuilder() {
         return getGopDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3206,6 +3288,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3242,6 +3325,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableTwoPass_;
+
       /**
        *
        *
@@ -3258,6 +3342,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableTwoPass() {
         return enableTwoPass_;
       }
+
       /**
        *
        *
@@ -3278,6 +3363,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3298,6 +3384,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int vbvSizeBits_;
+
       /**
        *
        *
@@ -3314,6 +3401,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getVbvSizeBits() {
         return vbvSizeBits_;
       }
+
       /**
        *
        *
@@ -3334,6 +3422,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3354,6 +3443,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int vbvFullnessBits_;
+
       /**
        *
        *
@@ -3371,6 +3461,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getVbvFullnessBits() {
         return vbvFullnessBits_;
       }
+
       /**
        *
        *
@@ -3392,6 +3483,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3413,6 +3505,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object entropyCoder_ = "";
+
       /**
        *
        *
@@ -3440,6 +3533,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3467,6 +3561,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3493,6 +3588,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3515,6 +3611,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3544,6 +3641,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean bPyramid_;
+
       /**
        *
        *
@@ -3560,6 +3658,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getBPyramid() {
         return bPyramid_;
       }
+
       /**
        *
        *
@@ -3580,6 +3679,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3600,6 +3700,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bFrameCount_;
+
       /**
        *
        *
@@ -3617,6 +3718,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getBFrameCount() {
         return bFrameCount_;
       }
+
       /**
        *
        *
@@ -3638,6 +3740,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3659,6 +3762,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double aqStrength_;
+
       /**
        *
        *
@@ -3676,6 +3780,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public double getAqStrength() {
         return aqStrength_;
       }
+
       /**
        *
        *
@@ -3697,6 +3802,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3718,6 +3824,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object profile_ = "";
+
       /**
        *
        *
@@ -3751,6 +3858,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3784,6 +3892,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3816,6 +3925,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3844,6 +3954,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3879,6 +3990,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object tune_ = "";
+
       /**
        *
        *
@@ -3905,6 +4017,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3931,6 +4044,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3956,6 +4070,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3977,6 +4092,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4005,6 +4121,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object preset_ = "";
+
       /**
        *
        *
@@ -4032,6 +4149,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4059,6 +4177,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4085,6 +4204,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4107,6 +4227,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4304,6 +4425,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The pixelFormat.
      */
     java.lang.String getPixelFormat();
+
     /**
      *
      *
@@ -4346,6 +4468,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The rateControlMode.
      */
     java.lang.String getRateControlMode();
+
     /**
      *
      *
@@ -4405,6 +4528,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopFrameCount field is set.
      */
     boolean hasGopFrameCount();
+
     /**
      *
      *
@@ -4435,6 +4559,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopDuration field is set.
      */
     boolean hasGopDuration();
+
     /**
      *
      *
@@ -4451,6 +4576,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The gopDuration.
      */
     com.google.protobuf.Duration getGopDuration();
+
     /**
      *
      *
@@ -4591,6 +4717,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The profile.
      */
     java.lang.String getProfile();
+
     /**
      *
      *
@@ -4646,6 +4773,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The tune.
      */
     java.lang.String getTune();
+
     /**
      *
      *
@@ -4680,6 +4808,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The preset.
      */
     java.lang.String getPreset();
+
     /**
      *
      *
@@ -4700,6 +4829,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.GopModeCase getGopModeCase();
   }
+
   /**
    *
    *
@@ -4714,6 +4844,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings)
       H265CodecSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use H265CodecSettings.newBuilder() to construct.
     private H265CodecSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4765,6 +4896,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private GopModeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4799,6 +4931,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
+
     /**
      *
      *
@@ -4824,6 +4957,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HEIGHT_PIXELS_FIELD_NUMBER = 2;
     private int heightPixels_ = 0;
+
     /**
      *
      *
@@ -4849,6 +4983,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FRAME_RATE_FIELD_NUMBER = 3;
     private double frameRate_ = 0D;
+
     /**
      *
      *
@@ -4873,6 +5008,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
     private int bitrateBps_ = 0;
+
     /**
      *
      *
@@ -4894,6 +5030,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pixelFormat_ = "";
+
     /**
      *
      *
@@ -4929,6 +5066,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -4969,6 +5107,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rateControlMode_ = "";
+
     /**
      *
      *
@@ -4997,6 +5136,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5028,6 +5168,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CRF_LEVEL_FIELD_NUMBER = 7;
     private int crfLevel_ = 0;
+
     /**
      *
      *
@@ -5047,6 +5188,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ALLOW_OPEN_GOP_FIELD_NUMBER = 8;
     private boolean allowOpenGop_ = false;
+
     /**
      *
      *
@@ -5065,6 +5207,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_FRAME_COUNT_FIELD_NUMBER = 9;
+
     /**
      *
      *
@@ -5081,6 +5224,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopFrameCount() {
       return gopModeCase_ == 9;
     }
+
     /**
      *
      *
@@ -5102,6 +5246,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_DURATION_FIELD_NUMBER = 10;
+
     /**
      *
      *
@@ -5121,6 +5266,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopDuration() {
       return gopModeCase_ == 10;
     }
+
     /**
      *
      *
@@ -5143,6 +5289,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5166,6 +5313,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENABLE_TWO_PASS_FIELD_NUMBER = 11;
     private boolean enableTwoPass_ = false;
+
     /**
      *
      *
@@ -5185,6 +5333,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VBV_SIZE_BITS_FIELD_NUMBER = 12;
     private int vbvSizeBits_ = 0;
+
     /**
      *
      *
@@ -5204,6 +5353,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VBV_FULLNESS_BITS_FIELD_NUMBER = 13;
     private int vbvFullnessBits_ = 0;
+
     /**
      *
      *
@@ -5224,6 +5374,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int B_PYRAMID_FIELD_NUMBER = 14;
     private boolean bPyramid_ = false;
+
     /**
      *
      *
@@ -5243,6 +5394,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int B_FRAME_COUNT_FIELD_NUMBER = 15;
     private int bFrameCount_ = 0;
+
     /**
      *
      *
@@ -5263,6 +5415,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AQ_STRENGTH_FIELD_NUMBER = 16;
     private double aqStrength_ = 0D;
+
     /**
      *
      *
@@ -5285,6 +5438,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object profile_ = "";
+
     /**
      *
      *
@@ -5334,6 +5488,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5388,6 +5543,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tune_ = "";
+
     /**
      *
      *
@@ -5415,6 +5571,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5447,6 +5604,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object preset_ = "";
+
     /**
      *
      *
@@ -5475,6 +5633,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -5857,6 +6016,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6324,6 +6484,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int widthPixels_;
+
       /**
        *
        *
@@ -6346,6 +6507,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getWidthPixels() {
         return widthPixels_;
       }
+
       /**
        *
        *
@@ -6372,6 +6534,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6398,6 +6561,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int heightPixels_;
+
       /**
        *
        *
@@ -6420,6 +6584,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getHeightPixels() {
         return heightPixels_;
       }
+
       /**
        *
        *
@@ -6446,6 +6611,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6472,6 +6638,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double frameRate_;
+
       /**
        *
        *
@@ -6493,6 +6660,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public double getFrameRate() {
         return frameRate_;
       }
+
       /**
        *
        *
@@ -6518,6 +6686,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6543,6 +6712,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitrateBps_;
+
       /**
        *
        *
@@ -6559,6 +6729,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getBitrateBps() {
         return bitrateBps_;
       }
+
       /**
        *
        *
@@ -6579,6 +6750,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6599,6 +6771,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pixelFormat_ = "";
+
       /**
        *
        *
@@ -6633,6 +6806,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6667,6 +6841,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6700,6 +6875,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6729,6 +6905,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6765,6 +6942,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object rateControlMode_ = "";
+
       /**
        *
        *
@@ -6792,6 +6970,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6819,6 +6998,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6845,6 +7025,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6867,6 +7048,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6896,6 +7078,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int crfLevel_;
+
       /**
        *
        *
@@ -6912,6 +7095,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getCrfLevel() {
         return crfLevel_;
       }
+
       /**
        *
        *
@@ -6932,6 +7116,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6952,6 +7137,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean allowOpenGop_;
+
       /**
        *
        *
@@ -6968,6 +7154,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getAllowOpenGop() {
         return allowOpenGop_;
       }
+
       /**
        *
        *
@@ -6988,6 +7175,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7022,6 +7210,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopFrameCount() {
         return gopModeCase_ == 9;
       }
+
       /**
        *
        *
@@ -7040,6 +7229,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -7060,6 +7250,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7086,6 +7277,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           gopDurationBuilder_;
+
       /**
        *
        *
@@ -7105,6 +7297,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopDuration() {
         return gopModeCase_ == 10;
       }
+
       /**
        *
        *
@@ -7134,6 +7327,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7160,6 +7354,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -7183,6 +7378,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -7217,6 +7413,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 10;
         return this;
       }
+
       /**
        *
        *
@@ -7246,6 +7443,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7262,6 +7460,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration.Builder getGopDurationBuilder() {
         return getGopDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7286,6 +7485,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7322,6 +7522,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean enableTwoPass_;
+
       /**
        *
        *
@@ -7338,6 +7539,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getEnableTwoPass() {
         return enableTwoPass_;
       }
+
       /**
        *
        *
@@ -7358,6 +7560,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7378,6 +7581,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int vbvSizeBits_;
+
       /**
        *
        *
@@ -7394,6 +7598,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getVbvSizeBits() {
         return vbvSizeBits_;
       }
+
       /**
        *
        *
@@ -7414,6 +7619,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7434,6 +7640,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int vbvFullnessBits_;
+
       /**
        *
        *
@@ -7451,6 +7658,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getVbvFullnessBits() {
         return vbvFullnessBits_;
       }
+
       /**
        *
        *
@@ -7472,6 +7680,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7493,6 +7702,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private boolean bPyramid_;
+
       /**
        *
        *
@@ -7509,6 +7719,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean getBPyramid() {
         return bPyramid_;
       }
+
       /**
        *
        *
@@ -7529,6 +7740,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7549,6 +7761,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bFrameCount_;
+
       /**
        *
        *
@@ -7566,6 +7779,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getBFrameCount() {
         return bFrameCount_;
       }
+
       /**
        *
        *
@@ -7587,6 +7801,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7608,6 +7823,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double aqStrength_;
+
       /**
        *
        *
@@ -7625,6 +7841,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public double getAqStrength() {
         return aqStrength_;
       }
+
       /**
        *
        *
@@ -7646,6 +7863,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7667,6 +7885,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object profile_ = "";
+
       /**
        *
        *
@@ -7715,6 +7934,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7763,6 +7983,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7810,6 +8031,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7853,6 +8075,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7903,6 +8126,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object tune_ = "";
+
       /**
        *
        *
@@ -7929,6 +8153,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7955,6 +8180,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7980,6 +8206,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8001,6 +8228,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8029,6 +8257,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object preset_ = "";
+
       /**
        *
        *
@@ -8056,6 +8285,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8083,6 +8313,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8109,6 +8340,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8131,6 +8363,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8328,6 +8561,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The pixelFormat.
      */
     java.lang.String getPixelFormat();
+
     /**
      *
      *
@@ -8369,6 +8603,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The rateControlMode.
      */
     java.lang.String getRateControlMode();
+
     /**
      *
      *
@@ -8415,6 +8650,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopFrameCount field is set.
      */
     boolean hasGopFrameCount();
+
     /**
      *
      *
@@ -8445,6 +8681,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the gopDuration field is set.
      */
     boolean hasGopDuration();
+
     /**
      *
      *
@@ -8461,6 +8698,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The gopDuration.
      */
     com.google.protobuf.Duration getGopDuration();
+
     /**
      *
      *
@@ -8500,6 +8738,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      * @return The profile.
      */
     java.lang.String getProfile();
+
     /**
      *
      *
@@ -8527,6 +8766,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.GopModeCase getGopModeCase();
   }
+
   /**
    *
    *
@@ -8541,6 +8781,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings)
       Vp9CodecSettingsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Vp9CodecSettings.newBuilder() to construct.
     private Vp9CodecSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8590,6 +8831,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private GopModeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -8624,6 +8866,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
     private int widthPixels_ = 0;
+
     /**
      *
      *
@@ -8649,6 +8892,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int HEIGHT_PIXELS_FIELD_NUMBER = 2;
     private int heightPixels_ = 0;
+
     /**
      *
      *
@@ -8674,6 +8918,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FRAME_RATE_FIELD_NUMBER = 3;
     private double frameRate_ = 0D;
+
     /**
      *
      *
@@ -8698,6 +8943,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int BITRATE_BPS_FIELD_NUMBER = 4;
     private int bitrateBps_ = 0;
+
     /**
      *
      *
@@ -8719,6 +8965,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pixelFormat_ = "";
+
     /**
      *
      *
@@ -8754,6 +9001,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -8794,6 +9042,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rateControlMode_ = "";
+
     /**
      *
      *
@@ -8821,6 +9070,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -8851,6 +9101,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     public static final int CRF_LEVEL_FIELD_NUMBER = 7;
     private int crfLevel_ = 0;
+
     /**
      *
      *
@@ -8871,6 +9122,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_FRAME_COUNT_FIELD_NUMBER = 8;
+
     /**
      *
      *
@@ -8887,6 +9139,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopFrameCount() {
       return gopModeCase_ == 8;
     }
+
     /**
      *
      *
@@ -8908,6 +9161,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOP_DURATION_FIELD_NUMBER = 9;
+
     /**
      *
      *
@@ -8927,6 +9181,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGopDuration() {
       return gopModeCase_ == 9;
     }
+
     /**
      *
      *
@@ -8949,6 +9204,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.Duration.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -8974,6 +9230,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object profile_ = "";
+
     /**
      *
      *
@@ -9009,6 +9266,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -9313,6 +9571,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9659,6 +9918,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int widthPixels_;
+
       /**
        *
        *
@@ -9681,6 +9941,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getWidthPixels() {
         return widthPixels_;
       }
+
       /**
        *
        *
@@ -9707,6 +9968,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9733,6 +9995,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int heightPixels_;
+
       /**
        *
        *
@@ -9755,6 +10018,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getHeightPixels() {
         return heightPixels_;
       }
+
       /**
        *
        *
@@ -9781,6 +10045,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9807,6 +10072,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double frameRate_;
+
       /**
        *
        *
@@ -9828,6 +10094,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public double getFrameRate() {
         return frameRate_;
       }
+
       /**
        *
        *
@@ -9853,6 +10120,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9878,6 +10146,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int bitrateBps_;
+
       /**
        *
        *
@@ -9894,6 +10163,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getBitrateBps() {
         return bitrateBps_;
       }
+
       /**
        *
        *
@@ -9914,6 +10184,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -9934,6 +10205,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object pixelFormat_ = "";
+
       /**
        *
        *
@@ -9968,6 +10240,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10002,6 +10275,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10035,6 +10309,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10064,6 +10339,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10100,6 +10376,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object rateControlMode_ = "";
+
       /**
        *
        *
@@ -10126,6 +10403,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10152,6 +10430,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10177,6 +10456,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10198,6 +10478,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10226,6 +10507,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private int crfLevel_;
+
       /**
        *
        *
@@ -10244,6 +10526,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public int getCrfLevel() {
         return crfLevel_;
       }
+
       /**
        *
        *
@@ -10266,6 +10549,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10302,6 +10586,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopFrameCount() {
         return gopModeCase_ == 8;
       }
+
       /**
        *
        *
@@ -10320,6 +10605,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -10340,6 +10626,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10366,6 +10653,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           gopDurationBuilder_;
+
       /**
        *
        *
@@ -10385,6 +10673,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGopDuration() {
         return gopModeCase_ == 9;
       }
+
       /**
        *
        *
@@ -10414,6 +10703,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10440,6 +10730,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -10463,6 +10754,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -10497,6 +10789,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         gopModeCase_ = 9;
         return this;
       }
+
       /**
        *
        *
@@ -10526,6 +10819,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -10542,6 +10836,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.Duration.Builder getGopDurationBuilder() {
         return getGopDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -10566,6 +10861,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return com.google.protobuf.Duration.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -10602,6 +10898,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object profile_ = "";
+
       /**
        *
        *
@@ -10636,6 +10933,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10670,6 +10968,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10703,6 +11002,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10732,6 +11032,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10852,6 +11153,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     private CodecSettingsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -10887,6 +11189,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int H264_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -10902,6 +11205,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasH264() {
     return codecSettingsCase_ == 1;
   }
+
   /**
    *
    *
@@ -10920,6 +11224,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -10939,6 +11244,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int H265_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -10954,6 +11260,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasH265() {
     return codecSettingsCase_ == 2;
   }
+
   /**
    *
    *
@@ -10972,6 +11279,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -10991,6 +11299,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int VP9_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -11006,6 +11315,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVp9() {
     return codecSettingsCase_ == 3;
   }
+
   /**
    *
    *
@@ -11024,6 +11334,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -11252,6 +11563,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -11504,6 +11816,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettings.Builder,
             com.google.cloud.video.transcoder.v1.VideoStream.H264CodecSettingsOrBuilder>
         h264Builder_;
+
     /**
      *
      *
@@ -11519,6 +11832,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasH264() {
       return codecSettingsCase_ == 1;
     }
+
     /**
      *
      *
@@ -11547,6 +11861,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -11570,6 +11885,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -11591,6 +11907,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -11627,6 +11944,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -11652,6 +11970,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11665,6 +11984,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         getH264Builder() {
       return getH264FieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11688,6 +12008,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -11728,6 +12049,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettings.Builder,
             com.google.cloud.video.transcoder.v1.VideoStream.H265CodecSettingsOrBuilder>
         h265Builder_;
+
     /**
      *
      *
@@ -11743,6 +12065,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasH265() {
       return codecSettingsCase_ == 2;
     }
+
     /**
      *
      *
@@ -11771,6 +12094,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -11794,6 +12118,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -11815,6 +12140,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -11851,6 +12177,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -11876,6 +12203,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11889,6 +12217,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         getH265Builder() {
       return getH265FieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11912,6 +12241,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -11952,6 +12282,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettings.Builder,
             com.google.cloud.video.transcoder.v1.VideoStream.Vp9CodecSettingsOrBuilder>
         vp9Builder_;
+
     /**
      *
      *
@@ -11967,6 +12298,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVp9() {
       return codecSettingsCase_ == 3;
     }
+
     /**
      *
      *
@@ -11994,6 +12326,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -12016,6 +12349,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12036,6 +12370,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12072,6 +12407,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -12097,6 +12433,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -12110,6 +12447,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
         getVp9Builder() {
       return getVp9FieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -12132,6 +12470,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

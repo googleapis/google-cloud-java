@@ -25,6 +25,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.iam.credentials.v1.GenerateAccessTokenRequest)
     GenerateAccessTokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateAccessTokenRequest.newBuilder() to construct.
   private GenerateAccessTokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -62,6 +63,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList delegates_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getDelegatesList() {
     return delegates_;
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public int getDelegatesCount() {
     return delegates_.size();
   }
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public java.lang.String getDelegates(int index) {
     return delegates_.get(index);
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList scope_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getScopeList() {
     return scope_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public int getScopeCount() {
     return scope_.size();
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public java.lang.String getScope(int index) {
     return scope_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
 
   public static final int LIFETIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration lifetime_;
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public boolean hasLifetime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
   public com.google.protobuf.Duration getLifetime() {
     return lifetime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : lifetime_;
   }
+
   /**
    *
    *
@@ -556,6 +570,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.iam.credentials.v1.GenerateAccessTokenRequest} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -808,6 +823,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -862,6 +879,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -971,6 +992,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       delegates_.makeImmutable();
       return delegates_;
     }
+
     /**
      *
      *
@@ -994,6 +1016,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public int getDelegatesCount() {
       return delegates_.size();
     }
+
     /**
      *
      *
@@ -1018,6 +1041,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public java.lang.String getDelegates(int index) {
       return delegates_.get(index);
     }
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getDelegatesBytes(int index) {
       return delegates_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1074,6 +1099,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1131,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1160,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1188,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1202,6 +1231,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1220,6 +1250,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       scope_.makeImmutable();
       return scope_;
     }
+
     /**
      *
      *
@@ -1237,6 +1268,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public int getScopeCount() {
       return scope_.size();
     }
+
     /**
      *
      *
@@ -1255,6 +1287,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public java.lang.String getScope(int index) {
       return scope_.get(index);
     }
+
     /**
      *
      *
@@ -1273,6 +1306,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getScopeBytes(int index) {
       return scope_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1299,6 +1333,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1359,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1382,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1404,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1438,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         lifetimeBuilder_;
+
     /**
      *
      *
@@ -1417,6 +1456,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public boolean hasLifetime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1438,6 +1478,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return lifetimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1463,6 +1504,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1485,6 +1527,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1515,6 +1558,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1581,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1599,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       onChanged();
       return getLifetimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1573,6 +1619,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return lifetime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : lifetime_;
       }
     }
+
     /**
      *
      *

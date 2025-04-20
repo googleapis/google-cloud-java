@@ -33,6 +33,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.QualityMetrics)
     QualityMetricsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QualityMetrics.newBuilder() to construct.
   private QualityMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -118,6 +119,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
      */
     double getTop10();
   }
+
   /**
    *
    *
@@ -132,6 +134,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics)
       TopkMetricsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TopkMetrics.newBuilder() to construct.
     private TopkMetrics(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,6 +165,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOP_1_FIELD_NUMBER = 1;
     private double top1_ = 0D;
+
     /**
      *
      *
@@ -180,6 +184,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOP_3_FIELD_NUMBER = 2;
     private double top3_ = 0D;
+
     /**
      *
      *
@@ -198,6 +203,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOP_5_FIELD_NUMBER = 3;
     private double top5_ = 0D;
+
     /**
      *
      *
@@ -216,6 +222,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
     public static final int TOP_10_FIELD_NUMBER = 4;
     private double top10_ = 0D;
+
     /**
      *
      *
@@ -434,6 +441,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -665,6 +673,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double top1_;
+
       /**
        *
        *
@@ -680,6 +689,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       public double getTop1() {
         return top1_;
       }
+
       /**
        *
        *
@@ -699,6 +709,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -718,6 +729,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double top3_;
+
       /**
        *
        *
@@ -733,6 +745,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       public double getTop3() {
         return top3_;
       }
+
       /**
        *
        *
@@ -752,6 +765,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -771,6 +785,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double top5_;
+
       /**
        *
        *
@@ -786,6 +801,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       public double getTop5() {
         return top5_;
       }
+
       /**
        *
        *
@@ -805,6 +821,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -824,6 +841,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double top10_;
+
       /**
        *
        *
@@ -839,6 +857,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       public double getTop10() {
         return top10_;
       }
+
       /**
        *
        *
@@ -858,6 +877,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -946,6 +966,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DOC_RECALL_FIELD_NUMBER = 1;
   private com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics docRecall_;
+
   /**
    *
    *
@@ -969,6 +990,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocRecall() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -994,6 +1016,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.getDefaultInstance()
         : docRecall_;
   }
+
   /**
    *
    *
@@ -1021,6 +1044,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOC_PRECISION_FIELD_NUMBER = 2;
   private com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics docPrecision_;
+
   /**
    *
    *
@@ -1044,6 +1068,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocPrecision() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1069,6 +1094,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.getDefaultInstance()
         : docPrecision_;
   }
+
   /**
    *
    *
@@ -1096,6 +1122,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DOC_NDCG_FIELD_NUMBER = 3;
   private com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics docNdcg_;
+
   /**
    *
    *
@@ -1129,6 +1156,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocNdcg() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1164,6 +1192,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.getDefaultInstance()
         : docNdcg_;
   }
+
   /**
    *
    *
@@ -1201,6 +1230,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_RECALL_FIELD_NUMBER = 4;
   private com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics pageRecall_;
+
   /**
    *
    *
@@ -1224,6 +1254,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPageRecall() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -1249,6 +1280,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.getDefaultInstance()
         : pageRecall_;
   }
+
   /**
    *
    *
@@ -1276,6 +1308,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAGE_NDCG_FIELD_NUMBER = 5;
   private com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics pageNdcg_;
+
   /**
    *
    *
@@ -1309,6 +1342,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPageNdcg() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -1344,6 +1378,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.getDefaultInstance()
         : pageNdcg_;
   }
+
   /**
    *
    *
@@ -1600,6 +1635,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1880,6 +1916,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.Builder,
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetricsOrBuilder>
         docRecallBuilder_;
+
     /**
      *
      *
@@ -1902,6 +1939,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocRecall() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1931,6 +1969,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         return docRecallBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1962,6 +2001,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1991,6 +2031,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2029,6 +2070,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2098,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2079,6 +2122,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocRecallFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2107,6 +2151,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             : docRecall_;
       }
     }
+
     /**
      *
      *
@@ -2147,6 +2192,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.Builder,
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetricsOrBuilder>
         docPrecisionBuilder_;
+
     /**
      *
      *
@@ -2170,6 +2216,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocPrecision() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2200,6 +2247,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         return docPrecisionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2232,6 +2280,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2262,6 +2311,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2301,6 +2351,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2380,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2353,6 +2405,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocPrecisionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2382,6 +2435,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             : docPrecision_;
       }
     }
+
     /**
      *
      *
@@ -2423,6 +2477,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.Builder,
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetricsOrBuilder>
         docNdcgBuilder_;
+
     /**
      *
      *
@@ -2455,6 +2510,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocNdcg() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2494,6 +2550,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         return docNdcgBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2592,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2574,6 +2632,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2622,6 +2681,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2659,6 +2719,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2692,6 +2753,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocNdcgFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2730,6 +2792,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             : docNdcg_;
       }
     }
+
     /**
      *
      *
@@ -2780,6 +2843,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.Builder,
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetricsOrBuilder>
         pageRecallBuilder_;
+
     /**
      *
      *
@@ -2802,6 +2866,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPageRecall() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2831,6 +2896,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         return pageRecallBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2862,6 +2928,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2891,6 +2958,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2929,6 +2997,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2956,6 +3025,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2979,6 +3049,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPageRecallFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3007,6 +3078,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             : pageRecall_;
       }
     }
+
     /**
      *
      *
@@ -3047,6 +3119,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetrics.Builder,
             com.google.cloud.discoveryengine.v1beta.QualityMetrics.TopkMetricsOrBuilder>
         pageNdcgBuilder_;
+
     /**
      *
      *
@@ -3079,6 +3152,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPageNdcg() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -3118,6 +3192,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
         return pageNdcgBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3159,6 +3234,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3198,6 +3274,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3246,6 +3323,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3283,6 +3361,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3316,6 +3395,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPageNdcgFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3354,6 +3434,7 @@ public final class QualityMetrics extends com.google.protobuf.GeneratedMessageV3
             : pageNdcg_;
       }
     }
+
     /**
      *
      *

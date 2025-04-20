@@ -33,6 +33,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.cloudquotas.v1beta.RolloutInfo)
     RolloutInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RolloutInfo.newBuilder() to construct.
   private RolloutInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ONGOING_ROLLOUT_FIELD_NUMBER = 1;
   private boolean ongoingRollout_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean ongoingRollout_;
+
     /**
      *
      *
@@ -434,6 +438,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean getOngoingRollout() {
       return ongoingRollout_;
     }
+
     /**
      *
      *
@@ -453,6 +458,7 @@ public final class RolloutInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

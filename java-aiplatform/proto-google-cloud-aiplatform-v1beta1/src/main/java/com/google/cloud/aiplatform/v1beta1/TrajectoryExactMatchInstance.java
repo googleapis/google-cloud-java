@@ -33,6 +33,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.TrajectoryExactMatchInstance)
     TrajectoryExactMatchInstanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TrajectoryExactMatchInstance.newBuilder() to construct.
   private TrajectoryExactMatchInstance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int PREDICTED_TRAJECTORY_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1beta1.Trajectory predictedTrajectory_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
   public boolean hasPredictedTrajectory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : predictedTrajectory_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
 
   public static final int REFERENCE_TRAJECTORY_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.Trajectory referenceTrajectory_;
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
   public boolean hasReferenceTrajectory() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
         ? com.google.cloud.aiplatform.v1beta1.Trajectory.getDefaultInstance()
         : referenceTrajectory_;
   }
+
   /**
    *
    *
@@ -353,6 +360,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -587,6 +595,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         predictedTrajectoryBuilder_;
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
     public boolean hasPredictedTrajectory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -625,6 +635,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
         return predictedTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +714,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +736,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return getPredictedTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
             : predictedTrajectory_;
       }
     }
+
     /**
      *
      *
@@ -793,6 +810,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
             com.google.cloud.aiplatform.v1beta1.Trajectory.Builder,
             com.google.cloud.aiplatform.v1beta1.TrajectoryOrBuilder>
         referenceTrajectoryBuilder_;
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
     public boolean hasReferenceTrajectory() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -831,6 +850,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
         return referenceTrajectoryBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +929,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
       onChanged();
       return getReferenceTrajectoryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class TrajectoryExactMatchInstance extends com.google.protobuf.Gene
             : referenceTrajectory_;
       }
     }
+
     /**
      *
      *

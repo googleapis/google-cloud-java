@@ -33,6 +33,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SetIamPolicyNodeTemplateRequest)
     SetIamPolicyNodeTemplateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetIamPolicyNodeTemplateRequest.newBuilder() to construct.
   private SetIamPolicyNodeTemplateRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
 
   public static final int REGION_SET_POLICY_REQUEST_RESOURCE_FIELD_NUMBER = 276489091;
   private com.google.cloud.compute.v1.RegionSetPolicyRequest regionSetPolicyRequestResource_;
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
   public boolean hasRegionSetPolicyRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         ? com.google.cloud.compute.v1.RegionSetPolicyRequest.getDefaultInstance()
         : regionSetPolicyRequestResource_;
   }
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
+
   /**
    *
    *
@@ -253,6 +262,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -473,6 +483,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +732,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -743,6 +755,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -765,6 +778,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +800,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +818,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +843,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -849,6 +866,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -909,6 +929,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
             com.google.cloud.compute.v1.RegionSetPolicyRequest.Builder,
             com.google.cloud.compute.v1.RegionSetPolicyRequestOrBuilder>
         regionSetPolicyRequestResourceBuilder_;
+
     /**
      *
      *
@@ -954,6 +976,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     public boolean hasRegionSetPolicyRequestResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return regionSetPolicyRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1001,6 +1025,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1023,6 +1048,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1075,6 +1102,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1120,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return getRegionSetPolicyRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1113,6 +1142,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
             : regionSetPolicyRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
     }
 
     private java.lang.Object resource_ = "";
+
     /**
      *
      *
@@ -1164,6 +1195,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1218,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1240,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1258,7 @@ public final class SetIamPolicyNodeTemplateRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

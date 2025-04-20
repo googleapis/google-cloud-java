@@ -41,6 +41,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The siteSearchEngine.
    */
   java.lang.String getSiteSearchEngine();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return A list containing the uris.
    */
   java.util.List<java.lang.String> getUrisList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The count of uris.
    */
   int getUrisCount();
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The uris at the given index.
    */
   java.lang.String getUris(int index);
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface RecrawlUrisRequestOrBuilder
    * @return The siteCredential.
    */
   java.lang.String getSiteCredential();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the count field is set.
    */
   boolean hasCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ReservationBlockOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the inUseCount field is set.
    */
   boolean hasInUseCount();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface ReservationBlockOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -197,6 +205,7 @@ public interface ReservationBlockOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -224,6 +233,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the physicalTopology field is set.
    */
   boolean hasPhysicalTopology();
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public interface ReservationBlockOrBuilder
    * @return The physicalTopology.
    */
   com.google.cloud.compute.v1.ReservationBlockPhysicalTopology getPhysicalTopology();
+
   /**
    *
    *
@@ -266,6 +277,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the reservationMaintenance field is set.
    */
   boolean hasReservationMaintenance();
+
   /**
    *
    *
@@ -280,6 +292,7 @@ public interface ReservationBlockOrBuilder
    * @return The reservationMaintenance.
    */
   com.google.cloud.compute.v1.GroupMaintenanceInfo getReservationMaintenance();
+
   /**
    *
    *
@@ -305,6 +318,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public interface ReservationBlockOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the selfLinkWithId field is set.
    */
   boolean hasSelfLinkWithId();
+
   /**
    *
    *
@@ -354,6 +370,7 @@ public interface ReservationBlockOrBuilder
    * @return The selfLinkWithId.
    */
   java.lang.String getSelfLinkWithId();
+
   /**
    *
    *
@@ -380,6 +397,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public interface ReservationBlockOrBuilder
    * @return The status.
    */
   java.lang.String getStatus();
+
   /**
    *
    *
@@ -419,6 +438,7 @@ public interface ReservationBlockOrBuilder
    * @return Whether the zone field is set.
    */
   boolean hasZone();
+
   /**
    *
    *
@@ -431,6 +451,7 @@ public interface ReservationBlockOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

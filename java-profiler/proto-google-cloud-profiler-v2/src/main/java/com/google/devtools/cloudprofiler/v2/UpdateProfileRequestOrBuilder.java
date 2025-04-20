@@ -36,6 +36,7 @@ public interface UpdateProfileRequestOrBuilder
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateProfileRequestOrBuilder
    * @return The profile.
    */
   com.google.devtools.cloudprofiler.v2.Profile getProfile();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateProfileRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface UpdateProfileRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

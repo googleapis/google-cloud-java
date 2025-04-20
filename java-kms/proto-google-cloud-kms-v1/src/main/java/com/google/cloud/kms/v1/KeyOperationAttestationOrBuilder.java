@@ -38,6 +38,7 @@ public interface KeyOperationAttestationOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface KeyOperationAttestationOrBuilder
    * @return Whether the certChains field is set.
    */
   boolean hasCertChains();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface KeyOperationAttestationOrBuilder
    * @return The certChains.
    */
   com.google.cloud.kms.v1.KeyOperationAttestation.CertificateChains getCertChains();
+
   /**
    *
    *

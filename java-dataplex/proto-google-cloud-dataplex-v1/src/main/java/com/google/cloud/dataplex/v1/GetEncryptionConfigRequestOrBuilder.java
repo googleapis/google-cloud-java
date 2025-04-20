@@ -38,6 +38,7 @@ public interface GetEncryptionConfigRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

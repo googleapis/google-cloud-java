@@ -33,6 +33,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1.SqlServerSourceConfig)
     SqlServerSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SqlServerSourceConfig.newBuilder() to construct.
   private SqlServerSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     private CdcMethodCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
 
   public static final int INCLUDE_OBJECTS_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1.SqlServerRdbms includeObjects_;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   public boolean hasIncludeObjects() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance()
         : includeObjects_;
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
 
   public static final int EXCLUDE_OBJECTS_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1.SqlServerRdbms excludeObjects_;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   public boolean hasExcludeObjects() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance()
         : excludeObjects_;
   }
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
 
   public static final int MAX_CONCURRENT_CDC_TASKS_FIELD_NUMBER = 3;
   private int maxConcurrentCdcTasks_ = 0;
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
 
   public static final int MAX_CONCURRENT_BACKFILL_TASKS_FIELD_NUMBER = 4;
   private int maxConcurrentBackfillTasks_ = 0;
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int TRANSACTION_LOGS_FIELD_NUMBER = 101;
+
   /**
    *
    *
@@ -263,6 +274,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   public boolean hasTransactionLogs() {
     return cdcMethodCase_ == 101;
   }
+
   /**
    *
    *
@@ -281,6 +293,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.datastream.v1.SqlServerTransactionLogs.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -300,6 +313,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CHANGE_TABLES_FIELD_NUMBER = 102;
+
   /**
    *
    *
@@ -315,6 +329,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
   public boolean hasChangeTables() {
     return cdcMethodCase_ == 102;
   }
+
   /**
    *
    *
@@ -333,6 +348,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     }
     return com.google.cloud.datastream.v1.SqlServerChangeTables.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -587,6 +603,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -899,6 +916,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
             com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
         includeObjectsBuilder_;
+
     /**
      *
      *
@@ -913,6 +931,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public boolean hasIncludeObjects() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -933,6 +952,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return includeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -975,6 +996,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1025,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1060,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getIncludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1079,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             : includeObjects_;
       }
     }
+
     /**
      *
      *
@@ -1086,6 +1112,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datastream.v1.SqlServerRdbms.Builder,
             com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder>
         excludeObjectsBuilder_;
+
     /**
      *
      *
@@ -1100,6 +1127,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public boolean hasExcludeObjects() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1120,6 +1148,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return excludeObjectsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1142,6 +1171,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1162,6 +1192,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1190,6 +1221,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1241,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1256,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getExcludeObjectsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1241,6 +1275,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             : excludeObjects_;
       }
     }
+
     /**
      *
      *
@@ -1268,6 +1303,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int maxConcurrentCdcTasks_;
+
     /**
      *
      *
@@ -1283,6 +1319,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public int getMaxConcurrentCdcTasks() {
       return maxConcurrentCdcTasks_;
     }
+
     /**
      *
      *
@@ -1302,6 +1339,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1321,6 +1359,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int maxConcurrentBackfillTasks_;
+
     /**
      *
      *
@@ -1336,6 +1375,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public int getMaxConcurrentBackfillTasks() {
       return maxConcurrentBackfillTasks_;
     }
+
     /**
      *
      *
@@ -1355,6 +1395,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1378,6 +1419,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datastream.v1.SqlServerTransactionLogs.Builder,
             com.google.cloud.datastream.v1.SqlServerTransactionLogsOrBuilder>
         transactionLogsBuilder_;
+
     /**
      *
      *
@@ -1393,6 +1435,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public boolean hasTransactionLogs() {
       return cdcMethodCase_ == 101;
     }
+
     /**
      *
      *
@@ -1418,6 +1461,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.datastream.v1.SqlServerTransactionLogs.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1441,6 +1485,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1506,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1495,6 +1541,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 101;
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1567,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1533,6 +1581,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         getTransactionLogsBuilder() {
       return getTransactionLogsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1554,6 +1603,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.datastream.v1.SqlServerTransactionLogs.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1592,6 +1642,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.datastream.v1.SqlServerChangeTables.Builder,
             com.google.cloud.datastream.v1.SqlServerChangeTablesOrBuilder>
         changeTablesBuilder_;
+
     /**
      *
      *
@@ -1607,6 +1658,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public boolean hasChangeTables() {
       return cdcMethodCase_ == 102;
     }
+
     /**
      *
      *
@@ -1632,6 +1684,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.datastream.v1.SqlServerChangeTables.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1654,6 +1707,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1728,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1762,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       cdcMethodCase_ = 102;
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1788,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1744,6 +1801,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
     public com.google.cloud.datastream.v1.SqlServerChangeTables.Builder getChangeTablesBuilder() {
       return getChangeTablesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1765,6 +1823,7 @@ public final class SqlServerSourceConfig extends com.google.protobuf.GeneratedMe
         return com.google.cloud.datastream.v1.SqlServerChangeTables.getDefaultInstance();
       }
     }
+
     /**
      *
      *

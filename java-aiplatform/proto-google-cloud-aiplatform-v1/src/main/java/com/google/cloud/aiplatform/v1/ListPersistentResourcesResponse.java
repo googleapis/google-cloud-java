@@ -34,6 +34,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ListPersistentResourcesResponse)
     ListPersistentResourcesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPersistentResourcesResponse.newBuilder() to construct.
   private ListPersistentResourcesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.PersistentResource> persistentResources_;
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -78,6 +80,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       getPersistentResourcesList() {
     return persistentResources_;
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -86,6 +89,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       getPersistentResourcesOrBuilderList() {
     return persistentResources_;
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -93,6 +97,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
   public int getPersistentResourcesCount() {
     return persistentResources_.size();
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -100,6 +105,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
   public com.google.cloud.aiplatform.v1.PersistentResource getPersistentResources(int index) {
     return persistentResources_.get(index);
   }
+
   /**
    * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;</code>
    */
@@ -113,6 +119,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -139,6 +146,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -338,6 +346,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -617,6 +626,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return persistentResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -628,6 +638,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return persistentResourcesBuilder_.getCount();
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -639,6 +650,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return persistentResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -657,6 +669,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -672,6 +685,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -689,6 +703,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -707,6 +722,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -722,6 +738,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -737,6 +754,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -752,6 +770,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -766,6 +785,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -780,6 +800,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -788,6 +809,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         int index) {
       return getPersistentResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -800,6 +822,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return persistentResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -812,6 +835,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(persistentResources_);
       }
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -821,6 +845,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       return getPersistentResourcesFieldBuilder()
           .addBuilder(com.google.cloud.aiplatform.v1.PersistentResource.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -831,6 +856,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.aiplatform.v1.PersistentResource.getDefaultInstance());
     }
+
     /**
      * <code>repeated .google.cloud.aiplatform.v1.PersistentResource persistent_resources = 1;
      * </code>
@@ -861,6 +887,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -886,6 +913,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +939,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -935,6 +964,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +985,7 @@ public final class ListPersistentResourcesResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

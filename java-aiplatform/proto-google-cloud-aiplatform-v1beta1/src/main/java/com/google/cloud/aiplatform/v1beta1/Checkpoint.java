@@ -33,6 +33,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.Checkpoint)
     CheckpointOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Checkpoint.newBuilder() to construct.
   private Checkpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object checkpointId_ = "";
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EPOCH_FIELD_NUMBER = 2;
   private long epoch_ = 0L;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STEP_FIELD_NUMBER = 3;
   private long step_ = 0L;
+
   /**
    *
    *
@@ -327,6 +332,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -536,6 +542,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object checkpointId_ = "";
+
     /**
      *
      *
@@ -558,6 +565,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +628,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +653,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long epoch_;
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     public long getEpoch() {
       return epoch_;
     }
+
     /**
      *
      *
@@ -676,6 +689,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +709,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long step_;
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
     public long getStep() {
       return step_;
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class Checkpoint extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

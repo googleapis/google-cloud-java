@@ -35,6 +35,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2.PredictResponse.PredictionResult results = 1;</code>
    */
   java.util.List<com.google.cloud.retail.v2.PredictResponse.PredictionResult> getResultsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2.PredictResponse.PredictionResult results = 1;</code>
    */
   com.google.cloud.retail.v2.PredictResponse.PredictionResult getResults(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface PredictResponseOrBuilder
    * <code>repeated .google.cloud.retail.v2.PredictResponse.PredictionResult results = 1;</code>
    */
   int getResultsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface PredictResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.retail.v2.PredictResponse.PredictionResultOrBuilder>
       getResultsOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface PredictResponseOrBuilder
    * @return The attributionToken.
    */
   java.lang.String getAttributionToken();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface PredictResponseOrBuilder
    * @return A list containing the missingIds.
    */
   java.util.List<java.lang.String> getMissingIdsList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface PredictResponseOrBuilder
    * @return The count of missingIds.
    */
   int getMissingIdsCount();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface PredictResponseOrBuilder
    * @return The missingIds at the given index.
    */
   java.lang.String getMissingIds(int index);
+
   /**
    *
    *

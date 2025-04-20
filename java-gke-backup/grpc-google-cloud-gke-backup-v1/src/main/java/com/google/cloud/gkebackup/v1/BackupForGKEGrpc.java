@@ -1162,6 +1162,19 @@ public final class BackupForGKEGrpc {
     return BackupForGKEStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BackupForGKEBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BackupForGKEBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BackupForGKEBlockingV2Stub>() {
+          @java.lang.Override
+          public BackupForGKEBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BackupForGKEBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BackupForGKEBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1998,6 +2011,353 @@ public final class BackupForGKEGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BackupForGKE.
+   *
+   * <pre>
+   * BackupForGKE allows Kubernetes administrators to configure, execute, and
+   * manage backup and restore operations for their GKE clusters.
+   * </pre>
+   */
+  public static final class BackupForGKEBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BackupForGKEBlockingV2Stub> {
+    private BackupForGKEBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BackupForGKEBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BackupForGKEBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new BackupPlan in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackupPlan(
+        com.google.cloud.gkebackup.v1.CreateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists BackupPlans in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupPlansResponse listBackupPlans(
+        com.google.cloud.gkebackup.v1.ListBackupPlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupPlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single BackupPlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.BackupPlan getBackupPlan(
+        com.google.cloud.gkebackup.v1.GetBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackupPlan(
+        com.google.cloud.gkebackup.v1.UpdateBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackupPlan(
+        com.google.cloud.gkebackup.v1.DeleteBackupPlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupPlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Backup for the given BackupPlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.cloud.gkebackup.v1.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Backups for a given BackupPlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListBackupsResponse listBackups(
+        com.google.cloud.gkebackup.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single Backup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.Backup getBackup(
+        com.google.cloud.gkebackup.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBackup(
+        com.google.cloud.gkebackup.v1.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing Backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.gkebackup.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the VolumeBackups for a given Backup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListVolumeBackupsResponse listVolumeBackups(
+        com.google.cloud.gkebackup.v1.ListVolumeBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumeBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single VolumeBackup.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeBackup getVolumeBackup(
+        com.google.cloud.gkebackup.v1.GetVolumeBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new RestorePlan in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestorePlan(
+        com.google.cloud.gkebackup.v1.CreateRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists RestorePlans in a given location.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestorePlansResponse listRestorePlans(
+        com.google.cloud.gkebackup.v1.ListRestorePlansRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestorePlansMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single RestorePlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.RestorePlan getRestorePlan(
+        com.google.cloud.gkebackup.v1.GetRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestorePlan(
+        com.google.cloud.gkebackup.v1.UpdateRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestorePlan(
+        com.google.cloud.gkebackup.v1.DeleteRestorePlanRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestorePlanMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Restore for the given RestorePlan.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createRestore(
+        com.google.cloud.gkebackup.v1.CreateRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the Restores for a given RestorePlan.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListRestoresResponse listRestores(
+        com.google.cloud.gkebackup.v1.ListRestoresRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListRestoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the details of a single Restore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.Restore getRestore(
+        com.google.cloud.gkebackup.v1.GetRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update a Restore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateRestore(
+        com.google.cloud.gkebackup.v1.UpdateRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing Restore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteRestore(
+        com.google.cloud.gkebackup.v1.DeleteRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the VolumeRestores for a given Restore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.ListVolumeRestoresResponse listVolumeRestores(
+        com.google.cloud.gkebackup.v1.ListVolumeRestoresRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListVolumeRestoresMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the details of a single VolumeRestore.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.VolumeRestore getVolumeRestore(
+        com.google.cloud.gkebackup.v1.GetVolumeRestoreRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetVolumeRestoreMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieve the link to the backupIndex.
+     * </pre>
+     */
+    public com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlResponse
+        getBackupIndexDownloadUrl(
+            com.google.cloud.gkebackup.v1.GetBackupIndexDownloadUrlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupIndexDownloadUrlMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BackupForGKE.
    *
    * <pre>
    * BackupForGKE allows Kubernetes administrators to configure, execute, and

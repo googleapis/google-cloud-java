@@ -38,6 +38,7 @@ public interface SubmitUserDeletionResponseOrBuilder
    * @return Whether the deletionRequestTime field is set.
    */
   boolean hasDeletionRequestTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SubmitUserDeletionResponseOrBuilder
    * @return The deletionRequestTime.
    */
   com.google.protobuf.Timestamp getDeletionRequestTime();
+
   /**
    *
    *

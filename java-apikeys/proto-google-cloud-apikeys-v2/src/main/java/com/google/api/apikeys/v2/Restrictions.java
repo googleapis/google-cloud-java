@@ -33,6 +33,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.api.apikeys.v2.Restrictions)
     RestrictionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Restrictions.newBuilder() to construct.
   private Restrictions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     private ClientRestrictionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BROWSER_KEY_RESTRICTIONS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBrowserKeyRestrictions() {
     return clientRestrictionsCase_ == 1;
   }
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.apikeys.v2.BrowserKeyRestrictions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SERVER_KEY_RESTRICTIONS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasServerKeyRestrictions() {
     return clientRestrictionsCase_ == 2;
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.apikeys.v2.ServerKeyRestrictions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ANDROID_KEY_RESTRICTIONS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAndroidKeyRestrictions() {
     return clientRestrictionsCase_ == 3;
   }
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.apikeys.v2.AndroidKeyRestrictions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int IOS_KEY_RESTRICTIONS_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -290,6 +302,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIosKeyRestrictions() {
     return clientRestrictionsCase_ == 4;
   }
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.api.apikeys.v2.IosKeyRestrictions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.apikeys.v2.ApiTarget> apiTargets_;
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.api.apikeys.v2.ApiTarget> getApiTargetsList() {
     return apiTargets_;
   }
+
   /**
    *
    *
@@ -362,6 +378,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       getApiTargetsOrBuilderList() {
     return apiTargets_;
   }
+
   /**
    *
    *
@@ -378,6 +395,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public int getApiTargetsCount() {
     return apiTargets_.size();
   }
+
   /**
    *
    *
@@ -394,6 +412,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
   public com.google.api.apikeys.v2.ApiTarget getApiTargets(int index) {
     return apiTargets_.get(index);
   }
+
   /**
    *
    *
@@ -642,6 +661,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -974,6 +994,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             com.google.api.apikeys.v2.BrowserKeyRestrictions.Builder,
             com.google.api.apikeys.v2.BrowserKeyRestrictionsOrBuilder>
         browserKeyRestrictionsBuilder_;
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBrowserKeyRestrictions() {
       return clientRestrictionsCase_ == 1;
     }
+
     /**
      *
      *
@@ -1014,6 +1036,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.BrowserKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1091,6 +1116,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1116,6 +1142,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         getBrowserKeyRestrictionsBuilder() {
       return getBrowserKeyRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1150,6 +1178,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.BrowserKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1218,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             com.google.api.apikeys.v2.ServerKeyRestrictions.Builder,
             com.google.api.apikeys.v2.ServerKeyRestrictionsOrBuilder>
         serverKeyRestrictionsBuilder_;
+
     /**
      *
      *
@@ -1204,6 +1234,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasServerKeyRestrictions() {
       return clientRestrictionsCase_ == 2;
     }
+
     /**
      *
      *
@@ -1229,6 +1260,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.ServerKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1251,6 +1283,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1271,6 +1304,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1339,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1365,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1343,6 +1379,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         getServerKeyRestrictionsBuilder() {
       return getServerKeyRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1364,6 +1401,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.ServerKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1403,6 +1441,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             com.google.api.apikeys.v2.AndroidKeyRestrictions.Builder,
             com.google.api.apikeys.v2.AndroidKeyRestrictionsOrBuilder>
         androidKeyRestrictionsBuilder_;
+
     /**
      *
      *
@@ -1418,6 +1457,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAndroidKeyRestrictions() {
       return clientRestrictionsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1443,6 +1483,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.AndroidKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1466,6 +1507,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1486,6 +1528,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1563,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1589,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1558,6 +1603,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         getAndroidKeyRestrictionsBuilder() {
       return getAndroidKeyRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1579,6 +1625,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.AndroidKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1618,6 +1665,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
             com.google.api.apikeys.v2.IosKeyRestrictions.Builder,
             com.google.api.apikeys.v2.IosKeyRestrictionsOrBuilder>
         iosKeyRestrictionsBuilder_;
+
     /**
      *
      *
@@ -1633,6 +1681,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIosKeyRestrictions() {
       return clientRestrictionsCase_ == 4;
     }
+
     /**
      *
      *
@@ -1658,6 +1707,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.IosKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1680,6 +1730,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1700,6 +1751,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1733,6 +1785,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       clientRestrictionsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1758,6 +1811,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1770,6 +1824,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.apikeys.v2.IosKeyRestrictions.Builder getIosKeyRestrictionsBuilder() {
       return getIosKeyRestrictionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1790,6 +1845,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return com.google.api.apikeys.v2.IosKeyRestrictions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1858,6 +1914,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return apiTargetsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1877,6 +1934,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return apiTargetsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1896,6 +1954,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return apiTargetsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1980,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1944,6 +2004,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1969,6 +2030,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1994,6 +2056,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2016,6 +2079,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2039,6 +2103,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2127,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2084,6 +2150,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2173,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2189,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
     public com.google.api.apikeys.v2.ApiTarget.Builder getApiTargetsBuilder(int index) {
       return getApiTargetsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2140,6 +2209,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return apiTargetsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2160,6 +2230,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(apiTargets_);
       }
     }
+
     /**
      *
      *
@@ -2176,6 +2247,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       return getApiTargetsFieldBuilder()
           .addBuilder(com.google.api.apikeys.v2.ApiTarget.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2192,6 +2264,7 @@ public final class Restrictions extends com.google.protobuf.GeneratedMessageV3
       return getApiTargetsFieldBuilder()
           .addBuilder(index, com.google.api.apikeys.v2.ApiTarget.getDefaultInstance());
     }
+
     /**
      *
      *

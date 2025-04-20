@@ -36,6 +36,7 @@ public interface RouterNatSubnetworkToNat64OrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterNatSubnetworkToNat64OrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

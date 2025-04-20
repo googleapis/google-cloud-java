@@ -33,6 +33,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GroupMaintenanceInfo)
     GroupMaintenanceInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GroupMaintenanceInfo.newBuilder() to construct.
   private GroupMaintenanceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      * <code>UNDEFINED_SCHEDULING_TYPE = 0;</code>
      */
     public static final int UNDEFINED_SCHEDULING_TYPE_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      * <code>GROUPED = 474540862;</code>
      */
     public static final int GROUPED_VALUE = 474540862;
+
     /**
      *
      *
@@ -146,6 +149,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
      * <code>GROUP_MAINTENANCE_TYPE_UNSPECIFIED = 447183678;</code>
      */
     public static final int GROUP_MAINTENANCE_TYPE_UNSPECIFIED_VALUE = 447183678;
+
     /**
      *
      *
@@ -245,6 +249,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int MAINTENANCE_ONGOING_COUNT_FIELD_NUMBER = 219781919;
   private int maintenanceOngoingCount_ = 0;
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
   public boolean hasMaintenanceOngoingCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +284,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
 
   public static final int MAINTENANCE_PENDING_COUNT_FIELD_NUMBER = 158783547;
   private int maintenancePendingCount_ = 0;
+
   /**
    *
    *
@@ -293,6 +300,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
   public boolean hasMaintenancePendingCount() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -313,6 +321,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schedulingType_ = "";
+
   /**
    *
    *
@@ -329,6 +338,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
   public boolean hasSchedulingType() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -353,6 +363,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -380,6 +391,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
 
   public static final int UPCOMING_GROUP_MAINTENANCE_FIELD_NUMBER = 393438448;
   private com.google.cloud.compute.v1.UpcomingMaintenance upcomingGroupMaintenance_;
+
   /**
    *
    *
@@ -397,6 +409,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
   public boolean hasUpcomingGroupMaintenance() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -416,6 +429,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()
         : upcomingGroupMaintenance_;
   }
+
   /**
    *
    *
@@ -647,6 +661,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -893,6 +908,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int maintenanceOngoingCount_;
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public boolean hasMaintenanceOngoingCount() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -923,6 +940,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public int getMaintenanceOngoingCount() {
       return maintenanceOngoingCount_;
     }
+
     /**
      *
      *
@@ -942,6 +960,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +980,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     }
 
     private int maintenancePendingCount_;
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public boolean hasMaintenancePendingCount() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -991,6 +1012,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public int getMaintenancePendingCount() {
       return maintenancePendingCount_;
     }
+
     /**
      *
      *
@@ -1010,6 +1032,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1029,6 +1052,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object schedulingType_ = "";
+
     /**
      *
      *
@@ -1044,6 +1068,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public boolean hasSchedulingType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1067,6 +1092,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1112,6 +1139,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1160,6 +1189,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
             com.google.cloud.compute.v1.UpcomingMaintenance.Builder,
             com.google.cloud.compute.v1.UpcomingMaintenanceOrBuilder>
         upcomingGroupMaintenanceBuilder_;
+
     /**
      *
      *
@@ -1176,6 +1206,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
     public boolean hasUpcomingGroupMaintenance() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1198,6 +1229,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
         return upcomingGroupMaintenanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1223,6 +1255,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1245,6 +1278,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1310,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1332,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1350,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpcomingGroupMaintenanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1335,6 +1372,7 @@ public final class GroupMaintenanceInfo extends com.google.protobuf.GeneratedMes
             : upcomingGroupMaintenance_;
       }
     }
+
     /**
      *
      *

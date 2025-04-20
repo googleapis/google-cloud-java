@@ -38,6 +38,7 @@ public interface DatasetOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface DatasetOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DatasetOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface DatasetOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DatasetOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface DatasetOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface DatasetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -207,6 +217,7 @@ public interface DatasetOrBuilder
    * </code>
    */
   int getTableSpecsCount();
+
   /**
    *
    *
@@ -227,9 +238,11 @@ public interface DatasetOrBuilder
    * </code>
    */
   boolean containsTableSpecs(java.lang.String key);
+
   /** Use {@link #getTableSpecsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTableSpecs();
+
   /**
    *
    *
@@ -250,6 +263,7 @@ public interface DatasetOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTableSpecsMap();
+
   /**
    *
    *
@@ -274,6 +288,7 @@ public interface DatasetOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -309,6 +324,7 @@ public interface DatasetOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -337,6 +353,7 @@ public interface DatasetOrBuilder
    * @return Whether the dateRange field is set.
    */
   boolean hasDateRange();
+
   /**
    *
    *
@@ -350,6 +367,7 @@ public interface DatasetOrBuilder
    * @return The dateRange.
    */
   com.google.type.Interval getDateRange();
+
   /**
    *
    *
@@ -374,6 +392,7 @@ public interface DatasetOrBuilder
    * @return Whether the timeZone field is set.
    */
   boolean hasTimeZone();
+
   /**
    *
    *
@@ -386,6 +405,7 @@ public interface DatasetOrBuilder
    * @return The timeZone.
    */
   com.google.type.TimeZone getTimeZone();
+
   /**
    *
    *

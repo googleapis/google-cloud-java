@@ -33,6 +33,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.SearchConfig)
     SearchConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SearchConfig.newBuilder() to construct.
   private SearchConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.BoostSpecs> boostSpecs_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.cx.v3.BoostSpecs> getBoostSpecsList() {
     return boostSpecs_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       getBoostSpecsOrBuilderList() {
     return boostSpecs_;
   }
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public int getBoostSpecsCount() {
     return boostSpecs_.size();
   }
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.cx.v3.BoostSpecs getBoostSpecs(int index) {
     return boostSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -169,6 +175,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.dialogflow.cx.v3.FilterSpecs> filterSpecs_;
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.dialogflow.cx.v3.FilterSpecs> getFilterSpecsList() {
     return filterSpecs_;
   }
+
   /**
    *
    *
@@ -210,6 +218,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       getFilterSpecsOrBuilderList() {
     return filterSpecs_;
   }
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public int getFilterSpecsCount() {
     return filterSpecs_.size();
   }
+
   /**
    *
    *
@@ -250,6 +260,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.dialogflow.cx.v3.FilterSpecs getFilterSpecs(int index) {
     return filterSpecs_.get(index);
   }
+
   /**
    *
    *
@@ -443,6 +454,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -765,6 +777,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return boostSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -787,6 +800,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return boostSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -809,6 +823,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return boostSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +908,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +991,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1089,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.BoostSpecs.Builder getBoostSpecsBuilder(int index) {
       return getBoostSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1087,6 +1112,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return boostSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1110,6 +1136,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(boostSpecs_);
       }
     }
+
     /**
      *
      *
@@ -1129,6 +1156,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       return getBoostSpecsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.BoostSpecs.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1148,6 +1176,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       return getBoostSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3.BoostSpecs.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1225,6 +1254,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return filterSpecsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1278,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return filterSpecsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1271,6 +1302,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return filterSpecsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1300,6 +1332,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1356,6 +1390,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1420,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1448,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1476,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1504,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1531,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1518,6 +1558,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1578,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.dialogflow.cx.v3.FilterSpecs.Builder getFilterSpecsBuilder(int index) {
       return getFilterSpecsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1561,6 +1603,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return filterSpecsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1628,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(filterSpecs_);
       }
     }
+
     /**
      *
      *
@@ -1605,6 +1649,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       return getFilterSpecsFieldBuilder()
           .addBuilder(com.google.cloud.dialogflow.cx.v3.FilterSpecs.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1625,6 +1670,7 @@ public final class SearchConfig extends com.google.protobuf.GeneratedMessageV3
       return getFilterSpecsFieldBuilder()
           .addBuilder(index, com.google.cloud.dialogflow.cx.v3.FilterSpecs.getDefaultInstance());
     }
+
     /**
      *
      *

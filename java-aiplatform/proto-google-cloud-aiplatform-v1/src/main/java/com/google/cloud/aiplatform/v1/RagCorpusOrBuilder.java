@@ -38,6 +38,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the vectorDbConfig field is set.
    */
   boolean hasVectorDbConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RagCorpusOrBuilder
    * @return The vectorDbConfig.
    */
   com.google.cloud.aiplatform.v1.RagVectorDbConfig getVectorDbConfig();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the vertexAiSearchConfig field is set.
    */
   boolean hasVertexAiSearchConfig();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface RagCorpusOrBuilder
    * @return The vertexAiSearchConfig.
    */
   com.google.cloud.aiplatform.v1.VertexAiSearchConfig getVertexAiSearchConfig();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface RagCorpusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface RagCorpusOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public interface RagCorpusOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public interface RagCorpusOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -249,6 +259,7 @@ public interface RagCorpusOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface RagCorpusOrBuilder
    * @return Whether the corpusStatus field is set.
    */
   boolean hasCorpusStatus();
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public interface RagCorpusOrBuilder
    * @return The corpusStatus.
    */
   com.google.cloud.aiplatform.v1.CorpusStatus getCorpusStatus();
+
   /**
    *
    *

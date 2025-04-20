@@ -36,6 +36,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return Whether the maintenanceOngoingCount field is set.
    */
   boolean hasMaintenanceOngoingCount();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return Whether the maintenancePendingCount field is set.
    */
   boolean hasMaintenancePendingCount();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return Whether the schedulingType field is set.
    */
   boolean hasSchedulingType();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return The schedulingType.
    */
   java.lang.String getSchedulingType();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return Whether the upcomingGroupMaintenance field is set.
    */
   boolean hasUpcomingGroupMaintenance();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface GroupMaintenanceInfoOrBuilder
    * @return The upcomingGroupMaintenance.
    */
   com.google.cloud.compute.v1.UpcomingMaintenance getUpcomingGroupMaintenance();
+
   /**
    *
    *

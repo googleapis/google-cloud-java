@@ -44,6 +44,7 @@ public interface FeatureOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface FeatureOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface FeatureOrBuilder
    * @return The enum numeric value on the wire for valueType.
    */
   int getValueTypeValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface FeatureOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface FeatureOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface FeatureOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface FeatureOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -243,9 +251,11 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface FeatureOrBuilder
    * <code>map&lt;string, string&gt; labels = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -290,6 +301,7 @@ public interface FeatureOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public interface FeatureOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -373,6 +386,7 @@ public interface FeatureOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly>
       getMonitoringStatsAnomaliesList();
+
   /**
    *
    *
@@ -387,6 +401,7 @@ public interface FeatureOrBuilder
    */
   com.google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomaly getMonitoringStatsAnomalies(
       int index);
+
   /**
    *
    *
@@ -400,6 +415,7 @@ public interface FeatureOrBuilder
    * </code>
    */
   int getMonitoringStatsAnomaliesCount();
+
   /**
    *
    *
@@ -414,6 +430,7 @@ public interface FeatureOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1.Feature.MonitoringStatsAnomalyOrBuilder>
       getMonitoringStatsAnomaliesOrBuilderList();
+
   /**
    *
    *
@@ -443,6 +460,7 @@ public interface FeatureOrBuilder
    * @return The versionColumnName.
    */
   java.lang.String getVersionColumnName();
+
   /**
    *
    *
@@ -471,6 +489,7 @@ public interface FeatureOrBuilder
    * @return The pointOfContact.
    */
   java.lang.String getPointOfContact();
+
   /**
    *
    *

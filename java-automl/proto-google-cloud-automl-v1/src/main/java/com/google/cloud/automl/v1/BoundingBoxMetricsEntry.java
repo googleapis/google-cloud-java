@@ -34,6 +34,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BoundingBoxMetricsEntry)
     BoundingBoxMetricsEntryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BoundingBoxMetricsEntry.newBuilder() to construct.
   private BoundingBoxMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -121,6 +122,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
      */
     float getF1Score();
   }
+
   /**
    *
    *
@@ -135,6 +137,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry)
       ConfidenceMetricsEntryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConfidenceMetricsEntry.newBuilder() to construct.
     private ConfidenceMetricsEntry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -166,6 +169,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
     public static final int CONFIDENCE_THRESHOLD_FIELD_NUMBER = 1;
     private float confidenceThreshold_ = 0F;
+
     /**
      *
      *
@@ -184,6 +188,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
     public static final int RECALL_FIELD_NUMBER = 2;
     private float recall_ = 0F;
+
     /**
      *
      *
@@ -202,6 +207,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
     public static final int PRECISION_FIELD_NUMBER = 3;
     private float precision_ = 0F;
+
     /**
      *
      *
@@ -220,6 +226,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
     public static final int F1_SCORE_FIELD_NUMBER = 4;
     private float f1Score_ = 0F;
+
     /**
      *
      *
@@ -435,6 +442,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -670,6 +678,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       private int bitField0_;
 
       private float confidenceThreshold_;
+
       /**
        *
        *
@@ -685,6 +694,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public float getConfidenceThreshold() {
         return confidenceThreshold_;
       }
+
       /**
        *
        *
@@ -704,6 +714,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -723,6 +734,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
 
       private float recall_;
+
       /**
        *
        *
@@ -738,6 +750,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public float getRecall() {
         return recall_;
       }
+
       /**
        *
        *
@@ -757,6 +770,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -776,6 +790,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
 
       private float precision_;
+
       /**
        *
        *
@@ -791,6 +806,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public float getPrecision() {
         return precision_;
       }
+
       /**
        *
        *
@@ -810,6 +826,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -829,6 +846,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
 
       private float f1Score_;
+
       /**
        *
        *
@@ -844,6 +862,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       public float getF1Score() {
         return f1Score_;
       }
+
       /**
        *
        *
@@ -863,6 +882,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -951,6 +971,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
   public static final int IOU_THRESHOLD_FIELD_NUMBER = 1;
   private float iouThreshold_ = 0F;
+
   /**
    *
    *
@@ -970,6 +991,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
 
   public static final int MEAN_AVERAGE_PRECISION_FIELD_NUMBER = 2;
   private float meanAveragePrecision_ = 0F;
+
   /**
    *
    *
@@ -991,6 +1013,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry>
       confidenceMetricsEntries_;
+
   /**
    *
    *
@@ -1009,6 +1032,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       getConfidenceMetricsEntriesList() {
     return confidenceMetricsEntries_;
   }
+
   /**
    *
    *
@@ -1029,6 +1053,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       getConfidenceMetricsEntriesOrBuilderList() {
     return confidenceMetricsEntries_;
   }
+
   /**
    *
    *
@@ -1046,6 +1071,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
   public int getConfidenceMetricsEntriesCount() {
     return confidenceMetricsEntries_.size();
   }
+
   /**
    *
    *
@@ -1064,6 +1090,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       getConfidenceMetricsEntries(int index) {
     return confidenceMetricsEntries_.get(index);
   }
+
   /**
    *
    *
@@ -1267,6 +1294,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1527,6 +1555,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     private int bitField0_;
 
     private float iouThreshold_;
+
     /**
      *
      *
@@ -1543,6 +1572,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public float getIouThreshold() {
       return iouThreshold_;
     }
+
     /**
      *
      *
@@ -1563,6 +1593,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1583,6 +1614,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     }
 
     private float meanAveragePrecision_;
+
     /**
      *
      *
@@ -1598,6 +1630,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
     public float getMeanAveragePrecision() {
       return meanAveragePrecision_;
     }
+
     /**
      *
      *
@@ -1617,6 +1650,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1710,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         return confidenceMetricsEntriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1731,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         return confidenceMetricsEntriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1753,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         return confidenceMetricsEntriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1745,6 +1782,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1771,6 +1809,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1798,6 +1837,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1826,6 +1866,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1892,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1877,6 +1919,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1903,6 +1946,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1970,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1949,6 +1994,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1966,6 +2012,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         getConfidenceMetricsEntriesBuilder(int index) {
       return getConfidenceMetricsEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1987,6 +2034,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         return confidenceMetricsEntriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2010,6 +2058,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(confidenceMetricsEntries_);
       }
     }
+
     /**
      *
      *
@@ -2030,6 +2079,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
               com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2051,6 +2101,7 @@ public final class BoundingBoxMetricsEntry extends com.google.protobuf.Generated
               com.google.cloud.automl.v1.BoundingBoxMetricsEntry.ConfidenceMetricsEntry
                   .getDefaultInstance());
     }
+
     /**
      *
      *

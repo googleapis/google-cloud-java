@@ -47,6 +47,7 @@ public interface DeleteWorkflowTemplateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

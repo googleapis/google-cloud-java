@@ -34,6 +34,7 @@ public interface ListAttestorsResponseOrBuilder
    * <code>repeated .google.cloud.binaryauthorization.v1beta1.Attestor attestors = 1;</code>
    */
   java.util.List<com.google.cloud.binaryauthorization.v1beta1.Attestor> getAttestorsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAttestorsResponseOrBuilder
    * <code>repeated .google.cloud.binaryauthorization.v1beta1.Attestor attestors = 1;</code>
    */
   com.google.cloud.binaryauthorization.v1beta1.Attestor getAttestors(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAttestorsResponseOrBuilder
    * <code>repeated .google.cloud.binaryauthorization.v1beta1.Attestor attestors = 1;</code>
    */
   int getAttestorsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAttestorsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.binaryauthorization.v1beta1.AttestorOrBuilder>
       getAttestorsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListAttestorsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return Whether the userId field is set.
    */
   boolean hasUserId();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return The userId.
    */
   java.lang.String getUserId();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return Whether the clientId field is set.
    */
   boolean hasClientId();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return Whether the appInstanceId field is set.
    */
   boolean hasAppInstanceId();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return The appInstanceId.
    */
   java.lang.String getAppInstanceId();
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return Whether the userProvidedData field is set.
    */
   boolean hasUserProvidedData();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return The userProvidedData.
    */
   java.lang.String getUserProvidedData();
+
   /**
    *
    *
@@ -198,6 +206,7 @@ public interface SubmitUserDeletionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

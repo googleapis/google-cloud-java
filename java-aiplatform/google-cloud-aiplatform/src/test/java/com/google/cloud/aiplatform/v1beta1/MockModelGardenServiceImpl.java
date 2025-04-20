@@ -136,7 +136,8 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeployPublisherModel, expected %s or %s",
+                  "Unrecognized response type %s for method DeployPublisherModel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -157,7 +158,8 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ExportPublisherModel, expected %s or %s",
+                  "Unrecognized response type %s for method ExportPublisherModel, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -179,7 +181,8 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CheckPublisherModelEulaAcceptance, expected %s or %s",
+                  "Unrecognized response type %s for method CheckPublisherModelEulaAcceptance,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PublisherModelEulaAcceptance.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +204,8 @@ public class MockModelGardenServiceImpl extends ModelGardenServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method AcceptPublisherModelEula, expected %s or %s",
+                  "Unrecognized response type %s for method AcceptPublisherModelEula, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   PublisherModelEulaAcceptance.class.getName(),
                   Exception.class.getName())));

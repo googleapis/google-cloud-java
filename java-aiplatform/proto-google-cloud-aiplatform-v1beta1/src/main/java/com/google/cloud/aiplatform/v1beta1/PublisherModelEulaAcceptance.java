@@ -34,6 +34,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.PublisherModelEulaAcceptance)
     PublisherModelEulaAcceptanceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublisherModelEulaAcceptance.newBuilder() to construct.
   private PublisherModelEulaAcceptance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
 
   public static final int PROJECT_NUMBER_FIELD_NUMBER = 1;
   private long projectNumber_ = 0L;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object publisherModel_ = "";
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
 
   public static final int PUBLISHER_MODEL_EULA_ACKED_FIELD_NUMBER = 3;
   private boolean publisherModelEulaAcked_ = false;
+
   /**
    *
    *
@@ -329,6 +334,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -544,6 +550,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     private int bitField0_;
 
     private long projectNumber_;
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     public long getProjectNumber() {
       return projectNumber_;
     }
+
     /**
      *
      *
@@ -578,6 +586,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     }
 
     private java.lang.Object publisherModel_ = "";
+
     /**
      *
      *
@@ -619,6 +629,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -641,6 +652,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +674,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -679,6 +692,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     }
 
     private boolean publisherModelEulaAcked_;
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
     public boolean getPublisherModelEulaAcked() {
       return publisherModelEulaAcked_;
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class PublisherModelEulaAcceptance extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

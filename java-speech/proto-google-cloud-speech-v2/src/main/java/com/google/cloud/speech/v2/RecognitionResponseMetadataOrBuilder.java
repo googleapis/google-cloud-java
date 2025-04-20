@@ -36,6 +36,7 @@ public interface RecognitionResponseMetadataOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RecognitionResponseMetadataOrBuilder
    * @return Whether the totalBilledDuration field is set.
    */
   boolean hasTotalBilledDuration();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface RecognitionResponseMetadataOrBuilder
    * @return The totalBilledDuration.
    */
   com.google.protobuf.Duration getTotalBilledDuration();
+
   /**
    *
    *

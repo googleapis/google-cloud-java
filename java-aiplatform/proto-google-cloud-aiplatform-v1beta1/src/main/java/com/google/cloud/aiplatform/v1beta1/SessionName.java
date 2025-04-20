@@ -298,7 +298,8 @@ public class SessionName implements ResourceName {
     private Builder(SessionName sessionName) {
       Preconditions.checkArgument(
           Objects.equals(sessionName.pathTemplate, PROJECT_LOCATION_SESSION),
-          "toBuilder is only supported when SessionName has the pattern of projects/{project}/locations/{location}/sessions/{session}");
+          "toBuilder is only supported when SessionName has the pattern of"
+              + " projects/{project}/locations/{location}/sessions/{session}");
       this.project = sessionName.project;
       this.location = sessionName.location;
       this.session = sessionName.session;

@@ -35,6 +35,7 @@ public interface ListSecretVersionsResponseOrBuilder
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   java.util.List<com.google.cloud.secretmanager.v1beta1.SecretVersion> getVersionsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListSecretVersionsResponseOrBuilder
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   com.google.cloud.secretmanager.v1beta1.SecretVersion getVersions(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListSecretVersionsResponseOrBuilder
    * <code>repeated .google.cloud.secrets.v1beta1.SecretVersion versions = 1;</code>
    */
   int getVersionsCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface ListSecretVersionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.secretmanager.v1beta1.SecretVersionOrBuilder>
       getVersionsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListSecretVersionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

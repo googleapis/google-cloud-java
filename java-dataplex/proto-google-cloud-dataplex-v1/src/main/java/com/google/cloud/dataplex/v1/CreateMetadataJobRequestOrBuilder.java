@@ -39,6 +39,7 @@ public interface CreateMetadataJobRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateMetadataJobRequestOrBuilder
    * @return Whether the metadataJob field is set.
    */
   boolean hasMetadataJob();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateMetadataJobRequestOrBuilder
    * @return The metadataJob.
    */
   com.google.cloud.dataplex.v1.MetadataJob getMetadataJob();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface CreateMetadataJobRequestOrBuilder
    * @return The metadataJobId.
    */
   java.lang.String getMetadataJobId();
+
   /**
    *
    *

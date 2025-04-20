@@ -1280,6 +1280,19 @@ public final class AppHubGrpc {
     return AppHubStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AppHubBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AppHubBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AppHubBlockingV2Stub>() {
+          @java.lang.Override
+          public AppHubBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AppHubBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AppHubBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2206,6 +2219,386 @@ public final class AppHubGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AppHub.
+   *
+   * <pre>
+   * The App Hub API allows you to manage App Hub resources.
+   * </pre>
+   */
+  public static final class AppHubBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AppHubBlockingV2Stub> {
+    private AppHubBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AppHubBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AppHubBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a service project attachment for a given service project. You can
+     * call this API from any project to find if it is attached to a host project.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.LookupServiceProjectAttachmentResponse
+        lookupServiceProjectAttachment(
+            com.google.cloud.apphub.v1.LookupServiceProjectAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupServiceProjectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists service projects attached to the host project.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListServiceProjectAttachmentsResponse
+        listServiceProjectAttachments(
+            com.google.cloud.apphub.v1.ListServiceProjectAttachmentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceProjectAttachmentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Attaches a service project to the host project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceProjectAttachment(
+        com.google.cloud.apphub.v1.CreateServiceProjectAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceProjectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a service project attachment.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ServiceProjectAttachment getServiceProjectAttachment(
+        com.google.cloud.apphub.v1.GetServiceProjectAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceProjectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a service project attachment.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceProjectAttachment(
+        com.google.cloud.apphub.v1.DeleteServiceProjectAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceProjectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a service project from a host project.
+     * You can call this API from any service project without needing access to
+     * the host project that it is attached to.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.DetachServiceProjectAttachmentResponse
+        detachServiceProjectAttachment(
+            com.google.cloud.apphub.v1.DetachServiceProjectAttachmentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachServiceProjectAttachmentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Discovered Services that can be added to an Application in a host
+     * project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListDiscoveredServicesResponse listDiscoveredServices(
+        com.google.cloud.apphub.v1.ListDiscoveredServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiscoveredServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Discovered Service in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.DiscoveredService getDiscoveredService(
+        com.google.cloud.apphub.v1.GetDiscoveredServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiscoveredServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a Discovered Service in a host project and location, with a
+     * given resource URI.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.LookupDiscoveredServiceResponse lookupDiscoveredService(
+        com.google.cloud.apphub.v1.LookupDiscoveredServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupDiscoveredServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Services in an Application.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListServicesResponse listServices(
+        com.google.cloud.apphub.v1.ListServicesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServicesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Service in an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createService(
+        com.google.cloud.apphub.v1.CreateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Service in an Application.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.Service getService(
+        com.google.cloud.apphub.v1.GetServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Service in an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateService(
+        com.google.cloud.apphub.v1.UpdateServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Service from an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteService(
+        com.google.cloud.apphub.v1.DeleteServiceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Discovered Workloads that can be added to an Application in a host
+     * project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListDiscoveredWorkloadsResponse listDiscoveredWorkloads(
+        com.google.cloud.apphub.v1.ListDiscoveredWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDiscoveredWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Discovered Workload in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.DiscoveredWorkload getDiscoveredWorkload(
+        com.google.cloud.apphub.v1.GetDiscoveredWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDiscoveredWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists a Discovered Workload in a host project and location, with a
+     * given resource URI.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.LookupDiscoveredWorkloadResponse lookupDiscoveredWorkload(
+        com.google.cloud.apphub.v1.LookupDiscoveredWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getLookupDiscoveredWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Workloads in an Application.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListWorkloadsResponse listWorkloads(
+        com.google.cloud.apphub.v1.ListWorkloadsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListWorkloadsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Workload in an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createWorkload(
+        com.google.cloud.apphub.v1.CreateWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Workload in an Application.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.Workload getWorkload(
+        com.google.cloud.apphub.v1.GetWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a Workload in an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateWorkload(
+        com.google.cloud.apphub.v1.UpdateWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Workload from an Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteWorkload(
+        com.google.cloud.apphub.v1.DeleteWorkloadRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteWorkloadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Applications in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.ListApplicationsResponse listApplications(
+        com.google.cloud.apphub.v1.ListApplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListApplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an Application in a host project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApplication(
+        com.google.cloud.apphub.v1.CreateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an Application in a host project and location.
+     * </pre>
+     */
+    public com.google.cloud.apphub.v1.Application getApplication(
+        com.google.cloud.apphub.v1.GetApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an Application in a host project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApplication(
+        com.google.cloud.apphub.v1.UpdateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an Application in a host project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteApplication(
+        com.google.cloud.apphub.v1.DeleteApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AppHub.
    *
    * <pre>
    * The App Hub API allows you to manage App Hub resources.

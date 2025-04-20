@@ -33,6 +33,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.ExplicitDecodingConfig)
     ExplicitDecodingConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExplicitDecodingConfig.newBuilder() to construct.
   private ExplicitDecodingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -216,6 +217,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>AUDIO_ENCODING_UNSPECIFIED = 0;</code>
      */
     public static final int AUDIO_ENCODING_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -226,6 +228,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>LINEAR16 = 1;</code>
      */
     public static final int LINEAR16_VALUE = 1;
+
     /**
      *
      *
@@ -236,6 +239,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>MULAW = 2;</code>
      */
     public static final int MULAW_VALUE = 2;
+
     /**
      *
      *
@@ -246,6 +250,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>ALAW = 3;</code>
      */
     public static final int ALAW_VALUE = 3;
+
     /**
      *
      *
@@ -256,6 +261,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>AMR = 4;</code>
      */
     public static final int AMR_VALUE = 4;
+
     /**
      *
      *
@@ -266,6 +272,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>AMR_WB = 5;</code>
      */
     public static final int AMR_WB_VALUE = 5;
+
     /**
      *
      *
@@ -276,6 +283,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>FLAC = 6;</code>
      */
     public static final int FLAC_VALUE = 6;
+
     /**
      *
      *
@@ -286,6 +294,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>MP3 = 7;</code>
      */
     public static final int MP3_VALUE = 7;
+
     /**
      *
      *
@@ -296,6 +305,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>OGG_OPUS = 8;</code>
      */
     public static final int OGG_OPUS_VALUE = 8;
+
     /**
      *
      *
@@ -306,6 +316,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>WEBM_OPUS = 9;</code>
      */
     public static final int WEBM_OPUS_VALUE = 9;
+
     /**
      *
      *
@@ -316,6 +327,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>MP4_AAC = 10;</code>
      */
     public static final int MP4_AAC_VALUE = 10;
+
     /**
      *
      *
@@ -326,6 +338,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
      * <code>M4A_AAC = 11;</code>
      */
     public static final int M4A_AAC_VALUE = 11;
+
     /**
      *
      *
@@ -444,6 +457,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
 
   public static final int ENCODING_FIELD_NUMBER = 1;
   private int encoding_ = 0;
+
   /**
    *
    *
@@ -461,6 +475,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
   public int getEncodingValue() {
     return encoding_;
   }
+
   /**
    *
    *
@@ -485,6 +500,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
 
   public static final int SAMPLE_RATE_HERTZ_FIELD_NUMBER = 2;
   private int sampleRateHertz_ = 0;
+
   /**
    *
    *
@@ -508,6 +524,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
 
   public static final int AUDIO_CHANNEL_COUNT_FIELD_NUMBER = 3;
   private int audioChannelCount_ = 0;
+
   /**
    *
    *
@@ -711,6 +728,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -919,6 +937,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int encoding_ = 0;
+
     /**
      *
      *
@@ -936,6 +955,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public int getEncodingValue() {
       return encoding_;
     }
+
     /**
      *
      *
@@ -956,6 +976,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +998,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
           ? com.google.cloud.speech.v2.ExplicitDecodingConfig.AudioEncoding.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1001,6 +1023,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     }
 
     private int sampleRateHertz_;
+
     /**
      *
      *
@@ -1042,6 +1066,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public int getSampleRateHertz() {
       return sampleRateHertz_;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     }
 
     private int audioChannelCount_;
+
     /**
      *
      *
@@ -1109,6 +1136,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
     public int getAudioChannelCount() {
       return audioChannelCount_;
     }
+
     /**
      *
      *
@@ -1132,6 +1160,7 @@ public final class ExplicitDecodingConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

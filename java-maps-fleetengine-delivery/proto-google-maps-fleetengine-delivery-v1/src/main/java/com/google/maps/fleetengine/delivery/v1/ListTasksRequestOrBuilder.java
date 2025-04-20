@@ -38,6 +38,7 @@ public interface ListTasksRequestOrBuilder
    * @return Whether the header field is set.
    */
   boolean hasHeader();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListTasksRequestOrBuilder
    * @return The header.
    */
   com.google.maps.fleetengine.delivery.v1.DeliveryRequestHeader getHeader();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ListTasksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface ListTasksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -162,6 +166,7 @@ public interface ListTasksRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

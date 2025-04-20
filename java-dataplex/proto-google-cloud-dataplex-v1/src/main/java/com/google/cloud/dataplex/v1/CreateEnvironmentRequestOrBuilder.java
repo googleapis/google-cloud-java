@@ -39,6 +39,7 @@ public interface CreateEnvironmentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateEnvironmentRequestOrBuilder
    * @return The environmentId.
    */
   java.lang.String getEnvironmentId();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface CreateEnvironmentRequestOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -118,6 +121,7 @@ public interface CreateEnvironmentRequestOrBuilder
    * @return The environment.
    */
   com.google.cloud.dataplex.v1.Environment getEnvironment();
+
   /**
    *
    *

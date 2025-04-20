@@ -40,6 +40,7 @@ public interface DeleteSecretRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

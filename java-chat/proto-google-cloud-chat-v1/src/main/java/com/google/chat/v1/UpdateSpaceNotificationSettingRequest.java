@@ -35,6 +35,7 @@ public final class UpdateSpaceNotificationSettingRequest
     // @@protoc_insertion_point(message_implements:google.chat.v1.UpdateSpaceNotificationSettingRequest)
     UpdateSpaceNotificationSettingRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSpaceNotificationSettingRequest.newBuilder() to construct.
   private UpdateSpaceNotificationSettingRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class UpdateSpaceNotificationSettingRequest
   private int bitField0_;
   public static final int SPACE_NOTIFICATION_SETTING_FIELD_NUMBER = 1;
   private com.google.chat.v1.SpaceNotificationSetting spaceNotificationSetting_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateSpaceNotificationSettingRequest
   public boolean hasSpaceNotificationSetting() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class UpdateSpaceNotificationSettingRequest
         ? com.google.chat.v1.SpaceNotificationSetting.getDefaultInstance()
         : spaceNotificationSetting_;
   }
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class UpdateSpaceNotificationSettingRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class UpdateSpaceNotificationSettingRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class UpdateSpaceNotificationSettingRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -373,6 +380,7 @@ public final class UpdateSpaceNotificationSettingRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +608,7 @@ public final class UpdateSpaceNotificationSettingRequest
             com.google.chat.v1.SpaceNotificationSetting.Builder,
             com.google.chat.v1.SpaceNotificationSettingOrBuilder>
         spaceNotificationSettingBuilder_;
+
     /**
      *
      *
@@ -619,6 +628,7 @@ public final class UpdateSpaceNotificationSettingRequest
     public boolean hasSpaceNotificationSetting() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class UpdateSpaceNotificationSettingRequest
         return spaceNotificationSettingBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -696,6 +708,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class UpdateSpaceNotificationSettingRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return getSpaceNotificationSettingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class UpdateSpaceNotificationSettingRequest
             : spaceNotificationSetting_;
       }
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class UpdateSpaceNotificationSettingRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class UpdateSpaceNotificationSettingRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -879,6 +898,7 @@ public final class UpdateSpaceNotificationSettingRequest
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -906,6 +926,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class UpdateSpaceNotificationSettingRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1005,6 +1029,7 @@ public final class UpdateSpaceNotificationSettingRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1028,6 +1053,7 @@ public final class UpdateSpaceNotificationSettingRequest
             : updateMask_;
       }
     }
+
     /**
      *
      *

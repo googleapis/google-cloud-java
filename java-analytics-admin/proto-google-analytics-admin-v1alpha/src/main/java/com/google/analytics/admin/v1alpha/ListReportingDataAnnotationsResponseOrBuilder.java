@@ -37,6 +37,7 @@ public interface ListReportingDataAnnotationsResponseOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.ReportingDataAnnotation>
       getReportingDataAnnotationsList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListReportingDataAnnotationsResponseOrBuilder
    * </code>
    */
   com.google.analytics.admin.v1alpha.ReportingDataAnnotation getReportingDataAnnotations(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListReportingDataAnnotationsResponseOrBuilder
    * </code>
    */
   int getReportingDataAnnotationsCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListReportingDataAnnotationsResponseOrBuilder
    */
   java.util.List<? extends com.google.analytics.admin.v1alpha.ReportingDataAnnotationOrBuilder>
       getReportingDataAnnotationsOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface ListReportingDataAnnotationsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface TransferMetadataOptionsOrBuilder
    * @return The enum numeric value on the wire for uid.
    */
   int getUidValue();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TransferMetadataOptionsOrBuilder
    * @return The enum numeric value on the wire for gid.
    */
   int getGidValue();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface TransferMetadataOptionsOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *

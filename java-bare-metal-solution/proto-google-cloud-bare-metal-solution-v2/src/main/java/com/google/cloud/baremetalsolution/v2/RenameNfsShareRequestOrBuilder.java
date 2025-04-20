@@ -39,6 +39,7 @@ public interface RenameNfsShareRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RenameNfsShareRequestOrBuilder
    * @return The newNfsshareId.
    */
   java.lang.String getNewNfsshareId();
+
   /**
    *
    *

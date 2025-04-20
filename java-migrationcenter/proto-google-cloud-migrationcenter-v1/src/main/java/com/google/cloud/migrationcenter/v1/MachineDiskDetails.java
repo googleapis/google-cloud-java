@@ -33,6 +33,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.MachineDiskDetails)
     MachineDiskDetailsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MachineDiskDetails.newBuilder() to construct.
   private MachineDiskDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int TOTAL_CAPACITY_BYTES_FIELD_NUMBER = 1;
   private long totalCapacityBytes_ = 0L;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int TOTAL_FREE_BYTES_FIELD_NUMBER = 2;
   private long totalFreeBytes_ = 0L;
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
 
   public static final int DISKS_FIELD_NUMBER = 3;
   private com.google.cloud.migrationcenter.v1.DiskEntryList disks_;
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
   public boolean hasDisks() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.migrationcenter.v1.DiskEntryList.getDefaultInstance()
         : disks_;
   }
+
   /**
    *
    *
@@ -331,6 +337,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long totalCapacityBytes_;
+
     /**
      *
      *
@@ -570,6 +578,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     public long getTotalCapacityBytes() {
       return totalCapacityBytes_;
     }
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     }
 
     private long totalFreeBytes_;
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     public long getTotalFreeBytes() {
       return totalFreeBytes_;
     }
+
     /**
      *
      *
@@ -642,6 +654,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
             com.google.cloud.migrationcenter.v1.DiskEntryList.Builder,
             com.google.cloud.migrationcenter.v1.DiskEntryListOrBuilder>
         disksBuilder_;
+
     /**
      *
      *
@@ -680,6 +694,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
     public boolean hasDisks() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
         return disksBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -722,6 +738,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +759,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +787,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +807,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +822,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getDisksFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -820,6 +841,7 @@ public final class MachineDiskDetails extends com.google.protobuf.GeneratedMessa
             : disks_;
       }
     }
+
     /**
      *
      *

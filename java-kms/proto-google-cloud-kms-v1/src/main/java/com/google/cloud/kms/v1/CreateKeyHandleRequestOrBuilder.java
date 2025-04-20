@@ -40,6 +40,7 @@ public interface CreateKeyHandleRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateKeyHandleRequestOrBuilder
    * @return The keyHandleId.
    */
   java.lang.String getKeyHandleId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateKeyHandleRequestOrBuilder
    * @return Whether the keyHandle field is set.
    */
   boolean hasKeyHandle();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateKeyHandleRequestOrBuilder
    * @return The keyHandle.
    */
   com.google.cloud.kms.v1.KeyHandle getKeyHandle();
+
   /**
    *
    *

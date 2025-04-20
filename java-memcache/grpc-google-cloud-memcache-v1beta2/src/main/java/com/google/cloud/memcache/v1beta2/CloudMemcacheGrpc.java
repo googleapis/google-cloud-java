@@ -472,6 +472,19 @@ public final class CloudMemcacheGrpc {
     return CloudMemcacheStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudMemcacheBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudMemcacheBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudMemcacheBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudMemcacheBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudMemcacheBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -860,6 +873,158 @@ public final class CloudMemcacheGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudMemcache.
+   *
+   * <pre>
+   * Configures and manages Cloud Memorystore for Memcached instances.
+   * The `memcache.googleapis.com` service implements the Google Cloud Memorystore
+   * for Memcached API and defines the following resource model for managing
+   * Memorystore Memcached (also called Memcached below) instances:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of Memcached instances, named:
+   * `/instances/&#42;`
+   * * As such, Memcached instances are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+   * Note that location_id must be a GCP `region`; for example:
+   * * `projects/my-memcached-project/locations/us-central1/instances/my-memcached`
+   * </pre>
+   */
+  public static final class CloudMemcacheBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudMemcacheBlockingV2Stub> {
+    private CloudMemcacheBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudMemcacheBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudMemcacheBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Instances in a given location.
+     * </pre>
+     */
+    public com.google.cloud.memcache.v1beta2.ListInstancesResponse listInstances(
+        com.google.cloud.memcache.v1beta2.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Instance.
+     * </pre>
+     */
+    public com.google.cloud.memcache.v1beta2.Instance getInstance(
+        com.google.cloud.memcache.v1beta2.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Instance in a given location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.cloud.memcache.v1beta2.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing Instance in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateInstance(
+        com.google.cloud.memcache.v1beta2.UpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the defined Memcached parameters for an existing instance.
+     * This method only stages the parameters, it must be followed by
+     * `ApplyParameters` to apply the parameters to nodes of the Memcached
+     * instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateParameters(
+        com.google.cloud.memcache.v1beta2.UpdateParametersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteInstance(
+        com.google.cloud.memcache.v1beta2.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * `ApplyParameters` restarts the set of specified nodes in order to update
+     * them to the current set of parameters for the Memcached Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation applyParameters(
+        com.google.cloud.memcache.v1beta2.ApplyParametersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApplyParametersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates software on the selected nodes of the Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation applySoftwareUpdate(
+        com.google.cloud.memcache.v1beta2.ApplySoftwareUpdateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getApplySoftwareUpdateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs the apply phase of the RescheduleMaintenance verb.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleMaintenance(
+        com.google.cloud.memcache.v1beta2.RescheduleMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleMaintenanceMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudMemcache.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Memcached instances.

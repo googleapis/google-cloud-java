@@ -36,6 +36,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:grafeas.v1.UpgradeDistribution)
     UpgradeDistributionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpgradeDistribution.newBuilder() to construct.
   private UpgradeDistribution(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object cpeUri_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object classification_ = "";
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object severity_ = "";
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +240,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList cve_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.ProtocolStringList getCveList() {
     return cve_;
   }
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public int getCveCount() {
     return cve_.size();
   }
+
   /**
    *
    *
@@ -276,6 +286,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
   public java.lang.String getCve(int index) {
     return cve_.get(index);
   }
+
   /**
    *
    *
@@ -483,6 +494,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -716,6 +728,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object cpeUri_ = "";
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +844,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object classification_ = "";
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object severity_ = "";
+
     /**
      *
      *
@@ -970,6 +993,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1016,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1056,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1089,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1077,6 +1105,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       cve_.makeImmutable();
       return cve_;
     }
+
     /**
      *
      *
@@ -1091,6 +1120,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     public int getCveCount() {
       return cve_.size();
     }
+
     /**
      *
      *
@@ -1106,6 +1136,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     public java.lang.String getCve(int index) {
       return cve_.get(index);
     }
+
     /**
      *
      *
@@ -1121,6 +1152,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getCveBytes(int index) {
       return cve_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1144,6 +1176,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1199,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1185,6 +1219,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1238,7 @@ public final class UpgradeDistribution extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ReportingDataAnnotation)
     ReportingDataAnnotationOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReportingDataAnnotation.newBuilder() to construct.
   private ReportingDataAnnotation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -170,6 +171,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>COLOR_UNSPECIFIED = 0;</code>
      */
     public static final int COLOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -180,6 +182,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>PURPLE = 1;</code>
      */
     public static final int PURPLE_VALUE = 1;
+
     /**
      *
      *
@@ -190,6 +193,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>BROWN = 2;</code>
      */
     public static final int BROWN_VALUE = 2;
+
     /**
      *
      *
@@ -200,6 +204,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>BLUE = 3;</code>
      */
     public static final int BLUE_VALUE = 3;
+
     /**
      *
      *
@@ -210,6 +215,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>GREEN = 4;</code>
      */
     public static final int GREEN_VALUE = 4;
+
     /**
      *
      *
@@ -220,6 +226,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>RED = 5;</code>
      */
     public static final int RED_VALUE = 5;
+
     /**
      *
      *
@@ -230,6 +237,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * <code>CYAN = 6;</code>
      */
     public static final int CYAN_VALUE = 6;
+
     /**
      *
      *
@@ -355,6 +363,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * @return Whether the startDate field is set.
      */
     boolean hasStartDate();
+
     /**
      *
      *
@@ -369,6 +378,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * @return The startDate.
      */
     com.google.type.Date getStartDate();
+
     /**
      *
      *
@@ -396,6 +406,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * @return Whether the endDate field is set.
      */
     boolean hasEndDate();
+
     /**
      *
      *
@@ -410,6 +421,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      * @return The endDate.
      */
     com.google.type.Date getEndDate();
+
     /**
      *
      *
@@ -423,6 +435,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
      */
     com.google.type.DateOrBuilder getEndDateOrBuilder();
   }
+
   /**
    *
    *
@@ -438,6 +451,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.ReportingDataAnnotation.DateRange)
       DateRangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DateRange.newBuilder() to construct.
     private DateRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -469,6 +483,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     private int bitField0_;
     public static final int START_DATE_FIELD_NUMBER = 1;
     private com.google.type.Date startDate_;
+
     /**
      *
      *
@@ -486,6 +501,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public boolean hasStartDate() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -503,6 +519,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public com.google.type.Date getStartDate() {
       return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
     }
+
     /**
      *
      *
@@ -521,6 +538,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
     public static final int END_DATE_FIELD_NUMBER = 2;
     private com.google.type.Date endDate_;
+
     /**
      *
      *
@@ -538,6 +556,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public boolean hasEndDate() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -555,6 +574,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public com.google.type.Date getEndDate() {
       return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
     }
+
     /**
      *
      *
@@ -752,6 +772,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           startDateBuilder_;
+
       /**
        *
        *
@@ -1000,6 +1022,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       public boolean hasStartDate() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1020,6 +1043,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
           return startDateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1044,6 +1068,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1065,6 +1090,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1094,6 +1120,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1115,6 +1142,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1131,6 +1159,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return getStartDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1149,6 +1178,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
           return startDate_ == null ? com.google.type.Date.getDefaultInstance() : startDate_;
         }
       }
+
       /**
        *
        *
@@ -1178,6 +1208,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
           endDateBuilder_;
+
       /**
        *
        *
@@ -1194,6 +1225,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       public boolean hasEndDate() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1214,6 +1246,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
           return endDateBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1238,6 +1271,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1259,6 +1293,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1288,6 +1323,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         }
         return this;
       }
+
       /**
        *
        *
@@ -1309,6 +1345,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1325,6 +1362,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         onChanged();
         return getEndDateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1343,6 +1381,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
           return endDate_ == null ? com.google.type.Date.getDefaultInstance() : endDate_;
         }
       }
+
       /**
        *
        *
@@ -1452,6 +1491,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     private TargetCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1485,6 +1525,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int ANNOTATION_DATE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1502,6 +1543,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
   public boolean hasAnnotationDate() {
     return targetCase_ == 4;
   }
+
   /**
    *
    *
@@ -1522,6 +1564,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
     return com.google.type.Date.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1542,6 +1585,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
   }
 
   public static final int ANNOTATION_DATE_RANGE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -1560,6 +1604,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
   public boolean hasAnnotationDateRange() {
     return targetCase_ == 5;
   }
+
   /**
    *
    *
@@ -1583,6 +1628,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     return com.google.analytics.admin.v1alpha.ReportingDataAnnotation.DateRange
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1609,6 +1655,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -1637,6 +1684,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1670,6 +1718,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
+
   /**
    *
    *
@@ -1693,6 +1742,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1721,6 +1771,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -1744,6 +1795,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -1770,6 +1822,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
   public static final int COLOR_FIELD_NUMBER = 6;
   private int color_ = 0;
+
   /**
    *
    *
@@ -1787,6 +1840,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
   public int getColorValue() {
     return color_;
   }
+
   /**
    *
    *
@@ -1811,6 +1865,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
 
   public static final int SYSTEM_GENERATED_FIELD_NUMBER = 7;
   private boolean systemGenerated_ = false;
+
   /**
    *
    *
@@ -2068,6 +2123,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2375,6 +2431,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         annotationDateBuilder_;
+
     /**
      *
      *
@@ -2392,6 +2449,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public boolean hasAnnotationDate() {
       return targetCase_ == 4;
     }
+
     /**
      *
      *
@@ -2419,6 +2477,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return com.google.type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2443,6 +2502,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2464,6 +2524,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2496,6 +2557,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2523,6 +2585,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2537,6 +2600,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public com.google.type.Date.Builder getAnnotationDateBuilder() {
       return getAnnotationDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2559,6 +2623,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return com.google.type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2593,6 +2658,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
             com.google.analytics.admin.v1alpha.ReportingDataAnnotation.DateRange.Builder,
             com.google.analytics.admin.v1alpha.ReportingDataAnnotation.DateRangeOrBuilder>
         annotationDateRangeBuilder_;
+
     /**
      *
      *
@@ -2611,6 +2677,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public boolean hasAnnotationDateRange() {
       return targetCase_ == 5;
     }
+
     /**
      *
      *
@@ -2642,6 +2709,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2668,6 +2736,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2692,6 +2761,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2731,6 +2801,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       targetCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2759,6 +2830,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2775,6 +2847,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         getAnnotationDateRangeBuilder() {
       return getAnnotationDateRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2800,6 +2873,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2839,6 +2913,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2866,6 +2941,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2893,6 +2969,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2919,6 +2996,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2941,6 +3019,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2970,6 +3049,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
 
     private java.lang.Object title_ = "";
+
     /**
      *
      *
@@ -2992,6 +3072,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3014,6 +3095,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3035,6 +3117,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3052,6 +3135,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3076,6 +3160,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -3098,6 +3183,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3120,6 +3206,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3141,6 +3228,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3158,6 +3246,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3182,6 +3271,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
 
     private int color_ = 0;
+
     /**
      *
      *
@@ -3199,6 +3289,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public int getColorValue() {
       return color_;
     }
+
     /**
      *
      *
@@ -3219,6 +3310,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3240,6 +3332,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
           ? com.google.analytics.admin.v1alpha.ReportingDataAnnotation.Color.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3264,6 +3357,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3285,6 +3379,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     }
 
     private boolean systemGenerated_;
+
     /**
      *
      *
@@ -3301,6 +3396,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
     public boolean getSystemGenerated() {
       return systemGenerated_;
     }
+
     /**
      *
      *
@@ -3321,6 +3417,7 @@ public final class ReportingDataAnnotation extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

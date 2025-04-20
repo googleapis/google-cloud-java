@@ -92,6 +92,7 @@ public enum TrafficModel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TRAFFIC_MODEL_UNSPECIFIED = 0;</code>
    */
   public static final int TRAFFIC_MODEL_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public enum TrafficModel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>BEST_GUESS = 1;</code>
    */
   public static final int BEST_GUESS_VALUE = 1;
+
   /**
    *
    *
@@ -117,6 +119,7 @@ public enum TrafficModel implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PESSIMISTIC = 2;</code>
    */
   public static final int PESSIMISTIC_VALUE = 2;
+
   /**
    *
    *

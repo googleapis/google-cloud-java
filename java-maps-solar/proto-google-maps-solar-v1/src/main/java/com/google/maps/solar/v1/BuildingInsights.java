@@ -35,6 +35,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.maps.solar.v1.BuildingInsights)
     BuildingInsightsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BuildingInsights.newBuilder() to construct.
   private BuildingInsights(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -75,6 +76,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int CENTER_FIELD_NUMBER = 2;
   private com.google.type.LatLng center_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public boolean hasCenter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public com.google.type.LatLng getCenter() {
     return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int BOUNDING_BOX_FIELD_NUMBER = 9;
   private com.google.maps.solar.v1.LatLngBox boundingBox_;
+
   /**
    *
    *
@@ -185,6 +192,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public boolean hasBoundingBox() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.solar.v1.LatLngBox.getDefaultInstance()
         : boundingBox_;
   }
+
   /**
    *
    *
@@ -220,6 +229,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int IMAGERY_DATE_FIELD_NUMBER = 3;
   private com.google.type.Date imageryDate_;
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public boolean hasImageryDate() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -250,6 +261,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public com.google.type.Date getImageryDate() {
     return imageryDate_ == null ? com.google.type.Date.getDefaultInstance() : imageryDate_;
   }
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int IMAGERY_PROCESSED_DATE_FIELD_NUMBER = 11;
   private com.google.type.Date imageryProcessedDate_;
+
   /**
    *
    *
@@ -281,6 +294,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public boolean hasImageryProcessedDate() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -298,6 +312,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         ? com.google.type.Date.getDefaultInstance()
         : imageryProcessedDate_;
   }
+
   /**
    *
    *
@@ -318,6 +333,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object postalCode_ = "";
+
   /**
    *
    *
@@ -341,6 +357,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -369,6 +386,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object administrativeArea_ = "";
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -422,6 +441,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object statisticalArea_ = "";
+
   /**
    *
    *
@@ -445,6 +465,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -473,6 +494,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object regionCode_ = "";
+
   /**
    *
    *
@@ -496,6 +518,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -522,6 +545,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int SOLAR_POTENTIAL_FIELD_NUMBER = 8;
   private com.google.maps.solar.v1.SolarPotential solarPotential_;
+
   /**
    *
    *
@@ -537,6 +561,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public boolean hasSolarPotential() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -554,6 +579,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         ? com.google.maps.solar.v1.SolarPotential.getDefaultInstance()
         : solarPotential_;
   }
+
   /**
    *
    *
@@ -572,6 +598,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
 
   public static final int IMAGERY_QUALITY_FIELD_NUMBER = 10;
   private int imageryQuality_ = 0;
+
   /**
    *
    *
@@ -587,6 +614,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
   public int getImageryQualityValue() {
     return imageryQuality_;
   }
+
   /**
    *
    *
@@ -882,6 +910,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1252,6 +1281,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1274,6 +1304,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1296,6 +1327,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1317,6 +1349,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1367,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1395,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         centerBuilder_;
+
     /**
      *
      *
@@ -1375,6 +1410,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public boolean hasCenter() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1393,6 +1429,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return centerBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1415,6 +1452,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1472,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1500,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1480,6 +1520,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1535,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getCenterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1510,6 +1552,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return center_ == null ? com.google.type.LatLng.getDefaultInstance() : center_;
       }
     }
+
     /**
      *
      *
@@ -1539,6 +1582,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             com.google.maps.solar.v1.LatLngBox.Builder,
             com.google.maps.solar.v1.LatLngBoxOrBuilder>
         boundingBoxBuilder_;
+
     /**
      *
      *
@@ -1553,6 +1597,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public boolean hasBoundingBox() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1573,6 +1618,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return boundingBoxBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1595,6 +1641,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1614,6 +1661,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1641,6 +1689,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1709,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1724,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getBoundingBoxFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1692,6 +1743,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             : boundingBox_;
       }
     }
+
     /**
      *
      *
@@ -1722,6 +1774,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         imageryDateBuilder_;
+
     /**
      *
      *
@@ -1736,6 +1789,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public boolean hasImageryDate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1754,6 +1808,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return imageryDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1776,6 +1831,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1795,6 +1851,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1822,6 +1879,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1841,6 +1899,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1855,6 +1914,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getImageryDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1871,6 +1931,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return imageryDate_ == null ? com.google.type.Date.getDefaultInstance() : imageryDate_;
       }
     }
+
     /**
      *
      *
@@ -1897,6 +1958,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
         imageryProcessedDateBuilder_;
+
     /**
      *
      *
@@ -1911,6 +1973,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public boolean hasImageryProcessedDate() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1931,6 +1994,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return imageryProcessedDateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1953,6 +2017,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1972,6 +2037,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1999,6 +2065,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2085,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2032,6 +2100,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getImageryProcessedDateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2050,6 +2119,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             : imageryProcessedDate_;
       }
     }
+
     /**
      *
      *
@@ -2073,6 +2143,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object postalCode_ = "";
+
     /**
      *
      *
@@ -2095,6 +2166,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2117,6 +2189,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2138,6 +2211,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2229,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2254,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object administrativeArea_ = "";
+
     /**
      *
      *
@@ -2202,6 +2278,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2225,6 +2302,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2247,6 +2325,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2265,6 +2344,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2290,6 +2370,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object statisticalArea_ = "";
+
     /**
      *
      *
@@ -2312,6 +2393,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2334,6 +2416,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2355,6 +2438,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2456,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2396,6 +2481,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object regionCode_ = "";
+
     /**
      *
      *
@@ -2418,6 +2504,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2440,6 +2527,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2461,6 +2549,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2478,6 +2567,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2507,6 +2597,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             com.google.maps.solar.v1.SolarPotential.Builder,
             com.google.maps.solar.v1.SolarPotentialOrBuilder>
         solarPotentialBuilder_;
+
     /**
      *
      *
@@ -2521,6 +2612,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public boolean hasSolarPotential() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2541,6 +2633,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
         return solarPotentialBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2563,6 +2656,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2583,6 +2677,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2610,6 +2705,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2629,6 +2725,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2643,6 +2740,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getSolarPotentialFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2661,6 +2759,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
             : solarPotential_;
       }
     }
+
     /**
      *
      *
@@ -2688,6 +2787,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     }
 
     private int imageryQuality_ = 0;
+
     /**
      *
      *
@@ -2703,6 +2803,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
     public int getImageryQualityValue() {
       return imageryQuality_;
     }
+
     /**
      *
      *
@@ -2721,6 +2822,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2738,6 +2840,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
           com.google.maps.solar.v1.ImageryQuality.forNumber(imageryQuality_);
       return result == null ? com.google.maps.solar.v1.ImageryQuality.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2759,6 +2862,7 @@ public final class BuildingInsights extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

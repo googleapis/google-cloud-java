@@ -34,6 +34,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.container.v1beta1.EphemeralStorageConfig)
     EphemeralStorageConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EphemeralStorageConfig.newBuilder() to construct.
   private EphemeralStorageConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
 
   public static final int LOCAL_SSD_COUNT_FIELD_NUMBER = 1;
   private int localSsdCount_ = 0;
+
   /**
    *
    *
@@ -255,6 +257,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -438,6 +441,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private int localSsdCount_;
+
     /**
      *
      *
@@ -469,6 +473,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
     public int getLocalSsdCount() {
       return localSsdCount_;
     }
+
     /**
      *
      *
@@ -504,6 +509,7 @@ public final class EphemeralStorageConfig extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

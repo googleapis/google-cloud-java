@@ -30,12 +30,14 @@ public interface ReservationBlocksGetResponseOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    * <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code>
    *
    * @return The resource.
    */
   com.google.cloud.compute.v1.ReservationBlock getResource();
+
   /** <code>optional .google.cloud.compute.v1.ReservationBlock resource = 195806222;</code> */
   com.google.cloud.compute.v1.ReservationBlockOrBuilder getResourceOrBuilder();
 }

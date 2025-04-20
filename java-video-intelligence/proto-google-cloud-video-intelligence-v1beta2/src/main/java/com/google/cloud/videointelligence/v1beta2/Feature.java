@@ -92,6 +92,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FEATURE_UNSPECIFIED = 0;</code>
    */
   public static final int FEATURE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LABEL_DETECTION = 1;</code>
    */
   public static final int LABEL_DETECTION_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SHOT_CHANGE_DETECTION = 2;</code>
    */
   public static final int SHOT_CHANGE_DETECTION_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPLICIT_CONTENT_DETECTION = 3;</code>
    */
   public static final int EXPLICIT_CONTENT_DETECTION_VALUE = 3;
+
   /**
    *
    *

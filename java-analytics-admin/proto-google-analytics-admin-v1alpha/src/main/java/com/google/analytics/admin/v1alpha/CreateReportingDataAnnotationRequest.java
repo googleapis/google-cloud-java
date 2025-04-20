@@ -34,6 +34,7 @@ public final class CreateReportingDataAnnotationRequest
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.CreateReportingDataAnnotationRequest)
     CreateReportingDataAnnotationRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateReportingDataAnnotationRequest.newBuilder() to construct.
   private CreateReportingDataAnnotationRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class CreateReportingDataAnnotationRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class CreateReportingDataAnnotationRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class CreateReportingDataAnnotationRequest
 
   public static final int REPORTING_DATA_ANNOTATION_FIELD_NUMBER = 2;
   private com.google.analytics.admin.v1alpha.ReportingDataAnnotation reportingDataAnnotation_;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class CreateReportingDataAnnotationRequest
   public boolean hasReportingDataAnnotation() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class CreateReportingDataAnnotationRequest
         ? com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance()
         : reportingDataAnnotation_;
   }
+
   /**
    *
    *
@@ -358,6 +364,7 @@ public final class CreateReportingDataAnnotationRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -585,6 +592,7 @@ public final class CreateReportingDataAnnotationRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -611,6 +619,7 @@ public final class CreateReportingDataAnnotationRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +646,7 @@ public final class CreateReportingDataAnnotationRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class CreateReportingDataAnnotationRequest
             com.google.analytics.admin.v1alpha.ReportingDataAnnotation.Builder,
             com.google.analytics.admin.v1alpha.ReportingDataAnnotationOrBuilder>
         reportingDataAnnotationBuilder_;
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class CreateReportingDataAnnotationRequest
     public boolean hasReportingDataAnnotation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class CreateReportingDataAnnotationRequest
         return reportingDataAnnotationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class CreateReportingDataAnnotationRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class CreateReportingDataAnnotationRequest
       onChanged();
       return getReportingDataAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class CreateReportingDataAnnotationRequest
             : reportingDataAnnotation_;
       }
     }
+
     /**
      *
      *

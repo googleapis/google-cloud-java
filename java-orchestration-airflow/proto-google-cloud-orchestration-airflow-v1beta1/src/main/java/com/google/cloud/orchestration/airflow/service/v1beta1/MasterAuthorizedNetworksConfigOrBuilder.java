@@ -53,6 +53,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
           com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
               .CidrBlock>
       getCidrBlocksList();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig.CidrBlock
       getCidrBlocks(int index);
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
    * </code>
    */
   int getCidrBlocksCount();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface MasterAuthorizedNetworksConfigOrBuilder
               com.google.cloud.orchestration.airflow.service.v1beta1.MasterAuthorizedNetworksConfig
                   .CidrBlockOrBuilder>
       getCidrBlocksOrBuilderList();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The vpcId.
    */
   java.lang.String getVpcId();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return A list containing the podAddressCidrBlocks.
    */
   java.util.List<java.lang.String> getPodAddressCidrBlocksList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The count of podAddressCidrBlocks.
    */
   int getPodAddressCidrBlocksCount();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The podAddressCidrBlocks at the given index.
    */
   java.lang.String getPodAddressCidrBlocks(int index);
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return A list containing the serviceAddressCidrBlocks.
    */
   java.util.List<java.lang.String> getServiceAddressCidrBlocksList();
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The count of serviceAddressCidrBlocks.
    */
   int getServiceAddressCidrBlocksCount();
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public interface AwsClusterNetworkingOrBuilder
    * @return The serviceAddressCidrBlocks at the given index.
    */
   java.lang.String getServiceAddressCidrBlocks(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return Whether the collection field is set.
    */
   boolean hasCollection();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return The collection.
    */
   com.google.privacy.dlp.v2.VertexDatasetCollection getCollection();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return Whether the vertexDatasetResourceReference field is set.
    */
   boolean hasVertexDatasetResourceReference();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return The vertexDatasetResourceReference.
    */
   com.google.privacy.dlp.v2.VertexDatasetResourceReference getVertexDatasetResourceReference();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return Whether the others field is set.
    */
   boolean hasOthers();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface DiscoveryVertexDatasetFilterOrBuilder
    * @return The others.
    */
   com.google.privacy.dlp.v2.AllOtherResources getOthers();
+
   /**
    *
    *

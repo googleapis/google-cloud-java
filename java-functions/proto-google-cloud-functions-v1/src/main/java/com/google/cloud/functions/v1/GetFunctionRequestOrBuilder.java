@@ -38,6 +38,7 @@ public interface GetFunctionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

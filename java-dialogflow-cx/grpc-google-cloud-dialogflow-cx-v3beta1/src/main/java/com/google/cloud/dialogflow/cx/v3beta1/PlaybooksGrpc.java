@@ -464,6 +464,19 @@ public final class PlaybooksGrpc {
     return PlaybooksStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PlaybooksBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PlaybooksBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PlaybooksBlockingV2Stub>() {
+          @java.lang.Override
+          public PlaybooksBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PlaybooksBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PlaybooksBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -826,6 +839,144 @@ public final class PlaybooksGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Playbooks.
+   *
+   * <pre>
+   * Service for managing
+   * [Playbooks][google.cloud.dialogflow.cx.v3beta1.Playbook].
+   * </pre>
+   */
+  public static final class PlaybooksBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PlaybooksBlockingV2Stub> {
+    private PlaybooksBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PlaybooksBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PlaybooksBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a playbook in a specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook createPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specified playbook.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of playbooks in the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksResponse listPlaybooks(
+        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybooksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPlaybooksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified Playbook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook getPlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified Playbook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Playbook updatePlaybook(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdatePlaybookRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdatePlaybookMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a version for the specified Playbook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion createPlaybookVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.CreatePlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreatePlaybookVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified version of the Playbook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.PlaybookVersion getPlaybookVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.GetPlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetPlaybookVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists versions for the specified Playbook.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsResponse listPlaybookVersions(
+        com.google.cloud.dialogflow.cx.v3beta1.ListPlaybookVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPlaybookVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified version of the Playbook.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deletePlaybookVersion(
+        com.google.cloud.dialogflow.cx.v3beta1.DeletePlaybookVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeletePlaybookVersionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Playbooks.
    *
    * <pre>
    * Service for managing

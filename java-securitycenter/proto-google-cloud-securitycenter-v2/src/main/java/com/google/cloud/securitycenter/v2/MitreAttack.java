@@ -34,6 +34,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.MitreAttack)
     MitreAttackOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MitreAttack.newBuilder() to construct.
   private MitreAttack(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -242,6 +243,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>TACTIC_UNSPECIFIED = 0;</code>
      */
     public static final int TACTIC_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -252,6 +254,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>RECONNAISSANCE = 1;</code>
      */
     public static final int RECONNAISSANCE_VALUE = 1;
+
     /**
      *
      *
@@ -262,6 +265,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_DEVELOPMENT = 2;</code>
      */
     public static final int RESOURCE_DEVELOPMENT_VALUE = 2;
+
     /**
      *
      *
@@ -272,6 +276,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INITIAL_ACCESS = 5;</code>
      */
     public static final int INITIAL_ACCESS_VALUE = 5;
+
     /**
      *
      *
@@ -282,6 +287,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTION = 3;</code>
      */
     public static final int EXECUTION_VALUE = 3;
+
     /**
      *
      *
@@ -292,6 +298,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PERSISTENCE = 6;</code>
      */
     public static final int PERSISTENCE_VALUE = 6;
+
     /**
      *
      *
@@ -302,6 +309,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PRIVILEGE_ESCALATION = 8;</code>
      */
     public static final int PRIVILEGE_ESCALATION_VALUE = 8;
+
     /**
      *
      *
@@ -312,6 +320,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DEFENSE_EVASION = 7;</code>
      */
     public static final int DEFENSE_EVASION_VALUE = 7;
+
     /**
      *
      *
@@ -322,6 +331,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CREDENTIAL_ACCESS = 9;</code>
      */
     public static final int CREDENTIAL_ACCESS_VALUE = 9;
+
     /**
      *
      *
@@ -332,6 +342,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DISCOVERY = 10;</code>
      */
     public static final int DISCOVERY_VALUE = 10;
+
     /**
      *
      *
@@ -342,6 +353,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>LATERAL_MOVEMENT = 11;</code>
      */
     public static final int LATERAL_MOVEMENT_VALUE = 11;
+
     /**
      *
      *
@@ -352,6 +364,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLECTION = 12;</code>
      */
     public static final int COLLECTION_VALUE = 12;
+
     /**
      *
      *
@@ -362,6 +375,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>COMMAND_AND_CONTROL = 4;</code>
      */
     public static final int COMMAND_AND_CONTROL_VALUE = 4;
+
     /**
      *
      *
@@ -372,6 +386,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXFILTRATION = 13;</code>
      */
     public static final int EXFILTRATION_VALUE = 13;
+
     /**
      *
      *
@@ -1184,6 +1199,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>TECHNIQUE_UNSPECIFIED = 0;</code>
      */
     public static final int TECHNIQUE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -1194,6 +1210,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MASQUERADING = 49;</code>
      */
     public static final int MASQUERADING_VALUE = 49;
+
     /**
      *
      *
@@ -1204,6 +1221,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MATCH_LEGITIMATE_NAME_OR_LOCATION = 50;</code>
      */
     public static final int MATCH_LEGITIMATE_NAME_OR_LOCATION_VALUE = 50;
+
     /**
      *
      *
@@ -1214,6 +1232,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>BOOT_OR_LOGON_INITIALIZATION_SCRIPTS = 37;</code>
      */
     public static final int BOOT_OR_LOGON_INITIALIZATION_SCRIPTS_VALUE = 37;
+
     /**
      *
      *
@@ -1224,6 +1243,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTUP_ITEMS = 38;</code>
      */
     public static final int STARTUP_ITEMS_VALUE = 38;
+
     /**
      *
      *
@@ -1234,6 +1254,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_SERVICE_DISCOVERY = 32;</code>
      */
     public static final int NETWORK_SERVICE_DISCOVERY_VALUE = 32;
+
     /**
      *
      *
@@ -1244,6 +1265,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PROCESS_DISCOVERY = 56;</code>
      */
     public static final int PROCESS_DISCOVERY_VALUE = 56;
+
     /**
      *
      *
@@ -1254,6 +1276,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>COMMAND_AND_SCRIPTING_INTERPRETER = 6;</code>
      */
     public static final int COMMAND_AND_SCRIPTING_INTERPRETER_VALUE = 6;
+
     /**
      *
      *
@@ -1264,6 +1287,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>UNIX_SHELL = 7;</code>
      */
     public static final int UNIX_SHELL_VALUE = 7;
+
     /**
      *
      *
@@ -1274,6 +1298,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PYTHON = 59;</code>
      */
     public static final int PYTHON_VALUE = 59;
+
     /**
      *
      *
@@ -1284,6 +1309,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPLOITATION_FOR_PRIVILEGE_ESCALATION = 63;</code>
      */
     public static final int EXPLOITATION_FOR_PRIVILEGE_ESCALATION_VALUE = 63;
+
     /**
      *
      *
@@ -1294,6 +1320,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_GROUPS_DISCOVERY = 18;</code>
      */
     public static final int PERMISSION_GROUPS_DISCOVERY_VALUE = 18;
+
     /**
      *
      *
@@ -1304,6 +1331,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_GROUPS = 19;</code>
      */
     public static final int CLOUD_GROUPS_VALUE = 19;
+
     /**
      *
      *
@@ -1314,6 +1342,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INDICATOR_REMOVAL_FILE_DELETION = 64;</code>
      */
     public static final int INDICATOR_REMOVAL_FILE_DELETION_VALUE = 64;
+
     /**
      *
      *
@@ -1324,6 +1353,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>APPLICATION_LAYER_PROTOCOL = 45;</code>
      */
     public static final int APPLICATION_LAYER_PROTOCOL_VALUE = 45;
+
     /**
      *
      *
@@ -1334,6 +1364,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DNS = 46;</code>
      */
     public static final int DNS_VALUE = 46;
+
     /**
      *
      *
@@ -1344,6 +1375,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SOFTWARE_DEPLOYMENT_TOOLS = 47;</code>
      */
     public static final int SOFTWARE_DEPLOYMENT_TOOLS_VALUE = 47;
+
     /**
      *
      *
@@ -1354,6 +1386,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>VALID_ACCOUNTS = 14;</code>
      */
     public static final int VALID_ACCOUNTS_VALUE = 14;
+
     /**
      *
      *
@@ -1364,6 +1397,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DEFAULT_ACCOUNTS = 35;</code>
      */
     public static final int DEFAULT_ACCOUNTS_VALUE = 35;
+
     /**
      *
      *
@@ -1374,6 +1408,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>LOCAL_ACCOUNTS = 15;</code>
      */
     public static final int LOCAL_ACCOUNTS_VALUE = 15;
+
     /**
      *
      *
@@ -1384,6 +1419,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_ACCOUNTS = 16;</code>
      */
     public static final int CLOUD_ACCOUNTS_VALUE = 16;
+
     /**
      *
      *
@@ -1394,6 +1430,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>PROXY = 9;</code>
      */
     public static final int PROXY_VALUE = 9;
+
     /**
      *
      *
@@ -1404,6 +1441,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXTERNAL_PROXY = 10;</code>
      */
     public static final int EXTERNAL_PROXY_VALUE = 10;
+
     /**
      *
      *
@@ -1414,6 +1452,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MULTI_HOP_PROXY = 11;</code>
      */
     public static final int MULTI_HOP_PROXY_VALUE = 11;
+
     /**
      *
      *
@@ -1424,6 +1463,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_MANIPULATION = 22;</code>
      */
     public static final int ACCOUNT_MANIPULATION_VALUE = 22;
+
     /**
      *
      *
@@ -1434,6 +1474,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_CLOUD_CREDENTIALS = 40;</code>
      */
     public static final int ADDITIONAL_CLOUD_CREDENTIALS_VALUE = 40;
+
     /**
      *
      *
@@ -1444,6 +1485,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SSH_AUTHORIZED_KEYS = 23;</code>
      */
     public static final int SSH_AUTHORIZED_KEYS_VALUE = 23;
+
     /**
      *
      *
@@ -1454,6 +1496,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ADDITIONAL_CONTAINER_CLUSTER_ROLES = 58;</code>
      */
     public static final int ADDITIONAL_CONTAINER_CLUSTER_ROLES_VALUE = 58;
+
     /**
      *
      *
@@ -1464,6 +1507,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INGRESS_TOOL_TRANSFER = 3;</code>
      */
     public static final int INGRESS_TOOL_TRANSFER_VALUE = 3;
+
     /**
      *
      *
@@ -1474,6 +1518,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NATIVE_API = 4;</code>
      */
     public static final int NATIVE_API_VALUE = 4;
+
     /**
      *
      *
@@ -1484,6 +1529,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>BRUTE_FORCE = 44;</code>
      */
     public static final int BRUTE_FORCE_VALUE = 44;
+
     /**
      *
      *
@@ -1494,6 +1540,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SHARED_MODULES = 5;</code>
      */
     public static final int SHARED_MODULES_VALUE = 5;
+
     /**
      *
      *
@@ -1504,6 +1551,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCESS_TOKEN_MANIPULATION = 33;</code>
      */
     public static final int ACCESS_TOKEN_MANIPULATION_VALUE = 33;
+
     /**
      *
      *
@@ -1514,6 +1562,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>TOKEN_IMPERSONATION_OR_THEFT = 39;</code>
      */
     public static final int TOKEN_IMPERSONATION_OR_THEFT_VALUE = 39;
+
     /**
      *
      *
@@ -1524,6 +1573,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXPLOIT_PUBLIC_FACING_APPLICATION = 27;</code>
      */
     public static final int EXPLOIT_PUBLIC_FACING_APPLICATION_VALUE = 27;
+
     /**
      *
      *
@@ -1534,6 +1584,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DOMAIN_POLICY_MODIFICATION = 30;</code>
      */
     public static final int DOMAIN_POLICY_MODIFICATION_VALUE = 30;
+
     /**
      *
      *
@@ -1544,6 +1595,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DATA_DESTRUCTION = 29;</code>
      */
     public static final int DATA_DESTRUCTION_VALUE = 29;
+
     /**
      *
      *
@@ -1554,6 +1606,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVICE_STOP = 52;</code>
      */
     public static final int SERVICE_STOP_VALUE = 52;
+
     /**
      *
      *
@@ -1564,6 +1617,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>INHIBIT_SYSTEM_RECOVERY = 36;</code>
      */
     public static final int INHIBIT_SYSTEM_RECOVERY_VALUE = 36;
+
     /**
      *
      *
@@ -1574,6 +1628,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>RESOURCE_HIJACKING = 8;</code>
      */
     public static final int RESOURCE_HIJACKING_VALUE = 8;
+
     /**
      *
      *
@@ -1584,6 +1639,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>NETWORK_DENIAL_OF_SERVICE = 17;</code>
      */
     public static final int NETWORK_DENIAL_OF_SERVICE_VALUE = 17;
+
     /**
      *
      *
@@ -1594,6 +1650,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SERVICE_DISCOVERY = 48;</code>
      */
     public static final int CLOUD_SERVICE_DISCOVERY_VALUE = 48;
+
     /**
      *
      *
@@ -1604,6 +1661,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>STEAL_APPLICATION_ACCESS_TOKEN = 42;</code>
      */
     public static final int STEAL_APPLICATION_ACCESS_TOKEN_VALUE = 42;
+
     /**
      *
      *
@@ -1614,6 +1672,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ACCOUNT_ACCESS_REMOVAL = 51;</code>
      */
     public static final int ACCOUNT_ACCESS_REMOVAL_VALUE = 51;
+
     /**
      *
      *
@@ -1624,6 +1683,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>STEAL_WEB_SESSION_COOKIE = 25;</code>
      */
     public static final int STEAL_WEB_SESSION_COOKIE_VALUE = 25;
+
     /**
      *
      *
@@ -1634,6 +1694,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATE_OR_MODIFY_SYSTEM_PROCESS = 24;</code>
      */
     public static final int CREATE_OR_MODIFY_SYSTEM_PROCESS_VALUE = 24;
+
     /**
      *
      *
@@ -1644,6 +1705,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT_TRIGGERED_EXECUTION = 65;</code>
      */
     public static final int EVENT_TRIGGERED_EXECUTION_VALUE = 65;
+
     /**
      *
      *
@@ -1654,6 +1716,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ABUSE_ELEVATION_CONTROL_MECHANISM = 34;</code>
      */
     public static final int ABUSE_ELEVATION_CONTROL_MECHANISM_VALUE = 34;
+
     /**
      *
      *
@@ -1664,6 +1727,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSECURED_CREDENTIALS = 13;</code>
      */
     public static final int UNSECURED_CREDENTIALS_VALUE = 13;
+
     /**
      *
      *
@@ -1674,6 +1738,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MODIFY_AUTHENTICATION_PROCESS = 28;</code>
      */
     public static final int MODIFY_AUTHENTICATION_PROCESS_VALUE = 28;
+
     /**
      *
      *
@@ -1684,6 +1749,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>IMPAIR_DEFENSES = 31;</code>
      */
     public static final int IMPAIR_DEFENSES_VALUE = 31;
+
     /**
      *
      *
@@ -1694,6 +1760,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DISABLE_OR_MODIFY_TOOLS = 55;</code>
      */
     public static final int DISABLE_OR_MODIFY_TOOLS_VALUE = 55;
+
     /**
      *
      *
@@ -1704,6 +1771,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXFILTRATION_OVER_WEB_SERVICE = 20;</code>
      */
     public static final int EXFILTRATION_OVER_WEB_SERVICE_VALUE = 20;
+
     /**
      *
      *
@@ -1714,6 +1782,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>EXFILTRATION_TO_CLOUD_STORAGE = 21;</code>
      */
     public static final int EXFILTRATION_TO_CLOUD_STORAGE_VALUE = 21;
+
     /**
      *
      *
@@ -1724,6 +1793,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DYNAMIC_RESOLUTION = 12;</code>
      */
     public static final int DYNAMIC_RESOLUTION_VALUE = 12;
+
     /**
      *
      *
@@ -1734,6 +1804,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>LATERAL_TOOL_TRANSFER = 41;</code>
      */
     public static final int LATERAL_TOOL_TRANSFER_VALUE = 41;
+
     /**
      *
      *
@@ -1744,6 +1815,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE = 26;</code>
      */
     public static final int MODIFY_CLOUD_COMPUTE_INFRASTRUCTURE_VALUE = 26;
+
     /**
      *
      *
@@ -1754,6 +1826,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATE_SNAPSHOT = 54;</code>
      */
     public static final int CREATE_SNAPSHOT_VALUE = 54;
+
     /**
      *
      *
@@ -1764,6 +1837,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_INFRASTRUCTURE_DISCOVERY = 53;</code>
      */
     public static final int CLOUD_INFRASTRUCTURE_DISCOVERY_VALUE = 53;
+
     /**
      *
      *
@@ -1774,6 +1848,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>OBTAIN_CAPABILITIES = 43;</code>
      */
     public static final int OBTAIN_CAPABILITIES_VALUE = 43;
+
     /**
      *
      *
@@ -1784,6 +1859,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE_SCANNING = 1;</code>
      */
     public static final int ACTIVE_SCANNING_VALUE = 1;
+
     /**
      *
      *
@@ -1794,6 +1870,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>SCANNING_IP_BLOCKS = 2;</code>
      */
     public static final int SCANNING_IP_BLOCKS_VALUE = 2;
+
     /**
      *
      *
@@ -1804,6 +1881,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTAINER_ADMINISTRATION_COMMAND = 60;</code>
      */
     public static final int CONTAINER_ADMINISTRATION_COMMAND_VALUE = 60;
+
     /**
      *
      *
@@ -1814,6 +1892,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>DEPLOY_CONTAINER = 66;</code>
      */
     public static final int DEPLOY_CONTAINER_VALUE = 66;
+
     /**
      *
      *
@@ -1824,6 +1903,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>ESCAPE_TO_HOST = 61;</code>
      */
     public static final int ESCAPE_TO_HOST_VALUE = 61;
+
     /**
      *
      *
@@ -1834,6 +1914,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTAINER_AND_RESOURCE_DISCOVERY = 57;</code>
      */
     public static final int CONTAINER_AND_RESOURCE_DISCOVERY_VALUE = 57;
+
     /**
      *
      *
@@ -2058,6 +2139,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PRIMARY_TACTIC_FIELD_NUMBER = 1;
   private int primaryTactic_ = 0;
+
   /**
    *
    *
@@ -2073,6 +2155,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public int getPrimaryTacticValue() {
     return primaryTactic_;
   }
+
   /**
    *
    *
@@ -2112,6 +2195,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -2136,6 +2220,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Technique>(
         primaryTechniques_, primaryTechniques_converter_);
   }
+
   /**
    *
    *
@@ -2157,6 +2242,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public int getPrimaryTechniquesCount() {
     return primaryTechniques_.size();
   }
+
   /**
    *
    *
@@ -2179,6 +2265,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.MitreAttack.Technique getPrimaryTechniques(int index) {
     return primaryTechniques_converter_.convert(primaryTechniques_.get(index));
   }
+
   /**
    *
    *
@@ -2200,6 +2287,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getPrimaryTechniquesValueList() {
     return primaryTechniques_;
   }
+
   /**
    *
    *
@@ -2244,6 +2332,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -2263,6 +2352,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Tactic>(
         additionalTactics_, additionalTactics_converter_);
   }
+
   /**
    *
    *
@@ -2279,6 +2369,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public int getAdditionalTacticsCount() {
     return additionalTactics_.size();
   }
+
   /**
    *
    *
@@ -2296,6 +2387,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.securitycenter.v2.MitreAttack.Tactic getAdditionalTactics(int index) {
     return additionalTactics_converter_.convert(additionalTactics_.get(index));
   }
+
   /**
    *
    *
@@ -2312,6 +2404,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAdditionalTacticsValueList() {
     return additionalTactics_;
   }
+
   /**
    *
    *
@@ -2351,6 +2444,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
                   : result;
             }
           };
+
   /**
    *
    *
@@ -2371,6 +2465,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Technique>(
         additionalTechniques_, additionalTechniques_converter_);
   }
+
   /**
    *
    *
@@ -2388,6 +2483,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public int getAdditionalTechniquesCount() {
     return additionalTechniques_.size();
   }
+
   /**
    *
    *
@@ -2407,6 +2503,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       int index) {
     return additionalTechniques_converter_.convert(additionalTechniques_.get(index));
   }
+
   /**
    *
    *
@@ -2424,6 +2521,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getAdditionalTechniquesValueList() {
     return additionalTechniques_;
   }
+
   /**
    *
    *
@@ -2449,6 +2547,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object version_ = "";
+
   /**
    *
    *
@@ -2472,6 +2571,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2743,6 +2843,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3052,6 +3153,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int primaryTactic_ = 0;
+
     /**
      *
      *
@@ -3067,6 +3169,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getPrimaryTacticValue() {
       return primaryTactic_;
     }
+
     /**
      *
      *
@@ -3085,6 +3188,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3104,6 +3208,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.securitycenter.v2.MitreAttack.Tactic.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3125,6 +3230,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3152,6 +3258,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
       }
     }
+
     /**
      *
      *
@@ -3175,6 +3282,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Technique>(
           primaryTechniques_, primaryTechniques_converter_);
     }
+
     /**
      *
      *
@@ -3195,6 +3303,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getPrimaryTechniquesCount() {
       return primaryTechniques_.size();
     }
+
     /**
      *
      *
@@ -3217,6 +3326,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return primaryTechniques_converter_.convert(primaryTechniques_.get(index));
     }
+
     /**
      *
      *
@@ -3246,6 +3356,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3274,6 +3385,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3302,6 +3414,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3325,6 +3438,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3345,6 +3459,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getPrimaryTechniquesValueList() {
       return java.util.Collections.unmodifiableList(primaryTechniques_);
     }
+
     /**
      *
      *
@@ -3366,6 +3481,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getPrimaryTechniquesValue(int index) {
       return primaryTechniques_.get(index);
     }
+
     /**
      *
      *
@@ -3391,6 +3507,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3415,6 +3532,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3451,6 +3569,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
       }
     }
+
     /**
      *
      *
@@ -3469,6 +3588,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Tactic>(
           additionalTactics_, additionalTactics_converter_);
     }
+
     /**
      *
      *
@@ -3484,6 +3604,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalTacticsCount() {
       return additionalTactics_.size();
     }
+
     /**
      *
      *
@@ -3500,6 +3621,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.securitycenter.v2.MitreAttack.Tactic getAdditionalTactics(int index) {
       return additionalTactics_converter_.convert(additionalTactics_.get(index));
     }
+
     /**
      *
      *
@@ -3524,6 +3646,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3547,6 +3670,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3570,6 +3694,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3588,6 +3713,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3603,6 +3729,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getAdditionalTacticsValueList() {
       return java.util.Collections.unmodifiableList(additionalTactics_);
     }
+
     /**
      *
      *
@@ -3619,6 +3746,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalTacticsValue(int index) {
       return additionalTactics_.get(index);
     }
+
     /**
      *
      *
@@ -3639,6 +3767,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3658,6 +3787,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3689,6 +3819,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
       }
     }
+
     /**
      *
      *
@@ -3709,6 +3840,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
           java.lang.Integer, com.google.cloud.securitycenter.v2.MitreAttack.Technique>(
           additionalTechniques_, additionalTechniques_converter_);
     }
+
     /**
      *
      *
@@ -3726,6 +3858,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalTechniquesCount() {
       return additionalTechniques_.size();
     }
+
     /**
      *
      *
@@ -3745,6 +3878,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return additionalTechniques_converter_.convert(additionalTechniques_.get(index));
     }
+
     /**
      *
      *
@@ -3771,6 +3905,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3796,6 +3931,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3821,6 +3957,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3841,6 +3978,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3858,6 +3996,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<java.lang.Integer> getAdditionalTechniquesValueList() {
       return java.util.Collections.unmodifiableList(additionalTechniques_);
     }
+
     /**
      *
      *
@@ -3876,6 +4015,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     public int getAdditionalTechniquesValue(int index) {
       return additionalTechniques_.get(index);
     }
+
     /**
      *
      *
@@ -3898,6 +4038,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3919,6 +4060,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3944,6 +4086,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object version_ = "";
+
     /**
      *
      *
@@ -3966,6 +4109,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3988,6 +4132,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4009,6 +4154,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4026,6 +4172,7 @@ public final class MitreAttack extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

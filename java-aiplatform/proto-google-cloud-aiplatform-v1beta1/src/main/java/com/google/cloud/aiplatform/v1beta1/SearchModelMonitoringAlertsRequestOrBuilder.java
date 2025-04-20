@@ -40,6 +40,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The modelMonitor.
    */
   java.lang.String getModelMonitor();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The modelMonitoringJob.
    */
   java.lang.String getModelMonitoringJob();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return Whether the alertTimeInterval field is set.
    */
   boolean hasAlertTimeInterval();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The alertTimeInterval.
    */
   com.google.type.Interval getAlertTimeInterval();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The statsName.
    */
   java.lang.String getStatsName();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The objectiveType.
    */
   java.lang.String getObjectiveType();
+
   /**
    *
    *
@@ -202,6 +208,7 @@ public interface SearchModelMonitoringAlertsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

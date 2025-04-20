@@ -37,6 +37,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    * @return Whether the disruptionSchedule field is set.
    */
   boolean hasDisruptionSchedule();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    * @return The disruptionSchedule.
    */
   java.lang.String getDisruptionSchedule();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason>
       getFaultReasonsList();
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -78,12 +81,14 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
    */
   com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason getFaultReasons(
       int index);
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
    * </code>
    */
   int getFaultReasonsCount();
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;
@@ -93,6 +98,7 @@ public interface InstancesReportHostAsFaultyRequestOrBuilder
           ? extends
               com.google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReasonOrBuilder>
       getFaultReasonsOrBuilderList();
+
   /**
    * <code>
    * repeated .google.cloud.compute.v1.InstancesReportHostAsFaultyRequestFaultReason fault_reasons = 168056210;

@@ -37,6 +37,7 @@ public interface ReplicationOrBuilder
    * @return Whether the automatic field is set.
    */
   boolean hasAutomatic();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ReplicationOrBuilder
    * @return The automatic.
    */
   com.google.cloud.secretmanager.v1beta1.Replication.Automatic getAutomatic();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ReplicationOrBuilder
    * @return Whether the userManaged field is set.
    */
   boolean hasUserManaged();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ReplicationOrBuilder
    * @return The userManaged.
    */
   com.google.cloud.secretmanager.v1beta1.Replication.UserManaged getUserManaged();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.CloneJob)
     CloneJobOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloneJob.newBuilder() to construct.
   private CloneJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -179,6 +180,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -189,6 +191,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING = 1;</code>
      */
     public static final int PENDING_VALUE = 1;
+
     /**
      *
      *
@@ -199,6 +202,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 2;</code>
      */
     public static final int ACTIVE_VALUE = 2;
+
     /**
      *
      *
@@ -209,6 +213,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>FAILED = 3;</code>
      */
     public static final int FAILED_VALUE = 3;
+
     /**
      *
      *
@@ -219,6 +224,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>SUCCEEDED = 4;</code>
      */
     public static final int SUCCEEDED_VALUE = 4;
+
     /**
      *
      *
@@ -229,6 +235,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLED = 5;</code>
      */
     public static final int CANCELLED_VALUE = 5;
+
     /**
      *
      *
@@ -239,6 +246,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 6;</code>
      */
     public static final int CANCELLING_VALUE = 6;
+
     /**
      *
      *
@@ -360,6 +368,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     private TargetVmDetailsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -391,6 +400,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int COMPUTE_ENGINE_TARGET_DETAILS_FIELD_NUMBER = 20;
+
   /**
    *
    *
@@ -408,6 +418,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasComputeEngineTargetDetails() {
     return targetVmDetailsCase_ == 20;
   }
+
   /**
    *
    *
@@ -429,6 +440,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -451,6 +463,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -468,6 +481,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -485,6 +499,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -503,6 +518,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 22;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -519,6 +535,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -535,6 +552,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -554,6 +572,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -577,6 +596,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -603,6 +623,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 12;
   private int state_ = 0;
+
   /**
    *
    *
@@ -620,6 +641,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -642,6 +664,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp stateTime_;
+
   /**
    *
    *
@@ -658,6 +681,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStateTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -674,6 +698,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStateTime() {
     return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
   }
+
   /**
    *
    *
@@ -691,6 +716,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ERROR_FIELD_NUMBER = 17;
   private com.google.rpc.Status error_;
+
   /**
    *
    *
@@ -707,6 +733,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public boolean hasError() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -723,6 +750,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.rpc.Status getError() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
+
   /**
    *
    *
@@ -742,6 +770,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vmmigration.v1.CloneStep> steps_;
+
   /**
    *
    *
@@ -757,6 +786,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vmmigration.v1.CloneStep> getStepsList() {
     return steps_;
   }
+
   /**
    *
    *
@@ -773,6 +803,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       getStepsOrBuilderList() {
     return steps_;
   }
+
   /**
    *
    *
@@ -788,6 +819,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public int getStepsCount() {
     return steps_.size();
   }
+
   /**
    *
    *
@@ -803,6 +835,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vmmigration.v1.CloneStep getSteps(int index) {
     return steps_.get(index);
   }
+
   /**
    *
    *
@@ -1079,6 +1112,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1481,6 +1515,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails.Builder,
             com.google.cloud.vmmigration.v1.ComputeEngineTargetDetailsOrBuilder>
         computeEngineTargetDetailsBuilder_;
+
     /**
      *
      *
@@ -1498,6 +1533,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasComputeEngineTargetDetails() {
       return targetVmDetailsCase_ == 20;
     }
+
     /**
      *
      *
@@ -1526,6 +1562,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1551,6 +1588,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       targetVmDetailsCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -1573,6 +1611,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       targetVmDetailsCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -1610,6 +1649,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       targetVmDetailsCase_ = 20;
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1677,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1693,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         getComputeEngineTargetDetailsBuilder() {
       return getComputeEngineTargetDetailsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1675,6 +1717,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.vmmigration.v1.ComputeEngineTargetDetails.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1717,6 +1760,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1734,6 +1778,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1757,6 +1802,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1782,6 +1828,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1804,6 +1851,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1834,6 +1882,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1905,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1873,6 +1923,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1894,6 +1945,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1929,6 +1981,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1944,6 +1997,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1963,6 +2017,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1986,6 +2041,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2006,6 +2062,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2034,6 +2091,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2054,6 +2112,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2069,6 +2128,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2086,6 +2146,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -2114,6 +2175,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2136,6 +2198,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2158,6 +2221,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2179,6 +2243,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2196,6 +2261,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2220,6 +2286,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -2237,6 +2304,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -2257,6 +2325,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2345,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.vmmigration.v1.CloneJob.State.forNumber(state_);
       return result == null ? com.google.cloud.vmmigration.v1.CloneJob.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2299,6 +2369,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2325,6 +2396,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         stateTimeBuilder_;
+
     /**
      *
      *
@@ -2341,6 +2413,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2361,6 +2434,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2385,6 +2459,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2481,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2435,6 +2511,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2456,6 +2533,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2472,6 +2550,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2490,6 +2569,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : stateTime_;
       }
     }
+
     /**
      *
      *
@@ -2522,6 +2602,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -2537,6 +2618,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public boolean hasError() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2556,6 +2638,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return errorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2579,6 +2662,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2599,6 +2683,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2627,6 +2712,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2647,6 +2733,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2662,6 +2749,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2679,6 +2767,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
+
     /**
      *
      *
@@ -2737,6 +2826,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2755,6 +2845,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2773,6 +2864,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2797,6 +2889,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2819,6 +2912,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2843,6 +2937,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2867,6 +2962,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2888,6 +2984,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2910,6 +3007,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2932,6 +3030,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2953,6 +3052,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2974,6 +3074,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2988,6 +3089,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vmmigration.v1.CloneStep.Builder getStepsBuilder(int index) {
       return getStepsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3006,6 +3108,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return stepsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3025,6 +3128,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(steps_);
       }
     }
+
     /**
      *
      *
@@ -3040,6 +3144,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       return getStepsFieldBuilder()
           .addBuilder(com.google.cloud.vmmigration.v1.CloneStep.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3055,6 +3160,7 @@ public final class CloneJob extends com.google.protobuf.GeneratedMessageV3
       return getStepsFieldBuilder()
           .addBuilder(index, com.google.cloud.vmmigration.v1.CloneStep.getDefaultInstance());
     }
+
     /**
      *
      *

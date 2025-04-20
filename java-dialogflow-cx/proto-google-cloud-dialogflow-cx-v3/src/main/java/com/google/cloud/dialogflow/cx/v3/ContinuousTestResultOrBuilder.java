@@ -37,6 +37,7 @@ public interface ContinuousTestResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface ContinuousTestResultOrBuilder
    * @return The enum numeric value on the wire for result.
    */
   int getResultValue();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface ContinuousTestResultOrBuilder
    * @return A list containing the testCaseResults.
    */
   java.util.List<java.lang.String> getTestCaseResultsList();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface ContinuousTestResultOrBuilder
    * @return The count of testCaseResults.
    */
   int getTestCaseResultsCount();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface ContinuousTestResultOrBuilder
    * @return The testCaseResults at the given index.
    */
   java.lang.String getTestCaseResults(int index);
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface ContinuousTestResultOrBuilder
    * @return Whether the runTime field is set.
    */
   boolean hasRunTime();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface ContinuousTestResultOrBuilder
    * @return The runTime.
    */
   com.google.protobuf.Timestamp getRunTime();
+
   /**
    *
    *

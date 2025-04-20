@@ -38,6 +38,7 @@ public interface RangeInfoOrBuilder
    * @return Whether the start field is set.
    */
   boolean hasStart();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RangeInfoOrBuilder
    * @return Whether the end field is set.
    */
   boolean hasEnd();
+
   /**
    *
    *

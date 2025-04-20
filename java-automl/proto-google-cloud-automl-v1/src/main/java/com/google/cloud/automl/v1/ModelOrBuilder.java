@@ -36,6 +36,7 @@ public interface ModelOrBuilder
    * @return Whether the translationModelMetadata field is set.
    */
   boolean hasTranslationModelMetadata();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ModelOrBuilder
    * @return The translationModelMetadata.
    */
   com.google.cloud.automl.v1.TranslationModelMetadata getTranslationModelMetadata();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ModelOrBuilder
    * @return Whether the imageClassificationModelMetadata field is set.
    */
   boolean hasImageClassificationModelMetadata();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface ModelOrBuilder
    * @return The imageClassificationModelMetadata.
    */
   com.google.cloud.automl.v1.ImageClassificationModelMetadata getImageClassificationModelMetadata();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface ModelOrBuilder
    * @return Whether the textClassificationModelMetadata field is set.
    */
   boolean hasTextClassificationModelMetadata();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface ModelOrBuilder
    * @return The textClassificationModelMetadata.
    */
   com.google.cloud.automl.v1.TextClassificationModelMetadata getTextClassificationModelMetadata();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface ModelOrBuilder
    * @return Whether the imageObjectDetectionModelMetadata field is set.
    */
   boolean hasImageObjectDetectionModelMetadata();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface ModelOrBuilder
    */
   com.google.cloud.automl.v1.ImageObjectDetectionModelMetadata
       getImageObjectDetectionModelMetadata();
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public interface ModelOrBuilder
    * @return Whether the textExtractionModelMetadata field is set.
    */
   boolean hasTextExtractionModelMetadata();
+
   /**
    *
    *
@@ -213,6 +222,7 @@ public interface ModelOrBuilder
    * @return The textExtractionModelMetadata.
    */
   com.google.cloud.automl.v1.TextExtractionModelMetadata getTextExtractionModelMetadata();
+
   /**
    *
    *
@@ -239,6 +249,7 @@ public interface ModelOrBuilder
    * @return Whether the textSentimentModelMetadata field is set.
    */
   boolean hasTextSentimentModelMetadata();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface ModelOrBuilder
    * @return The textSentimentModelMetadata.
    */
   com.google.cloud.automl.v1.TextSentimentModelMetadata getTextSentimentModelMetadata();
+
   /**
    *
    *
@@ -278,6 +290,7 @@ public interface ModelOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -307,6 +320,7 @@ public interface ModelOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -336,6 +350,7 @@ public interface ModelOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *
@@ -362,6 +377,7 @@ public interface ModelOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -374,6 +390,7 @@ public interface ModelOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -397,6 +414,7 @@ public interface ModelOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -409,6 +427,7 @@ public interface ModelOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -433,6 +452,7 @@ public interface ModelOrBuilder
    * @return The enum numeric value on the wire for deploymentState.
    */
   int getDeploymentStateValue();
+
   /**
    *
    *
@@ -460,6 +480,7 @@ public interface ModelOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -491,6 +512,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -508,9 +530,11 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -528,6 +552,7 @@ public interface ModelOrBuilder
    * <code>map&lt;string, string&gt; labels = 34;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -549,6 +574,7 @@ public interface ModelOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

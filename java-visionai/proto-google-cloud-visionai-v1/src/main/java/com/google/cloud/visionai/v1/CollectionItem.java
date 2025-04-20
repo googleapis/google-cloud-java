@@ -34,6 +34,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.CollectionItem)
     CollectionItemOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CollectionItem.newBuilder() to construct.
   private CollectionItem(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -109,6 +110,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -205,6 +207,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object collection_ = "";
+
   /**
    *
    *
@@ -231,6 +234,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -260,6 +264,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -301,6 +307,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object itemResource_ = "";
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -529,6 +537,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -741,6 +750,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object collection_ = "";
+
     /**
      *
      *
@@ -766,6 +776,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -791,6 +802,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -815,6 +827,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +848,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +876,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -879,6 +894,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -899,6 +915,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +937,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.visionai.v1.CollectionItem.Type.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -943,6 +961,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +983,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object itemResource_ = "";
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1033,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1057,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class CollectionItem extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

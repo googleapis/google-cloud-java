@@ -42,6 +42,7 @@ public interface DeleteCssProductInputRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface DeleteCssProductInputRequestOrBuilder
    * @return Whether the supplementalFeedId field is set.
    */
   boolean hasSupplementalFeedId();
+
   /**
    *
    *

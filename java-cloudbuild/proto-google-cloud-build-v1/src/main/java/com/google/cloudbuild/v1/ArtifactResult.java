@@ -34,6 +34,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.ArtifactResult)
     ArtifactResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArtifactResult.newBuilder() to construct.
   private ArtifactResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloudbuild.v1.FileHashes> fileHash_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloudbuild.v1.FileHashes> getFileHashList() {
     return fileHash_;
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       getFileHashOrBuilderList() {
     return fileHash_;
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   public int getFileHashCount() {
     return fileHash_.size();
   }
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloudbuild.v1.FileHashes getFileHash(int index) {
     return fileHash_.get(index);
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -604,6 +613,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -652,6 +663,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -675,6 +687,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +707,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return fileHashBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -767,6 +782,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return fileHashBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return fileHashBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +930,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +951,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +971,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +991,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1004,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloudbuild.v1.FileHashes.Builder getFileHashBuilder(int index) {
       return getFileHashFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return fileHashBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1039,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fileHash_);
       }
     }
+
     /**
      *
      *
@@ -1024,6 +1053,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       return getFileHashFieldBuilder()
           .addBuilder(com.google.cloudbuild.v1.FileHashes.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1037,6 +1067,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
       return getFileHashFieldBuilder()
           .addBuilder(index, com.google.cloudbuild.v1.FileHashes.getDefaultInstance());
     }
+
     /**
      *
      *

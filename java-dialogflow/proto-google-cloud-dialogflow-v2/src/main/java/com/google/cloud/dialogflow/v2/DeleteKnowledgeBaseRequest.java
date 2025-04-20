@@ -34,6 +34,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.DeleteKnowledgeBaseRequest)
     DeleteKnowledgeBaseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteKnowledgeBaseRequest.newBuilder() to construct.
   private DeleteKnowledgeBaseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
 
   public static final int FORCE_FIELD_NUMBER = 2;
   private boolean force_ = false;
+
   /**
    *
    *
@@ -311,6 +315,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -509,6 +514,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -535,6 +541,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -586,6 +594,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +645,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
     }
 
     private boolean force_;
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
     public boolean getForce() {
       return force_;
     }
+
     /**
      *
      *
@@ -671,6 +683,7 @@ public final class DeleteKnowledgeBaseRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

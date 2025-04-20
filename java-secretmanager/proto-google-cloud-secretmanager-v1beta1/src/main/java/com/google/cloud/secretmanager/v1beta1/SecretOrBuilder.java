@@ -38,6 +38,7 @@ public interface SecretOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SecretOrBuilder
    * @return Whether the replication field is set.
    */
   boolean hasReplication();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface SecretOrBuilder
    * @return The replication.
    */
   com.google.cloud.secretmanager.v1beta1.Replication getReplication();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface SecretOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public interface SecretOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -184,9 +190,11 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public interface SecretOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public interface SecretOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

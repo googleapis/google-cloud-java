@@ -39,6 +39,7 @@ public interface DocumentOrBuilder
    * @return Whether the uri field is set.
    */
   boolean hasUri();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface DocumentOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface DocumentOrBuilder
    * @return Whether the content field is set.
    */
   boolean hasContent();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface DocumentOrBuilder
    * @return The mimeType.
    */
   java.lang.String getMimeType();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DocumentOrBuilder
    * @return The text.
    */
   java.lang.String getText();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface DocumentOrBuilder
    */
   @java.lang.Deprecated
   java.util.List<com.google.cloud.documentai.v1beta3.Document.Style> getTextStylesList();
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public interface DocumentOrBuilder
    */
   @java.lang.Deprecated
   com.google.cloud.documentai.v1beta3.Document.Style getTextStyles(int index);
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface DocumentOrBuilder
    */
   @java.lang.Deprecated
   int getTextStylesCount();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface DocumentOrBuilder
   @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.StyleOrBuilder>
       getTextStylesOrBuilderList();
+
   /**
    *
    *
@@ -234,6 +243,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Document.Page> getPagesList();
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
    */
   com.google.cloud.documentai.v1beta3.Document.Page getPages(int index);
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Page pages = 6;</code>
    */
   int getPagesCount();
+
   /**
    *
    *
@@ -268,6 +280,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.PageOrBuilder>
       getPagesOrBuilderList();
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Document.Entity> getEntitiesList();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
    */
   com.google.cloud.documentai.v1beta3.Document.Entity getEntities(int index);
+
   /**
    *
    *
@@ -316,6 +331,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Entity entities = 7;</code>
    */
   int getEntitiesCount();
+
   /**
    *
    *
@@ -329,6 +345,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.EntityOrBuilder>
       getEntitiesOrBuilderList();
+
   /**
    *
    *
@@ -355,6 +372,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Document.EntityRelation>
       getEntityRelationsList();
+
   /**
    *
    *
@@ -367,6 +385,7 @@ public interface DocumentOrBuilder
    * </code>
    */
   com.google.cloud.documentai.v1beta3.Document.EntityRelation getEntityRelations(int index);
+
   /**
    *
    *
@@ -379,6 +398,7 @@ public interface DocumentOrBuilder
    * </code>
    */
   int getEntityRelationsCount();
+
   /**
    *
    *
@@ -392,6 +412,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.EntityRelationOrBuilder>
       getEntityRelationsOrBuilderList();
+
   /**
    *
    *
@@ -419,6 +440,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Document.TextChange> getTextChangesList();
+
   /**
    *
    *
@@ -432,6 +454,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
    */
   com.google.cloud.documentai.v1beta3.Document.TextChange getTextChanges(int index);
+
   /**
    *
    *
@@ -445,6 +468,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.TextChange text_changes = 14;</code>
    */
   int getTextChangesCount();
+
   /**
    *
    *
@@ -459,6 +483,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.TextChangeOrBuilder>
       getTextChangesOrBuilderList();
+
   /**
    *
    *
@@ -487,6 +512,7 @@ public interface DocumentOrBuilder
    * @return Whether the shardInfo field is set.
    */
   boolean hasShardInfo();
+
   /**
    *
    *
@@ -500,6 +526,7 @@ public interface DocumentOrBuilder
    * @return The shardInfo.
    */
   com.google.cloud.documentai.v1beta3.Document.ShardInfo getShardInfo();
+
   /**
    *
    *
@@ -524,6 +551,7 @@ public interface DocumentOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -536,6 +564,7 @@ public interface DocumentOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -557,6 +586,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
    */
   java.util.List<com.google.cloud.documentai.v1beta3.Document.Revision> getRevisionsList();
+
   /**
    *
    *
@@ -567,6 +597,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
    */
   com.google.cloud.documentai.v1beta3.Document.Revision getRevisions(int index);
+
   /**
    *
    *
@@ -577,6 +608,7 @@ public interface DocumentOrBuilder
    * <code>repeated .google.cloud.documentai.v1beta3.Document.Revision revisions = 13;</code>
    */
   int getRevisionsCount();
+
   /**
    *
    *
@@ -588,6 +620,7 @@ public interface DocumentOrBuilder
    */
   java.util.List<? extends com.google.cloud.documentai.v1beta3.Document.RevisionOrBuilder>
       getRevisionsOrBuilderList();
+
   /**
    *
    *
@@ -611,6 +644,7 @@ public interface DocumentOrBuilder
    * @return Whether the documentLayout field is set.
    */
   boolean hasDocumentLayout();
+
   /**
    *
    *
@@ -623,6 +657,7 @@ public interface DocumentOrBuilder
    * @return The documentLayout.
    */
   com.google.cloud.documentai.v1beta3.Document.DocumentLayout getDocumentLayout();
+
   /**
    *
    *
@@ -646,6 +681,7 @@ public interface DocumentOrBuilder
    * @return Whether the chunkedDocument field is set.
    */
   boolean hasChunkedDocument();
+
   /**
    *
    *
@@ -658,6 +694,7 @@ public interface DocumentOrBuilder
    * @return The chunkedDocument.
    */
   com.google.cloud.documentai.v1beta3.Document.ChunkedDocument getChunkedDocument();
+
   /**
    *
    *

@@ -41,6 +41,7 @@ public interface DeleteReportingDataAnnotationRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

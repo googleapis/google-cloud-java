@@ -35,6 +35,7 @@ public final class BatchCalculateEffectiveSettingsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.settings.v1beta1.BatchCalculateEffectiveSettingsResponse)
     BatchCalculateEffectiveSettingsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCalculateEffectiveSettingsResponse.newBuilder() to construct.
   private BatchCalculateEffectiveSettingsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class BatchCalculateEffectiveSettingsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.securitycenter.settings.v1beta1.Settings> settings_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       getSettingsList() {
     return settings_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       getSettingsOrBuilderList() {
     return settings_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class BatchCalculateEffectiveSettingsResponse
   public int getSettingsCount() {
     return settings_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class BatchCalculateEffectiveSettingsResponse
   public com.google.cloud.securitycenter.settings.v1beta1.Settings getSettings(int index) {
     return settings_.get(index);
   }
+
   /**
    *
    *
@@ -326,6 +332,7 @@ public final class BatchCalculateEffectiveSettingsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -615,6 +622,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         return settingsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -631,6 +639,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         return settingsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -647,6 +656,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         return settingsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +749,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +792,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +834,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class BatchCalculateEffectiveSettingsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +868,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         int index) {
       return getSettingsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -866,6 +886,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         return settingsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -884,6 +905,7 @@ public final class BatchCalculateEffectiveSettingsResponse
         return java.util.Collections.unmodifiableList(settings_);
       }
     }
+
     /**
      *
      *
@@ -898,6 +920,7 @@ public final class BatchCalculateEffectiveSettingsResponse
           .addBuilder(
               com.google.cloud.securitycenter.settings.v1beta1.Settings.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -914,6 +937,7 @@ public final class BatchCalculateEffectiveSettingsResponse
               index,
               com.google.cloud.securitycenter.settings.v1beta1.Settings.getDefaultInstance());
     }
+
     /**
      *
      *

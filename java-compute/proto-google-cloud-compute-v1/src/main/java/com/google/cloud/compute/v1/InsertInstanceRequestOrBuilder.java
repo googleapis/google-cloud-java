@@ -38,6 +38,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return Whether the instanceResource field is set.
    */
   boolean hasInstanceResource();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The instanceResource.
    */
   com.google.cloud.compute.v1.Instance getInstanceResource();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return Whether the sourceInstanceTemplate field is set.
    */
   boolean hasSourceInstanceTemplate();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The sourceInstanceTemplate.
    */
   java.lang.String getSourceInstanceTemplate();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return Whether the sourceMachineImage field is set.
    */
   boolean hasSourceMachineImage();
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The sourceMachineImage.
    */
   java.lang.String getSourceMachineImage();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface InsertInstanceRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

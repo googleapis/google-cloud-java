@@ -39,6 +39,7 @@ public interface SignalZoneStateRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface SignalZoneStateRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface SignalZoneStateRequestOrBuilder
    * @return The enum numeric value on the wire for stateSignal.
    */
   int getStateSignalValue();
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public interface SignalZoneStateRequestOrBuilder
    * @return The enum numeric value on the wire for provisioningStateSignal.
    */
   int getProvisioningStateSignalValue();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateVersionOperationMetadataOrBuilder
    * @return The version.
    */
   java.lang.String getVersion();
+
   /**
    *
    *
