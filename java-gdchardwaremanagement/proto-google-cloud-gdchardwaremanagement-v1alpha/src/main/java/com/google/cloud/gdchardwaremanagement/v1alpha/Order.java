@@ -50,6 +50,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     type_ = 0;
     billingId_ = "";
     existingHardware_ = java.util.Collections.emptyList();
+    deploymentType_ = 0;
   }
 
   @java.lang.Override
@@ -529,6 +530,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Not billed.
+     * </pre>
+     *
+     * <code>UNPAID = 2;</code>
+     */
+    public static final Type UNPAID = POC;
+
+    /**
+     *
+     *
+     * <pre>
      * Type of the order is unspecified.
      * </pre>
      *
@@ -557,6 +569,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * <code>POC = 2;</code>
      */
     public static final int POC_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not billed.
+     * </pre>
+     *
+     * <code>UNPAID = 2;</code>
+     */
+    public static final int UNPAID_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -622,7 +645,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           .get(1);
     }
 
-    private static final Type[] VALUES = values();
+    private static final Type[] VALUES = getStaticValuesArray();
+
+    private static Type[] getStaticValuesArray() {
+      return new Type[] {
+        TYPE_UNSPECIFIED, PAID, POC, UNPAID,
+      };
+    }
 
     public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
@@ -641,6 +670,213 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Order.Type)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Valid types of a deployment.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType}
+   */
+  public enum DeploymentType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Deployment type is unspecified.
+     * </pre>
+     *
+     * <code>DEPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    DEPLOYMENT_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Prod deployment with SLOs.
+     * </pre>
+     *
+     * <code>FULL_PRODUCTION = 1;</code>
+     */
+    FULL_PRODUCTION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Deployment with best-effort support and no SLOs.
+     * </pre>
+     *
+     * <code>PROOF_OF_CONCEPT = 2;</code>
+     */
+    PROOF_OF_CONCEPT(2),
+    /**
+     *
+     *
+     * <pre>
+     * Internal deployment with best-effort support and no SLOs.
+     * </pre>
+     *
+     * <code>INTERNAL = 3;</code>
+     */
+    INTERNAL(3),
+    /**
+     *
+     *
+     * <pre>
+     * Customer lab deployment that we support as though it's prod.
+     * </pre>
+     *
+     * <code>CUSTOMER_LAB = 4;</code>
+     */
+    CUSTOMER_LAB(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deployment type is unspecified.
+     * </pre>
+     *
+     * <code>DEPLOYMENT_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int DEPLOYMENT_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Prod deployment with SLOs.
+     * </pre>
+     *
+     * <code>FULL_PRODUCTION = 1;</code>
+     */
+    public static final int FULL_PRODUCTION_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Deployment with best-effort support and no SLOs.
+     * </pre>
+     *
+     * <code>PROOF_OF_CONCEPT = 2;</code>
+     */
+    public static final int PROOF_OF_CONCEPT_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Internal deployment with best-effort support and no SLOs.
+     * </pre>
+     *
+     * <code>INTERNAL = 3;</code>
+     */
+    public static final int INTERNAL_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer lab deployment that we support as though it's prod.
+     * </pre>
+     *
+     * <code>CUSTOMER_LAB = 4;</code>
+     */
+    public static final int CUSTOMER_LAB_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DeploymentType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DeploymentType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DEPLOYMENT_TYPE_UNSPECIFIED;
+        case 1:
+          return FULL_PRODUCTION;
+        case 2:
+          return PROOF_OF_CONCEPT;
+        case 3:
+          return INTERNAL;
+        case 4:
+          return CUSTOMER_LAB;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DeploymentType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DeploymentType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<DeploymentType>() {
+          public DeploymentType findValueByNumber(int number) {
+            return DeploymentType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.gdchardwaremanagement.v1alpha.Order.getDescriptor()
+          .getEnumTypes()
+          .get(2);
+    }
+
+    private static final DeploymentType[] VALUES = values();
+
+    public static DeploymentType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DeploymentType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType)
   }
 
   private int bitField0_;
@@ -1489,10 +1725,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Google Cloud Billing ID to be charged for this order.
+   * Output only. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The billingId.
    */
@@ -1513,10 +1749,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Google Cloud Billing ID to be charged for this order.
+   * Output only. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for billingId.
    */
@@ -1629,6 +1865,168 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     return existingHardware_.get(index);
   }
 
+  public static final int DEPLOYMENT_TYPE_FIELD_NUMBER = 18;
+  private int deploymentType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment type of this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentType.
+   */
+  @java.lang.Override
+  public int getDeploymentTypeValue() {
+    return deploymentType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment type of this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deploymentType.
+   */
+  @java.lang.Override
+  public com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType getDeploymentType() {
+    com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType result =
+        com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.forNumber(
+            deploymentType_);
+    return result == null
+        ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int ACTUAL_INSTALLATION_DATE_FIELD_NUMBER = 19;
+  private com.google.type.Date actualInstallationDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the actualInstallationDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasActualInstallationDate() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The actualInstallationDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getActualInstallationDate() {
+    return actualInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : actualInstallationDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getActualInstallationDateOrBuilder() {
+    return actualInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : actualInstallationDate_;
+  }
+
+  public static final int ESTIMATED_INSTALLATION_DATE_FIELD_NUMBER = 20;
+  private com.google.type.Date estimatedInstallationDate_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedInstallationDate field is set.
+   */
+  @java.lang.Override
+  public boolean hasEstimatedInstallationDate() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedInstallationDate.
+   */
+  @java.lang.Override
+  public com.google.type.Date getEstimatedInstallationDate() {
+    return estimatedInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedInstallationDate_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder() {
+    return estimatedInstallationDate_ == null
+        ? com.google.type.Date.getDefaultInstance()
+        : estimatedInstallationDate_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1692,6 +2090,18 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < existingHardware_.size(); i++) {
       output.writeMessage(16, existingHardware_.get(i));
+    }
+    if (deploymentType_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType
+            .DEPLOYMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(18, deploymentType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(19, getActualInstallationDate());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(20, getEstimatedInstallationDate());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1766,6 +2176,21 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(16, existingHardware_.get(i));
     }
+    if (deploymentType_
+        != com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType
+            .DEPLOYMENT_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, deploymentType_);
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(19, getActualInstallationDate());
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, getEstimatedInstallationDate());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1813,6 +2238,16 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getBillingId().equals(other.getBillingId())) return false;
     if (!getExistingHardwareList().equals(other.getExistingHardwareList())) return false;
+    if (deploymentType_ != other.deploymentType_) return false;
+    if (hasActualInstallationDate() != other.hasActualInstallationDate()) return false;
+    if (hasActualInstallationDate()) {
+      if (!getActualInstallationDate().equals(other.getActualInstallationDate())) return false;
+    }
+    if (hasEstimatedInstallationDate() != other.hasEstimatedInstallationDate()) return false;
+    if (hasEstimatedInstallationDate()) {
+      if (!getEstimatedInstallationDate().equals(other.getEstimatedInstallationDate()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1871,6 +2306,16 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (getExistingHardwareCount() > 0) {
       hash = (37 * hash) + EXISTING_HARDWARE_FIELD_NUMBER;
       hash = (53 * hash) + getExistingHardwareList().hashCode();
+    }
+    hash = (37 * hash) + DEPLOYMENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + deploymentType_;
+    if (hasActualInstallationDate()) {
+      hash = (37 * hash) + ACTUAL_INSTALLATION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getActualInstallationDate().hashCode();
+    }
+    if (hasEstimatedInstallationDate()) {
+      hash = (37 * hash) + ESTIMATED_INSTALLATION_DATE_FIELD_NUMBER;
+      hash = (53 * hash) + getEstimatedInstallationDate().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2041,6 +2486,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         getFulfillmentTimeFieldBuilder();
         getSubmitTimeFieldBuilder();
         getExistingHardwareFieldBuilder();
+        getActualInstallationDateFieldBuilder();
+        getEstimatedInstallationDateFieldBuilder();
       }
     }
 
@@ -2090,6 +2537,17 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardwareBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00008000);
+      deploymentType_ = 0;
+      actualInstallationDate_ = null;
+      if (actualInstallationDateBuilder_ != null) {
+        actualInstallationDateBuilder_.dispose();
+        actualInstallationDateBuilder_ = null;
+      }
+      estimatedInstallationDate_ = null;
+      if (estimatedInstallationDateBuilder_ != null) {
+        estimatedInstallationDateBuilder_.dispose();
+        estimatedInstallationDateBuilder_ = null;
+      }
       return this;
     }
 
@@ -2196,6 +2654,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.billingId_ = billingId_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.deploymentType_ = deploymentType_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.actualInstallationDate_ =
+            actualInstallationDateBuilder_ == null
+                ? actualInstallationDate_
+                : actualInstallationDateBuilder_.build();
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.estimatedInstallationDate_ =
+            estimatedInstallationDateBuilder_ == null
+                ? estimatedInstallationDate_
+                : estimatedInstallationDateBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2336,6 +2811,15 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.deploymentType_ != 0) {
+        setDeploymentTypeValue(other.getDeploymentTypeValue());
+      }
+      if (other.hasActualInstallationDate()) {
+        mergeActualInstallationDate(other.getActualInstallationDate());
+      }
+      if (other.hasEstimatedInstallationDate()) {
+        mergeEstimatedInstallationDate(other.getEstimatedInstallationDate());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2474,6 +2958,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 130
+            case 144:
+              {
+                deploymentType_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
+            case 154:
+              {
+                input.readMessage(
+                    getActualInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getEstimatedInstallationDateFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4774,10 +5278,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Google Cloud Billing ID to be charged for this order.
+     * Output only. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The billingId.
      */
@@ -4797,10 +5301,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Google Cloud Billing ID to be charged for this order.
+     * Output only. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for billingId.
      */
@@ -4820,10 +5324,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Google Cloud Billing ID to be charged for this order.
+     * Output only. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The billingId to set.
      * @return This builder for chaining.
@@ -4842,10 +5346,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Google Cloud Billing ID to be charged for this order.
+     * Output only. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -4860,10 +5364,10 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Google Cloud Billing ID to be charged for this order.
+     * Output only. The Google Cloud Billing ID to be charged for this order.
      * </pre>
      *
-     * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for billingId to set.
      * @return This builder for chaining.
@@ -5320,6 +5824,527 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         existingHardware_ = null;
       }
       return existingHardwareBuilder_;
+    }
+
+    private int deploymentType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment type of this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for deploymentType.
+     */
+    @java.lang.Override
+    public int getDeploymentTypeValue() {
+      return deploymentType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment type of this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for deploymentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentTypeValue(int value) {
+      deploymentType_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment type of this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The deploymentType.
+     */
+    @java.lang.Override
+    public com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType getDeploymentType() {
+      com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType result =
+          com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.forNumber(
+              deploymentType_);
+      return result == null
+          ? com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment type of this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The deploymentType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeploymentType(
+        com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      deploymentType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The deployment type of this order.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeploymentType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      deploymentType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.type.Date actualInstallationDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        actualInstallationDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the actualInstallationDate field is set.
+     */
+    public boolean hasActualInstallationDate() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The actualInstallationDate.
+     */
+    public com.google.type.Date getActualInstallationDate() {
+      if (actualInstallationDateBuilder_ == null) {
+        return actualInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : actualInstallationDate_;
+      } else {
+        return actualInstallationDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setActualInstallationDate(com.google.type.Date value) {
+      if (actualInstallationDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        actualInstallationDate_ = value;
+      } else {
+        actualInstallationDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setActualInstallationDate(com.google.type.Date.Builder builderForValue) {
+      if (actualInstallationDateBuilder_ == null) {
+        actualInstallationDate_ = builderForValue.build();
+      } else {
+        actualInstallationDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeActualInstallationDate(com.google.type.Date value) {
+      if (actualInstallationDateBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && actualInstallationDate_ != null
+            && actualInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
+          getActualInstallationDateBuilder().mergeFrom(value);
+        } else {
+          actualInstallationDate_ = value;
+        }
+      } else {
+        actualInstallationDateBuilder_.mergeFrom(value);
+      }
+      if (actualInstallationDate_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearActualInstallationDate() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      actualInstallationDate_ = null;
+      if (actualInstallationDateBuilder_ != null) {
+        actualInstallationDateBuilder_.dispose();
+        actualInstallationDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getActualInstallationDateBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getActualInstallationDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getActualInstallationDateOrBuilder() {
+      if (actualInstallationDateBuilder_ != null) {
+        return actualInstallationDateBuilder_.getMessageOrBuilder();
+      } else {
+        return actualInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : actualInstallationDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Actual installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getActualInstallationDateFieldBuilder() {
+      if (actualInstallationDateBuilder_ == null) {
+        actualInstallationDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getActualInstallationDate(), getParentForChildren(), isClean());
+        actualInstallationDate_ = null;
+      }
+      return actualInstallationDateBuilder_;
+    }
+
+    private com.google.type.Date estimatedInstallationDate_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        estimatedInstallationDateBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the estimatedInstallationDate field is set.
+     */
+    public boolean hasEstimatedInstallationDate() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The estimatedInstallationDate.
+     */
+    public com.google.type.Date getEstimatedInstallationDate() {
+      if (estimatedInstallationDateBuilder_ == null) {
+        return estimatedInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedInstallationDate_;
+      } else {
+        return estimatedInstallationDateBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedInstallationDate(com.google.type.Date value) {
+      if (estimatedInstallationDateBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        estimatedInstallationDate_ = value;
+      } else {
+        estimatedInstallationDateBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEstimatedInstallationDate(com.google.type.Date.Builder builderForValue) {
+      if (estimatedInstallationDateBuilder_ == null) {
+        estimatedInstallationDate_ = builderForValue.build();
+      } else {
+        estimatedInstallationDateBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEstimatedInstallationDate(com.google.type.Date value) {
+      if (estimatedInstallationDateBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && estimatedInstallationDate_ != null
+            && estimatedInstallationDate_ != com.google.type.Date.getDefaultInstance()) {
+          getEstimatedInstallationDateBuilder().mergeFrom(value);
+        } else {
+          estimatedInstallationDate_ = value;
+        }
+      } else {
+        estimatedInstallationDateBuilder_.mergeFrom(value);
+      }
+      if (estimatedInstallationDate_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEstimatedInstallationDate() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      estimatedInstallationDate_ = null;
+      if (estimatedInstallationDateBuilder_ != null) {
+        estimatedInstallationDateBuilder_.dispose();
+        estimatedInstallationDateBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.Date.Builder getEstimatedInstallationDateBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getEstimatedInstallationDateFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder() {
+      if (estimatedInstallationDateBuilder_ != null) {
+        return estimatedInstallationDateBuilder_.getMessageOrBuilder();
+      } else {
+        return estimatedInstallationDate_ == null
+            ? com.google.type.Date.getDefaultInstance()
+            : estimatedInstallationDate_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Estimated installation date for this order.
+     * </pre>
+     *
+     * <code>
+     * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>
+        getEstimatedInstallationDateFieldBuilder() {
+      if (estimatedInstallationDateBuilder_ == null) {
+        estimatedInstallationDateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.type.Date, com.google.type.Date.Builder, com.google.type.DateOrBuilder>(
+                getEstimatedInstallationDate(), getParentForChildren(), isClean());
+        estimatedInstallationDate_ = null;
+      }
+      return estimatedInstallationDateBuilder_;
     }
 
     @java.lang.Override

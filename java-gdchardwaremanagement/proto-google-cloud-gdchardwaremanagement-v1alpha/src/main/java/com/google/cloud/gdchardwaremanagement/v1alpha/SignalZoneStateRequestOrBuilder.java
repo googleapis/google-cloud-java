@@ -153,4 +153,62 @@ public interface SignalZoneStateRequestOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.ProvisioningStateSignal
       getProvisioningStateSignal();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The step being executed. Provides a finer grained status when the
+   * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
+   * FACTORY_TURNUP_CHECKS_FAILED.
+   * </pre>
+   *
+   * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The step.
+   */
+  java.lang.String getStep();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The step being executed. Provides a finer grained status when the
+   * state_signal is FACTORY_TURNUP_CHECKS_STARTED or
+   * FACTORY_TURNUP_CHECKS_FAILED.
+   * </pre>
+   *
+   * <code>string step = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for step.
+   */
+  com.google.protobuf.ByteString getStepBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional details, such as an error message when state_signal is
+   * FACTORY_TURNUP_CHECKS_FAILED.
+   * </pre>
+   *
+   * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The details.
+   */
+  java.lang.String getDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional details, such as an error message when state_signal is
+   * FACTORY_TURNUP_CHECKS_FAILED.
+   * </pre>
+   *
+   * <code>string details = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for details.
+   */
+  com.google.protobuf.ByteString getDetailsBytes();
 }

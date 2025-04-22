@@ -426,8 +426,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
      * </pre>
      */
     default void createSession(
@@ -456,7 +455,7 @@ public final class SessionServiceGrpc {
      *
      * <pre>
      * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * reasoning engine.
      * </pre>
      */
     default void listSessions(
@@ -564,8 +563,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
      * </pre>
      */
     public void createSession(
@@ -597,7 +595,7 @@ public final class SessionServiceGrpc {
      *
      * <pre>
      * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * reasoning engine.
      * </pre>
      */
     public void listSessions(
@@ -699,8 +697,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
      * </pre>
      */
     public com.google.longrunning.Operation createSession(
@@ -728,7 +725,7 @@ public final class SessionServiceGrpc {
      *
      * <pre>
      * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * reasoning engine.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListSessionsResponse listSessions(
@@ -814,8 +811,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
      * </pre>
      */
     public com.google.longrunning.Operation createSession(
@@ -843,7 +839,7 @@ public final class SessionServiceGrpc {
      *
      * <pre>
      * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * reasoning engine.
      * </pre>
      */
     public com.google.cloud.aiplatform.v1beta1.ListSessionsResponse listSessions(
@@ -929,8 +925,7 @@ public final class SessionServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * Creates a new [Session][google.cloud.aiplatform.v1beta1.Session].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -959,7 +954,7 @@ public final class SessionServiceGrpc {
      *
      * <pre>
      * Lists [Sessions][google.cloud.aiplatform.v1beta1.Session] in a given
-     * project and location.
+     * reasoning engine.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

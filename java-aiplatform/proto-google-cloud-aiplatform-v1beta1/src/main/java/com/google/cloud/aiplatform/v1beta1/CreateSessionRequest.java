@@ -76,7 +76,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the location to create the session in.
-   * Format: `projects/{project}/locations/{location}` or
+   * Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
@@ -104,7 +104,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * Required. The resource name of the location to create the session in.
-   * Format: `projects/{project}/locations/{location}` or
+   * Format:
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
@@ -581,7 +581,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the location to create the session in.
-     * Format: `projects/{project}/locations/{location}` or
+     * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
@@ -608,7 +608,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the location to create the session in.
-     * Format: `projects/{project}/locations/{location}` or
+     * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
@@ -635,7 +635,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the location to create the session in.
-     * Format: `projects/{project}/locations/{location}` or
+     * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
@@ -661,7 +661,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the location to create the session in.
-     * Format: `projects/{project}/locations/{location}` or
+     * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
@@ -683,7 +683,7 @@ public final class CreateSessionRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * Required. The resource name of the location to create the session in.
-     * Format: `projects/{project}/locations/{location}` or
+     * Format:
      * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *

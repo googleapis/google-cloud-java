@@ -136,6 +136,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Optional. The maximum number of events to return. The service may return
    * fewer than this value. If unspecified, at most 100 events will be returned.
+   * These events are ordered by timestamp in ascending order.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -738,6 +739,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The maximum number of events to return. The service may return
      * fewer than this value. If unspecified, at most 100 events will be returned.
+     * These events are ordered by timestamp in ascending order.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -755,6 +757,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The maximum number of events to return. The service may return
      * fewer than this value. If unspecified, at most 100 events will be returned.
+     * These events are ordered by timestamp in ascending order.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -776,6 +779,7 @@ public final class ListEventsRequest extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Optional. The maximum number of events to return. The service may return
      * fewer than this value. If unspecified, at most 100 events will be returned.
+     * These events are ordered by timestamp in ascending order.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

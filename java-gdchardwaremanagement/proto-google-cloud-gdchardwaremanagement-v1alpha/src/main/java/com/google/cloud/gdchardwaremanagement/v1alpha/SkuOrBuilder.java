@@ -385,4 +385,77 @@ public interface SkuOrBuilder
    * @return The vcpuCount.
    */
   int getVcpuCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range>
+      getHardwareCountRangesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Sku.Range getHardwareCountRanges(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getHardwareCountRangesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder>
+      getHardwareCountRangesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The inclusive ranges of hardware counts that are allowed in a
+   * zone using this SKU.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.gdchardwaremanagement.v1alpha.Sku.Range hardware_count_ranges = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Sku.RangeOrBuilder getHardwareCountRangesOrBuilder(
+      int index);
 }

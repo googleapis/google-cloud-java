@@ -75,7 +75,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -89,7 +90,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -104,7 +106,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -118,7 +121,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -132,7 +136,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A list of events matching the request.
+   * A list of events matching the request. Ordered by timestamp in ascending
+   * order.
    * </pre>
    *
    * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -642,7 +647,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -659,7 +665,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -676,7 +683,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -693,7 +701,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -717,7 +726,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -738,7 +748,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -761,7 +772,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -785,7 +797,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -806,7 +819,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -827,7 +841,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -848,7 +863,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -868,7 +884,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -888,7 +905,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -902,7 +920,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -920,7 +939,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -938,7 +958,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -952,7 +973,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>
@@ -967,7 +989,8 @@ public final class ListEventsResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * A list of events matching the request.
+     * A list of events matching the request. Ordered by timestamp in ascending
+     * order.
      * </pre>
      *
      * <code>repeated .google.cloud.aiplatform.v1beta1.SessionEvent session_events = 1;</code>

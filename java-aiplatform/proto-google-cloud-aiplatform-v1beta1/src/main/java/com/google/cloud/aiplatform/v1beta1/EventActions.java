@@ -39,7 +39,9 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private EventActions() {}
+  private EventActions() {
+    transferAgent_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -268,14 +270,17 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. If set, the event transfers to the specified agent.
+   * Deprecated. If set, the event transfers to the specified agent.
    * </pre>
    *
-   * <code>bool transfer_to_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/session.proto;l=163
    * @return The transferToAgent.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean getTransferToAgent() {
     return transferToAgent_;
   }
@@ -367,6 +372,59 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         : requestedAuthConfigs_;
   }
 
+  public static final int TRANSFER_AGENT_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object transferAgent_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the event transfers to the specified agent.
+   * </pre>
+   *
+   * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The transferAgent.
+   */
+  @java.lang.Override
+  public java.lang.String getTransferAgent() {
+    java.lang.Object ref = transferAgent_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      transferAgent_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the event transfers to the specified agent.
+   * </pre>
+   *
+   * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for transferAgent.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getTransferAgentBytes() {
+    java.lang.Object ref = transferAgent_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      transferAgent_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -397,6 +455,9 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getRequestedAuthConfigs());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transferAgent_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, transferAgent_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -433,6 +494,9 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRequestedAuthConfigs());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(transferAgent_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, transferAgent_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -461,6 +525,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
     if (hasRequestedAuthConfigs()) {
       if (!getRequestedAuthConfigs().equals(other.getRequestedAuthConfigs())) return false;
     }
+    if (!getTransferAgent().equals(other.getTransferAgent())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -490,6 +555,8 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + REQUESTED_AUTH_CONFIGS_FIELD_NUMBER;
       hash = (53 * hash) + getRequestedAuthConfigs().hashCode();
     }
+    hash = (37 * hash) + TRANSFER_AGENT_FIELD_NUMBER;
+    hash = (53 * hash) + getTransferAgent().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -676,6 +743,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         requestedAuthConfigsBuilder_.dispose();
         requestedAuthConfigsBuilder_ = null;
       }
+      transferAgent_ = "";
       return this;
     }
 
@@ -736,6 +804,9 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
                 ? requestedAuthConfigs_
                 : requestedAuthConfigsBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.transferAgent_ = transferAgent_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -802,6 +873,11 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRequestedAuthConfigs()) {
         mergeRequestedAuthConfigs(other.getRequestedAuthConfigs());
+      }
+      if (!other.getTransferAgent().isEmpty()) {
+        transferAgent_ = other.transferAgent_;
+        bitField0_ |= 0x00000040;
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -872,6 +948,12 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 58
+            case 66:
+              {
+                transferAgent_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1348,14 +1430,17 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set, the event transfers to the specified agent.
+     * Deprecated. If set, the event transfers to the specified agent.
      * </pre>
      *
-     * <code>bool transfer_to_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
      * @return The transferToAgent.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getTransferToAgent() {
       return transferToAgent_;
     }
@@ -1364,14 +1449,17 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set, the event transfers to the specified agent.
+     * Deprecated. If set, the event transfers to the specified agent.
      * </pre>
      *
-     * <code>bool transfer_to_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
      * @param value The transferToAgent to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setTransferToAgent(boolean value) {
 
       transferToAgent_ = value;
@@ -1384,13 +1472,16 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If set, the event transfers to the specified agent.
+     * Deprecated. If set, the event transfers to the specified agent.
      * </pre>
      *
-     * <code>bool transfer_to_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearTransferToAgent() {
       bitField0_ = (bitField0_ & ~0x00000008);
       transferToAgent_ = false;
@@ -1691,6 +1782,117 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
         requestedAuthConfigs_ = null;
       }
       return requestedAuthConfigsBuilder_;
+    }
+
+    private java.lang.Object transferAgent_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the event transfers to the specified agent.
+     * </pre>
+     *
+     * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The transferAgent.
+     */
+    public java.lang.String getTransferAgent() {
+      java.lang.Object ref = transferAgent_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        transferAgent_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the event transfers to the specified agent.
+     * </pre>
+     *
+     * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for transferAgent.
+     */
+    public com.google.protobuf.ByteString getTransferAgentBytes() {
+      java.lang.Object ref = transferAgent_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        transferAgent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the event transfers to the specified agent.
+     * </pre>
+     *
+     * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The transferAgent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransferAgent(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      transferAgent_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the event transfers to the specified agent.
+     * </pre>
+     *
+     * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTransferAgent() {
+      transferAgent_ = getDefaultInstance().getTransferAgent();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, the event transfers to the specified agent.
+     * </pre>
+     *
+     * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for transferAgent to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTransferAgentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      transferAgent_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

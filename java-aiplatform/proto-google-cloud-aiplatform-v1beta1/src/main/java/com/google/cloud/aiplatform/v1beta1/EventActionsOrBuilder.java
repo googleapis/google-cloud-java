@@ -151,13 +151,16 @@ public interface EventActionsOrBuilder
    *
    *
    * <pre>
-   * Optional. If set, the event transfers to the specified agent.
+   * Deprecated. If set, the event transfers to the specified agent.
    * </pre>
    *
-   * <code>bool transfer_to_agent = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/session.proto;l=163
    * @return The transferToAgent.
    */
+  @java.lang.Deprecated
   boolean getTransferToAgent();
 
   /**
@@ -224,4 +227,30 @@ public interface EventActionsOrBuilder
    * </code>
    */
   com.google.protobuf.StructOrBuilder getRequestedAuthConfigsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the event transfers to the specified agent.
+   * </pre>
+   *
+   * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The transferAgent.
+   */
+  java.lang.String getTransferAgent();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, the event transfers to the specified agent.
+   * </pre>
+   *
+   * <code>string transfer_agent = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for transferAgent.
+   */
+  com.google.protobuf.ByteString getTransferAgentBytes();
 }

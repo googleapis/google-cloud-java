@@ -137,6 +137,16 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The Zone is running factory turnup checks.
+     * </pre>
+     *
+     * <code>CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED = 8;</code>
+     */
+    CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED(8),
+    /**
+     *
+     *
+     * <pre>
      * The Zone is ready for site turnup.
      * </pre>
      *
@@ -224,6 +234,17 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The Zone is running factory turnup checks.
+     * </pre>
+     *
+     * <code>CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED = 8;</code>
+     */
+    public static final int CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED_VALUE = 8;
+
+    /**
+     *
+     *
+     * <pre>
      * The Zone is ready for site turnup.
      * </pre>
      *
@@ -296,6 +317,8 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
           return PREPARING;
         case 5:
           return READY_FOR_CUSTOMER_FACTORY_TURNUP_CHECKS;
+        case 8:
+          return CUSTOMER_FACTORY_TURNUP_CHECKS_STARTED;
         case 6:
           return READY_FOR_SITE_TURNUP;
         case 7:

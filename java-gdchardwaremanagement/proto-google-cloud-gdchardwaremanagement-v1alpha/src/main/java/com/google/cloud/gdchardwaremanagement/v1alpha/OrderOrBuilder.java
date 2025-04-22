@@ -578,10 +578,10 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Billing ID to be charged for this order.
+   * Output only. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The billingId.
    */
@@ -591,10 +591,10 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Required. The Google Cloud Billing ID to be charged for this order.
+   * Output only. The Google Cloud Billing ID to be charged for this order.
    * </pre>
    *
-   * <code>string billing_id = 15 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string billing_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for billingId.
    */
@@ -672,4 +672,120 @@ public interface OrderOrBuilder
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.HardwareLocationOrBuilder
       getExistingHardwareOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment type of this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for deploymentType.
+   */
+  int getDeploymentTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The deployment type of this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType deployment_type = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The deploymentType.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.Order.DeploymentType getDeploymentType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the actualInstallationDate field is set.
+   */
+  boolean hasActualInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The actualInstallationDate.
+   */
+  com.google.type.Date getActualInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Actual installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date actual_installation_date = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getActualInstallationDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedInstallationDate field is set.
+   */
+  boolean hasEstimatedInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedInstallationDate.
+   */
+  com.google.type.Date getEstimatedInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_installation_date = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder();
 }
