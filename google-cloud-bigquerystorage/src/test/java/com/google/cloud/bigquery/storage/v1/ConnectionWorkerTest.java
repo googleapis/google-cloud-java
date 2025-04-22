@@ -32,6 +32,7 @@ import com.google.cloud.bigquery.storage.test.Test.InnerType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
+import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.Attributes;
 import java.io.IOException;
@@ -896,6 +897,49 @@ public class ConnectionWorkerTest {
         "4531186922674871499");
     exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow :c", null, null, null);
     exerciseOpenTelemetryAttributesWithTraceId("a:b dataflow:c:d", "c", "d", null);
+  }
+
+  @Test
+  public void testDoubleDisconnectWithShorterRetryDuration() throws Exception {
+    // simulate server disconnect due to idle stream
+    testBigQueryWrite.setFailedStatus(
+        Status.ABORTED.withDescription(
+            "Closing the stream because it has been inactive for 600 seconds."));
+    testBigQueryWrite.setCloseEveryNAppends(1);
+    testBigQueryWrite.setTimesToClose(
+        2); // Total of 2 connection failures. The time interval between the processing of these
+    // failures will exceed the configured maxRetryDuration.
+    testBigQueryWrite.addResponse(createAppendResponse(0));
+
+    ProtoSchema schema1 = createProtoSchema("foo");
+    StreamWriter sw1 =
+        StreamWriter.newBuilder(TEST_STREAM_1, client)
+            .setLocation("us")
+            .setWriterSchema(schema1)
+            .build();
+    ConnectionWorker connectionWorker =
+        new ConnectionWorker(
+            TEST_STREAM_1,
+            "us",
+            schema1,
+            100000,
+            100000,
+            Duration.ofMillis(1), // very small maxRetryDuration
+            FlowController.LimitExceededBehavior.Block,
+            TEST_TRACE_ID,
+            null,
+            client.getSettings(),
+            retrySettings,
+            /*enableRequestProfiler=*/ false,
+            /*enableOpenTelemetry=*/ false,
+            /*isMultiplexing*/ false);
+
+    List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+    futures.add(
+        sendTestMessage(
+            connectionWorker, sw1, createFooProtoRows(new String[] {String.valueOf(0)}), 0));
+
+    assertEquals(0, futures.get(0).get().getAppendResult().getOffset().getValue());
   }
 
   @Test

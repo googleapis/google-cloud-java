@@ -1273,23 +1273,28 @@ class ConnectionWorker implements AutoCloseable {
             + writerId
             + " Final status: "
             + finalStatus.toString());
+    boolean closedIdleConnection =
+        finalStatus.toString().contains("Closing the stream because it has been inactive");
     this.lock.lock();
     try {
       this.streamConnectionIsConnected = false;
       this.telemetryMetrics.recordConnectionEnd(
           Code.values()[Status.fromThrowable(finalStatus).getCode().ordinal()].toString());
       if (connectionFinalStatus == null) {
-        if (connectionRetryStartTime == 0) {
+        if (!closedIdleConnection && connectionRetryStartTime == 0) {
           connectionRetryStartTime = System.currentTimeMillis();
         }
         // If the error can be retried, don't set it here, let it try to retry later on.
         if (isConnectionErrorRetriable(Status.fromThrowable(finalStatus).getCode())
             && !userClosed
             && (maxRetryDuration.toMillis() == 0f
+                || closedIdleConnection
                 || System.currentTimeMillis() - connectionRetryStartTime
                     <= maxRetryDuration.toMillis())) {
-          this.conectionRetryCountWithoutCallback++;
-          this.telemetryMetrics.recordConnectionStartWithRetry();
+          if (!closedIdleConnection) {
+            this.conectionRetryCountWithoutCallback++;
+            this.telemetryMetrics.recordConnectionStartWithRetry();
+          }
           log.info(
               "Connection is going to be reestablished with the next request. Retriable error "
                   + finalStatus.toString()
@@ -1297,7 +1302,9 @@ class ConnectionWorker implements AutoCloseable {
                   + conectionRetryCountWithoutCallback
                   + ", millis left to retry "
                   + (maxRetryDuration.toMillis()
-                      - (System.currentTimeMillis() - connectionRetryStartTime))
+                      - (connectionRetryStartTime > 0
+                          ? System.currentTimeMillis() - connectionRetryStartTime
+                          : 0))
                   + ", for stream "
                   + streamName
                   + " id:"
@@ -1311,7 +1318,10 @@ class ConnectionWorker implements AutoCloseable {
                   + " for stream "
                   + streamName
                   + " with write id: "
-                  + writerId);
+                  + writerId
+                  + ", millis left to retry was "
+                  + (maxRetryDuration.toMillis()
+                      - (System.currentTimeMillis() - connectionRetryStartTime)));
         }
       }
     } finally {
