@@ -33,6 +33,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.Precondition)
     PreconditionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Precondition.newBuilder() to construct.
   private Precondition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     private ConditionTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXISTS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExists() {
     return conditionTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return conditionTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -388,6 +395,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -625,6 +633,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExists() {
       return conditionTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -643,6 +652,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -663,6 +673,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +700,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return conditionTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +789,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +823,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       conditionTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class Precondition extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -657,8 +657,7 @@ public class TransactionTest {
     BatchGetDocumentsRequest expectedGetAll =
         getAll(TRANSACTION_ID, doc1.getResourcePath().toString());
     expectedGetAll =
-        expectedGetAll
-            .toBuilder()
+        expectedGetAll.toBuilder()
             .setMask(DocumentMask.newBuilder().addFieldPaths("foo.bar"))
             .build();
     assertEquals(expectedGetAll, requests.get(1));

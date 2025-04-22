@@ -39,6 +39,7 @@ public interface IndexOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for queryScope.
    */
   int getQueryScopeValue();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for apiScope.
    */
   int getApiScopeValue();
+
   /**
    *
    *
@@ -137,6 +140,7 @@ public interface IndexOrBuilder
    * <code>repeated .google.firestore.admin.v1.Index.IndexField fields = 3;</code>
    */
   java.util.List<com.google.firestore.admin.v1.Index.IndexField> getFieldsList();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface IndexOrBuilder
    * <code>repeated .google.firestore.admin.v1.Index.IndexField fields = 3;</code>
    */
   com.google.firestore.admin.v1.Index.IndexField getFields(int index);
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface IndexOrBuilder
    * <code>repeated .google.firestore.admin.v1.Index.IndexField fields = 3;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface IndexOrBuilder
    */
   java.util.List<? extends com.google.firestore.admin.v1.Index.IndexFieldOrBuilder>
       getFieldsOrBuilderList();
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -243,4 +251,67 @@ public interface IndexOrBuilder
    * @return The state.
    */
   com.google.firestore.admin.v1.Index.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The density configuration of the index.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for density.
+   */
+  int getDensityValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The density configuration of the index.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The density.
+   */
+  com.google.firestore.admin.v1.Index.Density getDensity();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the index is multikey. By default, the index is not
+   * multikey. For non-multikey indexes, none of the paths in the index
+   * definition reach or traverse an array, except via an explicit array index.
+   * For multikey indexes, at most one of the paths in the index definition
+   * reach or traverse an array, except via an explicit array index. Violations
+   * will result in errors.
+   *
+   * Note this field only applies to index with MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>bool multikey = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The multikey.
+   */
+  boolean getMultikey();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of shards for the index.
+   * </pre>
+   *
+   * <code>int32 shard_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The shardCount.
+   */
+  int getShardCount();
 }

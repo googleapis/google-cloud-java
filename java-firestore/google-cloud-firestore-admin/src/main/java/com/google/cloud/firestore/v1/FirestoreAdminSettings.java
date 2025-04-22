@@ -42,12 +42,16 @@ import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
 import com.google.firestore.admin.v1.CreateIndexRequest;
+import com.google.firestore.admin.v1.CreateUserCredsRequest;
 import com.google.firestore.admin.v1.Database;
 import com.google.firestore.admin.v1.DeleteBackupRequest;
 import com.google.firestore.admin.v1.DeleteBackupScheduleRequest;
 import com.google.firestore.admin.v1.DeleteDatabaseMetadata;
 import com.google.firestore.admin.v1.DeleteDatabaseRequest;
 import com.google.firestore.admin.v1.DeleteIndexRequest;
+import com.google.firestore.admin.v1.DeleteUserCredsRequest;
+import com.google.firestore.admin.v1.DisableUserCredsRequest;
+import com.google.firestore.admin.v1.EnableUserCredsRequest;
 import com.google.firestore.admin.v1.ExportDocumentsMetadata;
 import com.google.firestore.admin.v1.ExportDocumentsRequest;
 import com.google.firestore.admin.v1.ExportDocumentsResponse;
@@ -58,6 +62,7 @@ import com.google.firestore.admin.v1.GetBackupScheduleRequest;
 import com.google.firestore.admin.v1.GetDatabaseRequest;
 import com.google.firestore.admin.v1.GetFieldRequest;
 import com.google.firestore.admin.v1.GetIndexRequest;
+import com.google.firestore.admin.v1.GetUserCredsRequest;
 import com.google.firestore.admin.v1.ImportDocumentsMetadata;
 import com.google.firestore.admin.v1.ImportDocumentsRequest;
 import com.google.firestore.admin.v1.Index;
@@ -72,12 +77,16 @@ import com.google.firestore.admin.v1.ListFieldsRequest;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesRequest;
 import com.google.firestore.admin.v1.ListIndexesResponse;
+import com.google.firestore.admin.v1.ListUserCredsRequest;
+import com.google.firestore.admin.v1.ListUserCredsResponse;
+import com.google.firestore.admin.v1.ResetUserPasswordRequest;
 import com.google.firestore.admin.v1.RestoreDatabaseMetadata;
 import com.google.firestore.admin.v1.RestoreDatabaseRequest;
 import com.google.firestore.admin.v1.UpdateBackupScheduleRequest;
 import com.google.firestore.admin.v1.UpdateDatabaseMetadata;
 import com.google.firestore.admin.v1.UpdateDatabaseRequest;
 import com.google.firestore.admin.v1.UpdateFieldRequest;
+import com.google.firestore.admin.v1.UserCreds;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -288,6 +297,41 @@ public class FirestoreAdminSettings extends ClientSettings<FirestoreAdminSetting
   public OperationCallSettings<DeleteDatabaseRequest, Database, DeleteDatabaseMetadata>
       deleteDatabaseOperationSettings() {
     return ((FirestoreAdminStubSettings) getStubSettings()).deleteDatabaseOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createUserCreds. */
+  public UnaryCallSettings<CreateUserCredsRequest, UserCreds> createUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).createUserCredsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getUserCreds. */
+  public UnaryCallSettings<GetUserCredsRequest, UserCreds> getUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).getUserCredsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listUserCreds. */
+  public UnaryCallSettings<ListUserCredsRequest, ListUserCredsResponse> listUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).listUserCredsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enableUserCreds. */
+  public UnaryCallSettings<EnableUserCredsRequest, UserCreds> enableUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).enableUserCredsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disableUserCreds. */
+  public UnaryCallSettings<DisableUserCredsRequest, UserCreds> disableUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).disableUserCredsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetUserPassword. */
+  public UnaryCallSettings<ResetUserPasswordRequest, UserCreds> resetUserPasswordSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).resetUserPasswordSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteUserCreds. */
+  public UnaryCallSettings<DeleteUserCredsRequest, Empty> deleteUserCredsSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).deleteUserCredsSettings();
   }
 
   /** Returns the object with the settings used for calls to getBackup. */
@@ -584,6 +628,44 @@ public class FirestoreAdminSettings extends ClientSettings<FirestoreAdminSetting
     public OperationCallSettings.Builder<DeleteDatabaseRequest, Database, DeleteDatabaseMetadata>
         deleteDatabaseOperationSettings() {
       return getStubSettingsBuilder().deleteDatabaseOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createUserCreds. */
+    public UnaryCallSettings.Builder<CreateUserCredsRequest, UserCreds> createUserCredsSettings() {
+      return getStubSettingsBuilder().createUserCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getUserCreds. */
+    public UnaryCallSettings.Builder<GetUserCredsRequest, UserCreds> getUserCredsSettings() {
+      return getStubSettingsBuilder().getUserCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listUserCreds. */
+    public UnaryCallSettings.Builder<ListUserCredsRequest, ListUserCredsResponse>
+        listUserCredsSettings() {
+      return getStubSettingsBuilder().listUserCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enableUserCreds. */
+    public UnaryCallSettings.Builder<EnableUserCredsRequest, UserCreds> enableUserCredsSettings() {
+      return getStubSettingsBuilder().enableUserCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disableUserCreds. */
+    public UnaryCallSettings.Builder<DisableUserCredsRequest, UserCreds>
+        disableUserCredsSettings() {
+      return getStubSettingsBuilder().disableUserCredsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetUserPassword. */
+    public UnaryCallSettings.Builder<ResetUserPasswordRequest, UserCreds>
+        resetUserPasswordSettings() {
+      return getStubSettingsBuilder().resetUserPasswordSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUserCreds. */
+    public UnaryCallSettings.Builder<DeleteUserCredsRequest, Empty> deleteUserCredsSettings() {
+      return getStubSettingsBuilder().deleteUserCredsSettings();
     }
 
     /** Returns the builder for the settings used for calls to getBackup. */

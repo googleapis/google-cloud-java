@@ -36,6 +36,7 @@ public interface StructuredAggregationQueryOrBuilder
    * @return Whether the structuredQuery field is set.
    */
   boolean hasStructuredQuery();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StructuredAggregationQueryOrBuilder
    * @return The structuredQuery.
    */
   com.google.firestore.v1.StructuredQuery getStructuredQuery();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface StructuredAggregationQueryOrBuilder
    */
   java.util.List<com.google.firestore.v1.StructuredAggregationQuery.Aggregation>
       getAggregationsList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface StructuredAggregationQueryOrBuilder
    * </code>
    */
   com.google.firestore.v1.StructuredAggregationQuery.Aggregation getAggregations(int index);
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface StructuredAggregationQueryOrBuilder
    * </code>
    */
   int getAggregationsCount();
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public interface StructuredAggregationQueryOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.StructuredAggregationQuery.AggregationOrBuilder>
       getAggregationsOrBuilderList();
+
   /**
    *
    *

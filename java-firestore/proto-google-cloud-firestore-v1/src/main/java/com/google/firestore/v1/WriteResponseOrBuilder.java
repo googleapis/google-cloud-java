@@ -37,6 +37,7 @@ public interface WriteResponseOrBuilder
    * @return The streamId.
    */
   java.lang.String getStreamId();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface WriteResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 3;</code>
    */
   java.util.List<com.google.firestore.v1.WriteResult> getWriteResultsList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface WriteResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 3;</code>
    */
   com.google.firestore.v1.WriteResult getWriteResults(int index);
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface WriteResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 3;</code>
    */
   int getWriteResultsCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface WriteResponseOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.WriteResultOrBuilder>
       getWriteResultsOrBuilderList();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface WriteResponseOrBuilder
    * @return Whether the commitTime field is set.
    */
   boolean hasCommitTime();
+
   /**
    *
    *
@@ -160,6 +166,7 @@ public interface WriteResponseOrBuilder
    * @return The commitTime.
    */
   com.google.protobuf.Timestamp getCommitTime();
+
   /**
    *
    *

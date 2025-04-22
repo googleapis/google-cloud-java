@@ -72,7 +72,9 @@ public final class TransactionOptions {
     return numberOfAttempts;
   }
 
-  /** @return Executor to be used to run user callbacks on */
+  /**
+   * @return Executor to be used to run user callbacks on
+   */
   @Nullable
   public Executor getExecutor() {
     return executor;
@@ -214,7 +216,9 @@ public final class TransactionOptions {
       return (B) this;
     }
 
-    /** @return an instance of {@link TransactionOptions} from the values passed to this builder */
+    /**
+     * @return an instance of {@link TransactionOptions} from the values passed to this builder
+     */
     @Nonnull
     public abstract TransactionOptions build();
   }
@@ -232,7 +236,9 @@ public final class TransactionOptions {
       this.readTime = readTime;
     }
 
-    /** @return the currently set value that will be used as the readTime. */
+    /**
+     * @return the currently set value that will be used as the readTime.
+     */
     @Nullable
     public TimestampOrBuilder getReadTime() {
       return readTime;

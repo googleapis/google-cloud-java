@@ -34,6 +34,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.firestore.v1.BatchGetDocumentsResponse)
     BatchGetDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchGetDocumentsResponse.newBuilder() to construct.
   private BatchGetDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     private ResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   }
 
   public static final int FOUND_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   public boolean hasFound() {
     return resultCase_ == 1;
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     }
     return com.google.firestore.v1.Document.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   }
 
   public static final int MISSING_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   public boolean hasMissing() {
     return resultCase_ == 2;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
 
   public static final int TRANSACTION_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -261,6 +270,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -524,6 +536,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -799,6 +812,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
             com.google.firestore.v1.Document.Builder,
             com.google.firestore.v1.DocumentOrBuilder>
         foundBuilder_;
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     public boolean hasFound() {
       return resultCase_ == 1;
     }
+
     /**
      *
      *
@@ -839,6 +854,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -861,6 +877,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +897,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +929,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       resultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +955,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +968,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     public com.google.firestore.v1.Document.Builder getFoundBuilder() {
       return getFoundFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -968,6 +989,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1037,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     public boolean hasMissing() {
       return resultCase_ == 2;
     }
+
     /**
      *
      *
@@ -1044,6 +1067,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1073,6 +1097,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1115,6 +1141,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     }
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1158,6 +1186,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }
+
     /**
      *
      *
@@ -1182,6 +1211,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1226,6 +1257,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1247,6 +1279,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1305,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1328,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1324,6 +1359,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1382,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1382,6 +1420,7 @@ public final class BatchGetDocumentsResponse extends com.google.protobuf.Generat
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *

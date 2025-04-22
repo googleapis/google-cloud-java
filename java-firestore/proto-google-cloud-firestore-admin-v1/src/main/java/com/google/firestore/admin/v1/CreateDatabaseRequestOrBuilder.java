@@ -39,6 +39,7 @@ public interface CreateDatabaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateDatabaseRequestOrBuilder
    * @return Whether the database field is set.
    */
   boolean hasDatabase();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateDatabaseRequestOrBuilder
    * @return The database.
    */
   com.google.firestore.admin.v1.Database getDatabase();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface CreateDatabaseRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *

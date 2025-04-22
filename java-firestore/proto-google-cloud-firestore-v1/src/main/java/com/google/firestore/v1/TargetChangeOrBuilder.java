@@ -36,6 +36,7 @@ public interface TargetChangeOrBuilder
    * @return The enum numeric value on the wire for targetChangeType.
    */
   int getTargetChangeTypeValue();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface TargetChangeOrBuilder
    * @return A list containing the targetIds.
    */
   java.util.List<java.lang.Integer> getTargetIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface TargetChangeOrBuilder
    * @return The count of targetIds.
    */
   int getTargetIdsCount();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface TargetChangeOrBuilder
    * @return Whether the cause field is set.
    */
   boolean hasCause();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface TargetChangeOrBuilder
    * @return The cause.
    */
   com.google.rpc.Status getCause();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface TargetChangeOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface TargetChangeOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

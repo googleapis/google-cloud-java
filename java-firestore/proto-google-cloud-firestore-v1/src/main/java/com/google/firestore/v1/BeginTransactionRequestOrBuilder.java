@@ -37,6 +37,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return Whether the options field is set.
    */
   boolean hasOptions();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return The options.
    */
   com.google.firestore.v1.TransactionOptions getOptions();
+
   /**
    *
    *

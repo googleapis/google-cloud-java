@@ -37,6 +37,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return Whether the currentDocument field is set.
    */
   boolean hasCurrentDocument();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DeleteDocumentRequestOrBuilder
    * @return The currentDocument.
    */
   com.google.firestore.v1.Precondition getCurrentDocument();
+
   /**
    *
    *

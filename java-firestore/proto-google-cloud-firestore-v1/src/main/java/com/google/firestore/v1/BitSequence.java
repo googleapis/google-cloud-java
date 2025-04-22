@@ -47,6 +47,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.BitSequence)
     BitSequenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BitSequence.newBuilder() to construct.
   private BitSequence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
 
   public static final int BITMAP_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString bitmap_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PADDING_FIELD_NUMBER = 2;
   private int padding_ = 0;
+
   /**
    *
    *
@@ -282,6 +285,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +493,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString bitmap_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -505,6 +510,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getBitmap() {
       return bitmap_;
     }
+
     /**
      *
      *
@@ -527,6 +533,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -547,6 +554,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int padding_;
+
     /**
      *
      *
@@ -564,6 +572,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
     public int getPadding() {
       return padding_;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class BitSequence extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

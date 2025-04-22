@@ -41,6 +41,7 @@ public interface RunQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface RunQueryRequestOrBuilder
    * @return Whether the structuredQuery field is set.
    */
   boolean hasStructuredQuery();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RunQueryRequestOrBuilder
    * @return The structuredQuery.
    */
   com.google.firestore.v1.StructuredQuery getStructuredQuery();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface RunQueryRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface RunQueryRequestOrBuilder
    * @return Whether the newTransaction field is set.
    */
   boolean hasNewTransaction();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface RunQueryRequestOrBuilder
    * @return The newTransaction.
    */
   com.google.firestore.v1.TransactionOptions getNewTransaction();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface RunQueryRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -199,6 +206,7 @@ public interface RunQueryRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface RunQueryRequestOrBuilder
    * @return Whether the explainOptions field is set.
    */
   boolean hasExplainOptions();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface RunQueryRequestOrBuilder
    * @return The explainOptions.
    */
   com.google.firestore.v1.ExplainOptions getExplainOptions();
+
   /**
    *
    *

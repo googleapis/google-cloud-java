@@ -148,7 +148,8 @@ public abstract class BulkWriterOptions {
 
       if (!options.getThrottlingEnabled() && (maxRate != null || initialRate != null)) {
         throw FirestoreException.forInvalidArgument(
-            "Cannot set 'initialOpsPerSecond' or 'maxOpsPerSecond' when 'throttlingEnabled' is set to false.");
+            "Cannot set 'initialOpsPerSecond' or 'maxOpsPerSecond' when 'throttlingEnabled' is set"
+                + " to false.");
       }
       return options;
     }

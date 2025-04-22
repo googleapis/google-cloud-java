@@ -22,6 +22,9 @@
             "CreateIndex": {
               "methods": ["createIndexAsync", "createIndexAsync", "createIndexAsync", "createIndexOperationCallable", "createIndexCallable"]
             },
+            "CreateUserCreds": {
+              "methods": ["createUserCreds", "createUserCreds", "createUserCreds", "createUserCredsCallable"]
+            },
             "DeleteBackup": {
               "methods": ["deleteBackup", "deleteBackup", "deleteBackup", "deleteBackupCallable"]
             },
@@ -33,6 +36,15 @@
             },
             "DeleteIndex": {
               "methods": ["deleteIndex", "deleteIndex", "deleteIndex", "deleteIndexCallable"]
+            },
+            "DeleteUserCreds": {
+              "methods": ["deleteUserCreds", "deleteUserCreds", "deleteUserCreds", "deleteUserCredsCallable"]
+            },
+            "DisableUserCreds": {
+              "methods": ["disableUserCreds", "disableUserCreds", "disableUserCreds", "disableUserCredsCallable"]
+            },
+            "EnableUserCreds": {
+              "methods": ["enableUserCreds", "enableUserCreds", "enableUserCreds", "enableUserCredsCallable"]
             },
             "ExportDocuments": {
               "methods": ["exportDocumentsAsync", "exportDocumentsAsync", "exportDocumentsAsync", "exportDocumentsOperationCallable", "exportDocumentsCallable"]
@@ -52,6 +64,9 @@
             "GetIndex": {
               "methods": ["getIndex", "getIndex", "getIndex", "getIndexCallable"]
             },
+            "GetUserCreds": {
+              "methods": ["getUserCreds", "getUserCreds", "getUserCreds", "getUserCredsCallable"]
+            },
             "ImportDocuments": {
               "methods": ["importDocumentsAsync", "importDocumentsAsync", "importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
             },
@@ -69,6 +84,12 @@
             },
             "ListIndexes": {
               "methods": ["listIndexes", "listIndexes", "listIndexes", "listIndexesPagedCallable", "listIndexesCallable"]
+            },
+            "ListUserCreds": {
+              "methods": ["listUserCreds", "listUserCreds", "listUserCreds", "listUserCredsCallable"]
+            },
+            "ResetUserPassword": {
+              "methods": ["resetUserPassword", "resetUserPassword", "resetUserPassword", "resetUserPasswordCallable"]
             },
             "RestoreDatabase": {
               "methods": ["restoreDatabaseAsync", "restoreDatabaseOperationCallable", "restoreDatabaseCallable"]

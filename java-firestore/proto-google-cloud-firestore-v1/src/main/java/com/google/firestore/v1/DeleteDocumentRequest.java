@@ -34,6 +34,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.firestore.v1.DeleteDocumentRequest)
     DeleteDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDocumentRequest.newBuilder() to construct.
   private DeleteDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
 
   public static final int CURRENT_DOCUMENT_FIELD_NUMBER = 2;
   private com.google.firestore.v1.Precondition currentDocument_;
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
   public boolean hasCurrentDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
         ? com.google.firestore.v1.Precondition.getDefaultInstance()
         : currentDocument_;
   }
+
   /**
    *
    *
@@ -344,6 +350,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +655,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
             com.google.firestore.v1.Precondition.Builder,
             com.google.firestore.v1.PreconditionOrBuilder>
         currentDocumentBuilder_;
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
     public boolean hasCurrentDocument() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -710,6 +724,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
         return currentDocumentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +748,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -754,6 +770,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +799,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +820,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -817,6 +836,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getCurrentDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class DeleteDocumentRequest extends com.google.protobuf.GeneratedMe
             : currentDocument_;
       }
     }
+
     /**
      *
      *

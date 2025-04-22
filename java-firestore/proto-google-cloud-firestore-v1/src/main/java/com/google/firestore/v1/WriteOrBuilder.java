@@ -36,6 +36,7 @@ public interface WriteOrBuilder
    * @return Whether the update field is set.
    */
   boolean hasUpdate();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface WriteOrBuilder
    * @return The update.
    */
   com.google.firestore.v1.Document getUpdate();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface WriteOrBuilder
    * @return Whether the delete field is set.
    */
   boolean hasDelete();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface WriteOrBuilder
    * @return The delete.
    */
   java.lang.String getDelete();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface WriteOrBuilder
    * @return Whether the transform field is set.
    */
   boolean hasTransform();
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public interface WriteOrBuilder
    * @return The transform.
    */
   com.google.firestore.v1.DocumentTransform getTransform();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface WriteOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface WriteOrBuilder
    * @return The updateMask.
    */
   com.google.firestore.v1.DocumentMask getUpdateMask();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface WriteOrBuilder
    */
   java.util.List<com.google.firestore.v1.DocumentTransform.FieldTransform>
       getUpdateTransformsList();
+
   /**
    *
    *
@@ -227,6 +236,7 @@ public interface WriteOrBuilder
    * </code>
    */
   com.google.firestore.v1.DocumentTransform.FieldTransform getUpdateTransforms(int index);
+
   /**
    *
    *
@@ -242,6 +252,7 @@ public interface WriteOrBuilder
    * </code>
    */
   int getUpdateTransformsCount();
+
   /**
    *
    *
@@ -258,6 +269,7 @@ public interface WriteOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.DocumentTransform.FieldTransformOrBuilder>
       getUpdateTransformsOrBuilderList();
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public interface WriteOrBuilder
    * @return Whether the currentDocument field is set.
    */
   boolean hasCurrentDocument();
+
   /**
    *
    *
@@ -303,6 +316,7 @@ public interface WriteOrBuilder
    * @return The currentDocument.
    */
   com.google.firestore.v1.Precondition getCurrentDocument();
+
   /**
    *
    *

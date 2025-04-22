@@ -48,9 +48,12 @@ import com.google.firestore.admin.v1.ListBackupsResponse;
 import com.google.firestore.admin.v1.ListDatabasesResponse;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesResponse;
+import com.google.firestore.admin.v1.ListUserCredsResponse;
 import com.google.firestore.admin.v1.LocationName;
 import com.google.firestore.admin.v1.ProjectName;
 import com.google.firestore.admin.v1.RestoreDatabaseRequest;
+import com.google.firestore.admin.v1.UserCreds;
+import com.google.firestore.admin.v1.UserCredsName;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Any;
 import com.google.protobuf.Duration;
@@ -111,6 +114,8 @@ public class FirestoreAdminClientHttpJsonTest {
         Index.newBuilder()
             .setName(IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION]", "[INDEX]").toString())
             .addAllFields(new ArrayList<Index.IndexField>())
+            .setMultikey(true)
+            .setShardCount(-495377042)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -164,6 +169,8 @@ public class FirestoreAdminClientHttpJsonTest {
         Index.newBuilder()
             .setName(IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION]", "[INDEX]").toString())
             .addAllFields(new ArrayList<Index.IndexField>())
+            .setMultikey(true)
+            .setShardCount(-495377042)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -321,6 +328,8 @@ public class FirestoreAdminClientHttpJsonTest {
         Index.newBuilder()
             .setName(IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION]", "[INDEX]").toString())
             .addAllFields(new ArrayList<Index.IndexField>())
+            .setMultikey(true)
+            .setShardCount(-495377042)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -366,6 +375,8 @@ public class FirestoreAdminClientHttpJsonTest {
         Index.newBuilder()
             .setName(IndexName.of("[PROJECT]", "[DATABASE]", "[COLLECTION]", "[INDEX]").toString())
             .addAllFields(new ArrayList<Index.IndexField>())
+            .setMultikey(true)
+            .setShardCount(-495377042)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1040,6 +1051,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1105,6 +1117,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1170,6 +1183,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1226,6 +1240,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     mockService.addResponse(expectedResponse);
@@ -1372,6 +1387,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1396,6 +1412,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1440,6 +1457,7 @@ public class FirestoreAdminClientHttpJsonTest {
               .setCmekConfig(Database.CmekConfig.newBuilder().build())
               .setPreviousId("previousId-32447886")
               .setSourceInfo(Database.SourceInfo.newBuilder().build())
+              .setFreeTier(true)
               .setEtag("etag3123477")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
@@ -1465,6 +1483,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1526,6 +1545,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =
@@ -1568,6 +1588,648 @@ public class FirestoreAdminClientHttpJsonTest {
       client.deleteDatabaseAsync(name).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void createUserCredsTest() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatabaseName parent = DatabaseName.of("[PROJECT]", "[DATABASE]");
+    UserCreds userCreds = UserCreds.newBuilder().build();
+    String userCredsId = "userCredsId726775445";
+
+    UserCreds actualResponse = client.createUserCreds(parent, userCreds, userCredsId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatabaseName parent = DatabaseName.of("[PROJECT]", "[DATABASE]");
+      UserCreds userCreds = UserCreds.newBuilder().build();
+      String userCredsId = "userCredsId726775445";
+      client.createUserCreds(parent, userCreds, userCredsId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createUserCredsTest2() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9821/databases/database-9821";
+    UserCreds userCreds = UserCreds.newBuilder().build();
+    String userCredsId = "userCredsId726775445";
+
+    UserCreds actualResponse = client.createUserCreds(parent, userCreds, userCredsId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9821/databases/database-9821";
+      UserCreds userCreds = UserCreds.newBuilder().build();
+      String userCredsId = "userCredsId726775445";
+      client.createUserCreds(parent, userCreds, userCredsId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserCredsTest() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+
+    UserCreds actualResponse = client.getUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+      client.getUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getUserCredsTest2() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+
+    UserCreds actualResponse = client.getUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+      client.getUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserCredsTest() throws Exception {
+    ListUserCredsResponse expectedResponse =
+        ListUserCredsResponse.newBuilder().addAllUserCreds(new ArrayList<UserCreds>()).build();
+    mockService.addResponse(expectedResponse);
+
+    DatabaseName parent = DatabaseName.of("[PROJECT]", "[DATABASE]");
+
+    ListUserCredsResponse actualResponse = client.listUserCreds(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatabaseName parent = DatabaseName.of("[PROJECT]", "[DATABASE]");
+      client.listUserCreds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listUserCredsTest2() throws Exception {
+    ListUserCredsResponse expectedResponse =
+        ListUserCredsResponse.newBuilder().addAllUserCreds(new ArrayList<UserCreds>()).build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9821/databases/database-9821";
+
+    ListUserCredsResponse actualResponse = client.listUserCreds(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9821/databases/database-9821";
+      client.listUserCreds(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableUserCredsTest() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+
+    UserCreds actualResponse = client.enableUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void enableUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+      client.enableUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void enableUserCredsTest2() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+
+    UserCreds actualResponse = client.enableUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void enableUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+      client.enableUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableUserCredsTest() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+
+    UserCreds actualResponse = client.disableUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void disableUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+      client.disableUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void disableUserCredsTest2() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+
+    UserCreds actualResponse = client.disableUserCreds(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void disableUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+      client.disableUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resetUserPasswordTest() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+
+    UserCreds actualResponse = client.resetUserPassword(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resetUserPasswordExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+      client.resetUserPassword(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void resetUserPasswordTest2() throws Exception {
+    UserCreds expectedResponse =
+        UserCreds.newBuilder()
+            .setName(UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setSecurePassword("securePassword715395890")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+
+    UserCreds actualResponse = client.resetUserPassword(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void resetUserPasswordExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+      client.resetUserPassword(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserCredsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+
+    client.deleteUserCreds(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserCredsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      UserCredsName name = UserCredsName.of("[PROJECT]", "[DATABASE]", "[USER_CREDS]");
+      client.deleteUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteUserCredsTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+
+    client.deleteUserCreds(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteUserCredsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-3654/databases/database-3654/userCreds/userCred-3654";
+      client.deleteUserCreds(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 
@@ -1855,6 +2517,7 @@ public class FirestoreAdminClientHttpJsonTest {
             .setCmekConfig(Database.CmekConfig.newBuilder().build())
             .setPreviousId("previousId-32447886")
             .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .setFreeTier(true)
             .setEtag("etag3123477")
             .build();
     Operation resultOperation =

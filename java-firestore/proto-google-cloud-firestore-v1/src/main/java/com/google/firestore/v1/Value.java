@@ -33,6 +33,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.Value)
     ValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Value.newBuilder() to construct.
   private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private ValueTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -137,6 +139,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NULL_VALUE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -151,6 +154,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNullValue() {
     return valueTypeCase_ == 11;
   }
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOLEAN_VALUE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBooleanValue() {
     return valueTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -224,6 +231,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INTEGER_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasIntegerValue() {
     return valueTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOUBLE_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -274,6 +284,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDoubleValue() {
     return valueTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -294,6 +305,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_VALUE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampValue() {
     return valueTypeCase_ == 10;
   }
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -354,6 +368,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_VALUE_FIELD_NUMBER = 17;
+
   /**
    *
    *
@@ -372,6 +387,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringValue() {
     return valueTypeCase_ == 17;
   }
+
   /**
    *
    *
@@ -403,6 +419,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -436,6 +453,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BYTES_VALUE_FIELD_NUMBER = 18;
+
   /**
    *
    *
@@ -454,6 +472,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBytesValue() {
     return valueTypeCase_ == 18;
   }
+
   /**
    *
    *
@@ -477,6 +496,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REFERENCE_VALUE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -492,6 +512,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReferenceValue() {
     return valueTypeCase_ == 5;
   }
+
   /**
    *
    *
@@ -520,6 +541,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -550,6 +572,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int GEO_POINT_VALUE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -565,6 +588,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGeoPointValue() {
     return valueTypeCase_ == 8;
   }
+
   /**
    *
    *
@@ -583,6 +607,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.type.LatLng.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -601,6 +626,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARRAY_VALUE_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -619,6 +645,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArrayValue() {
     return valueTypeCase_ == 9;
   }
+
   /**
    *
    *
@@ -640,6 +667,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.ArrayValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -661,6 +689,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAP_VALUE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -676,6 +705,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMapValue() {
     return valueTypeCase_ == 6;
   }
+
   /**
    *
    *
@@ -694,6 +724,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.MapValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1033,6 +1064,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1393,6 +1425,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNullValue() {
       return valueTypeCase_ == 11;
     }
+
     /**
      *
      *
@@ -1411,6 +1444,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1429,6 +1463,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1449,6 +1484,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.NullValue.NULL_VALUE;
     }
+
     /**
      *
      *
@@ -1470,6 +1506,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1504,6 +1541,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBooleanValue() {
       return valueTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1521,6 +1559,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return false;
     }
+
     /**
      *
      *
@@ -1540,6 +1579,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1614,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasIntegerValue() {
       return valueTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1591,6 +1632,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -1610,6 +1652,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1687,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDoubleValue() {
       return valueTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1661,6 +1705,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return 0D;
     }
+
     /**
      *
      *
@@ -1680,6 +1725,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1751,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         timestampValueBuilder_;
+
     /**
      *
      *
@@ -1723,6 +1770,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampValue() {
       return valueTypeCase_ == 10;
     }
+
     /**
      *
      *
@@ -1751,6 +1799,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1776,6 +1825,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1798,6 +1848,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1832,6 +1883,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1912,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1875,6 +1928,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getTimestampValueBuilder() {
       return getTimestampValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1898,6 +1952,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1951,6 +2006,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringValue() {
       return valueTypeCase_ == 17;
     }
+
     /**
      *
      *
@@ -1983,6 +2039,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2015,6 +2072,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2040,6 +2098,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2063,6 +2122,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2167,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBytesValue() {
       return valueTypeCase_ == 18;
     }
+
     /**
      *
      *
@@ -2127,6 +2188,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -2151,6 +2213,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2190,6 +2253,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReferenceValue() {
       return valueTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -2219,6 +2283,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2248,6 +2313,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2270,6 +2336,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2290,6 +2357,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2317,6 +2385,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.type.LatLng, com.google.type.LatLng.Builder, com.google.type.LatLngOrBuilder>
         geoPointValueBuilder_;
+
     /**
      *
      *
@@ -2332,6 +2401,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGeoPointValue() {
       return valueTypeCase_ == 8;
     }
+
     /**
      *
      *
@@ -2357,6 +2427,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.LatLng.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2379,6 +2450,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2398,6 +2470,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2428,6 +2501,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2527,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2465,6 +2540,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.type.LatLng.Builder getGeoPointValueBuilder() {
       return getGeoPointValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2485,6 +2561,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.type.LatLng.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2519,6 +2596,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.ArrayValue.Builder,
             com.google.firestore.v1.ArrayValueOrBuilder>
         arrayValueBuilder_;
+
     /**
      *
      *
@@ -2537,6 +2615,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrayValue() {
       return valueTypeCase_ == 9;
     }
+
     /**
      *
      *
@@ -2565,6 +2644,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2590,6 +2670,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2612,6 +2693,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2647,6 +2729,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2675,6 +2758,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2690,6 +2774,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.ArrayValue.Builder getArrayValueBuilder() {
       return getArrayValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2713,6 +2798,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2752,6 +2838,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.MapValue.Builder,
             com.google.firestore.v1.MapValueOrBuilder>
         mapValueBuilder_;
+
     /**
      *
      *
@@ -2767,6 +2854,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMapValue() {
       return valueTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -2792,6 +2880,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.MapValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2814,6 +2903,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2833,6 +2923,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2865,6 +2956,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2890,6 +2982,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2902,6 +2995,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.MapValue.Builder getMapValueBuilder() {
       return getMapValueFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2922,6 +3016,7 @@ public final class Value extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.MapValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *

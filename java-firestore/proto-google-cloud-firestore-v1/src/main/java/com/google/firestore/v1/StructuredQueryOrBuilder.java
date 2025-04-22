@@ -40,6 +40,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the select field is set.
    */
   boolean hasSelect();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface StructuredQueryOrBuilder
    * @return The select.
    */
   com.google.firestore.v1.StructuredQuery.Projection getSelect();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.CollectionSelector from = 2;</code>
    */
   java.util.List<com.google.firestore.v1.StructuredQuery.CollectionSelector> getFromList();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.CollectionSelector from = 2;</code>
    */
   com.google.firestore.v1.StructuredQuery.CollectionSelector getFrom(int index);
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.CollectionSelector from = 2;</code>
    */
   int getFromCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface StructuredQueryOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.StructuredQuery.CollectionSelectorOrBuilder>
       getFromOrBuilderList();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the where field is set.
    */
   boolean hasWhere();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface StructuredQueryOrBuilder
    * @return The where.
    */
   com.google.firestore.v1.StructuredQuery.Filter getWhere();
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.Order order_by = 4;</code>
    */
   java.util.List<com.google.firestore.v1.StructuredQuery.Order> getOrderByList();
+
   /**
    *
    *
@@ -216,6 +225,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.Order order_by = 4;</code>
    */
   com.google.firestore.v1.StructuredQuery.Order getOrderBy(int index);
+
   /**
    *
    *
@@ -245,6 +255,7 @@ public interface StructuredQueryOrBuilder
    * <code>repeated .google.firestore.v1.StructuredQuery.Order order_by = 4;</code>
    */
   int getOrderByCount();
+
   /**
    *
    *
@@ -275,6 +286,7 @@ public interface StructuredQueryOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.StructuredQuery.OrderOrBuilder>
       getOrderByOrBuilderList();
+
   /**
    *
    *
@@ -347,6 +359,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the startAt field is set.
    */
   boolean hasStartAt();
+
   /**
    *
    *
@@ -389,6 +402,7 @@ public interface StructuredQueryOrBuilder
    * @return The startAt.
    */
   com.google.firestore.v1.Cursor getStartAt();
+
   /**
    *
    *
@@ -450,6 +464,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the endAt field is set.
    */
   boolean hasEndAt();
+
   /**
    *
    *
@@ -470,6 +485,7 @@ public interface StructuredQueryOrBuilder
    * @return The endAt.
    */
   com.google.firestore.v1.Cursor getEndAt();
+
   /**
    *
    *
@@ -527,6 +543,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the limit field is set.
    */
   boolean hasLimit();
+
   /**
    *
    *
@@ -545,6 +562,7 @@ public interface StructuredQueryOrBuilder
    * @return The limit.
    */
   com.google.protobuf.Int32Value getLimit();
+
   /**
    *
    *
@@ -580,6 +598,7 @@ public interface StructuredQueryOrBuilder
    * @return Whether the findNearest field is set.
    */
   boolean hasFindNearest();
+
   /**
    *
    *
@@ -598,6 +617,7 @@ public interface StructuredQueryOrBuilder
    * @return The findNearest.
    */
   com.google.firestore.v1.StructuredQuery.FindNearest getFindNearest();
+
   /**
    *
    *

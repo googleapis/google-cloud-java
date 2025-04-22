@@ -33,6 +33,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ArrayValue)
     ArrayValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArrayValue.newBuilder() to construct.
   private ArrayValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.Value> values_;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.firestore.v1.Value> getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.firestore.v1.ValueOrBuilder> getValuesOrBuilderList() {
     return values_;
   }
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.v1.Value getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -292,6 +298,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -549,6 +556,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -565,6 +573,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -622,6 +633,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -666,6 +679,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +699,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +719,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -724,6 +740,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +760,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +780,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +793,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Value.Builder getValuesBuilder(int index) {
       return getValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -790,6 +810,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
         return valuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -807,6 +828,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(values_);
       }
     }
+
     /**
      *
      *
@@ -819,6 +841,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Value.Builder addValuesBuilder() {
       return getValuesFieldBuilder().addBuilder(com.google.firestore.v1.Value.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -832,6 +855,7 @@ public final class ArrayValue extends com.google.protobuf.GeneratedMessageV3
       return getValuesFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.Value.getDefaultInstance());
     }
+
     /**
      *
      *

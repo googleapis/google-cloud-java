@@ -33,6 +33,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.bundle.BundledQuery)
     BundledQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BundledQuery.newBuilder() to construct.
   private BundledQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>FIRST = 0;</code> */
     public static final int FIRST_VALUE = 0;
+
     /** <code>LAST = 1;</code> */
     public static final int LAST_VALUE = 1;
 
@@ -184,6 +186,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     private QueryTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -218,6 +221,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -241,6 +245,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -266,6 +271,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCTURED_QUERY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -281,6 +287,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructuredQuery() {
     return queryTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -299,6 +306,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -318,6 +326,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIMIT_TYPE_FIELD_NUMBER = 3;
   private int limitType_ = 0;
+
   /**
    * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
    *
@@ -327,6 +336,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
   public int getLimitTypeValue() {
     return limitType_;
   }
+
   /**
    * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
    *
@@ -532,6 +542,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -773,6 +784,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -795,6 +807,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +830,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +870,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +899,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.StructuredQuery.Builder,
             com.google.firestore.v1.StructuredQueryOrBuilder>
         structuredQueryBuilder_;
+
     /**
      *
      *
@@ -898,6 +915,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructuredQuery() {
       return queryTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +985,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1018,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1022,6 +1044,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1057,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.StructuredQuery.Builder getStructuredQueryBuilder() {
       return getStructuredQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1088,6 +1113,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int limitType_ = 0;
+
     /**
      * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
      *
@@ -1097,6 +1123,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
     public int getLimitTypeValue() {
       return limitType_;
     }
+
     /**
      * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
      *
@@ -1109,6 +1136,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
      *
@@ -1122,6 +1150,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.bundle.BundledQuery.LimitType.UNRECOGNIZED
           : result;
     }
+
     /**
      * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
      *
@@ -1137,6 +1166,7 @@ public final class BundledQuery extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
      *

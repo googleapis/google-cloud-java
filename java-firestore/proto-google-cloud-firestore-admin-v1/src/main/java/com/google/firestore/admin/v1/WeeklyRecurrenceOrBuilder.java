@@ -38,6 +38,7 @@ public interface WeeklyRecurrenceOrBuilder
    * @return The enum numeric value on the wire for day.
    */
   int getDayValue();
+
   /**
    *
    *

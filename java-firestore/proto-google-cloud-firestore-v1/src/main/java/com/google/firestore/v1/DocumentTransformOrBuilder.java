@@ -36,6 +36,7 @@ public interface DocumentTransformOrBuilder
    * @return The document.
    */
   java.lang.String getDocument();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface DocumentTransformOrBuilder
    * </code>
    */
   java.util.List<com.google.firestore.v1.DocumentTransform.FieldTransform> getFieldTransformsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DocumentTransformOrBuilder
    * </code>
    */
   com.google.firestore.v1.DocumentTransform.FieldTransform getFieldTransforms(int index);
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface DocumentTransformOrBuilder
    * </code>
    */
   int getFieldTransformsCount();
+
   /**
    *
    *
@@ -102,6 +106,7 @@ public interface DocumentTransformOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.DocumentTransform.FieldTransformOrBuilder>
       getFieldTransformsOrBuilderList();
+
   /**
    *
    *

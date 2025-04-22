@@ -37,6 +37,7 @@ public interface CommitResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 1;</code>
    */
   java.util.List<com.google.firestore.v1.WriteResult> getWriteResultsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CommitResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 1;</code>
    */
   com.google.firestore.v1.WriteResult getWriteResults(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface CommitResponseOrBuilder
    * <code>repeated .google.firestore.v1.WriteResult write_results = 1;</code>
    */
   int getWriteResultsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface CommitResponseOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.WriteResultOrBuilder>
       getWriteResultsOrBuilderList();
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface CommitResponseOrBuilder
    * @return Whether the commitTime field is set.
    */
   boolean hasCommitTime();
+
   /**
    *
    *
@@ -117,6 +122,7 @@ public interface CommitResponseOrBuilder
    * @return The commitTime.
    */
   com.google.protobuf.Timestamp getCommitTime();
+
   /**
    *
    *

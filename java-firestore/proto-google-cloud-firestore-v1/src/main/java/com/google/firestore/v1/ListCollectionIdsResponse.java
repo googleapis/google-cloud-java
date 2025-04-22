@@ -34,6 +34,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ListCollectionIdsResponse)
     ListCollectionIdsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCollectionIdsResponse.newBuilder() to construct.
   private ListCollectionIdsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList collectionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
   public com.google.protobuf.ProtocolStringList getCollectionIdsList() {
     return collectionIds_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
   public int getCollectionIdsCount() {
     return collectionIds_.size();
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
   public java.lang.String getCollectionIds(int index) {
     return collectionIds_.get(index);
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -570,6 +578,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       collectionIds_.makeImmutable();
       return collectionIds_;
     }
+
     /**
      *
      *
@@ -599,6 +609,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     public int getCollectionIdsCount() {
       return collectionIds_.size();
     }
+
     /**
      *
      *
@@ -614,6 +625,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     public java.lang.String getCollectionIds(int index) {
       return collectionIds_.get(index);
     }
+
     /**
      *
      *
@@ -629,6 +641,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     public com.google.protobuf.ByteString getCollectionIdsBytes(int index) {
       return collectionIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -652,6 +665,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +688,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -693,6 +708,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +727,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +753,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -758,6 +776,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -780,6 +799,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +821,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +839,7 @@ public final class ListCollectionIdsResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

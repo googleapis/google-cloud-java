@@ -36,6 +36,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The enum numeric value on the wire for operationState.
    */
   int getOperationStateValue();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return Whether the progressDocuments field is set.
    */
   boolean hasProgressDocuments();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The progressDocuments.
    */
   com.google.firestore.admin.v1.Progress getProgressDocuments();
+
   /**
    *
    *
@@ -169,6 +176,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return Whether the progressBytes field is set.
    */
   boolean hasProgressBytes();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The progressBytes.
    */
   com.google.firestore.admin.v1.Progress getProgressBytes();
+
   /**
    *
    *
@@ -204,6 +213,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return A list containing the collectionIds.
    */
   java.util.List<java.lang.String> getCollectionIdsList();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The count of collectionIds.
    */
   int getCollectionIdsCount();
+
   /**
    *
    *
@@ -229,6 +240,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The collectionIds at the given index.
    */
   java.lang.String getCollectionIds(int index);
+
   /**
    *
    *
@@ -255,6 +267,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The outputUriPrefix.
    */
   java.lang.String getOutputUriPrefix();
+
   /**
    *
    *
@@ -280,6 +293,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return A list containing the namespaceIds.
    */
   java.util.List<java.lang.String> getNamespaceIdsList();
+
   /**
    *
    *
@@ -292,6 +306,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The count of namespaceIds.
    */
   int getNamespaceIdsCount();
+
   /**
    *
    *
@@ -305,6 +320,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The namespaceIds at the given index.
    */
   java.lang.String getNamespaceIds(int index);
+
   /**
    *
    *
@@ -333,6 +349,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return Whether the snapshotTime field is set.
    */
   boolean hasSnapshotTime();
+
   /**
    *
    *
@@ -347,6 +364,7 @@ public interface ExportDocumentsMetadataOrBuilder
    * @return The snapshotTime.
    */
   com.google.protobuf.Timestamp getSnapshotTime();
+
   /**
    *
    *

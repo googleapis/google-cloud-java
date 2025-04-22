@@ -36,6 +36,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The enum numeric value on the wire for operationState.
    */
   int getOperationStateValue();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return Whether the progressPercentage field is set.
    */
   boolean hasProgressPercentage();
+
   /**
    *
    *
@@ -193,6 +201,7 @@ public interface RestoreDatabaseMetadataOrBuilder
    * @return The progressPercentage.
    */
   com.google.firestore.admin.v1.Progress getProgressPercentage();
+
   /**
    *
    *

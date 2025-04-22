@@ -327,6 +327,7 @@ class ManageDataSnippets {
       System.err.println("Error deleting collection : " + e.getMessage());
     }
   }
+
   // [END firestore_data_delete_collection]
 
   /**

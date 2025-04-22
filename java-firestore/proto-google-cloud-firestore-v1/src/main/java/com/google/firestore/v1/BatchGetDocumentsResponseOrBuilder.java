@@ -36,6 +36,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return Whether the found field is set.
    */
   boolean hasFound();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return The found.
    */
   com.google.firestore.v1.Document getFound();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return Whether the missing field is set.
    */
   boolean hasMissing();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return The missing.
    */
   java.lang.String getMissing();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface BatchGetDocumentsResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

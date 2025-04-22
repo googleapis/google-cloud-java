@@ -36,6 +36,7 @@ public interface BloomFilterOrBuilder
    * @return Whether the bits field is set.
    */
   boolean hasBits();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BloomFilterOrBuilder
    * @return The bits.
    */
   com.google.firestore.v1.BitSequence getBits();
+
   /**
    *
    *

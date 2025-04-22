@@ -40,6 +40,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.DocumentChange)
     DocumentChangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentChange.newBuilder() to construct.
   private DocumentChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.firestore.v1.Document document_;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.v1.Document getDocument() {
     return document_ == null ? com.google.firestore.v1.Document.getDefaultInstance() : document_;
   }
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList targetIds_ = emptyIntList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getTargetIdsList() {
     return targetIds_;
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public int getTargetIdsCount() {
     return targetIds_.size();
   }
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList removedTargetIds_ = emptyIntList();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
     return removedTargetIds_;
   }
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
   public int getRemovedTargetIdsCount() {
     return removedTargetIds_.size();
   }
+
   /**
    *
    *
@@ -441,6 +451,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -718,6 +729,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Document.Builder,
             com.google.firestore.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -756,6 +769,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -780,6 +794,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +868,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +885,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -887,6 +906,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
             : document_;
       }
     }
+
     /**
      *
      *
@@ -923,6 +943,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -938,6 +959,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       targetIds_.makeImmutable();
       return targetIds_;
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     public int getTargetIdsCount() {
       return targetIds_.size();
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     public int getTargetIds(int index) {
       return targetIds_.getInt(index);
     }
+
     /**
      *
      *
@@ -988,6 +1012,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1068,6 +1096,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       removedTargetIds_.makeImmutable();
       return removedTargetIds_;
     }
+
     /**
      *
      *
@@ -1082,6 +1111,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     public int getRemovedTargetIdsCount() {
       return removedTargetIds_.size();
     }
+
     /**
      *
      *
@@ -1097,6 +1127,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
     public int getRemovedTargetIds(int index) {
       return removedTargetIds_.getInt(index);
     }
+
     /**
      *
      *
@@ -1118,6 +1149,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1170,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1190,7 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the result field is set.
    */
   boolean hasResult();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The result.
    */
   com.google.firestore.v1.AggregationResult getResult();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the explainMetrics field is set.
    */
   boolean hasExplainMetrics();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The explainMetrics.
    */
   com.google.firestore.v1.ExplainMetrics getExplainMetrics();
+
   /**
    *
    *

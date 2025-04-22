@@ -34,6 +34,7 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Database databases = 1;</code>
    */
   java.util.List<com.google.firestore.admin.v1.Database> getDatabasesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Database databases = 1;</code>
    */
   com.google.firestore.admin.v1.Database getDatabases(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListDatabasesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Database databases = 1;</code>
    */
   int getDatabasesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListDatabasesResponseOrBuilder
    */
   java.util.List<? extends com.google.firestore.admin.v1.DatabaseOrBuilder>
       getDatabasesOrBuilderList();
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface ListDatabasesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListDatabasesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ListDatabasesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

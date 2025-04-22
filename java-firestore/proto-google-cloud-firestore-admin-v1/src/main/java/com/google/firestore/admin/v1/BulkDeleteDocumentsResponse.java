@@ -34,6 +34,7 @@ public final class BulkDeleteDocumentsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.BulkDeleteDocumentsResponse)
     BulkDeleteDocumentsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkDeleteDocumentsResponse.newBuilder() to construct.
   private BulkDeleteDocumentsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class BulkDeleteDocumentsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

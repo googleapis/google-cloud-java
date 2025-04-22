@@ -59,6 +59,7 @@ public interface FieldOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +111,7 @@ public interface FieldOrBuilder
    * @return Whether the indexConfig field is set.
    */
   boolean hasIndexConfig();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface FieldOrBuilder
    * @return The indexConfig.
    */
   com.google.firestore.admin.v1.Field.IndexConfig getIndexConfig();
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public interface FieldOrBuilder
    * @return Whether the ttlConfig field is set.
    */
   boolean hasTtlConfig();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface FieldOrBuilder
    * @return The ttlConfig.
    */
   com.google.firestore.admin.v1.Field.TtlConfig getTtlConfig();
+
   /**
    *
    *

@@ -30,12 +30,14 @@ public interface BundleElementOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    * <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code>
    *
    * @return The metadata.
    */
   com.google.firestore.bundle.BundleMetadata getMetadata();
+
   /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
   com.google.firestore.bundle.BundleMetadataOrBuilder getMetadataOrBuilder();
 
@@ -45,12 +47,14 @@ public interface BundleElementOrBuilder
    * @return Whether the namedQuery field is set.
    */
   boolean hasNamedQuery();
+
   /**
    * <code>.google.firestore.bundle.NamedQuery named_query = 2;</code>
    *
    * @return The namedQuery.
    */
   com.google.firestore.bundle.NamedQuery getNamedQuery();
+
   /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
   com.google.firestore.bundle.NamedQueryOrBuilder getNamedQueryOrBuilder();
 
@@ -60,12 +64,14 @@ public interface BundleElementOrBuilder
    * @return Whether the documentMetadata field is set.
    */
   boolean hasDocumentMetadata();
+
   /**
    * <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code>
    *
    * @return The documentMetadata.
    */
   com.google.firestore.bundle.BundledDocumentMetadata getDocumentMetadata();
+
   /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
   com.google.firestore.bundle.BundledDocumentMetadataOrBuilder getDocumentMetadataOrBuilder();
 
@@ -75,12 +81,14 @@ public interface BundleElementOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    * <code>.google.firestore.v1.Document document = 4;</code>
    *
    * @return The document.
    */
   com.google.firestore.v1.Document getDocument();
+
   /** <code>.google.firestore.v1.Document document = 4;</code> */
   com.google.firestore.v1.DocumentOrBuilder getDocumentOrBuilder();
 

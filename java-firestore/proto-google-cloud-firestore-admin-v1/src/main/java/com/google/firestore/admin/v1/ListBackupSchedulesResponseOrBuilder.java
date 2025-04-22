@@ -34,6 +34,7 @@ public interface ListBackupSchedulesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.BackupSchedule backup_schedules = 1;</code>
    */
   java.util.List<com.google.firestore.admin.v1.BackupSchedule> getBackupSchedulesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupSchedulesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.BackupSchedule backup_schedules = 1;</code>
    */
   com.google.firestore.admin.v1.BackupSchedule getBackupSchedules(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupSchedulesResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.BackupSchedule backup_schedules = 1;</code>
    */
   int getBackupSchedulesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListBackupSchedulesResponseOrBuilder
    */
   java.util.List<? extends com.google.firestore.admin.v1.BackupScheduleOrBuilder>
       getBackupSchedulesOrBuilderList();
+
   /**
    *
    *

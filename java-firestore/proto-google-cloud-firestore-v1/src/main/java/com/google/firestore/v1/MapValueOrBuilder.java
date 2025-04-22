@@ -39,6 +39,7 @@ public interface MapValueOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 1;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -54,9 +55,11 @@ public interface MapValueOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 1;</code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getFields();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface MapValueOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 1;</code>
    */
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getFieldsMap();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface MapValueOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.firestore.v1.Value defaultValue);
+
   /**
    *
    *

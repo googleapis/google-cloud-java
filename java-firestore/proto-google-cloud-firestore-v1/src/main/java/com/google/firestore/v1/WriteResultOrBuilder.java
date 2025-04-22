@@ -40,6 +40,7 @@ public interface WriteResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface WriteResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface WriteResultOrBuilder
    * <code>repeated .google.firestore.v1.Value transform_results = 2;</code>
    */
   java.util.List<com.google.firestore.v1.Value> getTransformResultsList();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface WriteResultOrBuilder
    * <code>repeated .google.firestore.v1.Value transform_results = 2;</code>
    */
   com.google.firestore.v1.Value getTransformResults(int index);
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface WriteResultOrBuilder
    * <code>repeated .google.firestore.v1.Value transform_results = 2;</code>
    */
   int getTransformResultsCount();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface WriteResultOrBuilder
    */
   java.util.List<? extends com.google.firestore.v1.ValueOrBuilder>
       getTransformResultsOrBuilderList();
+
   /**
    *
    *

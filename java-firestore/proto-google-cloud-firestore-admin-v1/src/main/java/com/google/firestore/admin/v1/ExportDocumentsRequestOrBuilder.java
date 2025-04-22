@@ -39,6 +39,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return A list containing the collectionIds.
    */
   java.util.List<java.lang.String> getCollectionIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The count of collectionIds.
    */
   int getCollectionIdsCount();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The collectionIds at the given index.
    */
   java.lang.String getCollectionIds(int index);
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The outputUriPrefix.
    */
   java.lang.String getOutputUriPrefix();
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return A list containing the namespaceIds.
    */
   java.util.List<java.lang.String> getNamespaceIdsList();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The count of namespaceIds.
    */
   int getNamespaceIdsCount();
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The namespaceIds at the given index.
    */
   java.lang.String getNamespaceIds(int index);
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return Whether the snapshotTime field is set.
    */
   boolean hasSnapshotTime();
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public interface ExportDocumentsRequestOrBuilder
    * @return The snapshotTime.
    */
   com.google.protobuf.Timestamp getSnapshotTime();
+
   /**
    *
    *

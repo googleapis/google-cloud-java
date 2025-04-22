@@ -37,6 +37,7 @@ public interface DatabaseOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DatabaseOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface DatabaseOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface DatabaseOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface DatabaseOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public interface DatabaseOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface DatabaseOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface DatabaseOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public interface DatabaseOrBuilder
    * @return The locationId.
    */
   java.lang.String getLocationId();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for concurrencyMode.
    */
   int getConcurrencyModeValue();
+
   /**
    *
    *
@@ -306,6 +317,7 @@ public interface DatabaseOrBuilder
    * @return Whether the versionRetentionPeriod field is set.
    */
   boolean hasVersionRetentionPeriod();
+
   /**
    *
    *
@@ -329,6 +341,7 @@ public interface DatabaseOrBuilder
    * @return The versionRetentionPeriod.
    */
   com.google.protobuf.Duration getVersionRetentionPeriod();
+
   /**
    *
    *
@@ -372,6 +385,7 @@ public interface DatabaseOrBuilder
    * @return Whether the earliestVersionTime field is set.
    */
   boolean hasEarliestVersionTime();
+
   /**
    *
    *
@@ -393,6 +407,7 @@ public interface DatabaseOrBuilder
    * @return The earliestVersionTime.
    */
   com.google.protobuf.Timestamp getEarliestVersionTime();
+
   /**
    *
    *
@@ -427,6 +442,7 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for pointInTimeRecoveryEnablement.
    */
   int getPointInTimeRecoveryEnablementValue();
+
   /**
    *
    *
@@ -457,6 +473,7 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for appEngineIntegrationMode.
    */
   int getAppEngineIntegrationModeValue();
+
   /**
    *
    *
@@ -490,6 +507,7 @@ public interface DatabaseOrBuilder
    * @return The keyPrefix.
    */
   java.lang.String getKeyPrefix();
+
   /**
    *
    *
@@ -522,6 +540,7 @@ public interface DatabaseOrBuilder
    * @return The enum numeric value on the wire for deleteProtectionState.
    */
   int getDeleteProtectionStateValue();
+
   /**
    *
    *
@@ -550,6 +569,7 @@ public interface DatabaseOrBuilder
    * @return Whether the cmekConfig field is set.
    */
   boolean hasCmekConfig();
+
   /**
    *
    *
@@ -564,6 +584,7 @@ public interface DatabaseOrBuilder
    * @return The cmekConfig.
    */
   com.google.firestore.admin.v1.Database.CmekConfig getCmekConfig();
+
   /**
    *
    *
@@ -590,6 +611,7 @@ public interface DatabaseOrBuilder
    * @return The previousId.
    */
   java.lang.String getPreviousId();
+
   /**
    *
    *
@@ -618,6 +640,7 @@ public interface DatabaseOrBuilder
    * @return Whether the sourceInfo field is set.
    */
   boolean hasSourceInfo();
+
   /**
    *
    *
@@ -632,6 +655,7 @@ public interface DatabaseOrBuilder
    * @return The sourceInfo.
    */
   com.google.firestore.admin.v1.Database.SourceInfo getSourceInfo();
+
   /**
    *
    *
@@ -649,6 +673,52 @@ public interface DatabaseOrBuilder
    *
    *
    * <pre>
+   * Output only. Background: Free tier is the ability of a Firestore database
+   * to use a small amount of resources every day without being charged. Once
+   * usage exceeds the free tier limit further usage is charged.
+   *
+   * Whether this database can make use of the free tier. Only one database
+   * per project can be eligible for the free tier.
+   *
+   * The first (or next) database that is created in a project without a free
+   * tier database will be marked as eligible for the free tier. Databases that
+   * are created while there is a free tier database will not be eligible for
+   * the free tier.
+   * </pre>
+   *
+   * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the freeTier field is set.
+   */
+  boolean hasFreeTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Background: Free tier is the ability of a Firestore database
+   * to use a small amount of resources every day without being charged. Once
+   * usage exceeds the free tier limit further usage is charged.
+   *
+   * Whether this database can make use of the free tier. Only one database
+   * per project can be eligible for the free tier.
+   *
+   * The first (or next) database that is created in a project without a free
+   * tier database will be marked as eligible for the free tier. Databases that
+   * are created while there is a free tier database will not be eligible for
+   * the free tier.
+   * </pre>
+   *
+   * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The freeTier.
+   */
+  boolean getFreeTier();
+
+  /**
+   *
+   *
+   * <pre>
    * This checksum is computed by the server based on the value of other
    * fields, and may be sent on update and delete requests to ensure the
    * client has an up-to-date value before proceeding.
@@ -659,6 +729,7 @@ public interface DatabaseOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -673,4 +744,34 @@ public interface DatabaseOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The edition of the database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseEdition.
+   */
+  int getDatabaseEditionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The edition of the database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseEdition.
+   */
+  com.google.firestore.admin.v1.Database.DatabaseEdition getDatabaseEdition();
 }

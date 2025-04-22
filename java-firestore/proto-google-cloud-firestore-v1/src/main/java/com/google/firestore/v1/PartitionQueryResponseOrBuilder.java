@@ -50,6 +50,7 @@ public interface PartitionQueryResponseOrBuilder
    * <code>repeated .google.firestore.v1.Cursor partitions = 1;</code>
    */
   java.util.List<com.google.firestore.v1.Cursor> getPartitionsList();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface PartitionQueryResponseOrBuilder
    * <code>repeated .google.firestore.v1.Cursor partitions = 1;</code>
    */
   com.google.firestore.v1.Cursor getPartitions(int index);
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface PartitionQueryResponseOrBuilder
    * <code>repeated .google.firestore.v1.Cursor partitions = 1;</code>
    */
   int getPartitionsCount();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface PartitionQueryResponseOrBuilder
    * <code>repeated .google.firestore.v1.Cursor partitions = 1;</code>
    */
   java.util.List<? extends com.google.firestore.v1.CursorOrBuilder> getPartitionsOrBuilderList();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface PartitionQueryResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

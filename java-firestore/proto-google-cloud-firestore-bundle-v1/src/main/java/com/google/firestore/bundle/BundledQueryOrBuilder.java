@@ -36,6 +36,7 @@ public interface BundledQueryOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BundledQueryOrBuilder
    * @return Whether the structuredQuery field is set.
    */
   boolean hasStructuredQuery();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BundledQueryOrBuilder
    * @return The structuredQuery.
    */
   com.google.firestore.v1.StructuredQuery getStructuredQuery();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface BundledQueryOrBuilder
    * @return The enum numeric value on the wire for limitType.
    */
   int getLimitTypeValue();
+
   /**
    * <code>.google.firestore.bundle.BundledQuery.LimitType limit_type = 3;</code>
    *

@@ -37,6 +37,7 @@ public interface RollbackRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *

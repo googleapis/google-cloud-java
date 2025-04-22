@@ -37,6 +37,7 @@ public interface CursorOrBuilder
    * <code>repeated .google.firestore.v1.Value values = 1;</code>
    */
   java.util.List<com.google.firestore.v1.Value> getValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CursorOrBuilder
    * <code>repeated .google.firestore.v1.Value values = 1;</code>
    */
   com.google.firestore.v1.Value getValues(int index);
+
   /**
    *
    *
@@ -63,6 +65,7 @@ public interface CursorOrBuilder
    * <code>repeated .google.firestore.v1.Value values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface CursorOrBuilder
    * <code>repeated .google.firestore.v1.Value values = 1;</code>
    */
   java.util.List<? extends com.google.firestore.v1.ValueOrBuilder> getValuesOrBuilderList();
+
   /**
    *
    *

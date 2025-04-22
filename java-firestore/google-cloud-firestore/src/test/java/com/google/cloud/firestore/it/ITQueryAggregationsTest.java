@@ -114,7 +114,8 @@ public class ITQueryAggregationsTest extends ITBaseTest {
   @Test
   public void aggregateErrorMessageIfIndexIsMissing() throws Exception {
     assumeFalse(
-        "Skip this test when running against the emulator because it does not require composite index creation.",
+        "Skip this test when running against the emulator because it does not require composite"
+            + " index creation.",
         isRunningAgainstFirestoreEmulator(firestore));
 
     CollectionReference collection = testCollectionWithDocs(testDocs1);

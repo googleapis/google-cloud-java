@@ -36,6 +36,7 @@ public interface TargetOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TargetOrBuilder
    * @return The query.
    */
   com.google.firestore.v1.Target.QueryTarget getQuery();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TargetOrBuilder
    * @return Whether the documents field is set.
    */
   boolean hasDocuments();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TargetOrBuilder
    * @return The documents.
    */
   com.google.firestore.v1.Target.DocumentsTarget getDocuments();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface TargetOrBuilder
    * @return Whether the resumeToken field is set.
    */
   boolean hasResumeToken();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface TargetOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public interface TargetOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface TargetOrBuilder
    * @return Whether the expectedCount field is set.
    */
   boolean hasExpectedCount();
+
   /**
    *
    *
@@ -242,6 +250,7 @@ public interface TargetOrBuilder
    * @return The expectedCount.
    */
   com.google.protobuf.Int32Value getExpectedCount();
+
   /**
    *
    *

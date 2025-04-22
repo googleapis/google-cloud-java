@@ -735,6 +735,19 @@ public final class FirestoreGrpc {
     return FirestoreStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FirestoreBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FirestoreBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FirestoreBlockingV2Stub>() {
+          @java.lang.Override
+          public FirestoreBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FirestoreBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FirestoreBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1342,6 +1355,268 @@ public final class FirestoreGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Firestore.
+   *
+   * <pre>
+   * The Cloud Firestore service.
+   * Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL
+   * document database that simplifies storing, syncing, and querying data for
+   * your mobile, web, and IoT apps at global scale. Its client libraries provide
+   * live synchronization and offline support, while its security features and
+   * integrations with Firebase and Google Cloud Platform accelerate building
+   * truly serverless apps.
+   * </pre>
+   */
+  public static final class FirestoreBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FirestoreBlockingV2Stub> {
+    private FirestoreBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FirestoreBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FirestoreBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a single document.
+     * </pre>
+     */
+    public com.google.firestore.v1.Document getDocument(
+        com.google.firestore.v1.GetDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists documents.
+     * </pre>
+     */
+    public com.google.firestore.v1.ListDocumentsResponse listDocuments(
+        com.google.firestore.v1.ListDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates or inserts a document.
+     * </pre>
+     */
+    public com.google.firestore.v1.Document updateDocument(
+        com.google.firestore.v1.UpdateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a document.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteDocument(
+        com.google.firestore.v1.DeleteDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets multiple documents.
+     * Documents returned by this method are not guaranteed to be returned in the
+     * same order that they were requested.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.firestore.v1.BatchGetDocumentsResponse>
+        batchGetDocuments(com.google.firestore.v1.BatchGetDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getBatchGetDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts a new transaction.
+     * </pre>
+     */
+    public com.google.firestore.v1.BeginTransactionResponse beginTransaction(
+        com.google.firestore.v1.BeginTransactionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBeginTransactionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Commits a transaction, while optionally updating documents.
+     * </pre>
+     */
+    public com.google.firestore.v1.CommitResponse commit(
+        com.google.firestore.v1.CommitRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCommitMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Rolls back a transaction.
+     * </pre>
+     */
+    public com.google.protobuf.Empty rollback(com.google.firestore.v1.RollbackRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRollbackMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs a query.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.firestore.v1.RunQueryResponse> runQuery(
+        com.google.firestore.v1.RunQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getRunQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Runs an aggregation query.
+     * Rather than producing [Document][google.firestore.v1.Document] results like
+     * [Firestore.RunQuery][google.firestore.v1.Firestore.RunQuery], this API
+     * allows running an aggregation to produce a series of
+     * [AggregationResult][google.firestore.v1.AggregationResult] server-side.
+     * High-Level Example:
+     * ```
+     * -- Return the number of documents in table given a filter.
+     * SELECT COUNT(*) FROM ( SELECT * FROM k where a = true );
+     * ```
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.firestore.v1.RunAggregationQueryResponse>
+        runAggregationQuery(com.google.firestore.v1.RunAggregationQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getRunAggregationQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partitions a query by returning partition cursors that can be used to run
+     * the query in parallel. The returned partition cursors are split points that
+     * can be used by RunQuery as starting/end points for the query results.
+     * </pre>
+     */
+    public com.google.firestore.v1.PartitionQueryResponse partitionQuery(
+        com.google.firestore.v1.PartitionQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPartitionQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streams batches of document updates and deletes, in order. This method is
+     * only available via gRPC or WebChannel (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.firestore.v1.WriteRequest, com.google.firestore.v1.WriteResponse>
+        write() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getWriteMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Listens to changes. This method is only available via gRPC or WebChannel
+     * (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.firestore.v1.ListenRequest, com.google.firestore.v1.ListenResponse>
+        listen() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getListenMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the collection IDs underneath a document.
+     * </pre>
+     */
+    public com.google.firestore.v1.ListCollectionIdsResponse listCollectionIds(
+        com.google.firestore.v1.ListCollectionIdsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListCollectionIdsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Applies a batch of write operations.
+     * The BatchWrite method does not apply the write operations atomically
+     * and can apply them out of order. Method does not allow more than one write
+     * per document. Each write succeeds or fails independently. See the
+     * [BatchWriteResponse][google.firestore.v1.BatchWriteResponse] for the
+     * success status of each write.
+     * If you require an atomically applied set of writes, use
+     * [Commit][google.firestore.v1.Firestore.Commit] instead.
+     * </pre>
+     */
+    public com.google.firestore.v1.BatchWriteResponse batchWrite(
+        com.google.firestore.v1.BatchWriteRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchWriteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new document.
+     * </pre>
+     */
+    public com.google.firestore.v1.Document createDocument(
+        com.google.firestore.v1.CreateDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDocumentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Firestore.
    *
    * <pre>
    * The Cloud Firestore service.

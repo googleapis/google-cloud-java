@@ -35,6 +35,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.FieldOperationMetadata)
     FieldOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FieldOperationMetadata.newBuilder() to construct.
   private FieldOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,6 +87,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for changeType.
      */
     int getChangeTypeValue();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      * @return Whether the index field is set.
      */
     boolean hasIndex();
+
     /**
      *
      *
@@ -126,6 +129,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      * @return The index.
      */
     com.google.firestore.admin.v1.Index getIndex();
+
     /**
      *
      *
@@ -137,6 +141,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      */
     com.google.firestore.admin.v1.IndexOrBuilder getIndexOrBuilder();
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta)
       IndexConfigDeltaOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndexConfigDelta.newBuilder() to construct.
     private IndexConfigDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -235,6 +241,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
        * <code>CHANGE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int CHANGE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -245,6 +252,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
        * <code>ADD = 1;</code>
        */
       public static final int ADD_VALUE = 1;
+
       /**
        *
        *
@@ -344,6 +352,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     private int bitField0_;
     public static final int CHANGE_TYPE_FIELD_NUMBER = 1;
     private int changeType_ = 0;
+
     /**
      *
      *
@@ -361,6 +370,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public int getChangeTypeValue() {
       return changeType_;
     }
+
     /**
      *
      *
@@ -388,6 +398,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
     public static final int INDEX_FIELD_NUMBER = 2;
     private com.google.firestore.admin.v1.Index index_;
+
     /**
      *
      *
@@ -403,6 +414,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasIndex() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -418,6 +430,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public com.google.firestore.admin.v1.Index getIndex() {
       return index_ == null ? com.google.firestore.admin.v1.Index.getDefaultInstance() : index_;
     }
+
     /**
      *
      *
@@ -614,6 +627,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -838,6 +852,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int changeType_ = 0;
+
       /**
        *
        *
@@ -855,6 +870,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       public int getChangeTypeValue() {
         return changeType_;
       }
+
       /**
        *
        *
@@ -875,6 +891,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -899,6 +916,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -923,6 +941,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -949,6 +968,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               com.google.firestore.admin.v1.Index.Builder,
               com.google.firestore.admin.v1.IndexOrBuilder>
           indexBuilder_;
+
       /**
        *
        *
@@ -963,6 +983,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       public boolean hasIndex() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -981,6 +1002,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           return indexBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1003,6 +1025,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1022,6 +1045,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1049,6 +1073,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         }
         return this;
       }
+
       /**
        *
        *
@@ -1068,6 +1093,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1082,6 +1108,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return getIndexFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1098,6 +1125,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           return index_ == null ? com.google.firestore.admin.v1.Index.getDefaultInstance() : index_;
         }
       }
+
       /**
        *
        *
@@ -1211,6 +1239,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for changeType.
      */
     int getChangeTypeValue();
+
     /**
      *
      *
@@ -1226,6 +1255,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
      */
     com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.ChangeType getChangeType();
   }
+
   /**
    *
    *
@@ -1240,6 +1270,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta)
       TtlConfigDeltaOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TtlConfigDelta.newBuilder() to construct.
     private TtlConfigDelta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1324,6 +1355,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
        * <code>CHANGE_TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int CHANGE_TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1334,6 +1366,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
        * <code>ADD = 1;</code>
        */
       public static final int ADD_VALUE = 1;
+
       /**
        *
        *
@@ -1432,6 +1465,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
     public static final int CHANGE_TYPE_FIELD_NUMBER = 1;
     private int changeType_ = 0;
+
     /**
      *
      *
@@ -1449,6 +1483,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public int getChangeTypeValue() {
       return changeType_;
     }
+
     /**
      *
      *
@@ -1642,6 +1677,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1834,6 +1870,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int changeType_ = 0;
+
       /**
        *
        *
@@ -1851,6 +1888,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       public int getChangeTypeValue() {
         return changeType_;
       }
+
       /**
        *
        *
@@ -1871,6 +1909,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1895,6 +1934,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1919,6 +1959,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2009,6 +2050,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -2024,6 +2066,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2039,6 +2082,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -2055,6 +2099,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -2071,6 +2116,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2087,6 +2133,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -2106,6 +2153,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object field_ = "";
+
   /**
    *
    *
@@ -2130,6 +2178,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -2160,6 +2209,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta>
       indexConfigDeltas_;
+
   /**
    *
    *
@@ -2178,6 +2228,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       getIndexConfigDeltasList() {
     return indexConfigDeltas_;
   }
+
   /**
    *
    *
@@ -2197,6 +2248,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       getIndexConfigDeltasOrBuilderList() {
     return indexConfigDeltas_;
   }
+
   /**
    *
    *
@@ -2214,6 +2266,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public int getIndexConfigDeltasCount() {
     return indexConfigDeltas_.size();
   }
+
   /**
    *
    *
@@ -2232,6 +2285,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       int index) {
     return indexConfigDeltas_.get(index);
   }
+
   /**
    *
    *
@@ -2253,6 +2307,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -2268,6 +2323,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -2288,6 +2344,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_DOCUMENTS_FIELD_NUMBER = 6;
   private com.google.firestore.admin.v1.Progress progressDocuments_;
+
   /**
    *
    *
@@ -2303,6 +2360,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressDocuments() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2320,6 +2378,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressDocuments_;
   }
+
   /**
    *
    *
@@ -2338,6 +2397,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 7;
   private com.google.firestore.admin.v1.Progress progressBytes_;
+
   /**
    *
    *
@@ -2353,6 +2413,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressBytes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -2370,6 +2431,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressBytes_;
   }
+
   /**
    *
    *
@@ -2388,6 +2450,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int TTL_CONFIG_DELTA_FIELD_NUMBER = 8;
   private com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta ttlConfigDelta_;
+
   /**
    *
    *
@@ -2404,6 +2467,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasTtlConfigDelta() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -2422,6 +2486,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         ? com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.getDefaultInstance()
         : ttlConfigDelta_;
   }
+
   /**
    *
    *
@@ -2692,6 +2757,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3071,6 +3137,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -3085,6 +3152,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -3103,6 +3171,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3125,6 +3194,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3144,6 +3214,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3171,6 +3242,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3190,6 +3262,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3204,6 +3277,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3220,6 +3294,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -3252,6 +3327,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -3267,6 +3343,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3286,6 +3363,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3309,6 +3387,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3329,6 +3408,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3357,6 +3437,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3377,6 +3458,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3392,6 +3474,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3409,6 +3492,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -3437,6 +3521,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object field_ = "";
+
     /**
      *
      *
@@ -3460,6 +3545,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3483,6 +3569,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3505,6 +3592,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3523,6 +3611,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3587,6 +3676,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return indexConfigDeltasBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -3607,6 +3697,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return indexConfigDeltasBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -3628,6 +3719,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return indexConfigDeltasBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -3655,6 +3747,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3681,6 +3774,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3708,6 +3802,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3735,6 +3830,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3760,6 +3856,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3786,6 +3883,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3812,6 +3910,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3835,6 +3934,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3858,6 +3958,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -3875,6 +3976,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         getIndexConfigDeltasBuilder(int index) {
       return getIndexConfigDeltasFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3896,6 +3998,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return indexConfigDeltasBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3919,6 +4022,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(indexConfigDeltas_);
       }
     }
+
     /**
      *
      *
@@ -3939,6 +4043,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3960,6 +4065,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
               com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4000,6 +4106,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -4015,6 +4122,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4033,6 +4141,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4050,6 +4159,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
           com.google.firestore.admin.v1.OperationState.forNumber(state_);
       return result == null ? com.google.firestore.admin.v1.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4071,6 +4181,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4095,6 +4206,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressDocumentsBuilder_;
+
     /**
      *
      *
@@ -4109,6 +4221,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressDocuments() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -4129,6 +4242,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return progressDocumentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4151,6 +4265,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4171,6 +4286,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4198,6 +4314,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4217,6 +4334,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4231,6 +4349,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4249,6 +4368,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             : progressDocuments_;
       }
     }
+
     /**
      *
      *
@@ -4281,6 +4401,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressBytesBuilder_;
+
     /**
      *
      *
@@ -4295,6 +4416,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressBytes() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4315,6 +4437,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return progressBytesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4337,6 +4460,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4357,6 +4481,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4384,6 +4509,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4403,6 +4529,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4417,6 +4544,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4435,6 +4563,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             : progressBytes_;
       }
     }
+
     /**
      *
      *
@@ -4467,6 +4596,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta.Builder,
             com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDeltaOrBuilder>
         ttlConfigDeltaBuilder_;
+
     /**
      *
      *
@@ -4482,6 +4612,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasTtlConfigDelta() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4504,6 +4635,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
         return ttlConfigDeltaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4528,6 +4660,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4550,6 +4683,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4581,6 +4715,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -4601,6 +4736,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4617,6 +4753,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getTtlConfigDeltaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4638,6 +4775,7 @@ public final class FieldOperationMetadata extends com.google.protobuf.GeneratedM
             : ttlConfigDelta_;
       }
     }
+
     /**
      *
      *

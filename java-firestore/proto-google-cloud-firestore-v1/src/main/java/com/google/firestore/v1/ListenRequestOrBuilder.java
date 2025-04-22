@@ -37,6 +37,7 @@ public interface ListenRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface ListenRequestOrBuilder
    * @return Whether the addTarget field is set.
    */
   boolean hasAddTarget();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ListenRequestOrBuilder
    * @return The addTarget.
    */
   com.google.firestore.v1.Target getAddTarget();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ListenRequestOrBuilder
    * @return Whether the removeTarget field is set.
    */
   boolean hasRemoveTarget();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface ListenRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -131,9 +136,11 @@ public interface ListenRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -144,6 +151,7 @@ public interface ListenRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface ListenRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

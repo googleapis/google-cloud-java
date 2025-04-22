@@ -38,6 +38,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface BackupOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface BackupOrBuilder
    * @return The databaseUid.
    */
   java.lang.String getDatabaseUid();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface BackupOrBuilder
    * @return Whether the snapshotTime field is set.
    */
   boolean hasSnapshotTime();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface BackupOrBuilder
    * @return The snapshotTime.
    */
   com.google.protobuf.Timestamp getSnapshotTime();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface BackupOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface BackupOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface BackupOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public interface BackupOrBuilder
    * @return The stats.
    */
   com.google.firestore.admin.v1.Backup.Stats getStats();
+
   /**
    *
    *
@@ -259,6 +268,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

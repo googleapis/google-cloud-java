@@ -41,27 +41,37 @@ public final class BulkWriterException extends FirestoreException {
     this.failedAttempts = failedAttempts;
   }
 
-  /** @return The status code of the error. */
+  /**
+   * @return The status code of the error.
+   */
   public Status getStatus() {
     return status;
   }
 
-  /** @return The error message of the error. */
+  /**
+   * @return The error message of the error.
+   */
   public String getMessage() {
     return message;
   }
 
-  /** @return The DocumentReference the operation was performed on. */
+  /**
+   * @return The DocumentReference the operation was performed on.
+   */
   public DocumentReference getDocumentReference() {
     return documentReference;
   }
 
-  /** @return The type of operation performed. */
+  /**
+   * @return The type of operation performed.
+   */
   public OperationType getOperationType() {
     return operationType;
   }
 
-  /** @return How many times this operation has been attempted unsuccessfully. */
+  /**
+   * @return How many times this operation has been attempted unsuccessfully.
+   */
   public int getFailedAttempts() {
     return failedAttempts;
   }

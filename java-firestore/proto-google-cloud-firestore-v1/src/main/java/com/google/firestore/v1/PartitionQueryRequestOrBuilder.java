@@ -39,6 +39,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return Whether the structuredQuery field is set.
    */
   boolean hasStructuredQuery();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return The structuredQuery.
    */
   com.google.firestore.v1.StructuredQuery getStructuredQuery();
+
   /**
    *
    *
@@ -143,6 +146,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -203,6 +207,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -219,6 +224,7 @@ public interface PartitionQueryRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

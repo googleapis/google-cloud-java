@@ -258,7 +258,8 @@ class UserDataConverter {
     switch (mapRepresentation) {
       case UNKNOWN:
         LOGGER.warning(
-            "Parsing unknown map type as generic map. This map type may be supported in a newer SDK version.");
+            "Parsing unknown map type as generic map. This map type may be supported in a newer SDK"
+                + " version.");
       case NONE:
         Map<String, Object> outputMap = new HashMap<>();
         for (Map.Entry<String, Value> entry : inputMap.entrySet()) {

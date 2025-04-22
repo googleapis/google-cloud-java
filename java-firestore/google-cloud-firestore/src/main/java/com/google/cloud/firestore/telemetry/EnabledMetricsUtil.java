@@ -76,7 +76,8 @@ class EnabledMetricsUtil implements MetricsUtil {
       configureCustomMetricsProvider(firestoreOptions);
     } catch (IOException e) {
       logger.warning(
-          "Unable to create MetricsUtil object for client side metrics, will skip exporting client side metrics"
+          "Unable to create MetricsUtil object for client side metrics, will skip exporting client"
+              + " side metrics"
               + e);
     }
   }

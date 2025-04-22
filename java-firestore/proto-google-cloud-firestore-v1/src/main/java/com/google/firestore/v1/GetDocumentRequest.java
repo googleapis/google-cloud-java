@@ -34,6 +34,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.firestore.v1.GetDocumentRequest)
     GetDocumentRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetDocumentRequest.newBuilder() to construct.
   private GetDocumentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     private ConsistencySelectorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int MASK_FIELD_NUMBER = 2;
   private com.google.firestore.v1.DocumentMask mask_;
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public com.google.firestore.v1.DocumentMask getMask() {
     return mask_ == null ? com.google.firestore.v1.DocumentMask.getDefaultInstance() : mask_;
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TRANSACTION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -238,6 +246,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTransaction() {
     return consistencySelectorCase_ == 3;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasReadTime() {
     return consistencySelectorCase_ == 5;
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -532,6 +544,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -801,6 +814,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -824,6 +838,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -869,6 +885,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +904,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +935,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.firestore.v1.DocumentMask.Builder,
             com.google.firestore.v1.DocumentMaskOrBuilder>
         maskBuilder_;
+
     /**
      *
      *
@@ -934,6 +953,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -955,6 +975,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return maskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -980,6 +1001,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1002,6 +1024,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1055,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1071,6 +1096,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1090,6 +1116,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return mask_ == null ? com.google.firestore.v1.DocumentMask.getDefaultInstance() : mask_;
       }
     }
+
     /**
      *
      *
@@ -1133,6 +1160,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTransaction() {
       return consistencySelectorCase_ == 3;
     }
+
     /**
      *
      *
@@ -1150,6 +1178,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1215,6 +1246,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasReadTime() {
       return consistencySelectorCase_ == 5;
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1303,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       consistencySelectorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1327,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       consistencySelectorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1364,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       consistencySelectorCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1394,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1398,6 +1436,7 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *

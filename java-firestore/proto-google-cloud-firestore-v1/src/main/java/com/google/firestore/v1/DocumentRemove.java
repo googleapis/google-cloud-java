@@ -42,6 +42,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.DocumentRemove)
     DocumentRemoveOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentRemove.newBuilder() to construct.
   private DocumentRemove(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object document_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.IntList removedTargetIds_ = emptyIntList();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
     return removedTargetIds_;
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   public int getRemovedTargetIdsCount() {
     return removedTargetIds_.size();
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -429,6 +438,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object document_ = "";
+
     /**
      *
      *
@@ -707,6 +718,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +765,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +817,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       removedTargetIds_.makeImmutable();
       return removedTargetIds_;
     }
+
     /**
      *
      *
@@ -831,6 +848,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     public int getRemovedTargetIdsCount() {
       return removedTargetIds_.size();
     }
+
     /**
      *
      *
@@ -846,6 +864,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     public int getRemovedTargetIds(int index) {
       return removedTargetIds_.getInt(index);
     }
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +907,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +952,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -946,6 +969,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -966,6 +990,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -990,6 +1015,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1037,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1067,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1089,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1106,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1095,6 +1125,7 @@ public final class DocumentRemove extends com.google.protobuf.GeneratedMessageV3
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *

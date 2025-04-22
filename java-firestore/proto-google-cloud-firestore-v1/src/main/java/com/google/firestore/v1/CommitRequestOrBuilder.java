@@ -37,6 +37,7 @@ public interface CommitRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 2;</code>
    */
   java.util.List<com.google.firestore.v1.Write> getWritesList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 2;</code>
    */
   com.google.firestore.v1.Write getWrites(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 2;</code>
    */
   int getWritesCount();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 2;</code>
    */
   java.util.List<? extends com.google.firestore.v1.WriteOrBuilder> getWritesOrBuilderList();
+
   /**
    *
    *

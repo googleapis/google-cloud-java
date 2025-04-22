@@ -139,7 +139,8 @@ public class ITQueryTest extends ITBaseTest {
   @Test
   public void orQueriesWithCompositeIndexes() throws Exception {
     assumeTrue(
-        "Skip this test when running against production because these queries require a composite index.",
+        "Skip this test when running against production because these queries require a composite"
+            + " index.",
         isRunningAgainstFirestoreEmulator(firestore));
     Map<String, Map<String, Object>> testDocs =
         map(
@@ -222,7 +223,8 @@ public class ITQueryTest extends ITBaseTest {
   @Test
   public void orQueryDoesNotIncludeDocumentsWithMissingFields2() throws Exception {
     assumeTrue(
-        "Skip this test when running against production because these queries require a composite index.",
+        "Skip this test when running against production because these queries require a composite"
+            + " index.",
         isRunningAgainstFirestoreEmulator(firestore));
     Map<String, Map<String, Object>> testDocs =
         map(

@@ -33,6 +33,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.firestore.v1.DocumentTransform)
     DocumentTransformOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DocumentTransform.newBuilder() to construct.
   private DocumentTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The fieldPath.
      */
     java.lang.String getFieldPath();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the setToServerValue field is set.
      */
     boolean hasSetToServerValue();
+
     /**
      *
      *
@@ -126,6 +129,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The enum numeric value on the wire for setToServerValue.
      */
     int getSetToServerValueValue();
+
     /**
      *
      *
@@ -162,6 +166,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the increment field is set.
      */
     boolean hasIncrement();
+
     /**
      *
      *
@@ -183,6 +188,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The increment.
      */
     com.google.firestore.v1.Value getIncrement();
+
     /**
      *
      *
@@ -226,6 +232,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the maximum field is set.
      */
     boolean hasMaximum();
+
     /**
      *
      *
@@ -249,6 +256,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The maximum.
      */
     com.google.firestore.v1.Value getMaximum();
+
     /**
      *
      *
@@ -294,6 +302,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the minimum field is set.
      */
     boolean hasMinimum();
+
     /**
      *
      *
@@ -317,6 +326,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The minimum.
      */
     com.google.firestore.v1.Value getMinimum();
+
     /**
      *
      *
@@ -362,6 +372,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the appendMissingElements field is set.
      */
     boolean hasAppendMissingElements();
+
     /**
      *
      *
@@ -385,6 +396,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The appendMissingElements.
      */
     com.google.firestore.v1.ArrayValue getAppendMissingElements();
+
     /**
      *
      *
@@ -428,6 +440,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return Whether the removeAllFromArray field is set.
      */
     boolean hasRemoveAllFromArray();
+
     /**
      *
      *
@@ -449,6 +462,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
      * @return The removeAllFromArray.
      */
     com.google.firestore.v1.ArrayValue getRemoveAllFromArray();
+
     /**
      *
      *
@@ -472,6 +486,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     com.google.firestore.v1.DocumentTransform.FieldTransform.TransformTypeCase
         getTransformTypeCase();
   }
+
   /**
    *
    *
@@ -486,6 +501,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.firestore.v1.DocumentTransform.FieldTransform)
       FieldTransformOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FieldTransform.newBuilder() to construct.
     private FieldTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -561,6 +577,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
        * <code>SERVER_VALUE_UNSPECIFIED = 0;</code>
        */
       public static final int SERVER_VALUE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -678,6 +695,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       private TransformTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -722,6 +740,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -747,6 +766,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
+
     /**
      *
      *
@@ -774,6 +794,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int SET_TO_SERVER_VALUE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -790,6 +811,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasSetToServerValue() {
       return transformTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -809,6 +831,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -837,6 +860,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int INCREMENT_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -861,6 +885,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasIncrement() {
       return transformTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -888,6 +913,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1.Value.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -915,6 +941,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MAXIMUM_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -941,6 +968,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasMaximum() {
       return transformTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -970,6 +998,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1.Value.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -999,6 +1028,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int MINIMUM_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -1025,6 +1055,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasMinimum() {
       return transformTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -1054,6 +1085,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1.Value.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1083,6 +1115,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int APPEND_MISSING_ELEMENTS_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -1109,6 +1142,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasAppendMissingElements() {
       return transformTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -1138,6 +1172,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1.ArrayValue.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1167,6 +1202,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     }
 
     public static final int REMOVE_ALL_FROM_ARRAY_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -1191,6 +1227,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasRemoveAllFromArray() {
       return transformTypeCase_ == 7;
     }
+
     /**
      *
      *
@@ -1218,6 +1255,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.firestore.v1.ArrayValue.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1504,6 +1542,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1819,6 +1858,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object fieldPath_ = "";
+
       /**
        *
        *
@@ -1843,6 +1883,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1867,6 +1908,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1890,6 +1932,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1909,6 +1952,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1951,6 +1995,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasSetToServerValue() {
         return transformTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -1971,6 +2016,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return 0;
       }
+
       /**
        *
        *
@@ -1991,6 +2037,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2018,6 +2065,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return com.google.firestore.v1.DocumentTransform.FieldTransform.ServerValue
             .SERVER_VALUE_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -2042,6 +2090,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2069,6 +2118,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
               com.google.firestore.v1.Value.Builder,
               com.google.firestore.v1.ValueOrBuilder>
           incrementBuilder_;
+
       /**
        *
        *
@@ -2093,6 +2143,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasIncrement() {
         return transformTypeCase_ == 3;
       }
+
       /**
        *
        *
@@ -2127,6 +2178,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2158,6 +2210,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2186,6 +2239,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2227,6 +2281,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2261,6 +2316,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -2282,6 +2338,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public com.google.firestore.v1.Value.Builder getIncrementBuilder() {
         return getIncrementFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2311,6 +2368,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2358,6 +2416,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
               com.google.firestore.v1.Value.Builder,
               com.google.firestore.v1.ValueOrBuilder>
           maximumBuilder_;
+
       /**
        *
        *
@@ -2384,6 +2443,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasMaximum() {
         return transformTypeCase_ == 4;
       }
+
       /**
        *
        *
@@ -2420,6 +2480,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2453,6 +2514,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2483,6 +2545,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2526,6 +2589,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -2562,6 +2626,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -2585,6 +2650,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public com.google.firestore.v1.Value.Builder getMaximumBuilder() {
         return getMaximumFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2616,6 +2682,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2665,6 +2732,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
               com.google.firestore.v1.Value.Builder,
               com.google.firestore.v1.ValueOrBuilder>
           minimumBuilder_;
+
       /**
        *
        *
@@ -2691,6 +2759,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasMinimum() {
         return transformTypeCase_ == 5;
       }
+
       /**
        *
        *
@@ -2727,6 +2796,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2760,6 +2830,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2790,6 +2861,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2833,6 +2905,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2869,6 +2942,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -2892,6 +2966,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public com.google.firestore.v1.Value.Builder getMinimumBuilder() {
         return getMinimumFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2923,6 +2998,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.Value.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2972,6 +3048,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
               com.google.firestore.v1.ArrayValue.Builder,
               com.google.firestore.v1.ArrayValueOrBuilder>
           appendMissingElementsBuilder_;
+
       /**
        *
        *
@@ -2998,6 +3075,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasAppendMissingElements() {
         return transformTypeCase_ == 6;
       }
+
       /**
        *
        *
@@ -3034,6 +3112,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.ArrayValue.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3067,6 +3146,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3098,6 +3178,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3141,6 +3222,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -3177,6 +3259,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -3200,6 +3283,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public com.google.firestore.v1.ArrayValue.Builder getAppendMissingElementsBuilder() {
         return getAppendMissingElementsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3231,6 +3315,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.ArrayValue.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3280,6 +3365,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
               com.google.firestore.v1.ArrayValue.Builder,
               com.google.firestore.v1.ArrayValueOrBuilder>
           removeAllFromArrayBuilder_;
+
       /**
        *
        *
@@ -3304,6 +3390,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public boolean hasRemoveAllFromArray() {
         return transformTypeCase_ == 7;
       }
+
       /**
        *
        *
@@ -3338,6 +3425,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.ArrayValue.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3369,6 +3457,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3398,6 +3487,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3439,6 +3529,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         transformTypeCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -3473,6 +3564,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -3494,6 +3586,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       public com.google.firestore.v1.ArrayValue.Builder getRemoveAllFromArrayBuilder() {
         return getRemoveAllFromArrayFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3523,6 +3616,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           return com.google.firestore.v1.ArrayValue.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3633,6 +3727,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object document_ = "";
+
   /**
    *
    *
@@ -3656,6 +3751,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -3684,6 +3780,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.DocumentTransform.FieldTransform> fieldTransforms_;
+
   /**
    *
    *
@@ -3701,6 +3798,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       getFieldTransformsList() {
     return fieldTransforms_;
   }
+
   /**
    *
    *
@@ -3718,6 +3816,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       getFieldTransformsOrBuilderList() {
     return fieldTransforms_;
   }
+
   /**
    *
    *
@@ -3734,6 +3833,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
   public int getFieldTransformsCount() {
     return fieldTransforms_.size();
   }
+
   /**
    *
    *
@@ -3750,6 +3850,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
   public com.google.firestore.v1.DocumentTransform.FieldTransform getFieldTransforms(int index) {
     return fieldTransforms_.get(index);
   }
+
   /**
    *
    *
@@ -3938,6 +4039,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4182,6 +4284,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object document_ = "";
+
     /**
      *
      *
@@ -4204,6 +4307,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4226,6 +4330,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4247,6 +4352,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4264,6 +4370,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4325,6 +4432,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return fieldTransformsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -4344,6 +4452,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return fieldTransformsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -4363,6 +4472,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return fieldTransformsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -4389,6 +4499,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4413,6 +4524,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4439,6 +4551,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4465,6 +4578,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4488,6 +4602,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4512,6 +4627,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4536,6 +4652,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4558,6 +4675,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4580,6 +4698,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -4596,6 +4715,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         getFieldTransformsBuilder(int index) {
       return getFieldTransformsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -4616,6 +4736,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return fieldTransformsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -4637,6 +4758,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(fieldTransforms_);
       }
     }
+
     /**
      *
      *
@@ -4655,6 +4777,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               com.google.firestore.v1.DocumentTransform.FieldTransform.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -4673,6 +4796,7 @@ public final class DocumentTransform extends com.google.protobuf.GeneratedMessag
           .addBuilder(
               index, com.google.firestore.v1.DocumentTransform.FieldTransform.getDefaultInstance());
     }
+
     /**
      *
      *

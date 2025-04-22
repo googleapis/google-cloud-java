@@ -33,6 +33,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database)
     DatabaseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Database.newBuilder() to construct.
   private Database(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -50,6 +51,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     deleteProtectionState_ = 0;
     previousId_ = "";
     etag_ = "";
+    databaseEdition_ = 0;
   }
 
   @java.lang.Override
@@ -130,6 +132,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>DATABASE_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int DATABASE_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +143,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>FIRESTORE_NATIVE = 1;</code>
      */
     public static final int FIRESTORE_NATIVE_VALUE = 1;
+
     /**
      *
      *
@@ -306,6 +310,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>CONCURRENCY_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int CONCURRENCY_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -317,6 +322,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>OPTIMISTIC = 1;</code>
      */
     public static final int OPTIMISTIC_VALUE = 1;
+
     /**
      *
      *
@@ -330,6 +336,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>PESSIMISTIC = 2;</code>
      */
     public static final int PESSIMISTIC_VALUE = 2;
+
     /**
      *
      *
@@ -494,6 +501,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>POINT_IN_TIME_RECOVERY_ENABLEMENT_UNSPECIFIED = 0;</code>
      */
     public static final int POINT_IN_TIME_RECOVERY_ENABLEMENT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -511,6 +519,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>POINT_IN_TIME_RECOVERY_ENABLED = 1;</code>
      */
     public static final int POINT_IN_TIME_RECOVERY_ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -668,6 +677,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int APP_ENGINE_INTEGRATION_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -681,6 +691,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>ENABLED = 1;</code>
      */
     public static final int ENABLED_VALUE = 1;
+
     /**
      *
      *
@@ -834,6 +845,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE_PROTECTION_STATE_UNSPECIFIED = 0;</code>
      */
     public static final int DELETE_PROTECTION_STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -844,6 +856,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETE_PROTECTION_DISABLED = 1;</code>
      */
     public static final int DELETE_PROTECTION_DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -941,6 +954,171 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Database.DeleteProtectionState)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The edition of the database.
+   * </pre>
+   *
+   * Protobuf enum {@code google.firestore.admin.v1.Database.DatabaseEdition}
+   */
+  public enum DatabaseEdition implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Not used.
+     * </pre>
+     *
+     * <code>DATABASE_EDITION_UNSPECIFIED = 0;</code>
+     */
+    DATABASE_EDITION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Standard edition.
+     *
+     * This is the default setting if not specified.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    STANDARD(1),
+    /**
+     *
+     *
+     * <pre>
+     * Enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    ENTERPRISE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Not used.
+     * </pre>
+     *
+     * <code>DATABASE_EDITION_UNSPECIFIED = 0;</code>
+     */
+    public static final int DATABASE_EDITION_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Standard edition.
+     *
+     * This is the default setting if not specified.
+     * </pre>
+     *
+     * <code>STANDARD = 1;</code>
+     */
+    public static final int STANDARD_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static DatabaseEdition valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static DatabaseEdition forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DATABASE_EDITION_UNSPECIFIED;
+        case 1:
+          return STANDARD;
+        case 2:
+          return ENTERPRISE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<DatabaseEdition> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<DatabaseEdition>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DatabaseEdition>() {
+              public DatabaseEdition findValueByNumber(int number) {
+                return DatabaseEdition.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.firestore.admin.v1.Database.getDescriptor().getEnumTypes().get(5);
+    }
+
+    private static final DatabaseEdition[] VALUES = values();
+
+    public static DatabaseEdition valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private DatabaseEdition(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Database.DatabaseEdition)
+  }
+
   public interface CmekConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Database.CmekConfig)
@@ -967,6 +1145,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return The kmsKeyName.
      */
     java.lang.String getKmsKeyName();
+
     /**
      *
      *
@@ -1008,6 +1187,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the activeKeyVersion.
      */
     java.util.List<java.lang.String> getActiveKeyVersionList();
+
     /**
      *
      *
@@ -1027,6 +1207,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return The count of activeKeyVersion.
      */
     int getActiveKeyVersionCount();
+
     /**
      *
      *
@@ -1047,6 +1228,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return The activeKeyVersion at the given index.
      */
     java.lang.String getActiveKeyVersion(int index);
+
     /**
      *
      *
@@ -1068,6 +1250,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getActiveKeyVersionBytes(int index);
   }
+
   /**
    *
    *
@@ -1084,6 +1267,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.CmekConfig)
       CmekConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CmekConfig.newBuilder() to construct.
     private CmekConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1119,6 +1303,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -1151,6 +1336,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1375,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList activeKeyVersion_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1210,6 +1397,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getActiveKeyVersionList() {
       return activeKeyVersion_;
     }
+
     /**
      *
      *
@@ -1231,6 +1419,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getActiveKeyVersionCount() {
       return activeKeyVersion_.size();
     }
+
     /**
      *
      *
@@ -1253,6 +1442,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getActiveKeyVersion(int index) {
       return activeKeyVersion_.get(index);
     }
+
     /**
      *
      *
@@ -1452,6 +1642,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1663,6 +1854,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -1694,6 +1886,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1725,6 +1918,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1755,6 +1949,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1781,6 +1976,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1822,6 +2018,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1844,6 +2041,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         activeKeyVersion_.makeImmutable();
         return activeKeyVersion_;
       }
+
       /**
        *
        *
@@ -1865,6 +2063,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public int getActiveKeyVersionCount() {
         return activeKeyVersion_.size();
       }
+
       /**
        *
        *
@@ -1887,6 +2086,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getActiveKeyVersion(int index) {
         return activeKeyVersion_.get(index);
       }
+
       /**
        *
        *
@@ -1909,6 +2109,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getActiveKeyVersionBytes(int index) {
         return activeKeyVersion_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1939,6 +2140,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1968,6 +2170,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1994,6 +2197,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2019,6 +2223,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2132,6 +2337,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the backup field is set.
      */
     boolean hasBackup();
+
     /**
      *
      *
@@ -2145,6 +2351,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return The backup.
      */
     com.google.firestore.admin.v1.Database.SourceInfo.BackupSource getBackup();
+
     /**
      *
      *
@@ -2171,6 +2378,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return The operation.
      */
     java.lang.String getOperation();
+
     /**
      *
      *
@@ -2188,6 +2396,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
     com.google.firestore.admin.v1.Database.SourceInfo.SourceCase getSourceCase();
   }
+
   /**
    *
    *
@@ -2202,6 +2411,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.SourceInfo)
       SourceInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SourceInfo.newBuilder() to construct.
     private SourceInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2251,6 +2461,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
        * @return The backup.
        */
       java.lang.String getBackup();
+
       /**
        *
        *
@@ -2266,6 +2477,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getBackupBytes();
     }
+
     /**
      *
      *
@@ -2280,6 +2492,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.SourceInfo.BackupSource)
         BackupSourceOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use BackupSource.newBuilder() to construct.
       private BackupSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2314,6 +2527,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object backup_ = "";
+
       /**
        *
        *
@@ -2339,6 +2553,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -2528,6 +2743,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2722,6 +2938,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object backup_ = "";
+
         /**
          *
          *
@@ -2746,6 +2963,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2770,6 +2988,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -2793,6 +3012,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2812,6 +3032,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2920,6 +3141,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       private SourceCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2951,6 +3173,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int BACKUP_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -2967,6 +3190,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackup() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -2986,6 +3210,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.firestore.admin.v1.Database.SourceInfo.BackupSource.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3009,6 +3234,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object operation_ = "";
+
     /**
      *
      *
@@ -3034,6 +3260,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -3245,6 +3472,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3481,6 +3709,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Database.SourceInfo.BackupSource.Builder,
               com.google.firestore.admin.v1.Database.SourceInfo.BackupSourceOrBuilder>
           backupBuilder_;
+
       /**
        *
        *
@@ -3497,6 +3726,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBackup() {
         return sourceCase_ == 1;
       }
+
       /**
        *
        *
@@ -3525,6 +3755,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3549,6 +3780,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3570,6 +3802,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3606,6 +3839,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         sourceCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3632,6 +3866,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3646,6 +3881,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           getBackupBuilder() {
         return getBackupFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3669,6 +3905,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3705,6 +3942,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object operation_ = "";
+
       /**
        *
        *
@@ -3729,6 +3967,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3753,6 +3992,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3776,6 +4016,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3795,6 +4036,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3903,6 +4145,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the googleDefaultEncryption field is set.
      */
     boolean hasGoogleDefaultEncryption();
+
     /**
      *
      *
@@ -3918,6 +4161,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.firestore.admin.v1.Database.EncryptionConfig.GoogleDefaultEncryptionOptions
         getGoogleDefaultEncryption();
+
     /**
      *
      *
@@ -3946,6 +4190,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the useSourceEncryption field is set.
      */
     boolean hasUseSourceEncryption();
+
     /**
      *
      *
@@ -3961,6 +4206,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptions
         getUseSourceEncryption();
+
     /**
      *
      *
@@ -3989,6 +4235,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customerManagedEncryption field is set.
      */
     boolean hasCustomerManagedEncryption();
+
     /**
      *
      *
@@ -4004,6 +4251,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.firestore.admin.v1.Database.EncryptionConfig.CustomerManagedEncryptionOptions
         getCustomerManagedEncryption();
+
     /**
      *
      *
@@ -4022,6 +4270,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     com.google.firestore.admin.v1.Database.EncryptionConfig.EncryptionTypeCase
         getEncryptionTypeCase();
   }
+
   /**
    *
    *
@@ -4039,6 +4288,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.EncryptionConfig)
       EncryptionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EncryptionConfig.newBuilder() to construct.
     private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4071,6 +4321,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Database.EncryptionConfig.GoogleDefaultEncryptionOptions)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -4087,6 +4338,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.EncryptionConfig.GoogleDefaultEncryptionOptions)
         GoogleDefaultEncryptionOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use GoogleDefaultEncryptionOptions.newBuilder() to construct.
       private GoogleDefaultEncryptionOptions(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -4297,6 +4549,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4557,6 +4810,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptions)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -4573,6 +4827,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptions)
         SourceEncryptionOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use SourceEncryptionOptions.newBuilder() to construct.
       private SourceEncryptionOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -4766,6 +5021,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -5039,6 +5295,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
        * @return The kmsKeyName.
        */
       java.lang.String getKmsKeyName();
+
       /**
        *
        *
@@ -5061,6 +5318,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.protobuf.ByteString getKmsKeyNameBytes();
     }
+
     /**
      *
      *
@@ -5078,6 +5336,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Database.EncryptionConfig.CustomerManagedEncryptionOptions)
         CustomerManagedEncryptionOptionsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use CustomerManagedEncryptionOptions.newBuilder() to construct.
       private CustomerManagedEncryptionOptions(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -5115,6 +5374,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -5147,6 +5407,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -5368,6 +5629,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -5582,6 +5844,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object kmsKeyName_ = "";
+
         /**
          *
          *
@@ -5613,6 +5876,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -5644,6 +5908,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -5674,6 +5939,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5700,6 +5966,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -5822,6 +6089,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       private EncryptionTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5857,6 +6125,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int GOOGLE_DEFAULT_ENCRYPTION_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -5874,6 +6143,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGoogleDefaultEncryption() {
       return encryptionTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -5898,6 +6168,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return com.google.firestore.admin.v1.Database.EncryptionConfig.GoogleDefaultEncryptionOptions
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5923,6 +6194,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int USE_SOURCE_ENCRYPTION_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -5940,6 +6212,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUseSourceEncryption() {
       return encryptionTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -5963,6 +6236,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return com.google.firestore.admin.v1.Database.EncryptionConfig.SourceEncryptionOptions
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -5986,6 +6260,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int CUSTOMER_MANAGED_ENCRYPTION_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -6003,6 +6278,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomerManagedEncryption() {
       return encryptionTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -6027,6 +6303,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return com.google.firestore.admin.v1.Database.EncryptionConfig
           .CustomerManagedEncryptionOptions.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6277,6 +6554,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6542,6 +6820,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Database.EncryptionConfig
                   .GoogleDefaultEncryptionOptionsOrBuilder>
           googleDefaultEncryptionBuilder_;
+
       /**
        *
        *
@@ -6559,6 +6838,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public boolean hasGoogleDefaultEncryption() {
         return encryptionTypeCase_ == 1;
       }
+
       /**
        *
        *
@@ -6591,6 +6871,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .GoogleDefaultEncryptionOptions.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6617,6 +6898,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6641,6 +6923,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6682,6 +6965,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -6709,6 +6993,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6725,6 +7010,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           getGoogleDefaultEncryptionBuilder() {
         return getGoogleDefaultEncryptionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6752,6 +7038,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .GoogleDefaultEncryptionOptions.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6804,6 +7091,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Database.EncryptionConfig
                   .SourceEncryptionOptionsOrBuilder>
           useSourceEncryptionBuilder_;
+
       /**
        *
        *
@@ -6821,6 +7109,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUseSourceEncryption() {
         return encryptionTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -6852,6 +7141,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6877,6 +7167,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6900,6 +7191,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6940,6 +7232,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6967,6 +7260,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -6982,6 +7276,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           getUseSourceEncryptionBuilder() {
         return getUseSourceEncryptionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7008,6 +7303,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7058,6 +7354,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Database.EncryptionConfig
                   .CustomerManagedEncryptionOptionsOrBuilder>
           customerManagedEncryptionBuilder_;
+
       /**
        *
        *
@@ -7075,6 +7372,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       public boolean hasCustomerManagedEncryption() {
         return encryptionTypeCase_ == 3;
       }
+
       /**
        *
        *
@@ -7108,6 +7406,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .CustomerManagedEncryptionOptions.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7134,6 +7433,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -7158,6 +7458,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -7199,6 +7500,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         encryptionTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -7226,6 +7528,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -7242,6 +7545,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           getCustomerManagedEncryptionBuilder() {
         return getCustomerManagedEncryptionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7269,6 +7573,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
               .CustomerManagedEncryptionOptions.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7383,6 +7688,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -7407,6 +7713,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7436,6 +7743,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -7459,6 +7767,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7485,6 +7794,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -7502,6 +7812,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -7519,6 +7830,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -7537,6 +7849,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -7555,6 +7868,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -7573,6 +7887,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -7592,6 +7907,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp deleteTime_;
+
   /**
    *
    *
@@ -7609,6 +7925,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -7626,6 +7943,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
+
   /**
    *
    *
@@ -7646,6 +7964,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationId_ = "";
+
   /**
    *
    *
@@ -7670,6 +7989,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -7697,6 +8017,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 10;
   private int type_ = 0;
+
   /**
    *
    *
@@ -7714,6 +8035,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -7738,6 +8060,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONCURRENCY_MODE_FIELD_NUMBER = 15;
   private int concurrencyMode_ = 0;
+
   /**
    *
    *
@@ -7753,6 +8076,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public int getConcurrencyModeValue() {
     return concurrencyMode_;
   }
+
   /**
    *
    *
@@ -7775,6 +8099,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VERSION_RETENTION_PERIOD_FIELD_NUMBER = 17;
   private com.google.protobuf.Duration versionRetentionPeriod_;
+
   /**
    *
    *
@@ -7801,6 +8126,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVersionRetentionPeriod() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -7829,6 +8155,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : versionRetentionPeriod_;
   }
+
   /**
    *
    *
@@ -7858,6 +8185,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EARLIEST_VERSION_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp earliestVersionTime_;
+
   /**
    *
    *
@@ -7882,6 +8210,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEarliestVersionTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -7908,6 +8237,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : earliestVersionTime_;
   }
+
   /**
    *
    *
@@ -7935,6 +8265,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int POINT_IN_TIME_RECOVERY_ENABLEMENT_FIELD_NUMBER = 21;
   private int pointInTimeRecoveryEnablement_ = 0;
+
   /**
    *
    *
@@ -7952,6 +8283,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public int getPointInTimeRecoveryEnablementValue() {
     return pointInTimeRecoveryEnablement_;
   }
+
   /**
    *
    *
@@ -7978,6 +8310,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int APP_ENGINE_INTEGRATION_MODE_FIELD_NUMBER = 19;
   private int appEngineIntegrationMode_ = 0;
+
   /**
    *
    *
@@ -7995,6 +8328,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public int getAppEngineIntegrationModeValue() {
     return appEngineIntegrationMode_;
   }
+
   /**
    *
    *
@@ -8023,6 +8357,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object keyPrefix_ = "";
+
   /**
    *
    *
@@ -8052,6 +8387,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -8084,6 +8420,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_PROTECTION_STATE_FIELD_NUMBER = 22;
   private int deleteProtectionState_ = 0;
+
   /**
    *
    *
@@ -8100,6 +8437,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public int getDeleteProtectionStateValue() {
     return deleteProtectionState_;
   }
+
   /**
    *
    *
@@ -8124,6 +8462,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CMEK_CONFIG_FIELD_NUMBER = 23;
   private com.google.firestore.admin.v1.Database.CmekConfig cmekConfig_;
+
   /**
    *
    *
@@ -8141,6 +8480,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCmekConfig() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -8160,6 +8500,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         ? com.google.firestore.admin.v1.Database.CmekConfig.getDefaultInstance()
         : cmekConfig_;
   }
+
   /**
    *
    *
@@ -8182,6 +8523,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object previousId_ = "";
+
   /**
    *
    *
@@ -8206,6 +8548,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -8233,6 +8576,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_INFO_FIELD_NUMBER = 26;
   private com.google.firestore.admin.v1.Database.SourceInfo sourceInfo_;
+
   /**
    *
    *
@@ -8250,6 +8594,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceInfo() {
     return ((bitField0_ & 0x00000040) != 0);
   }
+
   /**
    *
    *
@@ -8269,6 +8614,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         ? com.google.firestore.admin.v1.Database.SourceInfo.getDefaultInstance()
         : sourceInfo_;
   }
+
   /**
    *
    *
@@ -8287,10 +8633,66 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         : sourceInfo_;
   }
 
+  public static final int FREE_TIER_FIELD_NUMBER = 30;
+  private boolean freeTier_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Background: Free tier is the ability of a Firestore database
+   * to use a small amount of resources every day without being charged. Once
+   * usage exceeds the free tier limit further usage is charged.
+   *
+   * Whether this database can make use of the free tier. Only one database
+   * per project can be eligible for the free tier.
+   *
+   * The first (or next) database that is created in a project without a free
+   * tier database will be marked as eligible for the free tier. Databases that
+   * are created while there is a free tier database will not be eligible for
+   * the free tier.
+   * </pre>
+   *
+   * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the freeTier field is set.
+   */
+  @java.lang.Override
+  public boolean hasFreeTier() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Background: Free tier is the ability of a Firestore database
+   * to use a small amount of resources every day without being charged. Once
+   * usage exceeds the free tier limit further usage is charged.
+   *
+   * Whether this database can make use of the free tier. Only one database
+   * per project can be eligible for the free tier.
+   *
+   * The first (or next) database that is created in a project without a free
+   * tier database will be marked as eligible for the free tier. Databases that
+   * are created while there is a free tier database will not be eligible for
+   * the free tier.
+   * </pre>
+   *
+   * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The freeTier.
+   */
+  @java.lang.Override
+  public boolean getFreeTier() {
+    return freeTier_;
+  }
+
   public static final int ETAG_FIELD_NUMBER = 99;
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -8316,6 +8718,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -8340,6 +8743,49 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int DATABASE_EDITION_FIELD_NUMBER = 28;
+  private int databaseEdition_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The edition of the database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseEdition.
+   */
+  @java.lang.Override
+  public int getDatabaseEditionValue() {
+    return databaseEdition_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The edition of the database.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseEdition.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Database.DatabaseEdition getDatabaseEdition() {
+    com.google.firestore.admin.v1.Database.DatabaseEdition result =
+        com.google.firestore.admin.v1.Database.DatabaseEdition.forNumber(databaseEdition_);
+    return result == null
+        ? com.google.firestore.admin.v1.Database.DatabaseEdition.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -8420,6 +8866,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(26, getSourceInfo());
     }
+    if (databaseEdition_
+        != com.google.firestore.admin.v1.Database.DatabaseEdition.DATABASE_EDITION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(28, databaseEdition_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeBool(30, freeTier_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 99, etag_);
     }
@@ -8499,6 +8953,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(26, getSourceInfo());
     }
+    if (databaseEdition_
+        != com.google.firestore.admin.v1.Database.DatabaseEdition.DATABASE_EDITION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(28, databaseEdition_);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(30, freeTier_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(99, etag_);
     }
@@ -8555,7 +9017,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (hasSourceInfo()) {
       if (!getSourceInfo().equals(other.getSourceInfo())) return false;
     }
+    if (hasFreeTier() != other.hasFreeTier()) return false;
+    if (hasFreeTier()) {
+      if (getFreeTier() != other.getFreeTier()) return false;
+    }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (databaseEdition_ != other.databaseEdition_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -8615,8 +9082,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + SOURCE_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getSourceInfo().hashCode();
     }
+    if (hasFreeTier()) {
+      hash = (37 * hash) + FREE_TIER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFreeTier());
+    }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DATABASE_EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + databaseEdition_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -8717,6 +9190,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8816,7 +9290,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         sourceInfoBuilder_.dispose();
         sourceInfoBuilder_ = null;
       }
+      freeTier_ = false;
       etag_ = "";
+      databaseEdition_ = 0;
       return this;
     }
 
@@ -8919,7 +9395,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.freeTier_ = freeTier_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.databaseEdition_ = databaseEdition_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9030,10 +9513,16 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (other.hasSourceInfo()) {
         mergeSourceInfo(other.getSourceInfo());
       }
+      if (other.hasFreeTier()) {
+        setFreeTier(other.getFreeTier());
+      }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
+      }
+      if (other.databaseEdition_ != 0) {
+        setDatabaseEditionValue(other.getDatabaseEditionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -9165,10 +9654,22 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 210
+            case 224:
+              {
+                databaseEdition_ = input.readEnum();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 224
+            case 240:
+              {
+                freeTier_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 240
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 794
             default:
@@ -9191,6 +9692,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -9214,6 +9716,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9237,6 +9740,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9259,6 +9763,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9277,6 +9782,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9302,6 +9808,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -9324,6 +9831,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -9346,6 +9854,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -9367,6 +9876,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9384,6 +9894,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9413,6 +9924,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -9430,6 +9942,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -9453,6 +9966,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9478,6 +9992,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9500,6 +10015,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9530,6 +10046,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9552,6 +10069,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9569,6 +10087,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9590,6 +10109,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -9625,6 +10145,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -9643,6 +10164,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -9667,6 +10189,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9693,6 +10216,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9716,6 +10240,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9747,6 +10272,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9770,6 +10296,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9788,6 +10315,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9810,6 +10338,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -9846,6 +10375,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
+
     /**
      *
      *
@@ -9863,6 +10393,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -9886,6 +10417,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -9911,6 +10443,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9933,6 +10466,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -9963,6 +10497,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -9985,6 +10520,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10002,6 +10538,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10023,6 +10560,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
+
     /**
      *
      *
@@ -10053,6 +10591,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object locationId_ = "";
+
     /**
      *
      *
@@ -10076,6 +10615,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10099,6 +10639,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10121,6 +10662,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10139,6 +10681,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10164,6 +10707,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -10181,6 +10725,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -10201,6 +10746,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10222,6 +10768,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.admin.v1.Database.DatabaseType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10245,6 +10792,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10266,6 +10814,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int concurrencyMode_ = 0;
+
     /**
      *
      *
@@ -10281,6 +10830,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getConcurrencyModeValue() {
       return concurrencyMode_;
     }
+
     /**
      *
      *
@@ -10299,6 +10849,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10318,6 +10869,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.admin.v1.Database.ConcurrencyMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10340,6 +10892,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10364,6 +10917,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         versionRetentionPeriodBuilder_;
+
     /**
      *
      *
@@ -10389,6 +10943,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVersionRetentionPeriod() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -10420,6 +10975,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return versionRetentionPeriodBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10453,6 +11009,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10483,6 +11040,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10521,6 +11079,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10551,6 +11110,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10576,6 +11136,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getVersionRetentionPeriodFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10605,6 +11166,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : versionRetentionPeriod_;
       }
     }
+
     /**
      *
      *
@@ -10648,6 +11210,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         earliestVersionTimeBuilder_;
+
     /**
      *
      *
@@ -10671,6 +11234,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEarliestVersionTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -10700,6 +11264,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return earliestVersionTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10731,6 +11296,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10759,6 +11325,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10795,6 +11362,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -10823,6 +11391,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10846,6 +11415,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEarliestVersionTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10873,6 +11443,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : earliestVersionTime_;
       }
     }
+
     /**
      *
      *
@@ -10909,6 +11480,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int pointInTimeRecoveryEnablement_ = 0;
+
     /**
      *
      *
@@ -10926,6 +11498,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getPointInTimeRecoveryEnablementValue() {
       return pointInTimeRecoveryEnablement_;
     }
+
     /**
      *
      *
@@ -10946,6 +11519,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10969,6 +11543,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.admin.v1.Database.PointInTimeRecoveryEnablement.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -10993,6 +11568,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11014,6 +11590,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int appEngineIntegrationMode_ = 0;
+
     /**
      *
      *
@@ -11031,6 +11608,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getAppEngineIntegrationModeValue() {
       return appEngineIntegrationMode_;
     }
+
     /**
      *
      *
@@ -11051,6 +11629,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11074,6 +11653,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.admin.v1.Database.AppEngineIntegrationMode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11098,6 +11678,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11119,6 +11700,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object keyPrefix_ = "";
+
     /**
      *
      *
@@ -11147,6 +11729,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11175,6 +11758,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11202,6 +11786,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11225,6 +11810,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11255,6 +11841,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int deleteProtectionState_ = 0;
+
     /**
      *
      *
@@ -11271,6 +11858,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public int getDeleteProtectionStateValue() {
       return deleteProtectionState_;
     }
+
     /**
      *
      *
@@ -11290,6 +11878,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11311,6 +11900,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
           ? com.google.firestore.admin.v1.Database.DeleteProtectionState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11334,6 +11924,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11359,6 +11950,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.admin.v1.Database.CmekConfig.Builder,
             com.google.firestore.admin.v1.Database.CmekConfigOrBuilder>
         cmekConfigBuilder_;
+
     /**
      *
      *
@@ -11375,6 +11967,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCmekConfig() {
       return ((bitField0_ & 0x00004000) != 0);
     }
+
     /**
      *
      *
@@ -11397,6 +11990,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return cmekConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11421,6 +12015,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11443,6 +12038,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11473,6 +12069,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11494,6 +12091,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11510,6 +12108,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCmekConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11530,6 +12129,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : cmekConfig_;
       }
     }
+
     /**
      *
      *
@@ -11559,6 +12159,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object previousId_ = "";
+
     /**
      *
      *
@@ -11582,6 +12183,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11605,6 +12207,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11627,6 +12230,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11645,6 +12249,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11675,6 +12280,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.admin.v1.Database.SourceInfo.Builder,
             com.google.firestore.admin.v1.Database.SourceInfoOrBuilder>
         sourceInfoBuilder_;
+
     /**
      *
      *
@@ -11691,6 +12297,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceInfo() {
       return ((bitField0_ & 0x00010000) != 0);
     }
+
     /**
      *
      *
@@ -11713,6 +12320,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return sourceInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -11737,6 +12345,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11759,6 +12368,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11789,6 +12399,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -11810,6 +12421,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11826,6 +12438,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -11846,6 +12459,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             : sourceInfo_;
       }
     }
+
     /**
      *
      *
@@ -11874,7 +12488,120 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       return sourceInfoBuilder_;
     }
 
+    private boolean freeTier_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Background: Free tier is the ability of a Firestore database
+     * to use a small amount of resources every day without being charged. Once
+     * usage exceeds the free tier limit further usage is charged.
+     *
+     * Whether this database can make use of the free tier. Only one database
+     * per project can be eligible for the free tier.
+     *
+     * The first (or next) database that is created in a project without a free
+     * tier database will be marked as eligible for the free tier. Databases that
+     * are created while there is a free tier database will not be eligible for
+     * the free tier.
+     * </pre>
+     *
+     * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the freeTier field is set.
+     */
+    @java.lang.Override
+    public boolean hasFreeTier() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Background: Free tier is the ability of a Firestore database
+     * to use a small amount of resources every day without being charged. Once
+     * usage exceeds the free tier limit further usage is charged.
+     *
+     * Whether this database can make use of the free tier. Only one database
+     * per project can be eligible for the free tier.
+     *
+     * The first (or next) database that is created in a project without a free
+     * tier database will be marked as eligible for the free tier. Databases that
+     * are created while there is a free tier database will not be eligible for
+     * the free tier.
+     * </pre>
+     *
+     * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The freeTier.
+     */
+    @java.lang.Override
+    public boolean getFreeTier() {
+      return freeTier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Background: Free tier is the ability of a Firestore database
+     * to use a small amount of resources every day without being charged. Once
+     * usage exceeds the free tier limit further usage is charged.
+     *
+     * Whether this database can make use of the free tier. Only one database
+     * per project can be eligible for the free tier.
+     *
+     * The first (or next) database that is created in a project without a free
+     * tier database will be marked as eligible for the free tier. Databases that
+     * are created while there is a free tier database will not be eligible for
+     * the free tier.
+     * </pre>
+     *
+     * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The freeTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFreeTier(boolean value) {
+
+      freeTier_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Background: Free tier is the ability of a Firestore database
+     * to use a small amount of resources every day without being charged. Once
+     * usage exceeds the free tier limit further usage is charged.
+     *
+     * Whether this database can make use of the free tier. Only one database
+     * per project can be eligible for the free tier.
+     *
+     * The first (or next) database that is created in a project without a free
+     * tier database will be marked as eligible for the free tier. Databases that
+     * are created while there is a free tier database will not be eligible for
+     * the free tier.
+     * </pre>
+     *
+     * <code>optional bool free_tier = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFreeTier() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      freeTier_ = false;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -11899,6 +12626,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11923,6 +12651,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11942,10 +12671,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11961,10 +12691,11 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11985,7 +12716,115 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    private int databaseEdition_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The edition of the database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for databaseEdition.
+     */
+    @java.lang.Override
+    public int getDatabaseEditionValue() {
+      return databaseEdition_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The edition of the database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for databaseEdition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseEditionValue(int value) {
+      databaseEdition_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The edition of the database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The databaseEdition.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Database.DatabaseEdition getDatabaseEdition() {
+      com.google.firestore.admin.v1.Database.DatabaseEdition result =
+          com.google.firestore.admin.v1.Database.DatabaseEdition.forNumber(databaseEdition_);
+      return result == null
+          ? com.google.firestore.admin.v1.Database.DatabaseEdition.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The edition of the database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The databaseEdition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseEdition(
+        com.google.firestore.admin.v1.Database.DatabaseEdition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00080000;
+      databaseEdition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The edition of the database.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Database.DatabaseEdition database_edition = 28 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseEdition() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      databaseEdition_ = 0;
       onChanged();
       return this;
     }

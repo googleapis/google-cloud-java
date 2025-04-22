@@ -33,6 +33,7 @@ public final class DeleteDatabaseMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.DeleteDatabaseMetadata)
     DeleteDatabaseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteDatabaseMetadata.newBuilder() to construct.
   private DeleteDatabaseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class DeleteDatabaseMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

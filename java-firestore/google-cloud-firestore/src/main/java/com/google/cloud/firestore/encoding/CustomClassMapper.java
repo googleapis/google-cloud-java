@@ -110,7 +110,8 @@ public class CustomClassMapper {
       } else {
         throw path.serializeError(
             String.format(
-                "Numbers of type %s are not supported, please use an int, long, float, double or BigDecimal",
+                "Numbers of type %s are not supported, please use an int, long, float, double or"
+                    + " BigDecimal",
                 o.getClass().getSimpleName()));
       }
     } else if (o instanceof String) {

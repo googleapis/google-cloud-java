@@ -35,6 +35,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.IndexOperationMetadata)
     IndexOperationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IndexOperationMetadata.newBuilder() to construct.
   private IndexOperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object index_ = "";
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -232,6 +242,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_DOCUMENTS_FIELD_NUMBER = 5;
   private com.google.firestore.admin.v1.Progress progressDocuments_;
+
   /**
    *
    *
@@ -267,6 +279,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressDocuments() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressDocuments_;
   }
+
   /**
    *
    *
@@ -302,6 +316,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 6;
   private com.google.firestore.admin.v1.Progress progressBytes_;
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressBytes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -334,6 +350,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressBytes_;
   }
+
   /**
    *
    *
@@ -576,6 +593,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -871,6 +889,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -903,6 +923,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +966,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -971,6 +994,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1029,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1020,6 +1046,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1079,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1067,6 +1095,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1086,6 +1115,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1109,6 +1139,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1129,6 +1160,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1210,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1226,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1209,6 +1244,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1237,6 +1273,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object index_ = "";
+
     /**
      *
      *
@@ -1260,6 +1297,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1283,6 +1321,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1305,6 +1344,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1323,6 +1363,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1389,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1363,6 +1405,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1381,6 +1424,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1398,6 +1442,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
           com.google.firestore.admin.v1.OperationState.forNumber(state_);
       return result == null ? com.google.firestore.admin.v1.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1419,6 +1464,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1489,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressDocumentsBuilder_;
+
     /**
      *
      *
@@ -1457,6 +1504,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressDocuments() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1477,6 +1525,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return progressDocumentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1499,6 +1548,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1569,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1546,6 +1597,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1617,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1632,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1597,6 +1651,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             : progressDocuments_;
       }
     }
+
     /**
      *
      *
@@ -1629,6 +1684,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressBytesBuilder_;
+
     /**
      *
      *
@@ -1643,6 +1699,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressBytes() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1663,6 +1720,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
         return progressBytesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1685,6 +1743,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1705,6 +1764,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1792,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1812,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1765,6 +1827,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1783,6 +1846,7 @@ public final class IndexOperationMetadata extends com.google.protobuf.GeneratedM
             : progressBytes_;
       }
     }
+
     /**
      *
      *

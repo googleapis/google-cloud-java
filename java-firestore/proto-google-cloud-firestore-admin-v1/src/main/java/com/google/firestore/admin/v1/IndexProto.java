@@ -56,42 +56,47 @@ public final class IndexProto {
       "\n%google/firestore/admin/v1/index.proto\022"
           + "\031google.firestore.admin.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\"\221\t\n\005Index\022\014\n\004name\030\001 \001(\t\022@\n\013query_"
+          + ".proto\"\355\n\n\005Index\022\014\n\004name\030\001 \001(\t\022@\n\013query_"
           + "scope\030\002 \001(\0162+.google.firestore.admin.v1."
           + "Index.QueryScope\022<\n\tapi_scope\030\005 \001(\0162).go"
           + "ogle.firestore.admin.v1.Index.ApiScope\022;"
           + "\n\006fields\030\003 \003(\0132+.google.firestore.admin."
           + "v1.Index.IndexField\0225\n\005state\030\004 \001(\0162&.goo"
-          + "gle.firestore.admin.v1.Index.State\032\242\004\n\nI"
-          + "ndexField\022\022\n\nfield_path\030\001 \001(\t\022B\n\005order\030\002"
-          + " \001(\01621.google.firestore.admin.v1.Index.I"
-          + "ndexField.OrderH\000\022O\n\014array_config\030\003 \001(\0162"
-          + "7.google.firestore.admin.v1.Index.IndexF"
-          + "ield.ArrayConfigH\000\022Q\n\rvector_config\030\004 \001("
-          + "\01328.google.firestore.admin.v1.Index.Inde"
-          + "xField.VectorConfigH\000\032\217\001\n\014VectorConfig\022\026"
-          + "\n\tdimension\030\001 \001(\005B\003\340A\002\022R\n\004flat\030\002 \001(\0132B.g"
-          + "oogle.firestore.admin.v1.Index.IndexFiel"
-          + "d.VectorConfig.FlatIndexH\000\032\013\n\tFlatIndexB"
-          + "\006\n\004type\"=\n\005Order\022\025\n\021ORDER_UNSPECIFIED\020\000\022"
-          + "\r\n\tASCENDING\020\001\022\016\n\nDESCENDING\020\002\"9\n\013ArrayC"
-          + "onfig\022\034\n\030ARRAY_CONFIG_UNSPECIFIED\020\000\022\014\n\010C"
-          + "ONTAINS\020\001B\014\n\nvalue_mode\"i\n\nQueryScope\022\033\n"
-          + "\027QUERY_SCOPE_UNSPECIFIED\020\000\022\016\n\nCOLLECTION"
-          + "\020\001\022\024\n\020COLLECTION_GROUP\020\002\022\030\n\024COLLECTION_R"
-          + "ECURSIVE\020\003\"/\n\010ApiScope\022\013\n\007ANY_API\020\000\022\026\n\022D"
-          + "ATASTORE_MODE_API\020\001\"I\n\005State\022\025\n\021STATE_UN"
-          + "SPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY\020\002\022\020\n\014"
-          + "NEEDS_REPAIR\020\003:z\352Aw\n\036firestore.googleapi"
-          + "s.com/Index\022Uprojects/{project}/database"
-          + "s/{database}/collectionGroups/{collectio"
-          + "n}/indexes/{index}B\331\001\n\035com.google.firest"
-          + "ore.admin.v1B\nIndexProtoP\001Z9cloud.google"
-          + ".com/go/firestore/apiv1/admin/adminpb;ad"
-          + "minpb\242\002\004GCFS\252\002\037Google.Cloud.Firestore.Ad"
-          + "min.V1\312\002\037Google\\Cloud\\Firestore\\Admin\\V1"
-          + "\352\002#Google::Cloud::Firestore::Admin::V1b\006"
-          + "proto3"
+          + "gle.firestore.admin.v1.Index.State\022>\n\007de"
+          + "nsity\030\006 \001(\0162(.google.firestore.admin.v1."
+          + "Index.DensityB\003\340A\005\022\025\n\010multikey\030\007 \001(\010B\003\340A"
+          + "\001\022\030\n\013shard_count\030\010 \001(\005B\003\340A\001\032\242\004\n\nIndexFie"
+          + "ld\022\022\n\nfield_path\030\001 \001(\t\022B\n\005order\030\002 \001(\01621."
+          + "google.firestore.admin.v1.Index.IndexFie"
+          + "ld.OrderH\000\022O\n\014array_config\030\003 \001(\01627.googl"
+          + "e.firestore.admin.v1.Index.IndexField.Ar"
+          + "rayConfigH\000\022Q\n\rvector_config\030\004 \001(\01328.goo"
+          + "gle.firestore.admin.v1.Index.IndexField."
+          + "VectorConfigH\000\032\217\001\n\014VectorConfig\022\026\n\tdimen"
+          + "sion\030\001 \001(\005B\003\340A\002\022R\n\004flat\030\002 \001(\0132B.google.f"
+          + "irestore.admin.v1.Index.IndexField.Vecto"
+          + "rConfig.FlatIndexH\000\032\013\n\tFlatIndexB\006\n\004type"
+          + "\"=\n\005Order\022\025\n\021ORDER_UNSPECIFIED\020\000\022\r\n\tASCE"
+          + "NDING\020\001\022\016\n\nDESCENDING\020\002\"9\n\013ArrayConfig\022\034"
+          + "\n\030ARRAY_CONFIG_UNSPECIFIED\020\000\022\014\n\010CONTAINS"
+          + "\020\001B\014\n\nvalue_mode\"i\n\nQueryScope\022\033\n\027QUERY_"
+          + "SCOPE_UNSPECIFIED\020\000\022\016\n\nCOLLECTION\020\001\022\024\n\020C"
+          + "OLLECTION_GROUP\020\002\022\030\n\024COLLECTION_RECURSIV"
+          + "E\020\003\"K\n\010ApiScope\022\013\n\007ANY_API\020\000\022\026\n\022DATASTOR"
+          + "E_MODE_API\020\001\022\032\n\026MONGODB_COMPATIBLE_API\020\002"
+          + "\"I\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\014\n\010CREA"
+          + "TING\020\001\022\t\n\005READY\020\002\022\020\n\014NEEDS_REPAIR\020\003\"M\n\007D"
+          + "ensity\022\027\n\023DENSITY_UNSPECIFIED\020\000\022\016\n\nSPARS"
+          + "E_ALL\020\001\022\016\n\nSPARSE_ANY\020\002\022\t\n\005DENSE\020\003:z\352Aw\n"
+          + "\036firestore.googleapis.com/Index\022Uproject"
+          + "s/{project}/databases/{database}/collect"
+          + "ionGroups/{collection}/indexes/{index}B\331"
+          + "\001\n\035com.google.firestore.admin.v1B\nIndexP"
+          + "rotoP\001Z9cloud.google.com/go/firestore/ap"
+          + "iv1/admin/adminpb;adminpb\242\002\004GCFS\252\002\037Googl"
+          + "e.Cloud.Firestore.Admin.V1\312\002\037Google\\Clou"
+          + "d\\Firestore\\Admin\\V1\352\002#Google::Cloud::Fi"
+          + "restore::Admin::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -106,7 +111,14 @@ public final class IndexProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_firestore_admin_v1_Index_descriptor,
             new java.lang.String[] {
-              "Name", "QueryScope", "ApiScope", "Fields", "State",
+              "Name",
+              "QueryScope",
+              "ApiScope",
+              "Fields",
+              "State",
+              "Density",
+              "Multikey",
+              "ShardCount",
             });
     internal_static_google_firestore_admin_v1_Index_IndexField_descriptor =
         internal_static_google_firestore_admin_v1_Index_descriptor.getNestedTypes().get(0);

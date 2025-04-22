@@ -35,6 +35,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.WeeklyRecurrence)
     WeeklyRecurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WeeklyRecurrence.newBuilder() to construct.
   private WeeklyRecurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
 
   public static final int DAY_FIELD_NUMBER = 2;
   private int day_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
   public int getDayValue() {
     return day_;
   }
+
   /**
    *
    *
@@ -262,6 +265,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -445,6 +449,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private int day_ = 0;
+
     /**
      *
      *
@@ -462,6 +467,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
     public int getDayValue() {
       return day_;
     }
+
     /**
      *
      *
@@ -482,6 +488,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -500,6 +507,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(day_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -523,6 +531,7 @@ public final class WeeklyRecurrence extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

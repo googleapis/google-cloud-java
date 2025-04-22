@@ -36,6 +36,7 @@ public interface ListenResponseOrBuilder
    * @return Whether the targetChange field is set.
    */
   boolean hasTargetChange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListenResponseOrBuilder
    * @return The targetChange.
    */
   com.google.firestore.v1.TargetChange getTargetChange();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ListenResponseOrBuilder
    * @return Whether the documentChange field is set.
    */
   boolean hasDocumentChange();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ListenResponseOrBuilder
    * @return The documentChange.
    */
   com.google.firestore.v1.DocumentChange getDocumentChange();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ListenResponseOrBuilder
    * @return Whether the documentDelete field is set.
    */
   boolean hasDocumentDelete();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ListenResponseOrBuilder
    * @return The documentDelete.
    */
   com.google.firestore.v1.DocumentDelete getDocumentDelete();
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public interface ListenResponseOrBuilder
    * @return Whether the documentRemove field is set.
    */
   boolean hasDocumentRemove();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface ListenResponseOrBuilder
    * @return The documentRemove.
    */
   com.google.firestore.v1.DocumentRemove getDocumentRemove();
+
   /**
    *
    *
@@ -183,6 +191,7 @@ public interface ListenResponseOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -199,6 +208,7 @@ public interface ListenResponseOrBuilder
    * @return The filter.
    */
   com.google.firestore.v1.ExistenceFilter getFilter();
+
   /**
    *
    *

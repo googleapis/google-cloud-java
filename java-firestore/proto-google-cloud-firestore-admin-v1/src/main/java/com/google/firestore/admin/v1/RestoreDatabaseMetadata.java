@@ -34,6 +34,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.RestoreDatabaseMetadata)
     RestoreDatabaseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RestoreDatabaseMetadata.newBuilder() to construct.
   private RestoreDatabaseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
 
   public static final int OPERATION_STATE_FIELD_NUMBER = 3;
   private int operationState_ = 0;
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public int getOperationStateValue() {
     return operationState_;
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -221,6 +231,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backup_ = "";
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -298,6 +311,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
 
   public static final int PROGRESS_PERCENTAGE_FIELD_NUMBER = 8;
   private com.google.firestore.admin.v1.Progress progressPercentage_;
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
   public boolean hasProgressPercentage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -330,6 +345,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressPercentage_;
   }
+
   /**
    *
    *
@@ -568,6 +584,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -857,6 +874,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -911,6 +931,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -957,6 +979,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +999,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1014,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1052,6 +1079,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1070,6 +1098,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1121,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1141,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1138,6 +1169,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1189,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1204,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1187,6 +1221,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1249,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     }
 
     private int operationState_ = 0;
+
     /**
      *
      *
@@ -1229,6 +1265,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     public int getOperationStateValue() {
       return operationState_;
     }
+
     /**
      *
      *
@@ -1247,6 +1284,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1264,6 +1302,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
           com.google.firestore.admin.v1.OperationState.forNumber(operationState_);
       return result == null ? com.google.firestore.admin.v1.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1285,6 +1324,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1304,6 +1344,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     }
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -1326,6 +1367,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1390,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1369,6 +1412,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1430,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1455,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     }
 
     private java.lang.Object backup_ = "";
+
     /**
      *
      *
@@ -1432,6 +1478,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1454,6 +1501,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1475,6 +1523,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1492,6 +1541,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1521,6 +1571,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressPercentageBuilder_;
+
     /**
      *
      *
@@ -1535,6 +1586,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
     public boolean hasProgressPercentage() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1555,6 +1607,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
         return progressPercentageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1577,6 +1630,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1651,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1624,6 +1679,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1643,6 +1699,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1657,6 +1714,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
       onChanged();
       return getProgressPercentageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1675,6 +1733,7 @@ public final class RestoreDatabaseMetadata extends com.google.protobuf.Generated
             : progressPercentage_;
       }
     }
+
     /**
      *
      *

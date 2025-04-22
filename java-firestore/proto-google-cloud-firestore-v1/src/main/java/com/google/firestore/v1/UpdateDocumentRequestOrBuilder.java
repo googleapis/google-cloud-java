@@ -38,6 +38,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.firestore.v1.Document getDocument();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The updateMask.
    */
   com.google.firestore.v1.DocumentMask getUpdateMask();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The mask.
    */
   com.google.firestore.v1.DocumentMask getMask();
+
   /**
    *
    *
@@ -175,6 +181,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return Whether the currentDocument field is set.
    */
   boolean hasCurrentDocument();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface UpdateDocumentRequestOrBuilder
    * @return The currentDocument.
    */
   com.google.firestore.v1.Precondition getCurrentDocument();
+
   /**
    *
    *

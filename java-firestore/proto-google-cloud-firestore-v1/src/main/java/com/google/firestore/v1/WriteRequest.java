@@ -42,6 +42,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.WriteRequest)
     WriteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WriteRequest.newBuilder() to construct.
   private WriteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -91,6 +92,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object streamId_ = "";
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -201,6 +206,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.Write> writes_;
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.firestore.v1.Write> getWritesList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -237,6 +244,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.firestore.v1.WriteOrBuilder> getWritesOrBuilderList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -255,6 +263,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public int getWritesCount() {
     return writes_.size();
   }
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.v1.Write getWrites(int index) {
     return writes_.get(index);
   }
+
   /**
    *
    *
@@ -294,6 +304,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STREAM_TOKEN_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString streamToken_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -349,6 +360,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -365,12 +377,14 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -384,6 +398,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -404,6 +419,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -628,6 +644,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -947,6 +964,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -971,6 +989,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -995,6 +1014,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1038,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1058,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1085,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object streamId_ = "";
+
     /**
      *
      *
@@ -1087,6 +1110,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1111,6 +1135,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1134,6 +1159,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1179,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1242,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1236,6 +1264,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1286,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1284,6 +1314,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1339,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1335,6 +1367,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1395,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1420,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1445,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1435,6 +1471,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1496,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1521,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1500,6 +1539,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Write.Builder getWritesBuilder(int index) {
       return getWritesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1521,6 +1561,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1543,6 +1584,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(writes_);
       }
     }
+
     /**
      *
      *
@@ -1560,6 +1602,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Write.Builder addWritesBuilder() {
       return getWritesFieldBuilder().addBuilder(com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1578,6 +1621,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       return getWritesFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1614,6 +1658,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString streamToken_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1642,6 +1687,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStreamToken() {
       return streamToken_;
     }
+
     /**
      *
      *
@@ -1676,6 +1722,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1732,6 +1779,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1748,12 +1796,14 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1767,6 +1817,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1787,6 +1838,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1813,6 +1865,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1829,12 +1882,14 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000010;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1855,6 +1910,7 @@ public final class WriteRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000010;
       return this;
     }
+
     /**
      *
      *

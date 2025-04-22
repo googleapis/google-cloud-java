@@ -34,6 +34,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.firestore.v1.PartitionQueryRequest)
     PartitionQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PartitionQueryRequest.newBuilder() to construct.
   private PartitionQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     private QueryTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     private ConsistencySelectorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -161,6 +164,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -187,6 +191,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -215,6 +220,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int STRUCTURED_QUERY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
   public boolean hasStructuredQuery() {
     return queryTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -254,6 +261,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -276,6 +284,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PARTITION_COUNT_FIELD_NUMBER = 3;
   private long partitionCount_ = 0L;
+
   /**
    *
    *
@@ -303,6 +312,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -338,6 +348,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -376,6 +387,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -418,6 +431,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
   public boolean hasReadTime() {
     return consistencySelectorCase_ == 6;
   }
+
   /**
    *
    *
@@ -440,6 +454,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -695,6 +710,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1006,6 +1022,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1031,6 +1048,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1074,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1099,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1120,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1152,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
             com.google.firestore.v1.StructuredQuery.Builder,
             com.google.firestore.v1.StructuredQueryOrBuilder>
         structuredQueryBuilder_;
+
     /**
      *
      *
@@ -1149,6 +1171,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public boolean hasStructuredQuery() {
       return queryTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1177,6 +1200,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1202,6 +1226,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1225,6 +1250,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1286,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       queryTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1288,6 +1315,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1331,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public com.google.firestore.v1.StructuredQuery.Builder getStructuredQueryBuilder() {
       return getStructuredQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1326,6 +1355,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1393,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     }
 
     private long partitionCount_;
+
     /**
      *
      *
@@ -1385,6 +1416,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public long getPartitionCount() {
       return partitionCount_;
     }
+
     /**
      *
      *
@@ -1411,6 +1443,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1437,6 +1470,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1471,6 +1505,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1505,6 +1540,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1538,6 +1574,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1604,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1603,6 +1641,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1624,6 +1663,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1649,6 +1689,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1678,6 +1719,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1697,6 +1739,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public boolean hasReadTime() {
       return consistencySelectorCase_ == 6;
     }
+
     /**
      *
      *
@@ -1726,6 +1769,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1752,6 +1796,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       consistencySelectorCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1775,6 +1820,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       consistencySelectorCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1811,6 +1857,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       consistencySelectorCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1840,6 +1887,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1856,6 +1904,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1880,6 +1929,7 @@ public final class PartitionQueryRequest extends com.google.protobuf.GeneratedMe
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *

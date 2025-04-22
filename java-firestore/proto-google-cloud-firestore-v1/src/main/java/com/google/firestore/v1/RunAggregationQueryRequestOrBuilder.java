@@ -41,6 +41,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the structuredAggregationQuery field is set.
    */
   boolean hasStructuredAggregationQuery();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The structuredAggregationQuery.
    */
   com.google.firestore.v1.StructuredAggregationQuery getStructuredAggregationQuery();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the newTransaction field is set.
    */
   boolean hasNewTransaction();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The newTransaction.
    */
   com.google.firestore.v1.TransactionOptions getNewTransaction();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the explainOptions field is set.
    */
   boolean hasExplainOptions();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The explainOptions.
    */
   com.google.firestore.v1.ExplainOptions getExplainOptions();
+
   /**
    *
    *

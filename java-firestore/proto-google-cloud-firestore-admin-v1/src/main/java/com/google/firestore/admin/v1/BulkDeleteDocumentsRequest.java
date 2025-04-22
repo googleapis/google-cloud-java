@@ -42,6 +42,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.BulkDeleteDocumentsRequest)
     BulkDeleteDocumentsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkDeleteDocumentsRequest.newBuilder() to construct.
   private BulkDeleteDocumentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList collectionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getCollectionIdsList() {
     return collectionIds_;
   }
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public int getCollectionIdsCount() {
     return collectionIds_.size();
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public java.lang.String getCollectionIds(int index) {
     return collectionIds_.get(index);
   }
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList namespaceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getNamespaceIdsList() {
     return namespaceIds_;
   }
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public int getNamespaceIdsCount() {
     return namespaceIds_.size();
   }
+
   /**
    *
    *
@@ -282,6 +292,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
   public java.lang.String getNamespaceIds(int index) {
     return namespaceIds_.get(index);
   }
+
   /**
    *
    *
@@ -499,6 +510,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -736,6 +748,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -761,6 +774,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +800,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +825,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +846,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -883,6 +901,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       collectionIds_.makeImmutable();
       return collectionIds_;
     }
+
     /**
      *
      *
@@ -900,6 +919,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public int getCollectionIdsCount() {
       return collectionIds_.size();
     }
+
     /**
      *
      *
@@ -918,6 +938,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public java.lang.String getCollectionIds(int index) {
       return collectionIds_.get(index);
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getCollectionIdsBytes(int index) {
       return collectionIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -962,6 +984,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -987,6 +1010,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1033,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1092,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1090,6 +1117,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       namespaceIds_.makeImmutable();
       return namespaceIds_;
     }
+
     /**
      *
      *
@@ -1113,6 +1141,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public int getNamespaceIdsCount() {
       return namespaceIds_.size();
     }
+
     /**
      *
      *
@@ -1137,6 +1166,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public java.lang.String getNamespaceIds(int index) {
       return namespaceIds_.get(index);
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getNamespaceIdsBytes(int index) {
       return namespaceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1193,6 +1224,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1224,6 +1256,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1285,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class BulkDeleteDocumentsRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

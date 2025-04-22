@@ -33,6 +33,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.CommitRequest)
     CommitRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CommitRequest.newBuilder() to construct.
   private CommitRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.Write> writes_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.firestore.v1.Write> getWritesList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.firestore.v1.WriteOrBuilder> getWritesOrBuilderList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   public int getWritesCount() {
     return writes_.size();
   }
+
   /**
    *
    *
@@ -182,6 +189,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.v1.Write getWrites(int index) {
     return writes_.get(index);
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRANSACTION_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -393,6 +402,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +658,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +706,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -810,6 +826,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +942,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +964,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +986,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1009,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1068,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Write.Builder getWritesBuilder(int index) {
       return getWritesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1059,6 +1087,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return writesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1107,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(writes_);
       }
     }
+
     /**
      *
      *
@@ -1092,6 +1122,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Write.Builder addWritesBuilder() {
       return getWritesFieldBuilder().addBuilder(com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1107,6 +1138,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       return getWritesFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1140,6 +1172,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1155,6 +1188,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }
+
     /**
      *
      *
@@ -1176,6 +1210,7 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

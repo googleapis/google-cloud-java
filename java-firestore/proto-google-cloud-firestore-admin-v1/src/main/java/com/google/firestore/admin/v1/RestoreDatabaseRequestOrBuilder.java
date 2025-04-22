@@ -39,6 +39,7 @@ public interface RestoreDatabaseRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface RestoreDatabaseRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface RestoreDatabaseRequestOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public interface RestoreDatabaseRequestOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public interface RestoreDatabaseRequestOrBuilder
    * @return The encryptionConfig.
    */
   com.google.firestore.admin.v1.Database.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *

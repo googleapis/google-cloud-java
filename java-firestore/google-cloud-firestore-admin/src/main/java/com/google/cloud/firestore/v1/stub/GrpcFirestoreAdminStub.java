@@ -36,12 +36,16 @@ import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
 import com.google.firestore.admin.v1.CreateIndexRequest;
+import com.google.firestore.admin.v1.CreateUserCredsRequest;
 import com.google.firestore.admin.v1.Database;
 import com.google.firestore.admin.v1.DeleteBackupRequest;
 import com.google.firestore.admin.v1.DeleteBackupScheduleRequest;
 import com.google.firestore.admin.v1.DeleteDatabaseMetadata;
 import com.google.firestore.admin.v1.DeleteDatabaseRequest;
 import com.google.firestore.admin.v1.DeleteIndexRequest;
+import com.google.firestore.admin.v1.DeleteUserCredsRequest;
+import com.google.firestore.admin.v1.DisableUserCredsRequest;
+import com.google.firestore.admin.v1.EnableUserCredsRequest;
 import com.google.firestore.admin.v1.ExportDocumentsMetadata;
 import com.google.firestore.admin.v1.ExportDocumentsRequest;
 import com.google.firestore.admin.v1.ExportDocumentsResponse;
@@ -52,6 +56,7 @@ import com.google.firestore.admin.v1.GetBackupScheduleRequest;
 import com.google.firestore.admin.v1.GetDatabaseRequest;
 import com.google.firestore.admin.v1.GetFieldRequest;
 import com.google.firestore.admin.v1.GetIndexRequest;
+import com.google.firestore.admin.v1.GetUserCredsRequest;
 import com.google.firestore.admin.v1.ImportDocumentsMetadata;
 import com.google.firestore.admin.v1.ImportDocumentsRequest;
 import com.google.firestore.admin.v1.Index;
@@ -66,12 +71,16 @@ import com.google.firestore.admin.v1.ListFieldsRequest;
 import com.google.firestore.admin.v1.ListFieldsResponse;
 import com.google.firestore.admin.v1.ListIndexesRequest;
 import com.google.firestore.admin.v1.ListIndexesResponse;
+import com.google.firestore.admin.v1.ListUserCredsRequest;
+import com.google.firestore.admin.v1.ListUserCredsResponse;
+import com.google.firestore.admin.v1.ResetUserPasswordRequest;
 import com.google.firestore.admin.v1.RestoreDatabaseMetadata;
 import com.google.firestore.admin.v1.RestoreDatabaseRequest;
 import com.google.firestore.admin.v1.UpdateBackupScheduleRequest;
 import com.google.firestore.admin.v1.UpdateDatabaseMetadata;
 import com.google.firestore.admin.v1.UpdateDatabaseRequest;
 import com.google.firestore.admin.v1.UpdateFieldRequest;
+import com.google.firestore.admin.v1.UserCreds;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
@@ -227,6 +236,76 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateUserCredsRequest, UserCreds>
+      createUserCredsMethodDescriptor =
+          MethodDescriptor.<CreateUserCredsRequest, UserCreds>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/CreateUserCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetUserCredsRequest, UserCreds>
+      getUserCredsMethodDescriptor =
+          MethodDescriptor.<GetUserCredsRequest, UserCreds>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetUserCreds")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListUserCredsRequest, ListUserCredsResponse>
+      listUserCredsMethodDescriptor =
+          MethodDescriptor.<ListUserCredsRequest, ListUserCredsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/ListUserCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListUserCredsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<EnableUserCredsRequest, UserCreds>
+      enableUserCredsMethodDescriptor =
+          MethodDescriptor.<EnableUserCredsRequest, UserCreds>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/EnableUserCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(EnableUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DisableUserCredsRequest, UserCreds>
+      disableUserCredsMethodDescriptor =
+          MethodDescriptor.<DisableUserCredsRequest, UserCreds>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/DisableUserCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DisableUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ResetUserPasswordRequest, UserCreds>
+      resetUserPasswordMethodDescriptor =
+          MethodDescriptor.<ResetUserPasswordRequest, UserCreds>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/ResetUserPassword")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ResetUserPasswordRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteUserCredsRequest, Empty>
+      deleteUserCredsMethodDescriptor =
+          MethodDescriptor.<DeleteUserCredsRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/DeleteUserCreds")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteUserCredsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
       MethodDescriptor.<GetBackupRequest, Backup>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -350,6 +429,13 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
   private final UnaryCallable<DeleteDatabaseRequest, Operation> deleteDatabaseCallable;
   private final OperationCallable<DeleteDatabaseRequest, Database, DeleteDatabaseMetadata>
       deleteDatabaseOperationCallable;
+  private final UnaryCallable<CreateUserCredsRequest, UserCreds> createUserCredsCallable;
+  private final UnaryCallable<GetUserCredsRequest, UserCreds> getUserCredsCallable;
+  private final UnaryCallable<ListUserCredsRequest, ListUserCredsResponse> listUserCredsCallable;
+  private final UnaryCallable<EnableUserCredsRequest, UserCreds> enableUserCredsCallable;
+  private final UnaryCallable<DisableUserCredsRequest, UserCreds> disableUserCredsCallable;
+  private final UnaryCallable<ResetUserPasswordRequest, UserCreds> resetUserPasswordCallable;
+  private final UnaryCallable<DeleteUserCredsRequest, Empty> deleteUserCredsCallable;
   private final UnaryCallable<GetBackupRequest, Backup> getBackupCallable;
   private final UnaryCallable<ListBackupsRequest, ListBackupsResponse> listBackupsCallable;
   private final UnaryCallable<DeleteBackupRequest, Empty> deleteBackupCallable;
@@ -559,6 +645,76 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateUserCredsRequest, UserCreds> createUserCredsTransportSettings =
+        GrpcCallSettings.<CreateUserCredsRequest, UserCreds>newBuilder()
+            .setMethodDescriptor(createUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetUserCredsRequest, UserCreds> getUserCredsTransportSettings =
+        GrpcCallSettings.<GetUserCredsRequest, UserCreds>newBuilder()
+            .setMethodDescriptor(getUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListUserCredsRequest, ListUserCredsResponse> listUserCredsTransportSettings =
+        GrpcCallSettings.<ListUserCredsRequest, ListUserCredsResponse>newBuilder()
+            .setMethodDescriptor(listUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<EnableUserCredsRequest, UserCreds> enableUserCredsTransportSettings =
+        GrpcCallSettings.<EnableUserCredsRequest, UserCreds>newBuilder()
+            .setMethodDescriptor(enableUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DisableUserCredsRequest, UserCreds> disableUserCredsTransportSettings =
+        GrpcCallSettings.<DisableUserCredsRequest, UserCreds>newBuilder()
+            .setMethodDescriptor(disableUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ResetUserPasswordRequest, UserCreds> resetUserPasswordTransportSettings =
+        GrpcCallSettings.<ResetUserPasswordRequest, UserCreds>newBuilder()
+            .setMethodDescriptor(resetUserPasswordMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteUserCredsRequest, Empty> deleteUserCredsTransportSettings =
+        GrpcCallSettings.<DeleteUserCredsRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteUserCredsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetBackupRequest, Backup> getBackupTransportSettings =
         GrpcCallSettings.<GetBackupRequest, Backup>newBuilder()
             .setMethodDescriptor(getBackupMethodDescriptor)
@@ -756,6 +912,29 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
             settings.deleteDatabaseOperationSettings(),
             clientContext,
             operationsStub);
+    this.createUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            createUserCredsTransportSettings, settings.createUserCredsSettings(), clientContext);
+    this.getUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            getUserCredsTransportSettings, settings.getUserCredsSettings(), clientContext);
+    this.listUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            listUserCredsTransportSettings, settings.listUserCredsSettings(), clientContext);
+    this.enableUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            enableUserCredsTransportSettings, settings.enableUserCredsSettings(), clientContext);
+    this.disableUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            disableUserCredsTransportSettings, settings.disableUserCredsSettings(), clientContext);
+    this.resetUserPasswordCallable =
+        callableFactory.createUnaryCallable(
+            resetUserPasswordTransportSettings,
+            settings.resetUserPasswordSettings(),
+            clientContext);
+    this.deleteUserCredsCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserCredsTransportSettings, settings.deleteUserCredsSettings(), clientContext);
     this.getBackupCallable =
         callableFactory.createUnaryCallable(
             getBackupTransportSettings, settings.getBackupSettings(), clientContext);
@@ -940,6 +1119,41 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
   public OperationCallable<DeleteDatabaseRequest, Database, DeleteDatabaseMetadata>
       deleteDatabaseOperationCallable() {
     return deleteDatabaseOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateUserCredsRequest, UserCreds> createUserCredsCallable() {
+    return createUserCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetUserCredsRequest, UserCreds> getUserCredsCallable() {
+    return getUserCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUserCredsRequest, ListUserCredsResponse> listUserCredsCallable() {
+    return listUserCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<EnableUserCredsRequest, UserCreds> enableUserCredsCallable() {
+    return enableUserCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<DisableUserCredsRequest, UserCreds> disableUserCredsCallable() {
+    return disableUserCredsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ResetUserPasswordRequest, UserCreds> resetUserPasswordCallable() {
+    return resetUserPasswordCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserCredsRequest, Empty> deleteUserCredsCallable() {
+    return deleteUserCredsCallable;
   }
 
   @Override

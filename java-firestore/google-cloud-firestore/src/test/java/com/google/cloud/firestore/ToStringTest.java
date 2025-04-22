@@ -31,7 +31,9 @@ import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.MockitoJUnitRunner;
 
-/** @author Eran Leshem */
+/**
+ * @author Eran Leshem
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class ToStringTest {
 

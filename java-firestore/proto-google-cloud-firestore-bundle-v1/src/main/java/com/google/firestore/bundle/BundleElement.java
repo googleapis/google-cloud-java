@@ -37,6 +37,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.bundle.BundleElement)
     BundleElementOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BundleElement.newBuilder() to construct.
   private BundleElement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     private ElementTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -121,6 +123,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int METADATA_FIELD_NUMBER = 1;
+
   /**
    * <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code>
    *
@@ -130,6 +133,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMetadata() {
     return elementTypeCase_ == 1;
   }
+
   /**
    * <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code>
    *
@@ -142,6 +146,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.bundle.BundleMetadata.getDefaultInstance();
   }
+
   /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
   @java.lang.Override
   public com.google.firestore.bundle.BundleMetadataOrBuilder getMetadataOrBuilder() {
@@ -152,6 +157,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NAMED_QUERY_FIELD_NUMBER = 2;
+
   /**
    * <code>.google.firestore.bundle.NamedQuery named_query = 2;</code>
    *
@@ -161,6 +167,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNamedQuery() {
     return elementTypeCase_ == 2;
   }
+
   /**
    * <code>.google.firestore.bundle.NamedQuery named_query = 2;</code>
    *
@@ -173,6 +180,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.bundle.NamedQuery.getDefaultInstance();
   }
+
   /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
   @java.lang.Override
   public com.google.firestore.bundle.NamedQueryOrBuilder getNamedQueryOrBuilder() {
@@ -183,6 +191,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_METADATA_FIELD_NUMBER = 3;
+
   /**
    * <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code>
    *
@@ -192,6 +201,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentMetadata() {
     return elementTypeCase_ == 3;
   }
+
   /**
    * <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code>
    *
@@ -204,6 +214,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.bundle.BundledDocumentMetadata.getDefaultInstance();
   }
+
   /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
   @java.lang.Override
   public com.google.firestore.bundle.BundledDocumentMetadataOrBuilder
@@ -215,6 +226,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_FIELD_NUMBER = 4;
+
   /**
    * <code>.google.firestore.v1.Document document = 4;</code>
    *
@@ -224,6 +236,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocument() {
     return elementTypeCase_ == 4;
   }
+
   /**
    * <code>.google.firestore.v1.Document document = 4;</code>
    *
@@ -236,6 +249,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.Document.getDefaultInstance();
   }
+
   /** <code>.google.firestore.v1.Document document = 4;</code> */
   @java.lang.Override
   public com.google.firestore.v1.DocumentOrBuilder getDocumentOrBuilder() {
@@ -464,6 +478,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +752,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.bundle.BundleMetadata.Builder,
             com.google.firestore.bundle.BundleMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      * <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code>
      *
@@ -746,6 +762,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMetadata() {
       return elementTypeCase_ == 1;
     }
+
     /**
      * <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code>
      *
@@ -765,6 +782,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.BundleMetadata.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     public Builder setMetadata(com.google.firestore.bundle.BundleMetadata value) {
       if (metadataBuilder_ == null) {
@@ -779,6 +797,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 1;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     public Builder setMetadata(com.google.firestore.bundle.BundleMetadata.Builder builderForValue) {
       if (metadataBuilder_ == null) {
@@ -790,6 +809,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 1;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     public Builder mergeMetadata(com.google.firestore.bundle.BundleMetadata value) {
       if (metadataBuilder_ == null) {
@@ -814,6 +834,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 1;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     public Builder clearMetadata() {
       if (metadataBuilder_ == null) {
@@ -831,10 +852,12 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     public com.google.firestore.bundle.BundleMetadata.Builder getMetadataBuilder() {
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     @java.lang.Override
     public com.google.firestore.bundle.BundleMetadataOrBuilder getMetadataOrBuilder() {
@@ -847,6 +870,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.BundleMetadata.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.BundleMetadata metadata = 1;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.bundle.BundleMetadata,
@@ -877,6 +901,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.bundle.NamedQuery.Builder,
             com.google.firestore.bundle.NamedQueryOrBuilder>
         namedQueryBuilder_;
+
     /**
      * <code>.google.firestore.bundle.NamedQuery named_query = 2;</code>
      *
@@ -886,6 +911,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNamedQuery() {
       return elementTypeCase_ == 2;
     }
+
     /**
      * <code>.google.firestore.bundle.NamedQuery named_query = 2;</code>
      *
@@ -905,6 +931,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.NamedQuery.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     public Builder setNamedQuery(com.google.firestore.bundle.NamedQuery value) {
       if (namedQueryBuilder_ == null) {
@@ -919,6 +946,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 2;
       return this;
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     public Builder setNamedQuery(com.google.firestore.bundle.NamedQuery.Builder builderForValue) {
       if (namedQueryBuilder_ == null) {
@@ -930,6 +958,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 2;
       return this;
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     public Builder mergeNamedQuery(com.google.firestore.bundle.NamedQuery value) {
       if (namedQueryBuilder_ == null) {
@@ -954,6 +983,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 2;
       return this;
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     public Builder clearNamedQuery() {
       if (namedQueryBuilder_ == null) {
@@ -971,10 +1001,12 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     public com.google.firestore.bundle.NamedQuery.Builder getNamedQueryBuilder() {
       return getNamedQueryFieldBuilder().getBuilder();
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     @java.lang.Override
     public com.google.firestore.bundle.NamedQueryOrBuilder getNamedQueryOrBuilder() {
@@ -987,6 +1019,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.NamedQuery.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.NamedQuery named_query = 2;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.bundle.NamedQuery,
@@ -1017,6 +1050,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.bundle.BundledDocumentMetadata.Builder,
             com.google.firestore.bundle.BundledDocumentMetadataOrBuilder>
         documentMetadataBuilder_;
+
     /**
      * <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code>
      *
@@ -1026,6 +1060,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentMetadata() {
       return elementTypeCase_ == 3;
     }
+
     /**
      * <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code>
      *
@@ -1045,6 +1080,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.BundledDocumentMetadata.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     public Builder setDocumentMetadata(com.google.firestore.bundle.BundledDocumentMetadata value) {
       if (documentMetadataBuilder_ == null) {
@@ -1059,6 +1095,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 3;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     public Builder setDocumentMetadata(
         com.google.firestore.bundle.BundledDocumentMetadata.Builder builderForValue) {
@@ -1071,6 +1108,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 3;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     public Builder mergeDocumentMetadata(
         com.google.firestore.bundle.BundledDocumentMetadata value) {
@@ -1097,6 +1135,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 3;
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     public Builder clearDocumentMetadata() {
       if (documentMetadataBuilder_ == null) {
@@ -1114,11 +1153,13 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     public com.google.firestore.bundle.BundledDocumentMetadata.Builder
         getDocumentMetadataBuilder() {
       return getDocumentMetadataFieldBuilder().getBuilder();
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     @java.lang.Override
     public com.google.firestore.bundle.BundledDocumentMetadataOrBuilder
@@ -1132,6 +1173,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.bundle.BundledDocumentMetadata.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.bundle.BundledDocumentMetadata document_metadata = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.bundle.BundledDocumentMetadata,
@@ -1162,6 +1204,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Document.Builder,
             com.google.firestore.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      * <code>.google.firestore.v1.Document document = 4;</code>
      *
@@ -1171,6 +1214,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocument() {
       return elementTypeCase_ == 4;
     }
+
     /**
      * <code>.google.firestore.v1.Document document = 4;</code>
      *
@@ -1190,6 +1234,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     public Builder setDocument(com.google.firestore.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -1204,6 +1249,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 4;
       return this;
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     public Builder setDocument(com.google.firestore.v1.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
@@ -1215,6 +1261,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 4;
       return this;
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     public Builder mergeDocument(com.google.firestore.v1.Document value) {
       if (documentBuilder_ == null) {
@@ -1239,6 +1286,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       elementTypeCase_ = 4;
       return this;
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     public Builder clearDocument() {
       if (documentBuilder_ == null) {
@@ -1256,10 +1304,12 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     public com.google.firestore.v1.Document.Builder getDocumentBuilder() {
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     @java.lang.Override
     public com.google.firestore.v1.DocumentOrBuilder getDocumentOrBuilder() {
@@ -1272,6 +1322,7 @@ public final class BundleElement extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /** <code>.google.firestore.v1.Document document = 4;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.firestore.v1.Document,

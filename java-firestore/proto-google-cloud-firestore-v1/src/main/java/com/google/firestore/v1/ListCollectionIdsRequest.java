@@ -34,6 +34,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ListCollectionIdsRequest)
     ListCollectionIdsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListCollectionIdsRequest.newBuilder() to construct.
   private ListCollectionIdsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     private ConsistencySelectorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -214,6 +220,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -240,6 +247,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -259,6 +267,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
   public boolean hasReadTime() {
     return consistencySelectorCase_ == 4;
   }
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -503,6 +513,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -761,6 +772,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -786,6 +798,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -811,6 +824,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -835,6 +849,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +870,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +898,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -916,6 +934,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +954,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -958,6 +978,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -981,6 +1002,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1003,6 +1025,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1021,6 +1044,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1074,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1069,6 +1094,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     public boolean hasReadTime() {
       return consistencySelectorCase_ == 4;
     }
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1124,6 +1151,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       consistencySelectorCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       consistencySelectorCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1212,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       consistencySelectorCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1242,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1259,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1252,6 +1284,7 @@ public final class ListCollectionIdsRequest extends com.google.protobuf.Generate
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *

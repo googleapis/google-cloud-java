@@ -34,6 +34,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.firestore.v1.RunAggregationQueryResponse)
     RunAggregationQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunAggregationQueryResponse.newBuilder() to construct.
   private RunAggregationQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int RESULT_FIELD_NUMBER = 1;
   private com.google.firestore.v1.AggregationResult result_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
   public boolean hasResult() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         ? com.google.firestore.v1.AggregationResult.getDefaultInstance()
         : result_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
 
   public static final int TRANSACTION_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
 
   public static final int READ_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -211,6 +219,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
 
   public static final int EXPLAIN_METRICS_FIELD_NUMBER = 10;
   private com.google.firestore.v1.ExplainMetrics explainMetrics_;
+
   /**
    *
    *
@@ -228,6 +237,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
   public boolean hasExplainMetrics() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +257,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         ? com.google.firestore.v1.ExplainMetrics.getDefaultInstance()
         : explainMetrics_;
   }
+
   /**
    *
    *
@@ -466,6 +477,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -722,6 +734,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             com.google.firestore.v1.AggregationResult.Builder,
             com.google.firestore.v1.AggregationResultOrBuilder>
         resultBuilder_;
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public boolean hasResult() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -760,6 +774,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         return resultBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +821,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             : result_;
       }
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     }
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -938,6 +960,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1035,6 +1061,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1090,6 +1118,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1153,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1180,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1202,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1266,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             com.google.firestore.v1.ExplainMetrics.Builder,
             com.google.firestore.v1.ExplainMetricsOrBuilder>
         explainMetricsBuilder_;
+
     /**
      *
      *
@@ -1249,6 +1283,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
     public boolean hasExplainMetrics() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1271,6 +1306,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
         return explainMetricsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1295,6 +1331,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1354,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1346,6 +1384,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1367,6 +1406,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1383,6 +1423,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
       onChanged();
       return getExplainMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1403,6 +1444,7 @@ public final class RunAggregationQueryResponse extends com.google.protobuf.Gener
             : explainMetrics_;
       }
     }
+
     /**
      *
      *

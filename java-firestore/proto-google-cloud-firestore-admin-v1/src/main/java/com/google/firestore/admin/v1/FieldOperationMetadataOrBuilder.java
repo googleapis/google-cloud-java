@@ -36,6 +36,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The field.
    */
   java.lang.String getField();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface FieldOperationMetadataOrBuilder
    */
   java.util.List<com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta>
       getIndexConfigDeltasList();
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface FieldOperationMetadataOrBuilder
    */
   com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDelta getIndexConfigDeltas(
       int index);
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface FieldOperationMetadataOrBuilder
    * </code>
    */
   int getIndexConfigDeltasCount();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface FieldOperationMetadataOrBuilder
   java.util.List<
           ? extends com.google.firestore.admin.v1.FieldOperationMetadata.IndexConfigDeltaOrBuilder>
       getIndexConfigDeltasOrBuilderList();
+
   /**
    *
    *
@@ -212,6 +221,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -237,6 +247,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return Whether the progressDocuments field is set.
    */
   boolean hasProgressDocuments();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The progressDocuments.
    */
   com.google.firestore.admin.v1.Progress getProgressDocuments();
+
   /**
    *
    *
@@ -272,6 +284,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return Whether the progressBytes field is set.
    */
   boolean hasProgressBytes();
+
   /**
    *
    *
@@ -284,6 +297,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The progressBytes.
    */
   com.google.firestore.admin.v1.Progress getProgressBytes();
+
   /**
    *
    *
@@ -308,6 +322,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return Whether the ttlConfigDelta field is set.
    */
   boolean hasTtlConfigDelta();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface FieldOperationMetadataOrBuilder
    * @return The ttlConfigDelta.
    */
   com.google.firestore.admin.v1.FieldOperationMetadata.TtlConfigDelta getTtlConfigDelta();
+
   /**
    *
    *

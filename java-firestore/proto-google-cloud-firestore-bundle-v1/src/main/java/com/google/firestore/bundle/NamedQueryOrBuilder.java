@@ -38,6 +38,7 @@ public interface NamedQueryOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface NamedQueryOrBuilder
    * @return Whether the bundledQuery field is set.
    */
   boolean hasBundledQuery();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface NamedQueryOrBuilder
    * @return The bundledQuery.
    */
   com.google.firestore.bundle.BundledQuery getBundledQuery();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface NamedQueryOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface NamedQueryOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

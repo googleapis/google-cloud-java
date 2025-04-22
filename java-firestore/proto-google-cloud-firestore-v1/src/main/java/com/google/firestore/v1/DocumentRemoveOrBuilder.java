@@ -37,6 +37,7 @@ public interface DocumentRemoveOrBuilder
    * @return The document.
    */
   java.lang.String getDocument();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface DocumentRemoveOrBuilder
    * @return A list containing the removedTargetIds.
    */
   java.util.List<java.lang.Integer> getRemovedTargetIdsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface DocumentRemoveOrBuilder
    * @return The count of removedTargetIds.
    */
   int getRemovedTargetIdsCount();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface DocumentRemoveOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface DocumentRemoveOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CreateDatabaseMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.CreateDatabaseMetadata)
     CreateDatabaseMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDatabaseMetadata.newBuilder() to construct.
   private CreateDatabaseMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class CreateDatabaseMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

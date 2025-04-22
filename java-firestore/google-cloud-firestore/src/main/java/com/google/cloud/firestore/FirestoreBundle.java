@@ -112,10 +112,7 @@ public final class FirestoreBundle {
       documents
           .get(documentName)
           .setMetadata(
-              documents
-                  .get(documentName)
-                  .getMetadata()
-                  .toBuilder()
+              documents.get(documentName).getMetadata().toBuilder()
                   .clearQueries()
                   .addAllQueries(queries)
                   .build());

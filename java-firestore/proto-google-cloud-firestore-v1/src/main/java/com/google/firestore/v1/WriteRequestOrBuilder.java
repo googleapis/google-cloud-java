@@ -38,6 +38,7 @@ public interface WriteRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface WriteRequestOrBuilder
    * @return The streamId.
    */
   java.lang.String getStreamId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface WriteRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 3;</code>
    */
   java.util.List<com.google.firestore.v1.Write> getWritesList();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface WriteRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 3;</code>
    */
   com.google.firestore.v1.Write getWrites(int index);
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface WriteRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 3;</code>
    */
   int getWritesCount();
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public interface WriteRequestOrBuilder
    * <code>repeated .google.firestore.v1.Write writes = 3;</code>
    */
   java.util.List<? extends com.google.firestore.v1.WriteOrBuilder> getWritesOrBuilderList();
+
   /**
    *
    *
@@ -194,6 +200,7 @@ public interface WriteRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -204,9 +211,11 @@ public interface WriteRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public interface WriteRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -231,6 +241,7 @@ public interface WriteRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

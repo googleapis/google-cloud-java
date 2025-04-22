@@ -34,6 +34,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.firestore.v1.BatchWriteRequest)
     BatchWriteRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchWriteRequest.newBuilder() to construct.
   private BatchWriteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.Write> writes_;
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.firestore.v1.Write> getWritesList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -168,6 +173,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.firestore.v1.WriteOrBuilder> getWritesOrBuilderList() {
     return writes_;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public int getWritesCount() {
     return writes_.size();
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public com.google.firestore.v1.Write getWrites(int index) {
     return writes_.get(index);
   }
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -262,12 +271,14 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -281,6 +292,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -509,6 +522,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -793,6 +807,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -839,6 +855,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +897,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +958,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return writesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -959,6 +979,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return writesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -979,6 +1000,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return writesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1005,6 +1027,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1028,6 +1051,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1080,6 +1105,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1129,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1153,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1150,6 +1178,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1196,6 +1226,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1243,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     public com.google.firestore.v1.Write.Builder getWritesBuilder(int index) {
       return getWritesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1232,6 +1264,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return writesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1286,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(writes_);
       }
     }
+
     /**
      *
      *
@@ -1269,6 +1303,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     public com.google.firestore.v1.Write.Builder addWritesBuilder() {
       return getWritesFieldBuilder().addBuilder(com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       return getWritesFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.Write.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1345,6 +1381,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1361,12 +1398,14 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1380,6 +1419,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1400,6 +1440,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1426,6 +1467,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1442,12 +1484,14 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1468,6 +1512,7 @@ public final class BatchWriteRequest extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

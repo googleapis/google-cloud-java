@@ -1336,8 +1336,9 @@ public class Query extends StreamableQuery<QuerySnapshot> {
         && fieldValues.length == 1
         && fieldValues[0] instanceof DocumentReference) {
       LOGGER.warning(
-          "Warning: Passing DocumentReference into a cursor without orderBy clause is not an intended "
-              + "behavior. Please use DocumentSnapshot or add an explicit orderBy on document key field.");
+          "Warning: Passing DocumentReference into a cursor without orderBy clause is not an"
+              + " intended behavior. Please use DocumentSnapshot or add an explicit orderBy on"
+              + " document key field.");
     }
   }
 
@@ -1385,9 +1386,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       if (options.getStartCursor() != null) {
         // Swap the cursors to match the flipped query ordering.
         Cursor cursor =
-            options
-                .getStartCursor()
-                .toBuilder()
+            options.getStartCursor().toBuilder()
                 .setBefore(!options.getStartCursor().getBefore())
                 .build();
         structuredQuery.setEndAt(cursor);
@@ -1396,9 +1395,7 @@ public class Query extends StreamableQuery<QuerySnapshot> {
       if (options.getEndCursor() != null) {
         // Swap the cursors to match the flipped query ordering.
         Cursor cursor =
-            options
-                .getEndCursor()
-                .toBuilder()
+            options.getEndCursor().toBuilder()
                 .setBefore(!options.getEndCursor().getBefore())
                 .build();
         structuredQuery.setStartAt(cursor);

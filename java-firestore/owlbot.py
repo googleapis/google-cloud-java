@@ -93,5 +93,6 @@ java.common_templates(excludes=[
     '.kokoro/requirements.in',
     '.kokoro/requirements.txt',
     '.github/CODEOWNERS',
+    '.github/workflows/samples.yaml',
     'renovate.json'
 ])

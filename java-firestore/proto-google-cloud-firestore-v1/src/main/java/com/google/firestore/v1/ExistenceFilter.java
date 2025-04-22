@@ -33,6 +33,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ExistenceFilter)
     ExistenceFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExistenceFilter.newBuilder() to construct.
   private ExistenceFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int TARGET_ID_FIELD_NUMBER = 1;
   private int targetId_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
 
   public static final int COUNT_FIELD_NUMBER = 2;
   private int count_ = 0;
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
 
   public static final int UNCHANGED_NAMES_FIELD_NUMBER = 3;
   private com.google.firestore.v1.BloomFilter unchangedNames_;
+
   /**
    *
    *
@@ -134,6 +138,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
   public boolean hasUnchangedNames() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
         ? com.google.firestore.v1.BloomFilter.getDefaultInstance()
         : unchangedNames_;
   }
+
   /**
    *
    *
@@ -368,6 +374,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -592,6 +599,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int targetId_;
+
     /**
      *
      *
@@ -607,6 +615,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     public int getTargetId() {
       return targetId_;
     }
+
     /**
      *
      *
@@ -626,6 +635,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     }
 
     private int count_;
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     public int getCount() {
       return count_;
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.BloomFilter.Builder,
             com.google.firestore.v1.BloomFilterOrBuilder>
         unchangedNamesBuilder_;
+
     /**
      *
      *
@@ -754,6 +768,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
     public boolean hasUnchangedNames() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
         return unchangedNamesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +862,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +900,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getUnchangedNamesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -963,6 +984,7 @@ public final class ExistenceFilter extends com.google.protobuf.GeneratedMessageV
             : unchangedNames_;
       }
     }
+
     /**
      *
      *

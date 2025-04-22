@@ -36,6 +36,7 @@ public interface ValueOrBuilder
    * @return Whether the nullValue field is set.
    */
   boolean hasNullValue();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ValueOrBuilder
    * @return The enum numeric value on the wire for nullValue.
    */
   int getNullValueValue();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ValueOrBuilder
    * @return Whether the booleanValue field is set.
    */
   boolean hasBooleanValue();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface ValueOrBuilder
    * @return Whether the integerValue field is set.
    */
   boolean hasIntegerValue();
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface ValueOrBuilder
    * @return Whether the doubleValue field is set.
    */
   boolean hasDoubleValue();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface ValueOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public interface ValueOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface ValueOrBuilder
    * @return Whether the bytesValue field is set.
    */
   boolean hasBytesValue();
+
   /**
    *
    *
@@ -273,6 +283,7 @@ public interface ValueOrBuilder
    * @return Whether the referenceValue field is set.
    */
   boolean hasReferenceValue();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface ValueOrBuilder
    * @return The referenceValue.
    */
   java.lang.String getReferenceValue();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface ValueOrBuilder
    * @return Whether the geoPointValue field is set.
    */
   boolean hasGeoPointValue();
+
   /**
    *
    *
@@ -324,6 +337,7 @@ public interface ValueOrBuilder
    * @return The geoPointValue.
    */
   com.google.type.LatLng getGeoPointValue();
+
   /**
    *
    *
@@ -350,6 +364,7 @@ public interface ValueOrBuilder
    * @return Whether the arrayValue field is set.
    */
   boolean hasArrayValue();
+
   /**
    *
    *
@@ -365,6 +380,7 @@ public interface ValueOrBuilder
    * @return The arrayValue.
    */
   com.google.firestore.v1.ArrayValue getArrayValue();
+
   /**
    *
    *
@@ -391,6 +407,7 @@ public interface ValueOrBuilder
    * @return Whether the mapValue field is set.
    */
   boolean hasMapValue();
+
   /**
    *
    *
@@ -403,6 +420,7 @@ public interface ValueOrBuilder
    * @return The mapValue.
    */
   com.google.firestore.v1.MapValue getMapValue();
+
   /**
    *
    *

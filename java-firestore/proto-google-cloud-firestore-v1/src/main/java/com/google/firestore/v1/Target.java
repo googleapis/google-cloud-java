@@ -33,6 +33,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.Target)
     TargetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Target.newBuilder() to construct.
   private Target(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the documents.
      */
     java.util.List<java.lang.String> getDocumentsList();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return The count of documents.
      */
     int getDocumentsCount();
+
     /**
      *
      *
@@ -111,6 +114,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return The documents at the given index.
      */
     java.lang.String getDocuments(int index);
+
     /**
      *
      *
@@ -128,6 +132,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getDocumentsBytes(int index);
   }
+
   /**
    *
    *
@@ -142,6 +147,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.v1.Target.DocumentsTarget)
       DocumentsTargetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DocumentsTarget.newBuilder() to construct.
     private DocumentsTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -177,6 +183,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList documents_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -194,6 +201,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getDocumentsList() {
       return documents_;
     }
+
     /**
      *
      *
@@ -211,6 +219,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public int getDocumentsCount() {
       return documents_.size();
     }
+
     /**
      *
      *
@@ -229,6 +238,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getDocuments(int index) {
       return documents_.get(index);
     }
+
     /**
      *
      *
@@ -415,6 +425,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -617,6 +628,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -635,6 +647,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         documents_.makeImmutable();
         return documents_;
       }
+
       /**
        *
        *
@@ -652,6 +665,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       public int getDocumentsCount() {
         return documents_.size();
       }
+
       /**
        *
        *
@@ -670,6 +684,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getDocuments(int index) {
         return documents_.get(index);
       }
+
       /**
        *
        *
@@ -688,6 +703,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getDocumentsBytes(int index) {
         return documents_.getByteString(index);
       }
+
       /**
        *
        *
@@ -714,6 +730,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -739,6 +756,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -761,6 +779,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -782,6 +801,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -895,6 +915,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return The parent.
      */
     java.lang.String getParent();
+
     /**
      *
      *
@@ -925,6 +946,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the structuredQuery field is set.
      */
     boolean hasStructuredQuery();
+
     /**
      *
      *
@@ -937,6 +959,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      * @return The structuredQuery.
      */
     com.google.firestore.v1.StructuredQuery getStructuredQuery();
+
     /**
      *
      *
@@ -950,6 +973,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
     com.google.firestore.v1.Target.QueryTarget.QueryTypeCase getQueryTypeCase();
   }
+
   /**
    *
    *
@@ -964,6 +988,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.v1.Target.QueryTarget)
       QueryTargetOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use QueryTarget.newBuilder() to construct.
     private QueryTarget(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1010,6 +1035,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       private QueryTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1044,6 +1070,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -1072,6 +1099,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1102,6 +1130,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int STRUCTURED_QUERY_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1117,6 +1146,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructuredQuery() {
       return queryTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1135,6 +1165,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1336,6 +1367,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1568,6 +1600,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object parent_ = "";
+
       /**
        *
        *
@@ -1595,6 +1628,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1622,6 +1656,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1648,6 +1683,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1670,6 +1706,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1703,6 +1740,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.v1.StructuredQuery.Builder,
               com.google.firestore.v1.StructuredQueryOrBuilder>
           structuredQueryBuilder_;
+
       /**
        *
        *
@@ -1718,6 +1756,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStructuredQuery() {
         return queryTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -1743,6 +1782,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1765,6 +1805,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         queryTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1785,6 +1826,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         queryTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1817,6 +1859,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         queryTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1842,6 +1885,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1854,6 +1898,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       public com.google.firestore.v1.StructuredQuery.Builder getStructuredQueryBuilder() {
         return getStructuredQueryFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1874,6 +1919,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
           return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1989,6 +2035,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     private TargetTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2038,6 +2085,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     private ResumeTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2071,6 +2119,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int QUERY_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2086,6 +2135,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public boolean hasQuery() {
     return targetTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -2104,6 +2154,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.Target.QueryTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2122,6 +2173,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENTS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -2137,6 +2189,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocuments() {
     return targetTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -2155,6 +2208,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.Target.DocumentsTarget.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2173,6 +2227,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RESUME_TOKEN_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -2191,6 +2246,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public boolean hasResumeToken() {
     return resumeTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -2214,6 +2270,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -2231,6 +2288,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadTime() {
     return resumeTypeCase_ == 11;
   }
+
   /**
    *
    *
@@ -2251,6 +2309,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2272,6 +2331,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TARGET_ID_FIELD_NUMBER = 5;
   private int targetId_ = 0;
+
   /**
    *
    *
@@ -2306,6 +2366,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ONCE_FIELD_NUMBER = 6;
   private boolean once_ = false;
+
   /**
    *
    *
@@ -2324,6 +2385,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPECTED_COUNT_FIELD_NUMBER = 12;
   private com.google.protobuf.Int32Value expectedCount_;
+
   /**
    *
    *
@@ -2344,6 +2406,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpectedCount() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2366,6 +2429,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Int32Value.getDefaultInstance()
         : expectedCount_;
   }
+
   /**
    *
    *
@@ -2645,6 +2709,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2985,6 +3050,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Target.QueryTarget.Builder,
             com.google.firestore.v1.Target.QueryTargetOrBuilder>
         queryBuilder_;
+
     /**
      *
      *
@@ -3000,6 +3066,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasQuery() {
       return targetTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -3025,6 +3092,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.QueryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3047,6 +3115,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3066,6 +3135,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3098,6 +3168,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3123,6 +3194,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3135,6 +3207,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Target.QueryTarget.Builder getQueryBuilder() {
       return getQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3155,6 +3228,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.QueryTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3193,6 +3267,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Target.DocumentsTarget.Builder,
             com.google.firestore.v1.Target.DocumentsTargetOrBuilder>
         documentsBuilder_;
+
     /**
      *
      *
@@ -3208,6 +3283,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocuments() {
       return targetTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -3233,6 +3309,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.DocumentsTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3255,6 +3332,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3275,6 +3353,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3307,6 +3386,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       targetTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -3332,6 +3412,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3344,6 +3425,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Target.DocumentsTarget.Builder getDocumentsBuilder() {
       return getDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3364,6 +3446,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.DocumentsTarget.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3414,6 +3497,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasResumeToken() {
       return resumeTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -3434,6 +3518,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -3458,6 +3543,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3486,6 +3572,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -3503,6 +3590,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadTime() {
       return resumeTypeCase_ == 11;
     }
+
     /**
      *
      *
@@ -3530,6 +3618,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3554,6 +3643,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       resumeTypeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3575,6 +3665,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       resumeTypeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3608,6 +3699,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       resumeTypeCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -3635,6 +3727,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3649,6 +3742,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3671,6 +3765,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3705,6 +3800,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int targetId_;
+
     /**
      *
      *
@@ -3736,6 +3832,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public int getTargetId() {
       return targetId_;
     }
+
     /**
      *
      *
@@ -3771,6 +3868,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3806,6 +3904,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean once_;
+
     /**
      *
      *
@@ -3821,6 +3920,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean getOnce() {
       return once_;
     }
+
     /**
      *
      *
@@ -3840,6 +3940,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3864,6 +3965,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         expectedCountBuilder_;
+
     /**
      *
      *
@@ -3883,6 +3985,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpectedCount() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -3908,6 +4011,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
         return expectedCountBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3935,6 +4039,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3959,6 +4064,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3991,6 +4097,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4015,6 +4122,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4034,6 +4142,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpectedCountFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4057,6 +4166,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
             : expectedCount_;
       }
     }
+
     /**
      *
      *

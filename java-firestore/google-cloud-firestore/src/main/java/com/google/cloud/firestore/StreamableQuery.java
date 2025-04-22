@@ -89,6 +89,7 @@ public abstract class StreamableQuery<SnapshotType> {
   MetricsContext createMetricsContext(String methodName) {
     return getFirestore().getOptions().getMetricsUtil().createMetricsContext(methodName);
   }
+
   /**
    * Executes the query and returns the results as QuerySnapshot.
    *

@@ -711,6 +711,326 @@ public final class FirestoreAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.CreateUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getCreateUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateUserCreds",
+      requestType = com.google.firestore.admin.v1.CreateUserCredsRequest.class,
+      responseType = com.google.firestore.admin.v1.UserCreds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.CreateUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getCreateUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.CreateUserCredsRequest,
+            com.google.firestore.admin.v1.UserCreds>
+        getCreateUserCredsMethod;
+    if ((getCreateUserCredsMethod = FirestoreAdminGrpc.getCreateUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getCreateUserCredsMethod = FirestoreAdminGrpc.getCreateUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getCreateUserCredsMethod =
+              getCreateUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.CreateUserCredsRequest,
+                          com.google.firestore.admin.v1.UserCreds>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.CreateUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.UserCreds.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("CreateUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getCreateUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.GetUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getGetUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetUserCreds",
+      requestType = com.google.firestore.admin.v1.GetUserCredsRequest.class,
+      responseType = com.google.firestore.admin.v1.UserCreds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.GetUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getGetUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.GetUserCredsRequest,
+            com.google.firestore.admin.v1.UserCreds>
+        getGetUserCredsMethod;
+    if ((getGetUserCredsMethod = FirestoreAdminGrpc.getGetUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getGetUserCredsMethod = FirestoreAdminGrpc.getGetUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getGetUserCredsMethod =
+              getGetUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.GetUserCredsRequest,
+                          com.google.firestore.admin.v1.UserCreds>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.GetUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.UserCreds.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("GetUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getGetUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.ListUserCredsRequest,
+          com.google.firestore.admin.v1.ListUserCredsResponse>
+      getListUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListUserCreds",
+      requestType = com.google.firestore.admin.v1.ListUserCredsRequest.class,
+      responseType = com.google.firestore.admin.v1.ListUserCredsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.ListUserCredsRequest,
+          com.google.firestore.admin.v1.ListUserCredsResponse>
+      getListUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.ListUserCredsRequest,
+            com.google.firestore.admin.v1.ListUserCredsResponse>
+        getListUserCredsMethod;
+    if ((getListUserCredsMethod = FirestoreAdminGrpc.getListUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getListUserCredsMethod = FirestoreAdminGrpc.getListUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getListUserCredsMethod =
+              getListUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.ListUserCredsRequest,
+                          com.google.firestore.admin.v1.ListUserCredsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.ListUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.ListUserCredsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("ListUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getListUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.EnableUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getEnableUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "EnableUserCreds",
+      requestType = com.google.firestore.admin.v1.EnableUserCredsRequest.class,
+      responseType = com.google.firestore.admin.v1.UserCreds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.EnableUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getEnableUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.EnableUserCredsRequest,
+            com.google.firestore.admin.v1.UserCreds>
+        getEnableUserCredsMethod;
+    if ((getEnableUserCredsMethod = FirestoreAdminGrpc.getEnableUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getEnableUserCredsMethod = FirestoreAdminGrpc.getEnableUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getEnableUserCredsMethod =
+              getEnableUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.EnableUserCredsRequest,
+                          com.google.firestore.admin.v1.UserCreds>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "EnableUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.EnableUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.UserCreds.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("EnableUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getEnableUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.DisableUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getDisableUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DisableUserCreds",
+      requestType = com.google.firestore.admin.v1.DisableUserCredsRequest.class,
+      responseType = com.google.firestore.admin.v1.UserCreds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.DisableUserCredsRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getDisableUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.DisableUserCredsRequest,
+            com.google.firestore.admin.v1.UserCreds>
+        getDisableUserCredsMethod;
+    if ((getDisableUserCredsMethod = FirestoreAdminGrpc.getDisableUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getDisableUserCredsMethod = FirestoreAdminGrpc.getDisableUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getDisableUserCredsMethod =
+              getDisableUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.DisableUserCredsRequest,
+                          com.google.firestore.admin.v1.UserCreds>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DisableUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.DisableUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.UserCreds.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("DisableUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getDisableUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.ResetUserPasswordRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getResetUserPasswordMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ResetUserPassword",
+      requestType = com.google.firestore.admin.v1.ResetUserPasswordRequest.class,
+      responseType = com.google.firestore.admin.v1.UserCreds.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.ResetUserPasswordRequest,
+          com.google.firestore.admin.v1.UserCreds>
+      getResetUserPasswordMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.ResetUserPasswordRequest,
+            com.google.firestore.admin.v1.UserCreds>
+        getResetUserPasswordMethod;
+    if ((getResetUserPasswordMethod = FirestoreAdminGrpc.getResetUserPasswordMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getResetUserPasswordMethod = FirestoreAdminGrpc.getResetUserPasswordMethod) == null) {
+          FirestoreAdminGrpc.getResetUserPasswordMethod =
+              getResetUserPasswordMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.ResetUserPasswordRequest,
+                          com.google.firestore.admin.v1.UserCreds>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ResetUserPassword"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.ResetUserPasswordRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.UserCreds.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("ResetUserPassword"))
+                      .build();
+        }
+      }
+    }
+    return getResetUserPasswordMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.DeleteUserCredsRequest, com.google.protobuf.Empty>
+      getDeleteUserCredsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteUserCreds",
+      requestType = com.google.firestore.admin.v1.DeleteUserCredsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.DeleteUserCredsRequest, com.google.protobuf.Empty>
+      getDeleteUserCredsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.DeleteUserCredsRequest, com.google.protobuf.Empty>
+        getDeleteUserCredsMethod;
+    if ((getDeleteUserCredsMethod = FirestoreAdminGrpc.getDeleteUserCredsMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getDeleteUserCredsMethod = FirestoreAdminGrpc.getDeleteUserCredsMethod) == null) {
+          FirestoreAdminGrpc.getDeleteUserCredsMethod =
+              getDeleteUserCredsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.DeleteUserCredsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteUserCreds"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.DeleteUserCredsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("DeleteUserCreds"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteUserCredsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.firestore.admin.v1.GetBackupRequest, com.google.firestore.admin.v1.Backup>
       getGetBackupMethod;
 
@@ -1136,6 +1456,19 @@ public final class FirestoreAdminGrpc {
     return FirestoreAdminStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static FirestoreAdminBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<FirestoreAdminBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<FirestoreAdminBlockingV2Stub>() {
+          @java.lang.Override
+          public FirestoreAdminBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new FirestoreAdminBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return FirestoreAdminBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1443,6 +1776,107 @@ public final class FirestoreAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteDatabaseMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a user creds.
+     * </pre>
+     */
+    default void createUserCreds(
+        com.google.firestore.admin.v1.CreateUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateUserCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a user creds resource. Note that the returned resource does not
+     * contain the secret value itself.
+     * </pre>
+     */
+    default void getUserCreds(
+        com.google.firestore.admin.v1.GetUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetUserCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all user creds in the database. Note that the returned resource
+     * does not contain the secret value itself.
+     * </pre>
+     */
+    default void listUserCreds(
+        com.google.firestore.admin.v1.ListUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListUserCredsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListUserCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a user creds. No-op if the user creds are already enabled.
+     * </pre>
+     */
+    default void enableUserCreds(
+        com.google.firestore.admin.v1.EnableUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getEnableUserCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a user creds. No-op if the user creds are already disabled.
+     * </pre>
+     */
+    default void disableUserCreds(
+        com.google.firestore.admin.v1.DisableUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDisableUserCredsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets the password of a user creds.
+     * </pre>
+     */
+    default void resetUserPassword(
+        com.google.firestore.admin.v1.ResetUserPasswordRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getResetUserPasswordMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user creds.
+     * </pre>
+     */
+    default void deleteUserCreds(
+        com.google.firestore.admin.v1.DeleteUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteUserCredsMethod(), responseObserver);
     }
 
     /**
@@ -1948,6 +2382,121 @@ public final class FirestoreAdminGrpc {
      *
      *
      * <pre>
+     * Create a user creds.
+     * </pre>
+     */
+    public void createUserCreds(
+        com.google.firestore.admin.v1.CreateUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a user creds resource. Note that the returned resource does not
+     * contain the secret value itself.
+     * </pre>
+     */
+    public void getUserCreds(
+        com.google.firestore.admin.v1.GetUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all user creds in the database. Note that the returned resource
+     * does not contain the secret value itself.
+     * </pre>
+     */
+    public void listUserCreds(
+        com.google.firestore.admin.v1.ListUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListUserCredsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a user creds. No-op if the user creds are already enabled.
+     * </pre>
+     */
+    public void enableUserCreds(
+        com.google.firestore.admin.v1.EnableUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getEnableUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a user creds. No-op if the user creds are already disabled.
+     * </pre>
+     */
+    public void disableUserCreds(
+        com.google.firestore.admin.v1.DisableUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDisableUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets the password of a user creds.
+     * </pre>
+     */
+    public void resetUserPassword(
+        com.google.firestore.admin.v1.ResetUserPasswordRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getResetUserPasswordMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user creds.
+     * </pre>
+     */
+    public void deleteUserCreds(
+        com.google.firestore.admin.v1.DeleteUserCredsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteUserCredsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets information about a backup.
      * </pre>
      */
@@ -2110,6 +2659,509 @@ public final class FirestoreAdminGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service FirestoreAdmin.
+   *
+   * <pre>
+   * The Cloud Firestore Admin API.
+   * This API provides several administrative services for Cloud Firestore.
+   * Project, Database, Namespace, Collection, Collection Group, and Document are
+   * used as defined in the Google Cloud Firestore API.
+   * Operation: An Operation represents work being performed in the background.
+   * The index service manages Cloud Firestore indexes.
+   * Index creation is performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * The Operations collection provides a record of actions performed for the
+   * specified Project (including any Operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An Operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection. Operations are garbage collected after
+   * 30 days. By default, ListOperations will only return in progress and failed
+   * operations. To list completed operation, issue a ListOperations request with
+   * the filter `done: true`.
+   * Operations are created by service `FirestoreAdmin`, but are accessed via
+   * service `google.longrunning.Operations`.
+   * </pre>
+   */
+  public static final class FirestoreAdminBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<FirestoreAdminBlockingV2Stub> {
+    private FirestoreAdminBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected FirestoreAdminBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new FirestoreAdminBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a composite index. This returns a
+     * [google.longrunning.Operation][google.longrunning.Operation] which may be
+     * used to track the status of the creation. The metadata for the operation
+     * will be the type
+     * [IndexOperationMetadata][google.firestore.admin.v1.IndexOperationMetadata].
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIndex(
+        com.google.firestore.admin.v1.CreateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists composite indexes.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListIndexesResponse listIndexes(
+        com.google.firestore.admin.v1.ListIndexesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIndexesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a composite index.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.Index getIndex(
+        com.google.firestore.admin.v1.GetIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a composite index.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteIndex(
+        com.google.firestore.admin.v1.DeleteIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the metadata and configuration for a Field.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.Field getField(
+        com.google.firestore.admin.v1.GetFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a field configuration. Currently, field updates apply only to
+     * single field index configuration. However, calls to
+     * [FirestoreAdmin.UpdateField][google.firestore.admin.v1.FirestoreAdmin.UpdateField]
+     * should provide a field mask to avoid changing any configuration that the
+     * caller isn't aware of. The field mask should be specified as: `{ paths:
+     * "index_config" }`.
+     * This call returns a
+     * [google.longrunning.Operation][google.longrunning.Operation] which may be
+     * used to track the status of the field update. The metadata for the
+     * operation will be the type
+     * [FieldOperationMetadata][google.firestore.admin.v1.FieldOperationMetadata].
+     * To configure the default field settings for the database, use
+     * the special `Field` with resource name:
+     * `projects/{project_id}/databases/{database_id}/collectionGroups/__default__/fields/&#42;`.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateField(
+        com.google.firestore.admin.v1.UpdateFieldRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateFieldMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the field configuration and metadata for this database.
+     * Currently,
+     * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields]
+     * only supports listing fields that have been explicitly overridden. To issue
+     * this query, call
+     * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields]
+     * with the filter set to `indexConfig.usesAncestorConfig:false` or
+     * `ttlConfig:*`.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListFieldsResponse listFields(
+        com.google.firestore.admin.v1.ListFieldsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListFieldsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a copy of all or a subset of documents from Google Cloud Firestore
+     * to another storage system, such as Google Cloud Storage. Recent updates to
+     * documents may not be reflected in the export. The export occurs in the
+     * background and its progress can be monitored and managed via the
+     * Operation resource that is created. The output of an export may only be
+     * used once the associated operation is done. If an export operation is
+     * cancelled before completion it may leave partial data behind in Google
+     * Cloud Storage.
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportDocuments(
+        com.google.firestore.admin.v1.ExportDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports documents into Google Cloud Firestore. Existing documents with the
+     * same name are overwritten. The import occurs in the background and its
+     * progress can be monitored and managed via the Operation resource that is
+     * created. If an ImportDocuments operation is cancelled, it is possible
+     * that a subset of the data has already been imported to Cloud Firestore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.firestore.admin.v1.ImportDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Bulk deletes a subset of documents from Google Cloud Firestore.
+     * Documents created or updated after the underlying system starts to process
+     * the request will not be deleted. The bulk delete occurs in the background
+     * and its progress can be monitored and managed via the Operation resource
+     * that is created.
+     * For more details on bulk delete behavior, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/bulk-delete
+     * </pre>
+     */
+    public com.google.longrunning.Operation bulkDeleteDocuments(
+        com.google.firestore.admin.v1.BulkDeleteDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBulkDeleteDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatabase(
+        com.google.firestore.admin.v1.CreateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a database.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.Database getDatabase(
+        com.google.firestore.admin.v1.GetDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all the databases in the project.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListDatabasesResponse listDatabases(
+        com.google.firestore.admin.v1.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatabasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDatabase(
+        com.google.firestore.admin.v1.UpdateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatabase(
+        com.google.firestore.admin.v1.DeleteDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a user creds.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds createUserCreds(
+        com.google.firestore.admin.v1.CreateUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a user creds resource. Note that the returned resource does not
+     * contain the secret value itself.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds getUserCreds(
+        com.google.firestore.admin.v1.GetUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all user creds in the database. Note that the returned resource
+     * does not contain the secret value itself.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListUserCredsResponse listUserCreds(
+        com.google.firestore.admin.v1.ListUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a user creds. No-op if the user creds are already enabled.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds enableUserCreds(
+        com.google.firestore.admin.v1.EnableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a user creds. No-op if the user creds are already disabled.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds disableUserCreds(
+        com.google.firestore.admin.v1.DisableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets the password of a user creds.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds resetUserPassword(
+        com.google.firestore.admin.v1.ResetUserPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetUserPasswordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user creds.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserCreds(
+        com.google.firestore.admin.v1.DeleteUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a backup.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.Backup getBackup(
+        com.google.firestore.admin.v1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the backups.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListBackupsResponse listBackups(
+        com.google.firestore.admin.v1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a backup.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBackup(
+        com.google.firestore.admin.v1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by restoring from an existing backup.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing backup. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * backup.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the restore, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [RestoreDatabaseMetadata][google.firestore.admin.v1.RestoreDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the restore was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreDatabase(
+        com.google.firestore.admin.v1.RestoreDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a backup schedule on a database.
+     * At most two backup schedules can be configured on a database, one daily
+     * backup schedule and one weekly backup schedule.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.BackupSchedule createBackupSchedule(
+        com.google.firestore.admin.v1.CreateBackupScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a backup schedule.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.BackupSchedule getBackupSchedule(
+        com.google.firestore.admin.v1.GetBackupScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List backup schedules.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListBackupSchedulesResponse listBackupSchedules(
+        com.google.firestore.admin.v1.ListBackupSchedulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupSchedulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a backup schedule.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.BackupSchedule updateBackupSchedule(
+        com.google.firestore.admin.v1.UpdateBackupScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a backup schedule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBackupSchedule(
+        com.google.firestore.admin.v1.DeleteBackupScheduleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupScheduleMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service FirestoreAdmin.
    *
    * <pre>
    * The Cloud Firestore Admin API.
@@ -2382,6 +3434,99 @@ public final class FirestoreAdminGrpc {
         com.google.firestore.admin.v1.DeleteDatabaseRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a user creds.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds createUserCreds(
+        com.google.firestore.admin.v1.CreateUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a user creds resource. Note that the returned resource does not
+     * contain the secret value itself.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds getUserCreds(
+        com.google.firestore.admin.v1.GetUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all user creds in the database. Note that the returned resource
+     * does not contain the secret value itself.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListUserCredsResponse listUserCreds(
+        com.google.firestore.admin.v1.ListUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a user creds. No-op if the user creds are already enabled.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds enableUserCreds(
+        com.google.firestore.admin.v1.EnableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getEnableUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a user creds. No-op if the user creds are already disabled.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds disableUserCreds(
+        com.google.firestore.admin.v1.DisableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDisableUserCredsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets the password of a user creds.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.UserCreds resetUserPassword(
+        com.google.firestore.admin.v1.ResetUserPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getResetUserPasswordMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user creds.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteUserCreds(
+        com.google.firestore.admin.v1.DeleteUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteUserCredsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2802,6 +3947,105 @@ public final class FirestoreAdminGrpc {
      *
      *
      * <pre>
+     * Create a user creds.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.UserCreds>
+        createUserCreds(com.google.firestore.admin.v1.CreateUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a user creds resource. Note that the returned resource does not
+     * contain the secret value itself.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.UserCreds>
+        getUserCreds(com.google.firestore.admin.v1.GetUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all user creds in the database. Note that the returned resource
+     * does not contain the secret value itself.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.ListUserCredsResponse>
+        listUserCreds(com.google.firestore.admin.v1.ListUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Enables a user creds. No-op if the user creds are already enabled.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.UserCreds>
+        enableUserCreds(com.google.firestore.admin.v1.EnableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getEnableUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables a user creds. No-op if the user creds are already disabled.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.UserCreds>
+        disableUserCreds(com.google.firestore.admin.v1.DisableUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDisableUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Resets the password of a user creds.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.firestore.admin.v1.UserCreds>
+        resetUserPassword(com.google.firestore.admin.v1.ResetUserPasswordRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getResetUserPasswordMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a user creds.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteUserCreds(com.google.firestore.admin.v1.DeleteUserCredsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteUserCredsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets information about a backup.
      * </pre>
      */
@@ -2952,15 +4196,22 @@ public final class FirestoreAdminGrpc {
   private static final int METHODID_LIST_DATABASES = 12;
   private static final int METHODID_UPDATE_DATABASE = 13;
   private static final int METHODID_DELETE_DATABASE = 14;
-  private static final int METHODID_GET_BACKUP = 15;
-  private static final int METHODID_LIST_BACKUPS = 16;
-  private static final int METHODID_DELETE_BACKUP = 17;
-  private static final int METHODID_RESTORE_DATABASE = 18;
-  private static final int METHODID_CREATE_BACKUP_SCHEDULE = 19;
-  private static final int METHODID_GET_BACKUP_SCHEDULE = 20;
-  private static final int METHODID_LIST_BACKUP_SCHEDULES = 21;
-  private static final int METHODID_UPDATE_BACKUP_SCHEDULE = 22;
-  private static final int METHODID_DELETE_BACKUP_SCHEDULE = 23;
+  private static final int METHODID_CREATE_USER_CREDS = 15;
+  private static final int METHODID_GET_USER_CREDS = 16;
+  private static final int METHODID_LIST_USER_CREDS = 17;
+  private static final int METHODID_ENABLE_USER_CREDS = 18;
+  private static final int METHODID_DISABLE_USER_CREDS = 19;
+  private static final int METHODID_RESET_USER_PASSWORD = 20;
+  private static final int METHODID_DELETE_USER_CREDS = 21;
+  private static final int METHODID_GET_BACKUP = 22;
+  private static final int METHODID_LIST_BACKUPS = 23;
+  private static final int METHODID_DELETE_BACKUP = 24;
+  private static final int METHODID_RESTORE_DATABASE = 25;
+  private static final int METHODID_CREATE_BACKUP_SCHEDULE = 26;
+  private static final int METHODID_GET_BACKUP_SCHEDULE = 27;
+  private static final int METHODID_LIST_BACKUP_SCHEDULES = 28;
+  private static final int METHODID_UPDATE_BACKUP_SCHEDULE = 29;
+  private static final int METHODID_DELETE_BACKUP_SCHEDULE = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3057,6 +4308,47 @@ public final class FirestoreAdminGrpc {
           serviceImpl.deleteDatabase(
               (com.google.firestore.admin.v1.DeleteDatabaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_USER_CREDS:
+          serviceImpl.createUserCreds(
+              (com.google.firestore.admin.v1.CreateUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds>)
+                  responseObserver);
+          break;
+        case METHODID_GET_USER_CREDS:
+          serviceImpl.getUserCreds(
+              (com.google.firestore.admin.v1.GetUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_USER_CREDS:
+          serviceImpl.listUserCreds(
+              (com.google.firestore.admin.v1.ListUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListUserCredsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_ENABLE_USER_CREDS:
+          serviceImpl.enableUserCreds(
+              (com.google.firestore.admin.v1.EnableUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds>)
+                  responseObserver);
+          break;
+        case METHODID_DISABLE_USER_CREDS:
+          serviceImpl.disableUserCreds(
+              (com.google.firestore.admin.v1.DisableUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds>)
+                  responseObserver);
+          break;
+        case METHODID_RESET_USER_PASSWORD:
+          serviceImpl.resetUserPassword(
+              (com.google.firestore.admin.v1.ResetUserPasswordRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.UserCreds>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_USER_CREDS:
+          serviceImpl.deleteUserCreds(
+              (com.google.firestore.admin.v1.DeleteUserCredsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_BACKUP:
           serviceImpl.getBackup(
@@ -3221,6 +4513,50 @@ public final class FirestoreAdminGrpc {
                     com.google.firestore.admin.v1.DeleteDatabaseRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_DATABASE)))
         .addMethod(
+            getCreateUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.CreateUserCredsRequest,
+                    com.google.firestore.admin.v1.UserCreds>(service, METHODID_CREATE_USER_CREDS)))
+        .addMethod(
+            getGetUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.GetUserCredsRequest,
+                    com.google.firestore.admin.v1.UserCreds>(service, METHODID_GET_USER_CREDS)))
+        .addMethod(
+            getListUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.ListUserCredsRequest,
+                    com.google.firestore.admin.v1.ListUserCredsResponse>(
+                    service, METHODID_LIST_USER_CREDS)))
+        .addMethod(
+            getEnableUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.EnableUserCredsRequest,
+                    com.google.firestore.admin.v1.UserCreds>(service, METHODID_ENABLE_USER_CREDS)))
+        .addMethod(
+            getDisableUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.DisableUserCredsRequest,
+                    com.google.firestore.admin.v1.UserCreds>(service, METHODID_DISABLE_USER_CREDS)))
+        .addMethod(
+            getResetUserPasswordMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.ResetUserPasswordRequest,
+                    com.google.firestore.admin.v1.UserCreds>(
+                    service, METHODID_RESET_USER_PASSWORD)))
+        .addMethod(
+            getDeleteUserCredsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.DeleteUserCredsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_USER_CREDS)))
+        .addMethod(
             getGetBackupMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3345,6 +4681,13 @@ public final class FirestoreAdminGrpc {
                       .addMethod(getListDatabasesMethod())
                       .addMethod(getUpdateDatabaseMethod())
                       .addMethod(getDeleteDatabaseMethod())
+                      .addMethod(getCreateUserCredsMethod())
+                      .addMethod(getGetUserCredsMethod())
+                      .addMethod(getListUserCredsMethod())
+                      .addMethod(getEnableUserCredsMethod())
+                      .addMethod(getDisableUserCredsMethod())
+                      .addMethod(getResetUserPasswordMethod())
+                      .addMethod(getDeleteUserCredsMethod())
                       .addMethod(getGetBackupMethod())
                       .addMethod(getListBackupsMethod())
                       .addMethod(getDeleteBackupMethod())

@@ -35,6 +35,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.ExportDocumentsMetadata)
     ExportDocumentsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportDocumentsMetadata.newBuilder() to construct.
   private ExportDocumentsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int OPERATION_STATE_FIELD_NUMBER = 3;
   private int operationState_ = 0;
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public int getOperationStateValue() {
     return operationState_;
   }
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int PROGRESS_DOCUMENTS_FIELD_NUMBER = 4;
   private com.google.firestore.admin.v1.Progress progressDocuments_;
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasProgressDocuments() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -233,6 +244,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressDocuments_;
   }
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 5;
   private com.google.firestore.admin.v1.Progress progressBytes_;
+
   /**
    *
    *
@@ -266,6 +279,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasProgressBytes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -283,6 +297,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressBytes_;
   }
+
   /**
    *
    *
@@ -304,6 +319,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList collectionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -318,6 +334,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getCollectionIdsList() {
     return collectionIds_;
   }
+
   /**
    *
    *
@@ -332,6 +349,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public int getCollectionIdsCount() {
     return collectionIds_.size();
   }
+
   /**
    *
    *
@@ -347,6 +365,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public java.lang.String getCollectionIds(int index) {
     return collectionIds_.get(index);
   }
+
   /**
    *
    *
@@ -367,6 +386,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputUriPrefix_ = "";
+
   /**
    *
    *
@@ -390,6 +410,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -419,6 +440,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList namespaceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -433,6 +455,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public com.google.protobuf.ProtocolStringList getNamespaceIdsList() {
     return namespaceIds_;
   }
+
   /**
    *
    *
@@ -447,6 +470,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public int getNamespaceIdsCount() {
     return namespaceIds_.size();
   }
+
   /**
    *
    *
@@ -462,6 +486,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public java.lang.String getNamespaceIds(int index) {
     return namespaceIds_.get(index);
   }
+
   /**
    *
    *
@@ -480,6 +505,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
 
   public static final int SNAPSHOT_TIME_FIELD_NUMBER = 9;
   private com.google.protobuf.Timestamp snapshotTime_;
+
   /**
    *
    *
@@ -497,6 +523,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
   public boolean hasSnapshotTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -516,6 +543,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : snapshotTime_;
   }
+
   /**
    *
    *
@@ -807,6 +835,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1166,6 +1195,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1180,6 +1210,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1198,6 +1229,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1252,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1272,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1285,6 +1320,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1299,6 +1335,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1315,6 +1352,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1347,6 +1385,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1362,6 +1401,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1381,6 +1421,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1404,6 +1445,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1466,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1452,6 +1495,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1472,6 +1516,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1487,6 +1532,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1504,6 +1550,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1532,6 +1579,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     }
 
     private int operationState_ = 0;
+
     /**
      *
      *
@@ -1547,6 +1595,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public int getOperationStateValue() {
       return operationState_;
     }
+
     /**
      *
      *
@@ -1565,6 +1614,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1582,6 +1632,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
           com.google.firestore.admin.v1.OperationState.forNumber(operationState_);
       return result == null ? com.google.firestore.admin.v1.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1603,6 +1654,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1627,6 +1679,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressDocumentsBuilder_;
+
     /**
      *
      *
@@ -1641,6 +1694,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasProgressDocuments() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1661,6 +1715,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return progressDocumentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1683,6 +1738,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1703,6 +1759,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1730,6 +1787,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1807,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1763,6 +1822,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getProgressDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1781,6 +1841,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             : progressDocuments_;
       }
     }
+
     /**
      *
      *
@@ -1813,6 +1874,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressBytesBuilder_;
+
     /**
      *
      *
@@ -1827,6 +1889,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasProgressBytes() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1847,6 +1910,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return progressBytesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1869,6 +1933,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1954,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1982,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1935,6 +2002,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1949,6 +2017,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1967,6 +2036,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             : progressBytes_;
       }
     }
+
     /**
      *
      *
@@ -2002,6 +2072,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2017,6 +2088,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       collectionIds_.makeImmutable();
       return collectionIds_;
     }
+
     /**
      *
      *
@@ -2031,6 +2103,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public int getCollectionIdsCount() {
       return collectionIds_.size();
     }
+
     /**
      *
      *
@@ -2046,6 +2119,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public java.lang.String getCollectionIds(int index) {
       return collectionIds_.get(index);
     }
+
     /**
      *
      *
@@ -2061,6 +2135,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getCollectionIdsBytes(int index) {
       return collectionIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2084,6 +2159,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2182,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2125,6 +2202,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2143,6 +2221,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2168,6 +2247,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     }
 
     private java.lang.Object outputUriPrefix_ = "";
+
     /**
      *
      *
@@ -2190,6 +2270,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2212,6 +2293,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2233,6 +2315,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2250,6 +2333,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2366,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       bitField0_ |= 0x00000080;
     }
+
     /**
      *
      *
@@ -2297,6 +2382,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       namespaceIds_.makeImmutable();
       return namespaceIds_;
     }
+
     /**
      *
      *
@@ -2311,6 +2397,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public int getNamespaceIdsCount() {
       return namespaceIds_.size();
     }
+
     /**
      *
      *
@@ -2326,6 +2413,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public java.lang.String getNamespaceIds(int index) {
       return namespaceIds_.get(index);
     }
+
     /**
      *
      *
@@ -2341,6 +2429,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public com.google.protobuf.ByteString getNamespaceIdsBytes(int index) {
       return namespaceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2364,6 +2453,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2476,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2405,6 +2496,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2423,6 +2515,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2453,6 +2546,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         snapshotTimeBuilder_;
+
     /**
      *
      *
@@ -2469,6 +2563,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -2491,6 +2586,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
         return snapshotTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2515,6 +2611,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2536,6 +2633,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2565,6 +2663,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2586,6 +2685,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2602,6 +2702,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
       onChanged();
       return getSnapshotTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2622,6 +2723,7 @@ public final class ExportDocumentsMetadata extends com.google.protobuf.Generated
             : snapshotTime_;
       }
     }
+
     /**
      *
      *

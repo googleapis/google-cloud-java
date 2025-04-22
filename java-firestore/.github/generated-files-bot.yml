@@ -6,6 +6,7 @@ externalManifests:
   file: '.github/readme/synth.metadata/synth.metadata'
   jsonpath: '$.generatedFiles[*]'
 ignoreAuthors:
+- 'cloud-java-bot'
 - 'renovate-bot'
 - 'yoshi-automation'
 - 'release-please[bot]'

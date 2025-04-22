@@ -39,6 +39,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return A list containing the collectionIds.
    */
   java.util.List<java.lang.String> getCollectionIdsList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return The count of collectionIds.
    */
   int getCollectionIdsCount();
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return The collectionIds at the given index.
    */
   java.lang.String getCollectionIds(int index);
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return A list containing the namespaceIds.
    */
   java.util.List<java.lang.String> getNamespaceIdsList();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return The count of namespaceIds.
    */
   int getNamespaceIdsCount();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface BulkDeleteDocumentsRequestOrBuilder
    * @return The namespaceIds at the given index.
    */
   java.lang.String getNamespaceIds(int index);
+
   /**
    *
    *

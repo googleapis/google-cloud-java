@@ -37,6 +37,7 @@ public interface DocumentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 2;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -117,9 +119,11 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 2;</code>
    */
   boolean containsFields(java.lang.String key);
+
   /** Use {@link #getFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getFields();
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface DocumentOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; fields = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getFieldsMap();
+
   /**
    *
    *
@@ -190,6 +195,7 @@ public interface DocumentOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.firestore.v1.Value defaultValue);
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public interface DocumentOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -256,6 +263,7 @@ public interface DocumentOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -287,6 +295,7 @@ public interface DocumentOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -303,6 +312,7 @@ public interface DocumentOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

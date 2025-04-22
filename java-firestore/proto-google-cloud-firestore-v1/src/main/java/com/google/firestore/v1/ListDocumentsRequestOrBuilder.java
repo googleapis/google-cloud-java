@@ -42,6 +42,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The collectionId.
    */
   java.lang.String getCollectionId();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -197,6 +201,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The mask.
    */
   com.google.firestore.v1.DocumentMask getMask();
+
   /**
    *
    *
@@ -240,6 +246,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -269,6 +276,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -285,6 +293,7 @@ public interface ListDocumentsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

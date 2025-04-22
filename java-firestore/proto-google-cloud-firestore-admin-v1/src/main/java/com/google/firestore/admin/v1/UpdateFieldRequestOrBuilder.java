@@ -37,6 +37,7 @@ public interface UpdateFieldRequestOrBuilder
    * @return Whether the field field is set.
    */
   boolean hasField();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateFieldRequestOrBuilder
    * @return The field.
    */
   com.google.firestore.admin.v1.Field getField();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface UpdateFieldRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface UpdateFieldRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

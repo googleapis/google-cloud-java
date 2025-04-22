@@ -42,6 +42,7 @@ public interface BackupScheduleOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface BackupScheduleOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface BackupScheduleOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface BackupScheduleOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface BackupScheduleOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public interface BackupScheduleOrBuilder
    * @return Whether the retention field is set.
    */
   boolean hasRetention();
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public interface BackupScheduleOrBuilder
    * @return The retention.
    */
   com.google.protobuf.Duration getRetention();
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public interface BackupScheduleOrBuilder
    * @return Whether the dailyRecurrence field is set.
    */
   boolean hasDailyRecurrence();
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public interface BackupScheduleOrBuilder
    * @return The dailyRecurrence.
    */
   com.google.firestore.admin.v1.DailyRecurrence getDailyRecurrence();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface BackupScheduleOrBuilder
    * @return Whether the weeklyRecurrence field is set.
    */
   boolean hasWeeklyRecurrence();
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public interface BackupScheduleOrBuilder
    * @return The weeklyRecurrence.
    */
   com.google.firestore.admin.v1.WeeklyRecurrence getWeeklyRecurrence();
+
   /**
    *
    *

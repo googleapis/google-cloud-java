@@ -42,6 +42,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery)
     StructuredQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StructuredQuery.newBuilder() to construct.
   private StructuredQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>ASCENDING = 1;</code>
      */
     public static final int ASCENDING_VALUE = 1;
+
     /**
      *
      *
@@ -248,6 +251,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The collectionId.
      */
     java.lang.String getCollectionId();
+
     /**
      *
      *
@@ -277,6 +281,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     boolean getAllDescendants();
   }
+
   /**
    *
    *
@@ -291,6 +296,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.CollectionSelector)
       CollectionSelectorOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CollectionSelector.newBuilder() to construct.
     private CollectionSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -325,6 +331,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object collectionId_ = "";
+
     /**
      *
      *
@@ -349,6 +356,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -376,6 +384,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int ALL_DESCENDANTS_FIELD_NUMBER = 3;
     private boolean allDescendants_ = false;
+
     /**
      *
      *
@@ -564,6 +573,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -767,6 +777,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object collectionId_ = "";
+
       /**
        *
        *
@@ -790,6 +801,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -813,6 +825,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -835,6 +848,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -853,6 +867,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -878,6 +893,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
 
       private boolean allDescendants_;
+
       /**
        *
        *
@@ -895,6 +911,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean getAllDescendants() {
         return allDescendants_;
       }
+
       /**
        *
        *
@@ -916,6 +933,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1018,6 +1036,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the compositeFilter field is set.
      */
     boolean hasCompositeFilter();
+
     /**
      *
      *
@@ -1030,6 +1049,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The compositeFilter.
      */
     com.google.firestore.v1.StructuredQuery.CompositeFilter getCompositeFilter();
+
     /**
      *
      *
@@ -1053,6 +1073,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the fieldFilter field is set.
      */
     boolean hasFieldFilter();
+
     /**
      *
      *
@@ -1065,6 +1086,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The fieldFilter.
      */
     com.google.firestore.v1.StructuredQuery.FieldFilter getFieldFilter();
+
     /**
      *
      *
@@ -1088,6 +1110,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the unaryFilter field is set.
      */
     boolean hasUnaryFilter();
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The unaryFilter.
      */
     com.google.firestore.v1.StructuredQuery.UnaryFilter getUnaryFilter();
+
     /**
      *
      *
@@ -1113,6 +1137,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     com.google.firestore.v1.StructuredQuery.Filter.FilterTypeCase getFilterTypeCase();
   }
+
   /**
    *
    *
@@ -1127,6 +1152,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.Filter)
       FilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Filter.newBuilder() to construct.
     private Filter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1173,6 +1199,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private FilterTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1208,6 +1235,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int COMPOSITE_FILTER_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -1223,6 +1251,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasCompositeFilter() {
       return filterTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1241,6 +1270,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.firestore.v1.StructuredQuery.CompositeFilter.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1260,6 +1290,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int FIELD_FILTER_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -1275,6 +1306,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasFieldFilter() {
       return filterTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1293,6 +1325,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.firestore.v1.StructuredQuery.FieldFilter.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1311,6 +1344,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int UNARY_FILTER_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -1326,6 +1360,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasUnaryFilter() {
       return filterTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1344,6 +1379,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.firestore.v1.StructuredQuery.UnaryFilter.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1567,6 +1603,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1823,6 +1860,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.CompositeFilter.Builder,
               com.google.firestore.v1.StructuredQuery.CompositeFilterOrBuilder>
           compositeFilterBuilder_;
+
       /**
        *
        *
@@ -1838,6 +1876,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasCompositeFilter() {
         return filterTypeCase_ == 1;
       }
+
       /**
        *
        *
@@ -1863,6 +1902,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.CompositeFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1886,6 +1926,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1906,6 +1947,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1940,6 +1982,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -1965,6 +2008,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -1978,6 +2022,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           getCompositeFilterBuilder() {
         return getCompositeFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1999,6 +2044,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.CompositeFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2038,6 +2084,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.FieldFilter.Builder,
               com.google.firestore.v1.StructuredQuery.FieldFilterOrBuilder>
           fieldFilterBuilder_;
+
       /**
        *
        *
@@ -2053,6 +2100,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasFieldFilter() {
         return filterTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -2078,6 +2126,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.FieldFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2100,6 +2149,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2120,6 +2170,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2153,6 +2204,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -2178,6 +2230,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2190,6 +2243,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public com.google.firestore.v1.StructuredQuery.FieldFilter.Builder getFieldFilterBuilder() {
         return getFieldFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2211,6 +2265,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.FieldFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2249,6 +2304,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.UnaryFilter.Builder,
               com.google.firestore.v1.StructuredQuery.UnaryFilterOrBuilder>
           unaryFilterBuilder_;
+
       /**
        *
        *
@@ -2264,6 +2320,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasUnaryFilter() {
         return filterTypeCase_ == 3;
       }
+
       /**
        *
        *
@@ -2289,6 +2346,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.UnaryFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2311,6 +2369,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2331,6 +2390,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2364,6 +2424,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         filterTypeCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -2389,6 +2450,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -2401,6 +2463,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public com.google.firestore.v1.StructuredQuery.UnaryFilter.Builder getUnaryFilterBuilder() {
         return getUnaryFilterFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2422,6 +2485,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.UnaryFilter.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2536,6 +2600,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
+
     /**
      *
      *
@@ -2563,6 +2628,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.Filter filters = 2;</code>
      */
     java.util.List<com.google.firestore.v1.StructuredQuery.Filter> getFiltersList();
+
     /**
      *
      *
@@ -2577,6 +2643,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.Filter filters = 2;</code>
      */
     com.google.firestore.v1.StructuredQuery.Filter getFilters(int index);
+
     /**
      *
      *
@@ -2591,6 +2658,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.Filter filters = 2;</code>
      */
     int getFiltersCount();
+
     /**
      *
      *
@@ -2606,6 +2674,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     java.util.List<? extends com.google.firestore.v1.StructuredQuery.FilterOrBuilder>
         getFiltersOrBuilderList();
+
     /**
      *
      *
@@ -2621,6 +2690,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.firestore.v1.StructuredQuery.FilterOrBuilder getFiltersOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -2635,6 +2705,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.CompositeFilter)
       CompositeFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CompositeFilter.newBuilder() to construct.
     private CompositeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2719,6 +2790,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2729,6 +2801,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>AND = 1;</code>
        */
       public static final int AND_VALUE = 1;
+
       /**
        *
        *
@@ -2827,6 +2900,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int OP_FIELD_NUMBER = 1;
     private int op_ = 0;
+
     /**
      *
      *
@@ -2842,6 +2916,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -2866,6 +2941,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.firestore.v1.StructuredQuery.Filter> filters_;
+
     /**
      *
      *
@@ -2883,6 +2959,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public java.util.List<com.google.firestore.v1.StructuredQuery.Filter> getFiltersList() {
       return filters_;
     }
+
     /**
      *
      *
@@ -2901,6 +2978,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         getFiltersOrBuilderList() {
       return filters_;
     }
+
     /**
      *
      *
@@ -2918,6 +2996,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getFiltersCount() {
       return filters_.size();
     }
+
     /**
      *
      *
@@ -2935,6 +3014,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.firestore.v1.StructuredQuery.Filter getFilters(int index) {
       return filters_.get(index);
     }
+
     /**
      *
      *
@@ -3129,6 +3209,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3376,6 +3457,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int op_ = 0;
+
       /**
        *
        *
@@ -3391,6 +3473,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public int getOpValue() {
         return op_;
       }
+
       /**
        *
        *
@@ -3409,6 +3492,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3428,6 +3512,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             ? com.google.firestore.v1.StructuredQuery.CompositeFilter.Operator.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3449,6 +3534,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3504,6 +3590,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return filtersBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -3524,6 +3611,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return filtersBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -3544,6 +3632,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return filtersBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -3570,6 +3659,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3594,6 +3684,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3620,6 +3711,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3646,6 +3738,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3670,6 +3763,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3694,6 +3788,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3718,6 +3813,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3741,6 +3837,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3764,6 +3861,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -3780,6 +3878,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public com.google.firestore.v1.StructuredQuery.Filter.Builder getFiltersBuilder(int index) {
         return getFiltersFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -3801,6 +3900,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return filtersBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -3822,6 +3922,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(filters_);
         }
       }
+
       /**
        *
        *
@@ -3839,6 +3940,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return getFiltersFieldBuilder()
             .addBuilder(com.google.firestore.v1.StructuredQuery.Filter.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3856,6 +3958,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return getFiltersFieldBuilder()
             .addBuilder(index, com.google.firestore.v1.StructuredQuery.Filter.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -3972,6 +4075,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the field field is set.
      */
     boolean hasField();
+
     /**
      *
      *
@@ -3984,6 +4088,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The field.
      */
     com.google.firestore.v1.StructuredQuery.FieldReference getField();
+
     /**
      *
      *
@@ -4007,6 +4112,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
+
     /**
      *
      *
@@ -4032,6 +4138,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the value field is set.
      */
     boolean hasValue();
+
     /**
      *
      *
@@ -4044,6 +4151,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The value.
      */
     com.google.firestore.v1.Value getValue();
+
     /**
      *
      *
@@ -4055,6 +4163,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.firestore.v1.ValueOrBuilder getValueOrBuilder();
   }
+
   /**
    *
    *
@@ -4069,6 +4178,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.FieldFilter)
       FieldFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FieldFilter.newBuilder() to construct.
     private FieldFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4274,6 +4384,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4288,6 +4399,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>LESS_THAN = 1;</code>
        */
       public static final int LESS_THAN_VALUE = 1;
+
       /**
        *
        *
@@ -4302,6 +4414,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>LESS_THAN_OR_EQUAL = 2;</code>
        */
       public static final int LESS_THAN_OR_EQUAL_VALUE = 2;
+
       /**
        *
        *
@@ -4316,6 +4429,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>GREATER_THAN = 3;</code>
        */
       public static final int GREATER_THAN_VALUE = 3;
+
       /**
        *
        *
@@ -4330,6 +4444,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>GREATER_THAN_OR_EQUAL = 4;</code>
        */
       public static final int GREATER_THAN_OR_EQUAL_VALUE = 4;
+
       /**
        *
        *
@@ -4340,6 +4455,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>EQUAL = 5;</code>
        */
       public static final int EQUAL_VALUE = 5;
+
       /**
        *
        *
@@ -4355,6 +4471,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>NOT_EQUAL = 6;</code>
        */
       public static final int NOT_EQUAL_VALUE = 6;
+
       /**
        *
        *
@@ -4365,6 +4482,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>ARRAY_CONTAINS = 7;</code>
        */
       public static final int ARRAY_CONTAINS_VALUE = 7;
+
       /**
        *
        *
@@ -4381,6 +4499,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>IN = 8;</code>
        */
       public static final int IN_VALUE = 8;
+
       /**
        *
        *
@@ -4399,6 +4518,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>ARRAY_CONTAINS_ANY = 9;</code>
        */
       public static final int ARRAY_CONTAINS_ANY_VALUE = 9;
+
       /**
        *
        *
@@ -4521,6 +4641,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.firestore.v1.StructuredQuery.FieldReference field_;
+
     /**
      *
      *
@@ -4536,6 +4657,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4553,6 +4675,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           ? com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance()
           : field_;
     }
+
     /**
      *
      *
@@ -4571,6 +4694,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int OP_FIELD_NUMBER = 2;
     private int op_ = 0;
+
     /**
      *
      *
@@ -4586,6 +4710,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -4608,6 +4733,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int VALUE_FIELD_NUMBER = 3;
     private com.google.firestore.v1.Value value_;
+
     /**
      *
      *
@@ -4623,6 +4749,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasValue() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -4638,6 +4765,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.firestore.v1.Value getValue() {
       return value_ == null ? com.google.firestore.v1.Value.getDefaultInstance() : value_;
     }
+
     /**
      *
      *
@@ -4845,6 +4973,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5083,6 +5212,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
               com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
           fieldBuilder_;
+
       /**
        *
        *
@@ -5097,6 +5227,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasField() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5117,6 +5248,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5139,6 +5271,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5159,6 +5292,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5187,6 +5321,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -5206,6 +5341,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5220,6 +5356,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5238,6 +5375,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               : field_;
         }
       }
+
       /**
        *
        *
@@ -5265,6 +5403,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
 
       private int op_ = 0;
+
       /**
        *
        *
@@ -5280,6 +5419,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public int getOpValue() {
         return op_;
       }
+
       /**
        *
        *
@@ -5298,6 +5438,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5317,6 +5458,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             ? com.google.firestore.v1.StructuredQuery.FieldFilter.Operator.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -5338,6 +5480,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5362,6 +5505,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.Value.Builder,
               com.google.firestore.v1.ValueOrBuilder>
           valueBuilder_;
+
       /**
        *
        *
@@ -5376,6 +5520,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasValue() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -5394,6 +5539,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return valueBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5416,6 +5562,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5435,6 +5582,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5462,6 +5610,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -5481,6 +5630,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5495,6 +5645,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getValueFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5511,6 +5662,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return value_ == null ? com.google.firestore.v1.Value.getDefaultInstance() : value_;
         }
       }
+
       /**
        *
        *
@@ -5618,6 +5770,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for op.
      */
     int getOpValue();
+
     /**
      *
      *
@@ -5643,6 +5796,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the field field is set.
      */
     boolean hasField();
+
     /**
      *
      *
@@ -5655,6 +5809,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The field.
      */
     com.google.firestore.v1.StructuredQuery.FieldReference getField();
+
     /**
      *
      *
@@ -5668,6 +5823,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     com.google.firestore.v1.StructuredQuery.UnaryFilter.OperandTypeCase getOperandTypeCase();
   }
+
   /**
    *
    *
@@ -5682,6 +5838,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.UnaryFilter)
       UnaryFilterOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use UnaryFilter.newBuilder() to construct.
     private UnaryFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5795,6 +5952,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>OPERATOR_UNSPECIFIED = 0;</code>
        */
       public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -5805,6 +5963,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>IS_NAN = 2;</code>
        */
       public static final int IS_NAN_VALUE = 2;
+
       /**
        *
        *
@@ -5815,6 +5974,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>IS_NULL = 3;</code>
        */
       public static final int IS_NULL_VALUE = 3;
+
       /**
        *
        *
@@ -5830,6 +5990,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>IS_NOT_NAN = 4;</code>
        */
       public static final int IS_NOT_NAN_VALUE = 4;
+
       /**
        *
        *
@@ -5951,6 +6112,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private OperandTypeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -5983,6 +6145,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int OP_FIELD_NUMBER = 1;
     private int op_ = 0;
+
     /**
      *
      *
@@ -5998,6 +6161,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -6019,6 +6183,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     public static final int FIELD_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -6034,6 +6199,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasField() {
       return operandTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -6052,6 +6218,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6259,6 +6426,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6489,6 +6657,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private int op_ = 0;
+
       /**
        *
        *
@@ -6504,6 +6673,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public int getOpValue() {
         return op_;
       }
+
       /**
        *
        *
@@ -6522,6 +6692,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6541,6 +6712,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             ? com.google.firestore.v1.StructuredQuery.UnaryFilter.Operator.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6562,6 +6734,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6585,6 +6758,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
               com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
           fieldBuilder_;
+
       /**
        *
        *
@@ -6600,6 +6774,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasField() {
         return operandTypeCase_ == 2;
       }
+
       /**
        *
        *
@@ -6625,6 +6800,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6647,6 +6823,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         operandTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6667,6 +6844,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         operandTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6700,6 +6878,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         operandTypeCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -6725,6 +6904,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -6737,6 +6917,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public com.google.firestore.v1.StructuredQuery.FieldReference.Builder getFieldBuilder() {
         return getFieldFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6757,6 +6938,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6872,6 +7054,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the field field is set.
      */
     boolean hasField();
+
     /**
      *
      *
@@ -6884,6 +7067,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The field.
      */
     com.google.firestore.v1.StructuredQuery.FieldReference getField();
+
     /**
      *
      *
@@ -6907,6 +7091,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for direction.
      */
     int getDirectionValue();
+
     /**
      *
      *
@@ -6920,6 +7105,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.firestore.v1.StructuredQuery.Direction getDirection();
   }
+
   /**
    *
    *
@@ -6934,6 +7120,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.Order)
       OrderOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Order.newBuilder() to construct.
     private Order(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6967,6 +7154,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int FIELD_FIELD_NUMBER = 1;
     private com.google.firestore.v1.StructuredQuery.FieldReference field_;
+
     /**
      *
      *
@@ -6982,6 +7170,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6999,6 +7188,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           ? com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance()
           : field_;
     }
+
     /**
      *
      *
@@ -7017,6 +7207,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int DIRECTION_FIELD_NUMBER = 2;
     private int direction_ = 0;
+
     /**
      *
      *
@@ -7032,6 +7223,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getDirectionValue() {
       return direction_;
     }
+
     /**
      *
      *
@@ -7228,6 +7420,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7447,6 +7640,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
               com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
           fieldBuilder_;
+
       /**
        *
        *
@@ -7461,6 +7655,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasField() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -7481,6 +7676,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7503,6 +7699,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7523,6 +7720,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7551,6 +7749,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -7570,6 +7769,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7584,6 +7784,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getFieldFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7602,6 +7803,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               : field_;
         }
       }
+
       /**
        *
        *
@@ -7629,6 +7831,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
 
       private int direction_ = 0;
+
       /**
        *
        *
@@ -7644,6 +7847,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public int getDirectionValue() {
         return direction_;
       }
+
       /**
        *
        *
@@ -7662,6 +7866,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7681,6 +7886,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             ? com.google.firestore.v1.StructuredQuery.Direction.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7702,6 +7908,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7807,6 +8014,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The fieldPath.
      */
     java.lang.String getFieldPath();
+
     /**
      *
      *
@@ -7826,6 +8034,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.ByteString getFieldPathBytes();
   }
+
   /**
    *
    *
@@ -7840,6 +8049,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.FieldReference)
       FieldReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FieldReference.newBuilder() to construct.
     private FieldReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7874,6 +8084,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -7903,6 +8114,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -8094,6 +8306,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8281,6 +8494,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       private int bitField0_;
 
       private java.lang.Object fieldPath_ = "";
+
       /**
        *
        *
@@ -8309,6 +8523,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8337,6 +8552,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8364,6 +8580,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8387,6 +8604,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8498,6 +8716,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.FieldReference fields = 2;</code>
      */
     java.util.List<com.google.firestore.v1.StructuredQuery.FieldReference> getFieldsList();
+
     /**
      *
      *
@@ -8511,6 +8730,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.FieldReference fields = 2;</code>
      */
     com.google.firestore.v1.StructuredQuery.FieldReference getFields(int index);
+
     /**
      *
      *
@@ -8524,6 +8744,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * <code>repeated .google.firestore.v1.StructuredQuery.FieldReference fields = 2;</code>
      */
     int getFieldsCount();
+
     /**
      *
      *
@@ -8538,6 +8759,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     java.util.List<? extends com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
         getFieldsOrBuilderList();
+
     /**
      *
      *
@@ -8552,6 +8774,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder getFieldsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -8566,6 +8789,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.Projection)
       ProjectionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Projection.newBuilder() to construct.
     private Projection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8600,6 +8824,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.firestore.v1.StructuredQuery.FieldReference> fields_;
+
     /**
      *
      *
@@ -8616,6 +8841,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public java.util.List<com.google.firestore.v1.StructuredQuery.FieldReference> getFieldsList() {
       return fields_;
     }
+
     /**
      *
      *
@@ -8633,6 +8859,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         getFieldsOrBuilderList() {
       return fields_;
     }
+
     /**
      *
      *
@@ -8649,6 +8876,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getFieldsCount() {
       return fields_.size();
     }
+
     /**
      *
      *
@@ -8665,6 +8893,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.firestore.v1.StructuredQuery.FieldReference getFields(int index) {
       return fields_.get(index);
     }
+
     /**
      *
      *
@@ -8845,6 +9074,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9116,6 +9346,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -9135,6 +9366,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -9154,6 +9386,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -9180,6 +9413,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9204,6 +9438,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9229,6 +9464,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9255,6 +9491,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9278,6 +9515,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9302,6 +9540,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9326,6 +9565,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9348,6 +9588,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9370,6 +9611,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -9386,6 +9628,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           int index) {
         return getFieldsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -9406,6 +9649,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return fieldsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -9427,6 +9671,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return java.util.Collections.unmodifiableList(fields_);
         }
       }
+
       /**
        *
        *
@@ -9444,6 +9689,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             .addBuilder(
                 com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -9462,6 +9708,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             .addBuilder(
                 index, com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -9581,6 +9828,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the vectorField field is set.
      */
     boolean hasVectorField();
+
     /**
      *
      *
@@ -9597,6 +9845,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The vectorField.
      */
     com.google.firestore.v1.StructuredQuery.FieldReference getVectorField();
+
     /**
      *
      *
@@ -9626,6 +9875,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the queryVector field is set.
      */
     boolean hasQueryVector();
+
     /**
      *
      *
@@ -9640,6 +9890,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The queryVector.
      */
     com.google.firestore.v1.Value getQueryVector();
+
     /**
      *
      *
@@ -9667,6 +9918,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The enum numeric value on the wire for distanceMeasure.
      */
     int getDistanceMeasureValue();
+
     /**
      *
      *
@@ -9695,6 +9947,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the limit field is set.
      */
     boolean hasLimit();
+
     /**
      *
      *
@@ -9708,6 +9961,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The limit.
      */
     com.google.protobuf.Int32Value getLimit();
+
     /**
      *
      *
@@ -9734,6 +9988,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The distanceResultField.
      */
     java.lang.String getDistanceResultField();
+
     /**
      *
      *
@@ -9770,6 +10025,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return Whether the distanceThreshold field is set.
      */
     boolean hasDistanceThreshold();
+
     /**
      *
      *
@@ -9791,6 +10047,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      * @return The distanceThreshold.
      */
     com.google.protobuf.DoubleValue getDistanceThreshold();
+
     /**
      *
      *
@@ -9811,6 +10068,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
      */
     com.google.protobuf.DoubleValueOrBuilder getDistanceThresholdOrBuilder();
   }
+
   /**
    *
    *
@@ -9828,6 +10086,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredQuery.FindNearest)
       FindNearestOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FindNearest.newBuilder() to construct.
     private FindNearest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9934,6 +10193,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>DISTANCE_MEASURE_UNSPECIFIED = 0;</code>
        */
       public static final int DISTANCE_MEASURE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -9947,6 +10207,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>EUCLIDEAN = 1;</code>
        */
       public static final int EUCLIDEAN_VALUE = 1;
+
       /**
        *
        *
@@ -9964,6 +10225,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
        * <code>COSINE = 2;</code>
        */
       public static final int COSINE_VALUE = 2;
+
       /**
        *
        *
@@ -10070,6 +10332,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
     public static final int VECTOR_FIELD_FIELD_NUMBER = 1;
     private com.google.firestore.v1.StructuredQuery.FieldReference vectorField_;
+
     /**
      *
      *
@@ -10089,6 +10352,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasVectorField() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -10110,6 +10374,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           ? com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance()
           : vectorField_;
     }
+
     /**
      *
      *
@@ -10133,6 +10398,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int QUERY_VECTOR_FIELD_NUMBER = 2;
     private com.google.firestore.v1.Value queryVector_;
+
     /**
      *
      *
@@ -10150,6 +10416,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasQueryVector() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -10169,6 +10436,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           ? com.google.firestore.v1.Value.getDefaultInstance()
           : queryVector_;
     }
+
     /**
      *
      *
@@ -10189,6 +10457,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int DISTANCE_MEASURE_FIELD_NUMBER = 3;
     private int distanceMeasure_ = 0;
+
     /**
      *
      *
@@ -10206,6 +10475,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getDistanceMeasureValue() {
       return distanceMeasure_;
     }
+
     /**
      *
      *
@@ -10232,6 +10502,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int LIMIT_FIELD_NUMBER = 4;
     private com.google.protobuf.Int32Value limit_;
+
     /**
      *
      *
@@ -10248,6 +10519,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -10264,6 +10536,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.Int32Value getLimit() {
       return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
     }
+
     /**
      *
      *
@@ -10283,6 +10556,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object distanceResultField_ = "";
+
     /**
      *
      *
@@ -10308,6 +10582,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return s;
       }
     }
+
     /**
      *
      *
@@ -10336,6 +10611,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
     public static final int DISTANCE_THRESHOLD_FIELD_NUMBER = 6;
     private com.google.protobuf.DoubleValue distanceThreshold_;
+
     /**
      *
      *
@@ -10360,6 +10636,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasDistanceThreshold() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -10386,6 +10663,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           ? com.google.protobuf.DoubleValue.getDefaultInstance()
           : distanceThreshold_;
     }
+
     /**
      *
      *
@@ -10643,6 +10921,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10943,6 +11222,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
               com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
           vectorFieldBuilder_;
+
       /**
        *
        *
@@ -10961,6 +11241,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasVectorField() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -10985,6 +11266,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return vectorFieldBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11011,6 +11293,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11035,6 +11318,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11068,6 +11352,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -11091,6 +11376,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11110,6 +11396,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getVectorFieldFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11133,6 +11420,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               : vectorField_;
         }
       }
+
       /**
        *
        *
@@ -11169,6 +11457,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.firestore.v1.Value.Builder,
               com.google.firestore.v1.ValueOrBuilder>
           queryVectorBuilder_;
+
       /**
        *
        *
@@ -11186,6 +11475,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasQueryVector() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -11209,6 +11499,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return queryVectorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11234,6 +11525,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11256,6 +11548,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11286,6 +11579,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -11308,6 +11602,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11325,6 +11620,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getQueryVectorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11346,6 +11642,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               : queryVector_;
         }
       }
+
       /**
        *
        *
@@ -11376,6 +11673,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
 
       private int distanceMeasure_ = 0;
+
       /**
        *
        *
@@ -11393,6 +11691,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public int getDistanceMeasureValue() {
         return distanceMeasure_;
       }
+
       /**
        *
        *
@@ -11413,6 +11712,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11436,6 +11736,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             ? com.google.firestore.v1.StructuredQuery.FindNearest.DistanceMeasure.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11460,6 +11761,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11486,6 +11788,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.Int32Value.Builder,
               com.google.protobuf.Int32ValueOrBuilder>
           limitBuilder_;
+
       /**
        *
        *
@@ -11502,6 +11805,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasLimit() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -11522,6 +11826,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return limitBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11546,6 +11851,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11567,6 +11873,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11596,6 +11903,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -11617,6 +11925,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11633,6 +11942,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getLimitFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11651,6 +11961,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
         }
       }
+
       /**
        *
        *
@@ -11680,6 +11991,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
 
       private java.lang.Object distanceResultField_ = "";
+
       /**
        *
        *
@@ -11704,6 +12016,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -11728,6 +12041,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -11751,6 +12065,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11770,6 +12085,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11801,6 +12117,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               com.google.protobuf.DoubleValue.Builder,
               com.google.protobuf.DoubleValueOrBuilder>
           distanceThresholdBuilder_;
+
       /**
        *
        *
@@ -11824,6 +12141,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       public boolean hasDistanceThreshold() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -11853,6 +12171,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           return distanceThresholdBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11884,6 +12203,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11912,6 +12232,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11948,6 +12269,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         }
         return this;
       }
+
       /**
        *
        *
@@ -11976,6 +12298,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11999,6 +12322,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         onChanged();
         return getDistanceThresholdFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -12026,6 +12350,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               : distanceThreshold_;
         }
       }
+
       /**
        *
        *
@@ -12128,6 +12453,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int SELECT_FIELD_NUMBER = 1;
   private com.google.firestore.v1.StructuredQuery.Projection select_;
+
   /**
    *
    *
@@ -12147,6 +12473,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasSelect() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -12168,6 +12495,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         ? com.google.firestore.v1.StructuredQuery.Projection.getDefaultInstance()
         : select_;
   }
+
   /**
    *
    *
@@ -12192,6 +12520,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.StructuredQuery.CollectionSelector> from_;
+
   /**
    *
    *
@@ -12205,6 +12534,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.firestore.v1.StructuredQuery.CollectionSelector> getFromList() {
     return from_;
   }
+
   /**
    *
    *
@@ -12220,6 +12550,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       getFromOrBuilderList() {
     return from_;
   }
+
   /**
    *
    *
@@ -12233,6 +12564,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public int getFromCount() {
     return from_.size();
   }
+
   /**
    *
    *
@@ -12246,6 +12578,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public com.google.firestore.v1.StructuredQuery.CollectionSelector getFrom(int index) {
     return from_.get(index);
   }
+
   /**
    *
    *
@@ -12263,6 +12596,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int WHERE_FIELD_NUMBER = 3;
   private com.google.firestore.v1.StructuredQuery.Filter where_;
+
   /**
    *
    *
@@ -12278,6 +12612,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasWhere() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -12295,6 +12630,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         ? com.google.firestore.v1.StructuredQuery.Filter.getDefaultInstance()
         : where_;
   }
+
   /**
    *
    *
@@ -12315,6 +12651,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.StructuredQuery.Order> orderBy_;
+
   /**
    *
    *
@@ -12347,6 +12684,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.firestore.v1.StructuredQuery.Order> getOrderByList() {
     return orderBy_;
   }
+
   /**
    *
    *
@@ -12380,6 +12718,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       getOrderByOrBuilderList() {
     return orderBy_;
   }
+
   /**
    *
    *
@@ -12412,6 +12751,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public int getOrderByCount() {
     return orderBy_.size();
   }
+
   /**
    *
    *
@@ -12444,6 +12784,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public com.google.firestore.v1.StructuredQuery.Order getOrderBy(int index) {
     return orderBy_.get(index);
   }
+
   /**
    *
    *
@@ -12479,6 +12820,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int START_AT_FIELD_NUMBER = 7;
   private com.google.firestore.v1.Cursor startAt_;
+
   /**
    *
    *
@@ -12524,6 +12866,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasStartAt() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -12569,6 +12912,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public com.google.firestore.v1.Cursor getStartAt() {
     return startAt_ == null ? com.google.firestore.v1.Cursor.getDefaultInstance() : startAt_;
   }
+
   /**
    *
    *
@@ -12615,6 +12959,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int END_AT_FIELD_NUMBER = 8;
   private com.google.firestore.v1.Cursor endAt_;
+
   /**
    *
    *
@@ -12638,6 +12983,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasEndAt() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -12661,6 +13007,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public com.google.firestore.v1.Cursor getEndAt() {
     return endAt_ == null ? com.google.firestore.v1.Cursor.getDefaultInstance() : endAt_;
   }
+
   /**
    *
    *
@@ -12685,6 +13032,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int OFFSET_FIELD_NUMBER = 6;
   private int offset_ = 0;
+
   /**
    *
    *
@@ -12710,6 +13058,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int LIMIT_FIELD_NUMBER = 5;
   private com.google.protobuf.Int32Value limit_;
+
   /**
    *
    *
@@ -12731,6 +13080,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasLimit() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -12752,6 +13102,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.Int32Value getLimit() {
     return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
   }
+
   /**
    *
    *
@@ -12774,6 +13125,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
 
   public static final int FIND_NEAREST_FIELD_NUMBER = 9;
   private com.google.firestore.v1.StructuredQuery.FindNearest findNearest_;
+
   /**
    *
    *
@@ -12795,6 +13147,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
   public boolean hasFindNearest() {
     return ((bitField0_ & 0x00000020) != 0);
   }
+
   /**
    *
    *
@@ -12818,6 +13171,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         ? com.google.firestore.v1.StructuredQuery.FindNearest.getDefaultInstance()
         : findNearest_;
   }
+
   /**
    *
    *
@@ -13104,6 +13458,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13543,6 +13898,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.StructuredQuery.Projection.Builder,
             com.google.firestore.v1.StructuredQuery.ProjectionOrBuilder>
         selectBuilder_;
+
     /**
      *
      *
@@ -13561,6 +13917,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasSelect() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -13585,6 +13942,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return selectBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -13611,6 +13969,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13635,6 +13994,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13666,6 +14026,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13689,6 +14050,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -13707,6 +14069,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getSelectFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13729,6 +14092,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             : select_;
       }
     }
+
     /**
      *
      *
@@ -13794,6 +14158,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return fromBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -13810,6 +14175,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return fromBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -13826,6 +14192,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return fromBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -13849,6 +14216,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13870,6 +14238,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13892,6 +14261,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13915,6 +14285,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13935,6 +14306,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13956,6 +14328,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13977,6 +14350,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -13996,6 +14370,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14015,6 +14390,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14028,6 +14404,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         int index) {
       return getFromFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -14045,6 +14422,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return fromBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -14063,6 +14441,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(from_);
       }
     }
+
     /**
      *
      *
@@ -14077,6 +14456,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
           .addBuilder(
               com.google.firestore.v1.StructuredQuery.CollectionSelector.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -14093,6 +14473,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
               index,
               com.google.firestore.v1.StructuredQuery.CollectionSelector.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -14130,6 +14511,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.StructuredQuery.Filter.Builder,
             com.google.firestore.v1.StructuredQuery.FilterOrBuilder>
         whereBuilder_;
+
     /**
      *
      *
@@ -14144,6 +14526,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasWhere() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -14164,6 +14547,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return whereBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14186,6 +14570,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14206,6 +14591,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14233,6 +14619,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14252,6 +14639,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14266,6 +14654,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getWhereFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14284,6 +14673,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             : where_;
       }
     }
+
     /**
      *
      *
@@ -14361,6 +14751,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return orderByBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -14396,6 +14787,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return orderByBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -14431,6 +14823,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return orderByBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -14472,6 +14865,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14511,6 +14905,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14552,6 +14947,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14593,6 +14989,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14632,6 +15029,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14671,6 +15069,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14710,6 +15109,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14748,6 +15148,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14786,6 +15187,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -14817,6 +15219,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public com.google.firestore.v1.StructuredQuery.Order.Builder getOrderByBuilder(int index) {
       return getOrderByFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -14852,6 +15255,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return orderByBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -14888,6 +15292,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(orderBy_);
       }
     }
+
     /**
      *
      *
@@ -14920,6 +15325,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       return getOrderByFieldBuilder()
           .addBuilder(com.google.firestore.v1.StructuredQuery.Order.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -14952,6 +15358,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       return getOrderByFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.StructuredQuery.Order.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -15008,6 +15415,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.Cursor.Builder,
             com.google.firestore.v1.CursorOrBuilder>
         startAtBuilder_;
+
     /**
      *
      *
@@ -15052,6 +15460,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasStartAt() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -15100,6 +15509,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return startAtBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15152,6 +15562,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15201,6 +15612,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15258,6 +15670,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -15307,6 +15720,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15351,6 +15765,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getStartAtFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15397,6 +15812,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return startAt_ == null ? com.google.firestore.v1.Cursor.getDefaultInstance() : startAt_;
       }
     }
+
     /**
      *
      *
@@ -15459,6 +15875,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.Cursor.Builder,
             com.google.firestore.v1.CursorOrBuilder>
         endAtBuilder_;
+
     /**
      *
      *
@@ -15481,6 +15898,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasEndAt() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -15507,6 +15925,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return endAtBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15537,6 +15956,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15564,6 +15984,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15599,6 +16020,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -15626,6 +16048,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15648,6 +16071,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getEndAtFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15672,6 +16096,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return endAt_ == null ? com.google.firestore.v1.Cursor.getDefaultInstance() : endAt_;
       }
     }
+
     /**
      *
      *
@@ -15707,6 +16132,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     }
 
     private int offset_;
+
     /**
      *
      *
@@ -15729,6 +16155,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public int getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -15755,6 +16182,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15786,6 +16214,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.protobuf.Int32Value.Builder,
             com.google.protobuf.Int32ValueOrBuilder>
         limitBuilder_;
+
     /**
      *
      *
@@ -15806,6 +16235,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasLimit() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -15830,6 +16260,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return limitBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -15858,6 +16289,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15883,6 +16315,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15916,6 +16349,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -15941,6 +16375,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -15961,6 +16396,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getLimitFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -15983,6 +16419,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return limit_ == null ? com.google.protobuf.Int32Value.getDefaultInstance() : limit_;
       }
     }
+
     /**
      *
      *
@@ -16021,6 +16458,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             com.google.firestore.v1.StructuredQuery.FindNearest.Builder,
             com.google.firestore.v1.StructuredQuery.FindNearestOrBuilder>
         findNearestBuilder_;
+
     /**
      *
      *
@@ -16041,6 +16479,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
     public boolean hasFindNearest() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -16067,6 +16506,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
         return findNearestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -16095,6 +16535,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16121,6 +16562,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16155,6 +16597,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -16180,6 +16623,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -16200,6 +16644,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getFindNearestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -16224,6 +16669,7 @@ public final class StructuredQuery extends com.google.protobuf.GeneratedMessageV
             : findNearest_;
       }
     }
+
     /**
      *
      *

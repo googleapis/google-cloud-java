@@ -37,6 +37,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The mask.
    */
   com.google.firestore.v1.DocumentMask getMask();
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface GetDocumentRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public interface GetDocumentRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

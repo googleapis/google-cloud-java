@@ -39,6 +39,7 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; aggregate_fields = 2;</code>
    */
   int getAggregateFieldsCount();
+
   /**
    *
    *
@@ -54,9 +55,11 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; aggregate_fields = 2;</code>
    */
   boolean containsAggregateFields(java.lang.String key);
+
   /** Use {@link #getAggregateFieldsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFields();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.firestore.v1.Value&gt; aggregate_fields = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFieldsMap();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface AggregationResultOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.firestore.v1.Value defaultValue);
+
   /**
    *
    *

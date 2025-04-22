@@ -36,6 +36,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return A list containing the queries.
    */
   java.util.List<java.lang.String> getQueriesList();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return The count of queries.
    */
   int getQueriesCount();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface BundledDocumentMetadataOrBuilder
    * @return The queries at the given index.
    */
   java.lang.String getQueries(int index);
+
   /**
    *
    *

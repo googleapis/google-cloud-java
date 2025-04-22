@@ -35,6 +35,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Progress)
     ProgressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Progress.newBuilder() to construct.
   private Progress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ESTIMATED_WORK_FIELD_NUMBER = 1;
   private long estimatedWork_ = 0L;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMPLETED_WORK_FIELD_NUMBER = 2;
   private long completedWork_ = 0L;
+
   /**
    *
    *
@@ -266,6 +269,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -462,6 +466,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long estimatedWork_;
+
     /**
      *
      *
@@ -477,6 +482,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     public long getEstimatedWork() {
       return estimatedWork_;
     }
+
     /**
      *
      *
@@ -496,6 +502,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -515,6 +522,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long completedWork_;
+
     /**
      *
      *
@@ -530,6 +538,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
     public long getCompletedWork() {
       return completedWork_;
     }
+
     /**
      *
      *
@@ -549,6 +558,7 @@ public final class Progress extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

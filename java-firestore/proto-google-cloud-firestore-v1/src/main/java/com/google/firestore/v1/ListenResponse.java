@@ -33,6 +33,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ListenResponse)
     ListenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListenResponse.newBuilder() to construct.
   private ListenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     private ResponseTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -120,6 +122,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TARGET_CHANGE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTargetChange() {
     return responseTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.TargetChange.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_CHANGE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentChange() {
     return responseTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -204,6 +211,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.DocumentChange.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -222,6 +230,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_DELETE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -237,6 +246,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentDelete() {
     return responseTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -255,6 +265,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.DocumentDelete.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -273,6 +284,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DOCUMENT_REMOVE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -289,6 +301,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDocumentRemove() {
     return responseTypeCase_ == 6;
   }
+
   /**
    *
    *
@@ -308,6 +321,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.DocumentRemove.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -327,6 +341,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -346,6 +361,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFilter() {
     return responseTypeCase_ == 5;
   }
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.ExistenceFilter.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -622,6 +639,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -907,6 +925,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.TargetChange.Builder,
             com.google.firestore.v1.TargetChangeOrBuilder>
         targetChangeBuilder_;
+
     /**
      *
      *
@@ -922,6 +941,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTargetChange() {
       return responseTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -947,6 +967,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.TargetChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -969,6 +990,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1010,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1043,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1069,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.TargetChange.Builder getTargetChangeBuilder() {
       return getTargetChangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.TargetChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1142,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentChange.Builder,
             com.google.firestore.v1.DocumentChangeOrBuilder>
         documentChangeBuilder_;
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentChange() {
       return responseTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1155,6 +1184,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1177,6 +1207,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1228,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1229,6 +1261,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1254,6 +1287,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1300,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.DocumentChange.Builder getDocumentChangeBuilder() {
       return getDocumentChangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1286,6 +1321,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1324,6 +1360,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentDelete.Builder,
             com.google.firestore.v1.DocumentDeleteOrBuilder>
         documentDeleteBuilder_;
+
     /**
      *
      *
@@ -1339,6 +1376,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentDelete() {
       return responseTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1364,6 +1402,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentDelete.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1386,6 +1425,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1406,6 +1446,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1438,6 +1479,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1505,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1518,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.DocumentDelete.Builder getDocumentDeleteBuilder() {
       return getDocumentDeleteFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1495,6 +1539,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentDelete.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1533,6 +1578,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentRemove.Builder,
             com.google.firestore.v1.DocumentRemoveOrBuilder>
         documentRemoveBuilder_;
+
     /**
      *
      *
@@ -1549,6 +1595,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDocumentRemove() {
       return responseTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -1575,6 +1622,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentRemove.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1598,6 +1646,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1619,6 +1668,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1702,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1678,6 +1729,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1691,6 +1743,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.DocumentRemove.Builder getDocumentRemoveBuilder() {
       return getDocumentRemoveFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1712,6 +1765,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentRemove.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1751,6 +1805,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.ExistenceFilter.Builder,
             com.google.firestore.v1.ExistenceFilterOrBuilder>
         filterBuilder_;
+
     /**
      *
      *
@@ -1770,6 +1825,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFilter() {
       return responseTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -1799,6 +1855,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.ExistenceFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1825,6 +1882,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1848,6 +1906,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1884,6 +1943,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       responseTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1913,6 +1973,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1929,6 +1990,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.ExistenceFilter.Builder getFilterBuilder() {
       return getFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1953,6 +2015,7 @@ public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.ExistenceFilter.getDefaultInstance();
       }
     }
+
     /**
      *
      *

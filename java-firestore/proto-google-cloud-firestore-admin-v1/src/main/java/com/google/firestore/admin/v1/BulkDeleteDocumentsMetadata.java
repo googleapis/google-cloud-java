@@ -35,6 +35,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.BulkDeleteDocumentsMetadata)
     BulkDeleteDocumentsMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BulkDeleteDocumentsMetadata.newBuilder() to construct.
   private BulkDeleteDocumentsMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
 
   public static final int OPERATION_STATE_FIELD_NUMBER = 3;
   private int operationState_ = 0;
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public int getOperationStateValue() {
     return operationState_;
   }
+
   /**
    *
    *
@@ -200,6 +209,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
 
   public static final int PROGRESS_DOCUMENTS_FIELD_NUMBER = 4;
   private com.google.firestore.admin.v1.Progress progressDocuments_;
+
   /**
    *
    *
@@ -215,6 +225,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public boolean hasProgressDocuments() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -232,6 +243,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressDocuments_;
   }
+
   /**
    *
    *
@@ -250,6 +262,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 5;
   private com.google.firestore.admin.v1.Progress progressBytes_;
+
   /**
    *
    *
@@ -265,6 +278,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public boolean hasProgressBytes() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -282,6 +296,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         ? com.google.firestore.admin.v1.Progress.getDefaultInstance()
         : progressBytes_;
   }
+
   /**
    *
    *
@@ -303,6 +318,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList collectionIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -317,6 +333,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getCollectionIdsList() {
     return collectionIds_;
   }
+
   /**
    *
    *
@@ -331,6 +348,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public int getCollectionIdsCount() {
     return collectionIds_.size();
   }
+
   /**
    *
    *
@@ -346,6 +364,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public java.lang.String getCollectionIds(int index) {
     return collectionIds_.get(index);
   }
+
   /**
    *
    *
@@ -367,6 +386,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList namespaceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -381,6 +401,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public com.google.protobuf.ProtocolStringList getNamespaceIdsList() {
     return namespaceIds_;
   }
+
   /**
    *
    *
@@ -395,6 +416,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public int getNamespaceIdsCount() {
     return namespaceIds_.size();
   }
+
   /**
    *
    *
@@ -410,6 +432,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public java.lang.String getNamespaceIds(int index) {
     return namespaceIds_.get(index);
   }
+
   /**
    *
    *
@@ -428,6 +451,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
 
   public static final int SNAPSHOT_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp snapshotTime_;
+
   /**
    *
    *
@@ -446,6 +470,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
   public boolean hasSnapshotTime() {
     return ((bitField0_ & 0x00000010) != 0);
   }
+
   /**
    *
    *
@@ -466,6 +491,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : snapshotTime_;
   }
+
   /**
    *
    *
@@ -749,6 +775,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1093,6 +1120,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1107,6 +1135,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1177,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1197,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1225,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1245,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1260,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1242,6 +1277,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1274,6 +1310,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1289,6 +1326,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1308,6 +1346,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1370,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1351,6 +1391,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1379,6 +1420,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1399,6 +1441,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1414,6 +1457,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1431,6 +1475,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1459,6 +1504,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     }
 
     private int operationState_ = 0;
+
     /**
      *
      *
@@ -1474,6 +1520,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public int getOperationStateValue() {
       return operationState_;
     }
+
     /**
      *
      *
@@ -1492,6 +1539,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1509,6 +1557,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
           com.google.firestore.admin.v1.OperationState.forNumber(operationState_);
       return result == null ? com.google.firestore.admin.v1.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1530,6 +1579,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1554,6 +1604,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressDocumentsBuilder_;
+
     /**
      *
      *
@@ -1568,6 +1619,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public boolean hasProgressDocuments() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1588,6 +1640,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return progressDocumentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1610,6 +1663,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1630,6 +1684,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1657,6 +1712,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1676,6 +1732,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1690,6 +1747,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getProgressDocumentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1708,6 +1766,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             : progressDocuments_;
       }
     }
+
     /**
      *
      *
@@ -1740,6 +1799,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             com.google.firestore.admin.v1.Progress.Builder,
             com.google.firestore.admin.v1.ProgressOrBuilder>
         progressBytesBuilder_;
+
     /**
      *
      *
@@ -1754,6 +1814,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public boolean hasProgressBytes() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1774,6 +1835,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return progressBytesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1796,6 +1858,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1816,6 +1879,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1843,6 +1907,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1862,6 +1927,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1876,6 +1942,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1894,6 +1961,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             : progressBytes_;
       }
     }
+
     /**
      *
      *
@@ -1929,6 +1997,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -1944,6 +2013,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       collectionIds_.makeImmutable();
       return collectionIds_;
     }
+
     /**
      *
      *
@@ -1958,6 +2028,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public int getCollectionIdsCount() {
       return collectionIds_.size();
     }
+
     /**
      *
      *
@@ -1973,6 +2044,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public java.lang.String getCollectionIds(int index) {
       return collectionIds_.get(index);
     }
+
     /**
      *
      *
@@ -1988,6 +2060,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getCollectionIdsBytes(int index) {
       return collectionIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2011,6 +2084,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2033,6 +2107,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2052,6 +2127,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2070,6 +2146,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2103,6 +2180,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       bitField0_ |= 0x00000040;
     }
+
     /**
      *
      *
@@ -2118,6 +2196,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       namespaceIds_.makeImmutable();
       return namespaceIds_;
     }
+
     /**
      *
      *
@@ -2132,6 +2211,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public int getNamespaceIdsCount() {
       return namespaceIds_.size();
     }
+
     /**
      *
      *
@@ -2147,6 +2227,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public java.lang.String getNamespaceIds(int index) {
       return namespaceIds_.get(index);
     }
+
     /**
      *
      *
@@ -2162,6 +2243,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public com.google.protobuf.ByteString getNamespaceIdsBytes(int index) {
       return namespaceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2185,6 +2267,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2207,6 +2290,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2310,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2244,6 +2329,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2274,6 +2360,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         snapshotTimeBuilder_;
+
     /**
      *
      *
@@ -2291,6 +2378,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2314,6 +2402,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
         return snapshotTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2339,6 +2428,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2361,6 +2451,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2391,6 +2482,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2413,6 +2505,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2523,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
       onChanged();
       return getSnapshotTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2451,6 +2545,7 @@ public final class BulkDeleteDocumentsMetadata extends com.google.protobuf.Gener
             : snapshotTime_;
       }
     }
+
     /**
      *
      *

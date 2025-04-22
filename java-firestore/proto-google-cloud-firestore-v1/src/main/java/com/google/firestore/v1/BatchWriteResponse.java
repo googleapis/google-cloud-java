@@ -34,6 +34,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.firestore.v1.BatchWriteResponse)
     BatchWriteResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchWriteResponse.newBuilder() to construct.
   private BatchWriteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.WriteResult> writeResults_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.firestore.v1.WriteResult> getWriteResultsList() {
     return writeResults_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       getWriteResultsOrBuilderList() {
     return writeResults_;
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public int getWriteResultsCount() {
     return writeResults_.size();
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public com.google.firestore.v1.WriteResult getWriteResults(int index) {
     return writeResults_.get(index);
   }
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> status_;
+
   /**
    *
    *
@@ -171,6 +178,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.rpc.Status> getStatusList() {
     return status_;
   }
+
   /**
    *
    *
@@ -187,6 +195,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<? extends com.google.rpc.StatusOrBuilder> getStatusOrBuilderList() {
     return status_;
   }
+
   /**
    *
    *
@@ -203,6 +212,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public int getStatusCount() {
     return status_.size();
   }
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
   public com.google.rpc.Status getStatus(int index) {
     return status_.get(index);
   }
+
   /**
    *
    *
@@ -408,6 +419,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -726,6 +738,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return writeResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -745,6 +758,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return writeResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return writeResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -789,6 +804,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +854,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +903,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +951,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +997,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1013,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     public com.google.firestore.v1.WriteResult.Builder getWriteResultsBuilder(int index) {
       return getWriteResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return writeResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1028,6 +1054,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(writeResults_);
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1071,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       return getWriteResultsFieldBuilder()
           .addBuilder(com.google.firestore.v1.WriteResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1060,6 +1088,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       return getWriteResultsFieldBuilder()
           .addBuilder(index, com.google.firestore.v1.WriteResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1126,6 +1155,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return statusBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1145,6 +1175,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return statusBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1164,6 +1195,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return statusBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1244,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1236,6 +1270,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1261,6 +1296,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1283,6 +1319,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1305,6 +1342,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1365,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1349,6 +1388,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1411,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status.Builder getStatusBuilder(int index) {
       return getStatusFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1405,6 +1447,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return statusBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1467,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(status_);
       }
     }
+
     /**
      *
      *
@@ -1439,6 +1483,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status.Builder addStatusBuilder() {
       return getStatusFieldBuilder().addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1454,6 +1499,7 @@ public final class BatchWriteResponse extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status.Builder addStatusBuilder(int index) {
       return getStatusFieldBuilder().addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
+
     /**
      *
      *

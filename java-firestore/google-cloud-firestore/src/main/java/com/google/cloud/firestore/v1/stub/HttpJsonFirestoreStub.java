@@ -1040,7 +1040,8 @@ public class HttpJsonFirestoreStub extends FirestoreStub {
   @Override
   public BidiStreamingCallable<ListenRequest, ListenResponse> listenCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: listenCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: listenCallable(). REST transport is not implemented for this method"
+            + " yet.");
   }
 
   @Override

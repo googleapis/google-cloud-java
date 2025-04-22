@@ -37,6 +37,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return A list containing the documents.
    */
   java.util.List<java.lang.String> getDocumentsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The count of documents.
    */
   int getDocumentsCount();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The documents at the given index.
    */
   java.lang.String getDocuments(int index);
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The mask.
    */
   com.google.firestore.v1.DocumentMask getMask();
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return Whether the newTransaction field is set.
    */
   boolean hasNewTransaction();
+
   /**
    *
    *
@@ -213,6 +221,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The newTransaction.
    */
   com.google.firestore.v1.TransactionOptions getNewTransaction();
+
   /**
    *
    *
@@ -243,6 +252,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -259,6 +269,7 @@ public interface BatchGetDocumentsRequestOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

@@ -124,6 +124,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -134,6 +135,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INITIALIZING = 1;</code>
    */
   public static final int INITIALIZING_VALUE = 1;
+
   /**
    *
    *
@@ -144,6 +146,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PROCESSING = 2;</code>
    */
   public static final int PROCESSING_VALUE = 2;
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CANCELLING = 3;</code>
    */
   public static final int CANCELLING_VALUE = 3;
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FINALIZING = 4;</code>
    */
   public static final int FINALIZING_VALUE = 4;
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SUCCESSFUL = 5;</code>
    */
   public static final int SUCCESSFUL_VALUE = 5;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>FAILED = 6;</code>
    */
   public static final int FAILED_VALUE = 6;
+
   /**
    *
    *

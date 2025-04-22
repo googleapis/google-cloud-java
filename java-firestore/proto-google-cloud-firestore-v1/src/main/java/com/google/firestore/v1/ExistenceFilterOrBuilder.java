@@ -81,6 +81,7 @@ public interface ExistenceFilterOrBuilder
    * @return Whether the unchangedNames field is set.
    */
   boolean hasUnchangedNames();
+
   /**
    *
    *
@@ -103,6 +104,7 @@ public interface ExistenceFilterOrBuilder
    * @return The unchangedNames.
    */
   com.google.firestore.v1.BloomFilter getUnchangedNames();
+
   /**
    *
    *

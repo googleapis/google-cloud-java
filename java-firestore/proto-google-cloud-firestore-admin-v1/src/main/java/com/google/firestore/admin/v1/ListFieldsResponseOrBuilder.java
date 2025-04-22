@@ -34,6 +34,7 @@ public interface ListFieldsResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Field fields = 1;</code>
    */
   java.util.List<com.google.firestore.admin.v1.Field> getFieldsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListFieldsResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Field fields = 1;</code>
    */
   com.google.firestore.admin.v1.Field getFields(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListFieldsResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Field fields = 1;</code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListFieldsResponseOrBuilder
    * <code>repeated .google.firestore.admin.v1.Field fields = 1;</code>
    */
   java.util.List<? extends com.google.firestore.admin.v1.FieldOrBuilder> getFieldsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListFieldsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

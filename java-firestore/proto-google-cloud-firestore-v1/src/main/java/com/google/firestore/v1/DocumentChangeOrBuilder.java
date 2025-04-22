@@ -38,6 +38,7 @@ public interface DocumentChangeOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DocumentChangeOrBuilder
    * @return The document.
    */
   com.google.firestore.v1.Document getDocument();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface DocumentChangeOrBuilder
    * @return A list containing the targetIds.
    */
   java.util.List<java.lang.Integer> getTargetIdsList();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface DocumentChangeOrBuilder
    * @return The count of targetIds.
    */
   int getTargetIdsCount();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface DocumentChangeOrBuilder
    * @return A list containing the removedTargetIds.
    */
   java.util.List<java.lang.Integer> getRemovedTargetIdsList();
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public interface DocumentChangeOrBuilder
    * @return The count of removedTargetIds.
    */
   int getRemovedTargetIdsCount();
+
   /**
    *
    *

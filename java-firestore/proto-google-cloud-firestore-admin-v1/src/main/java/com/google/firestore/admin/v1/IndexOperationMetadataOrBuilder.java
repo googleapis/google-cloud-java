@@ -36,6 +36,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return Whether the progressDocuments field is set.
    */
   boolean hasProgressDocuments();
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The progressDocuments.
    */
   com.google.firestore.admin.v1.Progress getProgressDocuments();
+
   /**
    *
    *
@@ -196,6 +204,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return Whether the progressBytes field is set.
    */
   boolean hasProgressBytes();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface IndexOperationMetadataOrBuilder
    * @return The progressBytes.
    */
   com.google.firestore.admin.v1.Progress getProgressBytes();
+
   /**
    *
    *

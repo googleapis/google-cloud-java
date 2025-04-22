@@ -34,6 +34,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredAggregationQuery)
     StructuredAggregationQueryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StructuredAggregationQuery.newBuilder() to construct.
   private StructuredAggregationQuery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return Whether the count field is set.
      */
     boolean hasCount();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return The count.
      */
     com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Count getCount();
+
     /**
      *
      *
@@ -117,6 +120,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return Whether the sum field is set.
      */
     boolean hasSum();
+
     /**
      *
      *
@@ -129,6 +133,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return The sum.
      */
     com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Sum getSum();
+
     /**
      *
      *
@@ -152,6 +157,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return Whether the avg field is set.
      */
     boolean hasAvg();
+
     /**
      *
      *
@@ -164,6 +170,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return The avg.
      */
     com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Avg getAvg();
+
     /**
      *
      *
@@ -221,6 +228,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
      * @return The alias.
      */
     java.lang.String getAlias();
+
     /**
      *
      *
@@ -270,6 +278,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
 
     com.google.firestore.v1.StructuredAggregationQuery.Aggregation.OperatorCase getOperatorCase();
   }
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredAggregationQuery.Aggregation)
       AggregationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Aggregation.newBuilder() to construct.
     private Aggregation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -348,6 +358,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return Whether the upTo field is set.
        */
       boolean hasUpTo();
+
       /**
        *
        *
@@ -377,6 +388,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return The upTo.
        */
       com.google.protobuf.Int64Value getUpTo();
+
       /**
        *
        *
@@ -405,6 +417,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        */
       com.google.protobuf.Int64ValueOrBuilder getUpToOrBuilder();
     }
+
     /**
      *
      *
@@ -422,6 +435,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredAggregationQuery.Aggregation.Count)
         CountOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Count.newBuilder() to construct.
       private Count(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -453,6 +467,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       private int bitField0_;
       public static final int UP_TO_FIELD_NUMBER = 1;
       private com.google.protobuf.Int64Value upTo_;
+
       /**
        *
        *
@@ -485,6 +500,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasUpTo() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -517,6 +533,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public com.google.protobuf.Int64Value getUpTo() {
         return upTo_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : upTo_;
       }
+
       /**
        *
        *
@@ -717,6 +734,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -936,6 +954,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
                 com.google.protobuf.Int64Value.Builder,
                 com.google.protobuf.Int64ValueOrBuilder>
             upToBuilder_;
+
         /**
          *
          *
@@ -967,6 +986,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         public boolean hasUpTo() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -1002,6 +1022,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             return upToBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -1041,6 +1062,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1077,6 +1099,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1121,6 +1144,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           }
           return this;
         }
+
         /**
          *
          *
@@ -1157,6 +1181,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1188,6 +1213,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return getUpToFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -1221,6 +1247,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             return upTo_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : upTo_;
           }
         }
+
         /**
          *
          *
@@ -1349,6 +1376,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return Whether the field field is set.
        */
       boolean hasField();
+
       /**
        *
        *
@@ -1361,6 +1389,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return The field.
        */
       com.google.firestore.v1.StructuredQuery.FieldReference getField();
+
       /**
        *
        *
@@ -1372,6 +1401,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        */
       com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder getFieldOrBuilder();
     }
+
     /**
      *
      *
@@ -1406,6 +1436,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredAggregationQuery.Aggregation.Sum)
         SumOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Sum.newBuilder() to construct.
       private Sum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1437,6 +1468,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       private int bitField0_;
       public static final int FIELD_FIELD_NUMBER = 1;
       private com.google.firestore.v1.StructuredQuery.FieldReference field_;
+
       /**
        *
        *
@@ -1452,6 +1484,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasField() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1469,6 +1502,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             ? com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance()
             : field_;
       }
+
       /**
        *
        *
@@ -1653,6 +1687,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1887,6 +1922,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
                 com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
                 com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
             fieldBuilder_;
+
         /**
          *
          *
@@ -1901,6 +1937,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         public boolean hasField() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -1921,6 +1958,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             return fieldBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -1943,6 +1981,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1963,6 +2002,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1992,6 +2032,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           }
           return this;
         }
+
         /**
          *
          *
@@ -2011,6 +2052,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2025,6 +2067,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return getFieldFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2043,6 +2086,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
                 : field_;
           }
         }
+
         /**
          *
          *
@@ -2153,6 +2197,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return Whether the field field is set.
        */
       boolean hasField();
+
       /**
        *
        *
@@ -2165,6 +2210,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        * @return The field.
        */
       com.google.firestore.v1.StructuredQuery.FieldReference getField();
+
       /**
        *
        *
@@ -2176,6 +2222,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
        */
       com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder getFieldOrBuilder();
     }
+
     /**
      *
      *
@@ -2200,6 +2247,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         // @@protoc_insertion_point(message_implements:google.firestore.v1.StructuredAggregationQuery.Aggregation.Avg)
         AvgOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Avg.newBuilder() to construct.
       private Avg(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2231,6 +2279,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       private int bitField0_;
       public static final int FIELD_FIELD_NUMBER = 1;
       private com.google.firestore.v1.StructuredQuery.FieldReference field_;
+
       /**
        *
        *
@@ -2246,6 +2295,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasField() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2263,6 +2313,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             ? com.google.firestore.v1.StructuredQuery.FieldReference.getDefaultInstance()
             : field_;
       }
+
       /**
        *
        *
@@ -2447,6 +2498,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2671,6 +2723,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
                 com.google.firestore.v1.StructuredQuery.FieldReference.Builder,
                 com.google.firestore.v1.StructuredQuery.FieldReferenceOrBuilder>
             fieldBuilder_;
+
         /**
          *
          *
@@ -2685,6 +2738,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         public boolean hasField() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2705,6 +2759,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             return fieldBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -2727,6 +2782,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2747,6 +2803,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2776,6 +2833,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           }
           return this;
         }
+
         /**
          *
          *
@@ -2795,6 +2853,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2809,6 +2868,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           onChanged();
           return getFieldFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2827,6 +2887,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
                 : field_;
           }
         }
+
         /**
          *
          *
@@ -2938,6 +2999,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       private OperatorCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2973,6 +3035,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     }
 
     public static final int COUNT_FIELD_NUMBER = 1;
+
     /**
      *
      *
@@ -2988,6 +3051,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     public boolean hasCount() {
       return operatorCase_ == 1;
     }
+
     /**
      *
      *
@@ -3007,6 +3071,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       return com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Count
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3027,6 +3092,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     }
 
     public static final int SUM_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -3042,6 +3108,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     public boolean hasSum() {
       return operatorCase_ == 2;
     }
+
     /**
      *
      *
@@ -3061,6 +3128,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       return com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Sum
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3081,6 +3149,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     }
 
     public static final int AVG_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -3096,6 +3165,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     public boolean hasAvg() {
       return operatorCase_ == 3;
     }
+
     /**
      *
      *
@@ -3115,6 +3185,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       return com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Avg
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3138,6 +3209,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object alias_ = "";
+
     /**
      *
      *
@@ -3195,6 +3267,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return s;
       }
     }
+
     /**
      *
      *
@@ -3472,6 +3545,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3747,6 +3821,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Count.Builder,
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.CountOrBuilder>
           countBuilder_;
+
       /**
        *
        *
@@ -3762,6 +3837,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasCount() {
         return operatorCase_ == 1;
       }
+
       /**
        *
        *
@@ -3789,6 +3865,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3812,6 +3889,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3833,6 +3911,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3869,6 +3948,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 1;
         return this;
       }
+
       /**
        *
        *
@@ -3894,6 +3974,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -3907,6 +3988,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           getCountBuilder() {
         return getCountFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3929,6 +4011,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3969,6 +4052,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Sum.Builder,
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.SumOrBuilder>
           sumBuilder_;
+
       /**
        *
        *
@@ -3984,6 +4068,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasSum() {
         return operatorCase_ == 2;
       }
+
       /**
        *
        *
@@ -4011,6 +4096,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4034,6 +4120,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4055,6 +4142,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4091,6 +4179,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -4116,6 +4205,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -4129,6 +4219,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           getSumBuilder() {
         return getSumFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4151,6 +4242,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4191,6 +4283,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.Avg.Builder,
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.AvgOrBuilder>
           avgBuilder_;
+
       /**
        *
        *
@@ -4206,6 +4299,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       public boolean hasAvg() {
         return operatorCase_ == 3;
       }
+
       /**
        *
        *
@@ -4233,6 +4327,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4256,6 +4351,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -4277,6 +4373,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -4313,6 +4410,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         operatorCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -4338,6 +4436,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         }
         return this;
       }
+
       /**
        *
        *
@@ -4351,6 +4450,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           getAvgBuilder() {
         return getAvgFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4373,6 +4473,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4409,6 +4510,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
 
       private java.lang.Object alias_ = "";
+
       /**
        *
        *
@@ -4465,6 +4567,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4521,6 +4624,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4576,6 +4680,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4627,6 +4732,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4767,6 +4873,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     private QueryTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4798,6 +4905,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
   }
 
   public static final int STRUCTURED_QUERY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -4813,6 +4921,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
   public boolean hasStructuredQuery() {
     return queryTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -4831,6 +4940,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     }
     return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4853,6 +4963,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.StructuredAggregationQuery.Aggregation>
       aggregations_;
+
   /**
    *
    *
@@ -4874,6 +4985,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       getAggregationsList() {
     return aggregations_;
   }
+
   /**
    *
    *
@@ -4896,6 +5008,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       getAggregationsOrBuilderList() {
     return aggregations_;
   }
+
   /**
    *
    *
@@ -4916,6 +5029,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
   public int getAggregationsCount() {
     return aggregations_.size();
   }
+
   /**
    *
    *
@@ -4936,6 +5050,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
   public com.google.firestore.v1.StructuredAggregationQuery.Aggregation getAggregations(int index) {
     return aggregations_.get(index);
   }
+
   /**
    *
    *
@@ -5143,6 +5258,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5424,6 +5540,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
             com.google.firestore.v1.StructuredQuery.Builder,
             com.google.firestore.v1.StructuredQueryOrBuilder>
         structuredQueryBuilder_;
+
     /**
      *
      *
@@ -5439,6 +5556,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     public boolean hasStructuredQuery() {
       return queryTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -5464,6 +5582,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5486,6 +5605,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       queryTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5506,6 +5626,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       queryTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5538,6 +5659,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       queryTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5563,6 +5685,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5575,6 +5698,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
     public com.google.firestore.v1.StructuredQuery.Builder getStructuredQueryBuilder() {
       return getStructuredQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5595,6 +5719,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return com.google.firestore.v1.StructuredQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5670,6 +5795,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return aggregationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5693,6 +5819,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return aggregationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5717,6 +5844,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return aggregationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5747,6 +5875,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5775,6 +5904,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5805,6 +5935,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5835,6 +5966,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5862,6 +5994,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5890,6 +6023,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5918,6 +6052,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5944,6 +6079,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5970,6 +6106,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -5990,6 +6127,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         getAggregationsBuilder(int index) {
       return getAggregationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -6014,6 +6152,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return aggregationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -6039,6 +6178,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(aggregations_);
       }
     }
+
     /**
      *
      *
@@ -6061,6 +6201,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
           .addBuilder(
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -6084,6 +6225,7 @@ public final class StructuredAggregationQuery extends com.google.protobuf.Genera
               index,
               com.google.firestore.v1.StructuredAggregationQuery.Aggregation.getDefaultInstance());
     }
+
     /**
      *
      *

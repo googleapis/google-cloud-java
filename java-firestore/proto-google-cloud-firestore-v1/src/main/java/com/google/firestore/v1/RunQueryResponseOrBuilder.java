@@ -53,6 +53,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RunQueryResponseOrBuilder
    * @return The document.
    */
   com.google.firestore.v1.Document getDocument();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RunQueryResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the done field is set.
    */
   boolean hasDone();
+
   /**
    *
    *
@@ -184,6 +189,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the explainMetrics field is set.
    */
   boolean hasExplainMetrics();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface RunQueryResponseOrBuilder
    * @return The explainMetrics.
    */
   com.google.firestore.v1.ExplainMetrics getExplainMetrics();
+
   /**
    *
    *

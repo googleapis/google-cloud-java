@@ -49,6 +49,7 @@ public class City {
     this.population = population;
     this.regions = regions;
   }
+
   // [END firestore_data_custom_type_definition]
 
   public City(String name) {

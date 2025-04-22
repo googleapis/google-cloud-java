@@ -39,6 +39,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return A list containing the collectionIds.
    */
   java.util.List<java.lang.String> getCollectionIdsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The count of collectionIds.
    */
   int getCollectionIdsCount();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The collectionIds at the given index.
    */
   java.lang.String getCollectionIds(int index);
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The inputUriPrefix.
    */
   java.lang.String getInputUriPrefix();
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return A list containing the namespaceIds.
    */
   java.util.List<java.lang.String> getNamespaceIdsList();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The count of namespaceIds.
    */
   int getNamespaceIdsCount();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface ImportDocumentsRequestOrBuilder
    * @return The namespaceIds at the given index.
    */
   java.lang.String getNamespaceIds(int index);
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The collectionId.
    */
   java.lang.String getCollectionId();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The documentId.
    */
   java.lang.String getDocumentId();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the document field is set.
    */
   boolean hasDocument();
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The document.
    */
   com.google.firestore.v1.Document getDocument();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return Whether the mask field is set.
    */
   boolean hasMask();
+
   /**
    *
    *
@@ -177,6 +183,7 @@ public interface CreateDocumentRequestOrBuilder
    * @return The mask.
    */
   com.google.firestore.v1.DocumentMask getMask();
+
   /**
    *
    *

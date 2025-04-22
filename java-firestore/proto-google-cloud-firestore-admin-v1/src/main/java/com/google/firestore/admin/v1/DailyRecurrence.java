@@ -35,6 +35,7 @@ public final class DailyRecurrence extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.DailyRecurrence)
     DailyRecurrenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DailyRecurrence.newBuilder() to construct.
   private DailyRecurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class DailyRecurrence extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

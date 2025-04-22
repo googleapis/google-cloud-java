@@ -36,6 +36,7 @@ public interface ListCollectionIdsResponseOrBuilder
    * @return A list containing the collectionIds.
    */
   java.util.List<java.lang.String> getCollectionIdsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListCollectionIdsResponseOrBuilder
    * @return The count of collectionIds.
    */
   int getCollectionIdsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListCollectionIdsResponseOrBuilder
    * @return The collectionIds at the given index.
    */
   java.lang.String getCollectionIds(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ListCollectionIdsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

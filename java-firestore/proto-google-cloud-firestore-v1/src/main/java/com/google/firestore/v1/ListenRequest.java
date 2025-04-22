@@ -33,6 +33,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.ListenRequest)
     ListenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListenRequest.newBuilder() to construct.
   private ListenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -92,6 +93,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     private TargetChangeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -128,6 +130,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object database_ = "";
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +182,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ADD_TARGET_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAddTarget() {
     return targetChangeCase_ == 2;
   }
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.Target.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int REMOVE_TARGET_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRemoveTarget() {
     return targetChangeCase_ == 3;
   }
+
   /**
    *
    *
@@ -289,6 +298,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -305,12 +315,14 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -324,6 +336,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -578,6 +592,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +873,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object database_ = "";
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -904,6 +921,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +944,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +963,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +993,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Target.Builder,
             com.google.firestore.v1.TargetOrBuilder>
         addTargetBuilder_;
+
     /**
      *
      *
@@ -988,6 +1009,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAddTarget() {
       return targetChangeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1013,6 +1035,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1035,6 +1058,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       targetChangeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1078,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       targetChangeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1111,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       targetChangeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1111,6 +1137,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Target.Builder getAddTargetBuilder() {
       return getAddTargetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1143,6 +1171,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Target.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1188,6 +1217,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRemoveTarget() {
       return targetChangeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1205,6 +1235,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1224,6 +1255,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1285,12 +1318,14 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1304,6 +1339,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1324,6 +1360,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1350,6 +1387,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1366,12 +1404,14 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1392,6 +1432,7 @@ public final class ListenRequest extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

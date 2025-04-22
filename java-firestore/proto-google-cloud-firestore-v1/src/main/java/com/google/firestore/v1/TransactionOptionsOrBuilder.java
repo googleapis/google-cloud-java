@@ -36,6 +36,7 @@ public interface TransactionOptionsOrBuilder
    * @return Whether the readOnly field is set.
    */
   boolean hasReadOnly();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TransactionOptionsOrBuilder
    * @return The readOnly.
    */
   com.google.firestore.v1.TransactionOptions.ReadOnly getReadOnly();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TransactionOptionsOrBuilder
    * @return Whether the readWrite field is set.
    */
   boolean hasReadWrite();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TransactionOptionsOrBuilder
    * @return The readWrite.
    */
   com.google.firestore.v1.TransactionOptions.ReadWrite getReadWrite();
+
   /**
    *
    *

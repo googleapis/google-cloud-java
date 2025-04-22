@@ -37,6 +37,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.firestore.v1.AggregationResult)
     AggregationResultOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AggregationResult.newBuilder() to construct.
   private AggregationResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public int getAggregateFieldsCount() {
     return internalGetAggregateFields().getMap().size();
   }
+
   /**
    *
    *
@@ -129,12 +131,14 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     }
     return internalGetAggregateFields().getMap().containsKey(key);
   }
+
   /** Use {@link #getAggregateFieldsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFields() {
     return getAggregateFieldsMap();
   }
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
   public java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFieldsMap() {
     return internalGetAggregateFields().getMap();
   }
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
         internalGetAggregateFields().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -374,6 +380,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -605,7 +612,8 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           defaultEntry() {
         return AggregateFieldsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final AggregateFieldsConverter aggregateFieldsConverter =
         new AggregateFieldsConverter();
@@ -646,6 +654,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public int getAggregateFieldsCount() {
       return internalGetAggregateFields().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -667,12 +676,14 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       }
       return internalGetAggregateFields().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getAggregateFieldsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFields() {
       return getAggregateFieldsMap();
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
     public java.util.Map<java.lang.String, com.google.firestore.v1.Value> getAggregateFieldsMap() {
       return internalGetAggregateFields().getImmutableMap();
     }
+
     /**
      *
      *
@@ -717,6 +729,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
           internalGetMutableAggregateFields().ensureBuilderMap();
       return map.containsKey(key) ? aggregateFieldsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       internalGetMutableAggregateFields().clear();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       internalGetMutableAggregateFields().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.firestore.v1.Value>
@@ -777,6 +792,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return internalGetMutableAggregateFields().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +845,7 @@ public final class AggregationResult extends com.google.protobuf.GeneratedMessag
       bitField0_ |= 0x00000001;
       return this;
     }
+
     /**
      *
      *

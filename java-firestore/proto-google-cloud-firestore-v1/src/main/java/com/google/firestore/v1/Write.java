@@ -33,6 +33,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.v1.Write)
     WriteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Write.newBuilder() to construct.
   private Write(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     private OperationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPDATE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdate() {
     return operationCase_ == 1;
   }
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.Document.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DELETE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDelete() {
     return operationCase_ == 2;
   }
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSFORM_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransform() {
     return operationCase_ == 6;
   }
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.firestore.v1.DocumentTransform.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -291,6 +302,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.firestore.v1.DocumentMask updateMask_;
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -341,6 +354,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         ? com.google.firestore.v1.DocumentMask.getDefaultInstance()
         : updateMask_;
   }
+
   /**
    *
    *
@@ -371,6 +385,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.v1.DocumentTransform.FieldTransform>
       updateTransforms_;
+
   /**
    *
    *
@@ -390,6 +405,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       getUpdateTransformsList() {
     return updateTransforms_;
   }
+
   /**
    *
    *
@@ -409,6 +425,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       getUpdateTransformsOrBuilderList() {
     return updateTransforms_;
   }
+
   /**
    *
    *
@@ -427,6 +444,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public int getUpdateTransformsCount() {
     return updateTransforms_.size();
   }
+
   /**
    *
    *
@@ -445,6 +463,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.v1.DocumentTransform.FieldTransform getUpdateTransforms(int index) {
     return updateTransforms_.get(index);
   }
+
   /**
    *
    *
@@ -467,6 +486,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CURRENT_DOCUMENT_FIELD_NUMBER = 4;
   private com.google.firestore.v1.Precondition currentDocument_;
+
   /**
    *
    *
@@ -484,6 +504,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCurrentDocument() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -503,6 +524,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         ? com.google.firestore.v1.Precondition.getDefaultInstance()
         : currentDocument_;
   }
+
   /**
    *
    *
@@ -760,6 +782,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1117,6 +1140,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Document.Builder,
             com.google.firestore.v1.DocumentOrBuilder>
         updateBuilder_;
+
     /**
      *
      *
@@ -1132,6 +1156,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdate() {
       return operationCase_ == 1;
     }
+
     /**
      *
      *
@@ -1157,6 +1182,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1179,6 +1205,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1225,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1258,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1284,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1267,6 +1297,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.Document.Builder getUpdateBuilder() {
       return getUpdateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1287,6 +1318,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.Document.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1334,6 +1366,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDelete() {
       return operationCase_ == 2;
     }
+
     /**
      *
      *
@@ -1363,6 +1396,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1392,6 +1426,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1449,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1434,6 +1470,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1500,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentTransform.Builder,
             com.google.firestore.v1.DocumentTransformOrBuilder>
         transformBuilder_;
+
     /**
      *
      *
@@ -1478,6 +1516,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransform() {
       return operationCase_ == 6;
     }
+
     /**
      *
      *
@@ -1503,6 +1542,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentTransform.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1525,6 +1565,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1544,6 +1585,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1576,6 +1618,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       operationCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1644,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1613,6 +1657,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.v1.DocumentTransform.Builder getTransformBuilder() {
       return getTransformFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1633,6 +1678,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.v1.DocumentTransform.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1672,6 +1718,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.DocumentMask.Builder,
             com.google.firestore.v1.DocumentMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1695,6 +1742,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1724,6 +1772,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1755,6 +1804,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1783,6 +1833,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1819,6 +1870,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1847,6 +1899,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1870,6 +1923,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1897,6 +1951,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1972,6 +2027,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return updateTransformsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1993,6 +2049,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return updateTransformsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2014,6 +2071,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return updateTransformsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2042,6 +2100,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2068,6 +2127,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2096,6 +2156,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2124,6 +2185,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2211,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2175,6 +2238,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2201,6 +2265,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2225,6 +2290,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2249,6 +2315,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2267,6 +2334,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         getUpdateTransformsBuilder(int index) {
       return getUpdateTransformsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2289,6 +2357,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return updateTransformsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2312,6 +2381,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(updateTransforms_);
       }
     }
+
     /**
      *
      *
@@ -2332,6 +2402,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.firestore.v1.DocumentTransform.FieldTransform.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2352,6 +2423,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.firestore.v1.DocumentTransform.FieldTransform.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2397,6 +2469,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             com.google.firestore.v1.Precondition.Builder,
             com.google.firestore.v1.PreconditionOrBuilder>
         currentDocumentBuilder_;
+
     /**
      *
      *
@@ -2413,6 +2486,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCurrentDocument() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2435,6 +2509,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
         return currentDocumentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2459,6 +2534,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2481,6 +2557,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2510,6 +2587,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2531,6 +2609,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2547,6 +2626,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCurrentDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2567,6 +2647,7 @@ public final class Write extends com.google.protobuf.GeneratedMessageV3
             : currentDocument_;
       }
     }
+
     /**
      *
      *

@@ -271,8 +271,8 @@ final class ServerSideTransactionRunner<T> {
   /** Determines whether the provided error is considered retryable. */
   private static boolean isRetryableTransactionError(ApiException exception) {
     switch (exception.getStatusCode().getCode()) {
-        // This list is based on
-        // https://github.com/firebase/firebase-js-sdk/blob/c822e78b00dd3420dcc749beb2f09a947aa4a344/packages/firestore/src/core/transaction_runner.ts#L112
+      // This list is based on
+      // https://github.com/firebase/firebase-js-sdk/blob/c822e78b00dd3420dcc749beb2f09a947aa4a344/packages/firestore/src/core/transaction_runner.ts#L112
       case ABORTED:
       case CANCELLED:
       case UNKNOWN:

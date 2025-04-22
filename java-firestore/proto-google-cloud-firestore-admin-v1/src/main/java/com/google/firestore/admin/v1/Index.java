@@ -34,6 +34,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index)
     IndexOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Index.newBuilder() to construct.
   private Index(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -45,6 +46,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     apiScope_ = 0;
     fields_ = java.util.Collections.emptyList();
     state_ = 0;
+    density_ = 0;
   }
 
   @java.lang.Override
@@ -137,6 +139,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>QUERY_SCOPE_UNSPECIFIED = 0;</code>
      */
     public static final int QUERY_SCOPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -149,6 +152,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLECTION = 1;</code>
      */
     public static final int COLLECTION_VALUE = 1;
+
     /**
      *
      *
@@ -161,6 +165,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>COLLECTION_GROUP = 2;</code>
      */
     public static final int COLLECTION_GROUP_VALUE = 2;
+
     /**
      *
      *
@@ -290,6 +295,16 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>DATASTORE_MODE_API = 1;</code>
      */
     DATASTORE_MODE_API(1),
+    /**
+     *
+     *
+     * <pre>
+     * The index can only be used by the MONGODB_COMPATIBLE_API.
+     * </pre>
+     *
+     * <code>MONGODB_COMPATIBLE_API = 2;</code>
+     */
+    MONGODB_COMPATIBLE_API(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -304,6 +319,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>ANY_API = 0;</code>
      */
     public static final int ANY_API_VALUE = 0;
+
     /**
      *
      *
@@ -314,6 +330,17 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>DATASTORE_MODE_API = 1;</code>
      */
     public static final int DATASTORE_MODE_API_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * The index can only be used by the MONGODB_COMPATIBLE_API.
+     * </pre>
+     *
+     * <code>MONGODB_COMPATIBLE_API = 2;</code>
+     */
+    public static final int MONGODB_COMPATIBLE_API_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -343,6 +370,8 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return ANY_API;
         case 1:
           return DATASTORE_MODE_API;
+        case 2:
+          return MONGODB_COMPATIBLE_API;
         default:
           return null;
       }
@@ -474,6 +503,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -487,6 +517,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 1;</code>
      */
     public static final int CREATING_VALUE = 1;
+
     /**
      *
      *
@@ -499,6 +530,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
+
     /**
      *
      *
@@ -602,6 +634,210 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Index.State)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The density configuration for the index.
+   * </pre>
+   *
+   * Protobuf enum {@code google.firestore.admin.v1.Index.Density}
+   */
+  public enum Density implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. It will use database default setting. This value is input
+     * only.
+     * </pre>
+     *
+     * <code>DENSITY_UNSPECIFIED = 0;</code>
+     */
+    DENSITY_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * In order for an index entry to be added, the document must
+     * contain all fields specified in the index.
+     *
+     * This is the only allowed value for indexes having ApiScope `ANY_API` and
+     * `DATASTORE_MODE_API`.
+     * </pre>
+     *
+     * <code>SPARSE_ALL = 1;</code>
+     */
+    SPARSE_ALL(1),
+    /**
+     *
+     *
+     * <pre>
+     * In order for an index entry to be added, the document must
+     * contain at least one of the fields specified in the index.
+     * Non-existent fields are treated as having a NULL value when generating
+     * index entries.
+     * </pre>
+     *
+     * <code>SPARSE_ANY = 2;</code>
+     */
+    SPARSE_ANY(2),
+    /**
+     *
+     *
+     * <pre>
+     * An index entry will be added regardless of whether the
+     * document contains any of the fields specified in the index.
+     * Non-existent fields are treated as having a NULL value when generating
+     * index entries.
+     * </pre>
+     *
+     * <code>DENSE = 3;</code>
+     */
+    DENSE(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified. It will use database default setting. This value is input
+     * only.
+     * </pre>
+     *
+     * <code>DENSITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int DENSITY_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * In order for an index entry to be added, the document must
+     * contain all fields specified in the index.
+     *
+     * This is the only allowed value for indexes having ApiScope `ANY_API` and
+     * `DATASTORE_MODE_API`.
+     * </pre>
+     *
+     * <code>SPARSE_ALL = 1;</code>
+     */
+    public static final int SPARSE_ALL_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * In order for an index entry to be added, the document must
+     * contain at least one of the fields specified in the index.
+     * Non-existent fields are treated as having a NULL value when generating
+     * index entries.
+     * </pre>
+     *
+     * <code>SPARSE_ANY = 2;</code>
+     */
+    public static final int SPARSE_ANY_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * An index entry will be added regardless of whether the
+     * document contains any of the fields specified in the index.
+     * Non-existent fields are treated as having a NULL value when generating
+     * index entries.
+     * </pre>
+     *
+     * <code>DENSE = 3;</code>
+     */
+    public static final int DENSE_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Density valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Density forNumber(int value) {
+      switch (value) {
+        case 0:
+          return DENSITY_UNSPECIFIED;
+        case 1:
+          return SPARSE_ALL;
+        case 2:
+          return SPARSE_ANY;
+        case 3:
+          return DENSE;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Density> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Density> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Density>() {
+          public Density findValueByNumber(int number) {
+            return Density.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.firestore.admin.v1.Index.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final Density[] VALUES = values();
+
+    public static Density valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Density(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.firestore.admin.v1.Index.Density)
+  }
+
   public interface IndexFieldOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField)
@@ -621,6 +857,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return The fieldPath.
      */
     java.lang.String getFieldPath();
+
     /**
      *
      *
@@ -649,6 +886,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the order field is set.
      */
     boolean hasOrder();
+
     /**
      *
      *
@@ -662,6 +900,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for order.
      */
     int getOrderValue();
+
     /**
      *
      *
@@ -688,6 +927,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the arrayConfig field is set.
      */
     boolean hasArrayConfig();
+
     /**
      *
      *
@@ -700,6 +940,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for arrayConfig.
      */
     int getArrayConfigValue();
+
     /**
      *
      *
@@ -726,6 +967,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the vectorConfig field is set.
      */
     boolean hasVectorConfig();
+
     /**
      *
      *
@@ -739,6 +981,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
      * @return The vectorConfig.
      */
     com.google.firestore.admin.v1.Index.IndexField.VectorConfig getVectorConfig();
+
     /**
      *
      *
@@ -753,6 +996,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
     com.google.firestore.admin.v1.Index.IndexField.ValueModeCase getValueModeCase();
   }
+
   /**
    *
    *
@@ -769,6 +1013,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField)
       IndexFieldOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use IndexField.newBuilder() to construct.
     private IndexField(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -852,6 +1097,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
        * <code>ORDER_UNSPECIFIED = 0;</code>
        */
       public static final int ORDER_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -862,6 +1108,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
        * <code>ASCENDING = 1;</code>
        */
       public static final int ASCENDING_VALUE = 1;
+
       /**
        *
        *
@@ -999,6 +1246,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
        * <code>ARRAY_CONFIG_UNSPECIFIED = 0;</code>
        */
       public static final int ARRAY_CONFIG_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1124,6 +1372,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the flat field is set.
        */
       boolean hasFlat();
+
       /**
        *
        *
@@ -1136,6 +1385,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
        * @return The flat.
        */
       com.google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndex getFlat();
+
       /**
        *
        *
@@ -1150,6 +1400,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
       com.google.firestore.admin.v1.Index.IndexField.VectorConfig.TypeCase getTypeCase();
     }
+
     /**
      *
      *
@@ -1164,6 +1415,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.VectorConfig)
         VectorConfigOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use VectorConfig.newBuilder() to construct.
       private VectorConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -1196,6 +1448,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndex)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -1211,6 +1464,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndex)
           FlatIndexOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use FlatIndex.newBuilder() to construct.
         private FlatIndex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -1404,6 +1658,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -1660,6 +1915,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         private TypeCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -1692,6 +1948,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
       public static final int DIMENSION_FIELD_NUMBER = 1;
       private int dimension_ = 0;
+
       /**
        *
        *
@@ -1712,6 +1969,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int FLAT_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -1727,6 +1985,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFlat() {
         return typeCase_ == 2;
       }
+
       /**
        *
        *
@@ -1746,6 +2005,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return com.google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndex
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -1951,6 +2211,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2186,6 +2447,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private int dimension_;
+
         /**
          *
          *
@@ -2204,6 +2466,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         public int getDimension() {
           return dimension_;
         }
+
         /**
          *
          *
@@ -2226,6 +2489,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -2252,6 +2516,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 com.google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndex.Builder,
                 com.google.firestore.admin.v1.Index.IndexField.VectorConfig.FlatIndexOrBuilder>
             flatBuilder_;
+
         /**
          *
          *
@@ -2267,6 +2532,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         public boolean hasFlat() {
           return typeCase_ == 2;
         }
+
         /**
          *
          *
@@ -2294,6 +2560,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2317,6 +2584,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2338,6 +2606,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2374,6 +2643,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           typeCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -2399,6 +2669,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -2412,6 +2683,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
             getFlatBuilder() {
           return getFlatFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -2434,6 +2706,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -2554,6 +2827,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       private ValueModeCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2592,6 +2866,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object fieldPath_ = "";
+
     /**
      *
      *
@@ -2617,6 +2892,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2644,6 +2920,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ORDER_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -2659,6 +2936,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasOrder() {
       return valueModeCase_ == 2;
     }
+
     /**
      *
      *
@@ -2677,6 +2955,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2702,6 +2981,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int ARRAY_CONFIG_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -2716,6 +2996,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrayConfig() {
       return valueModeCase_ == 3;
     }
+
     /**
      *
      *
@@ -2733,6 +3014,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -2757,6 +3039,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int VECTOR_CONFIG_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -2773,6 +3056,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVectorConfig() {
       return valueModeCase_ == 4;
     }
+
     /**
      *
      *
@@ -2792,6 +3076,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.firestore.admin.v1.Index.IndexField.VectorConfig.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3026,6 +3311,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3284,6 +3570,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object fieldPath_ = "";
+
       /**
        *
        *
@@ -3308,6 +3595,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3332,6 +3620,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3355,6 +3644,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3374,6 +3664,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3415,6 +3706,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOrder() {
         return valueModeCase_ == 2;
       }
+
       /**
        *
        *
@@ -3434,6 +3726,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -3453,6 +3746,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3477,6 +3771,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.firestore.admin.v1.Index.IndexField.Order.ORDER_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -3499,6 +3794,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3535,6 +3831,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       public boolean hasArrayConfig() {
         return valueModeCase_ == 3;
       }
+
       /**
        *
        *
@@ -3553,6 +3850,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         }
         return 0;
       }
+
       /**
        *
        *
@@ -3571,6 +3869,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3594,6 +3893,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.firestore.admin.v1.Index.IndexField.ArrayConfig.ARRAY_CONFIG_UNSPECIFIED;
       }
+
       /**
        *
        *
@@ -3616,6 +3916,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3641,6 +3942,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
               com.google.firestore.admin.v1.Index.IndexField.VectorConfig.Builder,
               com.google.firestore.admin.v1.Index.IndexField.VectorConfigOrBuilder>
           vectorConfigBuilder_;
+
       /**
        *
        *
@@ -3657,6 +3959,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       public boolean hasVectorConfig() {
         return valueModeCase_ == 4;
       }
+
       /**
        *
        *
@@ -3683,6 +3986,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return com.google.firestore.admin.v1.Index.IndexField.VectorConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3707,6 +4011,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         valueModeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3728,6 +4033,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         valueModeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3764,6 +4070,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         valueModeCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -3790,6 +4097,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3804,6 +4112,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           getVectorConfigBuilder() {
         return getVectorConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3826,6 +4135,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           return com.google.firestore.admin.v1.Index.IndexField.VectorConfig.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -3929,6 +4239,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3955,6 +4266,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3984,6 +4296,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUERY_SCOPE_FIELD_NUMBER = 2;
   private int queryScope_ = 0;
+
   /**
    *
    *
@@ -4005,6 +4318,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getQueryScopeValue() {
     return queryScope_;
   }
+
   /**
    *
    *
@@ -4031,6 +4345,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int API_SCOPE_FIELD_NUMBER = 5;
   private int apiScope_ = 0;
+
   /**
    *
    *
@@ -4046,6 +4361,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getApiScopeValue() {
     return apiScope_;
   }
+
   /**
    *
    *
@@ -4068,6 +4384,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.firestore.admin.v1.Index.IndexField> fields_;
+
   /**
    *
    *
@@ -4091,6 +4408,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.firestore.admin.v1.Index.IndexField> getFieldsList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -4115,6 +4433,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       getFieldsOrBuilderList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -4138,6 +4457,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getFieldsCount() {
     return fields_.size();
   }
+
   /**
    *
    *
@@ -4161,6 +4481,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public com.google.firestore.admin.v1.Index.IndexField getFields(int index) {
     return fields_.get(index);
   }
+
   /**
    *
    *
@@ -4187,6 +4508,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -4202,6 +4524,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -4218,6 +4541,92 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     com.google.firestore.admin.v1.Index.State result =
         com.google.firestore.admin.v1.Index.State.forNumber(state_);
     return result == null ? com.google.firestore.admin.v1.Index.State.UNRECOGNIZED : result;
+  }
+
+  public static final int DENSITY_FIELD_NUMBER = 6;
+  private int density_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The density configuration of the index.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for density.
+   */
+  @java.lang.Override
+  public int getDensityValue() {
+    return density_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The density configuration of the index.
+   * </pre>
+   *
+   * <code>
+   * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The density.
+   */
+  @java.lang.Override
+  public com.google.firestore.admin.v1.Index.Density getDensity() {
+    com.google.firestore.admin.v1.Index.Density result =
+        com.google.firestore.admin.v1.Index.Density.forNumber(density_);
+    return result == null ? com.google.firestore.admin.v1.Index.Density.UNRECOGNIZED : result;
+  }
+
+  public static final int MULTIKEY_FIELD_NUMBER = 7;
+  private boolean multikey_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the index is multikey. By default, the index is not
+   * multikey. For non-multikey indexes, none of the paths in the index
+   * definition reach or traverse an array, except via an explicit array index.
+   * For multikey indexes, at most one of the paths in the index definition
+   * reach or traverse an array, except via an explicit array index. Violations
+   * will result in errors.
+   *
+   * Note this field only applies to index with MONGODB_COMPATIBLE_API ApiScope.
+   * </pre>
+   *
+   * <code>bool multikey = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The multikey.
+   */
+  @java.lang.Override
+  public boolean getMultikey() {
+    return multikey_;
+  }
+
+  public static final int SHARD_COUNT_FIELD_NUMBER = 8;
+  private int shardCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The number of shards for the index.
+   * </pre>
+   *
+   * <code>int32 shard_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The shardCount.
+   */
+  @java.lang.Override
+  public int getShardCount() {
+    return shardCount_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -4250,6 +4659,15 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (apiScope_ != com.google.firestore.admin.v1.Index.ApiScope.ANY_API.getNumber()) {
       output.writeEnum(5, apiScope_);
     }
+    if (density_ != com.google.firestore.admin.v1.Index.Density.DENSITY_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, density_);
+    }
+    if (multikey_ != false) {
+      output.writeBool(7, multikey_);
+    }
+    if (shardCount_ != 0) {
+      output.writeInt32(8, shardCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4275,6 +4693,15 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (apiScope_ != com.google.firestore.admin.v1.Index.ApiScope.ANY_API.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, apiScope_);
     }
+    if (density_ != com.google.firestore.admin.v1.Index.Density.DENSITY_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, density_);
+    }
+    if (multikey_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, multikey_);
+    }
+    if (shardCount_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, shardCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4295,6 +4722,9 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     if (apiScope_ != other.apiScope_) return false;
     if (!getFieldsList().equals(other.getFieldsList())) return false;
     if (state_ != other.state_) return false;
+    if (density_ != other.density_) return false;
+    if (getMultikey() != other.getMultikey()) return false;
+    if (getShardCount() != other.getShardCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4318,6 +4748,12 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    hash = (37 * hash) + DENSITY_FIELD_NUMBER;
+    hash = (53 * hash) + density_;
+    hash = (37 * hash) + MULTIKEY_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultikey());
+    hash = (37 * hash) + SHARD_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getShardCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4417,6 +4853,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4468,6 +4905,9 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
+      density_ = 0;
+      multikey_ = false;
+      shardCount_ = 0;
       return this;
     }
 
@@ -4527,6 +4967,15 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.density_ = density_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.multikey_ = multikey_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.shardCount_ = shardCount_;
       }
     }
 
@@ -4616,6 +5065,15 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
+      if (other.density_ != 0) {
+        setDensityValue(other.getDensityValue());
+      }
+      if (other.getMultikey() != false) {
+        setMultikey(other.getMultikey());
+      }
+      if (other.getShardCount() != 0) {
+        setShardCount(other.getShardCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4679,6 +5137,24 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 40
+            case 48:
+              {
+                density_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+            case 56:
+              {
+                multikey_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+            case 64:
+              {
+                shardCount_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4699,6 +5175,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4724,6 +5201,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4749,6 +5227,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4773,6 +5252,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4793,6 +5273,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4820,6 +5301,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int queryScope_ = 0;
+
     /**
      *
      *
@@ -4841,6 +5323,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public int getQueryScopeValue() {
       return queryScope_;
     }
+
     /**
      *
      *
@@ -4865,6 +5348,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4888,6 +5372,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.firestore.admin.v1.Index.QueryScope.forNumber(queryScope_);
       return result == null ? com.google.firestore.admin.v1.Index.QueryScope.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4915,6 +5400,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4940,6 +5426,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int apiScope_ = 0;
+
     /**
      *
      *
@@ -4955,6 +5442,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public int getApiScopeValue() {
       return apiScope_;
     }
+
     /**
      *
      *
@@ -4973,6 +5461,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4990,6 +5479,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.firestore.admin.v1.Index.ApiScope.forNumber(apiScope_);
       return result == null ? com.google.firestore.admin.v1.Index.ApiScope.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -5011,6 +5501,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5071,6 +5562,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5097,6 +5589,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5123,6 +5616,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5155,6 +5649,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5185,6 +5680,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5217,6 +5713,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5249,6 +5746,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5279,6 +5777,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5309,6 +5808,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5339,6 +5839,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5368,6 +5869,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5397,6 +5899,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5419,6 +5922,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public com.google.firestore.admin.v1.Index.IndexField.Builder getFieldsBuilder(int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5445,6 +5949,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5472,6 +5977,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
+
     /**
      *
      *
@@ -5495,6 +6001,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return getFieldsFieldBuilder()
           .addBuilder(com.google.firestore.admin.v1.Index.IndexField.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5518,6 +6025,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       return getFieldsFieldBuilder()
           .addBuilder(index, com.google.firestore.admin.v1.Index.IndexField.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5560,6 +6068,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -5575,6 +6084,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -5593,6 +6103,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5610,6 +6121,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
           com.google.firestore.admin.v1.Index.State.forNumber(state_);
       return result == null ? com.google.firestore.admin.v1.Index.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -5631,6 +6143,7 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5645,6 +6158,244 @@ public final class Index extends com.google.protobuf.GeneratedMessageV3
     public Builder clearState() {
       bitField0_ = (bitField0_ & ~0x00000010);
       state_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int density_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The density configuration of the index.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for density.
+     */
+    @java.lang.Override
+    public int getDensityValue() {
+      return density_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The density configuration of the index.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for density to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDensityValue(int value) {
+      density_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The density configuration of the index.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The density.
+     */
+    @java.lang.Override
+    public com.google.firestore.admin.v1.Index.Density getDensity() {
+      com.google.firestore.admin.v1.Index.Density result =
+          com.google.firestore.admin.v1.Index.Density.forNumber(density_);
+      return result == null ? com.google.firestore.admin.v1.Index.Density.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The density configuration of the index.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The density to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDensity(com.google.firestore.admin.v1.Index.Density value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      density_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The density configuration of the index.
+     * </pre>
+     *
+     * <code>
+     * .google.firestore.admin.v1.Index.Density density = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDensity() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      density_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean multikey_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the index is multikey. By default, the index is not
+     * multikey. For non-multikey indexes, none of the paths in the index
+     * definition reach or traverse an array, except via an explicit array index.
+     * For multikey indexes, at most one of the paths in the index definition
+     * reach or traverse an array, except via an explicit array index. Violations
+     * will result in errors.
+     *
+     * Note this field only applies to index with MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>bool multikey = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The multikey.
+     */
+    @java.lang.Override
+    public boolean getMultikey() {
+      return multikey_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the index is multikey. By default, the index is not
+     * multikey. For non-multikey indexes, none of the paths in the index
+     * definition reach or traverse an array, except via an explicit array index.
+     * For multikey indexes, at most one of the paths in the index definition
+     * reach or traverse an array, except via an explicit array index. Violations
+     * will result in errors.
+     *
+     * Note this field only applies to index with MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>bool multikey = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The multikey to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMultikey(boolean value) {
+
+      multikey_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the index is multikey. By default, the index is not
+     * multikey. For non-multikey indexes, none of the paths in the index
+     * definition reach or traverse an array, except via an explicit array index.
+     * For multikey indexes, at most one of the paths in the index definition
+     * reach or traverse an array, except via an explicit array index. Violations
+     * will result in errors.
+     *
+     * Note this field only applies to index with MONGODB_COMPATIBLE_API ApiScope.
+     * </pre>
+     *
+     * <code>bool multikey = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMultikey() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      multikey_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int shardCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of shards for the index.
+     * </pre>
+     *
+     * <code>int32 shard_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The shardCount.
+     */
+    @java.lang.Override
+    public int getShardCount() {
+      return shardCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of shards for the index.
+     * </pre>
+     *
+     * <code>int32 shard_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The shardCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setShardCount(int value) {
+
+      shardCount_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of shards for the index.
+     * </pre>
+     *
+     * <code>int32 shard_count = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearShardCount() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      shardCount_ = 0;
       onChanged();
       return this;
     }

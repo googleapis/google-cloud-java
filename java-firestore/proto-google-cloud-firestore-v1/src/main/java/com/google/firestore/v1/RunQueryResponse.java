@@ -34,6 +34,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.firestore.v1.RunQueryResponse)
     RunQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunQueryResponse.newBuilder() to construct.
   private RunQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     private ContinuationSelectorCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int TRANSACTION_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.firestore.v1.Document document_;
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasDocument() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public com.google.firestore.v1.Document getDocument() {
     return document_ == null ? com.google.firestore.v1.Document.getDefaultInstance() : document_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int READ_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp readTime_;
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasReadTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Timestamp getReadTime() {
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int SKIPPED_RESULTS_FIELD_NUMBER = 4;
   private int skippedResults_ = 0;
+
   /**
    *
    *
@@ -263,6 +273,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int DONE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasDone() {
     return continuationSelectorCase_ == 6;
   }
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int EXPLAIN_METRICS_FIELD_NUMBER = 11;
   private com.google.firestore.v1.ExplainMetrics explainMetrics_;
+
   /**
    *
    *
@@ -318,6 +331,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasExplainMetrics() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -337,6 +351,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         ? com.google.firestore.v1.ExplainMetrics.getDefaultInstance()
         : explainMetrics_;
   }
+
   /**
    *
    *
@@ -588,6 +603,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -890,6 +906,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -909,6 +926,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }
+
     /**
      *
      *
@@ -934,6 +952,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             com.google.firestore.v1.Document.Builder,
             com.google.firestore.v1.DocumentOrBuilder>
         documentBuilder_;
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasDocument() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -996,6 +1017,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         return documentBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1018,6 +1040,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1037,6 +1060,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1083,6 +1108,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1115,6 +1142,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             : document_;
       }
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1167,6 +1196,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasReadTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1191,6 +1221,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         return readTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1310,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1336,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1357,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1344,6 +1380,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private int skippedResults_;
+
     /**
      *
      *
@@ -1393,6 +1431,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public int getSkippedResults() {
       return skippedResults_;
     }
+
     /**
      *
      *
@@ -1413,6 +1452,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1447,6 +1487,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasDone() {
       return continuationSelectorCase_ == 6;
     }
+
     /**
      *
      *
@@ -1465,6 +1506,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       return false;
     }
+
     /**
      *
      *
@@ -1485,6 +1527,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1555,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             com.google.firestore.v1.ExplainMetrics.Builder,
             com.google.firestore.v1.ExplainMetricsOrBuilder>
         explainMetricsBuilder_;
+
     /**
      *
      *
@@ -1528,6 +1572,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasExplainMetrics() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -1550,6 +1595,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
         return explainMetricsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1574,6 +1620,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1596,6 +1643,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1625,6 +1673,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1646,6 +1695,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1712,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getExplainMetricsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1682,6 +1733,7 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
             : explainMetrics_;
       }
     }
+
     /**
      *
      *
