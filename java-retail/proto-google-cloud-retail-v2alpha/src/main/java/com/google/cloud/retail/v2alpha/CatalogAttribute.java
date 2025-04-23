@@ -9244,8 +9244,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
    *
    * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] can be
    * pre-loaded by using
-   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute],
-   * [CatalogService.ImportCatalogAttributes][google.cloud.retail.v2alpha.CatalogService.ImportCatalogAttributes],
+   * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute]
    * or
    * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig]
    * APIs. This field is `False` for pre-loaded
@@ -10483,8 +10482,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] can be
      * pre-loaded by using
-     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute],
-     * [CatalogService.ImportCatalogAttributes][google.cloud.retail.v2alpha.CatalogService.ImportCatalogAttributes],
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute]
      * or
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
@@ -10522,8 +10520,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] can be
      * pre-loaded by using
-     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute],
-     * [CatalogService.ImportCatalogAttributes][google.cloud.retail.v2alpha.CatalogService.ImportCatalogAttributes],
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute]
      * or
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded
@@ -10565,8 +10562,7 @@ public final class CatalogAttribute extends com.google.protobuf.GeneratedMessage
      *
      * [CatalogAttribute][google.cloud.retail.v2alpha.CatalogAttribute] can be
      * pre-loaded by using
-     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute],
-     * [CatalogService.ImportCatalogAttributes][google.cloud.retail.v2alpha.CatalogService.ImportCatalogAttributes],
+     * [CatalogService.AddCatalogAttribute][google.cloud.retail.v2alpha.CatalogService.AddCatalogAttribute]
      * or
      * [CatalogService.UpdateAttributesConfig][google.cloud.retail.v2alpha.CatalogService.UpdateAttributesConfig]
      * APIs. This field is `False` for pre-loaded

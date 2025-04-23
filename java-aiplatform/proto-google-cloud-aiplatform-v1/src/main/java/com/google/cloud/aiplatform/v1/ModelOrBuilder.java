@@ -2020,4 +2020,70 @@ public interface ModelOrBuilder
    * @return The satisfiesPzi.
    */
   boolean getSatisfiesPzi();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.Checkpoint> getCheckpointsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.Checkpoint getCheckpoints(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getCheckpointsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1.CheckpointOrBuilder>
+      getCheckpointsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Output only. The checkpoints of the model.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.Checkpoint checkpoints = 57 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.CheckpointOrBuilder getCheckpointsOrBuilder(int index);
 }

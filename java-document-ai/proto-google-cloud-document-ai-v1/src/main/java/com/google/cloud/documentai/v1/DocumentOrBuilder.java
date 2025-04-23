@@ -106,6 +106,32 @@ public interface DocumentOrBuilder
    *
    *
    * <pre>
+   * Optional. An internal identifier for document. Should be loggable (no PII).
+   * </pre>
+   *
+   * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The docid.
+   */
+  java.lang.String getDocid();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An internal identifier for document. Should be loggable (no PII).
+   * </pre>
+   *
+   * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for docid.
+   */
+  com.google.protobuf.ByteString getDocidBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * An IANA published [media type (MIME
    * type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
    * </pre>

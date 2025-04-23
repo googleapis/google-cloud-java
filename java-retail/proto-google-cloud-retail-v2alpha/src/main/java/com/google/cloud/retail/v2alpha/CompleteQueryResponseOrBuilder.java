@@ -312,7 +312,7 @@ public interface CompleteQueryResponseOrBuilder
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -332,7 +332,7 @@ public interface CompleteQueryResponseOrBuilder
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -358,7 +358,7 @@ public interface CompleteQueryResponseOrBuilder
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -380,7 +380,7 @@ public interface CompleteQueryResponseOrBuilder
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -405,7 +405,7 @@ public interface CompleteQueryResponseOrBuilder
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *

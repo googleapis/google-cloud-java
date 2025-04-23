@@ -115,10 +115,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -134,10 +134,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -158,10 +158,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -178,10 +178,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -201,10 +201,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -461,10 +461,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -494,10 +494,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -517,10 +517,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -547,10 +547,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      * <pre>
      * Custom attributes for the suggestion term.
      *
-     * * For "user-data", the attributes are additional custom attributes
+     * * For `user-data`, the attributes are additional custom attributes
      * ingested through BigQuery.
      *
-     * * For "cloud-retail", the attributes are product attributes generated
+     * * For `cloud-retail`, the attributes are product attributes generated
      * by Cloud Retail. It requires
      * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
      * is imported properly.
@@ -1388,10 +1388,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1422,10 +1422,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1446,10 +1446,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1477,10 +1477,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1515,10 +1515,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1549,10 +1549,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1580,10 +1580,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -1611,10 +1611,10 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
        * <pre>
        * Custom attributes for the suggestion term.
        *
-       * * For "user-data", the attributes are additional custom attributes
+       * * For `user-data`, the attributes are additional custom attributes
        * ingested through BigQuery.
        *
-       * * For "cloud-retail", the attributes are product attributes generated
+       * * For `cloud-retail`, the attributes are product attributes generated
        * by Cloud Retail. It requires
        * [UserEvent.product_details][google.cloud.retail.v2alpha.UserEvent.product_details]
        * is imported properly.
@@ -2907,6 +2907,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
@@ -2914,6 +2920,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     java.util.List<java.lang.String> getSuggestionsList();
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
@@ -2921,6 +2933,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     int getSuggestionsCount();
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
@@ -2929,6 +2947,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     java.lang.String getSuggestions(int index);
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -2942,7 +2966,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Resource that represents attribute results.
-   * The list of suggestions for the attribute.
    * </pre>
    *
    * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -2990,6 +3013,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         com.google.protobuf.LazyStringArrayList.emptyList();
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return A list containing the suggestions.
@@ -2999,6 +3028,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @return The count of suggestions.
@@ -3008,6 +3043,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the element to return.
@@ -3018,6 +3059,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     }
 
     /**
+     *
+     *
+     * <pre>
+     * The list of suggestions for the attribute.
+     * </pre>
+     *
      * <code>repeated string suggestions = 1;</code>
      *
      * @param index The index of the value to return.
@@ -3202,7 +3249,6 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Resource that represents attribute results.
-     * The list of suggestions for the attribute.
      * </pre>
      *
      * Protobuf type {@code google.cloud.retail.v2alpha.CompleteQueryResponse.AttributeResult}
@@ -3412,6 +3458,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return A list containing the suggestions.
@@ -3422,6 +3474,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return The count of suggestions.
@@ -3431,6 +3489,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the element to return.
@@ -3441,6 +3505,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index of the value to return.
@@ -3451,6 +3521,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param index The index to set the value at.
@@ -3469,6 +3545,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The suggestions to add.
@@ -3486,6 +3568,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param values The suggestions to add.
@@ -3500,6 +3588,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @return This builder for chaining.
@@ -3513,6 +3607,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       }
 
       /**
+       *
+       *
+       * <pre>
+       * The list of suggestions for the attribute.
+       * </pre>
+       *
        * <code>repeated string suggestions = 1;</code>
        *
        * @param value The bytes of the suggestions to add.
@@ -3993,7 +4093,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -4028,7 +4128,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -4053,7 +4153,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -4086,7 +4186,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * A map of matched attribute suggestions. This field is only available for
-   * "cloud-retail" dataset.
+   * `cloud-retail` dataset.
    *
    * Current supported keys:
    *
@@ -6126,7 +6226,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6161,7 +6261,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6186,7 +6286,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6220,7 +6320,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6260,7 +6360,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6295,7 +6395,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6327,7 +6427,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *
@@ -6363,7 +6463,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * A map of matched attribute suggestions. This field is only available for
-     * "cloud-retail" dataset.
+     * `cloud-retail` dataset.
      *
      * Current supported keys:
      *

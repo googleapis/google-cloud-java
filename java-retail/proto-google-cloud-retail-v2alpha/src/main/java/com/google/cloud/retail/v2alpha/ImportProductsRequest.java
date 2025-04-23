@@ -315,7 +315,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-   *     google/cloud/retail/v2alpha/import_config.proto;l=189
+   *     google/cloud/retail/v2alpha/import_config.proto;l=186
    * @return The requestId.
    */
   @java.lang.Override
@@ -342,7 +342,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
    * <code>string request_id = 6 [deprecated = true];</code>
    *
    * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-   *     google/cloud/retail/v2alpha/import_config.proto;l=189
+   *     google/cloud/retail/v2alpha/import_config.proto;l=186
    * @return The bytes for requestId.
    */
   @java.lang.Override
@@ -1390,7 +1390,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=189
+     *     google/cloud/retail/v2alpha/import_config.proto;l=186
      * @return The requestId.
      */
     @java.lang.Deprecated
@@ -1416,7 +1416,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=189
+     *     google/cloud/retail/v2alpha/import_config.proto;l=186
      * @return The bytes for requestId.
      */
     @java.lang.Deprecated
@@ -1442,7 +1442,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=189
+     *     google/cloud/retail/v2alpha/import_config.proto;l=186
      * @param value The requestId to set.
      * @return This builder for chaining.
      */
@@ -1467,7 +1467,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=189
+     *     google/cloud/retail/v2alpha/import_config.proto;l=186
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1488,7 +1488,7 @@ public final class ImportProductsRequest extends com.google.protobuf.GeneratedMe
      * <code>string request_id = 6 [deprecated = true];</code>
      *
      * @deprecated google.cloud.retail.v2alpha.ImportProductsRequest.request_id is deprecated. See
-     *     google/cloud/retail/v2alpha/import_config.proto;l=189
+     *     google/cloud/retail/v2alpha/import_config.proto;l=186
      * @param value The bytes for requestId to set.
      * @return This builder for chaining.
      */

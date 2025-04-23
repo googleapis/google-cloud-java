@@ -43,6 +43,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
   }
 
   private Document() {
+    docid_ = "";
     mimeType_ = "";
     text_ = "";
     textStyles_ = java.util.Collections.emptyList();
@@ -66480,6 +66481,43 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               .LayoutPageSpanOrBuilder
           getPageSpanOrBuilder();
 
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       *
+       * @return Whether the boundingBox field is set.
+       */
+      boolean hasBoundingBox();
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       *
+       * @return The boundingBox.
+       */
+      com.google.cloud.documentai.v1.BoundingPoly getBoundingBox();
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       */
+      com.google.cloud.documentai.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder();
+
       com.google.cloud.documentai.v1.Document.DocumentLayout.DocumentLayoutBlock.BlockCase
           getBlockCase();
     }
@@ -76827,6 +76865,59 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             : pageSpan_;
       }
 
+      public static final int BOUNDING_BOX_FIELD_NUMBER = 6;
+      private com.google.cloud.documentai.v1.BoundingPoly boundingBox_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       *
+       * @return Whether the boundingBox field is set.
+       */
+      @java.lang.Override
+      public boolean hasBoundingBox() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       *
+       * @return The boundingBox.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.BoundingPoly getBoundingBox() {
+        return boundingBox_ == null
+            ? com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()
+            : boundingBox_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Identifies the bounding box for the block.
+       * </pre>
+       *
+       * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
+        return boundingBox_ == null
+            ? com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()
+            : boundingBox_;
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -76868,6 +76959,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           output.writeMessage(5, getPageSpan());
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(6, getBoundingBox());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -76907,6 +77001,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (((bitField0_ & 0x00000001) != 0)) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPageSpan());
         }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getBoundingBox());
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -76929,6 +77026,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (hasPageSpan() != other.hasPageSpan()) return false;
         if (hasPageSpan()) {
           if (!getPageSpan().equals(other.getPageSpan())) return false;
+        }
+        if (hasBoundingBox() != other.hasBoundingBox()) return false;
+        if (hasBoundingBox()) {
+          if (!getBoundingBox().equals(other.getBoundingBox())) return false;
         }
         if (!getBlockCase().equals(other.getBlockCase())) return false;
         switch (blockCase_) {
@@ -76960,6 +77061,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (hasPageSpan()) {
           hash = (37 * hash) + PAGE_SPAN_FIELD_NUMBER;
           hash = (53 * hash) + getPageSpan().hashCode();
+        }
+        if (hasBoundingBox()) {
+          hash = (37 * hash) + BOUNDING_BOX_FIELD_NUMBER;
+          hash = (53 * hash) + getBoundingBox().hashCode();
         }
         switch (blockCase_) {
           case 2:
@@ -77134,6 +77239,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         private void maybeForceBuilderInitialization() {
           if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
             getPageSpanFieldBuilder();
+            getBoundingBoxFieldBuilder();
           }
         }
 
@@ -77155,6 +77261,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (pageSpanBuilder_ != null) {
             pageSpanBuilder_.dispose();
             pageSpanBuilder_ = null;
+          }
+          boundingBox_ = null;
+          if (boundingBoxBuilder_ != null) {
+            boundingBoxBuilder_.dispose();
+            boundingBoxBuilder_ = null;
           }
           blockCase_ = 0;
           block_ = null;
@@ -77207,6 +77318,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (((from_bitField0_ & 0x00000010) != 0)) {
             result.pageSpan_ = pageSpanBuilder_ == null ? pageSpan_ : pageSpanBuilder_.build();
             to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.boundingBox_ =
+                boundingBoxBuilder_ == null ? boundingBox_ : boundingBoxBuilder_.build();
+            to_bitField0_ |= 0x00000002;
           }
           result.bitField0_ |= to_bitField0_;
         }
@@ -77287,6 +77403,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           if (other.hasPageSpan()) {
             mergePageSpan(other.getPageSpan());
           }
+          if (other.hasBoundingBox()) {
+            mergeBoundingBox(other.getBoundingBox());
+          }
           switch (other.getBlockCase()) {
             case TEXT_BLOCK:
               {
@@ -77364,6 +77483,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000010;
                     break;
                   } // case 42
+                case 50:
+                  {
+                    input.readMessage(getBoundingBoxFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000020;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -78572,6 +78697,202 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             pageSpan_ = null;
           }
           return pageSpanBuilder_;
+        }
+
+        private com.google.cloud.documentai.v1.BoundingPoly boundingBox_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.BoundingPoly,
+                com.google.cloud.documentai.v1.BoundingPoly.Builder,
+                com.google.cloud.documentai.v1.BoundingPolyOrBuilder>
+            boundingBoxBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         *
+         * @return Whether the boundingBox field is set.
+         */
+        public boolean hasBoundingBox() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         *
+         * @return The boundingBox.
+         */
+        public com.google.cloud.documentai.v1.BoundingPoly getBoundingBox() {
+          if (boundingBoxBuilder_ == null) {
+            return boundingBox_ == null
+                ? com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()
+                : boundingBox_;
+          } else {
+            return boundingBoxBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public Builder setBoundingBox(com.google.cloud.documentai.v1.BoundingPoly value) {
+          if (boundingBoxBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            boundingBox_ = value;
+          } else {
+            boundingBoxBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public Builder setBoundingBox(
+            com.google.cloud.documentai.v1.BoundingPoly.Builder builderForValue) {
+          if (boundingBoxBuilder_ == null) {
+            boundingBox_ = builderForValue.build();
+          } else {
+            boundingBoxBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public Builder mergeBoundingBox(com.google.cloud.documentai.v1.BoundingPoly value) {
+          if (boundingBoxBuilder_ == null) {
+            if (((bitField0_ & 0x00000020) != 0)
+                && boundingBox_ != null
+                && boundingBox_
+                    != com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()) {
+              getBoundingBoxBuilder().mergeFrom(value);
+            } else {
+              boundingBox_ = value;
+            }
+          } else {
+            boundingBoxBuilder_.mergeFrom(value);
+          }
+          if (boundingBox_ != null) {
+            bitField0_ |= 0x00000020;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public Builder clearBoundingBox() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          boundingBox_ = null;
+          if (boundingBoxBuilder_ != null) {
+            boundingBoxBuilder_.dispose();
+            boundingBoxBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public com.google.cloud.documentai.v1.BoundingPoly.Builder getBoundingBoxBuilder() {
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return getBoundingBoxFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        public com.google.cloud.documentai.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder() {
+          if (boundingBoxBuilder_ != null) {
+            return boundingBoxBuilder_.getMessageOrBuilder();
+          } else {
+            return boundingBox_ == null
+                ? com.google.cloud.documentai.v1.BoundingPoly.getDefaultInstance()
+                : boundingBox_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Identifies the bounding box for the block.
+         * </pre>
+         *
+         * <code>.google.cloud.documentai.v1.BoundingPoly bounding_box = 6;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1.BoundingPoly,
+                com.google.cloud.documentai.v1.BoundingPoly.Builder,
+                com.google.cloud.documentai.v1.BoundingPolyOrBuilder>
+            getBoundingBoxFieldBuilder() {
+          if (boundingBoxBuilder_ == null) {
+            boundingBoxBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.documentai.v1.BoundingPoly,
+                    com.google.cloud.documentai.v1.BoundingPoly.Builder,
+                    com.google.cloud.documentai.v1.BoundingPolyOrBuilder>(
+                    getBoundingBox(), getParentForChildren(), isClean());
+            boundingBox_ = null;
+          }
+          return boundingBoxBuilder_;
         }
 
         @java.lang.Override
@@ -86688,6 +87009,59 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     return com.google.protobuf.ByteString.EMPTY;
   }
 
+  public static final int DOCID_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object docid_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An internal identifier for document. Should be loggable (no PII).
+   * </pre>
+   *
+   * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The docid.
+   */
+  @java.lang.Override
+  public java.lang.String getDocid() {
+    java.lang.Object ref = docid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      docid_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An internal identifier for document. Should be loggable (no PII).
+   * </pre>
+   *
+   * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for docid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDocidBytes() {
+    java.lang.Object ref = docid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      docid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -87559,6 +87933,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < textChanges_.size(); i++) {
       output.writeMessage(14, textChanges_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(docid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, docid_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(17, getDocumentLayout());
     }
@@ -87612,6 +87989,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < textChanges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, textChanges_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(docid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, docid_);
+    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, getDocumentLayout());
     }
@@ -87633,6 +88013,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.documentai.v1.Document other = (com.google.cloud.documentai.v1.Document) obj;
 
+    if (!getDocid().equals(other.getDocid())) return false;
     if (!getMimeType().equals(other.getMimeType())) return false;
     if (!getText().equals(other.getText())) return false;
     if (!getTextStylesList().equals(other.getTextStylesList())) return false;
@@ -87679,6 +88060,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + DOCID_FIELD_NUMBER;
+    hash = (53 * hash) + getDocid().hashCode();
     hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMimeType().hashCode();
     hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -87896,6 +88279,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      docid_ = "";
       mimeType_ = "";
       text_ = "";
       if (textStylesBuilder_ == null) {
@@ -87904,35 +88288,35 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         textStyles_ = null;
         textStylesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       if (pagesBuilder_ == null) {
         pages_ = java.util.Collections.emptyList();
       } else {
         pages_ = null;
         pagesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
       } else {
         entities_ = null;
         entitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       if (entityRelationsBuilder_ == null) {
         entityRelations_ = java.util.Collections.emptyList();
       } else {
         entityRelations_ = null;
         entityRelationsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       if (textChangesBuilder_ == null) {
         textChanges_ = java.util.Collections.emptyList();
       } else {
         textChanges_ = null;
         textChangesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       shardInfo_ = null;
       if (shardInfoBuilder_ != null) {
         shardInfoBuilder_.dispose();
@@ -87949,7 +88333,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         revisions_ = null;
         revisionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       documentLayout_ = null;
       if (documentLayoutBuilder_ != null) {
         documentLayoutBuilder_.dispose();
@@ -88000,54 +88384,54 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.documentai.v1.Document result) {
       if (textStylesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           textStyles_ = java.util.Collections.unmodifiableList(textStyles_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.textStyles_ = textStyles_;
       } else {
         result.textStyles_ = textStylesBuilder_.build();
       }
       if (pagesBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           pages_ = java.util.Collections.unmodifiableList(pages_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.pages_ = pages_;
       } else {
         result.pages_ = pagesBuilder_.build();
       }
       if (entitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           entities_ = java.util.Collections.unmodifiableList(entities_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.entities_ = entities_;
       } else {
         result.entities_ = entitiesBuilder_.build();
       }
       if (entityRelationsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           entityRelations_ = java.util.Collections.unmodifiableList(entityRelations_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.entityRelations_ = entityRelations_;
       } else {
         result.entityRelations_ = entityRelationsBuilder_.build();
       }
       if (textChangesBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           textChanges_ = java.util.Collections.unmodifiableList(textChanges_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.textChanges_ = textChanges_;
       } else {
         result.textChanges_ = textChangesBuilder_.build();
       }
       if (revisionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
+        if (((bitField0_ & 0x00001000) != 0)) {
           revisions_ = java.util.Collections.unmodifiableList(revisions_);
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.revisions_ = revisions_;
       } else {
@@ -88058,26 +88442,29 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.documentai.v1.Document result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.mimeType_ = mimeType_;
+        result.docid_ = docid_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.text_ = text_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.shardInfo_ = shardInfoBuilder_ == null ? shardInfo_ : shardInfoBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.documentLayout_ =
             documentLayoutBuilder_ == null ? documentLayout_ : documentLayoutBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.chunkedDocument_ =
             chunkedDocumentBuilder_ == null ? chunkedDocument_ : chunkedDocumentBuilder_.build();
         to_bitField0_ |= 0x00000008;
@@ -88135,21 +88522,26 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.documentai.v1.Document other) {
       if (other == com.google.cloud.documentai.v1.Document.getDefaultInstance()) return this;
+      if (!other.getDocid().isEmpty()) {
+        docid_ = other.docid_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getMimeType().isEmpty()) {
         mimeType_ = other.mimeType_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getText().isEmpty()) {
         text_ = other.text_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (textStylesBuilder_ == null) {
         if (!other.textStyles_.isEmpty()) {
           if (textStyles_.isEmpty()) {
             textStyles_ = other.textStyles_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureTextStylesIsMutable();
             textStyles_.addAll(other.textStyles_);
@@ -88162,7 +88554,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             textStylesBuilder_.dispose();
             textStylesBuilder_ = null;
             textStyles_ = other.textStyles_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             textStylesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTextStylesFieldBuilder()
@@ -88176,7 +88568,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.pages_.isEmpty()) {
           if (pages_.isEmpty()) {
             pages_ = other.pages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensurePagesIsMutable();
             pages_.addAll(other.pages_);
@@ -88189,7 +88581,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             pagesBuilder_.dispose();
             pagesBuilder_ = null;
             pages_ = other.pages_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             pagesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPagesFieldBuilder()
@@ -88203,7 +88595,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.entities_.isEmpty()) {
           if (entities_.isEmpty()) {
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureEntitiesIsMutable();
             entities_.addAll(other.entities_);
@@ -88216,7 +88608,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             entitiesBuilder_.dispose();
             entitiesBuilder_ = null;
             entities_ = other.entities_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             entitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntitiesFieldBuilder()
@@ -88230,7 +88622,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.entityRelations_.isEmpty()) {
           if (entityRelations_.isEmpty()) {
             entityRelations_ = other.entityRelations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureEntityRelationsIsMutable();
             entityRelations_.addAll(other.entityRelations_);
@@ -88243,7 +88635,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             entityRelationsBuilder_.dispose();
             entityRelationsBuilder_ = null;
             entityRelations_ = other.entityRelations_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             entityRelationsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getEntityRelationsFieldBuilder()
@@ -88257,7 +88649,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.textChanges_.isEmpty()) {
           if (textChanges_.isEmpty()) {
             textChanges_ = other.textChanges_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureTextChangesIsMutable();
             textChanges_.addAll(other.textChanges_);
@@ -88270,7 +88662,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             textChangesBuilder_.dispose();
             textChangesBuilder_ = null;
             textChanges_ = other.textChanges_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             textChangesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getTextChangesFieldBuilder()
@@ -88290,7 +88682,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!other.revisions_.isEmpty()) {
           if (revisions_.isEmpty()) {
             revisions_ = other.revisions_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureRevisionsIsMutable();
             revisions_.addAll(other.revisions_);
@@ -88303,7 +88695,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             revisionsBuilder_.dispose();
             revisionsBuilder_ = null;
             revisions_ = other.revisions_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
             revisionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRevisionsFieldBuilder()
@@ -88379,13 +88771,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 mimeType_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 text_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -88444,13 +88836,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             case 74:
               {
                 input.readMessage(getShardInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 106:
@@ -88481,16 +88873,22 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 114
+            case 122:
+              {
+                docid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 122
             case 138:
               {
                 input.readMessage(getDocumentLayoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 138
             case 146:
               {
                 input.readMessage(getChunkedDocumentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 146
             default:
@@ -88766,6 +89164,117 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object docid_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An internal identifier for document. Should be loggable (no PII).
+     * </pre>
+     *
+     * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The docid.
+     */
+    public java.lang.String getDocid() {
+      java.lang.Object ref = docid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        docid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An internal identifier for document. Should be loggable (no PII).
+     * </pre>
+     *
+     * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for docid.
+     */
+    public com.google.protobuf.ByteString getDocidBytes() {
+      java.lang.Object ref = docid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        docid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An internal identifier for document. Should be loggable (no PII).
+     * </pre>
+     *
+     * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The docid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      docid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An internal identifier for document. Should be loggable (no PII).
+     * </pre>
+     *
+     * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocid() {
+      docid_ = getDefaultInstance().getDocid();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An internal identifier for document. Should be loggable (no PII).
+     * </pre>
+     *
+     * <code>string docid = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for docid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      docid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object mimeType_ = "";
 
     /**
@@ -88834,7 +89343,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       mimeType_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -88853,7 +89362,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMimeType() {
       mimeType_ = getDefaultInstance().getMimeType();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -88877,7 +89386,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       mimeType_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -88947,7 +89456,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       text_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -88965,7 +89474,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearText() {
       text_ = getDefaultInstance().getText();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -88988,7 +89497,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       text_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -88997,10 +89506,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTextStylesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         textStyles_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.Style>(textStyles_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -89259,7 +89768,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTextStyles() {
       if (textStylesBuilder_ == null) {
         textStyles_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         textStylesBuilder_.clear();
@@ -89410,7 +89919,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.Style,
                 com.google.cloud.documentai.v1.Document.Style.Builder,
                 com.google.cloud.documentai.v1.Document.StyleOrBuilder>(
-                textStyles_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+                textStyles_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
         textStyles_ = null;
       }
       return textStylesBuilder_;
@@ -89420,9 +89929,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensurePagesIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         pages_ = new java.util.ArrayList<com.google.cloud.documentai.v1.Document.Page>(pages_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -89647,7 +90156,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearPages() {
       if (pagesBuilder_ == null) {
         pages_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         pagesBuilder_.clear();
@@ -89776,7 +90285,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.Page,
                 com.google.cloud.documentai.v1.Document.Page.Builder,
                 com.google.cloud.documentai.v1.Document.PageOrBuilder>(
-                pages_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                pages_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         pages_ = null;
       }
       return pagesBuilder_;
@@ -89786,10 +90295,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureEntitiesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         entities_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.Entity>(entities_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -90037,7 +90546,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntities() {
       if (entitiesBuilder_ == null) {
         entities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         entitiesBuilder_.clear();
@@ -90180,7 +90689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.Entity,
                 com.google.cloud.documentai.v1.Document.Entity.Builder,
                 com.google.cloud.documentai.v1.Document.EntityOrBuilder>(
-                entities_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                entities_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         entities_ = null;
       }
       return entitiesBuilder_;
@@ -90190,11 +90699,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         entityRelations_ = java.util.Collections.emptyList();
 
     private void ensureEntityRelationsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         entityRelations_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.EntityRelation>(
                 entityRelations_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -90447,7 +90956,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearEntityRelations() {
       if (entityRelationsBuilder_ == null) {
         entityRelations_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         entityRelationsBuilder_.clear();
@@ -90596,7 +91105,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.EntityRelation.Builder,
                 com.google.cloud.documentai.v1.Document.EntityRelationOrBuilder>(
                 entityRelations_,
-                ((bitField0_ & 0x00000080) != 0),
+                ((bitField0_ & 0x00000100) != 0),
                 getParentForChildren(),
                 isClean());
         entityRelations_ = null;
@@ -90608,11 +91117,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureTextChangesIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         textChanges_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.TextChange>(
                 textChanges_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -90873,7 +91382,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearTextChanges() {
       if (textChangesBuilder_ == null) {
         textChanges_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         textChangesBuilder_.clear();
@@ -91027,7 +91536,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.TextChange,
                 com.google.cloud.documentai.v1.Document.TextChange.Builder,
                 com.google.cloud.documentai.v1.Document.TextChangeOrBuilder>(
-                textChanges_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                textChanges_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         textChanges_ = null;
       }
       return textChangesBuilder_;
@@ -91053,7 +91562,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the shardInfo field is set.
      */
     public boolean hasShardInfo() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -91097,7 +91606,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         shardInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -91119,7 +91628,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         shardInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -91136,7 +91645,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeShardInfo(com.google.cloud.documentai.v1.Document.ShardInfo value) {
       if (shardInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && shardInfo_ != null
             && shardInfo_
                 != com.google.cloud.documentai.v1.Document.ShardInfo.getDefaultInstance()) {
@@ -91148,7 +91657,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         shardInfoBuilder_.mergeFrom(value);
       }
       if (shardInfo_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -91165,7 +91674,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1.Document.ShardInfo shard_info = 9;</code>
      */
     public Builder clearShardInfo() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       shardInfo_ = null;
       if (shardInfoBuilder_ != null) {
         shardInfoBuilder_.dispose();
@@ -91186,7 +91695,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1.Document.ShardInfo shard_info = 9;</code>
      */
     public com.google.cloud.documentai.v1.Document.ShardInfo.Builder getShardInfoBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getShardInfoFieldBuilder().getBuilder();
     }
@@ -91255,7 +91764,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -91295,7 +91804,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -91315,7 +91824,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -91331,7 +91840,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -91342,7 +91851,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -91358,7 +91867,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 10;</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -91378,7 +91887,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 10;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -91427,10 +91936,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRevisionsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
+      if (!((bitField0_ & 0x00001000) != 0)) {
         revisions_ =
             new java.util.ArrayList<com.google.cloud.documentai.v1.Document.Revision>(revisions_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
       }
     }
 
@@ -91656,7 +92165,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRevisions() {
       if (revisionsBuilder_ == null) {
         revisions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
       } else {
         revisionsBuilder_.clear();
@@ -91786,7 +92295,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.documentai.v1.Document.Revision,
                 com.google.cloud.documentai.v1.Document.Revision.Builder,
                 com.google.cloud.documentai.v1.Document.RevisionOrBuilder>(
-                revisions_, ((bitField0_ & 0x00000800) != 0), getParentForChildren(), isClean());
+                revisions_, ((bitField0_ & 0x00001000) != 0), getParentForChildren(), isClean());
         revisions_ = null;
       }
       return revisionsBuilder_;
@@ -91811,7 +92320,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the documentLayout field is set.
      */
     public boolean hasDocumentLayout() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -91853,7 +92362,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentLayoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -91874,7 +92383,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentLayoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -91891,7 +92400,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDocumentLayout(
         com.google.cloud.documentai.v1.Document.DocumentLayout value) {
       if (documentLayoutBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && documentLayout_ != null
             && documentLayout_
                 != com.google.cloud.documentai.v1.Document.DocumentLayout.getDefaultInstance()) {
@@ -91903,7 +92412,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         documentLayoutBuilder_.mergeFrom(value);
       }
       if (documentLayout_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -91919,7 +92428,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1.Document.DocumentLayout document_layout = 17;</code>
      */
     public Builder clearDocumentLayout() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       documentLayout_ = null;
       if (documentLayoutBuilder_ != null) {
         documentLayoutBuilder_.dispose();
@@ -91940,7 +92449,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.documentai.v1.Document.DocumentLayout.Builder
         getDocumentLayoutBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getDocumentLayoutFieldBuilder().getBuilder();
     }
@@ -92010,7 +92519,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the chunkedDocument field is set.
      */
     public boolean hasChunkedDocument() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -92053,7 +92562,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         chunkedDocumentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -92074,7 +92583,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       } else {
         chunkedDocumentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -92091,7 +92600,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeChunkedDocument(
         com.google.cloud.documentai.v1.Document.ChunkedDocument value) {
       if (chunkedDocumentBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && chunkedDocument_ != null
             && chunkedDocument_
                 != com.google.cloud.documentai.v1.Document.ChunkedDocument.getDefaultInstance()) {
@@ -92103,7 +92612,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         chunkedDocumentBuilder_.mergeFrom(value);
       }
       if (chunkedDocument_ != null) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -92119,7 +92628,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1.Document.ChunkedDocument chunked_document = 18;</code>
      */
     public Builder clearChunkedDocument() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       chunkedDocument_ = null;
       if (chunkedDocumentBuilder_ != null) {
         chunkedDocumentBuilder_.dispose();
@@ -92140,7 +92649,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.documentai.v1.Document.ChunkedDocument.Builder
         getChunkedDocumentBuilder() {
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getChunkedDocumentFieldBuilder().getBuilder();
     }

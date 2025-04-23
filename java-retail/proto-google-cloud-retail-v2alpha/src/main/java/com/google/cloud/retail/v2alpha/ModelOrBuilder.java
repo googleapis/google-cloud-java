@@ -308,7 +308,6 @@ public interface ModelOrBuilder
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
    * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
    *
-   *
    * This field together with
    * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]
    * describe model metadata to use to control model training and serving.
@@ -335,7 +334,6 @@ public interface ModelOrBuilder
    * Currently supported values: `recommended-for-you`, `others-you-may-like`,
    * `frequently-bought-together`, `page-optimization`, `similar-items`,
    * `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value).
-   *
    *
    * This field together with
    * [optimization_objective][google.cloud.retail.v2alpha.Model.optimization_objective]

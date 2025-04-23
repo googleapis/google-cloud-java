@@ -104,6 +104,10 @@ public final class ModelProto {
       internal_static_google_cloud_aiplatform_v1_Probe_HttpHeader_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_Probe_HttpHeader_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_Checkpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_Checkpoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -121,7 +125,7 @@ public final class ModelProto {
           + "atform/v1/encryption_spec.proto\032(google/cloud/aiplatform/v1/env_var.proto\032,googl"
           + "e/cloud/aiplatform/v1/explanation.proto\032"
           + "\036google/protobuf/duration.proto\032\034google/"
-          + "protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\326\025\n"
+          + "protobuf/struct.proto\032\037google/protobuf/timestamp.proto\"\233\026\n"
           + "\005Model\022\014\n"
           + "\004name\030\001 \001(\t\022\032\n\n"
           + "version_id\030\034 \001(\tB\006\340A\005\340A\003\022\027\n"
@@ -172,11 +176,13 @@ public final class ModelProto {
           + "\021base_model_source\0302 \001(\01321.google.clou"
           + "d.aiplatform.v1.Model.BaseModelSourceB\003\340A\001\022\032\n\r"
           + "satisfies_pzs\0303 \001(\010B\003\340A\003\022\032\n\r"
-          + "satisfies_pzi\0304 \001(\010B\003\340A\003\032\325\001\n"
+          + "satisfies_pzi\0304 \001(\010B\003\340A\003\022C\n"
+          + "\013checkpoints\0309 \003(\0132"
+          + "&.google.cloud.aiplatform.v1.CheckpointB\006\340A\003\340A\001\032\325\001\n"
           + "\014ExportFormat\022\017\n"
           + "\002id\030\001 \001(\tB\003\340A\003\022b\n"
-          + "\023exportable_contents\030\002 \003("
-          + "\0162@.google.cloud.aiplatform.v1.Model.ExportFormat.ExportableContentB\003\340A\003\"P\n"
+          + "\023exportable_contents\030\002 \003(\0162@.google."
+          + "cloud.aiplatform.v1.Model.ExportFormat.ExportableContentB\003\340A\003\"P\n"
           + "\021ExportableContent\022\"\n"
           + "\036EXPORTABLE_CONTENT_UNSPECIFIED\020\000\022\014\n"
           + "\010ARTIFACT\020\001\022\t\n"
@@ -194,8 +200,8 @@ public final class ModelProto {
           + "\017BaseModelSource\022L\n"
           + "\023model_garden_source\030\001"
           + " \001(\0132-.google.cloud.aiplatform.v1.ModelGardenSourceH\000\022?\n"
-          + "\014genie_source\030\002"
-          + " \001(\0132\'.google.cloud.aiplatform.v1.GenieSourceH\000B\010\n"
+          + "\014genie_source\030\002 "
+          + "\001(\0132\'.google.cloud.aiplatform.v1.GenieSourceH\000B\010\n"
           + "\006source\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
@@ -205,8 +211,8 @@ public final class ModelProto {
           + "\023DEDICATED_RESOURCES\020\001\022\027\n"
           + "\023AUTOMATIC_RESOURCES\020\002\022\024\n"
           + "\020SHARED_RESOURCES\020\003:\\\352AY\n"
-          + "\037aiplatform.googl"
-          + "eapis.com/Model\0226projects/{project}/locations/{location}/models/{model}\"(\n"
+          + "\037aiplatform.googleapis.com/M"
+          + "odel\0226projects/{project}/locations/{location}/models/{model}\"(\n"
           + "\023LargeModelReference\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\"n\n"
           + "\021ModelGardenSource\022\036\n"
@@ -227,7 +233,8 @@ public final class ModelProto {
           + "\005ports\030\005 \003(\0132"
           + " .google.cloud.aiplatform.v1.PortB\003\340A\005\022\032\n\r"
           + "predict_route\030\006 \001(\tB\003\340A\005\022\031\n"
-          + "\014health_route\030\007 \001(\tB\003\340A\005\0229\n\n"
+          + "\014health_route\030\007 \001(\tB\003\340A\005\0229\n"
+          + "\n"
           + "grpc_ports\030\t \003(\0132 .google.cloud.aiplatform.v1.PortB\003\340A\005\022:\n"
           + "\022deployment_timeout\030\n"
           + " \001(\0132\031.google.protobuf.DurationB\003\340A\005\022\"\n"
@@ -241,8 +248,8 @@ public final class ModelProto {
           + "\004Port\022\026\n"
           + "\016container_port\030\003 \001(\005\"\223\002\n"
           + "\017ModelSourceInfo\022P\n"
-          + "\013source_type\030\001 \001(\0162;.google.cloud"
-          + ".aiplatform.v1.ModelSourceInfo.ModelSourceType\022\014\n"
+          + "\013source_type\030\001"
+          + " \001(\0162;.google.cloud.aiplatform.v1.ModelSourceInfo.ModelSourceType\022\014\n"
           + "\004copy\030\002 \001(\010\"\237\001\n"
           + "\017ModelSourceType\022!\n"
           + "\035MODEL_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n"
@@ -255,11 +262,11 @@ public final class ModelProto {
           + "\013MARKETPLACE\020\007\"\333\005\n"
           + "\005Probe\022<\n"
           + "\004exec\030\001 \001(\0132,.google.cloud.aiplatform.v1.Probe.ExecActionH\000\022C\n"
-          + "\010http_get\030\004 \001(\0132/.googl"
-          + "e.cloud.aiplatform.v1.Probe.HttpGetActionH\000\022<\n"
+          + "\010http_get\030\004"
+          + " \001(\0132/.google.cloud.aiplatform.v1.Probe.HttpGetActionH\000\022<\n"
           + "\004grpc\030\005 \001(\0132,.google.cloud.aiplatform.v1.Probe.GrpcActionH\000\022G\n\n"
-          + "tcp_socket\030\006"
-          + " \001(\01321.google.cloud.aiplatform.v1.Probe.TcpSocketActionH\000\022\026\n"
+          + "tcp_socket\030\006 \001(\01321.goo"
+          + "gle.cloud.aiplatform.v1.Probe.TcpSocketActionH\000\022\026\n"
           + "\016period_seconds\030\002 \001(\005\022\027\n"
           + "\017timeout_seconds\030\003 \001(\005\022\031\n"
           + "\021failure_threshold\030\007 \001(\005\022\031\n"
@@ -272,8 +279,8 @@ public final class ModelProto {
           + "\004port\030\002 \001(\005\022\014\n"
           + "\004host\030\003 \001(\t\022\016\n"
           + "\006scheme\030\004 \001(\t\022B\n"
-          + "\014http_headers\030\005 \003("
-          + "\0132,.google.cloud.aiplatform.v1.Probe.HttpHeader\032+\n\n"
+          + "\014http_headers\030\005"
+          + " \003(\0132,.google.cloud.aiplatform.v1.Probe.HttpHeader\032+\n\n"
           + "GrpcAction\022\014\n"
           + "\004port\030\001 \001(\005\022\017\n"
           + "\007service\030\002 \001(\t\032-\n"
@@ -283,12 +290,15 @@ public final class ModelProto {
           + "HttpHeader\022\014\n"
           + "\004name\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\tB\014\n\n"
-          + "probe_typeB\310\001\n"
+          + "probe_type\"@\n\n"
+          + "Checkpoint\022\025\n\r"
+          + "checkpoint_id\030\001 \001(\t\022\r\n"
+          + "\005epoch\030\002 \001(\003\022\014\n"
+          + "\004step\030\003 \001(\003B\310\001\n"
           + "\036com.google.cloud.aiplatform.v1B\n"
-          + "ModelProtoP\001Z>cloud.google.com/go/aiplatform/ap"
-          + "iv1/aiplatformpb;aiplatformpb\252\002\032Google.C"
-          + "loud.AIPlatform.V1\312\002\032Google\\Cloud\\AIPlat"
-          + "form\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
+          + "ModelProtoP\001Z>cloud.google.com/go/aiplatform/apiv1/aiplatformpb;aiplatfo"
+          + "rmpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Goog"
+          + "le\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::AIPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -344,6 +354,7 @@ public final class ModelProto {
               "BaseModelSource",
               "SatisfiesPzs",
               "SatisfiesPzi",
+              "Checkpoints",
             });
     internal_static_google_cloud_aiplatform_v1_Model_ExportFormat_descriptor =
         internal_static_google_cloud_aiplatform_v1_Model_descriptor.getNestedTypes().get(0);
@@ -514,6 +525,14 @@ public final class ModelProto {
             internal_static_google_cloud_aiplatform_v1_Probe_HttpHeader_descriptor,
             new java.lang.String[] {
               "Name", "Value",
+            });
+    internal_static_google_cloud_aiplatform_v1_Checkpoint_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_aiplatform_v1_Checkpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_Checkpoint_descriptor,
+            new java.lang.String[] {
+              "CheckpointId", "Epoch", "Step",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

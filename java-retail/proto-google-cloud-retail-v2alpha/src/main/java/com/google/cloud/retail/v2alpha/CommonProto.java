@@ -89,6 +89,14 @@ public final class CommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_Rule_RemoveFacetAction_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_Rule_PinAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_retail_v2alpha_Audience_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_Audience_fieldAccessorTable;
@@ -136,6 +144,22 @@ public final class CommonProto {
       internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_ProductPins_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_ProductPins_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_AllMatchedPinsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_AllMatchedPinsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -160,7 +184,7 @@ public final class CommonProto {
           + "full_match\030\002 \001(\010\032i\n"
           + "\tTimeRange\022.\n\n"
           + "start_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022,\n"
-          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\341\014\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.Timestamp\"\260\016\n"
           + "\004Rule\022E\n"
           + "\014boost_action\030\002 \001(\0132-.google."
           + "cloud.retail.v2alpha.Rule.BoostActionH\000\022K\n"
@@ -181,9 +205,10 @@ public final class CommonProto {
           + "\031force_return_facet_action\030\014"
           + " \001(\01328.google.cloud.retail.v2alpha.Rule.ForceReturnFacetActionH\000\022R\n"
           + "\023remove_facet_action\030\r"
-          + " \001(\01323.google.cloud.retail.v2alpha.Rule.RemoveFacetActionH\000\022>\n"
-          + "\tcondition\030\001"
-          + " \001(\0132&.google.cloud.retail.v2alpha.ConditionB\003\340A\002\0325\n"
+          + " \001(\01323.google.cloud.retail.v2alpha.Rule.RemoveFacetActionH\000\022A\n\n"
+          + "pin_action\030\016 \001(\0132+.google.cloud.retail.v2alpha.Rule.PinActionH\000\022>\n"
+          + "\tcondition\030\001 \001("
+          + "\0132&.google.cloud.retail.v2alpha.ConditionB\003\340A\002\0325\n"
           + "\013BoostAction\022\r\n"
           + "\005boost\030\001 \001(\002\022\027\n"
           + "\017products_filter\030\002 \001(\t\032\036\n"
@@ -208,13 +233,19 @@ public final class CommonProto {
           + "\014IgnoreAction\022\024\n"
           + "\014ignore_terms\030\001 \003(\t\032\323\001\n"
           + "\026ForceReturnFacetAction\022t\n"
-          + "\032facet_position_adjustments\030\001 \003(\0132P.google.cl"
-          + "oud.retail.v2alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment\032C\n"
+          + "\032facet_position_adjustments\030\001 \003(\0132P.google.cloud.retail.v2"
+          + "alpha.Rule.ForceReturnFacetAction.FacetPositionAdjustment\032C\n"
           + "\027FacetPositionAdjustment\022\026\n"
           + "\016attribute_name\030\001 \001(\t\022\020\n"
           + "\010position\030\002 \001(\005\032,\n"
           + "\021RemoveFacetAction\022\027\n"
-          + "\017attribute_names\030\001 \003(\tB\010\n"
+          + "\017attribute_names\030\001 \003(\t\032\211\001\n"
+          + "\tPinAction\022M\n"
+          + "\007pin_map\030\001 "
+          + "\003(\01327.google.cloud.retail.v2alpha.Rule.PinAction.PinMapEntryB\003\340A\002\032-\n"
+          + "\013PinMapEntry\022\013\n"
+          + "\003key\030\001 \001(\003\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001B\010\n"
           + "\006action\"/\n"
           + "\010Audience\022\017\n"
           + "\007genders\030\001 \003(\t\022\022\n\n"
@@ -263,17 +294,41 @@ public final class CommonProto {
           + "\007user_id\030\001 \001(\t\022\022\n\n"
           + "ip_address\030\002 \001(\t\022\022\n\n"
           + "user_agent\030\003 \001(\t\022\033\n"
-          + "\023direct_user_request\030\004 \001(\010\"\260\002\n"
-          + "\016LocalInventory\022\020\n"
-          + "\010place_id\030\001 \001(\t\022:\n\n"
-          + "price_info\030\002 \001(\0132&.google.cloud.retail.v2alpha.PriceInfo\022O\n\n"
-          + "attributes\030\003"
-          + " \003(\0132;.google.cloud.retail.v2alpha.LocalInventory.AttributesEntry\022\036\n"
-          + "\021fulfillment_types\030\004 \003(\tB\003\340A\004\032_\n"
+          + "\023direct_user_request\030\004 \001(\010\"\377\003\n"
+          + "\016LocalInventory\022\025\n"
+          + "\010place_id\030\001 \001(\tB\003\340A\001\022?\n\n"
+          + "price_info\030\002"
+          + " \001(\0132&.google.cloud.retail.v2alpha.PriceInfoB\003\340A\001\022S\n"
+          + "\014availability\030\005 \001(\01628.goo"
+          + "gle.cloud.retail.v2alpha.LocalInventory.AvailabilityB\003\340A\001\022T\n\n"
+          + "attributes\030\003 \003(\0132;."
+          + "google.cloud.retail.v2alpha.LocalInventory.AttributesEntryB\003\340A\001\022\036\n"
+          + "\021fulfillment_types\030\004 \003(\tB\003\340A\001\032_\n"
           + "\017AttributesEntry\022\013\n"
           + "\003key\030\001 \001(\t\022;\n"
-          + "\005value\030\002 \001(\0132,.go"
-          + "ogle.cloud.retail.v2alpha.CustomAttribute:\0028\001*\206\001\n"
+          + "\005value\030\002"
+          + " \001(\0132,.google.cloud.retail.v2alpha.CustomAttribute:\0028\001\"i\n"
+          + "\014Availability\022\034\n"
+          + "\030AVAILABILITY_UNSPECIFIED\020\000\022\014\n"
+          + "\010IN_STOCK\020\001\022\020\n"
+          + "\014OUT_OF_STOCK\020\002\022\014\n"
+          + "\010PREORDER\020\003\022\r\n"
+          + "\tBACKORDER\020\004\"\323\003\n"
+          + "\022PinControlMetadata\022]\n"
+          + "\020all_matched_pins\030\001 \003(\0132C.google.cl"
+          + "oud.retail.v2alpha.PinControlMetadata.AllMatchedPinsEntry\022V\n"
+          + "\014dropped_pins\030\002 \003(\0132"
+          + "@.google.cloud.retail.v2alpha.PinControlMetadata.DroppedPinsEntry\032!\n"
+          + "\013ProductPins\022\022\n\n"
+          + "product_id\030\001 \003(\t\032r\n"
+          + "\023AllMatchedPinsEntry\022\013\n"
+          + "\003key\030\001 \001(\003\022J\n"
+          + "\005value\030\002 \001(\0132;.google"
+          + ".cloud.retail.v2alpha.PinControlMetadata.ProductPins:\0028\001\032o\n"
+          + "\020DroppedPinsEntry\022\013\n"
+          + "\003key\030\001 \001(\003\022J\n"
+          + "\005value\030\002 \001(\0132;.google.cloud."
+          + "retail.v2alpha.PinControlMetadata.ProductPins:\0028\001*\206\001\n"
           + "\024AttributeConfigLevel\022&\n"
           + "\"ATTRIBUTE_CONFIG_LEVEL_UNSPECIFIED\020\000\022\"\n"
           + "\036PRODUCT_LEVEL_ATTRIBUTE_CONFIG\020\001\022\"\n"
@@ -290,11 +345,10 @@ public final class CommonProto {
           + "$SEARCH_SOLUTION_USE_CASE_UNSPECIFIED\020\000\022#\n"
           + "\037SEARCH_SOLUTION_USE_CASE_SEARCH\020\001\022#\n"
           + "\037SEARCH_SOLUTION_USE_CASE_BROWSE\020\002B\317\001\n"
-          + "\037com.google.cloud.retail.v2alphaB\013CommonP"
-          + "rotoP\001Z7cloud.google.com/go/retail/apiv2"
-          + "alpha/retailpb;retailpb\242\002\006RETAIL\252\002\033Googl"
-          + "e.Cloud.Retail.V2Alpha\312\002\033Google\\Cloud\\Re"
-          + "tail\\V2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
+          + "\037com.google.cloud.retail.v2alphaB\013CommonProtoP\001Z7cloud.google.com/go/retail/a"
+          + "piv2alpha/retailpb;retailpb\242\002\006RETAIL\252\002\033G"
+          + "oogle.Cloud.Retail.V2Alpha\312\002\033Google\\Clou"
+          + "d\\Retail\\V2alpha\352\002\036Google::Cloud::Retail::V2alphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -343,6 +397,7 @@ public final class CommonProto {
               "TwowaySynonymsAction",
               "ForceReturnFacetAction",
               "RemoveFacetAction",
+              "PinAction",
               "Condition",
               "Action",
             });
@@ -436,6 +491,24 @@ public final class CommonProto {
             new java.lang.String[] {
               "AttributeNames",
             });
+    internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor =
+        internal_static_google_cloud_retail_v2alpha_Rule_descriptor.getNestedTypes().get(10);
+    internal_static_google_cloud_retail_v2alpha_Rule_PinAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor,
+            new java.lang.String[] {
+              "PinMap",
+            });
+    internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_descriptor =
+        internal_static_google_cloud_retail_v2alpha_Rule_PinAction_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_Rule_PinAction_PinMapEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
     internal_static_google_cloud_retail_v2alpha_Audience_descriptor =
         getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_retail_v2alpha_Audience_fieldAccessorTable =
@@ -528,7 +601,7 @@ public final class CommonProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor,
             new java.lang.String[] {
-              "PlaceId", "PriceInfo", "Attributes", "FulfillmentTypes",
+              "PlaceId", "PriceInfo", "Availability", "Attributes", "FulfillmentTypes",
             });
     internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor =
         internal_static_google_cloud_retail_v2alpha_LocalInventory_descriptor
@@ -537,6 +610,44 @@ public final class CommonProto {
     internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_retail_v2alpha_LocalInventory_AttributesEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor,
+            new java.lang.String[] {
+              "AllMatchedPins", "DroppedPins",
+            });
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_ProductPins_descriptor =
+        internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_ProductPins_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_PinControlMetadata_ProductPins_descriptor,
+            new java.lang.String[] {
+              "ProductId",
+            });
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_AllMatchedPinsEntry_descriptor =
+        internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_AllMatchedPinsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_PinControlMetadata_AllMatchedPinsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_descriptor =
+        internal_static_google_cloud_retail_v2alpha_PinControlMetadata_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_retail_v2alpha_PinControlMetadata_DroppedPinsEntry_descriptor,
             new java.lang.String[] {
               "Key", "Value",
             });

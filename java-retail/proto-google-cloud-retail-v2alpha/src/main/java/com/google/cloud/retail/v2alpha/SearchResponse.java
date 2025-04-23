@@ -13745,6 +13745,75 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     return appliedControls_.getByteString(index);
   }
 
+  public static final int PIN_CONTROL_METADATA_FIELD_NUMBER = 22;
+  private com.google.cloud.retail.v2alpha.PinControlMetadata pinControlMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return Whether the pinControlMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasPinControlMetadata() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   *
+   * @return The pinControlMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.PinControlMetadata getPinControlMetadata() {
+    return pinControlMetadata_ == null
+        ? com.google.cloud.retail.v2alpha.PinControlMetadata.getDefaultInstance()
+        : pinControlMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Metadata for pin controls which were applicable to the request.
+   * This contains two map fields, one for all matched pins and one for pins
+   * which were matched but not applied.
+   *
+   * The two maps are keyed by pin position, and the values are the product ids
+   * which were matched to that pin.
+   * </pre>
+   *
+   * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder
+      getPinControlMetadataOrBuilder() {
+    return pinControlMetadata_ == null
+        ? com.google.cloud.retail.v2alpha.PinControlMetadata.getDefaultInstance()
+        : pinControlMetadata_;
+  }
+
   public static final int INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER = 14;
 
   @SuppressWarnings("serial")
@@ -13856,8 +13925,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -13872,8 +13940,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -13889,8 +13956,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -13905,8 +13971,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -13921,8 +13986,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Metadata related to A/B testing
-   * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+   * Metadata related to A/B testing experiment associated with this
    * response. Only exists when an experiment is triggered.
    * </pre>
    *
@@ -13954,7 +14018,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasConversationalSearchResult() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -14020,7 +14084,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasTileNavigationResult() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -14112,11 +14176,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < experimentInfo_.size(); i++) {
       output.writeMessage(17, experimentInfo_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(18, getConversationalSearchResult());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(19, getTileNavigationResult());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(22, getPinControlMetadata());
     }
     getUnknownFields().writeTo(output);
   }
@@ -14167,14 +14234,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < experimentInfo_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, experimentInfo_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getConversationalSearchResult());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(19, getTileNavigationResult());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getPinControlMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -14204,6 +14274,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getRedirectUri().equals(other.getRedirectUri())) return false;
     if (!getAppliedControlsList().equals(other.getAppliedControlsList())) return false;
+    if (hasPinControlMetadata() != other.hasPinControlMetadata()) return false;
+    if (hasPinControlMetadata()) {
+      if (!getPinControlMetadata().equals(other.getPinControlMetadata())) return false;
+    }
     if (!getInvalidConditionBoostSpecsList().equals(other.getInvalidConditionBoostSpecsList()))
       return false;
     if (!getExperimentInfoList().equals(other.getExperimentInfoList())) return false;
@@ -14252,6 +14326,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (getAppliedControlsCount() > 0) {
       hash = (37 * hash) + APPLIED_CONTROLS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedControlsList().hashCode();
+    }
+    if (hasPinControlMetadata()) {
+      hash = (37 * hash) + PIN_CONTROL_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getPinControlMetadata().hashCode();
     }
     if (getInvalidConditionBoostSpecsCount() > 0) {
       hash = (37 * hash) + INVALID_CONDITION_BOOST_SPECS_FIELD_NUMBER;
@@ -14415,6 +14493,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         getResultsFieldBuilder();
         getFacetsFieldBuilder();
         getQueryExpansionInfoFieldBuilder();
+        getPinControlMetadataFieldBuilder();
         getInvalidConditionBoostSpecsFieldBuilder();
         getExperimentInfoFieldBuilder();
         getConversationalSearchResultFieldBuilder();
@@ -14451,20 +14530,25 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       redirectUri_ = "";
       appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      pinControlMetadata_ = null;
+      if (pinControlMetadataBuilder_ != null) {
+        pinControlMetadataBuilder_.dispose();
+        pinControlMetadataBuilder_ = null;
+      }
       if (invalidConditionBoostSpecsBuilder_ == null) {
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
       } else {
         invalidConditionBoostSpecs_ = null;
         invalidConditionBoostSpecsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       if (experimentInfoBuilder_ == null) {
         experimentInfo_ = java.util.Collections.emptyList();
       } else {
         experimentInfo_ = null;
         experimentInfoBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       conversationalSearchResult_ = null;
       if (conversationalSearchResultBuilder_ != null) {
         conversationalSearchResultBuilder_.dispose();
@@ -14530,19 +14614,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         result.facets_ = facetsBuilder_.build();
       }
       if (invalidConditionBoostSpecsBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           invalidConditionBoostSpecs_ =
               java.util.Collections.unmodifiableList(invalidConditionBoostSpecs_);
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecs_;
       } else {
         result.invalidConditionBoostSpecs_ = invalidConditionBoostSpecsBuilder_.build();
       }
       if (experimentInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           experimentInfo_ = java.util.Collections.unmodifiableList(experimentInfo_);
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.experimentInfo_ = experimentInfo_;
       } else {
@@ -14579,19 +14663,26 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         appliedControls_.makeImmutable();
         result.appliedControls_ = appliedControls_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.pinControlMetadata_ =
+            pinControlMetadataBuilder_ == null
+                ? pinControlMetadata_
+                : pinControlMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.conversationalSearchResult_ =
             conversationalSearchResultBuilder_ == null
                 ? conversationalSearchResult_
                 : conversationalSearchResultBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.tileNavigationResult_ =
             tileNavigationResultBuilder_ == null
                 ? tileNavigationResult_
                 : tileNavigationResultBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00000008;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -14731,11 +14822,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasPinControlMetadata()) {
+        mergePinControlMetadata(other.getPinControlMetadata());
+      }
       if (invalidConditionBoostSpecsBuilder_ == null) {
         if (!other.invalidConditionBoostSpecs_.isEmpty()) {
           if (invalidConditionBoostSpecs_.isEmpty()) {
             invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureInvalidConditionBoostSpecsIsMutable();
             invalidConditionBoostSpecs_.addAll(other.invalidConditionBoostSpecs_);
@@ -14748,7 +14842,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             invalidConditionBoostSpecsBuilder_.dispose();
             invalidConditionBoostSpecsBuilder_ = null;
             invalidConditionBoostSpecs_ = other.invalidConditionBoostSpecs_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
             invalidConditionBoostSpecsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getInvalidConditionBoostSpecsFieldBuilder()
@@ -14762,7 +14856,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!other.experimentInfo_.isEmpty()) {
           if (experimentInfo_.isEmpty()) {
             experimentInfo_ = other.experimentInfo_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureExperimentInfoIsMutable();
             experimentInfo_.addAll(other.experimentInfo_);
@@ -14775,7 +14869,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             experimentInfoBuilder_.dispose();
             experimentInfoBuilder_ = null;
             experimentInfo_ = other.experimentInfo_;
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
             experimentInfoBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getExperimentInfoFieldBuilder()
@@ -14921,16 +15015,23 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getConversationalSearchResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(
                     getTileNavigationResultFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 154
+            case 178:
+              {
+                input.readMessage(
+                    getPinControlMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 178
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -16685,17 +16786,261 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.retail.v2alpha.PinControlMetadata pinControlMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.PinControlMetadata,
+            com.google.cloud.retail.v2alpha.PinControlMetadata.Builder,
+            com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder>
+        pinControlMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     *
+     * @return Whether the pinControlMetadata field is set.
+     */
+    public boolean hasPinControlMetadata() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     *
+     * @return The pinControlMetadata.
+     */
+    public com.google.cloud.retail.v2alpha.PinControlMetadata getPinControlMetadata() {
+      if (pinControlMetadataBuilder_ == null) {
+        return pinControlMetadata_ == null
+            ? com.google.cloud.retail.v2alpha.PinControlMetadata.getDefaultInstance()
+            : pinControlMetadata_;
+      } else {
+        return pinControlMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public Builder setPinControlMetadata(com.google.cloud.retail.v2alpha.PinControlMetadata value) {
+      if (pinControlMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pinControlMetadata_ = value;
+      } else {
+        pinControlMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public Builder setPinControlMetadata(
+        com.google.cloud.retail.v2alpha.PinControlMetadata.Builder builderForValue) {
+      if (pinControlMetadataBuilder_ == null) {
+        pinControlMetadata_ = builderForValue.build();
+      } else {
+        pinControlMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public Builder mergePinControlMetadata(
+        com.google.cloud.retail.v2alpha.PinControlMetadata value) {
+      if (pinControlMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && pinControlMetadata_ != null
+            && pinControlMetadata_
+                != com.google.cloud.retail.v2alpha.PinControlMetadata.getDefaultInstance()) {
+          getPinControlMetadataBuilder().mergeFrom(value);
+        } else {
+          pinControlMetadata_ = value;
+        }
+      } else {
+        pinControlMetadataBuilder_.mergeFrom(value);
+      }
+      if (pinControlMetadata_ != null) {
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public Builder clearPinControlMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      pinControlMetadata_ = null;
+      if (pinControlMetadataBuilder_ != null) {
+        pinControlMetadataBuilder_.dispose();
+        pinControlMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public com.google.cloud.retail.v2alpha.PinControlMetadata.Builder
+        getPinControlMetadataBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getPinControlMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    public com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder
+        getPinControlMetadataOrBuilder() {
+      if (pinControlMetadataBuilder_ != null) {
+        return pinControlMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return pinControlMetadata_ == null
+            ? com.google.cloud.retail.v2alpha.PinControlMetadata.getDefaultInstance()
+            : pinControlMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Metadata for pin controls which were applicable to the request.
+     * This contains two map fields, one for all matched pins and one for pins
+     * which were matched but not applied.
+     *
+     * The two maps are keyed by pin position, and the values are the product ids
+     * which were matched to that pin.
+     * </pre>
+     *
+     * <code>.google.cloud.retail.v2alpha.PinControlMetadata pin_control_metadata = 22;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.retail.v2alpha.PinControlMetadata,
+            com.google.cloud.retail.v2alpha.PinControlMetadata.Builder,
+            com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder>
+        getPinControlMetadataFieldBuilder() {
+      if (pinControlMetadataBuilder_ == null) {
+        pinControlMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.retail.v2alpha.PinControlMetadata,
+                com.google.cloud.retail.v2alpha.PinControlMetadata.Builder,
+                com.google.cloud.retail.v2alpha.PinControlMetadataOrBuilder>(
+                getPinControlMetadata(), getParentForChildren(), isClean());
+        pinControlMetadata_ = null;
+      }
+      return pinControlMetadataBuilder_;
+    }
+
     private java.util.List<
             com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec.ConditionBoostSpec>
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
 
     private void ensureInvalidConditionBoostSpecsIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000400) != 0)) {
         invalidConditionBoostSpecs_ =
             new java.util.ArrayList<
                 com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec.ConditionBoostSpec>(
                 invalidConditionBoostSpecs_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
       }
     }
 
@@ -16981,7 +17326,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInvalidConditionBoostSpecs() {
       if (invalidConditionBoostSpecsBuilder_ == null) {
         invalidConditionBoostSpecs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
       } else {
         invalidConditionBoostSpecsBuilder_.clear();
@@ -17152,7 +17497,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.SearchRequest.BoostSpec
                     .ConditionBoostSpecOrBuilder>(
                 invalidConditionBoostSpecs_,
-                ((bitField0_ & 0x00000200) != 0),
+                ((bitField0_ & 0x00000400) != 0),
                 getParentForChildren(),
                 isClean());
         invalidConditionBoostSpecs_ = null;
@@ -17164,11 +17509,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureExperimentInfoIsMutable() {
-      if (!((bitField0_ & 0x00000400) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         experimentInfo_ =
             new java.util.ArrayList<com.google.cloud.retail.v2alpha.ExperimentInfo>(
                 experimentInfo_);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -17182,8 +17527,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17201,8 +17545,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17220,8 +17563,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17239,8 +17581,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17265,8 +17606,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17288,8 +17628,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17313,8 +17652,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17339,8 +17677,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17362,8 +17699,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17385,8 +17721,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17408,8 +17743,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17418,7 +17752,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder clearExperimentInfo() {
       if (experimentInfoBuilder_ == null) {
         experimentInfo_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         experimentInfoBuilder_.clear();
@@ -17430,8 +17764,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17452,8 +17785,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17468,8 +17800,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17488,8 +17819,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17508,8 +17838,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17524,8 +17853,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17541,8 +17869,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Metadata related to A/B testing
-     * [Experiment][google.cloud.retail.v2alpha.Experiment] associated with this
+     * Metadata related to A/B testing experiment associated with this
      * response. Only exists when an experiment is triggered.
      * </pre>
      *
@@ -17565,7 +17892,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.retail.v2alpha.ExperimentInfo.Builder,
                 com.google.cloud.retail.v2alpha.ExperimentInfoOrBuilder>(
                 experimentInfo_,
-                ((bitField0_ & 0x00000400) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         experimentInfo_ = null;
@@ -17596,7 +17923,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the conversationalSearchResult field is set.
      */
     public boolean hasConversationalSearchResult() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -17647,7 +17974,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         conversationalSearchResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -17672,7 +17999,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         conversationalSearchResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -17692,7 +18019,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeConversationalSearchResult(
         com.google.cloud.retail.v2alpha.SearchResponse.ConversationalSearchResult value) {
       if (conversationalSearchResultBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && conversationalSearchResult_ != null
             && conversationalSearchResult_
                 != com.google.cloud.retail.v2alpha.SearchResponse.ConversationalSearchResult
@@ -17705,7 +18032,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         conversationalSearchResultBuilder_.mergeFrom(value);
       }
       if (conversationalSearchResult_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -17724,7 +18051,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearConversationalSearchResult() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       conversationalSearchResult_ = null;
       if (conversationalSearchResultBuilder_ != null) {
         conversationalSearchResultBuilder_.dispose();
@@ -17748,7 +18075,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchResponse.ConversationalSearchResult.Builder
         getConversationalSearchResultBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getConversationalSearchResultFieldBuilder().getBuilder();
     }
@@ -17829,7 +18156,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the tileNavigationResult field is set.
      */
     public boolean hasTileNavigationResult() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -17880,7 +18207,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         tileNavigationResultBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17905,7 +18232,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       } else {
         tileNavigationResultBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -17925,7 +18252,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeTileNavigationResult(
         com.google.cloud.retail.v2alpha.SearchResponse.TileNavigationResult value) {
       if (tileNavigationResultBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && tileNavigationResult_ != null
             && tileNavigationResult_
                 != com.google.cloud.retail.v2alpha.SearchResponse.TileNavigationResult
@@ -17938,7 +18265,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         tileNavigationResultBuilder_.mergeFrom(value);
       }
       if (tileNavigationResult_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -17957,7 +18284,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTileNavigationResult() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       tileNavigationResult_ = null;
       if (tileNavigationResultBuilder_ != null) {
         tileNavigationResultBuilder_.dispose();
@@ -17981,7 +18308,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.retail.v2alpha.SearchResponse.TileNavigationResult.Builder
         getTileNavigationResultBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getTileNavigationResultFieldBuilder().getBuilder();
     }
