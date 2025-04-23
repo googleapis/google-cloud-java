@@ -1,5 +1,24 @@
 # Changelog
 
+## [3.31.0](https://github.com/googleapis/java-firestore/compare/v3.30.13...v3.31.0) (2025-04-23)
+
+
+### Features
+
+* Add the UserCreds API ([f0e1ba1](https://github.com/googleapis/java-firestore/commit/f0e1ba1b9d9bae7235943ac1fbf5793ffec5d555))
+* New Firestore index modes and Database Editions ([f0e1ba1](https://github.com/googleapis/java-firestore/commit/f0e1ba1b9d9bae7235943ac1fbf5793ffec5d555))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.56.0 ([f0e1ba1](https://github.com/googleapis/java-firestore/commit/f0e1ba1b9d9bae7235943ac1fbf5793ffec5d555))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.46.0 ([#2076](https://github.com/googleapis/java-firestore/issues/2076)) ([1d1f633](https://github.com/googleapis/java-firestore/commit/1d1f633fafd2e935fb9cf9382d38a41548dafd41))
+* Update googleapis/sdk-platform-java action to v2.56.0 ([#2075](https://github.com/googleapis/java-firestore/issues/2075)) ([e88755d](https://github.com/googleapis/java-firestore/commit/e88755d777ae0e1c36c3ae0ad22556026db82578))
+
 ## [3.30.13](https://github.com/googleapis/java-firestore/compare/v3.30.12...v3.30.13) (2025-04-08)
 
 
