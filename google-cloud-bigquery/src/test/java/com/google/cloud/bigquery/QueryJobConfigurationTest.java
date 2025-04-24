@@ -141,14 +141,12 @@ public class QueryJobConfigurationTest {
           .setParameterMode(PARAMETER_MODE)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_ADD_POSITIONAL_PARAMETER =
-      QUERY_JOB_CONFIGURATION
-          .toBuilder()
+      QUERY_JOB_CONFIGURATION.toBuilder()
           .setPositionalParameters(ImmutableList.<QueryParameterValue>of())
           .addPositionalParameter(STRING_PARAMETER)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SET_NAME_PARAMETER =
-      QUERY_JOB_CONFIGURATION
-          .toBuilder()
+      QUERY_JOB_CONFIGURATION.toBuilder()
           .setPositionalParameters(ImmutableList.<QueryParameterValue>of())
           .setNamedParameters(NAME_PARAMETER)
           .build();
@@ -206,8 +204,7 @@ public class QueryJobConfigurationTest {
   @Test
   public void testSetProjectIdDoNotOverride() {
     QueryJobConfiguration configuration =
-        QUERY_JOB_CONFIGURATION
-            .toBuilder()
+        QUERY_JOB_CONFIGURATION.toBuilder()
             .setDestinationTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
             .build()
             .setProjectId("update-only-on-dataset");

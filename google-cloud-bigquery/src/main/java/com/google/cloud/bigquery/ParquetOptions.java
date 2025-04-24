@@ -79,6 +79,7 @@ public class ParquetOptions extends FormatOptions {
       return new ParquetOptions(this);
     }
   }
+
   /** Returns a builder for the {@link ParquetOptions} object. */
   public Builder toBuilder() {
     return new Builder(this);

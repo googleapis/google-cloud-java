@@ -798,9 +798,7 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateDataset() throws IOException {
     DatasetInfo updatedDatasetInfo =
-        DATASET_INFO
-            .setProjectId(OTHER_PROJECT)
-            .toBuilder()
+        DATASET_INFO.setProjectId(OTHER_PROJECT).toBuilder()
             .setDescription("newDescription")
             .build();
     when(bigqueryRpcMock.patchSkipExceptionTranslation(
@@ -1276,9 +1274,7 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateModel() throws IOException {
     ModelInfo updateModelInfo =
-        MODEL_INFO_WITH_PROJECT
-            .setProjectId(OTHER_PROJECT)
-            .toBuilder()
+        MODEL_INFO_WITH_PROJECT.setProjectId(OTHER_PROJECT).toBuilder()
             .setDescription("newDescription")
             .build();
     when(bigqueryRpcMock.patchSkipExceptionTranslation(updateModelInfo.toPb(), EMPTY_RPC_OPTIONS))
@@ -1422,8 +1418,7 @@ public class BigQueryImplTest {
         .thenThrow(new BigQueryException(500, "InternalError"))
         .thenReturn(responsePb);
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1467,8 +1462,7 @@ public class BigQueryImplTest {
     when(bigqueryRpcMock.insertAll(PROJECT, DATASET, TABLE, requestPb))
         .thenThrow(new BigQueryException(500, "InternalError"));
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1719,8 +1713,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1745,8 +1738,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1778,8 +1770,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1809,8 +1800,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1842,8 +1832,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -1872,8 +1861,7 @@ public class BigQueryImplTest {
 
     bigquery = options.getService();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2674,8 +2662,7 @@ public class BigQueryImplTest {
         .thenReturn(responsePb);
 
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2750,8 +2737,7 @@ public class BigQueryImplTest {
         .thenThrow(new BigQueryException(500, "InternalError"))
         .thenReturn(DATASET_INFO_WITH_PROJECT.toPb());
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2768,8 +2754,7 @@ public class BigQueryImplTest {
     when(bigqueryRpcMock.getDatasetSkipExceptionTranslation(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
         .thenThrow(new BigQueryException(501, exceptionMessage));
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2788,8 +2773,7 @@ public class BigQueryImplTest {
     when(bigqueryRpcMock.getDatasetSkipExceptionTranslation(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
         .thenThrow(new RuntimeException(exceptionMessage));
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2806,8 +2790,7 @@ public class BigQueryImplTest {
   public void testQueryDryRun() throws Exception {
     // https://github.com/googleapis/google-cloud-java/issues/2479
     try {
-      options
-          .toBuilder()
+      options.toBuilder()
           .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
           .build()
           .getService()
@@ -2838,8 +2821,7 @@ public class BigQueryImplTest {
         .thenReturn(responsePb);
 
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2880,8 +2862,7 @@ public class BigQueryImplTest {
         .thenReturn(responsePb);
 
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2925,8 +2906,7 @@ public class BigQueryImplTest {
         .thenReturn(responsePb);
 
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -2994,8 +2974,7 @@ public class BigQueryImplTest {
         .thenReturn(responsePb);
 
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();
@@ -3112,9 +3091,7 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateRoutine() throws IOException {
     RoutineInfo updatedRoutineInfo =
-        ROUTINE_INFO
-            .setProjectId(OTHER_PROJECT)
-            .toBuilder()
+        ROUTINE_INFO.setProjectId(OTHER_PROJECT).toBuilder()
             .setDescription("newDescription")
             .build();
     when(bigqueryRpcMock.updateSkipExceptionTranslation(

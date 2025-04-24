@@ -155,8 +155,7 @@ public class ConnectionImplTest {
             .setNumBufferedRows(DEFAULT_PAGE_SIZE)
             .build();
     bigquery =
-        options
-            .toBuilder()
+        options.toBuilder()
             .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
             .build()
             .getService();

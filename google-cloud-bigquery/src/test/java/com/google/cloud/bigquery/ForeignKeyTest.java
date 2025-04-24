@@ -54,8 +54,7 @@ public class ForeignKeyTest {
             .setReferencedColumn("to2")
             .build());
     ForeignKey foreignKey =
-        FOREIGN_KEY
-            .toBuilder()
+        FOREIGN_KEY.toBuilder()
             .setName("test")
             .setReferencedTable(referencedTable)
             .setColumnReferences(columnReferences)

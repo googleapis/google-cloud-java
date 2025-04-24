@@ -1409,8 +1409,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
 
     if (getOptions().isQueryPreviewEnabled()) {
       configuration =
-          configuration
-              .toBuilder()
+          configuration.toBuilder()
               .setJobCreationMode(JobCreationMode.JOB_CREATION_OPTIONAL)
               .build();
     }

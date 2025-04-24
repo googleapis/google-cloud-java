@@ -36,8 +36,7 @@ public class ParquetOptionsTest {
     ParquetOptions parquetOptions = OPTIONS.toBuilder().setEnableListInference(true).build();
     assertEquals(true, parquetOptions.getEnableListInference());
     parquetOptions =
-        parquetOptions
-            .toBuilder()
+        parquetOptions.toBuilder()
             .setEnumAsString(true)
             .setMapTargetType("ARRAY_OF_STRUCT")
             .build();

@@ -234,6 +234,7 @@ public interface BigQueryRpc extends ServiceRpc {
 
   Tuple<String, Iterable<Routine>> listRoutines(
       String projectId, String datasetId, Map<Option, ?> options);
+
   /**
    * Deletes the requested routine.
    *

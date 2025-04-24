@@ -46,56 +46,70 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Variable-length binary data. */
   public static final LegacySQLTypeName BYTES =
       type.createAndRegister("BYTES").setStandardType(StandardSQLTypeName.BYTES);
+
   /** Variable-length character (Unicode) data. */
   public static final LegacySQLTypeName STRING =
       type.createAndRegister("STRING").setStandardType(StandardSQLTypeName.STRING);
+
   /** A 64-bit signed integer value. */
   public static final LegacySQLTypeName INTEGER =
       type.createAndRegister("INTEGER").setStandardType(StandardSQLTypeName.INT64);
+
   /** A 64-bit IEEE binary floating-point value. */
   public static final LegacySQLTypeName FLOAT =
       type.createAndRegister("FLOAT").setStandardType(StandardSQLTypeName.FLOAT64);
+
   /**
    * A decimal value with 38 digits of precision and 9 digits of scale. Note, support for this type
    * is limited in legacy SQL.
    */
   public static final LegacySQLTypeName NUMERIC =
       type.createAndRegister("NUMERIC").setStandardType(StandardSQLTypeName.NUMERIC);
+
   /**
    * A decimal value with 76+ digits of precision (the 77th digit is partial) and 38 digits of scale
    */
   public static final LegacySQLTypeName BIGNUMERIC =
       type.createAndRegister("BIGNUMERIC").setStandardType(StandardSQLTypeName.BIGNUMERIC);
+
   /** A Boolean value (true or false). */
   public static final LegacySQLTypeName BOOLEAN =
       type.createAndRegister("BOOLEAN").setStandardType(StandardSQLTypeName.BOOL);
+
   /** Represents an absolute point in time, with microsecond precision. */
   public static final LegacySQLTypeName TIMESTAMP =
       type.createAndRegister("TIMESTAMP").setStandardType(StandardSQLTypeName.TIMESTAMP);
+
   /** Represents a logical calendar date. Note, support for this type is limited in legacy SQL. */
   public static final LegacySQLTypeName DATE =
       type.createAndRegister("DATE").setStandardType(StandardSQLTypeName.DATE);
+
   /** Represents a set of geographic points, represented as a Well Known Text (WKT) string. */
   public static final LegacySQLTypeName GEOGRAPHY =
       type.createAndRegister("GEOGRAPHY").setStandardType(StandardSQLTypeName.GEOGRAPHY);
+
   /**
    * Represents a time, independent of a specific date, to microsecond precision. Note, support for
    * this type is limited in legacy SQL.
    */
   public static final LegacySQLTypeName TIME =
       type.createAndRegister("TIME").setStandardType(StandardSQLTypeName.TIME);
+
   /**
    * Represents a year, month, day, hour, minute, second, and subsecond (microsecond precision).
    * Note, support for this type is limited in legacy SQL.
    */
   public static final LegacySQLTypeName DATETIME =
       type.createAndRegister("DATETIME").setStandardType(StandardSQLTypeName.DATETIME);
+
   /** A record type with a nested schema. */
   public static final LegacySQLTypeName RECORD =
       type.createAndRegister("RECORD").setStandardType(StandardSQLTypeName.STRUCT);
+
   /** Represents JSON data */
   public static final LegacySQLTypeName JSON =
       type.createAndRegister("JSON").setStandardType(StandardSQLTypeName.JSON);
+
   /** Represents duration or amount of time. */
   public static final LegacySQLTypeName INTERVAL =
       type.createAndRegister("INTERVAL").setStandardType(StandardSQLTypeName.INTERVAL);

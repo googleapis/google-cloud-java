@@ -92,8 +92,7 @@ public class DatasetInfoTest {
           .setResourceTags(RESOURCE_TAGS)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
-      DATASET_INFO
-          .toBuilder()
+      DATASET_INFO.toBuilder()
           .setDatasetId(DATASET_ID_COMPLETE)
           .setAcl(ACCESS_RULES_COMPLETE)
           .build();
@@ -111,8 +110,7 @@ public class DatasetInfoTest {
         DATASET_INFO_COMPLETE_WITH_IAM_MEMBER,
         DATASET_INFO_COMPLETE_WITH_IAM_MEMBER.toBuilder().build());
     DatasetInfo datasetInfo =
-        DATASET_INFO
-            .toBuilder()
+        DATASET_INFO.toBuilder()
             .setDatasetId(DatasetId.of("dataset2"))
             .setDescription("description2")
             .build();
@@ -141,8 +139,7 @@ public class DatasetInfoTest {
             .setConnection("connection2")
             .build();
     DatasetInfo datasetInfo =
-        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE
-            .toBuilder()
+        DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.toBuilder()
             .setExternalDatasetReference(externalDatasetReference)
             .build();
     assertEquals(externalDatasetReference, datasetInfo.getExternalDatasetReference());

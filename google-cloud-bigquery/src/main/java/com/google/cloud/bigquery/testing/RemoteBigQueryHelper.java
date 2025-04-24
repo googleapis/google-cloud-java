@@ -95,8 +95,7 @@ public class RemoteBigQueryHelper {
     try {
       HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
       transportOptions =
-          transportOptions
-              .toBuilder()
+          transportOptions.toBuilder()
               .setConnectTimeout(connectTimeout)
               .setReadTimeout(connectTimeout)
               .build();
@@ -123,8 +122,7 @@ public class RemoteBigQueryHelper {
   public static RemoteBigQueryHelper create() {
     HttpTransportOptions transportOptions = BigQueryOptions.getDefaultHttpTransportOptions();
     transportOptions =
-        transportOptions
-            .toBuilder()
+        transportOptions.toBuilder()
             .setConnectTimeout(connectTimeout)
             .setReadTimeout(connectTimeout)
             .build();

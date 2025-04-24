@@ -32,8 +32,7 @@ public class ColumnReferenceTest {
   public void testToBuilder() {
     compareColumnReferenceDefinition(COLUMN_REFERENCE, COLUMN_REFERENCE.toBuilder().build());
     ColumnReference columnReference =
-        COLUMN_REFERENCE
-            .toBuilder()
+        COLUMN_REFERENCE.toBuilder()
             .setReferencingColumn("col1")
             .setReferencedColumn("col2")
             .build();

@@ -81,8 +81,7 @@ public class TableConstraintsTest {
             .build();
 
     TableConstraints tableConstraints =
-        TABLE_CONSTRAINTS
-            .toBuilder()
+        TABLE_CONSTRAINTS.toBuilder()
             .setForeignKeys(Arrays.asList(foreignKey1, foreignKey2))
             .setPrimaryKey(primaryKey)
             .build();

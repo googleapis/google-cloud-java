@@ -167,7 +167,8 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     /** Sets the table Hive partitioning options. */
     public Builder setHivePartitioningOptions(HivePartitioningOptions hivePartitioningOptions) {
       return setHivePartitioningOptionsInner(hivePartitioningOptions);
-    };
+    }
+    ;
 
     /**
      * When creating an external table, the user can provide a reference file with the table schema.
@@ -253,7 +254,8 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   @Nullable
   public Boolean ignoreUnknownValues() {
     return getIgnoreUnknownValues();
-  };
+  }
+  ;
 
   @Nullable
   public abstract Boolean getIgnoreUnknownValues();

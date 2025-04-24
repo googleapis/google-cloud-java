@@ -135,6 +135,7 @@ class ConnectionImpl implements Connection {
         ? 20000
         : Math.min(connectionSettings.getNumBufferedRows() * 2, 100000));
   }
+
   /**
    * Cancel method shutdowns the pageFetcher and producerWorker threads gracefully using interrupt.
    * The pageFetcher threat will not request for any subsequent threads after interrupting and
@@ -263,6 +264,7 @@ class ConnectionImpl implements Connection {
       throw new BigQuerySQLException(e.getMessage(), e, e.getErrors());
     }
   }
+
   /**
    * Execute a SQL statement that returns a single ResultSet and returns a ListenableFuture to
    * process the response asynchronously.
@@ -527,6 +529,7 @@ class ConnectionImpl implements Connection {
         queryStatistics.getSessionInfo() == null ? null : queryStatistics.getSessionInfo();
     return new BigQueryResultStatsImpl(queryStatistics, sessionInfo);
   }
+
   /* This method processed the first page of GetQueryResultsResponse and then it uses tabledata.list */
   @VisibleForTesting
   BigQueryResult tableDataList(GetQueryResultsResponse firstPage, JobId jobId) {
@@ -1109,7 +1112,9 @@ class ConnectionImpl implements Connection {
       loader = new VectorLoader(root);
     }
 
-    /** @param batch object returned from the ReadRowsResponse. */
+    /**
+     * @param batch object returned from the ReadRowsResponse.
+     */
     private void processRows(
         ArrowRecordBatch batch, BlockingQueue<BigQueryResultImpl.Row> buffer, Schema schema)
         throws IOException { // deserialize the values and consume the hash of the values
@@ -1166,6 +1171,7 @@ class ConnectionImpl implements Connection {
       allocator.close();
     }
   }
+
   /*Returns just the first page of GetQueryResultsResponse using the jobId*/
   @VisibleForTesting
   GetQueryResultsResponse getQueryResultsFirstPage(JobId jobId) {

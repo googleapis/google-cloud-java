@@ -429,7 +429,8 @@ public class RoutineInfo implements Serializable {
   /** Returns the Remote function specific options. */
   public RemoteFunctionOptions getRemoteFunctionOptions() {
     return remoteFunctionOptions;
-  };
+  }
+  ;
 
   /** Returns the data governance type of the routine, e.g. DATA_MASKING. */
   public String getDataGovernanceType() {

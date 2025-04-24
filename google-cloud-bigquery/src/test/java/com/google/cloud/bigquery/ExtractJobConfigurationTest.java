@@ -92,8 +92,7 @@ public class ExtractJobConfigurationTest {
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION_MODEL, EXTRACT_CONFIGURATION_MODEL.toBuilder().build());
     ExtractJobConfiguration modelJob =
-        EXTRACT_CONFIGURATION_MODEL
-            .toBuilder()
+        EXTRACT_CONFIGURATION_MODEL.toBuilder()
             .setSourceModel(ModelId.of("dataset", "newModel"))
             .build();
     assertEquals("newModel", modelJob.getSourceModel().getModel());
@@ -102,8 +101,7 @@ public class ExtractJobConfigurationTest {
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION_AVRO, EXTRACT_CONFIGURATION_AVRO.toBuilder().build());
     ExtractJobConfiguration avroJob =
-        EXTRACT_CONFIGURATION_AVRO
-            .toBuilder()
+        EXTRACT_CONFIGURATION_AVRO.toBuilder()
             .setSourceTable(TableId.of("dataset", "avroTable"))
             .build();
     assertEquals("avroTable", avroJob.getSourceTable().getTable());
@@ -223,15 +221,13 @@ public class ExtractJobConfigurationTest {
   @Test
   public void testSetProjectIdDoNotOverride() {
     ExtractJobConfiguration configuration =
-        EXTRACT_CONFIGURATION
-            .toBuilder()
+        EXTRACT_CONFIGURATION.toBuilder()
             .setSourceTable(TABLE_ID.setProjectId(TEST_PROJECT_ID))
             .build()
             .setProjectId("do-not-update");
     assertEquals(TEST_PROJECT_ID, configuration.getSourceTable().getProject());
     ExtractJobConfiguration modelConfiguration =
-        EXTRACT_CONFIGURATION_MODEL
-            .toBuilder()
+        EXTRACT_CONFIGURATION_MODEL.toBuilder()
             .setSourceModel(MODEL_ID.setProjectId(TEST_PROJECT_ID))
             .build()
             .setProjectId("do-not-update");

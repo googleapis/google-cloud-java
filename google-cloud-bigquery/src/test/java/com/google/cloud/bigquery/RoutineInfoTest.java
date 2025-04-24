@@ -52,8 +52,7 @@ public class RoutineInfoTest {
   private static final String BODY = "body";
 
   private static final RoutineInfo ROUTINE_INFO =
-      RoutineInfo.of(ROUTINE_ID)
-          .toBuilder()
+      RoutineInfo.of(ROUTINE_ID).toBuilder()
           .setEtag(ETAG)
           .setRoutineType(ROUTINE_TYPE)
           .setCreationTime(CREATION_TIME)

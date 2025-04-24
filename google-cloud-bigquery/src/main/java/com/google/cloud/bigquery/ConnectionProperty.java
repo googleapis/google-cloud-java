@@ -55,7 +55,8 @@ public final class ConnectionProperty {
     private String key;
     private String value;
 
-    private Builder() {};
+    private Builder() {}
+    ;
 
     private Builder(ConnectionProperty properties) {
       this.key = properties.key;

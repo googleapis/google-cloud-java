@@ -87,16 +87,14 @@ public class ExternalTableDefinitionTest {
     compareExternalTableDefinition(
         EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_DEFINITION.toBuilder().build());
     ExternalTableDefinition externalTableDefinition =
-        EXTERNAL_TABLE_DEFINITION
-            .toBuilder()
+        EXTERNAL_TABLE_DEFINITION.toBuilder()
             .setCompression("NONE")
             .setConnectionId("00000")
             .build();
     assertEquals("NONE", externalTableDefinition.getCompression());
     assertEquals("00000", externalTableDefinition.getConnectionId());
     externalTableDefinition =
-        externalTableDefinition
-            .toBuilder()
+        externalTableDefinition.toBuilder()
             .setCompression(COMPRESSION)
             .setConnectionId(CONNECTION_ID)
             .build();

@@ -1284,8 +1284,7 @@ public class ITBigQueryTest {
     updateLabels.put("a", null);
     Dataset updatedDataset =
         bigquery.update(
-            dataset
-                .toBuilder()
+            dataset.toBuilder()
                 .setDescription("Updated Description")
                 .setLabels(updateLabels)
                 .setStorageBillingModel("LOGICAL")
@@ -1358,8 +1357,7 @@ public class ITBigQueryTest {
     DatasetOption datasetOption = DatasetOption.accessPolicyVersion(3);
     Dataset updatedDataset =
         bigquery.update(
-            dataset
-                .toBuilder()
+            dataset.toBuilder()
                 .setDescription("Updated Description")
                 .setLabels(null)
                 .setAcl(acls)
@@ -2040,8 +2038,7 @@ public class ITBigQueryTest {
       fieldList.add(stringFieldWithPolicy);
       Schema updatedSchemaWithPolicyTag = Schema.of(fieldList);
       Table updatedTable =
-          createdTableForUpdate
-              .toBuilder()
+          createdTableForUpdate.toBuilder()
               .setDefinition(StandardTableDefinition.of(updatedSchemaWithPolicyTag))
               .build();
       updatedTable.update();
@@ -2411,14 +2408,10 @@ public class ITBigQueryTest {
 
     Table updatedTable =
         bigquery.update(
-            createdTable
-                .toBuilder()
+            createdTable.toBuilder()
                 .setDefinition(
                     ((ExternalTableDefinition) createdTable.getDefinition())
-                        .toBuilder()
-                        .setSchema(null)
-                        .setAutodetect(true)
-                        .build())
+                        .toBuilder().setSchema(null).setAutodetect(true).build())
                 .build(),
             BigQuery.TableOption.autodetectSchema(true));
     // Schema should change.
@@ -2518,8 +2511,7 @@ public class ITBigQueryTest {
     // get and modify policy
     Policy policy = bigquery.getIamPolicy(tableId);
     Policy editedPolicy =
-        policy
-            .toBuilder()
+        policy.toBuilder()
             .addIdentity(Role.of("roles/bigquery.dataViewer"), Identity.allUsers())
             .build();
     Policy updatedPolicy = bigquery.setIamPolicy(tableId, editedPolicy);
@@ -2655,8 +2647,7 @@ public class ITBigQueryTest {
     updateLabels.put("a", null);
     Table updatedTable =
         bigquery.update(
-            createdTable
-                .toBuilder()
+            createdTable.toBuilder()
                 .setDescription("Updated Description")
                 .setLabels(updateLabels)
                 .build());
@@ -2685,11 +2676,9 @@ public class ITBigQueryTest {
         .isNull();
 
     table =
-        table
-            .toBuilder()
+        table.toBuilder()
             .setDefinition(
-                tableDefinition
-                    .toBuilder()
+                tableDefinition.toBuilder()
                     .setTimePartitioning(TimePartitioning.of(Type.DAY, 42L))
                     .build())
             .build()
@@ -2700,11 +2689,9 @@ public class ITBigQueryTest {
         .isEqualTo(42L);
 
     table =
-        table
-            .toBuilder()
+        table.toBuilder()
             .setDefinition(
-                tableDefinition
-                    .toBuilder()
+                tableDefinition.toBuilder()
                     .setTimePartitioning(TimePartitioning.of(Type.DAY))
                     .build())
             .build()
@@ -3144,8 +3131,7 @@ public class ITBigQueryTest {
 
     // Mutate metadata.
     RoutineInfo newInfo =
-        routine
-            .toBuilder()
+        routine.toBuilder()
             .setBody("x * 4")
             .setReturnType(routine.getReturnType())
             .setArguments(routine.getArguments())
@@ -3578,9 +3564,7 @@ public class ITBigQueryTest {
     // Create a new bigQuery object but explicitly set the credentials.
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
-        bigqueryHelper
-            .getOptions()
-            .toBuilder()
+        bigqueryHelper.getOptions().toBuilder()
             .setCredentials(bigquery.getOptions().getCredentials())
             .build();
     BigQuery bigQueryGoodCredentials = bigQueryOptions.getService();
@@ -3602,9 +3586,7 @@ public class ITBigQueryTest {
     // Scenario 2.
     // Create a new bigQuery object but explicitly an invalid credential.
     BigQueryOptions bigQueryOptionsBadCredentials =
-        bigqueryHelper
-            .getOptions()
-            .toBuilder()
+        bigqueryHelper.getOptions().toBuilder()
             .setCredentials(loadCredentials(FAKE_JSON_CRED_WITH_GOOGLE_DOMAIN))
             .build();
     BigQuery bigQueryBadCredentials = bigQueryOptionsBadCredentials.getService();
@@ -4090,7 +4072,8 @@ public class ITBigQueryTest {
 
   @Test
   public void testReadAPIIterationAndOrderAsync()
-      throws SQLException, ExecutionException,
+      throws SQLException,
+          ExecutionException,
           InterruptedException { // use read API to read 300K records and check the order
     String query =
         "SELECT date, county, state_name, confirmed_cases, deaths / 10 FROM "
@@ -4137,7 +4120,8 @@ public class ITBigQueryTest {
   // be uncompleted in 1000ms is nondeterministic! Though very likely it won't be complete in the
   // specified amount of time
   public void testExecuteSelectAsyncCancel()
-      throws SQLException, ExecutionException,
+      throws SQLException,
+          ExecutionException,
           InterruptedException { // use read API to read 300K records and check the order
     String query =
         "SELECT date, county, state_name, confirmed_cases, deaths FROM "
@@ -4183,7 +4167,8 @@ public class ITBigQueryTest {
   // be uncompleted in 1000ms is nondeterministic! Though very likely it won't be complete in the
   // specified amount of time
   public void testExecuteSelectAsyncTimeout()
-      throws SQLException, ExecutionException,
+      throws SQLException,
+          ExecutionException,
           InterruptedException { // use read API to read 300K records and check the order
     String query =
         "SELECT date, county, state_name, confirmed_cases, deaths FROM "
@@ -7219,9 +7204,7 @@ public class ITBigQueryTest {
   public void testUniverseDomainWithInvalidUniverseDomain() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
-        bigqueryHelper
-            .getOptions()
-            .toBuilder()
+        bigqueryHelper.getOptions().toBuilder()
             .setCredentials(loadCredentials(FAKE_JSON_CRED_WITH_GOOGLE_DOMAIN))
             .setUniverseDomain("invalid.domain")
             .build();
@@ -7245,9 +7228,7 @@ public class ITBigQueryTest {
   public void testInvalidUniverseDomainWithMismatchCredentials() {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     BigQueryOptions bigQueryOptions =
-        bigqueryHelper
-            .getOptions()
-            .toBuilder()
+        bigqueryHelper.getOptions().toBuilder()
             .setCredentials(loadCredentials(FAKE_JSON_CRED_WITH_INVALID_DOMAIN))
             .build();
     BigQuery bigQuery = bigQueryOptions.getService();

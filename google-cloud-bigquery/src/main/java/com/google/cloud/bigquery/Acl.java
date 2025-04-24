@@ -92,7 +92,9 @@ public final class Acl implements Serializable {
       return type.valueOf(constant);
     }
 
-    /** @return Return the known values for Role. */
+    /**
+     * @return Return the known values for Role.
+     */
     public static Role[] values() {
       return type.values();
     }
@@ -184,7 +186,9 @@ public final class Acl implements Serializable {
       this.targetTypes = targetTypes;
     }
 
-    /** @return Returns DatasetAclEntity's identity. */
+    /**
+     * @return Returns DatasetAclEntity's identity.
+     */
     public DatasetId getId() {
       return id;
     }
@@ -240,7 +244,9 @@ public final class Acl implements Serializable {
       this.domain = domain;
     }
 
-    /** @return Returns the domain name. */
+    /**
+     * @return Returns the domain name.
+     */
     public String getDomain() {
       return domain;
     }
@@ -348,22 +354,30 @@ public final class Acl implements Serializable {
       }
     }
 
-    /** @return Returns a Group entity representing all project's owners. */
+    /**
+     * @return Returns a Group entity representing all project's owners.
+     */
     public static Group ofProjectOwners() {
       return new Group(PROJECT_OWNERS);
     }
 
-    /** @return Returns a Group entity representing all project's readers. */
+    /**
+     * @return Returns a Group entity representing all project's readers.
+     */
     public static Group ofProjectReaders() {
       return new Group(PROJECT_READERS);
     }
 
-    /** @return Returns a Group entity representing all project's writers. */
+    /**
+     * @return Returns a Group entity representing all project's writers.
+     */
     public static Group ofProjectWriters() {
       return new Group(PROJECT_WRITERS);
     }
 
-    /** @return Returns a Group entity representing all BigQuery authenticated users. */
+    /**
+     * @return Returns a Group entity representing all BigQuery authenticated users.
+     */
     public static Group ofAllAuthenticatedUsers() {
       return new Group(ALL_AUTHENTICATED_USERS);
     }
@@ -385,7 +399,9 @@ public final class Acl implements Serializable {
       this.email = email;
     }
 
-    /** @return Returns user's email. */
+    /**
+     * @return Returns user's email.
+     */
     public String getEmail() {
       return email;
     }
@@ -437,7 +453,9 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /** @return Returns table's identity. */
+    /**
+     * @return Returns table's identity.
+     */
     public TableId getId() {
       return id;
     }
@@ -489,7 +507,9 @@ public final class Acl implements Serializable {
       this.id = id;
     }
 
-    /** @return Returns routine's identity. */
+    /**
+     * @return Returns routine's identity.
+     */
     public RoutineId getId() {
       return id;
     }
@@ -537,7 +557,9 @@ public final class Acl implements Serializable {
       this.iamMember = iamMember;
     }
 
-    /** @return Returns iamMember. */
+    /**
+     * @return Returns iamMember.
+     */
     public String getIamMember() {
       return iamMember;
     }
@@ -574,16 +596,19 @@ public final class Acl implements Serializable {
   public static final class Expr implements Serializable {
     // Textual representation of an expression in Common Expression Language syntax.
     private final String expression;
+
     /**
      * Optional. Title for the expression, i.e. a short string describing its purpose. This can be
      * used e.g. in UIs which allow to enter the expression.
      */
     private final String title;
+
     /**
      * Optional. Description of the expression. This is a longer text which describes the
      * expression, e.g. when hovered over it in a UI.
      */
     private final String description;
+
     /**
      * Optional. String indicating the location of the expression for error reporting, e.g. a file
      * name and a position in the file.
@@ -713,16 +738,23 @@ public final class Acl implements Serializable {
     this.condition = condition;
   }
 
-  /** @return Returns the entity for this ACL. */
+  /**
+   * @return Returns the entity for this ACL.
+   */
   public Entity getEntity() {
     return entity;
   }
 
-  /** @return Returns the role specified by this ACL. */
+  /**
+   * @return Returns the role specified by this ACL.
+   */
   public Role getRole() {
     return role;
   }
-  /** @return Returns the condition specified by this ACL. */
+
+  /**
+   * @return Returns the condition specified by this ACL.
+   */
   public Expr getCondition() {
     return condition;
   }

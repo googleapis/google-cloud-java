@@ -124,8 +124,7 @@ public class WriteChannelConfigurationTest {
   public void testToBuilder() {
     compareLoadConfiguration(LOAD_CONFIGURATION_CSV, LOAD_CONFIGURATION_CSV.toBuilder().build());
     WriteChannelConfiguration configuration =
-        LOAD_CONFIGURATION_CSV
-            .toBuilder()
+        LOAD_CONFIGURATION_CSV.toBuilder()
             .setDestinationTable(TableId.of("dataset", "newTable"))
             .build();
     assertEquals("newTable", configuration.getDestinationTable().getTable());
@@ -134,8 +133,7 @@ public class WriteChannelConfigurationTest {
 
     compareLoadConfiguration(LOAD_CONFIGURATION_AVRO, LOAD_CONFIGURATION_AVRO.toBuilder().build());
     WriteChannelConfiguration configurationAvro =
-        LOAD_CONFIGURATION_AVRO
-            .toBuilder()
+        LOAD_CONFIGURATION_AVRO.toBuilder()
             .setDestinationTable(TableId.of("dataset", "newTable"))
             .build();
     assertEquals("newTable", configurationAvro.getDestinationTable().getTable());

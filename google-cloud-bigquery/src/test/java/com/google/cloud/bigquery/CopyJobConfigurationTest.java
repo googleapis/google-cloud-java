@@ -67,8 +67,7 @@ public class CopyJobConfigurationTest {
         COPY_JOB_CONFIGURATION_MULTIPLE_TABLES,
         COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toBuilder().build());
     CopyJobConfiguration jobConfiguration =
-        COPY_JOB_CONFIGURATION
-            .toBuilder()
+        COPY_JOB_CONFIGURATION.toBuilder()
             .setDestinationTable(TableId.of("dataset", "newTable"))
             .build();
     assertEquals("newTable", jobConfiguration.getDestinationTable().getTable());
@@ -143,8 +142,7 @@ public class CopyJobConfigurationTest {
   @Test
   public void testSetProjectIdDoNotOverride() {
     CopyJobConfiguration configuration =
-        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES
-            .toBuilder()
+        COPY_JOB_CONFIGURATION_MULTIPLE_TABLES.toBuilder()
             .setSourceTables(
                 Lists.transform(
                     SOURCE_TABLES,

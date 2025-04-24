@@ -44,16 +44,14 @@ public class GoogleSheetsOptionsTest {
     compareGoogleSheetsOptions(
         GOOGLE_SHEETS_OPTIONS_RANGE, GOOGLE_SHEETS_OPTIONS_RANGE.toBuilder().build());
     GoogleSheetsOptions googleSheetsOptionsRange =
-        GOOGLE_SHEETS_OPTIONS_RANGE
-            .toBuilder()
+        GOOGLE_SHEETS_OPTIONS_RANGE.toBuilder()
             .setSkipLeadingRows(123)
             .setRange("sheet1!A1:A100")
             .build();
     assertThat(googleSheetsOptionsRange.getSkipLeadingRows()).isEqualTo(123);
     assertThat(googleSheetsOptionsRange.getRange()).isEqualTo("sheet1!A1:A100");
     googleSheetsOptionsRange =
-        googleSheetsOptionsRange
-            .toBuilder()
+        googleSheetsOptionsRange.toBuilder()
             .setSkipLeadingRows(SKIP_LEADING_ROWS)
             .setRange(RANGE)
             .build();

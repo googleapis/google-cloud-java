@@ -34,6 +34,7 @@ public class JobException extends RuntimeException {
   public JobId getId() {
     return id;
   }
+
   /**
    * The errors reported by the job.
    *
