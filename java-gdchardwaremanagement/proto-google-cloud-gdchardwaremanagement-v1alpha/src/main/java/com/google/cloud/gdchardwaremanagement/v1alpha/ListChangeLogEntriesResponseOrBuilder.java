@@ -37,6 +37,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    */
   java.util.List<com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry>
       getChangeLogEntriesList();
+
   /**
    *
    *
@@ -49,6 +50,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * </code>
    */
   com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry getChangeLogEntries(int index);
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * </code>
    */
   int getChangeLogEntriesCount();
+
   /**
    *
    *
@@ -74,6 +77,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntryOrBuilder>
       getChangeLogEntriesOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -137,6 +143,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface ListChangeLogEntriesResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

@@ -378,7 +378,8 @@ public class AnalysisName implements ResourceName {
     private Builder(AnalysisName analysisName) {
       Preconditions.checkArgument(
           Objects.equals(analysisName.pathTemplate, PROJECT_LOCATION_CONVERSATION_ANALYSIS),
-          "toBuilder is only supported when AnalysisName has the pattern of projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}");
+          "toBuilder is only supported when AnalysisName has the pattern of"
+              + " projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}");
       this.project = analysisName.project;
       this.location = analysisName.location;
       this.conversation = analysisName.conversation;

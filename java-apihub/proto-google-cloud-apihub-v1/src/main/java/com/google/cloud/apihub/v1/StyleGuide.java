@@ -34,6 +34,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.apihub.v1.StyleGuide)
     StyleGuideOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StyleGuide.newBuilder() to construct.
   private StyleGuide(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LINTER_FIELD_NUMBER = 2;
   private int linter_ = 0;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
   public int getLinterValue() {
     return linter_;
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENTS_FIELD_NUMBER = 3;
   private com.google.cloud.apihub.v1.StyleGuideContents contents_;
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContents() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.apihub.v1.StyleGuideContents.getDefaultInstance()
         : contents_;
   }
+
   /**
    *
    *
@@ -395,6 +403,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -621,6 +630,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -671,6 +682,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -695,6 +707,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int linter_ = 0;
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     public int getLinterValue() {
       return linter_;
     }
+
     /**
      *
      *
@@ -777,6 +793,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +812,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.apihub.v1.Linter.forNumber(linter_);
       return result == null ? com.google.cloud.apihub.v1.Linter.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -817,6 +835,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.apihub.v1.StyleGuideContents.Builder,
             com.google.cloud.apihub.v1.StyleGuideContentsOrBuilder>
         contentsBuilder_;
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContents() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -880,6 +901,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
         return contentsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -904,6 +926,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +949,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +979,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1001,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -992,6 +1018,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContentsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1039,7 @@ public final class StyleGuide extends com.google.protobuf.GeneratedMessageV3
             : contents_;
       }
     }
+
     /**
      *
      *

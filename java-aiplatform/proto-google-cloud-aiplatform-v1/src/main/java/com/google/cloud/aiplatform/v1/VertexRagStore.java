@@ -33,6 +33,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.VertexRagStore)
     VertexRagStoreOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VertexRagStore.newBuilder() to construct.
   private VertexRagStore(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * @return The ragCorpus.
      */
     java.lang.String getRagCorpus();
+
     /**
      *
      *
@@ -114,6 +116,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the ragFileIds.
      */
     java.util.List<java.lang.String> getRagFileIdsList();
+
     /**
      *
      *
@@ -127,6 +130,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * @return The count of ragFileIds.
      */
     int getRagFileIdsCount();
+
     /**
      *
      *
@@ -141,6 +145,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      * @return The ragFileIds at the given index.
      */
     java.lang.String getRagFileIds(int index);
+
     /**
      *
      *
@@ -156,6 +161,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getRagFileIdsBytes(int index);
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.VertexRagStore.RagResource)
       RagResourceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use RagResource.newBuilder() to construct.
     private RagResource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -205,6 +212,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ragCorpus_ = "";
+
     /**
      *
      *
@@ -232,6 +240,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -265,6 +274,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList ragFileIds_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -280,6 +290,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getRagFileIdsList() {
       return ragFileIds_;
     }
+
     /**
      *
      *
@@ -295,6 +306,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public int getRagFileIdsCount() {
       return ragFileIds_.size();
     }
+
     /**
      *
      *
@@ -311,6 +323,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRagFileIds(int index) {
       return ragFileIds_.get(index);
     }
+
     /**
      *
      *
@@ -505,6 +518,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -714,6 +728,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object ragCorpus_ = "";
+
       /**
        *
        *
@@ -740,6 +755,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -766,6 +782,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -791,6 +808,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -812,6 +830,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -848,6 +867,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -864,6 +884,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ragFileIds_.makeImmutable();
         return ragFileIds_;
       }
+
       /**
        *
        *
@@ -879,6 +900,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       public int getRagFileIdsCount() {
         return ragFileIds_.size();
       }
+
       /**
        *
        *
@@ -895,6 +917,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getRagFileIds(int index) {
         return ragFileIds_.get(index);
       }
+
       /**
        *
        *
@@ -911,6 +934,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRagFileIdsBytes(int index) {
         return ragFileIds_.getByteString(index);
       }
+
       /**
        *
        *
@@ -935,6 +959,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -958,6 +983,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -978,6 +1004,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -997,6 +1024,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1091,6 +1119,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.aiplatform.v1.VertexRagStore.RagResource> ragResources_;
+
   /**
    *
    *
@@ -1110,6 +1139,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       getRagResourcesList() {
     return ragResources_;
   }
+
   /**
    *
    *
@@ -1130,6 +1160,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       getRagResourcesOrBuilderList() {
     return ragResources_;
   }
+
   /**
    *
    *
@@ -1148,6 +1179,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
   public int getRagResourcesCount() {
     return ragResources_.size();
   }
+
   /**
    *
    *
@@ -1166,6 +1198,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.aiplatform.v1.VertexRagStore.RagResource getRagResources(int index) {
     return ragResources_.get(index);
   }
+
   /**
    *
    *
@@ -1188,6 +1221,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SIMILARITY_TOP_K_FIELD_NUMBER = 2;
   private int similarityTopK_ = 0;
+
   /**
    *
    *
@@ -1208,6 +1242,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSimilarityTopK() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1231,6 +1266,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VECTOR_DISTANCE_THRESHOLD_FIELD_NUMBER = 3;
   private double vectorDistanceThreshold_ = 0D;
+
   /**
    *
    *
@@ -1252,6 +1288,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasVectorDistanceThreshold() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1276,6 +1313,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RAG_RETRIEVAL_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.RagRetrievalConfig ragRetrievalConfig_;
+
   /**
    *
    *
@@ -1293,6 +1331,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRagRetrievalConfig() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1312,6 +1351,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.aiplatform.v1.RagRetrievalConfig.getDefaultInstance()
         : ragRetrievalConfig_;
   }
+
   /**
    *
    *
@@ -1538,6 +1578,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1868,6 +1909,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return ragResourcesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1931,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return ragResourcesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1953,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return ragResourcesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1938,6 +1982,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1964,6 +2009,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1992,6 +2038,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2020,6 +2067,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2045,6 +2093,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2120,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2097,6 +2147,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2172,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2145,6 +2197,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2216,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getRagResourcesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2185,6 +2239,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return ragResourcesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2208,6 +2263,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(ragResources_);
       }
     }
+
     /**
      *
      *
@@ -2228,6 +2284,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               com.google.cloud.aiplatform.v1.VertexRagStore.RagResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2249,6 +2306,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
               index,
               com.google.cloud.aiplatform.v1.VertexRagStore.RagResource.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2286,6 +2344,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int similarityTopK_;
+
     /**
      *
      *
@@ -2306,6 +2365,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSimilarityTopK() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2326,6 +2386,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public int getSimilarityTopK() {
       return similarityTopK_;
     }
+
     /**
      *
      *
@@ -2350,6 +2411,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2374,6 +2436,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double vectorDistanceThreshold_;
+
     /**
      *
      *
@@ -2395,6 +2458,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasVectorDistanceThreshold() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2416,6 +2480,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public double getVectorDistanceThreshold() {
       return vectorDistanceThreshold_;
     }
+
     /**
      *
      *
@@ -2441,6 +2506,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2471,6 +2537,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.RagRetrievalConfig.Builder,
             com.google.cloud.aiplatform.v1.RagRetrievalConfigOrBuilder>
         ragRetrievalConfigBuilder_;
+
     /**
      *
      *
@@ -2487,6 +2554,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRagRetrievalConfig() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -2509,6 +2577,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
         return ragRetrievalConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2533,6 +2602,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2555,6 +2625,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2586,6 +2657,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2607,6 +2679,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2624,6 +2697,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRagRetrievalConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2645,6 +2719,7 @@ public final class VertexRagStore extends com.google.protobuf.GeneratedMessageV3
             : ragRetrievalConfig_;
       }
     }
+
     /**
      *
      *

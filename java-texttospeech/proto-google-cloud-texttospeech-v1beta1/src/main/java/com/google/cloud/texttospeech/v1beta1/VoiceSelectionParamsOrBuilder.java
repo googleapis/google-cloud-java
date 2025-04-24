@@ -46,6 +46,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The enum numeric value on the wire for ssmlGender.
    */
   int getSsmlGenderValue();
+
   /**
    *
    *
@@ -145,6 +148,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return Whether the customVoice field is set.
    */
   boolean hasCustomVoice();
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The customVoice.
    */
   com.google.cloud.texttospeech.v1beta1.CustomVoiceParams getCustomVoice();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return Whether the voiceClone field is set.
    */
   boolean hasVoiceClone();
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The voiceClone.
    */
   com.google.cloud.texttospeech.v1beta1.VoiceCloneParams getVoiceClone();
+
   /**
    *
    *

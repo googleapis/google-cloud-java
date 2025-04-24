@@ -38,6 +38,7 @@ public interface AirflowMetadataRetentionPolicyConfigOrBuilder
    * @return The enum numeric value on the wire for retentionMode.
    */
   int getRetentionModeValue();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface PartitionOrBuilder
    * @return Whether the temporalPartition field is set.
    */
   boolean hasTemporalPartition();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PartitionOrBuilder
    * @return The temporalPartition.
    */
   com.google.cloud.visionai.v1.Partition.TemporalPartition getTemporalPartition();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PartitionOrBuilder
    * @return Whether the spatialPartition field is set.
    */
   boolean hasSpatialPartition();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PartitionOrBuilder
    * @return The spatialPartition.
    */
   com.google.cloud.visionai.v1.Partition.SpatialPartition getSpatialPartition();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface PartitionOrBuilder
    * @return Whether the relativeTemporalPartition field is set.
    */
   boolean hasRelativeTemporalPartition();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface PartitionOrBuilder
    * @return The relativeTemporalPartition.
    */
   com.google.cloud.visionai.v1.Partition.RelativeTemporalPartition getRelativeTemporalPartition();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.VideoClassificationConfig)
     VideoClassificationConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VideoClassificationConfig.newBuilder() to construct.
   private VideoClassificationConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -84,6 +85,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      * @return The annotationSpecSet.
      */
     java.lang.String getAnnotationSpecSet();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
      */
     boolean getAllowMultiLabel();
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig)
       AnnotationSpecSetConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AnnotationSpecSetConfig.newBuilder() to construct.
     private AnnotationSpecSetConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -162,6 +166,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object annotationSpecSet_ = "";
+
     /**
      *
      *
@@ -185,6 +190,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return s;
       }
     }
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
     public static final int ALLOW_MULTI_LABEL_FIELD_NUMBER = 2;
     private boolean allowMultiLabel_ = false;
+
     /**
      *
      *
@@ -423,6 +430,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -646,6 +654,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       private int bitField0_;
 
       private java.lang.Object annotationSpecSet_ = "";
+
       /**
        *
        *
@@ -668,6 +677,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -690,6 +700,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -711,6 +722,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -728,6 +740,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -752,6 +765,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
 
       private boolean allowMultiLabel_;
+
       /**
        *
        *
@@ -768,6 +782,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       public boolean getAllowMultiLabel() {
         return allowMultiLabel_;
       }
+
       /**
        *
        *
@@ -788,6 +803,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -884,6 +900,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
   private java.util.List<
           com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig.AnnotationSpecSetConfig>
       annotationSpecSetConfigs_;
+
   /**
    *
    *
@@ -906,6 +923,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       getAnnotationSpecSetConfigsList() {
     return annotationSpecSetConfigs_;
   }
+
   /**
    *
    *
@@ -930,6 +948,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       getAnnotationSpecSetConfigsOrBuilderList() {
     return annotationSpecSetConfigs_;
   }
+
   /**
    *
    *
@@ -950,6 +969,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
   public int getAnnotationSpecSetConfigsCount() {
     return annotationSpecSetConfigs_.size();
   }
+
   /**
    *
    *
@@ -971,6 +991,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       getAnnotationSpecSetConfigs(int index) {
     return annotationSpecSetConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -996,6 +1017,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
 
   public static final int APPLY_SHOT_DETECTION_FIELD_NUMBER = 2;
   private boolean applyShotDetection_ = false;
+
   /**
    *
    *
@@ -1186,6 +1208,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1488,6 +1511,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return annotationSpecSetConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1511,6 +1535,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return annotationSpecSetConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1535,6 +1560,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return annotationSpecSetConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1567,6 +1593,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1597,6 +1624,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1656,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1660,6 +1689,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1689,6 +1719,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1719,6 +1750,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1750,6 +1782,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1809,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1836,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       }
       return this;
     }
+
     /**
      *
      *
@@ -1823,6 +1858,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         getAnnotationSpecSetConfigsBuilder(int index) {
       return getAnnotationSpecSetConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1848,6 +1884,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return annotationSpecSetConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1875,6 +1912,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
         return java.util.Collections.unmodifiableList(annotationSpecSetConfigs_);
       }
     }
+
     /**
      *
      *
@@ -1899,6 +1937,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
               com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
                   .AnnotationSpecSetConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1924,6 +1963,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
               com.google.cloud.datalabeling.v1beta1.VideoClassificationConfig
                   .AnnotationSpecSetConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1973,6 +2013,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     }
 
     private boolean applyShotDetection_;
+
     /**
      *
      *
@@ -1988,6 +2029,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
     public boolean getApplyShotDetection() {
       return applyShotDetection_;
     }
+
     /**
      *
      *
@@ -2007,6 +2049,7 @@ public final class VideoClassificationConfig extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

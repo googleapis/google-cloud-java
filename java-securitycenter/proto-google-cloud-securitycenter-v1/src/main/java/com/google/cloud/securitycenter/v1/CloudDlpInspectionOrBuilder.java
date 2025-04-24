@@ -37,6 +37,7 @@ public interface CloudDlpInspectionOrBuilder
    * @return The inspectJob.
    */
   java.lang.String getInspectJob();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CloudDlpInspectionOrBuilder
    * @return The infoType.
    */
   java.lang.String getInfoType();
+
   /**
    *
    *

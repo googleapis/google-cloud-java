@@ -34,6 +34,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.DeleteInstancesInstanceGroupManagerRequest)
     DeleteInstancesInstanceGroupManagerRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteInstancesInstanceGroupManagerRequest.newBuilder() to construct.
   private DeleteInstancesInstanceGroupManagerRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceGroupManager_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       166421252;
   private com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest
       instanceGroupManagersDeleteInstancesRequestResource_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
   public boolean hasInstanceGroupManagersDeleteInstancesRequestResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
             .getDefaultInstance()
         : instanceGroupManagersDeleteInstancesRequestResource_;
   }
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -213,6 +220,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -281,6 +291,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -309,6 +320,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -334,6 +346,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -573,6 +586,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -847,6 +861,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     private int bitField0_;
 
     private java.lang.Object instanceGroupManager_ = "";
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -893,6 +909,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -915,6 +932,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +951,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +983,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
             com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequest.Builder,
             com.google.cloud.compute.v1.InstanceGroupManagersDeleteInstancesRequestOrBuilder>
         instanceGroupManagersDeleteInstancesRequestResourceBuilder_;
+
     /**
      *
      *
@@ -980,6 +1000,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     public boolean hasInstanceGroupManagersDeleteInstancesRequestResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1004,6 +1025,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return instanceGroupManagersDeleteInstancesRequestResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1051,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1053,6 +1076,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1109,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1131,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return getInstanceGroupManagersDeleteInstancesRequestResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1145,6 +1172,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
             : instanceGroupManagersDeleteInstancesRequestResource_;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1204,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1200,6 +1229,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1278,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1266,6 +1298,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1292,6 +1325,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1306,6 +1340,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1328,6 +1363,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1350,6 +1386,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1371,6 +1408,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1426,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1412,6 +1451,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1436,6 +1476,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1460,6 +1501,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1483,6 +1525,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1502,6 +1545,7 @@ public final class DeleteInstancesInstanceGroupManagerRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

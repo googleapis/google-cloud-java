@@ -34,6 +34,7 @@ public interface ImportCompletionDataResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<com.google.rpc.Status> getErrorSamplesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ImportCompletionDataResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   com.google.rpc.Status getErrorSamples(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ImportCompletionDataResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   int getErrorSamplesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ImportCompletionDataResponseOrBuilder
    * <code>repeated .google.rpc.Status error_samples = 1;</code>
    */
   java.util.List<? extends com.google.rpc.StatusOrBuilder> getErrorSamplesOrBuilderList();
+
   /**
    *
    *

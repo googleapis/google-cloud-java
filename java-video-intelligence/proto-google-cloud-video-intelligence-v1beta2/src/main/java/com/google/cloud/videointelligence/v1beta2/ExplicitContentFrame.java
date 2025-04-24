@@ -33,6 +33,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.ExplicitContentFrame)
     ExplicitContentFrameOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExplicitContentFrame.newBuilder() to construct.
   private ExplicitContentFrame(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int TIME_OFFSET_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration timeOffset_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
   public boolean hasTimeOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Duration getTimeOffset() {
     return timeOffset_ == null ? com.google.protobuf.Duration.getDefaultInstance() : timeOffset_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
 
   public static final int PORNOGRAPHY_LIKELIHOOD_FIELD_NUMBER = 2;
   private int pornographyLikelihood_ = 0;
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
   public int getPornographyLikelihoodValue() {
     return pornographyLikelihood_;
   }
+
   /**
    *
    *
@@ -328,6 +334,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +555,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         timeOffsetBuilder_;
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     public boolean hasTimeOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -584,6 +593,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
         return timeOffsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return getTimeOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -709,6 +724,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
             : timeOffset_;
       }
     }
+
     /**
      *
      *
@@ -737,6 +753,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     }
 
     private int pornographyLikelihood_ = 0;
+
     /**
      *
      *
@@ -752,6 +769,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
     public int getPornographyLikelihoodValue() {
       return pornographyLikelihood_;
     }
+
     /**
      *
      *
@@ -770,6 +788,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +808,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.videointelligence.v1beta2.Likelihood.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -811,6 +831,7 @@ public final class ExplicitContentFrame extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

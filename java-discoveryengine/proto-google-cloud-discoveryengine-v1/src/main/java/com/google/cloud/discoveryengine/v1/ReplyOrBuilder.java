@@ -36,6 +36,7 @@ public interface ReplyOrBuilder
    * @return Whether the summary field is set.
    */
   boolean hasSummary();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReplyOrBuilder
    * @return The summary.
    */
   com.google.cloud.discoveryengine.v1.SearchResponse.Summary getSummary();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface SourceConfigOrBuilder
    * @return The sourceConnectionProfileName.
    */
   java.lang.String getSourceConnectionProfileName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SourceConfigOrBuilder
    * @return Whether the oracleSourceConfig field is set.
    */
   boolean hasOracleSourceConfig();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface SourceConfigOrBuilder
    * @return The oracleSourceConfig.
    */
   com.google.cloud.datastream.v1alpha1.OracleSourceConfig getOracleSourceConfig();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface SourceConfigOrBuilder
    * @return Whether the mysqlSourceConfig field is set.
    */
   boolean hasMysqlSourceConfig();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface SourceConfigOrBuilder
    * @return The mysqlSourceConfig.
    */
   com.google.cloud.datastream.v1alpha1.MysqlSourceConfig getMysqlSourceConfig();
+
   /**
    *
    *

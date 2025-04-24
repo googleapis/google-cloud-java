@@ -36,6 +36,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.LinkedInterconnectAttachments)
     LinkedInterconnectAttachmentsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LinkedInterconnectAttachments.newBuilder() to construct.
   private LinkedInterconnectAttachments(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public int getUrisCount() {
     return uris_.size();
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
 
   public static final int SITE_TO_SITE_DATA_TRANSFER_FIELD_NUMBER = 2;
   private boolean siteToSiteDataTransfer_ = false;
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object vpcNetwork_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includeImportRanges_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public com.google.protobuf.ProtocolStringList getIncludeImportRangesList() {
     return includeImportRanges_;
   }
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public int getIncludeImportRangesCount() {
     return includeImportRanges_.size();
   }
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
   public java.lang.String getIncludeImportRanges(int index) {
     return includeImportRanges_.get(index);
   }
+
   /**
    *
    *
@@ -485,6 +497,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +757,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       uris_.makeImmutable();
       return uris_;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public int getUrisCount() {
       return uris_.size();
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +906,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     }
 
     private boolean siteToSiteDataTransfer_;
+
     /**
      *
      *
@@ -927,6 +950,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public boolean getSiteToSiteDataTransfer() {
       return siteToSiteDataTransfer_;
     }
+
     /**
      *
      *
@@ -948,6 +972,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +994,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     }
 
     private java.lang.Object vpcNetwork_ = "";
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1044,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1040,6 +1068,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1088,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1093,6 +1123,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1111,6 +1142,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       includeImportRanges_.makeImmutable();
       return includeImportRanges_;
     }
+
     /**
      *
      *
@@ -1128,6 +1160,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public int getIncludeImportRangesCount() {
       return includeImportRanges_.size();
     }
+
     /**
      *
      *
@@ -1146,6 +1179,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public java.lang.String getIncludeImportRanges(int index) {
       return includeImportRanges_.get(index);
     }
+
     /**
      *
      *
@@ -1164,6 +1198,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
     public com.google.protobuf.ByteString getIncludeImportRangesBytes(int index) {
       return includeImportRanges_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1190,6 +1225,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1251,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1274,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1258,6 +1296,7 @@ public final class LinkedInterconnectAttachments extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface GetBacktestResultRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

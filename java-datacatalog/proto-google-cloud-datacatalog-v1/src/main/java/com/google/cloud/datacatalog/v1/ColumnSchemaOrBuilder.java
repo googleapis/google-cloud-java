@@ -39,6 +39,7 @@ public interface ColumnSchemaOrBuilder
    * @return The column.
    */
   java.lang.String getColumn();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ColumnSchemaOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ColumnSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public interface ColumnSchemaOrBuilder
    * @return The mode.
    */
   java.lang.String getMode();
+
   /**
    *
    *
@@ -160,6 +164,7 @@ public interface ColumnSchemaOrBuilder
    * @return The defaultValue.
    */
   java.lang.String getDefaultValue();
+
   /**
    *
    *
@@ -200,6 +205,7 @@ public interface ColumnSchemaOrBuilder
    * @return The enum numeric value on the wire for highestIndexingType.
    */
   int getHighestIndexingTypeValue();
+
   /**
    *
    *
@@ -228,6 +234,7 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.datacatalog.v1.ColumnSchema> getSubcolumnsList();
+
   /**
    *
    *
@@ -241,6 +248,7 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   com.google.cloud.datacatalog.v1.ColumnSchema getSubcolumns(int index);
+
   /**
    *
    *
@@ -254,6 +262,7 @@ public interface ColumnSchemaOrBuilder
    * </code>
    */
   int getSubcolumnsCount();
+
   /**
    *
    *
@@ -268,6 +277,7 @@ public interface ColumnSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.datacatalog.v1.ColumnSchemaOrBuilder>
       getSubcolumnsOrBuilderList();
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public interface ColumnSchemaOrBuilder
    * @return Whether the lookerColumnSpec field is set.
    */
   boolean hasLookerColumnSpec();
+
   /**
    *
    *
@@ -308,6 +319,7 @@ public interface ColumnSchemaOrBuilder
    * @return The lookerColumnSpec.
    */
   com.google.cloud.datacatalog.v1.ColumnSchema.LookerColumnSpec getLookerColumnSpec();
+
   /**
    *
    *
@@ -340,6 +352,7 @@ public interface ColumnSchemaOrBuilder
    * @return Whether the rangeElementType field is set.
    */
   boolean hasRangeElementType();
+
   /**
    *
    *
@@ -359,6 +372,7 @@ public interface ColumnSchemaOrBuilder
    * @return The rangeElementType.
    */
   com.google.cloud.datacatalog.v1.ColumnSchema.FieldElementType getRangeElementType();
+
   /**
    *
    *
@@ -391,6 +405,7 @@ public interface ColumnSchemaOrBuilder
    * @return The gcRule.
    */
   java.lang.String getGcRule();
+
   /**
    *
    *

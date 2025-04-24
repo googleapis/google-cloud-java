@@ -38,6 +38,7 @@ public interface DataQualityRuleResultOrBuilder
    * @return Whether the rule field is set.
    */
   boolean hasRule();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DataQualityRuleResultOrBuilder
    * @return The rule.
    */
   com.google.cloud.dataplex.v1.DataQualityRule getRule();
+
   /**
    *
    *
@@ -161,6 +163,7 @@ public interface DataQualityRuleResultOrBuilder
    * @return The failingRowsQuery.
    */
   java.lang.String getFailingRowsQuery();
+
   /**
    *
    *

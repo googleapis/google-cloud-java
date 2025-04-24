@@ -38,6 +38,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * @return Whether the httpCookie field is set.
    */
   boolean hasHttpCookie();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * @return The httpCookie.
    */
   com.google.cloud.compute.v1.ConsistentHashLoadBalancerSettingsHttpCookie getHttpCookie();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * @return Whether the httpHeaderName field is set.
    */
   boolean hasHttpHeaderName();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * @return The httpHeaderName.
    */
   java.lang.String getHttpHeaderName();
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public interface ConsistentHashLoadBalancerSettingsOrBuilder
    * @return Whether the minimumRingSize field is set.
    */
   boolean hasMinimumRingSize();
+
   /**
    *
    *

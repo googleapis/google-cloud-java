@@ -33,6 +33,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.devtools.artifactregistry.v1.VirtualRepositoryConfig)
     VirtualRepositoryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use VirtualRepositoryConfig.newBuilder() to construct.
   private VirtualRepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.devtools.artifactregistry.v1.UpstreamPolicy> upstreamPolicies_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       getUpstreamPoliciesList() {
     return upstreamPolicies_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       getUpstreamPoliciesOrBuilderList() {
     return upstreamPolicies_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
   public int getUpstreamPoliciesCount() {
     return upstreamPolicies_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
   public com.google.devtools.artifactregistry.v1.UpstreamPolicy getUpstreamPolicies(int index) {
     return upstreamPolicies_.get(index);
   }
+
   /**
    *
    *
@@ -308,6 +314,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +586,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         return upstreamPoliciesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -597,6 +605,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         return upstreamPoliciesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         return upstreamPoliciesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -687,6 +699,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +748,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +771,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +817,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +839,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +855,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         getUpstreamPoliciesBuilder(int index) {
       return getUpstreamPoliciesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -855,6 +875,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         return upstreamPoliciesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
         return java.util.Collections.unmodifiableList(upstreamPolicies_);
       }
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
       return getUpstreamPoliciesFieldBuilder()
           .addBuilder(com.google.devtools.artifactregistry.v1.UpstreamPolicy.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -907,6 +930,7 @@ public final class VirtualRepositoryConfig extends com.google.protobuf.Generated
           .addBuilder(
               index, com.google.devtools.artifactregistry.v1.UpstreamPolicy.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:grafeas.v1.SbomReferenceIntotoPayload)
     SbomReferenceIntotoPayloadOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SbomReferenceIntotoPayload.newBuilder() to construct.
   private SbomReferenceIntotoPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -73,6 +74,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object type_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object predicateType_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.Subject> subject_;
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
   public java.util.List<io.grafeas.v1.Subject> getSubjectList() {
     return subject_;
   }
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
   public java.util.List<? extends io.grafeas.v1.SubjectOrBuilder> getSubjectOrBuilderList() {
     return subject_;
   }
+
   /**
    *
    *
@@ -217,6 +225,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
   public int getSubjectCount() {
     return subject_.size();
   }
+
   /**
    *
    *
@@ -231,6 +240,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
   public io.grafeas.v1.Subject getSubject(int index) {
     return subject_.get(index);
   }
+
   /**
    *
    *
@@ -248,6 +258,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
 
   public static final int PREDICATE_FIELD_NUMBER = 4;
   private io.grafeas.v1.SbomReferenceIntotoPredicate predicate_;
+
   /**
    *
    *
@@ -264,6 +275,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
   public boolean hasPredicate() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -282,6 +294,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         ? io.grafeas.v1.SbomReferenceIntotoPredicate.getDefaultInstance()
         : predicate_;
   }
+
   /**
    *
    *
@@ -491,6 +504,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -779,6 +793,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object type_ = "";
+
     /**
      *
      *
@@ -801,6 +816,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -823,6 +839,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +861,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     }
 
     private java.lang.Object predicateType_ = "";
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1020,6 +1044,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return subjectBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1062,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return subjectBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1080,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return subjectBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1125,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1149,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1194,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1183,6 +1215,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1203,6 +1236,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1223,6 +1257,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1243,6 +1278,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1256,6 +1292,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     public io.grafeas.v1.Subject.Builder getSubjectBuilder(int index) {
       return getSubjectFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1273,6 +1310,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return subjectBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1290,6 +1328,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(subject_);
       }
     }
+
     /**
      *
      *
@@ -1303,6 +1342,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     public io.grafeas.v1.Subject.Builder addSubjectBuilder() {
       return getSubjectFieldBuilder().addBuilder(io.grafeas.v1.Subject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1316,6 +1356,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     public io.grafeas.v1.Subject.Builder addSubjectBuilder(int index) {
       return getSubjectFieldBuilder().addBuilder(index, io.grafeas.v1.Subject.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1351,6 +1392,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
             io.grafeas.v1.SbomReferenceIntotoPredicate.Builder,
             io.grafeas.v1.SbomReferenceIntotoPredicateOrBuilder>
         predicateBuilder_;
+
     /**
      *
      *
@@ -1366,6 +1408,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
     public boolean hasPredicate() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1387,6 +1430,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
         return predicateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1454,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1431,6 +1476,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1459,6 +1505,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1526,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1542,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
       onChanged();
       return getPredicateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1513,6 +1562,7 @@ public final class SbomReferenceIntotoPayload extends com.google.protobuf.Genera
             : predicate_;
       }
     }
+
     /**
      *
      *

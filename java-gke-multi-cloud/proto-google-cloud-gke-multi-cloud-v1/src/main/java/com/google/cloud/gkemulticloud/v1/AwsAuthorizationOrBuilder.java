@@ -41,6 +41,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterUser> getAdminUsersList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsClusterUser getAdminUsers(int index);
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   int getAdminUsersCount();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AwsAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsClusterUserOrBuilder>
       getAdminUsersOrBuilderList();
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.gkemulticloud.v1.AwsClusterGroup> getAdminGroupsList();
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   com.google.cloud.gkemulticloud.v1.AwsClusterGroup getAdminGroups(int index);
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface AwsAuthorizationOrBuilder
    * </code>
    */
   int getAdminGroupsCount();
+
   /**
    *
    *
@@ -180,6 +187,7 @@ public interface AwsAuthorizationOrBuilder
    */
   java.util.List<? extends com.google.cloud.gkemulticloud.v1.AwsClusterGroupOrBuilder>
       getAdminGroupsOrBuilderList();
+
   /**
    *
    *

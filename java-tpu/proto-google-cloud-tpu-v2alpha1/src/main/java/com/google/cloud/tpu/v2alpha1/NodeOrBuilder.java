@@ -38,6 +38,7 @@ public interface NodeOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface NodeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface NodeOrBuilder
    * @return The acceleratorType.
    */
   java.lang.String getAcceleratorType();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public interface NodeOrBuilder
    * @return The healthDescription.
    */
   java.lang.String getHealthDescription();
+
   /**
    *
    *
@@ -171,6 +176,7 @@ public interface NodeOrBuilder
    * @return The runtimeVersion.
    */
   java.lang.String getRuntimeVersion();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface NodeOrBuilder
    * @return Whether the networkConfig field is set.
    */
   boolean hasNetworkConfig();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface NodeOrBuilder
    * @return The networkConfig.
    */
   com.google.cloud.tpu.v2alpha1.NetworkConfig getNetworkConfig();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.NetworkConfig> getNetworkConfigsList();
+
   /**
    *
    *
@@ -255,6 +264,7 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.NetworkConfig getNetworkConfigs(int index);
+
   /**
    *
    *
@@ -270,6 +280,7 @@ public interface NodeOrBuilder
    * </code>
    */
   int getNetworkConfigsCount();
+
   /**
    *
    *
@@ -286,6 +297,7 @@ public interface NodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.NetworkConfigOrBuilder>
       getNetworkConfigsOrBuilderList();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface NodeOrBuilder
    * @return The cidrBlock.
    */
   java.lang.String getCidrBlock();
+
   /**
    *
    *
@@ -354,6 +367,7 @@ public interface NodeOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -367,6 +381,7 @@ public interface NodeOrBuilder
    * @return The serviceAccount.
    */
   com.google.cloud.tpu.v2alpha1.ServiceAccount getServiceAccount();
+
   /**
    *
    *
@@ -392,6 +407,7 @@ public interface NodeOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -405,6 +421,7 @@ public interface NodeOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -429,6 +446,7 @@ public interface NodeOrBuilder
    * @return Whether the schedulingConfig field is set.
    */
   boolean hasSchedulingConfig();
+
   /**
    *
    *
@@ -441,6 +459,7 @@ public interface NodeOrBuilder
    * @return The schedulingConfig.
    */
   com.google.cloud.tpu.v2alpha1.SchedulingConfig getSchedulingConfig();
+
   /**
    *
    *
@@ -466,6 +485,7 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.NetworkEndpoint> getNetworkEndpointsList();
+
   /**
    *
    *
@@ -480,6 +500,7 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.NetworkEndpoint getNetworkEndpoints(int index);
+
   /**
    *
    *
@@ -494,6 +515,7 @@ public interface NodeOrBuilder
    * </code>
    */
   int getNetworkEndpointsCount();
+
   /**
    *
    *
@@ -509,6 +531,7 @@ public interface NodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.NetworkEndpointOrBuilder>
       getNetworkEndpointsOrBuilderList();
+
   /**
    *
    *
@@ -536,6 +559,7 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for health.
    */
   int getHealthValue();
+
   /**
    *
    *
@@ -559,6 +583,7 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -569,9 +594,11 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -582,6 +609,7 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; labels = 24;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -596,6 +624,7 @@ public interface NodeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -618,6 +647,7 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; metadata = 34;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -629,9 +659,11 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; metadata = 34;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -643,6 +675,7 @@ public interface NodeOrBuilder
    * <code>map&lt;string, string&gt; metadata = 34;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -658,6 +691,7 @@ public interface NodeOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -683,6 +717,7 @@ public interface NodeOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -696,6 +731,7 @@ public interface NodeOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -710,6 +746,7 @@ public interface NodeOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -748,6 +785,7 @@ public interface NodeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AttachedDisk data_disks = 41;</code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.AttachedDisk> getDataDisksList();
+
   /**
    *
    *
@@ -758,6 +796,7 @@ public interface NodeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AttachedDisk data_disks = 41;</code>
    */
   com.google.cloud.tpu.v2alpha1.AttachedDisk getDataDisks(int index);
+
   /**
    *
    *
@@ -768,6 +807,7 @@ public interface NodeOrBuilder
    * <code>repeated .google.cloud.tpu.v2alpha1.AttachedDisk data_disks = 41;</code>
    */
   int getDataDisksCount();
+
   /**
    *
    *
@@ -779,6 +819,7 @@ public interface NodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.AttachedDiskOrBuilder>
       getDataDisksOrBuilderList();
+
   /**
    *
    *
@@ -804,6 +845,7 @@ public interface NodeOrBuilder
    * @return The enum numeric value on the wire for apiVersion.
    */
   int getApiVersionValue();
+
   /**
    *
    *
@@ -831,6 +873,7 @@ public interface NodeOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.tpu.v2alpha1.Symptom> getSymptomsList();
+
   /**
    *
    *
@@ -843,6 +886,7 @@ public interface NodeOrBuilder
    * </code>
    */
   com.google.cloud.tpu.v2alpha1.Symptom getSymptoms(int index);
+
   /**
    *
    *
@@ -855,6 +899,7 @@ public interface NodeOrBuilder
    * </code>
    */
   int getSymptomsCount();
+
   /**
    *
    *
@@ -868,6 +913,7 @@ public interface NodeOrBuilder
    */
   java.util.List<? extends com.google.cloud.tpu.v2alpha1.SymptomOrBuilder>
       getSymptomsOrBuilderList();
+
   /**
    *
    *
@@ -894,6 +940,7 @@ public interface NodeOrBuilder
    * @return The queuedResource.
    */
   java.lang.String getQueuedResource();
+
   /**
    *
    *
@@ -920,6 +967,7 @@ public interface NodeOrBuilder
    * @return Whether the acceleratorConfig field is set.
    */
   boolean hasAcceleratorConfig();
+
   /**
    *
    *
@@ -932,6 +980,7 @@ public interface NodeOrBuilder
    * @return The acceleratorConfig.
    */
   com.google.cloud.tpu.v2alpha1.AcceleratorConfig getAcceleratorConfig();
+
   /**
    *
    *
@@ -955,6 +1004,7 @@ public interface NodeOrBuilder
    * @return Whether the shieldedInstanceConfig field is set.
    */
   boolean hasShieldedInstanceConfig();
+
   /**
    *
    *
@@ -967,6 +1017,7 @@ public interface NodeOrBuilder
    * @return The shieldedInstanceConfig.
    */
   com.google.cloud.tpu.v2alpha1.ShieldedInstanceConfig getShieldedInstanceConfig();
+
   /**
    *
    *
@@ -1019,6 +1070,7 @@ public interface NodeOrBuilder
    * @return Whether the bootDiskConfig field is set.
    */
   boolean hasBootDiskConfig();
+
   /**
    *
    *
@@ -1033,6 +1085,7 @@ public interface NodeOrBuilder
    * @return The bootDiskConfig.
    */
   com.google.cloud.tpu.v2alpha1.BootDiskConfig getBootDiskConfig();
+
   /**
    *
    *
@@ -1060,6 +1113,7 @@ public interface NodeOrBuilder
    * @return Whether the upcomingMaintenance field is set.
    */
   boolean hasUpcomingMaintenance();
+
   /**
    *
    *
@@ -1074,6 +1128,7 @@ public interface NodeOrBuilder
    * @return The upcomingMaintenance.
    */
   com.google.cloud.tpu.v2alpha1.UpcomingMaintenance getUpcomingMaintenance();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class SendDiagnosticInterruptInstanceResponse
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.SendDiagnosticInterruptInstanceResponse)
     SendDiagnosticInterruptInstanceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SendDiagnosticInterruptInstanceResponse.newBuilder() to construct.
   private SendDiagnosticInterruptInstanceResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -215,6 +216,7 @@ public final class SendDiagnosticInterruptInstanceResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

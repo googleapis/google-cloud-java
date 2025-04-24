@@ -39,6 +39,7 @@ public interface SpeechRecognitionResultOrBuilder
    */
   java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
       getAlternativesList();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface SpeechRecognitionResultOrBuilder
    * </code>
    */
   com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(int index);
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface SpeechRecognitionResultOrBuilder
    * </code>
    */
   int getAlternativesCount();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface SpeechRecognitionResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return Whether the resultEndTime field is set.
    */
   boolean hasResultEndTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return The resultEndTime.
    */
   com.google.protobuf.Duration getResultEndTime();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface SpeechRecognitionResultOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *

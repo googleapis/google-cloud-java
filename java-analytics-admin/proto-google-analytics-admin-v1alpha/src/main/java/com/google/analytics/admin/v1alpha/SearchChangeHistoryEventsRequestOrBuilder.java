@@ -41,6 +41,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The account.
    */
   java.lang.String getAccount();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The property.
    */
   java.lang.String getProperty();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    */
   java.util.List<com.google.analytics.admin.v1alpha.ChangeHistoryResourceType>
       getResourceTypeList();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The count of resourceType.
    */
   int getResourceTypeCount();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The resourceType at the given index.
    */
   com.google.analytics.admin.v1alpha.ChangeHistoryResourceType getResourceType(int index);
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for resourceType.
    */
   java.util.List<java.lang.Integer> getResourceTypeValueList();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return A list containing the action.
    */
   java.util.List<com.google.analytics.admin.v1alpha.ActionType> getActionList();
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The count of action.
    */
   int getActionCount();
+
   /**
    *
    *
@@ -221,6 +229,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The action at the given index.
    */
   com.google.analytics.admin.v1alpha.ActionType getAction(int index);
+
   /**
    *
    *
@@ -236,6 +245,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for action.
    */
   java.util.List<java.lang.Integer> getActionValueList();
+
   /**
    *
    *
@@ -266,6 +276,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return A list containing the actorEmail.
    */
   java.util.List<java.lang.String> getActorEmailList();
+
   /**
    *
    *
@@ -279,6 +290,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The count of actorEmail.
    */
   int getActorEmailCount();
+
   /**
    *
    *
@@ -293,6 +305,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The actorEmail at the given index.
    */
   java.lang.String getActorEmail(int index);
+
   /**
    *
    *
@@ -322,6 +335,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return Whether the earliestChangeTime field is set.
    */
   boolean hasEarliestChangeTime();
+
   /**
    *
    *
@@ -336,6 +350,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The earliestChangeTime.
    */
   com.google.protobuf.Timestamp getEarliestChangeTime();
+
   /**
    *
    *
@@ -363,6 +378,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return Whether the latestChangeTime field is set.
    */
   boolean hasLatestChangeTime();
+
   /**
    *
    *
@@ -377,6 +393,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The latestChangeTime.
    */
   com.google.protobuf.Timestamp getLatestChangeTime();
+
   /**
    *
    *
@@ -427,6 +444,7 @@ public interface SearchChangeHistoryEventsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -64,6 +64,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.CloudStorageRegexFileSet)
     CloudStorageRegexFileSetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CloudStorageRegexFileSet.newBuilder() to construct.
   private CloudStorageRegexFileSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -100,6 +101,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucketName_ = "";
+
   /**
    *
    *
@@ -123,6 +125,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -152,6 +155,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList includeRegex_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getIncludeRegexList() {
     return includeRegex_;
   }
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public int getIncludeRegexCount() {
     return includeRegex_.size();
   }
+
   /**
    *
    *
@@ -219,6 +225,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public java.lang.String getIncludeRegex(int index) {
     return includeRegex_.get(index);
   }
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList excludeRegex_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -268,6 +276,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getExcludeRegexList() {
     return excludeRegex_;
   }
+
   /**
    *
    *
@@ -288,6 +297,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public int getExcludeRegexCount() {
     return excludeRegex_.size();
   }
+
   /**
    *
    *
@@ -309,6 +319,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
   public java.lang.String getExcludeRegex(int index) {
     return excludeRegex_.get(index);
   }
+
   /**
    *
    *
@@ -522,6 +533,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -781,6 +793,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object bucketName_ = "";
+
     /**
      *
      *
@@ -803,6 +816,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -825,6 +839,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -846,6 +861,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +879,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +912,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -918,6 +936,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       includeRegex_.makeImmutable();
       return includeRegex_;
     }
+
     /**
      *
      *
@@ -940,6 +959,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public int getIncludeRegexCount() {
       return includeRegex_.size();
     }
+
     /**
      *
      *
@@ -963,6 +983,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public java.lang.String getIncludeRegex(int index) {
       return includeRegex_.get(index);
     }
+
     /**
      *
      *
@@ -986,6 +1007,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getIncludeRegexBytes(int index) {
       return includeRegex_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1017,6 +1039,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1098,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1125,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1167,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1162,6 +1189,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       excludeRegex_.makeImmutable();
       return excludeRegex_;
     }
+
     /**
      *
      *
@@ -1182,6 +1210,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public int getExcludeRegexCount() {
       return excludeRegex_.size();
     }
+
     /**
      *
      *
@@ -1203,6 +1232,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public java.lang.String getExcludeRegex(int index) {
       return excludeRegex_.get(index);
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getExcludeRegexBytes(int index) {
       return excludeRegex_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1253,6 +1284,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1313,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1306,6 +1339,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1330,6 +1364,7 @@ public final class CloudStorageRegexFileSet extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

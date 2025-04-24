@@ -39,6 +39,7 @@ public interface SearchNearestEntitiesRequestOrBuilder
    * @return The featureView.
    */
   java.lang.String getFeatureView();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SearchNearestEntitiesRequestOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SearchNearestEntitiesRequestOrBuilder
    * @return The query.
    */
   com.google.cloud.aiplatform.v1.NearestNeighborQuery getQuery();
+
   /**
    *
    *

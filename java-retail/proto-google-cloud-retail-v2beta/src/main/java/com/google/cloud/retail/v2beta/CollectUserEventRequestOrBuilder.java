@@ -37,6 +37,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return Whether the prebuiltRule field is set.
    */
   boolean hasPrebuiltRule();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The prebuiltRule.
    */
   java.lang.String getPrebuiltRule();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The userEvent.
    */
   java.lang.String getUserEvent();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The uri.
    */
   java.lang.String getUri();
+
   /**
    *
    *
@@ -179,6 +184,7 @@ public interface CollectUserEventRequestOrBuilder
    * @return The rawJson.
    */
   java.lang.String getRawJson();
+
   /**
    *
    *

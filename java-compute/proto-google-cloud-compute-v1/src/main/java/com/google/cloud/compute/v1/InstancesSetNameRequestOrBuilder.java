@@ -36,6 +36,7 @@ public interface InstancesSetNameRequestOrBuilder
    * @return Whether the currentName field is set.
    */
   boolean hasCurrentName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface InstancesSetNameRequestOrBuilder
    * @return The currentName.
    */
   java.lang.String getCurrentName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface InstancesSetNameRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface InstancesSetNameRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

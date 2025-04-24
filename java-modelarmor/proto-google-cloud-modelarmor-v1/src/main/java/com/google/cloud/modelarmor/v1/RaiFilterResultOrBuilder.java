@@ -39,6 +39,7 @@ public interface RaiFilterResultOrBuilder
    * @return The enum numeric value on the wire for executionState.
    */
   int getExecutionStateValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface RaiFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   java.util.List<com.google.cloud.modelarmor.v1.MessageItem> getMessageItemsList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface RaiFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   com.google.cloud.modelarmor.v1.MessageItem getMessageItems(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface RaiFilterResultOrBuilder
    * <code>repeated .google.cloud.modelarmor.v1.MessageItem message_items = 2;</code>
    */
   int getMessageItemsCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface RaiFilterResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.modelarmor.v1.MessageItemOrBuilder>
       getMessageItemsOrBuilderList();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface RaiFilterResultOrBuilder
    * @return The enum numeric value on the wire for matchState.
    */
   int getMatchStateValue();
+
   /**
    *
    *
@@ -168,6 +174,7 @@ public interface RaiFilterResultOrBuilder
    * </code>
    */
   int getRaiFilterTypeResultsCount();
+
   /**
    *
    *
@@ -181,11 +188,13 @@ public interface RaiFilterResultOrBuilder
    * </code>
    */
   boolean containsRaiFilterTypeResults(java.lang.String key);
+
   /** Use {@link #getRaiFilterTypeResultsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String, com.google.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResult>
       getRaiFilterTypeResults();
+
   /**
    *
    *
@@ -201,6 +210,7 @@ public interface RaiFilterResultOrBuilder
   java.util.Map<
           java.lang.String, com.google.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResult>
       getRaiFilterTypeResultsMap();
+
   /**
    *
    *
@@ -219,6 +229,7 @@ public interface RaiFilterResultOrBuilder
           java.lang.String key,
           /* nullable */
           com.google.cloud.modelarmor.v1.RaiFilterResult.RaiFilterTypeResult defaultValue);
+
   /**
    *
    *

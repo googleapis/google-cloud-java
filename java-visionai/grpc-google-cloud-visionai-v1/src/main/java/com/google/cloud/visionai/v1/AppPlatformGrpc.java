@@ -1223,6 +1223,19 @@ public final class AppPlatformGrpc {
     return AppPlatformStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AppPlatformBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AppPlatformBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AppPlatformBlockingV2Stub>() {
+          @java.lang.Override
+          public AppPlatformBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AppPlatformBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AppPlatformBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2114,6 +2127,380 @@ public final class AppPlatformGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AppPlatform.
+   *
+   * <pre>
+   * Service describing handlers for resources
+   * </pre>
+   */
+  public static final class AppPlatformBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AppPlatformBlockingV2Stub> {
+    private AppPlatformBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AppPlatformBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AppPlatformBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Applications in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListApplicationsResponse listApplications(
+        com.google.cloud.visionai.v1.ListApplicationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListApplicationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Application.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Application getApplication(
+        com.google.cloud.visionai.v1.GetApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Application in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApplication(
+        com.google.cloud.visionai.v1.CreateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApplication(
+        com.google.cloud.visionai.v1.UpdateApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteApplication(
+        com.google.cloud.visionai.v1.DeleteApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deploys a single Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deployApplication(
+        com.google.cloud.visionai.v1.DeployApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeployApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeploys a single Application.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeployApplication(
+        com.google.cloud.visionai.v1.UndeployApplicationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeployApplicationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds target stream input to the Application.
+     * If the Application is deployed, the corresponding new Application instance
+     * will be created. If the stream has already been in the Application, the RPC
+     * will fail.
+     * </pre>
+     */
+    public com.google.longrunning.Operation addApplicationStreamInput(
+        com.google.cloud.visionai.v1.AddApplicationStreamInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddApplicationStreamInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove target stream input to the Application, if the Application is
+     * deployed, the corresponding instance based will be deleted. If the stream
+     * is not in the Application, the RPC will fail.
+     * </pre>
+     */
+    public com.google.longrunning.Operation removeApplicationStreamInput(
+        com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveApplicationStreamInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update target stream input to the Application, if the Application is
+     * deployed, the corresponding instance based will be deployed. For
+     * CreateOrUpdate behavior, set allow_missing to true.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApplicationStreamInput(
+        com.google.cloud.visionai.v1.UpdateApplicationStreamInputRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationStreamInputMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Instances in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListInstancesResponse listInstances(
+        com.google.cloud.visionai.v1.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Instance.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Instance getInstance(
+        com.google.cloud.visionai.v1.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds target stream input to the Application.
+     * If the Application is deployed, the corresponding new Application instance
+     * will be created. If the stream has already been in the Application, the RPC
+     * will fail.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createApplicationInstances(
+        com.google.cloud.visionai.v1.CreateApplicationInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateApplicationInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Remove target stream input to the Application, if the Application is
+     * deployed, the corresponding instance based will be deleted. If the stream
+     * is not in the Application, the RPC will fail.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteApplicationInstances(
+        com.google.cloud.visionai.v1.DeleteApplicationInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteApplicationInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds target stream input to the Application.
+     * If the Application is deployed, the corresponding new Application instance
+     * will be created. If the stream has already been in the Application, the RPC
+     * will fail.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateApplicationInstances(
+        com.google.cloud.visionai.v1.UpdateApplicationInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateApplicationInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Drafts in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListDraftsResponse listDrafts(
+        com.google.cloud.visionai.v1.ListDraftsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDraftsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Draft.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Draft getDraft(
+        com.google.cloud.visionai.v1.GetDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDraftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Draft in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDraft(
+        com.google.cloud.visionai.v1.CreateDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDraftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Draft.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDraft(
+        com.google.cloud.visionai.v1.UpdateDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDraftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Draft.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDraft(
+        com.google.cloud.visionai.v1.DeleteDraftRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDraftMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Processors in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListProcessorsResponse listProcessors(
+        com.google.cloud.visionai.v1.ListProcessorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListProcessorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * ListPrebuiltProcessors is a custom pass-through verb that Lists Prebuilt
+     * Processors.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.ListPrebuiltProcessorsResponse listPrebuiltProcessors(
+        com.google.cloud.visionai.v1.ListPrebuiltProcessorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPrebuiltProcessorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single Processor.
+     * </pre>
+     */
+    public com.google.cloud.visionai.v1.Processor getProcessor(
+        com.google.cloud.visionai.v1.GetProcessorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Processor in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createProcessor(
+        com.google.cloud.visionai.v1.CreateProcessorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single Processor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateProcessor(
+        com.google.cloud.visionai.v1.UpdateProcessorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateProcessorMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single Processor.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteProcessor(
+        com.google.cloud.visionai.v1.DeleteProcessorRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteProcessorMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AppPlatform.
    *
    * <pre>
    * Service describing handlers for resources

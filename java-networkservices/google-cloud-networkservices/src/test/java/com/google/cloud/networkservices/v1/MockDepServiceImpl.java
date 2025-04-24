@@ -74,7 +74,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListLbTrafficExtensions, expected %s or %s",
+                  "Unrecognized response type %s for method ListLbTrafficExtensions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLbTrafficExtensionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetLbTrafficExtension, expected %s or %s",
+                  "Unrecognized response type %s for method GetLbTrafficExtension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   LbTrafficExtension.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +118,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateLbTrafficExtension, expected %s or %s",
+                  "Unrecognized response type %s for method CreateLbTrafficExtension, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +140,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateLbTrafficExtension, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateLbTrafficExtension, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +162,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteLbTrafficExtension, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteLbTrafficExtension, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -180,7 +185,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListLbRouteExtensions, expected %s or %s",
+                  "Unrecognized response type %s for method ListLbRouteExtensions, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListLbRouteExtensionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -222,7 +228,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateLbRouteExtension, expected %s or %s",
+                  "Unrecognized response type %s for method CreateLbRouteExtension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -243,7 +250,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateLbRouteExtension, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateLbRouteExtension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -264,7 +272,8 @@ public class MockDepServiceImpl extends DepServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteLbRouteExtension, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteLbRouteExtension, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

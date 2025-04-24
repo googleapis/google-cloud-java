@@ -75,6 +75,7 @@ public enum HeuristicRelevance implements com.google.protobuf.ProtocolMessageEnu
    * <code>HEURISTIC_RELEVANCE_UNSPECIFIED = 0;</code>
    */
   public static final int HEURISTIC_RELEVANCE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum HeuristicRelevance implements com.google.protobuf.ProtocolMessageEnu
    * <code>HEURISTIC_RELEVANCE_NORMAL = 1;</code>
    */
   public static final int HEURISTIC_RELEVANCE_NORMAL_VALUE = 1;
+
   /**
    *
    *

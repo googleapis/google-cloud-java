@@ -48,6 +48,7 @@ public interface PolicyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,7 +78,7 @@ public interface PolicyOrBuilder
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -85,11 +86,12 @@ public interface PolicyOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -97,11 +99,12 @@ public interface PolicyOrBuilder
    * @return The spec.
    */
   com.google.cloud.orgpolicy.v2.PolicySpec getSpec();
+
   /**
    *
    *
    * <pre>
-   * Basic information about the Organization Policy.
+   * Basic information about the organization policy.
    * </pre>
    *
    * <code>.google.cloud.orgpolicy.v2.PolicySpec spec = 2;</code>
@@ -118,11 +121,12 @@ public interface PolicyOrBuilder
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
    * @return Whether the alternate field is set.
    */
   @java.lang.Deprecated
   boolean hasAlternate();
+
   /**
    *
    *
@@ -133,11 +137,12 @@ public interface PolicyOrBuilder
    * <code>.google.cloud.orgpolicy.v2.AlternatePolicySpec alternate = 3 [deprecated = true];</code>
    *
    * @deprecated google.cloud.orgpolicy.v2.Policy.alternate is deprecated. See
-   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=270
+   *     google/cloud/orgpolicy/v2/orgpolicy.proto;l=271
    * @return The alternate.
    */
   @java.lang.Deprecated
   com.google.cloud.orgpolicy.v2.AlternatePolicySpec getAlternate();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface PolicyOrBuilder
    * @return Whether the dryRunSpec field is set.
    */
   boolean hasDryRunSpec();
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface PolicyOrBuilder
    * @return The dryRunSpec.
    */
   com.google.cloud.orgpolicy.v2.PolicySpec getDryRunSpec();
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public interface PolicyOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

@@ -40,6 +40,7 @@ public interface UpdateSpecRequestOrBuilder
    * @return Whether the spec field is set.
    */
   boolean hasSpec();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateSpecRequestOrBuilder
    * @return The spec.
    */
   com.google.cloud.apihub.v1.Spec getSpec();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface UpdateSpecRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface UpdateSpecRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

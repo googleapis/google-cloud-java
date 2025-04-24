@@ -31,6 +31,7 @@ public interface EvaluationMetricsOrBuilder
    * @return Whether the classificationMetrics field is set.
    */
   boolean hasClassificationMetrics();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
@@ -38,6 +39,7 @@ public interface EvaluationMetricsOrBuilder
    * @return The classificationMetrics.
    */
   com.google.cloud.datalabeling.v1beta1.ClassificationMetrics getClassificationMetrics();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ClassificationMetrics classification_metrics = 1;
    * </code>
@@ -52,6 +54,7 @@ public interface EvaluationMetricsOrBuilder
    * @return Whether the objectDetectionMetrics field is set.
    */
   boolean hasObjectDetectionMetrics();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>
@@ -59,6 +62,7 @@ public interface EvaluationMetricsOrBuilder
    * @return The objectDetectionMetrics.
    */
   com.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics getObjectDetectionMetrics();
+
   /**
    * <code>.google.cloud.datalabeling.v1beta1.ObjectDetectionMetrics object_detection_metrics = 2;
    * </code>

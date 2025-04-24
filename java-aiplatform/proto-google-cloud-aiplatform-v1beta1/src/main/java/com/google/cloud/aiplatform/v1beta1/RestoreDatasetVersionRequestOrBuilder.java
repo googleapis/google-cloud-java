@@ -40,6 +40,7 @@ public interface RestoreDatasetVersionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

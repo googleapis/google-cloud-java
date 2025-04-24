@@ -39,6 +39,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    * @return Whether the restorePlan field is set.
    */
   boolean hasRestorePlan();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    * @return The restorePlan.
    */
   com.google.cloud.gkebackup.v1.RestorePlan getRestorePlan();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface UpdateRestorePlanRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

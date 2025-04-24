@@ -30,7 +30,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Output only. The resource name of the BacktestResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -38,13 +38,14 @@ public interface BacktestResultOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Output only. The resource name of the BacktestResult.
    * format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/backtestResults/{backtest_result}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -66,6 +67,7 @@ public interface BacktestResultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BacktestResultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BacktestResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface BacktestResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface BacktestResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface BacktestResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface BacktestResultOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface BacktestResultOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface BacktestResultOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -222,7 +233,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Dataset to backtest on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -232,13 +243,14 @@ public interface BacktestResultOrBuilder
    * @return The dataset.
    */
   java.lang.String getDataset();
+
   /**
    *
    *
    * <pre>
    * Required. The resource name of the Dataset to backtest on
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/datasets/{dataset}`
    * </pre>
    *
    * <code>
@@ -255,7 +267,7 @@ public interface BacktestResultOrBuilder
    * <pre>
    * Required. The resource name of the Model to use or to backtest.
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>
@@ -265,13 +277,14 @@ public interface BacktestResultOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *
    * <pre>
    * Required. The resource name of the Model to use or to backtest.
    * Format:
-   * "/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}"
+   * `/projects/{project_num}/locations/{location}/instances/{instance}/models/{model}`
    * </pre>
    *
    * <code>
@@ -296,6 +309,7 @@ public interface BacktestResultOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -310,6 +324,7 @@ public interface BacktestResultOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -353,6 +368,7 @@ public interface BacktestResultOrBuilder
    * @return Whether the performanceTarget field is set.
    */
   boolean hasPerformanceTarget();
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public interface BacktestResultOrBuilder
    * @return The performanceTarget.
    */
   com.google.cloud.financialservices.v1.BacktestResult.PerformanceTarget getPerformanceTarget();
+
   /**
    *
    *
@@ -398,6 +415,7 @@ public interface BacktestResultOrBuilder
    * @return The enum numeric value on the wire for lineOfBusiness.
    */
   int getLineOfBusinessValue();
+
   /**
    *
    *

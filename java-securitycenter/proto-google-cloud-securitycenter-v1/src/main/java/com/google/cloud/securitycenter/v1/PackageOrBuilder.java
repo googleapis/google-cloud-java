@@ -36,6 +36,7 @@ public interface PackageOrBuilder
    * @return The packageName.
    */
   java.lang.String getPackageName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface PackageOrBuilder
    * @return The cpeUri.
    */
   java.lang.String getCpeUri();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PackageOrBuilder
    * @return The packageType.
    */
   java.lang.String getPackageType();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface PackageOrBuilder
    * @return The packageVersion.
    */
   java.lang.String getPackageVersion();
+
   /**
    *
    *

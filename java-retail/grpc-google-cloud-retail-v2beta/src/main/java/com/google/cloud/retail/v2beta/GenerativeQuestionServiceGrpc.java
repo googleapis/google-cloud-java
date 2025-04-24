@@ -325,6 +325,19 @@ public final class GenerativeQuestionServiceGrpc {
     return GenerativeQuestionServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static GenerativeQuestionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<GenerativeQuestionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<GenerativeQuestionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public GenerativeQuestionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new GenerativeQuestionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return GenerativeQuestionServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -570,6 +583,102 @@ public final class GenerativeQuestionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service GenerativeQuestionService.
+   *
+   * <pre>
+   * Service for managing LLM generated questions in search serving.
+   * </pre>
+   */
+  public static final class GenerativeQuestionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<GenerativeQuestionServiceBlockingV2Stub> {
+    private GenerativeQuestionServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected GenerativeQuestionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new GenerativeQuestionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Manages overal generative question feature state -- enables toggling
+     * feature on and off.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.GenerativeQuestionsFeatureConfig
+        updateGenerativeQuestionsFeatureConfig(
+            com.google.cloud.retail.v2beta.UpdateGenerativeQuestionsFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getUpdateGenerativeQuestionsFeatureConfigMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Manages overal generative question feature state -- enables toggling
+     * feature on and off.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.GenerativeQuestionsFeatureConfig
+        getGenerativeQuestionsFeatureConfig(
+            com.google.cloud.retail.v2beta.GetGenerativeQuestionsFeatureConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGenerativeQuestionsFeatureConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns all questions for a given catalog.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.ListGenerativeQuestionConfigsResponse
+        listGenerativeQuestionConfigs(
+            com.google.cloud.retail.v2beta.ListGenerativeQuestionConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListGenerativeQuestionConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows management of individual questions.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.GenerativeQuestionConfig updateGenerativeQuestionConfig(
+        com.google.cloud.retail.v2beta.UpdateGenerativeQuestionConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGenerativeQuestionConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Allows management of multiple questions.
+     * </pre>
+     */
+    public com.google.cloud.retail.v2beta.BatchUpdateGenerativeQuestionConfigsResponse
+        batchUpdateGenerativeQuestionConfigs(
+            com.google.cloud.retail.v2beta.BatchUpdateGenerativeQuestionConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateGenerativeQuestionConfigsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * GenerativeQuestionService.
    *
    * <pre>
    * Service for managing LLM generated questions in search serving.

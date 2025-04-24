@@ -37,6 +37,7 @@ public interface EndpointsApiServiceOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface EndpointsApiServiceOrBuilder
    * @return The configId.
    */
   java.lang.String getConfigId();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface EndpointsApiServiceOrBuilder
    * @return The enum numeric value on the wire for rolloutStrategy.
    */
   int getRolloutStrategyValue();
+
   /**
    *
    *

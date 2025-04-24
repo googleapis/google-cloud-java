@@ -32,6 +32,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InstancesSetMinCpuPlatformRequest)
     InstancesSetMinCpuPlatformRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InstancesSetMinCpuPlatformRequest.newBuilder() to construct.
   private InstancesSetMinCpuPlatformRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object minCpuPlatform_ = "";
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
   public boolean hasMinCpuPlatform() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       return s;
     }
   }
+
   /**
    *
    *
@@ -295,6 +299,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -484,6 +489,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     private int bitField0_;
 
     private java.lang.Object minCpuPlatform_ = "";
+
     /**
      *
      *
@@ -498,6 +504,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
     public boolean hasMinCpuPlatform() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -520,6 +527,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -542,6 +550,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -563,6 +572,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -580,6 +590,7 @@ public final class InstancesSetMinCpuPlatformRequest extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

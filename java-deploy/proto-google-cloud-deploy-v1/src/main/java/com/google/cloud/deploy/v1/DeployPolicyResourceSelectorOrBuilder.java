@@ -38,6 +38,7 @@ public interface DeployPolicyResourceSelectorOrBuilder
    * @return Whether the deliveryPipeline field is set.
    */
   boolean hasDeliveryPipeline();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface DeployPolicyResourceSelectorOrBuilder
    * @return The deliveryPipeline.
    */
   com.google.cloud.deploy.v1.DeliveryPipelineAttribute getDeliveryPipeline();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface DeployPolicyResourceSelectorOrBuilder
    * @return Whether the target field is set.
    */
   boolean hasTarget();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface DeployPolicyResourceSelectorOrBuilder
    * @return The target.
    */
   com.google.cloud.deploy.v1.TargetAttribute getTarget();
+
   /**
    *
    *

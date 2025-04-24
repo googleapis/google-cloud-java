@@ -36,6 +36,7 @@ public interface CheckOnboardingStatusResponseOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CheckOnboardingStatusResponseOrBuilder
    */
   java.util.List<com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusResponse.Finding>
       getFindingsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CheckOnboardingStatusResponseOrBuilder
    */
   com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusResponse.Finding getFindings(
       int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface CheckOnboardingStatusResponseOrBuilder
    * </code>
    */
   int getFindingsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface CheckOnboardingStatusResponseOrBuilder
               com.google.cloud.privilegedaccessmanager.v1.CheckOnboardingStatusResponse
                   .FindingOrBuilder>
       getFindingsOrBuilderList();
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface AssembleDataResponseOrBuilder
    * @return The bigqueryDestination.
    */
   java.lang.String getBigqueryDestination();
+
   /**
    *
    *

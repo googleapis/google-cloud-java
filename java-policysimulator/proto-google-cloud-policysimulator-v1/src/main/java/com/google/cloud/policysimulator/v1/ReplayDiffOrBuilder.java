@@ -41,6 +41,7 @@ public interface ReplayDiffOrBuilder
    * @return Whether the accessDiff field is set.
    */
   boolean hasAccessDiff();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ReplayDiffOrBuilder
    * @return The accessDiff.
    */
   com.google.cloud.policysimulator.v1.AccessStateDiff getAccessDiff();
+
   /**
    *
    *

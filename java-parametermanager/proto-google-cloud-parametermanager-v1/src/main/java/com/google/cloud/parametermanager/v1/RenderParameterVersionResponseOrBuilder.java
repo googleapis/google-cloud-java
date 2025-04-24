@@ -39,6 +39,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return The parameterVersion.
    */
   java.lang.String getParameterVersion();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return Whether the payload field is set.
    */
   boolean hasPayload();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface RenderParameterVersionResponseOrBuilder
    * @return The payload.
    */
   com.google.cloud.parametermanager.v1.ParameterVersionPayload getPayload();
+
   /**
    *
    *

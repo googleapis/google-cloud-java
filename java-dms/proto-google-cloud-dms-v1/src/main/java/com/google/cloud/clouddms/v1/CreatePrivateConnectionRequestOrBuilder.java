@@ -38,6 +38,7 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return The privateConnectionId.
    */
   java.lang.String getPrivateConnectionId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return Whether the privateConnection field is set.
    */
   boolean hasPrivateConnection();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return The privateConnection.
    */
   com.google.cloud.clouddms.v1.PrivateConnection getPrivateConnection();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

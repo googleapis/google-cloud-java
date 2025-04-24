@@ -36,6 +36,7 @@ public interface GitSourceContextOrBuilder
    * @return The url.
    */
   java.lang.String getUrl();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GitSourceContextOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *

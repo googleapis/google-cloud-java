@@ -37,6 +37,7 @@ public interface AnnotationBoundaryOrBuilder
    * @return Whether the wordIndex field is set.
    */
   boolean hasWordIndex();
+
   /**
    *
    *

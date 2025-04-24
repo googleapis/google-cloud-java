@@ -33,6 +33,7 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.maps.areainsights.v1.PlaceInsight)
     PlaceInsightOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PlaceInsight.newBuilder() to construct.
   private PlaceInsight(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,12 +68,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object place_ = "";
+
   /**
    *
    *
    * <pre>
-   * The resource name of a place. This resource name can be used to retrieve
-   * details about the place using the [Places
+   * The unique identifier of the place. This resource name can be used to
+   * retrieve details about the place using the [Places
    * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
    * </pre>
    *
@@ -92,12 +94,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
    * <pre>
-   * The resource name of a place. This resource name can be used to retrieve
-   * details about the place using the [Places
+   * The unique identifier of the place. This resource name can be used to
+   * retrieve details about the place using the [Places
    * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
    * </pre>
    *
@@ -277,6 +280,7 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -460,12 +464,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object place_ = "";
+
     /**
      *
      *
      * <pre>
-     * The resource name of a place. This resource name can be used to retrieve
-     * details about the place using the [Places
+     * The unique identifier of the place. This resource name can be used to
+     * retrieve details about the place using the [Places
      * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
      * </pre>
      *
@@ -484,12 +489,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The resource name of a place. This resource name can be used to retrieve
-     * details about the place using the [Places
+     * The unique identifier of the place. This resource name can be used to
+     * retrieve details about the place using the [Places
      * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
      * </pre>
      *
@@ -508,12 +514,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
      * <pre>
-     * The resource name of a place. This resource name can be used to retrieve
-     * details about the place using the [Places
+     * The unique identifier of the place. This resource name can be used to
+     * retrieve details about the place using the [Places
      * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
      * </pre>
      *
@@ -531,12 +538,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The resource name of a place. This resource name can be used to retrieve
-     * details about the place using the [Places
+     * The unique identifier of the place. This resource name can be used to
+     * retrieve details about the place using the [Places
      * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
      * </pre>
      *
@@ -550,12 +558,13 @@ public final class PlaceInsight extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
      * <pre>
-     * The resource name of a place. This resource name can be used to retrieve
-     * details about the place using the [Places
+     * The unique identifier of the place. This resource name can be used to
+     * retrieve details about the place using the [Places
      * API](https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/get).
      * </pre>
      *

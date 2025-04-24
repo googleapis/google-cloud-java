@@ -36,6 +36,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return A list containing the autoAllocatedNatIps.
    */
   java.util.List<java.lang.String> getAutoAllocatedNatIpsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The count of autoAllocatedNatIps.
    */
   int getAutoAllocatedNatIpsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The autoAllocatedNatIps at the given index.
    */
   java.lang.String getAutoAllocatedNatIps(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return A list containing the drainAutoAllocatedNatIps.
    */
   java.util.List<java.lang.String> getDrainAutoAllocatedNatIpsList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The count of drainAutoAllocatedNatIps.
    */
   int getDrainAutoAllocatedNatIpsCount();
+
   /**
    *
    *
@@ -112,6 +117,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The drainAutoAllocatedNatIps at the given index.
    */
   java.lang.String getDrainAutoAllocatedNatIps(int index);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return A list containing the drainUserAllocatedNatIps.
    */
   java.util.List<java.lang.String> getDrainUserAllocatedNatIpsList();
+
   /**
    *
    *
@@ -150,6 +157,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The count of drainUserAllocatedNatIps.
    */
   int getDrainUserAllocatedNatIpsCount();
+
   /**
    *
    *
@@ -163,6 +171,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The drainUserAllocatedNatIps at the given index.
    */
   java.lang.String getDrainUserAllocatedNatIps(int index);
+
   /**
    *
    *
@@ -189,6 +198,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return Whether the minExtraNatIpsNeeded field is set.
    */
   boolean hasMinExtraNatIpsNeeded();
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -226,6 +237,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return Whether the numVmEndpointsWithNatMappings field is set.
    */
   boolean hasNumVmEndpointsWithNatMappings();
+
   /**
    *
    *
@@ -277,6 +290,7 @@ public interface RouterStatusNatStatusOrBuilder
    */
   java.util.List<com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus>
       getRuleStatusList();
+
   /**
    *
    *
@@ -289,6 +303,7 @@ public interface RouterStatusNatStatusOrBuilder
    * </code>
    */
   com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatus getRuleStatus(int index);
+
   /**
    *
    *
@@ -301,6 +316,7 @@ public interface RouterStatusNatStatusOrBuilder
    * </code>
    */
   int getRuleStatusCount();
+
   /**
    *
    *
@@ -314,6 +330,7 @@ public interface RouterStatusNatStatusOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouterStatusNatStatusNatRuleStatusOrBuilder>
       getRuleStatusOrBuilderList();
+
   /**
    *
    *
@@ -340,6 +357,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return A list containing the userAllocatedNatIpResources.
    */
   java.util.List<java.lang.String> getUserAllocatedNatIpResourcesList();
+
   /**
    *
    *
@@ -352,6 +370,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The count of userAllocatedNatIpResources.
    */
   int getUserAllocatedNatIpResourcesCount();
+
   /**
    *
    *
@@ -365,6 +384,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The userAllocatedNatIpResources at the given index.
    */
   java.lang.String getUserAllocatedNatIpResources(int index);
+
   /**
    *
    *
@@ -391,6 +411,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return A list containing the userAllocatedNatIps.
    */
   java.util.List<java.lang.String> getUserAllocatedNatIpsList();
+
   /**
    *
    *
@@ -403,6 +424,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The count of userAllocatedNatIps.
    */
   int getUserAllocatedNatIpsCount();
+
   /**
    *
    *
@@ -416,6 +438,7 @@ public interface RouterStatusNatStatusOrBuilder
    * @return The userAllocatedNatIps at the given index.
    */
   java.lang.String getUserAllocatedNatIps(int index);
+
   /**
    *
    *

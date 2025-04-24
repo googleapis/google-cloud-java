@@ -34,6 +34,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertRegionNetworkEndpointGroupRequest)
     InsertRegionNetworkEndpointGroupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertRegionNetworkEndpointGroupRequest.newBuilder() to construct.
   private InsertRegionNetworkEndpointGroupRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
   private int bitField0_;
   public static final int NETWORK_ENDPOINT_GROUP_RESOURCE_FIELD_NUMBER = 525788839;
   private com.google.cloud.compute.v1.NetworkEndpointGroup networkEndpointGroupResource_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
   public boolean hasNetworkEndpointGroupResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         ? com.google.cloud.compute.v1.NetworkEndpointGroup.getDefaultInstance()
         : networkEndpointGroupResource_;
   }
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -239,6 +247,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -254,6 +263,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -502,6 +513,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -762,6 +774,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
             com.google.cloud.compute.v1.NetworkEndpointGroup.Builder,
             com.google.cloud.compute.v1.NetworkEndpointGroupOrBuilder>
         networkEndpointGroupResourceBuilder_;
+
     /**
      *
      *
@@ -778,6 +791,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     public boolean hasNetworkEndpointGroupResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -800,6 +814,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return networkEndpointGroupResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -825,6 +840,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +863,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +895,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -916,6 +935,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return getNetworkEndpointGroupResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -937,6 +957,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
             : networkEndpointGroupResource_;
       }
     }
+
     /**
      *
      *
@@ -966,6 +987,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -990,6 +1012,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1014,6 +1037,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1037,6 +1061,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1082,6 +1108,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1106,6 +1133,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1153,6 +1182,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1202,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1229,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1234,6 +1267,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1256,6 +1290,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1277,6 +1312,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1330,7 @@ public final class InsertRegionNetworkEndpointGroupRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

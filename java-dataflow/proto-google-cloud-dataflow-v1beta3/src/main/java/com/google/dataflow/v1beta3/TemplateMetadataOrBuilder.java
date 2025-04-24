@@ -36,6 +36,7 @@ public interface TemplateMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface TemplateMetadataOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface TemplateMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 3;</code>
    */
   java.util.List<com.google.dataflow.v1beta3.ParameterMetadata> getParametersList();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface TemplateMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 3;</code>
    */
   com.google.dataflow.v1beta3.ParameterMetadata getParameters(int index);
+
   /**
    *
    *
@@ -104,6 +108,7 @@ public interface TemplateMetadataOrBuilder
    * <code>repeated .google.dataflow.v1beta3.ParameterMetadata parameters = 3;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -115,6 +120,7 @@ public interface TemplateMetadataOrBuilder
    */
   java.util.List<? extends com.google.dataflow.v1beta3.ParameterMetadataOrBuilder>
       getParametersOrBuilderList();
+
   /**
    *
    *

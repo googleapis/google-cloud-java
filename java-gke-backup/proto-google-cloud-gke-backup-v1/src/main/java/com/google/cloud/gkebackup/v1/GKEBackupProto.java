@@ -57,6 +57,42 @@ public final class GKEBackupProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_DeleteBackupPlanRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_CreateBackupChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_CreateBackupChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListBackupChannelsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListBackupChannelsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListBackupChannelsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListBackupChannelsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_GetBackupChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_GetBackupChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_UpdateBackupChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_UpdateBackupChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_DeleteBackupChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_DeleteBackupChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_GetBackupPlanBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_GetBackupPlanBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_fieldAccessorTable;
@@ -117,6 +153,42 @@ public final class GKEBackupProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_DeleteRestorePlanRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_CreateRestoreChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_CreateRestoreChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_GetRestoreChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_GetRestoreChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_UpdateRestoreChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_UpdateRestoreChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_DeleteRestoreChannelRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_DeleteRestoreChannelRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gkebackup_v1_GetRestorePlanBindingRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gkebackup_v1_GetRestorePlanBindingRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_fieldAccessorTable;
@@ -169,278 +241,450 @@ public final class GKEBackupProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n)google/cloud/gkebackup/v1/gkebackup.pr"
+      "\n"
+          + ")google/cloud/gkebackup/v1/gkebackup.pr"
           + "oto\022\031google.cloud.gkebackup.v1\032\034google/a"
           + "pi/annotations.proto\032\027google/api/client."
           + "proto\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032&google/cloud/"
-          + "gkebackup/v1/backup.proto\032+google/cloud/"
-          + "gkebackup/v1/backup_plan.proto\032\'google/c"
-          + "loud/gkebackup/v1/restore.proto\032,google/"
-          + "cloud/gkebackup/v1/restore_plan.proto\032&g"
-          + "oogle/cloud/gkebackup/v1/volume.proto\032#g"
-          + "oogle/longrunning/operations.proto\032\033goog"
-          + "le/protobuf/empty.proto\032 google/protobuf"
-          + "/field_mask.proto\032\037google/protobuf/times"
-          + "tamp.proto\"\200\002\n\021OperationMetadata\0224\n\013crea"
-          + "te_time\030\001 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.google.protob"
-          + "uf.TimestampB\003\340A\003\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021"
-          + "\n\004verb\030\004 \001(\tB\003\340A\003\022\033\n\016status_message\030\005 \001("
-          + "\tB\003\340A\003\022#\n\026requested_cancellation\030\006 \001(\010B\003"
-          + "\340A\003\022\030\n\013api_version\030\007 \001(\tB\003\340A\003\"\262\001\n\027Create"
-          + "BackupPlanRequest\0229\n\006parent\030\001 \001(\tB)\340A\002\372A"
-          + "#\n!locations.googleapis.com/Location\022?\n\013"
-          + "backup_plan\030\002 \001(\0132%.google.cloud.gkeback"
-          + "up.v1.BackupPlanB\003\340A\002\022\033\n\016backup_plan_id\030"
-          + "\003 \001(\tB\003\340A\002\"\260\001\n\026ListBackupPlansRequest\0229\n"
-          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.googlea"
-          + "pis.com/Location\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001"
-          + "\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001("
-          + "\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"\204\001\n\027ListBa"
-          + "ckupPlansResponse\022;\n\014backup_plans\030\001 \003(\0132"
-          + "%.google.cloud.gkebackup.v1.BackupPlan\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003"
-          + " \003(\t\"Q\n\024GetBackupPlanRequest\0229\n\004name\030\001 \001"
-          + "(\tB+\340A\002\372A%\n#gkebackup.googleapis.com/Bac"
-          + "kupPlan\"\220\001\n\027UpdateBackupPlanRequest\022?\n\013b"
-          + "ackup_plan\030\001 \001(\0132%.google.cloud.gkebacku"
-          + "p.v1.BackupPlanB\003\340A\002\0224\n\013update_mask\030\002 \001("
-          + "\0132\032.google.protobuf.FieldMaskB\003\340A\001\"g\n\027De"
-          + "leteBackupPlanRequest\0229\n\004name\030\001 \001(\tB+\340A\002"
-          + "\372A%\n#gkebackup.googleapis.com/BackupPlan"
-          + "\022\021\n\004etag\030\002 \001(\tB\003\340A\001\"\242\001\n\023CreateBackupRequ"
-          + "est\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#gkebackup.g"
-          + "oogleapis.com/BackupPlan\0226\n\006backup\030\002 \001(\013"
-          + "2!.google.cloud.gkebackup.v1.BackupB\003\340A\001"
-          + "\022\026\n\tbackup_id\030\003 \001(\tB\003\340A\001\"\256\001\n\022ListBackups"
-          + "Request\022;\n\006parent\030\001 \001(\tB+\340A\002\372A%\n#gkeback"
-          + "up.googleapis.com/BackupPlan\022\026\n\tpage_siz"
-          + "e\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340A\001\022\023\n"
-          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A"
-          + "\001\"b\n\023ListBackupsResponse\0222\n\007backups\030\001 \003("
-          + "\0132!.google.cloud.gkebackup.v1.Backup\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"I\n\020GetBackupReques"
-          + "t\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037gkebackup.googl"
-          + "eapis.com/Backup\"\203\001\n\023UpdateBackupRequest"
-          + "\0226\n\006backup\030\001 \001(\0132!.google.cloud.gkebacku"
-          + "p.v1.BackupB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032."
-          + "google.protobuf.FieldMaskB\003\340A\001\"s\n\023Delete"
-          + "BackupRequest\0225\n\004name\030\001 \001(\tB\'\340A\002\372A!\n\037gke"
-          + "backup.googleapis.com/Backup\022\021\n\004etag\030\002 \001"
-          + "(\tB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003\340A\001\"\260\001\n\030ListVolu"
-          + "meBackupsRequest\0227\n\006parent\030\001 \001(\tB\'\340A\002\372A!"
-          + "\n\037gkebackup.googleapis.com/Backup\022\026\n\tpag"
-          + "e_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_token\030\003 \001(\tB\003\340"
-          + "A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010order_by\030\005 \001("
-          + "\tB\003\340A\001\"u\n\031ListVolumeBackupsResponse\022?\n\016v"
-          + "olume_backups\030\001 \003(\0132\'.google.cloud.gkeba"
-          + "ckup.v1.VolumeBackup\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"U\n\026GetVolumeBackupRequest\022;\n\004name\030"
-          + "\001 \001(\tB-\340A\002\372A\'\n%gkebackup.googleapis.com/"
-          + "VolumeBackup\"\266\001\n\030CreateRestorePlanReques"
-          + "t\0229\n\006parent\030\001 \001(\tB)\340A\002\372A#\n!locations.goo"
-          + "gleapis.com/Location\022A\n\014restore_plan\030\002 \001"
-          + "(\0132&.google.cloud.gkebackup.v1.RestorePl"
-          + "anB\003\340A\002\022\034\n\017restore_plan_id\030\003 \001(\tB\003\340A\002\"\261\001"
-          + "\n\027ListRestorePlansRequest\0229\n\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\n!locations.googleapis.com/Loca"
-          + "tion\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\npage_tok"
-          + "en\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A\001\022\025\n\010or"
-          + "der_by\030\005 \001(\tB\003\340A\001\"\207\001\n\030ListRestorePlansRe"
-          + "sponse\022=\n\rrestore_plans\030\001 \003(\0132&.google.c"
-          + "loud.gkebackup.v1.RestorePlan\022\027\n\017next_pa"
-          + "ge_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"S\n\025G"
-          + "etRestorePlanRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372"
-          + "A&\n$gkebackup.googleapis.com/RestorePlan"
-          + "\"\223\001\n\030UpdateRestorePlanRequest\022A\n\014restore"
-          + "_plan\030\001 \001(\0132&.google.cloud.gkebackup.v1."
-          + "RestorePlanB\003\340A\002\0224\n\013update_mask\030\002 \001(\0132\032."
-          + "google.protobuf.FieldMaskB\003\340A\001\"}\n\030Delete"
-          + "RestorePlanRequest\022:\n\004name\030\001 \001(\tB,\340A\002\372A&"
-          + "\n$gkebackup.googleapis.com/RestorePlan\022\021"
-          + "\n\004etag\030\002 \001(\tB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003\340A\001\"\247\001"
-          + "\n\024CreateRestoreRequest\022<\n\006parent\030\001 \001(\tB,"
-          + "\340A\002\372A&\n$gkebackup.googleapis.com/Restore"
-          + "Plan\0228\n\007restore\030\002 \001(\0132\".google.cloud.gke"
-          + "backup.v1.RestoreB\003\340A\002\022\027\n\nrestore_id\030\003 \001"
-          + "(\tB\003\340A\002\"\260\001\n\023ListRestoresRequest\022<\n\006paren"
-          + "t\030\001 \001(\tB,\340A\002\372A&\n$gkebackup.googleapis.co"
-          + "m/RestorePlan\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
-          + "\npage_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003"
-          + "\340A\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"z\n\024ListRestor"
-          + "esResponse\0224\n\010restores\030\001 \003(\0132\".google.cl"
-          + "oud.gkebackup.v1.Restore\022\027\n\017next_page_to"
-          + "ken\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(\t\"K\n\021GetRes"
-          + "toreRequest\0226\n\004name\030\001 \001(\tB(\340A\002\372A\"\n gkeba"
-          + "ckup.googleapis.com/Restore\"\206\001\n\024UpdateRe"
-          + "storeRequest\0228\n\007restore\030\001 \001(\0132\".google.c"
-          + "loud.gkebackup.v1.RestoreB\003\340A\002\0224\n\013update"
-          + "_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB"
-          + "\003\340A\001\"u\n\024DeleteRestoreRequest\0226\n\004name\030\001 \001"
-          + "(\tB(\340A\002\372A\"\n gkebackup.googleapis.com/Res"
-          + "tore\022\021\n\004etag\030\002 \001(\tB\003\340A\001\022\022\n\005force\030\003 \001(\010B\003"
-          + "\340A\001\"\262\001\n\031ListVolumeRestoresRequest\0228\n\006par"
-          + "ent\030\001 \001(\tB(\340A\002\372A\"\n gkebackup.googleapis."
-          + "com/Restore\022\026\n\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\np"
-          + "age_token\030\003 \001(\tB\003\340A\001\022\023\n\006filter\030\004 \001(\tB\003\340A"
-          + "\001\022\025\n\010order_by\030\005 \001(\tB\003\340A\001\"x\n\032ListVolumeRe"
-          + "storesResponse\022A\n\017volume_restores\030\001 \003(\0132"
-          + "(.google.cloud.gkebackup.v1.VolumeRestor"
-          + "e\022\027\n\017next_page_token\030\002 \001(\t\"W\n\027GetVolumeR"
-          + "estoreRequest\022<\n\004name\030\001 \001(\tB.\340A\002\372A(\n&gke"
-          + "backup.googleapis.com/VolumeRestore\"[\n G"
-          + "etBackupIndexDownloadUrlRequest\0227\n\006backu"
-          + "p\030\001 \001(\tB\'\340A\002\372A!\n\037gkebackup.googleapis.co"
-          + "m/Backup\"<\n!GetBackupIndexDownloadUrlRes"
-          + "ponse\022\027\n\nsigned_url\030\001 \001(\tB\003\340A\0022\306*\n\014Backu"
-          + "pForGKE\022\362\001\n\020CreateBackupPlan\0222.google.cl"
-          + "oud.gkebackup.v1.CreateBackupPlanRequest"
-          + "\032\035.google.longrunning.Operation\"\212\001\312A\037\n\nB"
-          + "ackupPlan\022\021OperationMetadata\332A!parent,ba"
-          + "ckup_plan,backup_plan_id\202\323\344\223\002>\"//v1/{par"
-          + "ent=projects/*/locations/*}/backupPlans:"
-          + "\013backup_plan\022\272\001\n\017ListBackupPlans\0221.googl"
-          + "e.cloud.gkebackup.v1.ListBackupPlansRequ"
-          + "est\0322.google.cloud.gkebackup.v1.ListBack"
-          + "upPlansResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{p"
-          + "arent=projects/*/locations/*}/backupPlan"
-          + "s\022\247\001\n\rGetBackupPlan\022/.google.cloud.gkeba"
-          + "ckup.v1.GetBackupPlanRequest\032%.google.cl"
-          + "oud.gkebackup.v1.BackupPlan\">\332A\004name\202\323\344\223"
-          + "\0021\022//v1/{name=projects/*/locations/*/bac"
-          + "kupPlans/*}\022\364\001\n\020UpdateBackupPlan\0222.googl"
-          + "e.cloud.gkebackup.v1.UpdateBackupPlanReq"
-          + "uest\032\035.google.longrunning.Operation\"\214\001\312A"
-          + "\037\n\nBackupPlan\022\021OperationMetadata\332A\027backu"
-          + "p_plan,update_mask\202\323\344\223\002J2;/v1/{backup_pl"
-          + "an.name=projects/*/locations/*/backupPla"
-          + "ns/*}:\013backup_plan\022\322\001\n\020DeleteBackupPlan\022"
-          + "2.google.cloud.gkebackup.v1.DeleteBackup"
-          + "PlanRequest\032\035.google.longrunning.Operati"
-          + "on\"k\312A*\n\025google.protobuf.Empty\022\021Operatio"
-          + "nMetadata\332A\004name\202\323\344\223\0021*//v1/{name=projec"
-          + "ts/*/locations/*/backupPlans/*}\022\341\001\n\014Crea"
-          + "teBackup\022..google.cloud.gkebackup.v1.Cre"
-          + "ateBackupRequest\032\035.google.longrunning.Op"
-          + "eration\"\201\001\312A\033\n\006Backup\022\021OperationMetadata"
-          + "\332A\027parent,backup,backup_id\202\323\344\223\002C\"9/v1/{p"
-          + "arent=projects/*/locations/*/backupPlans"
-          + "/*}/backups:\006backup\022\270\001\n\013ListBackups\022-.go"
-          + "ogle.cloud.gkebackup.v1.ListBackupsReque"
-          + "st\032..google.cloud.gkebackup.v1.ListBacku"
-          + "psResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{parent"
-          + "=projects/*/locations/*/backupPlans/*}/b"
-          + "ackups\022\245\001\n\tGetBackup\022+.google.cloud.gkeb"
-          + "ackup.v1.GetBackupRequest\032!.google.cloud"
-          + ".gkebackup.v1.Backup\"H\332A\004name\202\323\344\223\002;\0229/v1"
-          + "/{name=projects/*/locations/*/backupPlan"
-          + "s/*/backups/*}\022\343\001\n\014UpdateBackup\022..google"
-          + ".cloud.gkebackup.v1.UpdateBackupRequest\032"
-          + "\035.google.longrunning.Operation\"\203\001\312A\033\n\006Ba"
-          + "ckup\022\021OperationMetadata\332A\022backup,update_"
-          + "mask\202\323\344\223\002J2@/v1/{backup.name=projects/*/"
-          + "locations/*/backupPlans/*/backups/*}:\006ba"
-          + "ckup\022\324\001\n\014DeleteBackup\022..google.cloud.gke"
-          + "backup.v1.DeleteBackupRequest\032\035.google.l"
-          + "ongrunning.Operation\"u\312A*\n\025google.protob"
-          + "uf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002;"
-          + "*9/v1/{name=projects/*/locations/*/backu"
-          + "pPlans/*/backups/*}\022\332\001\n\021ListVolumeBackup"
-          + "s\0223.google.cloud.gkebackup.v1.ListVolume"
-          + "BackupsRequest\0324.google.cloud.gkebackup."
-          + "v1.ListVolumeBackupsResponse\"Z\332A\006parent\202"
-          + "\323\344\223\002K\022I/v1/{parent=projects/*/locations/"
-          + "*/backupPlans/*/backups/*}/volumeBackups"
-          + "\022\307\001\n\017GetVolumeBackup\0221.google.cloud.gkeb"
-          + "ackup.v1.GetVolumeBackupRequest\032\'.google"
-          + ".cloud.gkebackup.v1.VolumeBackup\"X\332A\004nam"
-          + "e\202\323\344\223\002K\022I/v1/{name=projects/*/locations/"
-          + "*/backupPlans/*/backups/*/volumeBackups/"
-          + "*}\022\371\001\n\021CreateRestorePlan\0223.google.cloud."
-          + "gkebackup.v1.CreateRestorePlanRequest\032\035."
-          + "google.longrunning.Operation\"\217\001\312A \n\013Rest"
-          + "orePlan\022\021OperationMetadata\332A#parent,rest"
-          + "ore_plan,restore_plan_id\202\323\344\223\002@\"0/v1/{par"
-          + "ent=projects/*/locations/*}/restorePlans"
-          + ":\014restore_plan\022\276\001\n\020ListRestorePlans\0222.go"
-          + "ogle.cloud.gkebackup.v1.ListRestorePlans"
-          + "Request\0323.google.cloud.gkebackup.v1.List"
-          + "RestorePlansResponse\"A\332A\006parent\202\323\344\223\0022\0220/"
-          + "v1/{parent=projects/*/locations/*}/resto"
-          + "rePlans\022\253\001\n\016GetRestorePlan\0220.google.clou"
-          + "d.gkebackup.v1.GetRestorePlanRequest\032&.g"
-          + "oogle.cloud.gkebackup.v1.RestorePlan\"?\332A"
-          + "\004name\202\323\344\223\0022\0220/v1/{name=projects/*/locati"
-          + "ons/*/restorePlans/*}\022\373\001\n\021UpdateRestoreP"
-          + "lan\0223.google.cloud.gkebackup.v1.UpdateRe"
-          + "storePlanRequest\032\035.google.longrunning.Op"
-          + "eration\"\221\001\312A \n\013RestorePlan\022\021OperationMet"
-          + "adata\332A\030restore_plan,update_mask\202\323\344\223\002M2="
-          + "/v1/{restore_plan.name=projects/*/locati"
-          + "ons/*/restorePlans/*}:\014restore_plan\022\325\001\n\021"
-          + "DeleteRestorePlan\0223.google.cloud.gkeback"
-          + "up.v1.DeleteRestorePlanRequest\032\035.google."
-          + "longrunning.Operation\"l\312A*\n\025google.proto"
-          + "buf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
-          + "2*0/v1/{name=projects/*/locations/*/rest"
-          + "orePlans/*}\022\351\001\n\rCreateRestore\022/.google.c"
-          + "loud.gkebackup.v1.CreateRestoreRequest\032\035"
-          + ".google.longrunning.Operation\"\207\001\312A\034\n\007Res"
-          + "tore\022\021OperationMetadata\332A\031parent,restore"
-          + ",restore_id\202\323\344\223\002F\";/v1/{parent=projects/"
-          + "*/locations/*/restorePlans/*}/restores:\007"
-          + "restore\022\275\001\n\014ListRestores\022..google.cloud."
-          + "gkebackup.v1.ListRestoresRequest\032/.googl"
-          + "e.cloud.gkebackup.v1.ListRestoresRespons"
-          + "e\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=projects"
-          + "/*/locations/*/restorePlans/*}/restores\022"
-          + "\252\001\n\nGetRestore\022,.google.cloud.gkebackup."
-          + "v1.GetRestoreRequest\032\".google.cloud.gkeb"
-          + "ackup.v1.Restore\"J\332A\004name\202\323\344\223\002=\022;/v1/{na"
-          + "me=projects/*/locations/*/restorePlans/*"
-          + "/restores/*}\022\353\001\n\rUpdateRestore\022/.google."
-          + "cloud.gkebackup.v1.UpdateRestoreRequest\032"
-          + "\035.google.longrunning.Operation\"\211\001\312A\034\n\007Re"
-          + "store\022\021OperationMetadata\332A\023restore,updat"
-          + "e_mask\202\323\344\223\002N2C/v1/{restore.name=projects"
-          + "/*/locations/*/restorePlans/*/restores/*"
-          + "}:\007restore\022\330\001\n\rDeleteRestore\022/.google.cl"
-          + "oud.gkebackup.v1.DeleteRestoreRequest\032\035."
-          + "google.longrunning.Operation\"w\312A*\n\025googl"
-          + "e.protobuf.Empty\022\021OperationMetadata\332A\004na"
-          + "me\202\323\344\223\002=*;/v1/{name=projects/*/locations"
-          + "/*/restorePlans/*/restores/*}\022\340\001\n\022ListVo"
-          + "lumeRestores\0224.google.cloud.gkebackup.v1"
-          + ".ListVolumeRestoresRequest\0325.google.clou"
-          + "d.gkebackup.v1.ListVolumeRestoresRespons"
-          + "e\"]\332A\006parent\202\323\344\223\002N\022L/v1/{parent=projects"
-          + "/*/locations/*/restorePlans/*/restores/*"
-          + "}/volumeRestores\022\315\001\n\020GetVolumeRestore\0222."
-          + "google.cloud.gkebackup.v1.GetVolumeResto"
-          + "reRequest\032(.google.cloud.gkebackup.v1.Vo"
-          + "lumeRestore\"[\332A\004name\202\323\344\223\002N\022L/v1/{name=pr"
-          + "ojects/*/locations/*/restorePlans/*/rest"
-          + "ores/*/volumeRestores/*}\022\376\001\n\031GetBackupIn"
-          + "dexDownloadUrl\022;.google.cloud.gkebackup."
-          + "v1.GetBackupIndexDownloadUrlRequest\032<.go"
-          + "ogle.cloud.gkebackup.v1.GetBackupIndexDo"
-          + "wnloadUrlResponse\"f\332A\006backup\202\323\344\223\002W\022U/v1/"
-          + "{backup=projects/*/locations/*/backupPla"
-          + "ns/*/backups/*}:getBackupIndexDownloadUr"
-          + "l\032L\312A\030gkebackup.googleapis.com\322A.https:/"
-          + "/www.googleapis.com/auth/cloud-platformB"
-          + "\241\003\n\035com.google.cloud.gkebackup.v1B\016GKEBa"
-          + "ckupProtoP\001Z;cloud.google.com/go/gkeback"
-          + "up/apiv1/gkebackuppb;gkebackuppb\252\002\031Googl"
-          + "e.Cloud.GkeBackup.V1\312\002\031Google\\Cloud\\GkeB"
-          + "ackup\\V1\352\002\034Google::Cloud::GkeBackup::V1\352"
-          + "A^\n container.googleapis.com/Cluster\022:pr"
-          + "ojects/{project}/locations/{location}/cl"
-          + "usters/{cluster}\352Ax\n!cloudkms.googleapis"
-          + ".com/CryptoKey\022Sprojects/{project}/locat"
-          + "ions/{location}/keyRings/{key_ring}/cryp"
-          + "toKeys/{crypto_key}b\006proto3"
+          + "google/api/resource.proto\032&google/cloud/gkebackup/v1/backup.proto\032.google/cloud/"
+          + "gkebackup/v1/backup_channel.proto\032+google/cloud/gkebackup/v1/backup_plan.proto\0323"
+          + "google/cloud/gkebackup/v1/backup_plan_binding.proto\032\'google/cloud/gkebackup/v1/r"
+          + "estore.proto\032/google/cloud/gkebackup/v1/restore_channel.proto\032,google/cloud/gkeb"
+          + "ackup/v1/restore_plan.proto\0324google/cloud/gkebackup/v1/restore_plan_binding.prot"
+          + "o\032&google/cloud/gkebackup/v1/volume.prot"
+          + "o\032#google/longrunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\200\002\n"
+          + "\021OperationMetadata\0224\n"
+          + "\013create_time\030\001 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\023\n"
+          + "\006target\030\003 \001(\tB\003\340A\003\022\021\n"
+          + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
+          + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
+          + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003\"\262\001\n"
+          + "\027CreateBackupPlanRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022?\n"
+          + "\013backup_plan\030\002"
+          + " \001(\0132%.google.cloud.gkebackup.v1.BackupPlanB\003\340A\002\022\033\n"
+          + "\016backup_plan_id\030\003 \001(\tB\003\340A\002\"\260\001\n"
+          + "\026ListBackupPlansRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\204\001\n"
+          + "\027ListBackupPlansResponse\022;\n"
+          + "\014backup_plans\030\001 \003(\0132%.google.cloud.gkebackup.v1.BackupPlan\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"Q\n"
+          + "\024GetBackupPlanRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#gkebackup.googleapis.com/BackupPlan\"\220\001\n"
+          + "\027UpdateBackupPlanRequest\022?\n"
+          + "\013backup_plan\030\001"
+          + " \001(\0132%.google.cloud.gkebackup.v1.BackupPlanB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"g\n"
+          + "\027DeleteBackupPlanRequest\0229\n"
+          + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#gkebackup.googleapis.com/BackupPlan\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"\276\001\n"
+          + "\032CreateBackupChannelRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022E\n"
+          + "\016backup_channel\030\002"
+          + " \001(\0132(.google.cloud.gkebackup.v1.BackupChannelB\003\340A\002\022\036\n"
+          + "\021backup_channel_id\030\003 \001(\tB\003\340A\001\"\263\001\n"
+          + "\031ListBackupChannelsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\215\001\n"
+          + "\032ListBackupChannelsResponse\022A\n"
+          + "\017backup_channels\030\001"
+          + " \003(\0132(.google.cloud.gkebackup.v1.BackupChannel\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"W\n"
+          + "\027GetBackupChannelRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&gkebackup.googleapis.com/BackupChannel\"\231\001\n"
+          + "\032UpdateBackupChannelRequest\022E\n"
+          + "\016backup_channel\030\001"
+          + " \001(\0132(.google.cloud.gkebackup.v1.BackupChannelB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\201\001\n"
+          + "\032DeleteBackupChannelRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&gkebackup.googleapis.com/BackupChannel\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\274\001\n"
+          + "\035ListBackupPlanBindingsRequest\022>\n"
+          + "\006parent\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&gkebackup.googleapis.com/BackupChannel\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\232\001\n"
+          + "\036ListBackupPlanBindingsResponse\022J\n"
+          + "\024backup_plan_bindings\030\001"
+          + " \003(\0132,.google.cloud.gkebackup.v1.BackupPlanBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"_\n"
+          + "\033GetBackupPlanBindingRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
+          + "*gkebackup.googleapis.com/BackupPlanBinding\"\242\001\n"
+          + "\023CreateBackupRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#gkebackup.googleapis.com/BackupPlan\0226\n"
+          + "\006backup\030\002"
+          + " \001(\0132!.google.cloud.gkebackup.v1.BackupB\003\340A\001\022\026\n"
+          + "\tbackup_id\030\003 \001(\tB\003\340A\001\"\323\001\n"
+          + "\022ListBackupsRequest\022;\n"
+          + "\006parent\030\001 \001(\tB+\340A\002\372A%\n"
+          + "#gkebackup.googleapis.com/BackupPlan\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
+          + "\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\022#\n"
+          + "\026return_partial_success\030\006 \001(\010B\003\340A\001\"w\n"
+          + "\023ListBackupsResponse\0222\n"
+          + "\007backups\030\001 \003(\0132!.google.cloud.gkebackup.v1.Backup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"I\n"
+          + "\020GetBackupRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkebackup.googleapis.com/Backup\"\203\001\n"
+          + "\023UpdateBackupRequest\0226\n"
+          + "\006backup\030\001 \001(\0132!.google.cloud.gkebackup.v1.BackupB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"s\n"
+          + "\023DeleteBackupRequest\0225\n"
+          + "\004name\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkebackup.googleapis.com/Backup\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\260\001\n"
+          + "\030ListVolumeBackupsRequest\0227\n"
+          + "\006parent\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkebackup.googleapis.com/Backup\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"u\n"
+          + "\031ListVolumeBackupsResponse\022?\n"
+          + "\016volume_backups\030\001"
+          + " \003(\0132\'.google.cloud.gkebackup.v1.VolumeBackup\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"U\n"
+          + "\026GetVolumeBackupRequest\022;\n"
+          + "\004name\030\001 \001(\tB-\340A\002\372A\'\n"
+          + "%gkebackup.googleapis.com/VolumeBackup\"\266\001\n"
+          + "\030CreateRestorePlanRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022A\n"
+          + "\014restore_plan\030\002"
+          + " \001(\0132&.google.cloud.gkebackup.v1.RestorePlanB\003\340A\002\022\034\n"
+          + "\017restore_plan_id\030\003 \001(\tB\003\340A\002\"\261\001\n"
+          + "\027ListRestorePlansRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\207\001\n"
+          + "\030ListRestorePlansResponse\022=\n\r"
+          + "restore_plans\030\001 \003(\0132&.google.cloud.gkebackup.v1.RestorePlan\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"S\n"
+          + "\025GetRestorePlanRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$gkebackup.googleapis.com/RestorePlan\"\223\001\n"
+          + "\030UpdateRestorePlanRequest\022A\n"
+          + "\014restore_plan\030\001"
+          + " \001(\0132&.google.cloud.gkebackup.v1.RestorePlanB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"}\n"
+          + "\030DeleteRestorePlanRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$gkebackup.googleapis.com/RestorePlan\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\302\001\n"
+          + "\033CreateRestoreChannelRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022G\n"
+          + "\017restore_channel\030\002 \001(\0132).g"
+          + "oogle.cloud.gkebackup.v1.RestoreChannelB\003\340A\002\022\037\n"
+          + "\022restore_channel_id\030\003 \001(\tB\003\340A\001\"\264\001\n"
+          + "\032ListRestoreChannelsRequest\0229\n"
+          + "\006parent\030\001 \001(\tB)\340A\002\372A#\n"
+          + "!locations.googleapis.com/Location\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\220\001\n"
+          + "\033ListRestoreChannelsResponse\022C\n"
+          + "\020restore_channels\030\001 \003(\0132)"
+          + ".google.cloud.gkebackup.v1.RestoreChannel\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"Y\n"
+          + "\030GetRestoreChannelRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'gkebackup.googleapis.com/RestoreChannel\"\234\001\n"
+          + "\033UpdateRestoreChannelRequest\022G\n"
+          + "\017restore_channel\030\001 \001(\0132).go"
+          + "ogle.cloud.gkebackup.v1.RestoreChannelB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"o\n"
+          + "\033DeleteRestoreChannelRequest\022=\n"
+          + "\004name\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'gkebackup.googleapis.com/RestoreChannel\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\"\276\001\n"
+          + "\036ListRestorePlanBindingsRequest\022?\n"
+          + "\006parent\030\001 \001(\tB/\340A\002\372A)\n"
+          + "\'gkebackup.googleapis.com/RestoreChannel\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"\242\001\n"
+          + "\037ListRestorePlanBindingsResponse\022L\n"
+          + "\025restore_plan_bindings\030\001"
+          + " \003(\0132-.google.cloud.gkebackup.v1.RestorePlanBinding\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\030\n"
+          + "\013unreachable\030\003 \003(\tB\003\340A\006\"a\n"
+          + "\034GetRestorePlanBindingRequest\022A\n"
+          + "\004name\030\001 \001(\tB3\340A\002\372A-\n"
+          + "+gkebackup.googleapis.com/RestorePlanBinding\"\247\001\n"
+          + "\024CreateRestoreRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$gkebackup.googleapis.com/RestorePlan\0228\n"
+          + "\007restore\030\002"
+          + " \001(\0132\".google.cloud.gkebackup.v1.RestoreB\003\340A\002\022\027\n\n"
+          + "restore_id\030\003 \001(\tB\003\340A\002\"\260\001\n"
+          + "\023ListRestoresRequest\022<\n"
+          + "\006parent\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$gkebackup.googleapis.com/RestorePlan\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"z\n"
+          + "\024ListRestoresResponse\0224\n"
+          + "\010restores\030\001 \003(\0132\".google.cloud.gkebackup.v1.Restore\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\022\023\n"
+          + "\013unreachable\030\003 \003(\t\"K\n"
+          + "\021GetRestoreRequest\0226\n"
+          + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " gkebackup.googleapis.com/Restore\"\206\001\n"
+          + "\024UpdateRestoreRequest\0228\n"
+          + "\007restore\030\001"
+          + " \001(\0132\".google.cloud.gkebackup.v1.RestoreB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"u\n"
+          + "\024DeleteRestoreRequest\0226\n"
+          + "\004name\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " gkebackup.googleapis.com/Restore\022\021\n"
+          + "\004etag\030\002 \001(\tB\003\340A\001\022\022\n"
+          + "\005force\030\003 \001(\010B\003\340A\001\"\262\001\n"
+          + "\031ListVolumeRestoresRequest\0228\n"
+          + "\006parent\030\001 \001(\tB(\340A\002\372A\"\n"
+          + " gkebackup.googleapis.com/Restore\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\005 \001(\tB\003\340A\001\"x\n"
+          + "\032ListVolumeRestoresResponse\022A\n"
+          + "\017volume_restores\030\001"
+          + " \003(\0132(.google.cloud.gkebackup.v1.VolumeRestore\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"W\n"
+          + "\027GetVolumeRestoreRequest\022<\n"
+          + "\004name\030\001 \001(\tB.\340A\002\372A(\n"
+          + "&gkebackup.googleapis.com/VolumeRestore\"[\n"
+          + " GetBackupIndexDownloadUrlRequest\0227\n"
+          + "\006backup\030\001 \001(\tB\'\340A\002\372A!\n"
+          + "\037gkebackup.googleapis.com/Backup\"<\n"
+          + "!GetBackupIndexDownloadUrlResponse\022\027\n\n"
+          + "signed_url\030\001 \001(\tB\003\340A\0022\321C\n"
+          + "\014BackupForGKE\022\362\001\n"
+          + "\020CreateBackupPlan\0222.google.cloud.gkebac"
+          + "kup.v1.CreateBackupPlanRequest\032\035.google.longrunning.Operation\"\212\001\312A\037\n\n"
+          + "BackupPlan\022\021OperationMetadata\332A!parent,backup_plan,"
+          + "backup_plan_id\202\323\344\223\002>\"//v1/{parent=projec"
+          + "ts/*/locations/*}/backupPlans:\013backup_plan\022\272\001\n"
+          + "\017ListBackupPlans\0221.google.cloud.gkebackup.v1.ListBackupPlansRequest\0322.goog"
+          + "le.cloud.gkebackup.v1.ListBackupPlansRes"
+          + "ponse\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/backupPlans\022\247\001\n\r"
+          + "GetBackupPlan\022/.google.cloud.gkebackup.v1.Ge"
+          + "tBackupPlanRequest\032%.google.cloud.gkebac"
+          + "kup.v1.BackupPlan\">\332A\004name\202\323\344\223\0021\022//v1/{n"
+          + "ame=projects/*/locations/*/backupPlans/*}\022\364\001\n"
+          + "\020UpdateBackupPlan\0222.google.cloud.gk"
+          + "ebackup.v1.UpdateBackupPlanRequest\032\035.google.longrunning.Operation\"\214\001\312A\037\n\n"
+          + "BackupPlan\022\021OperationMetadata\332A\027backup_plan,upd"
+          + "ate_mask\202\323\344\223\002J2;/v1/{backup_plan.name=pr"
+          + "ojects/*/locations/*/backupPlans/*}:\013backup_plan\022\322\001\n"
+          + "\020DeleteBackupPlan\0222.google.c"
+          + "loud.gkebackup.v1.DeleteBackupPlanRequest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332"
+          + "A\004name\202\323\344\223\0021*//v1/{name=projects/*/locations/*/backupPlans/*}\022\207\002\n"
+          + "\023CreateBackupChannel\0225.google.cloud.gkebackup.v1.Create"
+          + "BackupChannelRequest\032\035.google.longrunning.Operation\"\231\001\312A\"\n\r"
+          + "BackupChannel\022\021OperationMetadata\332A\'parent,backup_channel,back"
+          + "up_channel_id\202\323\344\223\002D\"2/v1/{parent=project"
+          + "s/*/locations/*}/backupChannels:\016backup_channel\022\306\001\n"
+          + "\022ListBackupChannels\0224.google.cloud.gkebackup.v1.ListBackupChannelsReq"
+          + "uest\0325.google.cloud.gkebackup.v1.ListBac"
+          + "kupChannelsResponse\"C\332A\006parent\202\323\344\223\0024\0222/v"
+          + "1/{parent=projects/*/locations/*}/backupChannels\022\263\001\n"
+          + "\020GetBackupChannel\0222.google.cloud.gkebackup.v1.GetBackupChannelReques"
+          + "t\032(.google.cloud.gkebackup.v1.BackupChan"
+          + "nel\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*/locations/*/backupChannels/*}\022\211\002\n"
+          + "\023UpdateBackupChannel\0225.google.cloud.gkebackup."
+          + "v1.UpdateBackupChannelRequest\032\035.google.longrunning.Operation\"\233\001\312A\"\n\r"
+          + "BackupChannel\022\021OperationMetadata\332A\032backup_channel,up"
+          + "date_mask\202\323\344\223\002S2A/v1/{backup_channel.nam"
+          + "e=projects/*/locations/*/backupChannels/*}:\016backup_channel\022\333\001\n"
+          + "\023DeleteBackupChannel\0225.google.cloud.gkebackup.v1.DeleteBac"
+          + "kupChannelRequest\032\035.google.longrunning.Operation\"n\312A*\n"
+          + "\025google.protobuf.Empty\022\021Op"
+          + "erationMetadata\332A\004name\202\323\344\223\0024*2/v1/{name="
+          + "projects/*/locations/*/backupChannels/*}\022\347\001\n"
+          + "\026ListBackupPlanBindings\0228.google.cloud.gkebackup.v1.ListBackupPlanBindingsRe"
+          + "quest\0329.google.cloud.gkebackup.v1.ListBa"
+          + "ckupPlanBindingsResponse\"X\332A\006parent\202\323\344\223\002"
+          + "I\022G/v1/{parent=projects/*/locations/*/backupChannels/*}/backupPlanBindings\022\324\001\n"
+          + "\024GetBackupPlanBinding\0226.google.cloud.gkeba"
+          + "ckup.v1.GetBackupPlanBindingRequest\032,.google.cloud.gkebackup.v1.BackupPlanBindin"
+          + "g\"V\332A\004name\202\323\344\223\002I\022G/v1/{name=projects/*/l"
+          + "ocations/*/backupChannels/*/backupPlanBindings/*}\022\341\001\n"
+          + "\014CreateBackup\022..google.clou"
+          + "d.gkebackup.v1.CreateBackupRequest\032\035.google.longrunning.Operation\"\201\001\312A\033\n"
+          + "\006Backup\022\021OperationMetadata\332A\027parent,backup,backu"
+          + "p_id\202\323\344\223\002C\"9/v1/{parent=projects/*/locat"
+          + "ions/*/backupPlans/*}/backups:\006backup\022\270\001\n"
+          + "\013ListBackups\022-.google.cloud.gkebackup.v"
+          + "1.ListBackupsRequest\032..google.cloud.gkeb"
+          + "ackup.v1.ListBackupsResponse\"J\332A\006parent\202"
+          + "\323\344\223\002;\0229/v1/{parent=projects/*/locations/*/backupPlans/*}/backups\022\245\001\n"
+          + "\tGetBackup\022+.google.cloud.gkebackup.v1.GetBackupRequ"
+          + "est\032!.google.cloud.gkebackup.v1.Backup\"H"
+          + "\332A\004name\202\323\344\223\002;\0229/v1/{name=projects/*/locations/*/backupPlans/*/backups/*}\022\343\001\n"
+          + "\014UpdateBackup\022..google.cloud.gkebackup.v1.Up"
+          + "dateBackupRequest\032\035.google.longrunning.Operation\"\203\001\312A\033\n"
+          + "\006Backup\022\021OperationMetadat"
+          + "a\332A\022backup,update_mask\202\323\344\223\002J2@/v1/{backu"
+          + "p.name=projects/*/locations/*/backupPlans/*/backups/*}:\006backup\022\324\001\n"
+          + "\014DeleteBackup\022..google.cloud.gkebackup.v1.DeleteBackup"
+          + "Request\032\035.google.longrunning.Operation\"u\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMet"
+          + "adata\332A\004name\202\323\344\223\002;*9/v1/{name=projects/*"
+          + "/locations/*/backupPlans/*/backups/*}\022\332\001\n"
+          + "\021ListVolumeBackups\0223.google.cloud.gkeba"
+          + "ckup.v1.ListVolumeBackupsRequest\0324.google.cloud.gkebackup.v1.ListVolumeBackupsRe"
+          + "sponse\"Z\332A\006parent\202\323\344\223\002K\022I/v1/{parent=pro"
+          + "jects/*/locations/*/backupPlans/*/backups/*}/volumeBackups\022\307\001\n"
+          + "\017GetVolumeBackup\0221.google.cloud.gkebackup.v1.GetVolumeBack"
+          + "upRequest\032\'.google.cloud.gkebackup.v1.Vo"
+          + "lumeBackup\"X\332A\004name\202\323\344\223\002K\022I/v1/{name=pro"
+          + "jects/*/locations/*/backupPlans/*/backups/*/volumeBackups/*}\022\371\001\n"
+          + "\021CreateRestorePlan\0223.google.cloud.gkebackup.v1.CreateRes"
+          + "torePlanRequest\032\035.google.longrunning.Operation\"\217\001\312A \n"
+          + "\013RestorePlan\022\021OperationMetadata\332A#parent,restore_plan,restore_plan_"
+          + "id\202\323\344\223\002@\"0/v1/{parent=projects/*/locations/*}/restorePlans:\014restore_plan\022\276\001\n"
+          + "\020ListRestorePlans\0222.google.cloud.gkebackup.v"
+          + "1.ListRestorePlansRequest\0323.google.cloud.gkebackup.v1.ListRestorePlansResponse\"A"
+          + "\332A\006parent\202\323\344\223\0022\0220/v1/{parent=projects/*/locations/*}/restorePlans\022\253\001\n"
+          + "\016GetRestorePlan\0220.google.cloud.gkebackup.v1.GetRest"
+          + "orePlanRequest\032&.google.cloud.gkebackup."
+          + "v1.RestorePlan\"?\332A\004name\202\323\344\223\0022\0220/v1/{name"
+          + "=projects/*/locations/*/restorePlans/*}\022\373\001\n"
+          + "\021UpdateRestorePlan\0223.google.cloud.gke"
+          + "backup.v1.UpdateRestorePlanRequest\032\035.google.longrunning.Operation\"\221\001\312A"
+          + " \n"
+          + "\013RestorePlan\022\021OperationMetadata\332A\030restore_plan,u"
+          + "pdate_mask\202\323\344\223\002M2=/v1/{restore_plan.name"
+          + "=projects/*/locations/*/restorePlans/*}:\014restore_plan\022\325\001\n"
+          + "\021DeleteRestorePlan\0223.google.cloud.gkebackup.v1.DeleteRestorePla"
+          + "nRequest\032\035.google.longrunning.Operation\"l\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMe"
+          + "tadata\332A\004name\202\323\344\223\0022*0/v1/{name=projects/*/locations/*/restorePlans/*}\022\216\002\n"
+          + "\024CreateRestoreChannel\0226.google.cloud.gkebackup."
+          + "v1.CreateRestoreChannelRequest\032\035.google.longrunning.Operation\"\236\001\312A#\n"
+          + "\016RestoreChannel\022\021OperationMetadata\332A)parent,restore_"
+          + "channel,restore_channel_id\202\323\344\223\002F\"3/v1/{p"
+          + "arent=projects/*/locations/*}/restoreChannels:\017restore_channel\022\312\001\n"
+          + "\023ListRestoreChannels\0225.google.cloud.gkebackup.v1.ListR"
+          + "estoreChannelsRequest\0326.google.cloud.gke"
+          + "backup.v1.ListRestoreChannelsResponse\"D\332"
+          + "A\006parent\202\323\344\223\0025\0223/v1/{parent=projects/*/locations/*}/restoreChannels\022\267\001\n"
+          + "\021GetRestoreChannel\0223.google.cloud.gkebackup.v1.Ge"
+          + "tRestoreChannelRequest\032).google.cloud.gk"
+          + "ebackup.v1.RestoreChannel\"B\332A\004name\202\323\344\223\0025"
+          + "\0223/v1/{name=projects/*/locations/*/restoreChannels/*}\022\220\002\n"
+          + "\024UpdateRestoreChannel\0226.google.cloud.gkebackup.v1.UpdateRestore"
+          + "ChannelRequest\032\035.google.longrunning.Operation\"\240\001\312A#\n"
+          + "\016RestoreChannel\022\021OperationMe"
+          + "tadata\332A\033restore_channel,update_mask\202\323\344\223"
+          + "\002V2C/v1/{restore_channel.name=projects/*"
+          + "/locations/*/restoreChannels/*}:\017restore_channel\022\336\001\n"
+          + "\024DeleteRestoreChannel\0226.google.cloud.gkebackup.v1.DeleteRestoreChann"
+          + "elRequest\032\035.google.longrunning.Operation\"o\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationM"
+          + "etadata\332A\004name\202\323\344\223\0025*3/v1/{name=projects/*/locations/*/restoreChannels/*}\022\354\001\n"
+          + "\027ListRestorePlanBindings\0229.google.cloud.gke"
+          + "backup.v1.ListRestorePlanBindingsRequest\032:.google.cloud.gkebackup.v1.ListRestore"
+          + "PlanBindingsResponse\"Z\332A\006parent\202\323\344\223\002K\022I/"
+          + "v1/{parent=projects/*/locations/*/restoreChannels/*}/restorePlanBindings\022\331\001\n"
+          + "\025GetRestorePlanBinding\0227.google.cloud.gkebac"
+          + "kup.v1.GetRestorePlanBindingRequest\032-.google.cloud.gkebackup.v1.RestorePlanBindi"
+          + "ng\"X\332A\004name\202\323\344\223\002K\022I/v1/{name=projects/*/"
+          + "locations/*/restoreChannels/*/restorePlanBindings/*}\022\351\001\n\r"
+          + "CreateRestore\022/.google."
+          + "cloud.gkebackup.v1.CreateRestoreRequest\032\035.google.longrunning.Operation\"\207\001\312A\034\n"
+          + "\007Restore\022\021OperationMetadata\332A\031parent,restor"
+          + "e,restore_id\202\323\344\223\002F\";/v1/{parent=projects"
+          + "/*/locations/*/restorePlans/*}/restores:\007restore\022\275\001\n"
+          + "\014ListRestores\022..google.cloud.gkebackup.v1.ListRestoresRequest\032/.goog"
+          + "le.cloud.gkebackup.v1.ListRestoresRespon"
+          + "se\"L\332A\006parent\202\323\344\223\002=\022;/v1/{parent=project"
+          + "s/*/locations/*/restorePlans/*}/restores\022\252\001\n\n"
+          + "GetRestore\022,.google.cloud.gkebackup.v1.GetRestoreRequest\032\".google.cloud.gke"
+          + "backup.v1.Restore\"J\332A\004name\202\323\344\223\002=\022;/v1/{n"
+          + "ame=projects/*/locations/*/restorePlans/*/restores/*}\022\353\001\n\r"
+          + "UpdateRestore\022/.google"
+          + ".cloud.gkebackup.v1.UpdateRestoreRequest\032\035.google.longrunning.Operation\"\211\001\312A\034\n"
+          + "\007Restore\022\021OperationMetadata\332A\023restore,upda"
+          + "te_mask\202\323\344\223\002N2C/v1/{restore.name=project"
+          + "s/*/locations/*/restorePlans/*/restores/*}:\007restore\022\330\001\n\r"
+          + "DeleteRestore\022/.google.c"
+          + "loud.gkebackup.v1.DeleteRestoreRequest\032\035.google.longrunning.Operation\"w\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004n"
+          + "ame\202\323\344\223\002=*;/v1/{name=projects/*/locations/*/restorePlans/*/restores/*}\022\340\001\n"
+          + "\022ListVolumeRestores\0224.google.cloud.gkebackup.v"
+          + "1.ListVolumeRestoresRequest\0325.google.cloud.gkebackup.v1.ListVolumeRestoresRespon"
+          + "se\"]\332A\006parent\202\323\344\223\002N\022L/v1/{parent=project",
+      "s/*/locations/*/restorePlans/*/restores/"
+          + "*}/volumeRestores\022\315\001\n\020GetVolumeRestore\0222"
+          + ".google.cloud.gkebackup.v1.GetVolumeRest"
+          + "oreRequest\032(.google.cloud.gkebackup.v1.V"
+          + "olumeRestore\"[\332A\004name\202\323\344\223\002N\022L/v1/{name=p"
+          + "rojects/*/locations/*/restorePlans/*/res"
+          + "tores/*/volumeRestores/*}\022\376\001\n\031GetBackupI"
+          + "ndexDownloadUrl\022;.google.cloud.gkebackup"
+          + ".v1.GetBackupIndexDownloadUrlRequest\032<.g"
+          + "oogle.cloud.gkebackup.v1.GetBackupIndexD"
+          + "ownloadUrlResponse\"f\332A\006backup\202\323\344\223\002W\022U/v1"
+          + "/{backup=projects/*/locations/*/backupPl"
+          + "ans/*/backups/*}:getBackupIndexDownloadU"
+          + "rl\032L\312A\030gkebackup.googleapis.com\322A.https:"
+          + "//www.googleapis.com/auth/cloud-platform"
+          + "B\241\003\n\035com.google.cloud.gkebackup.v1B\016GKEB"
+          + "ackupProtoP\001Z;cloud.google.com/go/gkebac"
+          + "kup/apiv1/gkebackuppb;gkebackuppb\252\002\031Goog"
+          + "le.Cloud.GkeBackup.V1\312\002\031Google\\Cloud\\Gke"
+          + "Backup\\V1\352\002\034Google::Cloud::GkeBackup::V1"
+          + "\352A^\n container.googleapis.com/Cluster\022:p"
+          + "rojects/{project}/locations/{location}/c"
+          + "lusters/{cluster}\352Ax\n!cloudkms.googleapi"
+          + "s.com/CryptoKey\022Sprojects/{project}/loca"
+          + "tions/{location}/keyRings/{key_ring}/cry"
+          + "ptoKeys/{crypto_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -451,9 +695,13 @@ public final class GKEBackupProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.gkebackup.v1.BackupProto.getDescriptor(),
+              com.google.cloud.gkebackup.v1.BackupChannelProto.getDescriptor(),
               com.google.cloud.gkebackup.v1.BackupPlanProto.getDescriptor(),
+              com.google.cloud.gkebackup.v1.BackupPlanBindingProto.getDescriptor(),
               com.google.cloud.gkebackup.v1.RestoreProto.getDescriptor(),
+              com.google.cloud.gkebackup.v1.RestoreChannelProto.getDescriptor(),
               com.google.cloud.gkebackup.v1.RestorePlanProto.getDescriptor(),
+              com.google.cloud.gkebackup.v1.RestorePlanBindingProto.getDescriptor(),
               com.google.cloud.gkebackup.v1.VolumeProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
               com.google.protobuf.EmptyProto.getDescriptor(),
@@ -522,8 +770,80 @@ public final class GKEBackupProto {
             new java.lang.String[] {
               "Name", "Etag",
             });
-    internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_descriptor =
+    internal_static_google_cloud_gkebackup_v1_CreateBackupChannelRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_gkebackup_v1_CreateBackupChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_CreateBackupChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "BackupChannel", "BackupChannelId",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListBackupChannelsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_gkebackup_v1_ListBackupChannelsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListBackupChannelsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListBackupChannelsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_gkebackup_v1_ListBackupChannelsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListBackupChannelsResponse_descriptor,
+            new java.lang.String[] {
+              "BackupChannels", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkebackup_v1_GetBackupChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_gkebackup_v1_GetBackupChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_GetBackupChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkebackup_v1_UpdateBackupChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_gkebackup_v1_UpdateBackupChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_UpdateBackupChannelRequest_descriptor,
+            new java.lang.String[] {
+              "BackupChannel", "UpdateMask",
+            });
+    internal_static_google_cloud_gkebackup_v1_DeleteBackupChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_gkebackup_v1_DeleteBackupChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_DeleteBackupChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag", "Force",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListBackupPlanBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "BackupPlanBindings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkebackup_v1_GetBackupPlanBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_gkebackup_v1_GetBackupPlanBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_GetBackupPlanBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_descriptor =
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_CreateBackupRequest_descriptor,
@@ -531,23 +851,23 @@ public final class GKEBackupProto {
               "Parent", "Backup", "BackupId",
             });
     internal_static_google_cloud_gkebackup_v1_ListBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gkebackup_v1_ListBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListBackupsRequest_descriptor,
             new java.lang.String[] {
-              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy", "ReturnPartialSuccess",
             });
     internal_static_google_cloud_gkebackup_v1_ListBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gkebackup_v1_ListBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListBackupsResponse_descriptor,
             new java.lang.String[] {
-              "Backups", "NextPageToken",
+              "Backups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gkebackup_v1_GetBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gkebackup_v1_GetBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetBackupRequest_descriptor,
@@ -555,7 +875,7 @@ public final class GKEBackupProto {
               "Name",
             });
     internal_static_google_cloud_gkebackup_v1_UpdateBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gkebackup_v1_UpdateBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_UpdateBackupRequest_descriptor,
@@ -563,7 +883,7 @@ public final class GKEBackupProto {
               "Backup", "UpdateMask",
             });
     internal_static_google_cloud_gkebackup_v1_DeleteBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_gkebackup_v1_DeleteBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_DeleteBackupRequest_descriptor,
@@ -571,7 +891,7 @@ public final class GKEBackupProto {
               "Name", "Etag", "Force",
             });
     internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsRequest_descriptor,
@@ -579,7 +899,7 @@ public final class GKEBackupProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListVolumeBackupsResponse_descriptor,
@@ -587,7 +907,7 @@ public final class GKEBackupProto {
               "VolumeBackups", "NextPageToken",
             });
     internal_static_google_cloud_gkebackup_v1_GetVolumeBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_gkebackup_v1_GetVolumeBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetVolumeBackupRequest_descriptor,
@@ -595,7 +915,7 @@ public final class GKEBackupProto {
               "Name",
             });
     internal_static_google_cloud_gkebackup_v1_CreateRestorePlanRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_gkebackup_v1_CreateRestorePlanRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_CreateRestorePlanRequest_descriptor,
@@ -603,7 +923,7 @@ public final class GKEBackupProto {
               "Parent", "RestorePlan", "RestorePlanId",
             });
     internal_static_google_cloud_gkebackup_v1_ListRestorePlansRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_gkebackup_v1_ListRestorePlansRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListRestorePlansRequest_descriptor,
@@ -611,7 +931,7 @@ public final class GKEBackupProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gkebackup_v1_ListRestorePlansResponse_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_gkebackup_v1_ListRestorePlansResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListRestorePlansResponse_descriptor,
@@ -619,7 +939,7 @@ public final class GKEBackupProto {
               "RestorePlans", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gkebackup_v1_GetRestorePlanRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_gkebackup_v1_GetRestorePlanRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetRestorePlanRequest_descriptor,
@@ -627,7 +947,7 @@ public final class GKEBackupProto {
               "Name",
             });
     internal_static_google_cloud_gkebackup_v1_UpdateRestorePlanRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_gkebackup_v1_UpdateRestorePlanRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_UpdateRestorePlanRequest_descriptor,
@@ -635,15 +955,87 @@ public final class GKEBackupProto {
               "RestorePlan", "UpdateMask",
             });
     internal_static_google_cloud_gkebackup_v1_DeleteRestorePlanRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_gkebackup_v1_DeleteRestorePlanRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_DeleteRestorePlanRequest_descriptor,
             new java.lang.String[] {
               "Name", "Etag", "Force",
             });
+    internal_static_google_cloud_gkebackup_v1_CreateRestoreChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(31);
+    internal_static_google_cloud_gkebackup_v1_CreateRestoreChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_CreateRestoreChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "RestoreChannel", "RestoreChannelId",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(32);
+    internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(33);
+    internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListRestoreChannelsResponse_descriptor,
+            new java.lang.String[] {
+              "RestoreChannels", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkebackup_v1_GetRestoreChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(34);
+    internal_static_google_cloud_gkebackup_v1_GetRestoreChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_GetRestoreChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_gkebackup_v1_UpdateRestoreChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(35);
+    internal_static_google_cloud_gkebackup_v1_UpdateRestoreChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_UpdateRestoreChannelRequest_descriptor,
+            new java.lang.String[] {
+              "RestoreChannel", "UpdateMask",
+            });
+    internal_static_google_cloud_gkebackup_v1_DeleteRestoreChannelRequest_descriptor =
+        getDescriptor().getMessageTypes().get(36);
+    internal_static_google_cloud_gkebackup_v1_DeleteRestoreChannelRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_DeleteRestoreChannelRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "Etag",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(38);
+    internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_ListRestorePlanBindingsResponse_descriptor,
+            new java.lang.String[] {
+              "RestorePlanBindings", "NextPageToken", "Unreachable",
+            });
+    internal_static_google_cloud_gkebackup_v1_GetRestorePlanBindingRequest_descriptor =
+        getDescriptor().getMessageTypes().get(39);
+    internal_static_google_cloud_gkebackup_v1_GetRestorePlanBindingRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gkebackup_v1_GetRestorePlanBindingRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_CreateRestoreRequest_descriptor,
@@ -651,7 +1043,7 @@ public final class GKEBackupProto {
               "Parent", "Restore", "RestoreId",
             });
     internal_static_google_cloud_gkebackup_v1_ListRestoresRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_gkebackup_v1_ListRestoresRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListRestoresRequest_descriptor,
@@ -659,7 +1051,7 @@ public final class GKEBackupProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gkebackup_v1_ListRestoresResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_gkebackup_v1_ListRestoresResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListRestoresResponse_descriptor,
@@ -667,7 +1059,7 @@ public final class GKEBackupProto {
               "Restores", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gkebackup_v1_GetRestoreRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_gkebackup_v1_GetRestoreRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetRestoreRequest_descriptor,
@@ -675,7 +1067,7 @@ public final class GKEBackupProto {
               "Name",
             });
     internal_static_google_cloud_gkebackup_v1_UpdateRestoreRequest_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_gkebackup_v1_UpdateRestoreRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_UpdateRestoreRequest_descriptor,
@@ -683,7 +1075,7 @@ public final class GKEBackupProto {
               "Restore", "UpdateMask",
             });
     internal_static_google_cloud_gkebackup_v1_DeleteRestoreRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_gkebackup_v1_DeleteRestoreRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_DeleteRestoreRequest_descriptor,
@@ -691,7 +1083,7 @@ public final class GKEBackupProto {
               "Name", "Etag", "Force",
             });
     internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresRequest_descriptor,
@@ -699,7 +1091,7 @@ public final class GKEBackupProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresResponse_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_ListVolumeRestoresResponse_descriptor,
@@ -707,7 +1099,7 @@ public final class GKEBackupProto {
               "VolumeRestores", "NextPageToken",
             });
     internal_static_google_cloud_gkebackup_v1_GetVolumeRestoreRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_gkebackup_v1_GetVolumeRestoreRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetVolumeRestoreRequest_descriptor,
@@ -715,7 +1107,7 @@ public final class GKEBackupProto {
               "Name",
             });
     internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlRequest_descriptor,
@@ -723,7 +1115,7 @@ public final class GKEBackupProto {
               "Backup",
             });
     internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlResponse_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkebackup_v1_GetBackupIndexDownloadUrlResponse_descriptor,
@@ -747,9 +1139,13 @@ public final class GKEBackupProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.gkebackup.v1.BackupProto.getDescriptor();
+    com.google.cloud.gkebackup.v1.BackupChannelProto.getDescriptor();
     com.google.cloud.gkebackup.v1.BackupPlanProto.getDescriptor();
+    com.google.cloud.gkebackup.v1.BackupPlanBindingProto.getDescriptor();
     com.google.cloud.gkebackup.v1.RestoreProto.getDescriptor();
+    com.google.cloud.gkebackup.v1.RestoreChannelProto.getDescriptor();
     com.google.cloud.gkebackup.v1.RestorePlanProto.getDescriptor();
+    com.google.cloud.gkebackup.v1.RestorePlanBindingProto.getDescriptor();
     com.google.cloud.gkebackup.v1.VolumeProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();

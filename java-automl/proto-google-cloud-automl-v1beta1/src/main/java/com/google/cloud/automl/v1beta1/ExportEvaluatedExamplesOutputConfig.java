@@ -62,6 +62,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ExportEvaluatedExamplesOutputConfig)
     ExportEvaluatedExamplesOutputConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExportEvaluatedExamplesOutputConfig.newBuilder() to construct.
   private ExportEvaluatedExamplesOutputConfig(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -107,6 +108,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     private DestinationCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -138,6 +140,7 @@ public final class ExportEvaluatedExamplesOutputConfig
   }
 
   public static final int BIGQUERY_DESTINATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public final class ExportEvaluatedExamplesOutputConfig
   public boolean hasBigqueryDestination() {
     return destinationCase_ == 2;
   }
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     }
     return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -365,6 +370,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +626,7 @@ public final class ExportEvaluatedExamplesOutputConfig
             com.google.cloud.automl.v1beta1.BigQueryDestination.Builder,
             com.google.cloud.automl.v1beta1.BigQueryDestinationOrBuilder>
         bigqueryDestinationBuilder_;
+
     /**
      *
      *
@@ -635,6 +642,7 @@ public final class ExportEvaluatedExamplesOutputConfig
     public boolean hasBigqueryDestination() {
       return destinationCase_ == 2;
     }
+
     /**
      *
      *
@@ -660,6 +668,7 @@ public final class ExportEvaluatedExamplesOutputConfig
         return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -683,6 +692,7 @@ public final class ExportEvaluatedExamplesOutputConfig
       destinationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +713,7 @@ public final class ExportEvaluatedExamplesOutputConfig
       destinationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -737,6 +748,7 @@ public final class ExportEvaluatedExamplesOutputConfig
       destinationCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +774,7 @@ public final class ExportEvaluatedExamplesOutputConfig
       }
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class ExportEvaluatedExamplesOutputConfig
         getBigqueryDestinationBuilder() {
       return getBigqueryDestinationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class ExportEvaluatedExamplesOutputConfig
         return com.google.cloud.automl.v1beta1.BigQueryDestination.getDefaultInstance();
       }
     }
+
     /**
      *
      *

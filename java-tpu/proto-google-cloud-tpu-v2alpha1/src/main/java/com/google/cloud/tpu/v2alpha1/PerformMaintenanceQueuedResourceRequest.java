@@ -35,6 +35,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.PerformMaintenanceQueuedResourceRequest)
     PerformMaintenanceQueuedResourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PerformMaintenanceQueuedResourceRequest.newBuilder() to construct.
   private PerformMaintenanceQueuedResourceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class PerformMaintenanceQueuedResourceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class PerformMaintenanceQueuedResourceRequest
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList nodeNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class PerformMaintenanceQueuedResourceRequest
   public com.google.protobuf.ProtocolStringList getNodeNamesList() {
     return nodeNames_;
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class PerformMaintenanceQueuedResourceRequest
   public int getNodeNamesCount() {
     return nodeNames_.size();
   }
+
   /**
    *
    *
@@ -172,6 +178,7 @@ public final class PerformMaintenanceQueuedResourceRequest
   public java.lang.String getNodeNames(int index) {
     return nodeNames_.get(index);
   }
+
   /**
    *
    *
@@ -365,6 +372,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +587,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class PerformMaintenanceQueuedResourceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class PerformMaintenanceQueuedResourceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       nodeNames_.makeImmutable();
       return nodeNames_;
     }
+
     /**
      *
      *
@@ -737,6 +752,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     public int getNodeNamesCount() {
       return nodeNames_.size();
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     public java.lang.String getNodeNames(int index) {
       return nodeNames_.get(index);
     }
+
     /**
      *
      *
@@ -767,6 +784,7 @@ public final class PerformMaintenanceQueuedResourceRequest
     public com.google.protobuf.ByteString getNodeNamesBytes(int index) {
       return nodeNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +851,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +870,7 @@ public final class PerformMaintenanceQueuedResourceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

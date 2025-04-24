@@ -34,6 +34,7 @@ public interface ListAccountLabelsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.AccountLabel account_labels = 1;</code>
    */
   java.util.List<com.google.shopping.css.v1.AccountLabel> getAccountLabelsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAccountLabelsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.AccountLabel account_labels = 1;</code>
    */
   com.google.shopping.css.v1.AccountLabel getAccountLabels(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAccountLabelsResponseOrBuilder
    * <code>repeated .google.shopping.css.v1.AccountLabel account_labels = 1;</code>
    */
   int getAccountLabelsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAccountLabelsResponseOrBuilder
    */
   java.util.List<? extends com.google.shopping.css.v1.AccountLabelOrBuilder>
       getAccountLabelsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListAccountLabelsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The message.
    */
   java.lang.String getMessage();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The ruleType.
    */
   java.lang.String getRuleType();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The rule.
    */
   java.lang.String getRule();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The pipelineUid.
    */
   java.lang.String getPipelineUid();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The deliveryPipeline.
    */
   java.lang.String getDeliveryPipeline();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The targetUid.
    */
   java.lang.String getTargetUid();
+
   /**
    *
    *
@@ -189,6 +195,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The target.
    */
   java.lang.String getTarget();
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The enum numeric value on the wire for invoker.
    */
   int getInvokerValue();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The deployPolicy.
    */
   java.lang.String getDeployPolicy();
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The deployPolicyUid.
    */
   java.lang.String getDeployPolicyUid();
+
   /**
    *
    *
@@ -307,6 +317,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The enum numeric value on the wire for verdict.
    */
   int getVerdictValue();
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    */
   java.util.List<com.google.cloud.deploy.v1.DeployPolicyEvaluationEvent.PolicyVerdictOverride>
       getOverridesList();
+
   /**
    *
    *
@@ -351,6 +363,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return The count of overrides.
    */
   int getOverridesCount();
+
   /**
    *
    *
@@ -368,6 +381,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    */
   com.google.cloud.deploy.v1.DeployPolicyEvaluationEvent.PolicyVerdictOverride getOverrides(
       int index);
+
   /**
    *
    *
@@ -383,6 +397,7 @@ public interface DeployPolicyEvaluationEventOrBuilder
    * @return A list containing the enum numeric values on the wire for overrides.
    */
   java.util.List<java.lang.Integer> getOverridesValueList();
+
   /**
    *
    *

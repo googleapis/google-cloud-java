@@ -34,6 +34,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.devtools.cloudbuild.v1.PubsubConfig)
     PubsubConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PubsubConfig.newBuilder() to construct.
   private PubsubConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -141,6 +142,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -151,6 +153,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>OK = 1;</code>
      */
     public static final int OK_VALUE = 1;
+
     /**
      *
      *
@@ -161,6 +164,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SUBSCRIPTION_DELETED = 2;</code>
      */
     public static final int SUBSCRIPTION_DELETED_VALUE = 2;
+
     /**
      *
      *
@@ -171,6 +175,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>TOPIC_DELETED = 3;</code>
      */
     public static final int TOPIC_DELETED_VALUE = 3;
+
     /**
      *
      *
@@ -273,6 +278,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object subscription_ = "";
+
   /**
    *
    *
@@ -299,6 +305,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -330,6 +337,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
+
   /**
    *
    *
@@ -354,6 +362,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -383,6 +392,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
@@ -406,6 +416,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -432,6 +443,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 4;
   private int state_ = 0;
+
   /**
    *
    *
@@ -448,6 +460,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -651,6 +664,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -878,6 +892,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object subscription_ = "";
+
     /**
      *
      *
@@ -903,6 +918,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -928,6 +944,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -952,6 +969,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +990,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -999,6 +1018,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -1022,6 +1042,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1045,6 +1066,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1067,6 +1089,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1108,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1134,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
@@ -1132,6 +1157,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1154,6 +1180,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1202,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1192,6 +1220,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1216,6 +1245,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1232,6 +1262,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1251,6 +1282,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1269,6 +1301,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloudbuild.v1.PubsubConfig.State.forNumber(state_);
       return result == null ? com.google.cloudbuild.v1.PubsubConfig.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1291,6 +1324,7 @@ public final class PubsubConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

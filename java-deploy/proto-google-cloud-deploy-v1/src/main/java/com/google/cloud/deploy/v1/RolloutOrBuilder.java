@@ -38,6 +38,7 @@ public interface RolloutOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface RolloutOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface RolloutOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -133,9 +137,11 @@ public interface RolloutOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -150,6 +156,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface RolloutOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface RolloutOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -223,9 +232,11 @@ public interface RolloutOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -246,6 +257,7 @@ public interface RolloutOrBuilder
    * <code>map&lt;string, string&gt; labels = 5;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -270,6 +282,7 @@ public interface RolloutOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -304,6 +317,7 @@ public interface RolloutOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -317,6 +331,7 @@ public interface RolloutOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -342,6 +357,7 @@ public interface RolloutOrBuilder
    * @return Whether the approveTime field is set.
    */
   boolean hasApproveTime();
+
   /**
    *
    *
@@ -355,6 +371,7 @@ public interface RolloutOrBuilder
    * @return The approveTime.
    */
   com.google.protobuf.Timestamp getApproveTime();
+
   /**
    *
    *
@@ -380,6 +397,7 @@ public interface RolloutOrBuilder
    * @return Whether the enqueueTime field is set.
    */
   boolean hasEnqueueTime();
+
   /**
    *
    *
@@ -393,6 +411,7 @@ public interface RolloutOrBuilder
    * @return The enqueueTime.
    */
   com.google.protobuf.Timestamp getEnqueueTime();
+
   /**
    *
    *
@@ -419,6 +438,7 @@ public interface RolloutOrBuilder
    * @return Whether the deployStartTime field is set.
    */
   boolean hasDeployStartTime();
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public interface RolloutOrBuilder
    * @return The deployStartTime.
    */
   com.google.protobuf.Timestamp getDeployStartTime();
+
   /**
    *
    *
@@ -460,6 +481,7 @@ public interface RolloutOrBuilder
    * @return Whether the deployEndTime field is set.
    */
   boolean hasDeployEndTime();
+
   /**
    *
    *
@@ -474,6 +496,7 @@ public interface RolloutOrBuilder
    * @return The deployEndTime.
    */
   com.google.protobuf.Timestamp getDeployEndTime();
+
   /**
    *
    *
@@ -499,6 +522,7 @@ public interface RolloutOrBuilder
    * @return The targetId.
    */
   java.lang.String getTargetId();
+
   /**
    *
    *
@@ -526,6 +550,7 @@ public interface RolloutOrBuilder
    * @return The enum numeric value on the wire for approvalState.
    */
   int getApprovalStateValue();
+
   /**
    *
    *
@@ -555,6 +580,7 @@ public interface RolloutOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -583,6 +609,7 @@ public interface RolloutOrBuilder
    * @return The failureReason.
    */
   java.lang.String getFailureReason();
+
   /**
    *
    *
@@ -613,6 +640,7 @@ public interface RolloutOrBuilder
    * @return The deployingBuild.
    */
   java.lang.String getDeployingBuild();
+
   /**
    *
    *
@@ -644,6 +672,7 @@ public interface RolloutOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -674,6 +703,7 @@ public interface RolloutOrBuilder
    * @return The enum numeric value on the wire for deployFailureCause.
    */
   int getDeployFailureCauseValue();
+
   /**
    *
    *
@@ -702,6 +732,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.deploy.v1.Phase> getPhasesList();
+
   /**
    *
    *
@@ -714,6 +745,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   com.google.cloud.deploy.v1.Phase getPhases(int index);
+
   /**
    *
    *
@@ -726,6 +758,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   int getPhasesCount();
+
   /**
    *
    *
@@ -738,6 +771,7 @@ public interface RolloutOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.deploy.v1.PhaseOrBuilder> getPhasesOrBuilderList();
+
   /**
    *
    *
@@ -765,6 +799,7 @@ public interface RolloutOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -779,6 +814,7 @@ public interface RolloutOrBuilder
    * @return The metadata.
    */
   com.google.cloud.deploy.v1.Metadata getMetadata();
+
   /**
    *
    *
@@ -805,6 +841,7 @@ public interface RolloutOrBuilder
    * @return The controllerRollout.
    */
   java.lang.String getControllerRollout();
+
   /**
    *
    *
@@ -832,6 +869,7 @@ public interface RolloutOrBuilder
    * @return The rollbackOfRollout.
    */
   java.lang.String getRollbackOfRollout();
+
   /**
    *
    *
@@ -860,6 +898,7 @@ public interface RolloutOrBuilder
    * @return A list containing the rolledBackByRollouts.
    */
   java.util.List<java.lang.String> getRolledBackByRolloutsList();
+
   /**
    *
    *
@@ -874,6 +913,7 @@ public interface RolloutOrBuilder
    * @return The count of rolledBackByRollouts.
    */
   int getRolledBackByRolloutsCount();
+
   /**
    *
    *
@@ -889,6 +929,7 @@ public interface RolloutOrBuilder
    * @return The rolledBackByRollouts at the given index.
    */
   java.lang.String getRolledBackByRollouts(int index);
+
   /**
    *
    *
@@ -918,6 +959,7 @@ public interface RolloutOrBuilder
    * @return The activeRepairAutomationRun.
    */
   java.lang.String getActiveRepairAutomationRun();
+
   /**
    *
    *

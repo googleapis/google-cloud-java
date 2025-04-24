@@ -53,6 +53,7 @@ public interface JobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -100,6 +101,7 @@ public interface JobOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -130,6 +132,7 @@ public interface JobOrBuilder
    * @return Whether the pubsubTarget field is set.
    */
   boolean hasPubsubTarget();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface JobOrBuilder
    * @return The pubsubTarget.
    */
   com.google.cloud.scheduler.v1.PubsubTarget getPubsubTarget();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public interface JobOrBuilder
    * @return Whether the appEngineHttpTarget field is set.
    */
   boolean hasAppEngineHttpTarget();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface JobOrBuilder
    * @return The appEngineHttpTarget.
    */
   com.google.cloud.scheduler.v1.AppEngineHttpTarget getAppEngineHttpTarget();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface JobOrBuilder
    * @return Whether the httpTarget field is set.
    */
   boolean hasHttpTarget();
+
   /**
    *
    *
@@ -212,6 +219,7 @@ public interface JobOrBuilder
    * @return The httpTarget.
    */
   com.google.cloud.scheduler.v1.HttpTarget getHttpTarget();
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public interface JobOrBuilder
    * @return The schedule.
    */
   java.lang.String getSchedule();
+
   /**
    *
    *
@@ -323,6 +332,7 @@ public interface JobOrBuilder
    * @return The timeZone.
    */
   java.lang.String getTimeZone();
+
   /**
    *
    *
@@ -359,6 +369,7 @@ public interface JobOrBuilder
    * @return Whether the userUpdateTime field is set.
    */
   boolean hasUserUpdateTime();
+
   /**
    *
    *
@@ -373,6 +384,7 @@ public interface JobOrBuilder
    * @return The userUpdateTime.
    */
   com.google.protobuf.Timestamp getUserUpdateTime();
+
   /**
    *
    *
@@ -400,6 +412,7 @@ public interface JobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -427,6 +440,7 @@ public interface JobOrBuilder
    * @return Whether the status field is set.
    */
   boolean hasStatus();
+
   /**
    *
    *
@@ -439,6 +453,7 @@ public interface JobOrBuilder
    * @return The status.
    */
   com.google.rpc.Status getStatus();
+
   /**
    *
    *
@@ -466,6 +481,7 @@ public interface JobOrBuilder
    * @return Whether the scheduleTime field is set.
    */
   boolean hasScheduleTime();
+
   /**
    *
    *
@@ -482,6 +498,7 @@ public interface JobOrBuilder
    * @return The scheduleTime.
    */
   com.google.protobuf.Timestamp getScheduleTime();
+
   /**
    *
    *
@@ -511,6 +528,7 @@ public interface JobOrBuilder
    * @return Whether the lastAttemptTime field is set.
    */
   boolean hasLastAttemptTime();
+
   /**
    *
    *
@@ -525,6 +543,7 @@ public interface JobOrBuilder
    * @return The lastAttemptTime.
    */
   com.google.protobuf.Timestamp getLastAttemptTime();
+
   /**
    *
    *
@@ -550,6 +569,7 @@ public interface JobOrBuilder
    * @return Whether the retryConfig field is set.
    */
   boolean hasRetryConfig();
+
   /**
    *
    *
@@ -562,6 +582,7 @@ public interface JobOrBuilder
    * @return The retryConfig.
    */
   com.google.cloud.scheduler.v1.RetryConfig getRetryConfig();
+
   /**
    *
    *
@@ -606,6 +627,7 @@ public interface JobOrBuilder
    * @return Whether the attemptDeadline field is set.
    */
   boolean hasAttemptDeadline();
+
   /**
    *
    *
@@ -639,6 +661,7 @@ public interface JobOrBuilder
    * @return The attemptDeadline.
    */
   com.google.protobuf.Duration getAttemptDeadline();
+
   /**
    *
    *

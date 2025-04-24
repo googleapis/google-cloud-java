@@ -37,6 +37,7 @@ public interface IsInstanceUpgradeableRequestOrBuilder
    * @return The notebookInstance.
    */
   java.lang.String getNotebookInstance();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface IsInstanceUpgradeableRequestOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *

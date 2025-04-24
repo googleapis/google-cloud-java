@@ -36,6 +36,7 @@ public interface EntityOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface EntityOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   int getMetadataCount();
+
   /**
    *
    *
@@ -100,9 +103,11 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   boolean containsMetadata(java.lang.String key);
+
   /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getMetadata();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface EntityOrBuilder
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
+
   /**
    *
    *
@@ -133,6 +139,7 @@ public interface EntityOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface EntityOrBuilder
    * <code>repeated .google.cloud.language.v2.EntityMention mentions = 5;</code>
    */
   java.util.List<com.google.cloud.language.v2.EntityMention> getMentionsList();
+
   /**
    *
    *
@@ -169,6 +177,7 @@ public interface EntityOrBuilder
    * <code>repeated .google.cloud.language.v2.EntityMention mentions = 5;</code>
    */
   com.google.cloud.language.v2.EntityMention getMentions(int index);
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface EntityOrBuilder
    * <code>repeated .google.cloud.language.v2.EntityMention mentions = 5;</code>
    */
   int getMentionsCount();
+
   /**
    *
    *
@@ -192,6 +202,7 @@ public interface EntityOrBuilder
    */
   java.util.List<? extends com.google.cloud.language.v2.EntityMentionOrBuilder>
       getMentionsOrBuilderList();
+
   /**
    *
    *
@@ -219,6 +230,7 @@ public interface EntityOrBuilder
    * @return Whether the sentiment field is set.
    */
   boolean hasSentiment();
+
   /**
    *
    *
@@ -234,6 +246,7 @@ public interface EntityOrBuilder
    * @return The sentiment.
    */
   com.google.cloud.language.v2.Sentiment getSentiment();
+
   /**
    *
    *

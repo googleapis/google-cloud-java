@@ -34,6 +34,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ImportRagFilesRequest)
     ImportRagFilesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportRagFilesRequest.newBuilder() to construct.
   private ImportRagFilesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
 
   public static final int IMPORT_RAG_FILES_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.ImportRagFilesConfig importRagFilesConfig_;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
   public boolean hasImportRagFilesConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.aiplatform.v1.ImportRagFilesConfig.getDefaultInstance()
         : importRagFilesConfig_;
   }
+
   /**
    *
    *
@@ -361,6 +367,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +586,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -605,6 +613,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -631,6 +640,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -656,6 +666,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
             com.google.cloud.aiplatform.v1.ImportRagFilesConfig.Builder,
             com.google.cloud.aiplatform.v1.ImportRagFilesConfigOrBuilder>
         importRagFilesConfigBuilder_;
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
     public boolean hasImportRagFilesConfig() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
         return importRagFilesConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +819,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +853,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getImportRagFilesConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -901,6 +921,7 @@ public final class ImportRagFilesRequest extends com.google.protobuf.GeneratedMe
             : importRagFilesConfig_;
       }
     }
+
     /**
      *
      *

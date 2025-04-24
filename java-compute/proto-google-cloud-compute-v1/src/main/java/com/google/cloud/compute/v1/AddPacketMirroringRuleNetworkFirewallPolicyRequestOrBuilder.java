@@ -36,6 +36,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicy.
    */
   java.lang.String getFirewallPolicy();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the firewallPolicyRuleResource field is set.
    */
   boolean hasFirewallPolicyRuleResource();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The firewallPolicyRuleResource.
    */
   com.google.cloud.compute.v1.FirewallPolicyRule getFirewallPolicyRuleResource();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the maxPriority field is set.
    */
   boolean hasMaxPriority();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the minPriority field is set.
    */
   boolean hasMinPriority();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return Whether the requestId field is set.
    */
   boolean hasRequestId();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface AddPacketMirroringRuleNetworkFirewallPolicyRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

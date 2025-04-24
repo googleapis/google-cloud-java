@@ -33,6 +33,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig)
     AutomatedBackupConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutomatedBackupConfig.newBuilder() to construct.
   private AutomatedBackupConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
      * <code>AUTOMATED_BACKUP_MODE_UNSPECIFIED = 0;</code>
      */
     public static final int AUTOMATED_BACKUP_MODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -246,6 +249,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
      * @return Whether the startTime field is set.
      */
     boolean hasStartTime();
+
     /**
      *
      *
@@ -261,6 +265,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
      * @return The startTime.
      */
     com.google.type.TimeOfDay getStartTime();
+
     /**
      *
      *
@@ -275,6 +280,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
      */
     com.google.type.TimeOfDayOrBuilder getStartTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -291,6 +297,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.FixedFrequencySchedule)
       FixedFrequencyScheduleOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FixedFrequencySchedule.newBuilder() to construct.
     private FixedFrequencySchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -324,6 +331,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     private int bitField0_;
     public static final int START_TIME_FIELD_NUMBER = 2;
     private com.google.type.TimeOfDay startTime_;
+
     /**
      *
      *
@@ -342,6 +350,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -360,6 +369,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     public com.google.type.TimeOfDay getStartTime() {
       return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
     }
+
     /**
      *
      *
@@ -564,6 +574,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -791,6 +802,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
               com.google.type.TimeOfDay.Builder,
               com.google.type.TimeOfDayOrBuilder>
           startTimeBuilder_;
+
       /**
        *
        *
@@ -808,6 +820,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       public boolean hasStartTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -829,6 +842,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
           return startTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -854,6 +868,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -876,6 +891,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -906,6 +922,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -928,6 +945,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -945,6 +963,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         onChanged();
         return getStartTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -964,6 +983,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
           return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
         }
       }
+
       /**
        *
        *
@@ -1080,6 +1100,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     private ScheduleCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1111,6 +1132,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
   }
 
   public static final int FIXED_FREQUENCY_SCHEDULE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -1128,6 +1150,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
   public boolean hasFixedFrequencySchedule() {
     return scheduleCase_ == 2;
   }
+
   /**
    *
    *
@@ -1151,6 +1174,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     return com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig.FixedFrequencySchedule
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1176,6 +1200,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
 
   public static final int AUTOMATED_BACKUP_MODE_FIELD_NUMBER = 1;
   private int automatedBackupMode_ = 0;
+
   /**
    *
    *
@@ -1194,6 +1219,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
   public int getAutomatedBackupModeValue() {
     return automatedBackupMode_;
   }
+
   /**
    *
    *
@@ -1222,6 +1248,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
 
   public static final int RETENTION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration retention_;
+
   /**
    *
    *
@@ -1241,6 +1268,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
   public boolean hasRetention() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1260,6 +1288,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Duration getRetention() {
     return retention_ == null ? com.google.protobuf.Duration.getDefaultInstance() : retention_;
   }
+
   /**
    *
    *
@@ -1487,6 +1516,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1754,6 +1784,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
             com.google.cloud.redis.cluster.v1beta1.AutomatedBackupConfig
                 .FixedFrequencyScheduleOrBuilder>
         fixedFrequencyScheduleBuilder_;
+
     /**
      *
      *
@@ -1771,6 +1802,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     public boolean hasFixedFrequencySchedule() {
       return scheduleCase_ == 2;
     }
+
     /**
      *
      *
@@ -1803,6 +1835,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1828,6 +1861,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1885,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1891,6 +1926,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       scheduleCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1918,6 +1954,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1971,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         getFixedFrequencyScheduleBuilder() {
       return getFixedFrequencyScheduleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1961,6 +1999,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2005,6 +2044,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     }
 
     private int automatedBackupMode_ = 0;
+
     /**
      *
      *
@@ -2023,6 +2063,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     public int getAutomatedBackupModeValue() {
       return automatedBackupMode_;
     }
+
     /**
      *
      *
@@ -2044,6 +2085,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2069,6 +2111,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2094,6 +2137,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2165,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         retentionBuilder_;
+
     /**
      *
      *
@@ -2139,6 +2184,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
     public boolean hasRetention() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2161,6 +2207,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         return retentionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2187,6 +2234,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2258,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2241,6 +2290,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2264,6 +2314,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2282,6 +2333,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRetentionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2302,6 +2354,7 @@ public final class AutomatedBackupConfig extends com.google.protobuf.GeneratedMe
         return retention_ == null ? com.google.protobuf.Duration.getDefaultInstance() : retention_;
       }
     }
+
     /**
      *
      *

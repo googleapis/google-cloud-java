@@ -35,6 +35,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.DimensionValue> getDimensionValuesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
    */
   com.google.analytics.data.v1alpha.DimensionValue getDimensionValues(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.DimensionValue dimension_values = 1;</code>
    */
   int getDimensionValuesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface RowOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.DimensionValueOrBuilder>
       getDimensionValuesOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricValue metric_values = 2;</code>
    */
   java.util.List<com.google.analytics.data.v1alpha.MetricValue> getMetricValuesList();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricValue metric_values = 2;</code>
    */
   com.google.analytics.data.v1alpha.MetricValue getMetricValues(int index);
+
   /**
    *
    *
@@ -111,6 +117,7 @@ public interface RowOrBuilder
    * <code>repeated .google.analytics.data.v1alpha.MetricValue metric_values = 2;</code>
    */
   int getMetricValuesCount();
+
   /**
    *
    *
@@ -122,6 +129,7 @@ public interface RowOrBuilder
    */
   java.util.List<? extends com.google.analytics.data.v1alpha.MetricValueOrBuilder>
       getMetricValuesOrBuilderList();
+
   /**
    *
    *

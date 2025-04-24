@@ -74,7 +74,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListConnectionProfiles, expected %s or %s",
+                  "Unrecognized response type %s for method ListConnectionProfiles, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListConnectionProfilesResponse.class.getName(),
                   Exception.class.getName())));
@@ -95,7 +96,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetConnectionProfile, expected %s or %s",
+                  "Unrecognized response type %s for method GetConnectionProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConnectionProfile.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +118,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateConnectionProfile, expected %s or %s",
+                  "Unrecognized response type %s for method CreateConnectionProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +140,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateConnectionProfile, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateConnectionProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -158,7 +162,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteConnectionProfile, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteConnectionProfile, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -180,7 +185,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DiscoverConnectionProfile, expected %s or %s",
+                  "Unrecognized response type %s for method DiscoverConnectionProfile, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   DiscoverConnectionProfileResponse.class.getName(),
                   Exception.class.getName())));
@@ -346,7 +352,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or %s",
+                  "Unrecognized response type %s for method CreatePrivateConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -367,7 +374,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or %s",
+                  "Unrecognized response type %s for method GetPrivateConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   PrivateConnection.class.getName(),
                   Exception.class.getName())));
@@ -389,7 +397,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or %s",
+                  "Unrecognized response type %s for method ListPrivateConnections, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListPrivateConnectionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -410,7 +419,8 @@ public class MockDatastreamImpl extends DatastreamImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or %s",
+                  "Unrecognized response type %s for method DeletePrivateConnection, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

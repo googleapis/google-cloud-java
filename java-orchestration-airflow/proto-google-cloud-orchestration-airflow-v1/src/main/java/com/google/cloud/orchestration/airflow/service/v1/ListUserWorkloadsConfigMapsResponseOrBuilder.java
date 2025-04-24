@@ -37,6 +37,7 @@ public interface ListUserWorkloadsConfigMapsResponseOrBuilder
    */
   java.util.List<com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap>
       getUserWorkloadsConfigMapsList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ListUserWorkloadsConfigMapsResponseOrBuilder
    */
   com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMap
       getUserWorkloadsConfigMaps(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface ListUserWorkloadsConfigMapsResponseOrBuilder
    * </code>
    */
   int getUserWorkloadsConfigMapsCount();
+
   /**
    *
    *
@@ -77,6 +80,7 @@ public interface ListUserWorkloadsConfigMapsResponseOrBuilder
           ? extends
               com.google.cloud.orchestration.airflow.service.v1.UserWorkloadsConfigMapOrBuilder>
       getUserWorkloadsConfigMapsOrBuilderList();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface ListUserWorkloadsConfigMapsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

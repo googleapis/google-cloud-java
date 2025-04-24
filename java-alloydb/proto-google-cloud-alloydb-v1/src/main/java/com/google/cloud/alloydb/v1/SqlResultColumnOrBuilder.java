@@ -36,6 +36,7 @@ public interface SqlResultColumnOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SqlResultColumnOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

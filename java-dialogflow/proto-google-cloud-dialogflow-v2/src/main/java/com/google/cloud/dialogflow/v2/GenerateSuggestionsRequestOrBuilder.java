@@ -43,6 +43,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return The conversation.
    */
   java.lang.String getConversation();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return The latestMessage.
    */
   java.lang.String getLatestMessage();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return A list containing the triggerEvents.
    */
   java.util.List<com.google.cloud.dialogflow.v2.TriggerEvent> getTriggerEventsList();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return The count of triggerEvents.
    */
   int getTriggerEventsCount();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return The triggerEvents at the given index.
    */
   com.google.cloud.dialogflow.v2.TriggerEvent getTriggerEvents(int index);
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface GenerateSuggestionsRequestOrBuilder
    * @return A list containing the enum numeric values on the wire for triggerEvents.
    */
   java.util.List<java.lang.Integer> getTriggerEventsValueList();
+
   /**
    *
    *

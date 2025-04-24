@@ -41,6 +41,7 @@ public interface GenerateStreamHlsTokenResponseOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface GenerateStreamHlsTokenResponseOrBuilder
    * @return Whether the expirationTime field is set.
    */
   boolean hasExpirationTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface GenerateStreamHlsTokenResponseOrBuilder
    * @return The expirationTime.
    */
   com.google.protobuf.Timestamp getExpirationTime();
+
   /**
    *
    *

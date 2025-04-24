@@ -37,6 +37,7 @@ public interface ServicePropertiesOrBuilder
    * @return The gcpProject.
    */
   java.lang.String getGcpProject();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface ServicePropertiesOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ServicePropertiesOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

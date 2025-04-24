@@ -38,6 +38,7 @@ public interface UpdatePipelineRequestOrBuilder
    * @return Whether the pipeline field is set.
    */
   boolean hasPipeline();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdatePipelineRequestOrBuilder
    * @return The pipeline.
    */
   com.google.cloud.eventarc.v1.Pipeline getPipeline();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface UpdatePipelineRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdatePipelineRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

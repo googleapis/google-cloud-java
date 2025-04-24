@@ -33,6 +33,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.networksecurity.v1beta1.DeleteAuthorizationPolicyRequest)
     DeleteAuthorizationPolicyRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DeleteAuthorizationPolicyRequest.newBuilder() to construct.
   private DeleteAuthorizationPolicyRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -284,6 +287,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +483,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -504,6 +509,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -529,6 +535,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -553,6 +560,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class DeleteAuthorizationPolicyRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

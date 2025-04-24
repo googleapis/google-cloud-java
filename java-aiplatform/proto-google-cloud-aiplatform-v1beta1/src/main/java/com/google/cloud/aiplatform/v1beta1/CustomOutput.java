@@ -33,6 +33,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.CustomOutput)
     CustomOutputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CustomOutput.newBuilder() to construct.
   private CustomOutput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     private CustomOutputCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int RAW_OUTPUTS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRawOutputs() {
     return customOutputCase_ == 1;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.aiplatform.v1beta1.RawOutput.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -338,6 +343,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +562,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.RawOutput.Builder,
             com.google.cloud.aiplatform.v1beta1.RawOutputOrBuilder>
         rawOutputsBuilder_;
+
     /**
      *
      *
@@ -573,6 +580,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRawOutputs() {
       return customOutputCase_ == 1;
     }
+
     /**
      *
      *
@@ -600,6 +608,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.RawOutput.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
       customOutputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
       customOutputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
       customOutputCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +720,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1beta1.RawOutput.Builder getRawOutputsBuilder() {
       return getRawOutputsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class CustomOutput extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.aiplatform.v1beta1.RawOutput.getDefaultInstance();
       }
     }
+
     /**
      *
      *

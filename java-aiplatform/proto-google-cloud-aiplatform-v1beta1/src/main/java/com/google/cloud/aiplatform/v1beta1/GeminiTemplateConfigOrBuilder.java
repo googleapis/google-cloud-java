@@ -39,6 +39,7 @@ public interface GeminiTemplateConfigOrBuilder
    * @return Whether the geminiExample field is set.
    */
   boolean hasGeminiExample();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface GeminiTemplateConfigOrBuilder
    * @return The geminiExample.
    */
   com.google.cloud.aiplatform.v1beta1.GeminiExample getGeminiExample();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface GeminiTemplateConfigOrBuilder
    * </code>
    */
   int getFieldMappingCount();
+
   /**
    *
    *
@@ -90,9 +93,11 @@ public interface GeminiTemplateConfigOrBuilder
    * </code>
    */
   boolean containsFieldMapping(java.lang.String key);
+
   /** Use {@link #getFieldMappingMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getFieldMapping();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface GeminiTemplateConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getFieldMappingMap();
+
   /**
    *
    *
@@ -119,6 +125,7 @@ public interface GeminiTemplateConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

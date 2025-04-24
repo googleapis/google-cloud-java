@@ -37,6 +37,7 @@ public interface InsertShippingSettingsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface InsertShippingSettingsRequestOrBuilder
    * @return Whether the shippingSetting field is set.
    */
   boolean hasShippingSetting();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface InsertShippingSettingsRequestOrBuilder
    * @return The shippingSetting.
    */
   com.google.shopping.merchant.accounts.v1beta.ShippingSettings getShippingSetting();
+
   /**
    *
    *

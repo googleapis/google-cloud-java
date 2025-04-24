@@ -37,6 +37,7 @@ public interface TrajectoryAnyOrderMatchResultsOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchMetricValue>
       getTrajectoryAnyOrderMatchMetricValuesList();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface TrajectoryAnyOrderMatchResultsOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchMetricValue
       getTrajectoryAnyOrderMatchMetricValues(int index);
+
   /**
    *
    *
@@ -62,6 +64,7 @@ public interface TrajectoryAnyOrderMatchResultsOrBuilder
    * </code>
    */
   int getTrajectoryAnyOrderMatchMetricValuesCount();
+
   /**
    *
    *
@@ -76,6 +79,7 @@ public interface TrajectoryAnyOrderMatchResultsOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.TrajectoryAnyOrderMatchMetricValueOrBuilder>
       getTrajectoryAnyOrderMatchMetricValuesOrBuilderList();
+
   /**
    *
    *

@@ -43,6 +43,7 @@ public interface CreateQueueRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface CreateQueueRequestOrBuilder
    * @return Whether the queue field is set.
    */
   boolean hasQueue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateQueueRequestOrBuilder
    * @return The queue.
    */
   com.google.cloud.tasks.v2.Queue getQueue();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.SequenceEntity)
     SequenceEntityOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SequenceEntity.newBuilder() to construct.
   private SequenceEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INCREMENT_FIELD_NUMBER = 1;
   private long increment_ = 0L;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString startValue_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MAX_VALUE_FIELD_NUMBER = 3;
   private com.google.protobuf.ByteString maxValue_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MIN_VALUE_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString minValue_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CYCLE_FIELD_NUMBER = 5;
   private boolean cycle_ = false;
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CACHE_FIELD_NUMBER = 6;
   private long cache_ = 0L;
+
   /**
    *
    *
@@ -179,6 +186,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CUSTOM_FEATURES_FIELD_NUMBER = 7;
   private com.google.protobuf.Struct customFeatures_;
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCustomFeatures() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -211,6 +220,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Struct.getDefaultInstance()
         : customFeatures_;
   }
+
   /**
    *
    *
@@ -445,6 +455,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +732,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long increment_;
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public long getIncrement() {
       return increment_;
     }
+
     /**
      *
      *
@@ -755,6 +768,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +788,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString startValue_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -790,6 +805,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getStartValue() {
       return startValue_;
     }
+
     /**
      *
      *
@@ -812,6 +828,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +849,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString maxValue_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMaxValue() {
       return maxValue_;
     }
+
     /**
      *
      *
@@ -870,6 +889,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString minValue_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -906,6 +927,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getMinValue() {
       return minValue_;
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean cycle_;
+
     /**
      *
      *
@@ -963,6 +987,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean getCycle() {
       return cycle_;
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1001,6 +1027,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long cache_;
+
     /**
      *
      *
@@ -1016,6 +1043,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public long getCache() {
       return cache_;
     }
+
     /**
      *
      *
@@ -1035,6 +1063,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1088,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         customFeaturesBuilder_;
+
     /**
      *
      *
@@ -1073,6 +1103,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCustomFeatures() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -1093,6 +1124,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
         return customFeaturesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1115,6 +1147,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1134,6 +1167,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1195,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1180,6 +1215,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1230,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCustomFeaturesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1212,6 +1249,7 @@ public final class SequenceEntity extends com.google.protobuf.GeneratedMessageV3
             : customFeatures_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.GenerateSuggestionsResponse)
     GenerateSuggestionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateSuggestionsResponse.newBuilder() to construct.
   private GenerateSuggestionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
      * @return Whether the generatorSuggestion field is set.
      */
     boolean hasGeneratorSuggestion();
+
     /**
      *
      *
@@ -94,6 +96,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
      * @return The generatorSuggestion.
      */
     com.google.cloud.dialogflow.v2.GeneratorSuggestion getGeneratorSuggestion();
+
     /**
      *
      *
@@ -119,6 +122,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
      * @return The sourceGenerator.
      */
     java.lang.String getSourceGenerator();
+
     /**
      *
      *
@@ -147,6 +151,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
      * @return The answerRecord.
      */
     java.lang.String getAnswerRecord();
+
     /**
      *
      *
@@ -161,6 +166,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getAnswerRecordBytes();
   }
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer)
       GeneratorSuggestionAnswerOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GeneratorSuggestionAnswer.newBuilder() to construct.
     private GeneratorSuggestionAnswer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -212,6 +219,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
     private int bitField0_;
     public static final int GENERATOR_SUGGESTION_FIELD_NUMBER = 1;
     private com.google.cloud.dialogflow.v2.GeneratorSuggestion generatorSuggestion_;
+
     /**
      *
      *
@@ -227,6 +235,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
     public boolean hasGeneratorSuggestion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -244,6 +253,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           ? com.google.cloud.dialogflow.v2.GeneratorSuggestion.getDefaultInstance()
           : generatorSuggestion_;
     }
+
     /**
      *
      *
@@ -265,6 +275,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceGenerator_ = "";
+
     /**
      *
      *
@@ -290,6 +301,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -320,6 +332,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object answerRecord_ = "";
+
     /**
      *
      *
@@ -344,6 +357,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -576,6 +590,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
               com.google.cloud.dialogflow.v2.GeneratorSuggestion.Builder,
               com.google.cloud.dialogflow.v2.GeneratorSuggestionOrBuilder>
           generatorSuggestionBuilder_;
+
       /**
        *
        *
@@ -851,6 +867,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       public boolean hasGeneratorSuggestion() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -871,6 +888,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           return generatorSuggestionBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -894,6 +912,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -914,6 +933,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -943,6 +963,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -962,6 +983,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -977,6 +999,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return getGeneratorSuggestionFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -996,6 +1019,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
               : generatorSuggestion_;
         }
       }
+
       /**
        *
        *
@@ -1023,6 +1047,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
 
       private java.lang.Object sourceGenerator_ = "";
+
       /**
        *
        *
@@ -1047,6 +1072,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1071,6 +1097,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1094,6 +1121,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1113,6 +1141,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1139,6 +1168,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
 
       private java.lang.Object answerRecord_ = "";
+
       /**
        *
        *
@@ -1162,6 +1192,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1185,6 +1216,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1207,6 +1239,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1225,6 +1258,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1326,6 +1360,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
   private java.util.List<
           com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer>
       generatorSuggestionAnswers_;
+
   /**
    *
    *
@@ -1343,6 +1378,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       getGeneratorSuggestionAnswersList() {
     return generatorSuggestionAnswers_;
   }
+
   /**
    *
    *
@@ -1362,6 +1398,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       getGeneratorSuggestionAnswersOrBuilderList() {
     return generatorSuggestionAnswers_;
   }
+
   /**
    *
    *
@@ -1377,6 +1414,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
   public int getGeneratorSuggestionAnswersCount() {
     return generatorSuggestionAnswers_.size();
   }
+
   /**
    *
    *
@@ -1393,6 +1431,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       getGeneratorSuggestionAnswers(int index) {
     return generatorSuggestionAnswers_.get(index);
   }
+
   /**
    *
    *
@@ -1415,6 +1454,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object latestMessage_ = "";
+
   /**
    *
    *
@@ -1442,6 +1482,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -1644,6 +1685,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1935,6 +1977,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return generatorSuggestionAnswersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1953,6 +1996,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return generatorSuggestionAnswersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1972,6 +2016,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return generatorSuggestionAnswersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1999,6 +2044,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2023,6 +2069,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2096,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2076,6 +2124,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2148,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2173,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2149,6 +2200,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2170,6 +2222,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2191,6 +2244,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2207,6 +2261,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         getGeneratorSuggestionAnswersBuilder(int index) {
       return getGeneratorSuggestionAnswersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2227,6 +2282,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return generatorSuggestionAnswersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2249,6 +2305,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(generatorSuggestionAnswers_);
       }
     }
+
     /**
      *
      *
@@ -2268,6 +2325,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
               com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2288,6 +2346,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
               com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse.GeneratorSuggestionAnswer
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2332,6 +2391,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
     }
 
     private java.lang.Object latestMessage_ = "";
+
     /**
      *
      *
@@ -2358,6 +2418,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2384,6 +2445,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2409,6 +2471,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2430,6 +2493,7 @@ public final class GenerateSuggestionsResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

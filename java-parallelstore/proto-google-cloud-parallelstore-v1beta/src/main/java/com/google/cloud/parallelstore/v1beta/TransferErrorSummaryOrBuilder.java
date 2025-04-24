@@ -36,6 +36,7 @@ public interface TransferErrorSummaryOrBuilder
    * @return The enum numeric value on the wire for errorCode.
    */
   int getErrorCodeValue();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface TransferErrorSummaryOrBuilder
    */
   java.util.List<com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry>
       getErrorLogEntriesList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface TransferErrorSummaryOrBuilder
    * </code>
    */
   com.google.cloud.parallelstore.v1beta.TransferErrorLogEntry getErrorLogEntries(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface TransferErrorSummaryOrBuilder
    * </code>
    */
   int getErrorLogEntriesCount();
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public interface TransferErrorSummaryOrBuilder
    */
   java.util.List<? extends com.google.cloud.parallelstore.v1beta.TransferErrorLogEntryOrBuilder>
       getErrorLogEntriesOrBuilderList();
+
   /**
    *
    *

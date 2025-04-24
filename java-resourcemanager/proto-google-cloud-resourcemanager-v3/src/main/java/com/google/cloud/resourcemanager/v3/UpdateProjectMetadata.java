@@ -34,6 +34,7 @@ public final class UpdateProjectMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.resourcemanager.v3.UpdateProjectMetadata)
     UpdateProjectMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateProjectMetadata.newBuilder() to construct.
   private UpdateProjectMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class UpdateProjectMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

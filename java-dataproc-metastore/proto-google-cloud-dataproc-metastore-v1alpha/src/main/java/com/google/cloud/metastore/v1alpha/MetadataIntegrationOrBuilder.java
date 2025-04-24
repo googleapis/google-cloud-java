@@ -36,6 +36,7 @@ public interface MetadataIntegrationOrBuilder
    * @return Whether the dataCatalogConfig field is set.
    */
   boolean hasDataCatalogConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetadataIntegrationOrBuilder
    * @return The dataCatalogConfig.
    */
   com.google.cloud.metastore.v1alpha.DataCatalogConfig getDataCatalogConfig();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface MetadataIntegrationOrBuilder
    * @return Whether the dataplexConfig field is set.
    */
   boolean hasDataplexConfig();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface MetadataIntegrationOrBuilder
    * @return The dataplexConfig.
    */
   com.google.cloud.metastore.v1alpha.DataplexConfig getDataplexConfig();
+
   /**
    *
    *

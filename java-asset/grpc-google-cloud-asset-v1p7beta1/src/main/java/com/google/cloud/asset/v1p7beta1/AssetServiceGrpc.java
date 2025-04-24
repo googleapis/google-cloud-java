@@ -90,6 +90,19 @@ public final class AssetServiceGrpc {
     return AssetServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AssetServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AssetServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public AssetServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AssetServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AssetServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -215,6 +228,49 @@ public final class AssetServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service AssetService.
+   *
+   * <pre>
+   * Asset service definition.
+   * </pre>
+   */
+  public static final class AssetServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AssetServiceBlockingV2Stub> {
+    private AssetServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AssetServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AssetServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports assets with time and resource types to a given Cloud Storage
+     * location/BigQuery table. For Cloud Storage location destinations, the
+     * output format is newline-delimited JSON. Each line represents a
+     * [google.cloud.asset.v1p7beta1.Asset][google.cloud.asset.v1p7beta1.Asset] in
+     * the JSON format; for BigQuery table destinations, the output table stores
+     * the fields in asset proto as columns. This API implements the
+     * [google.longrunning.Operation][google.longrunning.Operation] API , which
+     * allows you to keep track of the export. We recommend intervals of at least
+     * 2 seconds with exponential retry to poll the export operation result. For
+     * regular-size resource parent, the export operation usually finishes within
+     * 5 minutes.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportAssets(
+        com.google.cloud.asset.v1p7beta1.ExportAssetsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportAssetsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service AssetService.
    *
    * <pre>
    * Asset service definition.

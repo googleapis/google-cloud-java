@@ -41,6 +41,7 @@ public interface UpdateServiceClassRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateServiceClassRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface UpdateServiceClassRequestOrBuilder
    * @return Whether the serviceClass field is set.
    */
   boolean hasServiceClass();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface UpdateServiceClassRequestOrBuilder
    * @return The serviceClass.
    */
   com.google.cloud.networkconnectivity.v1.ServiceClass getServiceClass();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface UpdateServiceClassRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

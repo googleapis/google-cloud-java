@@ -179,7 +179,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CommitRepositoryChanges, expected %s or %s",
+                  "Unrecognized response type %s for method CommitRepositoryChanges, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CommitRepositoryChangesResponse.class.getName(),
                   Exception.class.getName())));
@@ -223,7 +224,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryRepositoryDirectoryContents, expected %s or %s",
+                  "Unrecognized response type %s for method QueryRepositoryDirectoryContents,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryRepositoryDirectoryContentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -245,7 +247,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchRepositoryHistory, expected %s or %s",
+                  "Unrecognized response type %s for method FetchRepositoryHistory, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchRepositoryHistoryResponse.class.getName(),
                   Exception.class.getName())));
@@ -267,7 +270,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ComputeRepositoryAccessTokenStatus, expected %s or %s",
+                  "Unrecognized response type %s for method ComputeRepositoryAccessTokenStatus,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ComputeRepositoryAccessTokenStatusResponse.class.getName(),
                   Exception.class.getName())));
@@ -459,7 +463,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchFileGitStatuses, expected %s or %s",
+                  "Unrecognized response type %s for method FetchFileGitStatuses, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchFileGitStatusesResponse.class.getName(),
                   Exception.class.getName())));
@@ -503,7 +508,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CommitWorkspaceChanges, expected %s or %s",
+                  "Unrecognized response type %s for method CommitWorkspaceChanges, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CommitWorkspaceChangesResponse.class.getName(),
                   Exception.class.getName())));
@@ -525,7 +531,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ResetWorkspaceChanges, expected %s or %s",
+                  "Unrecognized response type %s for method ResetWorkspaceChanges, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ResetWorkspaceChangesResponse.class.getName(),
                   Exception.class.getName())));
@@ -568,7 +575,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryDirectoryContents, expected %s or %s",
+                  "Unrecognized response type %s for method QueryDirectoryContents, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryDirectoryContentsResponse.class.getName(),
                   Exception.class.getName())));
@@ -862,7 +870,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListCompilationResults, expected %s or %s",
+                  "Unrecognized response type %s for method ListCompilationResults, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListCompilationResultsResponse.class.getName(),
                   Exception.class.getName())));
@@ -883,7 +892,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetCompilationResult, expected %s or %s",
+                  "Unrecognized response type %s for method GetCompilationResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CompilationResult.class.getName(),
                   Exception.class.getName())));
@@ -904,7 +914,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateCompilationResult, expected %s or %s",
+                  "Unrecognized response type %s for method CreateCompilationResult, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   CompilationResult.class.getName(),
                   Exception.class.getName())));
@@ -926,7 +937,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryCompilationResultActions, expected %s or %s",
+                  "Unrecognized response type %s for method QueryCompilationResultActions, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryCompilationResultActionsResponse.class.getName(),
                   Exception.class.getName())));
@@ -990,7 +1002,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateWorkflowConfig, expected %s or %s",
+                  "Unrecognized response type %s for method CreateWorkflowConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowConfig.class.getName(),
                   Exception.class.getName())));
@@ -1011,7 +1024,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateWorkflowConfig, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateWorkflowConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowConfig.class.getName(),
                   Exception.class.getName())));
@@ -1032,7 +1046,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteWorkflowConfig, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteWorkflowConfig, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1054,7 +1069,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListWorkflowInvocations, expected %s or %s",
+                  "Unrecognized response type %s for method ListWorkflowInvocations, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListWorkflowInvocationsResponse.class.getName(),
                   Exception.class.getName())));
@@ -1075,7 +1091,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetWorkflowInvocation, expected %s or %s",
+                  "Unrecognized response type %s for method GetWorkflowInvocation, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowInvocation.class.getName(),
                   Exception.class.getName())));
@@ -1097,7 +1114,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateWorkflowInvocation, expected %s or %s",
+                  "Unrecognized response type %s for method CreateWorkflowInvocation, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   WorkflowInvocation.class.getName(),
                   Exception.class.getName())));
@@ -1118,7 +1136,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteWorkflowInvocation, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteWorkflowInvocation, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -1140,7 +1159,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CancelWorkflowInvocation, expected %s or %s",
+                  "Unrecognized response type %s for method CancelWorkflowInvocation, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   CancelWorkflowInvocationResponse.class.getName(),
                   Exception.class.getName())));
@@ -1162,7 +1182,8 @@ public class MockDataformImpl extends DataformImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method QueryWorkflowInvocationActions, expected %s or %s",
+                  "Unrecognized response type %s for method QueryWorkflowInvocationActions,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   QueryWorkflowInvocationActionsResponse.class.getName(),
                   Exception.class.getName())));

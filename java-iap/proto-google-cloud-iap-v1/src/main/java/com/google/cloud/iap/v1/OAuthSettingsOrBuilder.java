@@ -40,6 +40,7 @@ public interface OAuthSettingsOrBuilder
    * @return Whether the loginHint field is set.
    */
   boolean hasLoginHint();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface OAuthSettingsOrBuilder
    * @return The loginHint.
    */
   com.google.protobuf.StringValue getLoginHint();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface OAuthSettingsOrBuilder
    * @return A list containing the programmaticClients.
    */
   java.util.List<java.lang.String> getProgrammaticClientsList();
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface OAuthSettingsOrBuilder
    * @return The count of programmaticClients.
    */
   int getProgrammaticClientsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface OAuthSettingsOrBuilder
    * @return The programmaticClients at the given index.
    */
   java.lang.String getProgrammaticClients(int index);
+
   /**
    *
    *

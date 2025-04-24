@@ -50,6 +50,7 @@ public interface VerifyKmsConfigResponseOrBuilder
    * @return The healthError.
    */
   java.lang.String getHealthError();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface VerifyKmsConfigResponseOrBuilder
    * @return The instructions.
    */
   java.lang.String getInstructions();
+
   /**
    *
    *

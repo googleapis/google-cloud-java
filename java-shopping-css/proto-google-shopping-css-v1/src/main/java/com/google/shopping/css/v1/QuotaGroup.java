@@ -35,6 +35,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.shopping.css.v1.QuotaGroup)
     QuotaGroupOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use QuotaGroup.newBuilder() to construct.
   private QuotaGroup(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUOTA_USAGE_FIELD_NUMBER = 2;
   private long quotaUsage_ = 0L;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUOTA_LIMIT_FIELD_NUMBER = 3;
   private long quotaLimit_ = 0L;
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUOTA_MINUTE_LIMIT_FIELD_NUMBER = 5;
   private long quotaMinuteLimit_ = 0L;
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.css.v1.MethodDetails> methodDetails_;
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.shopping.css.v1.MethodDetails> getMethodDetailsList() {
     return methodDetails_;
   }
+
   /**
    *
    *
@@ -214,6 +222,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       getMethodDetailsOrBuilderList() {
     return methodDetails_;
   }
+
   /**
    *
    *
@@ -229,6 +238,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
   public int getMethodDetailsCount() {
     return methodDetails_.size();
   }
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
   public com.google.shopping.css.v1.MethodDetails getMethodDetails(int index) {
     return methodDetails_.get(index);
   }
+
   /**
    *
    *
@@ -455,6 +466,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -739,6 +751,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -764,6 +777,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +803,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -813,6 +828,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +849,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +877,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long quotaUsage_;
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     public long getQuotaUsage() {
       return quotaUsage_;
     }
+
     /**
      *
      *
@@ -898,6 +917,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long quotaLimit_;
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     public long getQuotaLimit() {
       return quotaLimit_;
     }
+
     /**
      *
      *
@@ -953,6 +975,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +995,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long quotaMinuteLimit_;
+
     /**
      *
      *
@@ -987,6 +1011,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     public long getQuotaMinuteLimit() {
       return quotaMinuteLimit_;
     }
+
     /**
      *
      *
@@ -1006,6 +1031,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1059,6 +1085,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return methodDetailsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1077,6 +1104,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return methodDetailsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1123,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return methodDetailsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1196,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1189,6 +1221,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1244,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1233,6 +1267,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1255,6 +1290,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1276,6 +1312,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1297,6 +1334,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1349,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
     public com.google.shopping.css.v1.MethodDetails.Builder getMethodDetailsBuilder(int index) {
       return getMethodDetailsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1329,6 +1368,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return methodDetailsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1388,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(methodDetails_);
       }
     }
+
     /**
      *
      *
@@ -1363,6 +1404,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       return getMethodDetailsFieldBuilder()
           .addBuilder(com.google.shopping.css.v1.MethodDetails.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1378,6 +1420,7 @@ public final class QuotaGroup extends com.google.protobuf.GeneratedMessageV3
       return getMethodDetailsFieldBuilder()
           .addBuilder(index, com.google.shopping.css.v1.MethodDetails.getDefaultInstance());
     }
+
     /**
      *
      *

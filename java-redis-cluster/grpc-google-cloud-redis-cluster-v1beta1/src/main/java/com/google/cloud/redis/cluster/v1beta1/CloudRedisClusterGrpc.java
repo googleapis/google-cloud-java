@@ -730,6 +730,19 @@ public final class CloudRedisClusterGrpc {
     return CloudRedisClusterStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CloudRedisClusterBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CloudRedisClusterBlockingV2Stub>() {
+          @java.lang.Override
+          public CloudRedisClusterBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CloudRedisClusterBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CloudRedisClusterBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1327,6 +1340,251 @@ public final class CloudRedisClusterGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CloudRedisCluster.
+   *
+   * <pre>
+   * Configures and manages Cloud Memorystore for Redis clusters
+   * Google Cloud Memorystore for Redis Cluster
+   * The `redis.googleapis.com` service implements the Google Cloud Memorystore
+   * for Redis API and defines the following resource model for managing Redis
+   * clusters:
+   * * The service works with a collection of cloud projects, named: `/projects/&#42;`
+   * * Each project has a collection of available locations, named: `/locations/&#42;`
+   * * Each location has a collection of Redis clusters, named: `/clusters/&#42;`
+   * * As such, Redis clusters are resources of the form:
+   *   `/projects/{project_id}/locations/{location_id}/clusters/{instance_id}`
+   * Note that location_id must be a GCP `region`; for example:
+   * * `projects/redpepper-1290/locations/us-central1/clusters/my-redis`
+   * </pre>
+   */
+  public static final class CloudRedisClusterBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CloudRedisClusterBlockingV2Stub> {
+    private CloudRedisClusterBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CloudRedisClusterBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CloudRedisClusterBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all Redis clusters owned by a project in either the specified
+     * location (region) or all locations.
+     * The location should have the following format:
+     * * `projects/{project_id}/locations/{location_id}`
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListClustersResponse listClusters(
+        com.google.cloud.redis.cluster.v1beta1.ListClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific Redis cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.Cluster getCluster(
+        com.google.cloud.redis.cluster.v1beta1.GetClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the metadata and configuration of a specific Redis cluster.
+     * Completed longrunning.Operation will contain the new cluster object
+     * in the response field. The returned operation is automatically deleted
+     * after a few hours, so there is no need to call DeleteOperation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.cloud.redis.cluster.v1beta1.UpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific Redis cluster. Cluster stops serving and data is
+     * deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteCluster(
+        com.google.cloud.redis.cluster.v1beta1.DeleteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Redis cluster based on the specified properties.
+     * The creation is executed asynchronously and callers may check the returned
+     * operation to track its progress. Once the operation is completed the Redis
+     * cluster will be fully functional. The completed longrunning.Operation will
+     * contain the new cluster object in the response field.
+     * The returned operation is automatically deleted after a few hours, so there
+     * is no need to call DeleteOperation.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.cloud.redis.cluster.v1beta1.CreateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of certificate authority information for Redis cluster.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.CertificateAuthority
+        getClusterCertificateAuthority(
+            com.google.cloud.redis.cluster.v1beta1.GetClusterCertificateAuthorityRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterCertificateAuthorityMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reschedules upcoming maintenance event.
+     * </pre>
+     */
+    public com.google.longrunning.Operation rescheduleClusterMaintenance(
+        com.google.cloud.redis.cluster.v1beta1.RescheduleClusterMaintenanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRescheduleClusterMaintenanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backup collections owned by a consumer project in either the
+     * specified location (region) or all locations.
+     * If `location_id` is specified as `-` (wildcard), then all regions
+     * available to the project are queried, and the results are aggregated.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsResponse
+        listBackupCollections(
+            com.google.cloud.redis.cluster.v1beta1.ListBackupCollectionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupCollectionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.BackupCollection getBackupCollection(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupCollectionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupCollectionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all backups owned by a backup collection.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.ListBackupsResponse listBackups(
+        com.google.cloud.redis.cluster.v1beta1.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a specific backup.
+     * </pre>
+     */
+    public com.google.cloud.redis.cluster.v1beta1.Backup getBackup(
+        com.google.cloud.redis.cluster.v1beta1.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a specific backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteBackup(
+        com.google.cloud.redis.cluster.v1beta1.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a specific backup to a customer target Cloud Storage URI.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportBackup(
+        com.google.cloud.redis.cluster.v1beta1.ExportBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Backup Redis Cluster.
+     * If this is the first time a backup is being created, a backup collection
+     * will be created at the backend, and this backup belongs to this collection.
+     * Both collection and backup will have a resource name. Backup will be
+     * executed for each shard. A replica (primary if nonHA) will be selected to
+     * perform the execution. Backup call will be rejected if there is an ongoing
+     * backup or update operation. Be aware that during preview, if the cluster's
+     * internal software version is too old, critical update will be performed
+     * before actual backup. Once the internal software version is updated to the
+     * minimum version required by the backup feature, subsequent backups will not
+     * require critical update. After preview, there will be no critical update
+     * needed for backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation backupCluster(
+        com.google.cloud.redis.cluster.v1beta1.BackupClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBackupClusterMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service CloudRedisCluster.
    *
    * <pre>
    * Configures and manages Cloud Memorystore for Redis clusters

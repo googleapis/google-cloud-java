@@ -46,6 +46,7 @@ public interface CreateSpaceRequestOrBuilder
    * @return Whether the space field is set.
    */
   boolean hasSpace();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateSpaceRequestOrBuilder
    * @return The space.
    */
   com.google.chat.v1.Space getSpace();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface CreateSpaceRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

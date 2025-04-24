@@ -33,6 +33,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.ModalityTokenCount)
     ModalityTokenCountOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModalityTokenCount.newBuilder() to construct.
   private ModalityTokenCount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
 
   public static final int MODALITY_FIELD_NUMBER = 1;
   private int modality_ = 0;
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
   public int getModalityValue() {
     return modality_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
 
   public static final int TOKEN_COUNT_FIELD_NUMBER = 2;
   private int tokenCount_ = 0;
+
   /**
    *
    *
@@ -284,6 +288,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +484,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int modality_ = 0;
+
     /**
      *
      *
@@ -494,6 +500,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     public int getModalityValue() {
       return modality_;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
           com.google.cloud.aiplatform.v1.Modality.forNumber(modality_);
       return result == null ? com.google.cloud.aiplatform.v1.Modality.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -550,6 +559,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -569,6 +579,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     }
 
     private int tokenCount_;
+
     /**
      *
      *
@@ -584,6 +595,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
     public int getTokenCount() {
       return tokenCount_;
     }
+
     /**
      *
      *
@@ -603,6 +615,7 @@ public final class ModalityTokenCount extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

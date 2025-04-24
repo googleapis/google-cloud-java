@@ -38,6 +38,7 @@ public interface ResetQueuedResourceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

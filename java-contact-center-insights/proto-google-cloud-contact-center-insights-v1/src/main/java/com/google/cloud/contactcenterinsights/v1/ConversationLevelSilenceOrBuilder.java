@@ -36,6 +36,7 @@ public interface ConversationLevelSilenceOrBuilder
    * @return Whether the silenceDuration field is set.
    */
   boolean hasSilenceDuration();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ConversationLevelSilenceOrBuilder
    * @return The silenceDuration.
    */
   com.google.protobuf.Duration getSilenceDuration();
+
   /**
    *
    *

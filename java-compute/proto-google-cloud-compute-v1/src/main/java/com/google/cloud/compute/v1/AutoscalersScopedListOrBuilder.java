@@ -34,6 +34,7 @@ public interface AutoscalersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Autoscaler> getAutoscalersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface AutoscalersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
    */
   com.google.cloud.compute.v1.Autoscaler getAutoscalers(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface AutoscalersScopedListOrBuilder
    * <code>repeated .google.cloud.compute.v1.Autoscaler autoscalers = 465771644;</code>
    */
   int getAutoscalersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface AutoscalersScopedListOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.AutoscalerOrBuilder>
       getAutoscalersOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface AutoscalersScopedListOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface AutoscalersScopedListOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

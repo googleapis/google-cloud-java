@@ -39,6 +39,7 @@ public interface CreateTrainingPipelineRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTrainingPipelineRequestOrBuilder
    * @return Whether the trainingPipeline field is set.
    */
   boolean hasTrainingPipeline();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateTrainingPipelineRequestOrBuilder
    * @return The trainingPipeline.
    */
   com.google.cloud.aiplatform.v1beta1.TrainingPipeline getTrainingPipeline();
+
   /**
    *
    *

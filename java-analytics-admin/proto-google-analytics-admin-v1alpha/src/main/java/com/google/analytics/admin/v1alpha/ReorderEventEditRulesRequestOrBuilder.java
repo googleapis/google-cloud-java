@@ -38,6 +38,7 @@ public interface ReorderEventEditRulesRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ReorderEventEditRulesRequestOrBuilder
    * @return A list containing the eventEditRules.
    */
   java.util.List<java.lang.String> getEventEditRulesList();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface ReorderEventEditRulesRequestOrBuilder
    * @return The count of eventEditRules.
    */
   int getEventEditRulesCount();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface ReorderEventEditRulesRequestOrBuilder
    * @return The eventEditRules at the given index.
    */
   java.lang.String getEventEditRules(int index);
+
   /**
    *
    *

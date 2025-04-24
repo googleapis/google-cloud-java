@@ -36,6 +36,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:grafeas.v1.Envelope)
     EnvelopeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Envelope.newBuilder() to construct.
   private Envelope(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PAYLOAD_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    * <code>bytes payload = 1;</code>
    *
@@ -81,6 +83,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object payloadType_ = "";
+
   /**
    * <code>string payload_type = 2;</code>
    *
@@ -98,6 +101,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    * <code>string payload_type = 2;</code>
    *
@@ -120,27 +124,32 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<io.grafeas.v1.EnvelopeSignature> signatures_;
+
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
   public java.util.List<io.grafeas.v1.EnvelopeSignature> getSignaturesList() {
     return signatures_;
   }
+
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
   public java.util.List<? extends io.grafeas.v1.EnvelopeSignatureOrBuilder>
       getSignaturesOrBuilderList() {
     return signatures_;
   }
+
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
   public int getSignaturesCount() {
     return signatures_.size();
   }
+
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.EnvelopeSignature getSignatures(int index) {
     return signatures_.get(index);
   }
+
   /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
   @java.lang.Override
   public io.grafeas.v1.EnvelopeSignatureOrBuilder getSignaturesOrBuilder(int index) {
@@ -324,6 +333,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +586,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString payload_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      * <code>bytes payload = 1;</code>
      *
@@ -585,6 +596,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getPayload() {
       return payload_;
     }
+
     /**
      * <code>bytes payload = 1;</code>
      *
@@ -600,6 +612,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>bytes payload = 1;</code>
      *
@@ -613,6 +626,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object payloadType_ = "";
+
     /**
      * <code>string payload_type = 2;</code>
      *
@@ -629,6 +643,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string payload_type = 2;</code>
      *
@@ -645,6 +660,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string payload_type = 2;</code>
      *
@@ -660,6 +676,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>string payload_type = 2;</code>
      *
@@ -671,6 +688,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      * <code>string payload_type = 2;</code>
      *
@@ -712,6 +730,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessageList();
       }
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public int getSignaturesCount() {
       if (signaturesBuilder_ == null) {
@@ -720,6 +739,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getCount();
       }
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public io.grafeas.v1.EnvelopeSignature getSignatures(int index) {
       if (signaturesBuilder_ == null) {
@@ -728,6 +748,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessage(index);
       }
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder setSignatures(int index, io.grafeas.v1.EnvelopeSignature value) {
       if (signaturesBuilder_ == null) {
@@ -742,6 +763,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder setSignatures(
         int index, io.grafeas.v1.EnvelopeSignature.Builder builderForValue) {
@@ -754,6 +776,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder addSignatures(io.grafeas.v1.EnvelopeSignature value) {
       if (signaturesBuilder_ == null) {
@@ -768,6 +791,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder addSignatures(int index, io.grafeas.v1.EnvelopeSignature value) {
       if (signaturesBuilder_ == null) {
@@ -782,6 +806,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder addSignatures(io.grafeas.v1.EnvelopeSignature.Builder builderForValue) {
       if (signaturesBuilder_ == null) {
@@ -793,6 +818,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder addSignatures(
         int index, io.grafeas.v1.EnvelopeSignature.Builder builderForValue) {
@@ -805,6 +831,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder addAllSignatures(
         java.lang.Iterable<? extends io.grafeas.v1.EnvelopeSignature> values) {
@@ -817,6 +844,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder clearSignatures() {
       if (signaturesBuilder_ == null) {
@@ -828,6 +856,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public Builder removeSignatures(int index) {
       if (signaturesBuilder_ == null) {
@@ -839,10 +868,12 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public io.grafeas.v1.EnvelopeSignature.Builder getSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder().getBuilder(index);
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public io.grafeas.v1.EnvelopeSignatureOrBuilder getSignaturesOrBuilder(int index) {
       if (signaturesBuilder_ == null) {
@@ -851,6 +882,7 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return signaturesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public java.util.List<? extends io.grafeas.v1.EnvelopeSignatureOrBuilder>
         getSignaturesOrBuilderList() {
@@ -860,16 +892,19 @@ public final class Envelope extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(signatures_);
       }
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public io.grafeas.v1.EnvelopeSignature.Builder addSignaturesBuilder() {
       return getSignaturesFieldBuilder()
           .addBuilder(io.grafeas.v1.EnvelopeSignature.getDefaultInstance());
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public io.grafeas.v1.EnvelopeSignature.Builder addSignaturesBuilder(int index) {
       return getSignaturesFieldBuilder()
           .addBuilder(index, io.grafeas.v1.EnvelopeSignature.getDefaultInstance());
     }
+
     /** <code>repeated .grafeas.v1.EnvelopeSignature signatures = 3;</code> */
     public java.util.List<io.grafeas.v1.EnvelopeSignature.Builder> getSignaturesBuilderList() {
       return getSignaturesFieldBuilder().getBuilderList();

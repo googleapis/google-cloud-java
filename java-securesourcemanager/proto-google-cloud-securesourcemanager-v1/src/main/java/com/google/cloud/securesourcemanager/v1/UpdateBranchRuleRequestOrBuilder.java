@@ -32,6 +32,7 @@ public interface UpdateBranchRuleRequestOrBuilder
    * @return Whether the branchRule field is set.
    */
   boolean hasBranchRule();
+
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -40,6 +41,7 @@ public interface UpdateBranchRuleRequestOrBuilder
    * @return The branchRule.
    */
   com.google.cloud.securesourcemanager.v1.BranchRule getBranchRule();
+
   /**
    * <code>
    * .google.cloud.securesourcemanager.v1.BranchRule branch_rule = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -78,6 +80,7 @@ public interface UpdateBranchRuleRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface UpdateBranchRuleRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.SummarizationVerbosityInput)
     SummarizationVerbosityInputOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SummarizationVerbosityInput.newBuilder() to construct.
   private SummarizationVerbosityInput(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int METRIC_SPEC_FIELD_NUMBER = 1;
   private com.google.cloud.aiplatform.v1.SummarizationVerbositySpec metricSpec_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
   public boolean hasMetricSpec() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1.SummarizationVerbositySpec.getDefaultInstance()
         : metricSpec_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
 
   public static final int INSTANCE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.SummarizationVerbosityInstance instance_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
   public boolean hasInstance() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
         ? com.google.cloud.aiplatform.v1.SummarizationVerbosityInstance.getDefaultInstance()
         : instance_;
   }
+
   /**
    *
    *
@@ -355,6 +362,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -577,6 +585,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1.SummarizationVerbositySpec.Builder,
             com.google.cloud.aiplatform.v1.SummarizationVerbositySpecOrBuilder>
         metricSpecBuilder_;
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
     public boolean hasMetricSpec() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
         return metricSpecBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -639,6 +650,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +745,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return getMetricSpecFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
             : metricSpec_;
       }
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
             com.google.cloud.aiplatform.v1.SummarizationVerbosityInstance.Builder,
             com.google.cloud.aiplatform.v1.SummarizationVerbosityInstanceOrBuilder>
         instanceBuilder_;
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
     public boolean hasInstance() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
         return instanceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -848,6 +868,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +891,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +924,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class SummarizationVerbosityInput extends com.google.protobuf.Gener
             : instance_;
       }
     }
+
     /**
      *
      *

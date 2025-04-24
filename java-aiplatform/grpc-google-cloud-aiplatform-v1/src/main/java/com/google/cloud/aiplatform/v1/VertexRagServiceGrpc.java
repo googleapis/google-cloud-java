@@ -190,6 +190,19 @@ public final class VertexRagServiceGrpc {
     return VertexRagServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static VertexRagServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<VertexRagServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public VertexRagServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new VertexRagServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return VertexRagServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -367,6 +380,69 @@ public final class VertexRagServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service VertexRagService.
+   *
+   * <pre>
+   * A service for retrieving relevant contexts.
+   * </pre>
+   */
+  public static final class VertexRagServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<VertexRagServiceBlockingV2Stub> {
+    private VertexRagServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected VertexRagServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new VertexRagServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves relevant contexts for a query.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.RetrieveContextsResponse retrieveContexts(
+        com.google.cloud.aiplatform.v1.RetrieveContextsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRetrieveContextsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input prompt, it returns augmented prompt from vertex rag store
+     *  to guide LLM towards generating grounded responses.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.AugmentPromptResponse augmentPrompt(
+        com.google.cloud.aiplatform.v1.AugmentPromptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAugmentPromptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Given an input text, it returns a score that evaluates the factuality of
+     * the text. It also extracts and returns claims from the text and provides
+     * supporting facts.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.CorroborateContentResponse corroborateContent(
+        com.google.cloud.aiplatform.v1.CorroborateContentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCorroborateContentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service VertexRagService.
    *
    * <pre>
    * A service for retrieving relevant contexts.

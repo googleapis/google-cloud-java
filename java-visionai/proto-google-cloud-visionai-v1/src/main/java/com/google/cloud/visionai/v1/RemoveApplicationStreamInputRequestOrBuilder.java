@@ -40,6 +40,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
    */
   java.util.List<com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput>
       getTargetStreamInputsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
    */
   com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest.TargetStreamInput
       getTargetStreamInputs(int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
    * </code>
    */
   int getTargetStreamInputsCount();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
               com.google.cloud.visionai.v1.RemoveApplicationStreamInputRequest
                   .TargetStreamInputOrBuilder>
       getTargetStreamInputsOrBuilderList();
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public interface RemoveApplicationStreamInputRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

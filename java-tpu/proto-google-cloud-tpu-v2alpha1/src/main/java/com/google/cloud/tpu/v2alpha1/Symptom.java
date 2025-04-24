@@ -33,6 +33,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.Symptom)
     SymptomOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Symptom.newBuilder() to construct.
   private Symptom(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -160,6 +161,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>SYMPTOM_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int SYMPTOM_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -170,6 +172,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>LOW_MEMORY = 1;</code>
      */
     public static final int LOW_MEMORY_VALUE = 1;
+
     /**
      *
      *
@@ -180,6 +183,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>OUT_OF_MEMORY = 2;</code>
      */
     public static final int OUT_OF_MEMORY_VALUE = 2;
+
     /**
      *
      *
@@ -190,6 +194,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>EXECUTE_TIMED_OUT = 3;</code>
      */
     public static final int EXECUTE_TIMED_OUT_VALUE = 3;
+
     /**
      *
      *
@@ -201,6 +206,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>MESH_BUILD_FAIL = 4;</code>
      */
     public static final int MESH_BUILD_FAIL_VALUE = 4;
+
     /**
      *
      *
@@ -211,6 +217,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
      * <code>HBM_OUT_OF_MEMORY = 5;</code>
      */
     public static final int HBM_OUT_OF_MEMORY_VALUE = 5;
+
     /**
      *
      *
@@ -316,6 +323,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int CREATE_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -331,6 +339,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -346,6 +355,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -362,6 +372,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SYMPTOM_TYPE_FIELD_NUMBER = 2;
   private int symptomType_ = 0;
+
   /**
    *
    *
@@ -377,6 +388,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
   public int getSymptomTypeValue() {
     return symptomType_;
   }
+
   /**
    *
    *
@@ -399,6 +411,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object details_ = "";
+
   /**
    *
    *
@@ -422,6 +435,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -450,6 +464,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object workerId_ = "";
+
   /**
    *
    *
@@ -473,6 +488,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -688,6 +704,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -933,6 +950,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -947,6 +965,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -989,6 +1009,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1029,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1057,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1054,6 +1077,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1086,6 +1111,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1113,6 +1139,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int symptomType_ = 0;
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     public int getSymptomTypeValue() {
       return symptomType_;
     }
+
     /**
      *
      *
@@ -1146,6 +1174,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1165,6 +1194,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.tpu.v2alpha1.Symptom.SymptomType.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -1186,6 +1216,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1205,6 +1236,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object details_ = "";
+
     /**
      *
      *
@@ -1227,6 +1259,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1249,6 +1282,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1270,6 +1304,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1287,6 +1322,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1347,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object workerId_ = "";
+
     /**
      *
      *
@@ -1333,6 +1370,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1393,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1376,6 +1415,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1393,6 +1433,7 @@ public final class Symptom extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

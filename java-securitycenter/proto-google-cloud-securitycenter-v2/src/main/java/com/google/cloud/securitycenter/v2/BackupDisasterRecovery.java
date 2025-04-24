@@ -33,6 +33,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v2.BackupDisasterRecovery)
     BackupDisasterRecoveryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackupDisasterRecovery.newBuilder() to construct.
   private BackupDisasterRecovery(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupTemplate_ = "";
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList policies_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPoliciesList() {
     return policies_;
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public int getPoliciesCount() {
     return policies_.size();
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public java.lang.String getPolicies(int index) {
     return policies_.get(index);
   }
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object host_ = "";
+
   /**
    *
    *
@@ -234,6 +242,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList applications_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -286,6 +296,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getApplicationsList() {
     return applications_;
   }
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public int getApplicationsCount() {
     return applications_.size();
   }
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public java.lang.String getApplications(int index) {
     return applications_.get(index);
   }
+
   /**
    *
    *
@@ -344,6 +357,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object storagePool_ = "";
+
   /**
    *
    *
@@ -372,6 +386,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -406,6 +421,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList policyOptions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -423,6 +439,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public com.google.protobuf.ProtocolStringList getPolicyOptionsList() {
     return policyOptions_;
   }
+
   /**
    *
    *
@@ -440,6 +457,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public int getPolicyOptionsCount() {
     return policyOptions_.size();
   }
+
   /**
    *
    *
@@ -458,6 +476,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public java.lang.String getPolicyOptions(int index) {
     return policyOptions_.get(index);
   }
+
   /**
    *
    *
@@ -481,6 +500,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object profile_ = "";
+
   /**
    *
    *
@@ -508,6 +528,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -540,6 +561,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appliance_ = "";
+
   /**
    *
    *
@@ -564,6 +586,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -593,6 +616,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupType_ = "";
+
   /**
    *
    *
@@ -617,6 +641,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -644,6 +669,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
 
   public static final int BACKUP_CREATE_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp backupCreateTime_;
+
   /**
    *
    *
@@ -659,6 +685,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
   public boolean hasBackupCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -676,6 +703,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : backupCreateTime_;
   }
+
   /**
    *
    *
@@ -959,6 +987,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1315,6 +1344,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object backupTemplate_ = "";
+
     /**
      *
      *
@@ -1340,6 +1370,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1365,6 +1396,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1421,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1409,6 +1442,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1444,6 +1478,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -1461,6 +1496,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       policies_.makeImmutable();
       return policies_;
     }
+
     /**
      *
      *
@@ -1477,6 +1513,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public int getPoliciesCount() {
       return policies_.size();
     }
+
     /**
      *
      *
@@ -1494,6 +1531,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public java.lang.String getPolicies(int index) {
       return policies_.get(index);
     }
+
     /**
      *
      *
@@ -1511,6 +1549,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPoliciesBytes(int index) {
       return policies_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1536,6 +1575,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1560,6 +1600,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1581,6 +1622,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1643,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1628,6 +1671,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object host_ = "";
+
     /**
      *
      *
@@ -1656,6 +1700,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1729,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1711,6 +1757,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1734,6 +1781,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1772,6 +1820,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000008;
     }
+
     /**
      *
      *
@@ -1790,6 +1839,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       applications_.makeImmutable();
       return applications_;
     }
+
     /**
      *
      *
@@ -1807,6 +1857,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public int getApplicationsCount() {
       return applications_.size();
     }
+
     /**
      *
      *
@@ -1825,6 +1876,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public java.lang.String getApplications(int index) {
       return applications_.get(index);
     }
+
     /**
      *
      *
@@ -1843,6 +1895,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getApplicationsBytes(int index) {
       return applications_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1869,6 +1922,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1894,6 +1948,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1916,6 +1971,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1937,6 +1993,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2022,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object storagePool_ = "";
+
     /**
      *
      *
@@ -1992,6 +2050,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2019,6 +2078,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2045,6 +2105,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2067,6 +2128,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2104,6 +2166,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       }
       bitField0_ |= 0x00000020;
     }
+
     /**
      *
      *
@@ -2122,6 +2185,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       policyOptions_.makeImmutable();
       return policyOptions_;
     }
+
     /**
      *
      *
@@ -2139,6 +2203,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public int getPolicyOptionsCount() {
       return policyOptions_.size();
     }
+
     /**
      *
      *
@@ -2157,6 +2222,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public java.lang.String getPolicyOptions(int index) {
       return policyOptions_.get(index);
     }
+
     /**
      *
      *
@@ -2175,6 +2241,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getPolicyOptionsBytes(int index) {
       return policyOptions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2201,6 +2268,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2226,6 +2294,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2248,6 +2317,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2269,6 +2339,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2297,6 +2368,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object profile_ = "";
+
     /**
      *
      *
@@ -2323,6 +2395,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2349,6 +2422,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2374,6 +2448,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2395,6 +2470,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2423,6 +2499,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object appliance_ = "";
+
     /**
      *
      *
@@ -2446,6 +2523,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2469,6 +2547,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2491,6 +2570,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2509,6 +2589,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2534,6 +2615,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object backupType_ = "";
+
     /**
      *
      *
@@ -2557,6 +2639,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2580,6 +2663,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2602,6 +2686,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2620,6 +2705,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2736,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         backupCreateTimeBuilder_;
+
     /**
      *
      *
@@ -2664,6 +2751,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
     public boolean hasBackupCreateTime() {
       return ((bitField0_ & 0x00000200) != 0);
     }
+
     /**
      *
      *
@@ -2684,6 +2772,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
         return backupCreateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2706,6 +2795,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2725,6 +2815,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2752,6 +2843,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2771,6 +2863,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2785,6 +2878,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
       onChanged();
       return getBackupCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2803,6 +2897,7 @@ public final class BackupDisasterRecovery extends com.google.protobuf.GeneratedM
             : backupCreateTime_;
       }
     }
+
     /**
      *
      *

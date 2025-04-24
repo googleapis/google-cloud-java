@@ -33,6 +33,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.baremetalsolution.v2.ListNfsSharesResponse)
     ListNfsSharesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListNfsSharesResponse.newBuilder() to construct.
   private ListNfsSharesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.baremetalsolution.v2.NfsShare> nfsShares_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.cloud.baremetalsolution.v2.NfsShare> getNfsSharesList() {
     return nfsShares_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       getNfsSharesOrBuilderList() {
     return nfsShares_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public int getNfsSharesCount() {
     return nfsShares_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public com.google.cloud.baremetalsolution.v2.NfsShare getNfsShares(int index) {
     return nfsShares_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -192,6 +200,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList unreachable_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -206,6 +215,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getUnreachableList() {
     return unreachable_;
   }
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public int getUnreachableCount() {
     return unreachable_.size();
   }
+
   /**
    *
    *
@@ -235,6 +246,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
   public java.lang.String getUnreachable(int index) {
     return unreachable_.get(index);
   }
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +750,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return nfsSharesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -753,6 +767,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return nfsSharesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return nfsSharesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -791,6 +807,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -833,6 +851,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +874,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +895,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -895,6 +916,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -934,6 +957,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -953,6 +977,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +990,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     public com.google.cloud.baremetalsolution.v2.NfsShare.Builder getNfsSharesBuilder(int index) {
       return getNfsSharesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -982,6 +1008,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return nfsSharesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -999,6 +1026,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(nfsShares_);
       }
     }
+
     /**
      *
      *
@@ -1012,6 +1040,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       return getNfsSharesFieldBuilder()
           .addBuilder(com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1025,6 +1054,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       return getNfsSharesFieldBuilder()
           .addBuilder(index, com.google.cloud.baremetalsolution.v2.NfsShare.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1057,6 +1087,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1079,6 +1110,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1101,6 +1133,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1122,6 +1155,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1139,6 +1173,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1171,6 +1206,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -1186,6 +1222,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       unreachable_.makeImmutable();
       return unreachable_;
     }
+
     /**
      *
      *
@@ -1200,6 +1237,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     public int getUnreachableCount() {
       return unreachable_.size();
     }
+
     /**
      *
      *
@@ -1215,6 +1253,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     public java.lang.String getUnreachable(int index) {
       return unreachable_.get(index);
     }
+
     /**
      *
      *
@@ -1230,6 +1269,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getUnreachableBytes(int index) {
       return unreachable_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1253,6 +1293,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1316,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1336,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1355,7 @@ public final class ListNfsSharesResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

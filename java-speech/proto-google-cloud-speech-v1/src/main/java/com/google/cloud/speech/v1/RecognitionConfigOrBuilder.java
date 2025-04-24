@@ -39,6 +39,7 @@ public interface RecognitionConfigOrBuilder
    * @return The enum numeric value on the wire for encoding.
    */
   int getEncodingValue();
+
   /**
    *
    *
@@ -130,6 +131,7 @@ public interface RecognitionConfigOrBuilder
    * @return The languageCode.
    */
   java.lang.String getLanguageCode();
+
   /**
    *
    *
@@ -171,6 +173,7 @@ public interface RecognitionConfigOrBuilder
    * @return A list containing the alternativeLanguageCodes.
    */
   java.util.List<java.lang.String> getAlternativeLanguageCodesList();
+
   /**
    *
    *
@@ -194,6 +197,7 @@ public interface RecognitionConfigOrBuilder
    * @return The count of alternativeLanguageCodes.
    */
   int getAlternativeLanguageCodesCount();
+
   /**
    *
    *
@@ -218,6 +222,7 @@ public interface RecognitionConfigOrBuilder
    * @return The alternativeLanguageCodes at the given index.
    */
   java.lang.String getAlternativeLanguageCodes(int index);
+
   /**
    *
    *
@@ -293,6 +298,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the adaptation field is set.
    */
   boolean hasAdaptation();
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public interface RecognitionConfigOrBuilder
    * @return The adaptation.
    */
   com.google.cloud.speech.v1.SpeechAdaptation getAdaptation();
+
   /**
    *
    *
@@ -341,6 +348,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the transcriptNormalization field is set.
    */
   boolean hasTranscriptNormalization();
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public interface RecognitionConfigOrBuilder
    * @return The transcriptNormalization.
    */
   com.google.cloud.speech.v1.TranscriptNormalization getTranscriptNormalization();
+
   /**
    *
    *
@@ -388,6 +397,7 @@ public interface RecognitionConfigOrBuilder
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
   java.util.List<com.google.cloud.speech.v1.SpeechContext> getSpeechContextsList();
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public interface RecognitionConfigOrBuilder
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
   com.google.cloud.speech.v1.SpeechContext getSpeechContexts(int index);
+
   /**
    *
    *
@@ -416,6 +427,7 @@ public interface RecognitionConfigOrBuilder
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
   int getSpeechContextsCount();
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public interface RecognitionConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
+
   /**
    *
    *
@@ -511,6 +524,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the enableSpokenPunctuation field is set.
    */
   boolean hasEnableSpokenPunctuation();
+
   /**
    *
    *
@@ -529,6 +543,7 @@ public interface RecognitionConfigOrBuilder
    * @return The enableSpokenPunctuation.
    */
   com.google.protobuf.BoolValue getEnableSpokenPunctuation();
+
   /**
    *
    *
@@ -562,6 +577,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the enableSpokenEmojis field is set.
    */
   boolean hasEnableSpokenEmojis();
+
   /**
    *
    *
@@ -578,6 +594,7 @@ public interface RecognitionConfigOrBuilder
    * @return The enableSpokenEmojis.
    */
   com.google.protobuf.BoolValue getEnableSpokenEmojis();
+
   /**
    *
    *
@@ -612,6 +629,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the diarizationConfig field is set.
    */
   boolean hasDiarizationConfig();
+
   /**
    *
    *
@@ -631,6 +649,7 @@ public interface RecognitionConfigOrBuilder
    * @return The diarizationConfig.
    */
   com.google.cloud.speech.v1.SpeakerDiarizationConfig getDiarizationConfig();
+
   /**
    *
    *
@@ -661,6 +680,7 @@ public interface RecognitionConfigOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -673,6 +693,7 @@ public interface RecognitionConfigOrBuilder
    * @return The metadata.
    */
   com.google.cloud.speech.v1.RecognitionMetadata getMetadata();
+
   /**
    *
    *
@@ -746,6 +767,7 @@ public interface RecognitionConfigOrBuilder
    * @return The model.
    */
   java.lang.String getModel();
+
   /**
    *
    *

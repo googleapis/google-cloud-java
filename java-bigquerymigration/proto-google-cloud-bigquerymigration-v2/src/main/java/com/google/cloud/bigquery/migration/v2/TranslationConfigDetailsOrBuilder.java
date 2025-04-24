@@ -36,6 +36,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the gcsSourcePath field is set.
    */
   boolean hasGcsSourcePath();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The gcsSourcePath.
    */
   java.lang.String getGcsSourcePath();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the gcsTargetPath field is set.
    */
   boolean hasGcsTargetPath();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The gcsTargetPath.
    */
   java.lang.String getGcsTargetPath();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the nameMappingList field is set.
    */
   boolean hasNameMappingList();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The nameMappingList.
    */
   com.google.cloud.bigquery.migration.v2.ObjectNameMappingList getNameMappingList();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the sourceDialect field is set.
    */
   boolean hasSourceDialect();
+
   /**
    *
    *
@@ -158,6 +165,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The sourceDialect.
    */
   com.google.cloud.bigquery.migration.v2.Dialect getSourceDialect();
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the targetDialect field is set.
    */
   boolean hasTargetDialect();
+
   /**
    *
    *
@@ -193,6 +202,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The targetDialect.
    */
   com.google.cloud.bigquery.migration.v2.Dialect getTargetDialect();
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return Whether the sourceEnv field is set.
    */
   boolean hasSourceEnv();
+
   /**
    *
    *
@@ -228,6 +239,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The sourceEnv.
    */
   com.google.cloud.bigquery.migration.v2.SourceEnv getSourceEnv();
+
   /**
    *
    *
@@ -251,6 +263,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The requestSource.
    */
   java.lang.String getRequestSource();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return A list containing the targetTypes.
    */
   java.util.List<java.lang.String> getTargetTypesList();
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The count of targetTypes.
    */
   int getTargetTypesCount();
+
   /**
    *
    *
@@ -310,6 +325,7 @@ public interface TranslationConfigDetailsOrBuilder
    * @return The targetTypes at the given index.
    */
   java.lang.String getTargetTypes(int index);
+
   /**
    *
    *

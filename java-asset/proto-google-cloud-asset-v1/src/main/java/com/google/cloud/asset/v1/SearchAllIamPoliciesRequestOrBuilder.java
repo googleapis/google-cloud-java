@@ -47,6 +47,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The scope.
    */
   java.lang.String getScope();
+
   /**
    *
    *
@@ -124,6 +125,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -210,6 +212,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *
@@ -254,6 +257,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return A list containing the assetTypes.
    */
   java.util.List<java.lang.String> getAssetTypesList();
+
   /**
    *
    *
@@ -282,6 +286,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The count of assetTypes.
    */
   int getAssetTypesCount();
+
   /**
    *
    *
@@ -311,6 +316,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The assetTypes at the given index.
    */
   java.lang.String getAssetTypes(int index);
+
   /**
    *
    *
@@ -362,6 +368,7 @@ public interface SearchAllIamPoliciesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *

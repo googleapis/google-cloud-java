@@ -36,6 +36,7 @@ public interface DataRetentionDeletionEventOrBuilder
    * @return Whether the eventDetectionTime field is set.
    */
   boolean hasEventDetectionTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataRetentionDeletionEventOrBuilder
    * @return The eventDetectionTime.
    */
   com.google.protobuf.Timestamp getEventDetectionTime();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface DataRetentionDeletionEventOrBuilder
    * @return Whether the maxRetentionAllowed field is set.
    */
   boolean hasMaxRetentionAllowed();
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public interface DataRetentionDeletionEventOrBuilder
    * @return The maxRetentionAllowed.
    */
   com.google.protobuf.Duration getMaxRetentionAllowed();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface DataRetentionDeletionEventOrBuilder
    * @return The enum numeric value on the wire for eventType.
    */
   int getEventTypeValue();
+
   /**
    *
    *

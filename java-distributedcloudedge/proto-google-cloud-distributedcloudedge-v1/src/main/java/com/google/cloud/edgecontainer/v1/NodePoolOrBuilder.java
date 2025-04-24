@@ -38,6 +38,7 @@ public interface NodePoolOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface NodePoolOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface NodePoolOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface NodePoolOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public interface NodePoolOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface NodePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -149,9 +155,11 @@ public interface NodePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface NodePoolOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -176,6 +185,7 @@ public interface NodePoolOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -200,6 +210,7 @@ public interface NodePoolOrBuilder
    * @return The nodeLocation.
    */
   java.lang.String getNodeLocation();
+
   /**
    *
    *
@@ -241,6 +252,7 @@ public interface NodePoolOrBuilder
    * @return The machineFilter.
    */
   java.lang.String getMachineFilter();
+
   /**
    *
    *
@@ -271,6 +283,7 @@ public interface NodePoolOrBuilder
    * @return Whether the localDiskEncryption field is set.
    */
   boolean hasLocalDiskEncryption();
+
   /**
    *
    *
@@ -286,6 +299,7 @@ public interface NodePoolOrBuilder
    * @return The localDiskEncryption.
    */
   com.google.cloud.edgecontainer.v1.NodePool.LocalDiskEncryption getLocalDiskEncryption();
+
   /**
    *
    *
@@ -313,6 +327,7 @@ public interface NodePoolOrBuilder
    * @return The nodeVersion.
    */
   java.lang.String getNodeVersion();
+
   /**
    *
    *
@@ -340,6 +355,7 @@ public interface NodePoolOrBuilder
    * @return Whether the nodeConfig field is set.
    */
   boolean hasNodeConfig();
+
   /**
    *
    *
@@ -354,6 +370,7 @@ public interface NodePoolOrBuilder
    * @return The nodeConfig.
    */
   com.google.cloud.edgecontainer.v1.NodePool.NodeConfig getNodeConfig();
+
   /**
    *
    *

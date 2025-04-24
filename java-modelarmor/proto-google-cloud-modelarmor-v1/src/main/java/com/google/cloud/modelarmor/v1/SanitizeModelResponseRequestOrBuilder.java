@@ -39,6 +39,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    * @return Whether the modelResponseData field is set.
    */
   boolean hasModelResponseData();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    * @return The modelResponseData.
    */
   com.google.cloud.modelarmor.v1.DataItem getModelResponseData();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface SanitizeModelResponseRequestOrBuilder
    * @return The userPrompt.
    */
   java.lang.String getUserPrompt();
+
   /**
    *
    *

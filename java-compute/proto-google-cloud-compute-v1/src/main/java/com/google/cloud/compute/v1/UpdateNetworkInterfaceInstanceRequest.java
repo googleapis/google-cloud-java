@@ -34,6 +34,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.UpdateNetworkInterfaceInstanceRequest)
     UpdateNetworkInterfaceInstanceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateNetworkInterfaceInstanceRequest.newBuilder() to construct.
   private UpdateNetworkInterfaceInstanceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instance_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object networkInterface_ = "";
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   public static final int NETWORK_INTERFACE_RESOURCE_FIELD_NUMBER = 325814789;
   private com.google.cloud.compute.v1.NetworkInterface networkInterfaceResource_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
   public boolean hasNetworkInterfaceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         ? com.google.cloud.compute.v1.NetworkInterface.getDefaultInstance()
         : networkInterfaceResource_;
   }
+
   /**
    *
    *
@@ -233,6 +241,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -258,6 +267,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -288,6 +298,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -303,6 +314,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -326,6 +338,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -354,6 +367,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object zone_ = "";
+
   /**
    *
    *
@@ -379,6 +393,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -624,6 +639,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -907,6 +923,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     private int bitField0_;
 
     private java.lang.Object instance_ = "";
+
     /**
      *
      *
@@ -929,6 +946,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -951,6 +969,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -972,6 +991,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1009,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1034,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
 
     private java.lang.Object networkInterface_ = "";
+
     /**
      *
      *
@@ -1035,6 +1057,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1080,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1102,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1150,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
             com.google.cloud.compute.v1.NetworkInterface.Builder,
             com.google.cloud.compute.v1.NetworkInterfaceOrBuilder>
         networkInterfaceResourceBuilder_;
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     public boolean hasNetworkInterfaceResource() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1162,6 +1190,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return networkInterfaceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1238,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1270,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1260,6 +1292,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1310,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return getNetworkInterfaceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1298,6 +1332,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
             : networkInterfaceResource_;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1362,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1351,6 +1387,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1375,6 +1412,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1398,6 +1436,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1456,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1483,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1457,6 +1498,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1479,6 +1521,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1501,6 +1544,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1522,6 +1566,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1539,6 +1584,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1563,6 +1609,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
     }
 
     private java.lang.Object zone_ = "";
+
     /**
      *
      *
@@ -1587,6 +1634,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1611,6 +1659,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1634,6 +1683,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1653,6 +1703,7 @@ public final class UpdateNetworkInterfaceInstanceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

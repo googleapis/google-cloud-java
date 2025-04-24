@@ -42,6 +42,7 @@ public interface TextLocatorOrBuilder
    * @return The source.
    */
   java.lang.String getSource();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface TextLocatorOrBuilder
    * @return Whether the startPosition field is set.
    */
   boolean hasStartPosition();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface TextLocatorOrBuilder
    * @return The startPosition.
    */
   com.google.monitoring.v3.TextLocator.Position getStartPosition();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface TextLocatorOrBuilder
    * @return Whether the endPosition field is set.
    */
   boolean hasEndPosition();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface TextLocatorOrBuilder
    * @return The endPosition.
    */
   com.google.monitoring.v3.TextLocator.Position getEndPosition();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface TextLocatorOrBuilder
    * @return Whether the nestedLocator field is set.
    */
   boolean hasNestedLocator();
+
   /**
    *
    *
@@ -161,6 +167,7 @@ public interface TextLocatorOrBuilder
    * @return The nestedLocator.
    */
   com.google.monitoring.v3.TextLocator getNestedLocator();
+
   /**
    *
    *
@@ -192,6 +199,7 @@ public interface TextLocatorOrBuilder
    * @return The nestingReason.
    */
   java.lang.String getNestingReason();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
    */
   java.util.List<com.google.cloud.compute.v1.RouteAsPath> getAsPathsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
    */
   com.google.cloud.compute.v1.RouteAsPath getAsPaths(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.RouteAsPath as_paths = 137568929;</code>
    */
   int getAsPathsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface RouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.RouteAsPathOrBuilder>
       getAsPathsOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface RouteOrBuilder
    * @return Whether the creationTimestamp field is set.
    */
   boolean hasCreationTimestamp();
+
   /**
    *
    *
@@ -100,6 +105,7 @@ public interface RouteOrBuilder
    * @return The creationTimestamp.
    */
   java.lang.String getCreationTimestamp();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface RouteOrBuilder
    * @return Whether the description field is set.
    */
   boolean hasDescription();
+
   /**
    *
    *
@@ -137,6 +144,7 @@ public interface RouteOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface RouteOrBuilder
    * @return Whether the destRange field is set.
    */
   boolean hasDestRange();
+
   /**
    *
    *
@@ -174,6 +183,7 @@ public interface RouteOrBuilder
    * @return The destRange.
    */
   java.lang.String getDestRange();
+
   /**
    *
    *
@@ -199,6 +209,7 @@ public interface RouteOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -224,6 +235,7 @@ public interface RouteOrBuilder
    * @return Whether the kind field is set.
    */
   boolean hasKind();
+
   /**
    *
    *
@@ -236,6 +248,7 @@ public interface RouteOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -261,6 +274,7 @@ public interface RouteOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -273,6 +287,7 @@ public interface RouteOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -298,6 +313,7 @@ public interface RouteOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -310,6 +326,7 @@ public interface RouteOrBuilder
    * @return The network.
    */
   java.lang.String getNetwork();
+
   /**
    *
    *
@@ -335,6 +352,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopGateway field is set.
    */
   boolean hasNextHopGateway();
+
   /**
    *
    *
@@ -347,6 +365,7 @@ public interface RouteOrBuilder
    * @return The nextHopGateway.
    */
   java.lang.String getNextHopGateway();
+
   /**
    *
    *
@@ -372,6 +391,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopHub field is set.
    */
   boolean hasNextHopHub();
+
   /**
    *
    *
@@ -384,6 +404,7 @@ public interface RouteOrBuilder
    * @return The nextHopHub.
    */
   java.lang.String getNextHopHub();
+
   /**
    *
    *
@@ -409,6 +430,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopIlb field is set.
    */
   boolean hasNextHopIlb();
+
   /**
    *
    *
@@ -421,6 +443,7 @@ public interface RouteOrBuilder
    * @return The nextHopIlb.
    */
   java.lang.String getNextHopIlb();
+
   /**
    *
    *
@@ -446,6 +469,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopInstance field is set.
    */
   boolean hasNextHopInstance();
+
   /**
    *
    *
@@ -458,6 +482,7 @@ public interface RouteOrBuilder
    * @return The nextHopInstance.
    */
   java.lang.String getNextHopInstance();
+
   /**
    *
    *
@@ -483,6 +508,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopInterRegionCost field is set.
    */
   boolean hasNextHopInterRegionCost();
+
   /**
    *
    *
@@ -508,6 +534,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopIp field is set.
    */
   boolean hasNextHopIp();
+
   /**
    *
    *
@@ -520,6 +547,7 @@ public interface RouteOrBuilder
    * @return The nextHopIp.
    */
   java.lang.String getNextHopIp();
+
   /**
    *
    *
@@ -545,6 +573,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopMed field is set.
    */
   boolean hasNextHopMed();
+
   /**
    *
    *
@@ -570,6 +599,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopNetwork field is set.
    */
   boolean hasNextHopNetwork();
+
   /**
    *
    *
@@ -582,6 +612,7 @@ public interface RouteOrBuilder
    * @return The nextHopNetwork.
    */
   java.lang.String getNextHopNetwork();
+
   /**
    *
    *
@@ -608,6 +639,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopOrigin field is set.
    */
   boolean hasNextHopOrigin();
+
   /**
    *
    *
@@ -621,6 +653,7 @@ public interface RouteOrBuilder
    * @return The nextHopOrigin.
    */
   java.lang.String getNextHopOrigin();
+
   /**
    *
    *
@@ -647,6 +680,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopPeering field is set.
    */
   boolean hasNextHopPeering();
+
   /**
    *
    *
@@ -659,6 +693,7 @@ public interface RouteOrBuilder
    * @return The nextHopPeering.
    */
   java.lang.String getNextHopPeering();
+
   /**
    *
    *
@@ -684,6 +719,7 @@ public interface RouteOrBuilder
    * @return Whether the nextHopVpnTunnel field is set.
    */
   boolean hasNextHopVpnTunnel();
+
   /**
    *
    *
@@ -696,6 +732,7 @@ public interface RouteOrBuilder
    * @return The nextHopVpnTunnel.
    */
   java.lang.String getNextHopVpnTunnel();
+
   /**
    *
    *
@@ -721,6 +758,7 @@ public interface RouteOrBuilder
    * @return Whether the priority field is set.
    */
   boolean hasPriority();
+
   /**
    *
    *
@@ -747,6 +785,7 @@ public interface RouteOrBuilder
    * @return Whether the routeStatus field is set.
    */
   boolean hasRouteStatus();
+
   /**
    *
    *
@@ -760,6 +799,7 @@ public interface RouteOrBuilder
    * @return The routeStatus.
    */
   java.lang.String getRouteStatus();
+
   /**
    *
    *
@@ -787,6 +827,7 @@ public interface RouteOrBuilder
    * @return Whether the routeType field is set.
    */
   boolean hasRouteType();
+
   /**
    *
    *
@@ -800,6 +841,7 @@ public interface RouteOrBuilder
    * @return The routeType.
    */
   java.lang.String getRouteType();
+
   /**
    *
    *
@@ -826,6 +868,7 @@ public interface RouteOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -838,6 +881,7 @@ public interface RouteOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -863,6 +907,7 @@ public interface RouteOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -875,6 +920,7 @@ public interface RouteOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -888,6 +934,7 @@ public interface RouteOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *
@@ -912,6 +959,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   java.util.List<com.google.cloud.compute.v1.Warnings> getWarningsList();
+
   /**
    *
    *
@@ -922,6 +970,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   com.google.cloud.compute.v1.Warnings getWarnings(int index);
+
   /**
    *
    *
@@ -932,6 +981,7 @@ public interface RouteOrBuilder
    * <code>repeated .google.cloud.compute.v1.Warnings warnings = 498091095;</code>
    */
   int getWarningsCount();
+
   /**
    *
    *
@@ -943,6 +993,7 @@ public interface RouteOrBuilder
    */
   java.util.List<? extends com.google.cloud.compute.v1.WarningsOrBuilder>
       getWarningsOrBuilderList();
+
   /**
    *
    *

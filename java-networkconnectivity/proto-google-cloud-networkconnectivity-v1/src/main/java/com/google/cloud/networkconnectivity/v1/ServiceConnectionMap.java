@@ -33,6 +33,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ServiceConnectionMap)
     ServiceConnectionMapOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ServiceConnectionMap.newBuilder() to construct.
   private ServiceConnectionMap(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -103,6 +104,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The serviceAttachmentUri.
      */
     java.lang.String getServiceAttachmentUri();
+
     /**
      *
      *
@@ -118,6 +120,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     com.google.protobuf.ByteString getServiceAttachmentUriBytes();
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig)
       ProducerPscConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProducerPscConfig.newBuilder() to construct.
     private ProducerPscConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -168,6 +172,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAttachmentUri_ = "";
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -388,6 +394,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -592,6 +599,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object serviceAttachmentUri_ = "";
+
       /**
        *
        *
@@ -616,6 +624,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -640,6 +649,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -663,6 +673,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -682,6 +693,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -793,6 +805,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The project.
      */
     java.lang.String getProject();
+
     /**
      *
      *
@@ -822,6 +835,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The network.
      */
     java.lang.String getNetwork();
+
     /**
      *
      *
@@ -868,6 +882,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -904,6 +919,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     java.lang.String getProducerInstanceId();
+
     /**
      *
      *
@@ -939,6 +955,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     int getServiceAttachmentIpAddressMapCount();
+
     /**
      *
      *
@@ -953,9 +970,11 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     boolean containsServiceAttachmentIpAddressMap(java.lang.String key);
+
     /** Use {@link #getServiceAttachmentIpAddressMapMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getServiceAttachmentIpAddressMap();
+
     /**
      *
      *
@@ -970,6 +989,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getServiceAttachmentIpAddressMapMap();
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -1022,6 +1043,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The consumerInstanceProject.
      */
     java.lang.String getConsumerInstanceProject();
+
     /**
      *
      *
@@ -1054,6 +1076,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     int getProducerInstanceMetadataCount();
+
     /**
      *
      *
@@ -1066,9 +1089,11 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     boolean containsProducerInstanceMetadata(java.lang.String key);
+
     /** Use {@link #getProducerInstanceMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata();
+
     /**
      *
      *
@@ -1081,6 +1106,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap();
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -1122,6 +1149,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return Whether the ipVersion field is set.
      */
     boolean hasIpVersion();
+
     /**
      *
      *
@@ -1134,6 +1162,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for ipVersion.
      */
     int getIpVersionValue();
+
     /**
      *
      *
@@ -1147,6 +1176,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.networkconnectivity.v1.IPVersion getIpVersion();
   }
+
   /**
    *
    *
@@ -1162,6 +1192,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig)
       ConsumerPscConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConsumerPscConfig.newBuilder() to construct.
     private ConsumerPscConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1292,6 +1323,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -1304,6 +1336,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>VALID = 1;</code>
        */
       public static final int VALID_VALUE = 1;
+
       /**
        *
        *
@@ -1315,6 +1348,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>CONNECTION_POLICY_MISSING = 2;</code>
        */
       public static final int CONNECTION_POLICY_MISSING_VALUE = 2;
+
       /**
        *
        *
@@ -1326,6 +1360,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>POLICY_LIMIT_REACHED = 3;</code>
        */
       public static final int POLICY_LIMIT_REACHED_VALUE = 3;
+
       /**
        *
        *
@@ -1434,6 +1469,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1457,6 +1493,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1485,6 +1522,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -1512,6 +1550,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1542,6 +1581,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int DISABLE_GLOBAL_ACCESS_FIELD_NUMBER = 3;
     private boolean disableGlobalAccess_ = false;
+
     /**
      *
      *
@@ -1561,6 +1601,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int STATE_FIELD_NUMBER = 4;
     private int state_ = 0;
+
     /**
      *
      *
@@ -1579,6 +1620,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1609,6 +1651,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object producerInstanceId_ = "";
+
     /**
      *
      *
@@ -1640,6 +1683,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1701,6 +1745,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getServiceAttachmentIpAddressMapCount() {
       return internalGetServiceAttachmentIpAddressMap().getMap().size();
     }
+
     /**
      *
      *
@@ -1721,12 +1766,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return internalGetServiceAttachmentIpAddressMap().getMap().containsKey(key);
     }
+
     /** Use {@link #getServiceAttachmentIpAddressMapMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getServiceAttachmentIpAddressMap() {
       return getServiceAttachmentIpAddressMapMap();
     }
+
     /**
      *
      *
@@ -1744,6 +1791,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getServiceAttachmentIpAddressMapMap() {
       return internalGetServiceAttachmentIpAddressMap().getMap();
     }
+
     /**
      *
      *
@@ -1769,6 +1817,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           internalGetServiceAttachmentIpAddressMap().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1799,6 +1848,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object consumerInstanceProject_ = "";
+
     /**
      *
      *
@@ -1829,6 +1879,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -1889,6 +1940,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getProducerInstanceMetadataCount() {
       return internalGetProducerInstanceMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -1907,12 +1959,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return internalGetProducerInstanceMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getProducerInstanceMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata() {
       return getProducerInstanceMetadataMap();
     }
+
     /**
      *
      *
@@ -1928,6 +1982,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap() {
       return internalGetProducerInstanceMetadata().getMap();
     }
+
     /**
      *
      *
@@ -1951,6 +2006,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           internalGetProducerInstanceMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1977,6 +2033,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int IP_VERSION_FIELD_NUMBER = 9;
     private int ipVersion_ = 0;
+
     /**
      *
      *
@@ -1992,6 +2049,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2007,6 +2065,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getIpVersionValue() {
       return ipVersion_;
     }
+
     /**
      *
      *
@@ -2309,6 +2368,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2674,6 +2734,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object project_ = "";
+
       /**
        *
        *
@@ -2696,6 +2757,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2718,6 +2780,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2739,6 +2802,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2756,6 +2820,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2780,6 +2845,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object network_ = "";
+
       /**
        *
        *
@@ -2806,6 +2872,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2832,6 +2899,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2857,6 +2925,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2878,6 +2947,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2906,6 +2976,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private boolean disableGlobalAccess_;
+
       /**
        *
        *
@@ -2922,6 +2993,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public boolean getDisableGlobalAccess() {
         return disableGlobalAccess_;
       }
+
       /**
        *
        *
@@ -2942,6 +3014,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2962,6 +3035,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -2980,6 +3054,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -3001,6 +3076,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3027,6 +3103,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
                 .UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3053,6 +3130,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3075,6 +3153,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object producerInstanceId_ = "";
+
       /**
        *
        *
@@ -3105,6 +3184,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3135,6 +3215,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3164,6 +3245,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3189,6 +3271,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3250,6 +3333,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getServiceAttachmentIpAddressMapCount() {
         return internalGetServiceAttachmentIpAddressMap().getMap().size();
       }
+
       /**
        *
        *
@@ -3270,12 +3354,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         }
         return internalGetServiceAttachmentIpAddressMap().getMap().containsKey(key);
       }
+
       /** Use {@link #getServiceAttachmentIpAddressMapMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getServiceAttachmentIpAddressMap() {
         return getServiceAttachmentIpAddressMapMap();
       }
+
       /**
        *
        *
@@ -3294,6 +3380,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           getServiceAttachmentIpAddressMapMap() {
         return internalGetServiceAttachmentIpAddressMap().getMap();
       }
+
       /**
        *
        *
@@ -3319,6 +3406,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             internalGetServiceAttachmentIpAddressMap().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -3350,6 +3438,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableServiceAttachmentIpAddressMap().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -3370,6 +3459,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableServiceAttachmentIpAddressMap().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
@@ -3377,6 +3467,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000020;
         return internalGetMutableServiceAttachmentIpAddressMap().getMutableMap();
       }
+
       /**
        *
        *
@@ -3402,6 +3493,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000020;
         return this;
       }
+
       /**
        *
        *
@@ -3423,6 +3515,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object consumerInstanceProject_ = "";
+
       /**
        *
        *
@@ -3452,6 +3545,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3481,6 +3575,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3509,6 +3604,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3533,6 +3629,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3593,6 +3690,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getProducerInstanceMetadataCount() {
         return internalGetProducerInstanceMetadata().getMap().size();
       }
+
       /**
        *
        *
@@ -3611,12 +3709,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         }
         return internalGetProducerInstanceMetadata().getMap().containsKey(key);
       }
+
       /** Use {@link #getProducerInstanceMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata() {
         return getProducerInstanceMetadataMap();
       }
+
       /**
        *
        *
@@ -3632,6 +3732,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap() {
         return internalGetProducerInstanceMetadata().getMap();
       }
+
       /**
        *
        *
@@ -3655,6 +3756,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             internalGetProducerInstanceMetadata().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -3684,6 +3786,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableProducerInstanceMetadata().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -3702,6 +3805,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableProducerInstanceMetadata().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
@@ -3709,6 +3813,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000080;
         return internalGetMutableProducerInstanceMetadata().getMutableMap();
       }
+
       /**
        *
        *
@@ -3731,6 +3836,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000080;
         return this;
       }
+
       /**
        *
        *
@@ -3750,6 +3856,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private int ipVersion_ = 0;
+
       /**
        *
        *
@@ -3765,6 +3872,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public boolean hasIpVersion() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -3780,6 +3888,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getIpVersionValue() {
         return ipVersion_;
       }
+
       /**
        *
        *
@@ -3798,6 +3907,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3817,6 +3927,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.networkconnectivity.v1.IPVersion.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3838,6 +3949,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3943,6 +4055,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The serviceAttachmentUri.
      */
     java.lang.String getServiceAttachmentUri();
+
     /**
      *
      *
@@ -3971,6 +4084,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -4000,6 +4114,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The project.
      */
     java.lang.String getProject();
+
     /**
      *
      *
@@ -4028,6 +4143,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The network.
      */
     java.lang.String getNetwork();
+
     /**
      *
      *
@@ -4056,6 +4172,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The pscConnectionId.
      */
     java.lang.String getPscConnectionId();
+
     /**
      *
      *
@@ -4084,6 +4201,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The ip.
      */
     java.lang.String getIp();
+
     /**
      *
      *
@@ -4119,6 +4237,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     int getErrorTypeValue();
+
     /**
      *
      *
@@ -4156,6 +4275,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     boolean hasError();
+
     /**
      *
      *
@@ -4172,6 +4292,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     com.google.rpc.Status getError();
+
     /**
      *
      *
@@ -4196,6 +4317,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The gceOperation.
      */
     java.lang.String getGceOperation();
+
     /**
      *
      *
@@ -4223,6 +4345,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The forwardingRule.
      */
     java.lang.String getForwardingRule();
+
     /**
      *
      *
@@ -4252,6 +4375,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return Whether the errorInfo field is set.
      */
     boolean hasErrorInfo();
+
     /**
      *
      *
@@ -4266,6 +4390,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The errorInfo.
      */
     com.google.rpc.ErrorInfo getErrorInfo();
+
     /**
      *
      *
@@ -4292,6 +4417,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The selectedSubnetwork.
      */
     java.lang.String getSelectedSubnetwork();
+
     /**
      *
      *
@@ -4326,6 +4452,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Deprecated
     java.lang.String getProducerInstanceId();
+
     /**
      *
      *
@@ -4359,6 +4486,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     int getProducerInstanceMetadataCount();
+
     /**
      *
      *
@@ -4371,9 +4499,11 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     boolean containsProducerInstanceMetadata(java.lang.String key);
+
     /** Use {@link #getProducerInstanceMetadataMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata();
+
     /**
      *
      *
@@ -4386,6 +4516,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * </code>
      */
     java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap();
+
     /**
      *
      *
@@ -4402,6 +4533,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         java.lang.String key,
         /* nullable */
         java.lang.String defaultValue);
+
     /**
      *
      *
@@ -4427,6 +4559,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return Whether the ipVersion field is set.
      */
     boolean hasIpVersion();
+
     /**
      *
      *
@@ -4439,6 +4572,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      * @return The enum numeric value on the wire for ipVersion.
      */
     int getIpVersionValue();
+
     /**
      *
      *
@@ -4452,6 +4586,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.networkconnectivity.v1.IPVersion getIpVersion();
   }
+
   /**
    *
    *
@@ -4467,6 +4602,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       // @@protoc_insertion_point(message_implements:google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection)
       ConsumerPscConnectionOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConsumerPscConnection.newBuilder() to construct.
     private ConsumerPscConnection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4622,6 +4758,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -4634,6 +4771,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -4645,6 +4783,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>FAILED = 2;</code>
        */
       public static final int FAILED_VALUE = 2;
+
       /**
        *
        *
@@ -4655,6 +4794,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>CREATING = 3;</code>
        */
       public static final int CREATING_VALUE = 3;
+
       /**
        *
        *
@@ -4665,6 +4805,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>DELETING = 4;</code>
        */
       public static final int DELETING_VALUE = 4;
+
       /**
        *
        *
@@ -4675,6 +4816,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
        * <code>CREATE_REPAIRING = 5;</code>
        */
       public static final int CREATE_REPAIRING_VALUE = 5;
+
       /**
        *
        *
@@ -4785,6 +4927,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object serviceAttachmentUri_ = "";
+
     /**
      *
      *
@@ -4809,6 +4952,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -4836,6 +4980,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int STATE_FIELD_NUMBER = 2;
     private int state_ = 0;
+
     /**
      *
      *
@@ -4853,6 +4998,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4883,6 +5029,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -4907,6 +5054,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -4936,6 +5084,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object network_ = "";
+
     /**
      *
      *
@@ -4961,6 +5110,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -4991,6 +5141,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object pscConnectionId_ = "";
+
     /**
      *
      *
@@ -5015,6 +5166,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5044,6 +5196,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object ip_ = "";
+
     /**
      *
      *
@@ -5069,6 +5222,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5097,6 +5251,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int ERROR_TYPE_FIELD_NUMBER = 7;
     private int errorType_ = 0;
+
     /**
      *
      *
@@ -5120,6 +5275,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getErrorTypeValue() {
       return errorType_;
     }
+
     /**
      *
      *
@@ -5150,6 +5306,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int ERROR_FIELD_NUMBER = 8;
     private com.google.rpc.Status error_;
+
     /**
      *
      *
@@ -5169,6 +5326,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasError() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5188,6 +5346,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public com.google.rpc.Status getError() {
       return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
     }
+
     /**
      *
      *
@@ -5207,6 +5366,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gceOperation_ = "";
+
     /**
      *
      *
@@ -5230,6 +5390,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5258,6 +5419,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object forwardingRule_ = "";
+
     /**
      *
      *
@@ -5283,6 +5445,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5311,6 +5474,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int ERROR_INFO_FIELD_NUMBER = 11;
     private com.google.rpc.ErrorInfo errorInfo_;
+
     /**
      *
      *
@@ -5328,6 +5492,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasErrorInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5345,6 +5510,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public com.google.rpc.ErrorInfo getErrorInfo() {
       return errorInfo_ == null ? com.google.rpc.ErrorInfo.getDefaultInstance() : errorInfo_;
     }
+
     /**
      *
      *
@@ -5365,6 +5531,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object selectedSubnetwork_ = "";
+
     /**
      *
      *
@@ -5389,6 +5556,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5418,6 +5586,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object producerInstanceId_ = "";
+
     /**
      *
      *
@@ -5449,6 +5618,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return s;
       }
     }
+
     /**
      *
      *
@@ -5510,6 +5680,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getProducerInstanceMetadataCount() {
       return internalGetProducerInstanceMetadata().getMap().size();
     }
+
     /**
      *
      *
@@ -5528,12 +5699,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return internalGetProducerInstanceMetadata().getMap().containsKey(key);
     }
+
     /** Use {@link #getProducerInstanceMetadataMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata() {
       return getProducerInstanceMetadataMap();
     }
+
     /**
      *
      *
@@ -5549,6 +5722,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap() {
       return internalGetProducerInstanceMetadata().getMap();
     }
+
     /**
      *
      *
@@ -5572,6 +5746,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           internalGetProducerInstanceMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -5598,6 +5773,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
     public static final int IP_VERSION_FIELD_NUMBER = 15;
     private int ipVersion_ = 0;
+
     /**
      *
      *
@@ -5613,6 +5789,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -5628,6 +5805,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getIpVersionValue() {
       return ipVersion_;
     }
+
     /**
      *
      *
@@ -5986,6 +6164,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6447,6 +6626,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       private int bitField0_;
 
       private java.lang.Object serviceAttachmentUri_ = "";
+
       /**
        *
        *
@@ -6470,6 +6650,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6493,6 +6674,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6515,6 +6697,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6533,6 +6716,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6558,6 +6742,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -6575,6 +6760,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -6595,6 +6781,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6621,6 +6808,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
                 .State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -6646,6 +6834,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6667,6 +6856,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object project_ = "";
+
       /**
        *
        *
@@ -6690,6 +6880,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6713,6 +6904,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6735,6 +6927,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6753,6 +6946,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6778,6 +6972,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object network_ = "";
+
       /**
        *
        *
@@ -6802,6 +6997,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6826,6 +7022,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6849,6 +7046,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6868,6 +7066,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6894,6 +7093,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object pscConnectionId_ = "";
+
       /**
        *
        *
@@ -6917,6 +7117,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6940,6 +7141,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6962,6 +7164,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6980,6 +7183,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7005,6 +7209,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object ip_ = "";
+
       /**
        *
        *
@@ -7029,6 +7234,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7053,6 +7259,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7076,6 +7283,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7095,6 +7303,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7121,6 +7330,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private int errorType_ = 0;
+
       /**
        *
        *
@@ -7144,6 +7354,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getErrorTypeValue() {
         return errorType_;
       }
+
       /**
        *
        *
@@ -7170,6 +7381,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7197,6 +7409,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.networkconnectivity.v1.ConnectionErrorType.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -7227,6 +7440,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7257,6 +7471,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           errorBuilder_;
+
       /**
        *
        *
@@ -7276,6 +7491,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public boolean hasError() {
         return ((bitField0_ & 0x00000080) != 0);
       }
+
       /**
        *
        *
@@ -7299,6 +7515,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return errorBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7322,6 +7539,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7342,6 +7560,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7370,6 +7589,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7390,6 +7610,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7405,6 +7626,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return getErrorFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7422,6 +7644,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
         }
       }
+
       /**
        *
        *
@@ -7446,6 +7669,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object gceOperation_ = "";
+
       /**
        *
        *
@@ -7468,6 +7692,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7490,6 +7715,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7511,6 +7737,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7528,6 +7755,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7552,6 +7780,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object forwardingRule_ = "";
+
       /**
        *
        *
@@ -7576,6 +7805,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7600,6 +7830,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7623,6 +7854,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7642,6 +7874,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7673,6 +7906,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.rpc.ErrorInfo.Builder,
               com.google.rpc.ErrorInfoOrBuilder>
           errorInfoBuilder_;
+
       /**
        *
        *
@@ -7689,6 +7923,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public boolean hasErrorInfo() {
         return ((bitField0_ & 0x00000400) != 0);
       }
+
       /**
        *
        *
@@ -7709,6 +7944,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return errorInfoBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7733,6 +7969,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7754,6 +7991,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7783,6 +8021,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         }
         return this;
       }
+
       /**
        *
        *
@@ -7804,6 +8043,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7820,6 +8060,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return getErrorInfoFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7838,6 +8079,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return errorInfo_ == null ? com.google.rpc.ErrorInfo.getDefaultInstance() : errorInfo_;
         }
       }
+
       /**
        *
        *
@@ -7867,6 +8109,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object selectedSubnetwork_ = "";
+
       /**
        *
        *
@@ -7890,6 +8133,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -7913,6 +8157,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -7935,6 +8180,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7953,6 +8199,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7978,6 +8225,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private java.lang.Object producerInstanceId_ = "";
+
       /**
        *
        *
@@ -8008,6 +8256,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8038,6 +8287,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8067,6 +8317,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8092,6 +8343,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8153,6 +8405,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getProducerInstanceMetadataCount() {
         return internalGetProducerInstanceMetadata().getMap().size();
       }
+
       /**
        *
        *
@@ -8171,12 +8424,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         }
         return internalGetProducerInstanceMetadata().getMap().containsKey(key);
       }
+
       /** Use {@link #getProducerInstanceMetadataMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadata() {
         return getProducerInstanceMetadataMap();
       }
+
       /**
        *
        *
@@ -8192,6 +8447,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public java.util.Map<java.lang.String, java.lang.String> getProducerInstanceMetadataMap() {
         return internalGetProducerInstanceMetadata().getMap();
       }
+
       /**
        *
        *
@@ -8215,6 +8471,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             internalGetProducerInstanceMetadata().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
+
       /**
        *
        *
@@ -8244,6 +8501,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableProducerInstanceMetadata().getMutableMap().clear();
         return this;
       }
+
       /**
        *
        *
@@ -8262,6 +8520,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         internalGetMutableProducerInstanceMetadata().getMutableMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
@@ -8269,6 +8528,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00002000;
         return internalGetMutableProducerInstanceMetadata().getMutableMap();
       }
+
       /**
        *
        *
@@ -8291,6 +8551,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00002000;
         return this;
       }
+
       /**
        *
        *
@@ -8310,6 +8571,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
 
       private int ipVersion_ = 0;
+
       /**
        *
        *
@@ -8325,6 +8587,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public boolean hasIpVersion() {
         return ((bitField0_ & 0x00004000) != 0);
       }
+
       /**
        *
        *
@@ -8340,6 +8603,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       public int getIpVersionValue() {
         return ipVersion_;
       }
+
       /**
        *
        *
@@ -8358,6 +8622,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8377,6 +8642,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             ? com.google.cloud.networkconnectivity.v1.IPVersion.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -8398,6 +8664,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8490,6 +8757,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -8516,6 +8784,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -8545,6 +8814,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -8561,6 +8831,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -8577,6 +8848,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -8594,6 +8866,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -8610,6 +8883,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -8626,6 +8900,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -8667,6 +8942,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -8683,12 +8959,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -8702,6 +8980,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -8722,6 +9001,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -8747,6 +9027,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -8770,6 +9051,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -8798,6 +9080,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceClass_ = "";
+
   /**
    *
    *
@@ -8824,6 +9107,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -8855,6 +9139,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceClassUri_ = "";
+
   /**
    *
    *
@@ -8878,6 +9163,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -8904,6 +9190,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   public static final int INFRASTRUCTURE_FIELD_NUMBER = 8;
   private int infrastructure_ = 0;
+
   /**
    *
    *
@@ -8922,6 +9209,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public int getInfrastructureValue() {
     return infrastructure_;
   }
+
   /**
    *
    *
@@ -8951,6 +9239,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   private java.util.List<
           com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig>
       producerPscConfigs_;
+
   /**
    *
    *
@@ -8968,6 +9257,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getProducerPscConfigsList() {
     return producerPscConfigs_;
   }
+
   /**
    *
    *
@@ -8987,6 +9277,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getProducerPscConfigsOrBuilderList() {
     return producerPscConfigs_;
   }
+
   /**
    *
    *
@@ -9002,6 +9293,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public int getProducerPscConfigsCount() {
     return producerPscConfigs_.size();
   }
+
   /**
    *
    *
@@ -9018,6 +9310,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getProducerPscConfigs(int index) {
     return producerPscConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -9041,6 +9334,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   private java.util.List<
           com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig>
       consumerPscConfigs_;
+
   /**
    *
    *
@@ -9058,6 +9352,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConfigsList() {
     return consumerPscConfigs_;
   }
+
   /**
    *
    *
@@ -9077,6 +9372,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConfigsOrBuilderList() {
     return consumerPscConfigs_;
   }
+
   /**
    *
    *
@@ -9092,6 +9388,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public int getConsumerPscConfigsCount() {
     return consumerPscConfigs_.size();
   }
+
   /**
    *
    *
@@ -9108,6 +9405,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConfigs(int index) {
     return consumerPscConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -9131,6 +9429,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   private java.util.List<
           com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection>
       consumerPscConnections_;
+
   /**
    *
    *
@@ -9148,6 +9447,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConnectionsList() {
     return consumerPscConnections_;
   }
+
   /**
    *
    *
@@ -9167,6 +9467,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConnectionsOrBuilderList() {
     return consumerPscConnections_;
   }
+
   /**
    *
    *
@@ -9182,6 +9483,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public int getConsumerPscConnectionsCount() {
     return consumerPscConnections_.size();
   }
+
   /**
    *
    *
@@ -9198,6 +9500,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       getConsumerPscConnections(int index) {
     return consumerPscConnections_.get(index);
   }
+
   /**
    *
    *
@@ -9219,6 +9522,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object token_ = "";
+
   /**
    *
    *
@@ -9243,6 +9547,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -9272,6 +9577,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -9289,6 +9595,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
   public boolean hasEtag() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -9314,6 +9621,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -9646,6 +9954,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -10194,6 +10503,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -10219,6 +10529,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10244,6 +10555,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10268,6 +10580,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10288,6 +10601,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10320,6 +10634,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -10336,6 +10651,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -10358,6 +10674,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10382,6 +10699,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10403,6 +10721,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10432,6 +10751,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10453,6 +10773,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10469,6 +10790,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10489,6 +10811,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -10523,6 +10846,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -10539,6 +10863,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -10561,6 +10886,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -10585,6 +10911,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10606,6 +10933,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10635,6 +10963,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -10656,6 +10985,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10672,6 +11002,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -10692,6 +11023,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -10745,6 +11077,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -10761,12 +11094,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -10780,6 +11115,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -10800,6 +11136,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -10826,6 +11163,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -10842,12 +11180,14 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000008;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -10868,6 +11208,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -10884,6 +11225,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -10906,6 +11248,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -10928,6 +11271,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -10949,6 +11293,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10966,6 +11311,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -10990,6 +11336,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object serviceClass_ = "";
+
     /**
      *
      *
@@ -11015,6 +11362,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11040,6 +11388,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11064,6 +11413,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11084,6 +11434,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11111,6 +11462,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object serviceClassUri_ = "";
+
     /**
      *
      *
@@ -11133,6 +11485,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -11155,6 +11508,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -11176,6 +11530,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11193,6 +11548,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11217,6 +11573,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private int infrastructure_ = 0;
+
     /**
      *
      *
@@ -11235,6 +11592,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public int getInfrastructureValue() {
       return infrastructure_;
     }
+
     /**
      *
      *
@@ -11256,6 +11614,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11278,6 +11637,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
           ? com.google.cloud.networkconnectivity.v1.Infrastructure.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -11302,6 +11662,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -11363,6 +11724,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return producerPscConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -11381,6 +11743,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return producerPscConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -11400,6 +11763,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return producerPscConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -11426,6 +11790,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11450,6 +11815,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11475,6 +11841,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11501,6 +11868,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11524,6 +11892,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11548,6 +11917,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11573,6 +11943,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11594,6 +11965,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11615,6 +11987,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11630,6 +12003,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         getProducerPscConfigsBuilder(int index) {
       return getProducerPscConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -11649,6 +12023,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return producerPscConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -11671,6 +12046,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(producerPscConfigs_);
       }
     }
+
     /**
      *
      *
@@ -11689,6 +12065,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -11708,6 +12085,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ProducerPscConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -11787,6 +12165,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -11805,6 +12184,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -11824,6 +12204,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -11850,6 +12231,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11874,6 +12256,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11899,6 +12282,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11925,6 +12309,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11948,6 +12333,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11972,6 +12358,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -11997,6 +12384,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12018,6 +12406,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12039,6 +12428,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12054,6 +12444,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         getConsumerPscConfigsBuilder(int index) {
       return getConsumerPscConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -12073,6 +12464,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -12095,6 +12487,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(consumerPscConfigs_);
       }
     }
+
     /**
      *
      *
@@ -12113,6 +12506,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12132,6 +12526,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConfig
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12213,6 +12608,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConnectionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -12231,6 +12627,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConnectionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -12250,6 +12647,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConnectionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -12276,6 +12674,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12300,6 +12699,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12325,6 +12725,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12351,6 +12752,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12374,6 +12776,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12398,6 +12801,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12424,6 +12828,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12445,6 +12850,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12466,6 +12872,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -12482,6 +12889,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         getConsumerPscConnectionsBuilder(int index) {
       return getConsumerPscConnectionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -12502,6 +12910,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return consumerPscConnectionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -12524,6 +12933,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(consumerPscConnections_);
       }
     }
+
     /**
      *
      *
@@ -12543,6 +12953,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12563,6 +12974,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
               com.google.cloud.networkconnectivity.v1.ServiceConnectionMap.ConsumerPscConnection
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -12606,6 +13018,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object token_ = "";
+
     /**
      *
      *
@@ -12629,6 +13042,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -12652,6 +13066,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -12674,6 +13089,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12692,6 +13108,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12717,6 +13134,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -12733,6 +13151,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
     public boolean hasEtag() {
       return ((bitField0_ & 0x00001000) != 0);
     }
+
     /**
      *
      *
@@ -12757,6 +13176,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -12781,6 +13201,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -12804,6 +13225,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -12823,6 +13245,7 @@ public final class ServiceConnectionMap extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.UpdateSourceRequest)
     UpdateSourceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSourceRequest.newBuilder() to construct.
   private UpdateSourceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int UPDATE_MASK_FIELD_NUMBER = 1;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
 
   public static final int SOURCE_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.Source source_;
+
   /**
    *
    *
@@ -147,6 +152,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
   public boolean hasSource() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
         ? com.google.cloud.migrationcenter.v1.Source.getDefaultInstance()
         : source_;
   }
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -447,6 +456,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -684,6 +694,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -704,6 +715,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -730,6 +742,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +797,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +831,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +857,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -885,6 +903,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -923,6 +942,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
             com.google.cloud.migrationcenter.v1.Source.Builder,
             com.google.cloud.migrationcenter.v1.SourceOrBuilder>
         sourceBuilder_;
+
     /**
      *
      *
@@ -939,6 +959,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     public boolean hasSource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -961,6 +982,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
         return sourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -985,6 +1007,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1035,6 +1059,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1056,6 +1081,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1072,6 +1098,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getSourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1092,6 +1119,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
             : source_;
       }
     }
+
     /**
      *
      *
@@ -1121,6 +1149,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1155,6 +1184,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1189,6 +1219,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1222,6 +1253,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1251,6 +1283,7 @@ public final class UpdateSourceRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

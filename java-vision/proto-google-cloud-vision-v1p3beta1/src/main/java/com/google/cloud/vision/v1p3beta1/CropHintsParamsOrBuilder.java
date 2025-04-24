@@ -41,6 +41,7 @@ public interface CropHintsParamsOrBuilder
    * @return A list containing the aspectRatios.
    */
   java.util.List<java.lang.Float> getAspectRatiosList();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface CropHintsParamsOrBuilder
    * @return The count of aspectRatios.
    */
   int getAspectRatiosCount();
+
   /**
    *
    *

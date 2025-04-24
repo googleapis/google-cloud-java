@@ -40,6 +40,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * @return The index.
    */
   java.lang.String getIndex();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.IndexDatapoint datapoints = 2;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.IndexDatapoint> getDatapointsList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.IndexDatapoint datapoints = 2;</code>
    */
   com.google.cloud.aiplatform.v1beta1.IndexDatapoint getDatapoints(int index);
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.IndexDatapoint datapoints = 2;</code>
    */
   int getDatapointsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface UpsertDatapointsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.IndexDatapointOrBuilder>
       getDatapointsOrBuilderList();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -147,6 +153,7 @@ public interface UpsertDatapointsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

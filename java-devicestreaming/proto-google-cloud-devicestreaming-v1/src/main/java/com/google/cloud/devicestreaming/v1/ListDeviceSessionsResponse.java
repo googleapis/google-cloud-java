@@ -33,6 +33,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.ListDeviceSessionsResponse)
     ListDeviceSessionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListDeviceSessionsResponse.newBuilder() to construct.
   private ListDeviceSessionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.devicestreaming.v1.DeviceSession> deviceSessions_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
   public java.util.List<com.google.cloud.devicestreaming.v1.DeviceSession> getDeviceSessionsList() {
     return deviceSessions_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       getDeviceSessionsOrBuilderList() {
     return deviceSessions_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
   public int getDeviceSessionsCount() {
     return deviceSessions_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
   public com.google.cloud.devicestreaming.v1.DeviceSession getDeviceSessions(int index) {
     return deviceSessions_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -643,6 +652,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return deviceSessionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -659,6 +669,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return deviceSessionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return deviceSessionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +731,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +754,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +841,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +861,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         int index) {
       return getDeviceSessionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return deviceSessionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -908,6 +931,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return java.util.Collections.unmodifiableList(deviceSessions_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       return getDeviceSessionsFieldBuilder()
           .addBuilder(com.google.cloud.devicestreaming.v1.DeviceSession.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -936,6 +961,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
           .addBuilder(
               index, com.google.cloud.devicestreaming.v1.DeviceSession.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -971,6 +997,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1017,6 +1045,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1068,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1057,6 +1087,7 @@ public final class ListDeviceSessionsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

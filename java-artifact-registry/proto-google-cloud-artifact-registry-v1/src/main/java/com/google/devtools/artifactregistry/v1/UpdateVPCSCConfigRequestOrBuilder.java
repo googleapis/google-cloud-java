@@ -36,6 +36,7 @@ public interface UpdateVPCSCConfigRequestOrBuilder
    * @return Whether the vpcscConfig field is set.
    */
   boolean hasVpcscConfig();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateVPCSCConfigRequestOrBuilder
    * @return The vpcscConfig.
    */
   com.google.devtools.artifactregistry.v1.VPCSCConfig getVpcscConfig();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UpdateVPCSCConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface UpdateVPCSCConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

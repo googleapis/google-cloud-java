@@ -33,6 +33,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.cloud.securityposture.v1.SecurityHealthAnalyticsModule)
     SecurityHealthAnalyticsModuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SecurityHealthAnalyticsModule.newBuilder() to construct.
   private SecurityHealthAnalyticsModule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object moduleName_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
 
   public static final int MODULE_ENABLEMENT_STATE_FIELD_NUMBER = 2;
   private int moduleEnablementState_ = 0;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
   public int getModuleEnablementStateValue() {
     return moduleEnablementState_;
   }
+
   /**
    *
    *
@@ -328,6 +333,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -530,6 +536,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object moduleName_ = "";
+
     /**
      *
      *
@@ -552,6 +559,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -574,6 +582,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +622,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
     }
 
     private int moduleEnablementState_ = 0;
+
     /**
      *
      *
@@ -652,6 +664,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
     public int getModuleEnablementStateValue() {
       return moduleEnablementState_;
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +705,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
           ? com.google.cloud.securityposture.v1.EnablementState.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class SecurityHealthAnalyticsModule extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *

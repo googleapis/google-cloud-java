@@ -36,6 +36,7 @@ public interface FilteringAttributeOrBuilder
    * @return The attribute.
    */
   java.lang.String getAttribute();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface FilteringAttributeOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

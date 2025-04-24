@@ -83,6 +83,7 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BIG_QUERY_TABLE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int BIG_QUERY_TABLE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BIG_QUERY_TABLE_TYPE_TABLE = 1;</code>
    */
   public static final int BIG_QUERY_TABLE_TYPE_TABLE_VALUE = 1;
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public enum BigQueryTableType implements com.google.protobuf.ProtocolMessageEnum
    * <code>BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE = 2;</code>
    */
   public static final int BIG_QUERY_TABLE_TYPE_EXTERNAL_BIG_LAKE_VALUE = 2;
+
   /**
    *
    *

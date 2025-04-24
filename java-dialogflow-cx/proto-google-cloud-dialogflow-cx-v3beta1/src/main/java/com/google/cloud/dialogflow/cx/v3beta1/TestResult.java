@@ -72,6 +72,7 @@ public enum TestResult implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEST_RESULT_UNSPECIFIED = 0;</code>
    */
   public static final int TEST_RESULT_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum TestResult implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PASSED = 1;</code>
    */
   public static final int PASSED_VALUE = 1;
+
   /**
    *
    *

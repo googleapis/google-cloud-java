@@ -38,6 +38,7 @@ public interface UpdateConfigRequestOrBuilder
    * @return Whether the config field is set.
    */
   boolean hasConfig();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateConfigRequestOrBuilder
    * @return The config.
    */
   com.google.cloud.dataform.v1beta1.Config getConfig();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface UpdateConfigRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface UpdateConfigRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

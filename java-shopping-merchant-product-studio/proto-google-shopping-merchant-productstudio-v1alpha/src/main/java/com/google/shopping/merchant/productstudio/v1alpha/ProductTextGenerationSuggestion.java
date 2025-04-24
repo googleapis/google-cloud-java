@@ -34,6 +34,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.productstudio.v1alpha.ProductTextGenerationSuggestion)
     ProductTextGenerationSuggestionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProductTextGenerationSuggestion.newBuilder() to construct.
   private ProductTextGenerationSuggestion(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -73,6 +74,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object text_ = "";
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
   public boolean hasText() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
 
   public static final int SCORE_FIELD_NUMBER = 2;
   private float score_ = 0F;
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
   public boolean hasScore() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object changeSummary_ = "";
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
   public boolean hasChangeSummary() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -439,6 +448,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -673,6 +683,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object text_ = "";
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     public boolean hasText() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -731,6 +744,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -752,6 +766,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +784,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     }
 
     private float score_;
+
     /**
      *
      *
@@ -809,6 +826,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     public boolean hasScore() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     public float getScore() {
       return score_;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     }
 
     private java.lang.Object changeSummary_ = "";
+
     /**
      *
      *
@@ -879,6 +900,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
     public boolean hasChangeSummary() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +986,7 @@ public final class ProductTextGenerationSuggestion extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *

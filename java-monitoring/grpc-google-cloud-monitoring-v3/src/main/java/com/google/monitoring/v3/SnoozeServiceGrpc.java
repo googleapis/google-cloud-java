@@ -216,6 +216,19 @@ public final class SnoozeServiceGrpc {
     return SnoozeServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SnoozeServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SnoozeServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SnoozeServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public SnoozeServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SnoozeServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SnoozeServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -424,6 +437,84 @@ public final class SnoozeServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service SnoozeService.
+   *
+   * <pre>
+   * The SnoozeService API is used to temporarily prevent an alert policy from
+   * generating alerts. A Snooze is a description of the criteria under which one
+   * or more alert policies should not fire alerts for the specified duration.
+   * </pre>
+   */
+  public static final class SnoozeServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SnoozeServiceBlockingV2Stub> {
+    private SnoozeServiceBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SnoozeServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SnoozeServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a `Snooze` that will prevent alerts, which match the provided
+     * criteria, from being opened. The `Snooze` applies for a specific time
+     * interval.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Snooze createSnooze(
+        com.google.monitoring.v3.CreateSnoozeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnoozeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the `Snooze`s associated with a project. Can optionally pass in
+     * `filter`, which specifies predicates to match `Snooze`s.
+     * </pre>
+     */
+    public com.google.monitoring.v3.ListSnoozesResponse listSnoozes(
+        com.google.monitoring.v3.ListSnoozesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnoozesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves a `Snooze` by `name`.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Snooze getSnooze(
+        com.google.monitoring.v3.GetSnoozeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnoozeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `Snooze`, identified by its `name`, with the parameters in the
+     * given `Snooze` object.
+     * </pre>
+     */
+    public com.google.monitoring.v3.Snooze updateSnooze(
+        com.google.monitoring.v3.UpdateSnoozeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnoozeMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service SnoozeService.
    *
    * <pre>
    * The SnoozeService API is used to temporarily prevent an alert policy from

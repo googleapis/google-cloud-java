@@ -66,6 +66,9 @@ public class AsyncSearch {
               .setConversationalSearchSpec(
                   SearchRequest.ConversationalSearchSpec.newBuilder().build())
               .setTileNavigationSpec(SearchRequest.TileNavigationSpec.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .setRegionCode("regionCode-1991004415")
+              .setPlaceId("placeId-494224254")
               .build();
       ApiFuture<SearchResponse.SearchResult> future =
           searchServiceClient.searchPagedCallable().futureCall(request);

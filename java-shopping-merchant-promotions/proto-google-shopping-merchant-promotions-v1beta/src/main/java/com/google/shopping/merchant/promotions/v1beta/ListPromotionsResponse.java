@@ -33,6 +33,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.promotions.v1beta.ListPromotionsResponse)
     ListPromotionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListPromotionsResponse.newBuilder() to construct.
   private ListPromotionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.promotions.v1beta.Promotion> promotions_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       getPromotionsList() {
     return promotions_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       getPromotionsOrBuilderList() {
     return promotions_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
   public int getPromotionsCount() {
     return promotions_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
   public com.google.shopping.merchant.promotions.v1beta.Promotion getPromotions(int index) {
     return promotions_.get(index);
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -362,6 +370,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +658,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return promotionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return promotionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -681,6 +692,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return promotionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -704,6 +716,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +738,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +828,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         int index) {
       return getPromotionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -900,6 +922,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return promotionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -918,6 +941,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(promotions_);
       }
     }
+
     /**
      *
      *
@@ -932,6 +956,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.shopping.merchant.promotions.v1beta.Promotion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               index, com.google.shopping.merchant.promotions.v1beta.Promotion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -979,6 +1005,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1002,6 +1029,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1025,6 +1053,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1065,6 +1095,7 @@ public final class ListPromotionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

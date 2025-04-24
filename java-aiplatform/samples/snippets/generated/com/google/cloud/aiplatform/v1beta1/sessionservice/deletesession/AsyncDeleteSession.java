@@ -39,7 +39,7 @@ public class AsyncDeleteSession {
       DeleteSessionRequest request =
           DeleteSessionRequest.newBuilder()
               .setName(
-                  SessionName.ofProjectLocationSessionName("[PROJECT]", "[LOCATION]", "[SESSION]")
+                  SessionName.of("[PROJECT]", "[LOCATION]", "[REASONING_ENGINE]", "[SESSION]")
                       .toString())
               .build();
       ApiFuture<Operation> future =

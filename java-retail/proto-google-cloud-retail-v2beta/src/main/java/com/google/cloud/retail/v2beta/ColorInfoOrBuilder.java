@@ -48,6 +48,7 @@ public interface ColorInfoOrBuilder
    * @return A list containing the colorFamilies.
    */
   java.util.List<java.lang.String> getColorFamiliesList();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ColorInfoOrBuilder
    * @return The count of colorFamilies.
    */
   int getColorFamiliesCount();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface ColorInfoOrBuilder
    * @return The colorFamilies at the given index.
    */
   java.lang.String getColorFamilies(int index);
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public interface ColorInfoOrBuilder
    * @return A list containing the colors.
    */
   java.util.List<java.lang.String> getColorsList();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface ColorInfoOrBuilder
    * @return The count of colors.
    */
   int getColorsCount();
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public interface ColorInfoOrBuilder
    * @return The colors at the given index.
    */
   java.lang.String getColors(int index);
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface OracleTableOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface OracleTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleColumn oracle_columns = 2;</code>
    */
   java.util.List<com.google.cloud.datastream.v1alpha1.OracleColumn> getOracleColumnsList();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface OracleTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleColumn oracle_columns = 2;</code>
    */
   com.google.cloud.datastream.v1alpha1.OracleColumn getOracleColumns(int index);
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface OracleTableOrBuilder
    * <code>repeated .google.cloud.datastream.v1alpha1.OracleColumn oracle_columns = 2;</code>
    */
   int getOracleColumnsCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface OracleTableOrBuilder
    */
   java.util.List<? extends com.google.cloud.datastream.v1alpha1.OracleColumnOrBuilder>
       getOracleColumnsOrBuilderList();
+
   /**
    *
    *

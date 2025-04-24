@@ -34,6 +34,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.orchestration.airflow.service.v1beta1.PrivateClusterConfig)
     PrivateClusterConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrivateClusterConfig.newBuilder() to construct.
   private PrivateClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   public static final int ENABLE_PRIVATE_ENDPOINT_FIELD_NUMBER = 1;
   private boolean enablePrivateEndpoint_ = false;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object masterIpv4CidrBlock_ = "";
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object masterIpv4ReservedRange_ = "";
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +390,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -608,6 +615,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private boolean enablePrivateEndpoint_;
+
     /**
      *
      *
@@ -624,6 +632,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     public boolean getEnablePrivateEndpoint() {
       return enablePrivateEndpoint_;
     }
+
     /**
      *
      *
@@ -644,6 +653,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object masterIpv4CidrBlock_ = "";
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -750,6 +764,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +790,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object masterIpv4ReservedRange_ = "";
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -855,6 +873,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +896,7 @@ public final class PrivateClusterConfig extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

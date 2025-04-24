@@ -34,6 +34,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Session sessions = 1;</code>
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.Session> getSessionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Session sessions = 1;</code>
    */
   com.google.cloud.aiplatform.v1beta1.Session getSessions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSessionsResponseOrBuilder
    * <code>repeated .google.cloud.aiplatform.v1beta1.Session sessions = 1;</code>
    */
   int getSessionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSessionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.SessionOrBuilder>
       getSessionsOrBuilderList();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface ListSessionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

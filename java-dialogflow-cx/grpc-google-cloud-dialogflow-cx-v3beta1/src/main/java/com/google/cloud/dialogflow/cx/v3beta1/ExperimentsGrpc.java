@@ -374,6 +374,19 @@ public final class ExperimentsGrpc {
     return ExperimentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ExperimentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ExperimentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ExperimentsBlockingV2Stub>() {
+          @java.lang.Override
+          public ExperimentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ExperimentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ExperimentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -694,6 +707,128 @@ public final class ExperimentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Experiments.
+   *
+   * <pre>
+   * Service for managing
+   * [Experiments][google.cloud.dialogflow.cx.v3beta1.Experiment].
+   * </pre>
+   */
+  public static final class ExperimentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ExperimentsBlockingV2Stub> {
+    private ExperimentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ExperimentsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ExperimentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all experiments in the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ListExperimentsResponse listExperiments(
+        com.google.cloud.dialogflow.cx.v3beta1.ListExperimentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExperimentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified
+     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Experiment getExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.GetExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment] in
+     * the specified
+     * [Environment][google.cloud.dialogflow.cx.v3beta1.Environment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Experiment createExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.CreateExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the specified
+     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Experiment updateExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified
+     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment].
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.DeleteExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts the specified
+     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
+     * changes the state of experiment from PENDING to RUNNING.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Experiment startExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.StartExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStartExperimentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Stops the specified
+     * [Experiment][google.cloud.dialogflow.cx.v3beta1.Experiment]. This rpc only
+     * changes the state of experiment from RUNNING to DONE.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.Experiment stopExperiment(
+        com.google.cloud.dialogflow.cx.v3beta1.StopExperimentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStopExperimentMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Experiments.
    *
    * <pre>
    * Service for managing

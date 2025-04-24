@@ -41,6 +41,7 @@ public interface GetEnhancedMeasurementSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

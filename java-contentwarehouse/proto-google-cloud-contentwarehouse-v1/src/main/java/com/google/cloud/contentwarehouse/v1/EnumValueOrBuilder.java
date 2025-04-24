@@ -37,6 +37,7 @@ public interface EnumValueOrBuilder
    * @return The value.
    */
   java.lang.String getValue();
+
   /**
    *
    *

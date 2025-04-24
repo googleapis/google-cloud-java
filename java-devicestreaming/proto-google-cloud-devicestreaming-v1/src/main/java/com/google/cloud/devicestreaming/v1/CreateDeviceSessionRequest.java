@@ -33,6 +33,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.devicestreaming.v1.CreateDeviceSessionRequest)
     CreateDeviceSessionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateDeviceSessionRequest.newBuilder() to construct.
   private CreateDeviceSessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
 
   public static final int DEVICE_SESSION_FIELD_NUMBER = 2;
   private com.google.cloud.devicestreaming.v1.DeviceSession deviceSession_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
   public boolean hasDeviceSession() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         ? com.google.cloud.devicestreaming.v1.DeviceSession.getDefaultInstance()
         : deviceSession_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object deviceSessionId_ = "";
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -420,6 +428,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -652,6 +661,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -702,6 +713,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -726,6 +738,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +792,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
             com.google.cloud.devicestreaming.v1.DeviceSession.Builder,
             com.google.cloud.devicestreaming.v1.DeviceSessionOrBuilder>
         deviceSessionBuilder_;
+
     /**
      *
      *
@@ -794,6 +809,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
     public boolean hasDeviceSession() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -816,6 +832,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         return deviceSessionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -840,6 +857,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -862,6 +880,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +933,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return getDeviceSessionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -949,6 +971,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
             : deviceSession_;
       }
     }
+
     /**
      *
      *
@@ -978,6 +1001,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object deviceSessionId_ = "";
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1030,6 +1055,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1103,7 @@ public final class CreateDeviceSessionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

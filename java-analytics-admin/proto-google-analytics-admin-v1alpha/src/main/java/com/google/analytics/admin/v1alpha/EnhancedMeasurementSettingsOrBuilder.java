@@ -39,6 +39,7 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -184,6 +185,7 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * @return The searchQueryParameter.
    */
   java.lang.String getSearchQueryParameter();
+
   /**
    *
    *
@@ -211,6 +213,7 @@ public interface EnhancedMeasurementSettingsOrBuilder
    * @return The uriQueryParameter.
    */
   java.lang.String getUriQueryParameter();
+
   /**
    *
    *

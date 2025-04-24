@@ -34,6 +34,7 @@ public final class GetHealthRegionBackendServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.GetHealthRegionBackendServiceRequest)
     GetHealthRegionBackendServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetHealthRegionBackendServiceRequest.newBuilder() to construct.
   private GetHealthRegionBackendServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class GetHealthRegionBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backendService_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class GetHealthRegionBackendServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GetHealthRegionBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -140,6 +144,7 @@ public final class GetHealthRegionBackendServiceRequest
       return s;
     }
   }
+
   /**
    * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
    *
@@ -162,6 +167,7 @@ public final class GetHealthRegionBackendServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class GetHealthRegionBackendServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class GetHealthRegionBackendServiceRequest
 
   public static final int RESOURCE_GROUP_REFERENCE_RESOURCE_FIELD_NUMBER = 112951123;
   private com.google.cloud.compute.v1.ResourceGroupReference resourceGroupReferenceResource_;
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class GetHealthRegionBackendServiceRequest
   public boolean hasResourceGroupReferenceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class GetHealthRegionBackendServiceRequest
         ? com.google.cloud.compute.v1.ResourceGroupReference.getDefaultInstance()
         : resourceGroupReferenceResource_;
   }
+
   /**
    *
    *
@@ -462,6 +472,7 @@ public final class GetHealthRegionBackendServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -714,6 +725,7 @@ public final class GetHealthRegionBackendServiceRequest
     private int bitField0_;
 
     private java.lang.Object backendService_ = "";
+
     /**
      *
      *
@@ -736,6 +748,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -758,6 +771,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -779,6 +793,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +811,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +836,7 @@ public final class GetHealthRegionBackendServiceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -836,6 +853,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -852,6 +870,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -867,6 +886,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -878,6 +898,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      * <code>string project = 227560217 [(.google.api.field_behavior) = REQUIRED];</code>
      *
@@ -896,6 +917,7 @@ public final class GetHealthRegionBackendServiceRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -918,6 +940,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -940,6 +963,7 @@ public final class GetHealthRegionBackendServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -961,6 +985,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1003,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1033,7 @@ public final class GetHealthRegionBackendServiceRequest
             com.google.cloud.compute.v1.ResourceGroupReference.Builder,
             com.google.cloud.compute.v1.ResourceGroupReferenceOrBuilder>
         resourceGroupReferenceResourceBuilder_;
+
     /**
      *
      *
@@ -1023,6 +1050,7 @@ public final class GetHealthRegionBackendServiceRequest
     public boolean hasResourceGroupReferenceResource() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1045,6 +1073,7 @@ public final class GetHealthRegionBackendServiceRequest
         return resourceGroupReferenceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1099,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1122,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1154,7 @@ public final class GetHealthRegionBackendServiceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1176,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1194,7 @@ public final class GetHealthRegionBackendServiceRequest
       onChanged();
       return getResourceGroupReferenceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1182,6 +1216,7 @@ public final class GetHealthRegionBackendServiceRequest
             : resourceGroupReferenceResource_;
       }
     }
+
     /**
      *
      *

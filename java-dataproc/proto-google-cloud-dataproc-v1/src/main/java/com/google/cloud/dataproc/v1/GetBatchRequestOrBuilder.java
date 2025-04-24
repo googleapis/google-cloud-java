@@ -40,6 +40,7 @@ public interface GetBatchRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

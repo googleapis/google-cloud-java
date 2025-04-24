@@ -38,6 +38,7 @@ public interface BatchDatasetDocumentsOrBuilder
    * @return Whether the individualDocumentIds field is set.
    */
   boolean hasIndividualDocumentIds();
+
   /**
    *
    *
@@ -53,6 +54,7 @@ public interface BatchDatasetDocumentsOrBuilder
    */
   com.google.cloud.documentai.v1beta3.BatchDatasetDocuments.IndividualDocumentIds
       getIndividualDocumentIds();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface BatchDatasetDocumentsOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface BatchDatasetDocumentsOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

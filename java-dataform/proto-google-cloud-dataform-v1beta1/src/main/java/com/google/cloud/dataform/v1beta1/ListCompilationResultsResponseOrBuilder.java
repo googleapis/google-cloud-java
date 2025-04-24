@@ -34,6 +34,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CompilationResult compilation_results = 1;</code>
    */
   java.util.List<com.google.cloud.dataform.v1beta1.CompilationResult> getCompilationResultsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CompilationResult compilation_results = 1;</code>
    */
   com.google.cloud.dataform.v1beta1.CompilationResult getCompilationResults(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * <code>repeated .google.cloud.dataform.v1beta1.CompilationResult compilation_results = 1;</code>
    */
   int getCompilationResultsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListCompilationResultsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataform.v1beta1.CompilationResultOrBuilder>
       getCompilationResultsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -141,6 +148,7 @@ public interface ListCompilationResultsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

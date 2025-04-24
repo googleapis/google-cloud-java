@@ -31,6 +31,7 @@ public interface CapacityQuantityOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    * <code>string type = 1;</code>
    *

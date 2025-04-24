@@ -36,6 +36,7 @@ public interface LicensesListResponseOrBuilder
    * @return Whether the id field is set.
    */
   boolean hasId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LicensesListResponseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface LicensesListResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.License items = 100526016;</code>
    */
   java.util.List<com.google.cloud.compute.v1.License> getItemsList();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface LicensesListResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.License items = 100526016;</code>
    */
   com.google.cloud.compute.v1.License getItems(int index);
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface LicensesListResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.License items = 100526016;</code>
    */
   int getItemsCount();
+
   /**
    *
    *
@@ -101,6 +106,7 @@ public interface LicensesListResponseOrBuilder
    * <code>repeated .google.cloud.compute.v1.License items = 100526016;</code>
    */
   java.util.List<? extends com.google.cloud.compute.v1.LicenseOrBuilder> getItemsOrBuilderList();
+
   /**
    *
    *
@@ -124,6 +130,7 @@ public interface LicensesListResponseOrBuilder
    * @return Whether the nextPageToken field is set.
    */
   boolean hasNextPageToken();
+
   /**
    *
    *
@@ -136,6 +143,7 @@ public interface LicensesListResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -161,6 +169,7 @@ public interface LicensesListResponseOrBuilder
    * @return Whether the selfLink field is set.
    */
   boolean hasSelfLink();
+
   /**
    *
    *
@@ -173,6 +182,7 @@ public interface LicensesListResponseOrBuilder
    * @return The selfLink.
    */
   java.lang.String getSelfLink();
+
   /**
    *
    *
@@ -198,6 +208,7 @@ public interface LicensesListResponseOrBuilder
    * @return Whether the warning field is set.
    */
   boolean hasWarning();
+
   /**
    *
    *
@@ -210,6 +221,7 @@ public interface LicensesListResponseOrBuilder
    * @return The warning.
    */
   com.google.cloud.compute.v1.Warning getWarning();
+
   /**
    *
    *

@@ -31,6 +31,7 @@ public interface SubjectOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    * <code>string name = 1;</code>
    *
@@ -51,6 +52,7 @@ public interface SubjectOrBuilder
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   int getDigestCount();
+
   /**
    *
    *
@@ -64,9 +66,11 @@ public interface SubjectOrBuilder
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   boolean containsDigest(java.lang.String key);
+
   /** Use {@link #getDigestMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getDigest();
+
   /**
    *
    *
@@ -80,6 +84,7 @@ public interface SubjectOrBuilder
    * <code>map&lt;string, string&gt; digest = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getDigestMap();
+
   /**
    *
    *
@@ -97,6 +102,7 @@ public interface SubjectOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

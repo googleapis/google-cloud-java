@@ -33,6 +33,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.cloud.modelarmor.v1.SanitizeModelResponseRequest)
     SanitizeModelResponseRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SanitizeModelResponseRequest.newBuilder() to construct.
   private SanitizeModelResponseRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
 
   public static final int MODEL_RESPONSE_DATA_FIELD_NUMBER = 2;
   private com.google.cloud.modelarmor.v1.DataItem modelResponseData_;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
   public boolean hasModelResponseData() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -160,6 +165,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         ? com.google.cloud.modelarmor.v1.DataItem.getDefaultInstance()
         : modelResponseData_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object userPrompt_ = "";
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -669,6 +679,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -718,6 +730,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +784,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
             com.google.cloud.modelarmor.v1.DataItem.Builder,
             com.google.cloud.modelarmor.v1.DataItemOrBuilder>
         modelResponseDataBuilder_;
+
     /**
      *
      *
@@ -786,6 +801,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
     public boolean hasModelResponseData() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         return modelResponseDataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -832,6 +849,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +872,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +902,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +941,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return getModelResponseDataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -940,6 +962,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
             : modelResponseData_;
       }
     }
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
     }
 
     private java.lang.Object userPrompt_ = "";
+
     /**
      *
      *
@@ -991,6 +1015,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1034,6 +1060,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1051,6 +1078,7 @@ public final class SanitizeModelResponseRequest extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -1003,6 +1003,20 @@ public final class CrossNetworkAutomationServiceGrpc {
     return CrossNetworkAutomationServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static CrossNetworkAutomationServiceBlockingV2Stub newBlockingV2Stub(
+      io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<CrossNetworkAutomationServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<CrossNetworkAutomationServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public CrossNetworkAutomationServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new CrossNetworkAutomationServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return CrossNetworkAutomationServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1644,6 +1658,266 @@ public final class CrossNetworkAutomationServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service CrossNetworkAutomationService.
+   *
+   * <pre>
+   * The service for CrossNetworkAutomation resources.
+   * </pre>
+   */
+  public static final class CrossNetworkAutomationServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<CrossNetworkAutomationServiceBlockingV2Stub> {
+    private CrossNetworkAutomationServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected CrossNetworkAutomationServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new CrossNetworkAutomationServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceConnectionMaps in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListServiceConnectionMapsResponse
+        listServiceConnectionMaps(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionMapsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceConnectionMapsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceConnectionMap.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ServiceConnectionMap getServiceConnectionMap(
+        com.google.cloud.networkconnectivity.v1.GetServiceConnectionMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceConnectionMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceConnectionMap in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceConnectionMap(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceConnectionMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceConnectionMap.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceConnectionMap(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceConnectionMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceConnectionMap.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceConnectionMap(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionMapRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceConnectionMapMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceConnectionPolicies in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListServiceConnectionPoliciesResponse
+        listServiceConnectionPolicies(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionPoliciesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceConnectionPoliciesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceConnectionPolicy.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ServiceConnectionPolicy
+        getServiceConnectionPolicy(
+            com.google.cloud.networkconnectivity.v1.GetServiceConnectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceConnectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceConnectionPolicy in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceConnectionPolicy(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceConnectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceConnectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceConnectionPolicy(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceConnectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceConnectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceConnectionPolicy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceConnectionPolicy(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceConnectionPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceClasses in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListServiceClassesResponse listServiceClasses(
+        com.google.cloud.networkconnectivity.v1.ListServiceClassesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceClassesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceClass.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ServiceClass getServiceClass(
+        com.google.cloud.networkconnectivity.v1.GetServiceClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the parameters of a single ServiceClass.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateServiceClass(
+        com.google.cloud.networkconnectivity.v1.UpdateServiceClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateServiceClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceClass.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceClass(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceClassRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceClassMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets details of a single ServiceConnectionToken.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ServiceConnectionToken getServiceConnectionToken(
+        com.google.cloud.networkconnectivity.v1.GetServiceConnectionTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetServiceConnectionTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists ServiceConnectionTokens in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.networkconnectivity.v1.ListServiceConnectionTokensResponse
+        listServiceConnectionTokens(
+            com.google.cloud.networkconnectivity.v1.ListServiceConnectionTokensRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListServiceConnectionTokensMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new ServiceConnectionToken in a given project and location.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createServiceConnectionToken(
+        com.google.cloud.networkconnectivity.v1.CreateServiceConnectionTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateServiceConnectionTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single ServiceConnectionToken.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteServiceConnectionToken(
+        com.google.cloud.networkconnectivity.v1.DeleteServiceConnectionTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteServiceConnectionTokenMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * CrossNetworkAutomationService.
    *
    * <pre>
    * The service for CrossNetworkAutomation resources.

@@ -35,6 +35,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryVertexDatasetFilter)
     DiscoveryVertexDatasetFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryVertexDatasetFilter.newBuilder() to construct.
   private DiscoveryVertexDatasetFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     private FilterCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -116,6 +118,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   }
 
   public static final int COLLECTION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   public boolean hasCollection() {
     return filterCase_ == 1;
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.VertexDatasetCollection.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -167,6 +172,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   }
 
   public static final int VERTEX_DATASET_RESOURCE_REFERENCE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   public boolean hasVertexDatasetResourceReference() {
     return filterCase_ == 2;
   }
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.VertexDatasetResourceReference.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   }
 
   public static final int OTHERS_FIELD_NUMBER = 100;
+
   /**
    *
    *
@@ -247,6 +256,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
   public boolean hasOthers() {
     return filterCase_ == 100;
   }
+
   /**
    *
    *
@@ -268,6 +278,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     }
     return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -494,6 +505,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -750,6 +762,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.VertexDatasetCollection.Builder,
             com.google.privacy.dlp.v2.VertexDatasetCollectionOrBuilder>
         collectionBuilder_;
+
     /**
      *
      *
@@ -765,6 +778,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     public boolean hasCollection() {
       return filterCase_ == 1;
     }
+
     /**
      *
      *
@@ -790,6 +804,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.VertexDatasetCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -812,6 +827,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +848,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +920,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.VertexDatasetCollection.Builder getCollectionBuilder() {
       return getCollectionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -921,6 +941,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.VertexDatasetCollection.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -959,6 +980,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.VertexDatasetResourceReference.Builder,
             com.google.privacy.dlp.v2.VertexDatasetResourceReferenceOrBuilder>
         vertexDatasetResourceReferenceBuilder_;
+
     /**
      *
      *
@@ -977,6 +999,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     public boolean hasVertexDatasetResourceReference() {
       return filterCase_ == 2;
     }
+
     /**
      *
      *
@@ -1006,6 +1029,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.VertexDatasetResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1056,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1118,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1147,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1164,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         getVertexDatasetResourceReferenceBuilder() {
       return getVertexDatasetResourceReferenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1160,6 +1189,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.VertexDatasetResourceReference.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1201,6 +1231,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
             com.google.privacy.dlp.v2.AllOtherResources.Builder,
             com.google.privacy.dlp.v2.AllOtherResourcesOrBuilder>
         othersBuilder_;
+
     /**
      *
      *
@@ -1219,6 +1250,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     public boolean hasOthers() {
       return filterCase_ == 100;
     }
+
     /**
      *
      *
@@ -1247,6 +1279,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1272,6 +1305,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1294,6 +1328,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1329,6 +1364,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       filterCase_ = 100;
       return this;
     }
+
     /**
      *
      *
@@ -1357,6 +1393,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1372,6 +1409,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
     public com.google.privacy.dlp.v2.AllOtherResources.Builder getOthersBuilder() {
       return getOthersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1395,6 +1433,7 @@ public final class DiscoveryVertexDatasetFilter extends com.google.protobuf.Gene
         return com.google.privacy.dlp.v2.AllOtherResources.getDefaultInstance();
       }
     }
+
     /**
      *
      *

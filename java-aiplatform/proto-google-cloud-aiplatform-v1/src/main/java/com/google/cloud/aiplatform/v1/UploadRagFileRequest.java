@@ -34,6 +34,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.UploadRagFileRequest)
     UploadRagFileRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UploadRagFileRequest.newBuilder() to construct.
   private UploadRagFileRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
 
   public static final int RAG_FILE_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1.RagFile ragFile_;
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
   public boolean hasRagFile() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.RagFile.getDefaultInstance()
         : ragFile_;
   }
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
 
   public static final int UPLOAD_RAG_FILE_CONFIG_FIELD_NUMBER = 5;
   private com.google.cloud.aiplatform.v1.UploadRagFileConfig uploadRagFileConfig_;
+
   /**
    *
    *
@@ -200,6 +207,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
   public boolean hasUploadRagFileConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -220,6 +228,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         ? com.google.cloud.aiplatform.v1.UploadRagFileConfig.getDefaultInstance()
         : uploadRagFileConfig_;
   }
+
   /**
    *
    *
@@ -427,6 +436,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -664,6 +674,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -690,6 +701,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -716,6 +728,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -741,6 +754,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.RagFile.Builder,
             com.google.cloud.aiplatform.v1.RagFileOrBuilder>
         ragFileBuilder_;
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
     public boolean hasRagFile() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -833,6 +850,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         return ragFileBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -857,6 +875,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +949,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +966,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getRagFileFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -964,6 +987,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
             : ragFile_;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1022,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
             com.google.cloud.aiplatform.v1.UploadRagFileConfig.Builder,
             com.google.cloud.aiplatform.v1.UploadRagFileConfigOrBuilder>
         uploadRagFileConfigBuilder_;
+
     /**
      *
      *
@@ -1015,6 +1040,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
     public boolean hasUploadRagFileConfig() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1038,6 +1064,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
         return uploadRagFileConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1064,6 +1091,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1087,6 +1115,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1119,6 +1148,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1141,6 +1171,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1190,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
       onChanged();
       return getUploadRagFileConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1181,6 +1213,7 @@ public final class UploadRagFileRequest extends com.google.protobuf.GeneratedMes
             : uploadRagFileConfig_;
       }
     }
+
     /**
      *
      *

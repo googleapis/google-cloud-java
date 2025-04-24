@@ -36,6 +36,7 @@ public interface SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -85,6 +88,7 @@ public interface SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -98,6 +102,7 @@ public interface SecurityPolicyRuleNetworkMatcherUserDefinedFieldMatchOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.KubernetesConfig)
     KubernetesConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use KubernetesConfig.newBuilder() to construct.
   private KubernetesConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The httpRoute.
      */
     java.lang.String getHttpRoute();
+
     /**
      *
      *
@@ -103,6 +105,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The service.
      */
     java.lang.String getService();
+
     /**
      *
      *
@@ -129,6 +132,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The deployment.
      */
     java.lang.String getDeployment();
+
     /**
      *
      *
@@ -159,6 +163,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the routeUpdateWaitTime field is set.
      */
     boolean hasRouteUpdateWaitTime();
+
     /**
      *
      *
@@ -175,6 +180,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The routeUpdateWaitTime.
      */
     com.google.protobuf.Duration getRouteUpdateWaitTime();
+
     /**
      *
      *
@@ -207,6 +213,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the stableCutbackDuration field is set.
      */
     boolean hasStableCutbackDuration();
+
     /**
      *
      *
@@ -224,6 +231,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The stableCutbackDuration.
      */
     com.google.protobuf.Duration getStableCutbackDuration();
+
     /**
      *
      *
@@ -253,6 +261,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The podSelectorLabel.
      */
     java.lang.String getPodSelectorLabel();
+
     /**
      *
      *
@@ -285,6 +294,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return Whether the routeDestinations field is set.
      */
     boolean hasRouteDestinations();
+
     /**
      *
      *
@@ -304,6 +314,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      */
     com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
         getRouteDestinations();
+
     /**
      *
      *
@@ -322,6 +333,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinationsOrBuilder
         getRouteDestinationsOrBuilder();
   }
+
   /**
    *
    *
@@ -336,6 +348,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh)
       GatewayServiceMeshOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use GatewayServiceMesh.newBuilder() to construct.
     private GatewayServiceMesh(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -389,6 +402,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        * @return A list containing the destinationIds.
        */
       java.util.List<java.lang.String> getDestinationIdsList();
+
       /**
        *
        *
@@ -404,6 +418,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        * @return The count of destinationIds.
        */
       int getDestinationIdsCount();
+
       /**
        *
        *
@@ -420,6 +435,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        * @return The destinationIds at the given index.
        */
       java.lang.String getDestinationIds(int index);
+
       /**
        *
        *
@@ -454,6 +470,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
        */
       boolean getPropagateService();
     }
+
     /**
      *
      *
@@ -469,6 +486,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations)
         RouteDestinationsOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use RouteDestinations.newBuilder() to construct.
       private RouteDestinations(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -506,6 +524,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       @SuppressWarnings("serial")
       private com.google.protobuf.LazyStringArrayList destinationIds_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+
       /**
        *
        *
@@ -523,6 +542,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public com.google.protobuf.ProtocolStringList getDestinationIdsList() {
         return destinationIds_;
       }
+
       /**
        *
        *
@@ -540,6 +560,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public int getDestinationIdsCount() {
         return destinationIds_.size();
       }
+
       /**
        *
        *
@@ -558,6 +579,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public java.lang.String getDestinationIds(int index) {
         return destinationIds_.get(index);
       }
+
       /**
        *
        *
@@ -579,6 +601,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
       public static final int PROPAGATE_SERVICE_FIELD_NUMBER = 2;
       private boolean propagateService_ = false;
+
       /**
        *
        *
@@ -787,6 +810,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1022,6 +1046,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           }
           bitField0_ |= 0x00000001;
         }
+
         /**
          *
          *
@@ -1041,6 +1066,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           destinationIds_.makeImmutable();
           return destinationIds_;
         }
+
         /**
          *
          *
@@ -1059,6 +1085,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         public int getDestinationIdsCount() {
           return destinationIds_.size();
         }
+
         /**
          *
          *
@@ -1078,6 +1105,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         public java.lang.String getDestinationIds(int index) {
           return destinationIds_.get(index);
         }
+
         /**
          *
          *
@@ -1097,6 +1125,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         public com.google.protobuf.ByteString getDestinationIdsBytes(int index) {
           return destinationIds_.getByteString(index);
         }
+
         /**
          *
          *
@@ -1124,6 +1153,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1150,6 +1180,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1173,6 +1204,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1195,6 +1227,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1224,6 +1257,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
 
         private boolean propagateService_;
+
         /**
          *
          *
@@ -1243,6 +1277,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         public boolean getPropagateService() {
           return propagateService_;
         }
+
         /**
          *
          *
@@ -1266,6 +1301,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -1362,6 +1398,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object httpRoute_ = "";
+
     /**
      *
      *
@@ -1385,6 +1422,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1413,6 +1451,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object service_ = "";
+
     /**
      *
      *
@@ -1436,6 +1475,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1464,6 +1504,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object deployment_ = "";
+
     /**
      *
      *
@@ -1488,6 +1529,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1515,6 +1557,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int ROUTE_UPDATE_WAIT_TIME_FIELD_NUMBER = 4;
     private com.google.protobuf.Duration routeUpdateWaitTime_;
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasRouteUpdateWaitTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1555,6 +1599,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.Duration.getDefaultInstance()
           : routeUpdateWaitTime_;
     }
+
     /**
      *
      *
@@ -1577,6 +1622,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int STABLE_CUTBACK_DURATION_FIELD_NUMBER = 5;
     private com.google.protobuf.Duration stableCutbackDuration_;
+
     /**
      *
      *
@@ -1597,6 +1643,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasStableCutbackDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1619,6 +1666,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           ? com.google.protobuf.Duration.getDefaultInstance()
           : stableCutbackDuration_;
     }
+
     /**
      *
      *
@@ -1644,6 +1692,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object podSelectorLabel_ = "";
+
     /**
      *
      *
@@ -1668,6 +1717,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -1696,6 +1746,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public static final int ROUTE_DESTINATIONS_FIELD_NUMBER = 8;
     private com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.RouteDestinations
         routeDestinations_;
+
     /**
      *
      *
@@ -1717,6 +1768,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasRouteDestinations() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1742,6 +1794,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               .getDefaultInstance()
           : routeDestinations_;
     }
+
     /**
      *
      *
@@ -1998,6 +2051,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2313,6 +2367,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object httpRoute_ = "";
+
       /**
        *
        *
@@ -2335,6 +2390,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2357,6 +2413,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2378,6 +2435,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2395,6 +2453,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2419,6 +2478,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object service_ = "";
+
       /**
        *
        *
@@ -2441,6 +2501,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2463,6 +2524,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2484,6 +2546,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2501,6 +2564,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2525,6 +2589,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object deployment_ = "";
+
       /**
        *
        *
@@ -2548,6 +2613,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2571,6 +2637,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2593,6 +2660,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2611,6 +2679,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2641,6 +2710,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           routeUpdateWaitTimeBuilder_;
+
       /**
        *
        *
@@ -2659,6 +2729,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasRouteUpdateWaitTime() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -2683,6 +2754,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return routeUpdateWaitTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2709,6 +2781,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2732,6 +2805,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2763,6 +2837,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -2786,6 +2861,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2804,6 +2880,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getRouteUpdateWaitTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2826,6 +2903,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               : routeUpdateWaitTime_;
         }
       }
+
       /**
        *
        *
@@ -2862,6 +2940,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           stableCutbackDurationBuilder_;
+
       /**
        *
        *
@@ -2881,6 +2960,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasStableCutbackDuration() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -2906,6 +2986,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return stableCutbackDurationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2933,6 +3014,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2958,6 +3040,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2990,6 +3073,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3014,6 +3098,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3033,6 +3118,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getStableCutbackDurationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3056,6 +3142,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               : stableCutbackDuration_;
         }
       }
+
       /**
        *
        *
@@ -3088,6 +3175,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object podSelectorLabel_ = "";
+
       /**
        *
        *
@@ -3111,6 +3199,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3134,6 +3223,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3156,6 +3246,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3174,6 +3265,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3207,6 +3299,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh
                   .RouteDestinationsOrBuilder>
           routeDestinationsBuilder_;
+
       /**
        *
        *
@@ -3227,6 +3320,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public boolean hasRouteDestinations() {
         return ((bitField0_ & 0x00000040) != 0);
       }
+
       /**
        *
        *
@@ -3255,6 +3349,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return routeDestinationsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3284,6 +3379,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3311,6 +3407,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3347,6 +3444,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         }
         return this;
       }
+
       /**
        *
        *
@@ -3372,6 +3470,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3394,6 +3493,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return getRouteDestinationsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3421,6 +3521,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
               : routeDestinations_;
         }
       }
+
       /**
        *
        *
@@ -3541,6 +3642,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The service.
      */
     java.lang.String getService();
+
     /**
      *
      *
@@ -3567,6 +3669,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The deployment.
      */
     java.lang.String getDeployment();
+
     /**
      *
      *
@@ -3610,6 +3713,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      * @return The podSelectorLabel.
      */
     java.lang.String getPodSelectorLabel();
+
     /**
      *
      *
@@ -3624,6 +3728,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
      */
     com.google.protobuf.ByteString getPodSelectorLabelBytes();
   }
+
   /**
    *
    *
@@ -3638,6 +3743,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       // @@protoc_insertion_point(message_implements:google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking)
       ServiceNetworkingOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ServiceNetworking.newBuilder() to construct.
     private ServiceNetworking(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3674,6 +3780,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object service_ = "";
+
     /**
      *
      *
@@ -3697,6 +3804,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -3725,6 +3833,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object deployment_ = "";
+
     /**
      *
      *
@@ -3749,6 +3858,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -3776,6 +3886,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     public static final int DISABLE_POD_OVERPROVISIONING_FIELD_NUMBER = 3;
     private boolean disablePodOverprovisioning_ = false;
+
     /**
      *
      *
@@ -3799,6 +3910,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object podSelectorLabel_ = "";
+
     /**
      *
      *
@@ -3823,6 +3935,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return s;
       }
     }
+
     /**
      *
      *
@@ -4038,6 +4151,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4272,6 +4386,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       private int bitField0_;
 
       private java.lang.Object service_ = "";
+
       /**
        *
        *
@@ -4294,6 +4409,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4316,6 +4432,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4337,6 +4454,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4354,6 +4472,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4378,6 +4497,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object deployment_ = "";
+
       /**
        *
        *
@@ -4401,6 +4521,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4424,6 +4545,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4446,6 +4568,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4464,6 +4587,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4489,6 +4613,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private boolean disablePodOverprovisioning_;
+
       /**
        *
        *
@@ -4508,6 +4633,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       public boolean getDisablePodOverprovisioning() {
         return disablePodOverprovisioning_;
       }
+
       /**
        *
        *
@@ -4531,6 +4657,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4554,6 +4681,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
 
       private java.lang.Object podSelectorLabel_ = "";
+
       /**
        *
        *
@@ -4577,6 +4705,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4600,6 +4729,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4622,6 +4752,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4640,6 +4771,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4748,6 +4880,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     private ServiceDefinitionCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -4781,6 +4914,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int GATEWAY_SERVICE_MESH_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -4798,6 +4932,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasGatewayServiceMesh() {
     return serviceDefinitionCase_ == 1;
   }
+
   /**
    *
    *
@@ -4818,6 +4953,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -4839,6 +4975,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int SERVICE_NETWORKING_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -4856,6 +4993,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasServiceNetworking() {
     return serviceDefinitionCase_ == 2;
   }
+
   /**
    *
    *
@@ -4876,6 +5014,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -5089,6 +5228,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -5325,6 +5465,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.Builder,
             com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMeshOrBuilder>
         gatewayServiceMeshBuilder_;
+
     /**
      *
      *
@@ -5342,6 +5483,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasGatewayServiceMesh() {
       return serviceDefinitionCase_ == 1;
     }
+
     /**
      *
      *
@@ -5370,6 +5512,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5395,6 +5538,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5417,6 +5561,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5455,6 +5600,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -5482,6 +5628,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5497,6 +5644,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         getGatewayServiceMeshBuilder() {
       return getGatewayServiceMeshFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5521,6 +5669,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.deploy.v1.KubernetesConfig.GatewayServiceMesh.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5562,6 +5711,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking.Builder,
             com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworkingOrBuilder>
         serviceNetworkingBuilder_;
+
     /**
      *
      *
@@ -5579,6 +5729,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasServiceNetworking() {
       return serviceDefinitionCase_ == 2;
     }
+
     /**
      *
      *
@@ -5606,6 +5757,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -5631,6 +5783,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5653,6 +5806,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5691,6 +5845,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       serviceDefinitionCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -5718,6 +5873,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -5733,6 +5889,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         getServiceNetworkingBuilder() {
       return getServiceNetworkingFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5756,6 +5913,7 @@ public final class KubernetesConfig extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.deploy.v1.KubernetesConfig.ServiceNetworking.getDefaultInstance();
       }
     }
+
     /**
      *
      *

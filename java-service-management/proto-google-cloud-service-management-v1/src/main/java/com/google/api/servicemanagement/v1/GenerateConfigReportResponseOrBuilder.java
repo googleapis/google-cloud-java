@@ -36,6 +36,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * @return The serviceName.
    */
   java.lang.String getServiceName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ChangeReport change_reports = 3;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.ChangeReport> getChangeReportsList();
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ChangeReport change_reports = 3;</code>
    */
   com.google.api.servicemanagement.v1.ChangeReport getChangeReports(int index);
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.ChangeReport change_reports = 3;</code>
    */
   int getChangeReportsCount();
+
   /**
    *
    *
@@ -119,6 +124,7 @@ public interface GenerateConfigReportResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.ChangeReportOrBuilder>
       getChangeReportsOrBuilderList();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Diagnostic diagnostics = 4;</code>
    */
   java.util.List<com.google.api.servicemanagement.v1.Diagnostic> getDiagnosticsList();
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Diagnostic diagnostics = 4;</code>
    */
   com.google.api.servicemanagement.v1.Diagnostic getDiagnostics(int index);
+
   /**
    *
    *
@@ -167,6 +175,7 @@ public interface GenerateConfigReportResponseOrBuilder
    * <code>repeated .google.api.servicemanagement.v1.Diagnostic diagnostics = 4;</code>
    */
   int getDiagnosticsCount();
+
   /**
    *
    *
@@ -180,6 +189,7 @@ public interface GenerateConfigReportResponseOrBuilder
    */
   java.util.List<? extends com.google.api.servicemanagement.v1.DiagnosticOrBuilder>
       getDiagnosticsOrBuilderList();
+
   /**
    *
    *

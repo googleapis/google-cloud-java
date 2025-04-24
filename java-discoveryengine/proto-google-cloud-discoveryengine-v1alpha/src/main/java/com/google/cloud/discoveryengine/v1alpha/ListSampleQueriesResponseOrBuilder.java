@@ -34,6 +34,7 @@ public interface ListSampleQueriesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.SampleQuery sample_queries = 1;</code>
    */
   java.util.List<com.google.cloud.discoveryengine.v1alpha.SampleQuery> getSampleQueriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSampleQueriesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.SampleQuery sample_queries = 1;</code>
    */
   com.google.cloud.discoveryengine.v1alpha.SampleQuery getSampleQueries(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSampleQueriesResponseOrBuilder
    * <code>repeated .google.cloud.discoveryengine.v1alpha.SampleQuery sample_queries = 1;</code>
    */
   int getSampleQueriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSampleQueriesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.discoveryengine.v1alpha.SampleQueryOrBuilder>
       getSampleQueriesOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListSampleQueriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

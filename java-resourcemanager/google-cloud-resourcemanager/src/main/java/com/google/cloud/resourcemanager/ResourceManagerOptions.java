@@ -27,7 +27,9 @@ import com.google.cloud.resourcemanager.spi.v1beta1.ResourceManagerRpc;
 import com.google.common.collect.ImmutableSet;
 import java.util.Set;
 
-/** @deprecated v3 GAPIC client of ResourceManager is now available */
+/**
+ * @deprecated v3 GAPIC client of ResourceManager is now available
+ */
 @Deprecated
 public class ResourceManagerOptions
     extends ServiceOptions<ResourceManager, ResourceManagerOptions> {

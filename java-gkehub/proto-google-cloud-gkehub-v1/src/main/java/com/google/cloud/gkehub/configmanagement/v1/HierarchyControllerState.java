@@ -33,6 +33,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.gkehub.configmanagement.v1.HierarchyControllerState)
     HierarchyControllerStateOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use HierarchyControllerState.newBuilder() to construct.
   private HierarchyControllerState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int VERSION_FIELD_NUMBER = 1;
   private com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion version_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
   public boolean hasVersion() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             .getDefaultInstance()
         : version_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
 
   public static final int STATE_FIELD_NUMBER = 2;
   private com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState state_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
   public boolean hasState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +158,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             .getDefaultInstance()
         : state_;
   }
+
   /**
    *
    *
@@ -351,6 +358,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersion.Builder,
             com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerVersionOrBuilder>
         versionBuilder_;
+
     /**
      *
      *
@@ -594,6 +603,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     public boolean hasVersion() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
         return versionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +722,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -723,6 +738,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return getVersionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             : version_;
       }
     }
+
     /**
      *
      *
@@ -775,6 +792,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentState.Builder,
             com.google.cloud.gkehub.configmanagement.v1.HierarchyControllerDeploymentStateOrBuilder>
         stateBuilder_;
+
     /**
      *
      *
@@ -790,6 +808,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
     public boolean hasState() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -813,6 +832,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
         return stateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -837,6 +857,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +933,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +950,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -947,6 +972,7 @@ public final class HierarchyControllerState extends com.google.protobuf.Generate
             : state_;
       }
     }
+
     /**
      *
      *

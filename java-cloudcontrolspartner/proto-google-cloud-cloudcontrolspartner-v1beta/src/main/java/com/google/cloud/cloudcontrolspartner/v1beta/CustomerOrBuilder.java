@@ -37,6 +37,7 @@ public interface CustomerOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CustomerOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface CustomerOrBuilder
    * @return Whether the customerOnboardingState field is set.
    */
   boolean hasCustomerOnboardingState();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface CustomerOrBuilder
    * @return The customerOnboardingState.
    */
   com.google.cloud.cloudcontrolspartner.v1beta.CustomerOnboardingState getCustomerOnboardingState();
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public interface CustomerOrBuilder
    * @return The organizationDomain.
    */
   java.lang.String getOrganizationDomain();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface RubricBasedInstructionFollowingResultOrBuilder
    * @return Whether the score field is set.
    */
   boolean hasScore();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RubricBasedInstructionFollowingResultOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.RubricCritiqueResult>
       getRubricCritiqueResultsList();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface RubricBasedInstructionFollowingResultOrBuilder
    * </code>
    */
   com.google.cloud.aiplatform.v1beta1.RubricCritiqueResult getRubricCritiqueResults(int index);
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface RubricBasedInstructionFollowingResultOrBuilder
    * </code>
    */
   int getRubricCritiqueResultsCount();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface RubricBasedInstructionFollowingResultOrBuilder
    */
   java.util.List<? extends com.google.cloud.aiplatform.v1beta1.RubricCritiqueResultOrBuilder>
       getRubricCritiqueResultsOrBuilderList();
+
   /**
    *
    *

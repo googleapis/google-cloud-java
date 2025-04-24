@@ -38,6 +38,7 @@ public interface ResizeVolumeRequestOrBuilder
    * @return The volume.
    */
   java.lang.String getVolume();
+
   /**
    *
    *

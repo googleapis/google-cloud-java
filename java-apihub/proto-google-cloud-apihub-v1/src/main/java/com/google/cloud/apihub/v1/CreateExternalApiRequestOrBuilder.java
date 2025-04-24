@@ -39,6 +39,7 @@ public interface CreateExternalApiRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface CreateExternalApiRequestOrBuilder
    * @return The externalApiId.
    */
   java.lang.String getExternalApiId();
+
   /**
    *
    *
@@ -114,6 +116,7 @@ public interface CreateExternalApiRequestOrBuilder
    * @return Whether the externalApi field is set.
    */
   boolean hasExternalApi();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface CreateExternalApiRequestOrBuilder
    * @return The externalApi.
    */
   com.google.cloud.apihub.v1.ExternalApi getExternalApi();
+
   /**
    *
    *

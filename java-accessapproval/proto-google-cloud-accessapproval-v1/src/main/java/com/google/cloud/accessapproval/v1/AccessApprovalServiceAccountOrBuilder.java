@@ -40,6 +40,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AccessApprovalServiceAccountOrBuilder
    * @return The accountEmail.
    */
   java.lang.String getAccountEmail();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1.RecrawlUrisRequest)
     RecrawlUrisRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RecrawlUrisRequest.newBuilder() to construct.
   private RecrawlUrisRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteSearchEngine_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -131,6 +134,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList uris_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getUrisList() {
     return uris_;
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
   public int getUrisCount() {
     return uris_.size();
   }
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
   public java.lang.String getUris(int index) {
     return uris_.get(index);
   }
+
   /**
    *
    *
@@ -206,6 +213,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object siteCredential_ = "";
+
   /**
    *
    *
@@ -229,6 +237,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       return s;
     }
   }
+
   /**
    *
    *
@@ -438,6 +447,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -661,6 +671,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private java.lang.Object siteSearchEngine_ = "";
+
     /**
      *
      *
@@ -687,6 +698,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +810,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       uris_.makeImmutable();
       return uris_;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     public int getUrisCount() {
       return uris_.size();
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     public java.lang.String getUris(int index) {
       return uris_.get(index);
     }
+
     /**
      *
      *
@@ -866,6 +885,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getUrisBytes(int index) {
       return uris_.getByteString(index);
     }
+
     /**
      *
      *
@@ -892,6 +912,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1012,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private java.lang.Object siteCredential_ = "";
+
     /**
      *
      *
@@ -1010,6 +1035,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1032,6 +1058,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1053,6 +1080,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1098,7 @@ public final class RecrawlUrisRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

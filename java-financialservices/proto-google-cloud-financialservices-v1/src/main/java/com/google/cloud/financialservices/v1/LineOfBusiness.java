@@ -72,6 +72,7 @@ public enum LineOfBusiness implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LINE_OF_BUSINESS_UNSPECIFIED = 0;</code>
    */
   public static final int LINE_OF_BUSINESS_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum LineOfBusiness implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COMMERCIAL = 1;</code>
    */
   public static final int COMMERCIAL_VALUE = 1;
+
   /**
    *
    *

@@ -37,6 +37,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return The jobName.
    */
   java.lang.String getJobName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return Whether the containerSpec field is set.
    */
   boolean hasContainerSpec();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return The containerSpec.
    */
   com.google.dataflow.v1beta3.ContainerSpec getContainerSpec();
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return Whether the containerSpecGcsPath field is set.
    */
   boolean hasContainerSpecGcsPath();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return The containerSpecGcsPath.
    */
   java.lang.String getContainerSpecGcsPath();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -148,9 +154,11 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   boolean containsParameters(java.lang.String key);
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
+
   /**
    *
    *
@@ -162,6 +170,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; parameters = 2;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
+
   /**
    *
    *
@@ -177,6 +186,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -201,6 +211,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; launch_options = 6;</code>
    */
   int getLaunchOptionsCount();
+
   /**
    *
    *
@@ -213,9 +224,11 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; launch_options = 6;</code>
    */
   boolean containsLaunchOptions(java.lang.String key);
+
   /** Use {@link #getLaunchOptionsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLaunchOptions();
+
   /**
    *
    *
@@ -228,6 +241,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; launch_options = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLaunchOptionsMap();
+
   /**
    *
    *
@@ -244,6 +258,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -269,6 +284,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return Whether the environment field is set.
    */
   boolean hasEnvironment();
+
   /**
    *
    *
@@ -281,6 +297,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * @return The environment.
    */
   com.google.dataflow.v1beta3.FlexTemplateRuntimeEnvironment getEnvironment();
+
   /**
    *
    *
@@ -318,6 +335,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mappings = 9;</code>
    */
   int getTransformNameMappingsCount();
+
   /**
    *
    *
@@ -329,9 +347,11 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mappings = 9;</code>
    */
   boolean containsTransformNameMappings(java.lang.String key);
+
   /** Use {@link #getTransformNameMappingsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMappings();
+
   /**
    *
    *
@@ -343,6 +363,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
    * <code>map&lt;string, string&gt; transform_name_mappings = 9;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getTransformNameMappingsMap();
+
   /**
    *
    *
@@ -358,6 +379,7 @@ public interface LaunchFlexTemplateParameterOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *

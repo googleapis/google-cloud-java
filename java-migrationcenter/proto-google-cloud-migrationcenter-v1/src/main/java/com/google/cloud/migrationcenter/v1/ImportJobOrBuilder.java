@@ -36,6 +36,7 @@ public interface ImportJobOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ImportJobOrBuilder
    * @return The displayName.
    */
   java.lang.String getDisplayName();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface ImportJobOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface ImportJobOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public interface ImportJobOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public interface ImportJobOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface ImportJobOrBuilder
    * @return Whether the completeTime field is set.
    */
   boolean hasCompleteTime();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface ImportJobOrBuilder
    * @return The completeTime.
    */
   com.google.protobuf.Timestamp getCompleteTime();
+
   /**
    *
    *
@@ -205,6 +213,7 @@ public interface ImportJobOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface ImportJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -240,9 +250,11 @@ public interface ImportJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -253,6 +265,7 @@ public interface ImportJobOrBuilder
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -267,6 +280,7 @@ public interface ImportJobOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -292,6 +306,7 @@ public interface ImportJobOrBuilder
    * @return The assetSource.
    */
   java.lang.String getAssetSource();
+
   /**
    *
    *
@@ -321,6 +336,7 @@ public interface ImportJobOrBuilder
    * @return Whether the validationReport field is set.
    */
   boolean hasValidationReport();
+
   /**
    *
    *
@@ -335,6 +351,7 @@ public interface ImportJobOrBuilder
    * @return The validationReport.
    */
   com.google.cloud.migrationcenter.v1.ValidationReport getValidationReport();
+
   /**
    *
    *
@@ -362,6 +379,7 @@ public interface ImportJobOrBuilder
    * @return Whether the executionReport field is set.
    */
   boolean hasExecutionReport();
+
   /**
    *
    *
@@ -376,6 +394,7 @@ public interface ImportJobOrBuilder
    * @return The executionReport.
    */
   com.google.cloud.migrationcenter.v1.ExecutionReport getExecutionReport();
+
   /**
    *
    *

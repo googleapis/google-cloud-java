@@ -33,6 +33,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.cloud.datalabeling.v1beta1.AnnotationValue)
     AnnotationValueOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnnotationValue.newBuilder() to construct.
   private AnnotationValue(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -85,6 +86,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     private ValueTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -132,6 +134,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_CLASSIFICATION_ANNOTATION_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -149,6 +152,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasImageClassificationAnnotation() {
     return valueTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_BOUNDING_POLY_ANNOTATION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasImageBoundingPolyAnnotation() {
     return valueTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -231,6 +238,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_POLYLINE_ANNOTATION_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -272,6 +281,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasImagePolylineAnnotation() {
     return valueTypeCase_ == 8;
   }
+
   /**
    *
    *
@@ -295,6 +305,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int IMAGE_SEGMENTATION_ANNOTATION_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -335,6 +347,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasImageSegmentationAnnotation() {
     return valueTypeCase_ == 9;
   }
+
   /**
    *
    *
@@ -356,6 +369,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -377,6 +391,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_CLASSIFICATION_ANNOTATION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -394,6 +409,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasTextClassificationAnnotation() {
     return valueTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -415,6 +431,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -436,6 +453,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int TEXT_ENTITY_EXTRACTION_ANNOTATION_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -453,6 +471,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasTextEntityExtractionAnnotation() {
     return valueTypeCase_ == 10;
   }
+
   /**
    *
    *
@@ -475,6 +494,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -497,6 +517,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VIDEO_CLASSIFICATION_ANNOTATION_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -514,6 +535,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasVideoClassificationAnnotation() {
     return valueTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -535,6 +557,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -556,6 +579,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VIDEO_OBJECT_TRACKING_ANNOTATION_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -573,6 +597,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasVideoObjectTrackingAnnotation() {
     return valueTypeCase_ == 5;
   }
+
   /**
    *
    *
@@ -594,6 +619,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -615,6 +641,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   }
 
   public static final int VIDEO_EVENT_ANNOTATION_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -631,6 +658,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
   public boolean hasVideoEventAnnotation() {
     return valueTypeCase_ == 6;
   }
+
   /**
    *
    *
@@ -650,6 +678,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     }
     return com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -981,6 +1010,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1345,6 +1375,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.ImageClassificationAnnotationOrBuilder>
         imageClassificationAnnotationBuilder_;
+
     /**
      *
      *
@@ -1362,6 +1393,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasImageClassificationAnnotation() {
       return valueTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1392,6 +1424,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1417,6 +1450,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1474,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1478,6 +1513,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1505,6 +1541,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1557,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getImageClassificationAnnotationBuilder() {
       return getImageClassificationAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1544,6 +1582,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1586,6 +1625,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.ImageBoundingPolyAnnotationOrBuilder>
         imageBoundingPolyAnnotationBuilder_;
+
     /**
      *
      *
@@ -1604,6 +1644,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasImageBoundingPolyAnnotation() {
       return valueTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1635,6 +1676,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1703,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1727,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1723,6 +1767,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1751,6 +1796,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1767,6 +1813,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getImageBoundingPolyAnnotationBuilder() {
       return getImageBoundingPolyAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1792,6 +1839,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1835,6 +1883,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotationOrBuilder>
         imagePolylineAnnotationBuilder_;
+
     /**
      *
      *
@@ -1855,6 +1904,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasImagePolylineAnnotation() {
       return valueTypeCase_ == 8;
     }
+
     /**
      *
      *
@@ -1886,6 +1936,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1914,6 +1965,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1939,6 +1991,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -1979,6 +2032,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2009,6 +2063,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2082,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getImagePolylineAnnotationBuilder() {
       return getImagePolylineAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2053,6 +2109,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.datalabeling.v1beta1.ImagePolylineAnnotation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2097,6 +2154,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.ImageSegmentationAnnotationOrBuilder>
         imageSegmentationAnnotationBuilder_;
+
     /**
      *
      *
@@ -2114,6 +2172,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasImageSegmentationAnnotation() {
       return valueTypeCase_ == 9;
     }
+
     /**
      *
      *
@@ -2144,6 +2203,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2169,6 +2229,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2191,6 +2252,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2229,6 +2291,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -2256,6 +2319,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2271,6 +2335,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getImageSegmentationAnnotationBuilder() {
       return getImageSegmentationAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2295,6 +2360,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2337,6 +2403,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.TextClassificationAnnotationOrBuilder>
         textClassificationAnnotationBuilder_;
+
     /**
      *
      *
@@ -2354,6 +2421,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasTextClassificationAnnotation() {
       return valueTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -2384,6 +2452,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2409,6 +2478,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2432,6 +2502,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2470,6 +2541,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -2497,6 +2569,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2512,6 +2585,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getTextClassificationAnnotationBuilder() {
       return getTextClassificationAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2536,6 +2610,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2578,6 +2653,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.TextEntityExtractionAnnotationOrBuilder>
         textEntityExtractionAnnotationBuilder_;
+
     /**
      *
      *
@@ -2595,6 +2671,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasTextEntityExtractionAnnotation() {
       return valueTypeCase_ == 10;
     }
+
     /**
      *
      *
@@ -2625,6 +2702,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2650,6 +2728,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2673,6 +2752,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2711,6 +2791,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -2738,6 +2819,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2753,6 +2835,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getTextEntityExtractionAnnotationBuilder() {
       return getTextEntityExtractionAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2777,6 +2860,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2819,6 +2903,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoClassificationAnnotationOrBuilder>
         videoClassificationAnnotationBuilder_;
+
     /**
      *
      *
@@ -2836,6 +2921,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasVideoClassificationAnnotation() {
       return valueTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -2866,6 +2952,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2891,6 +2978,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2914,6 +3002,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2952,6 +3041,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2979,6 +3069,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -2994,6 +3085,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getVideoClassificationAnnotationBuilder() {
       return getVideoClassificationAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3018,6 +3110,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3060,6 +3153,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoObjectTrackingAnnotationOrBuilder>
         videoObjectTrackingAnnotationBuilder_;
+
     /**
      *
      *
@@ -3077,6 +3171,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasVideoObjectTrackingAnnotation() {
       return valueTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -3107,6 +3202,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3132,6 +3228,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3155,6 +3252,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3193,6 +3291,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -3220,6 +3319,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3235,6 +3335,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getVideoObjectTrackingAnnotationBuilder() {
       return getVideoObjectTrackingAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3259,6 +3360,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3301,6 +3403,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
             com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.Builder,
             com.google.cloud.datalabeling.v1beta1.VideoEventAnnotationOrBuilder>
         videoEventAnnotationBuilder_;
+
     /**
      *
      *
@@ -3317,6 +3420,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
     public boolean hasVideoEventAnnotation() {
       return valueTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -3343,6 +3447,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3367,6 +3472,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3388,6 +3494,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3424,6 +3531,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       valueTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -3450,6 +3558,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -3464,6 +3573,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         getVideoEventAnnotationBuilder() {
       return getVideoEventAnnotationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3486,6 +3596,7 @@ public final class AnnotationValue extends com.google.protobuf.GeneratedMessageV
         return com.google.cloud.datalabeling.v1beta1.VideoEventAnnotation.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -36,6 +36,7 @@ public interface RevisionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface RevisionOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *
@@ -107,6 +109,7 @@ public interface RevisionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -122,9 +125,11 @@ public interface RevisionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public interface RevisionOrBuilder
    * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public interface RevisionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -189,6 +196,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   int getAnnotationsCount();
+
   /**
    *
    *
@@ -203,9 +211,11 @@ public interface RevisionOrBuilder
    * </code>
    */
   boolean containsAnnotations(java.lang.String key);
+
   /** Use {@link #getAnnotationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAnnotations();
+
   /**
    *
    *
@@ -220,6 +230,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
+
   /**
    *
    *
@@ -238,6 +249,7 @@ public interface RevisionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -266,6 +278,7 @@ public interface RevisionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -279,6 +292,7 @@ public interface RevisionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -304,6 +318,7 @@ public interface RevisionOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -317,6 +332,7 @@ public interface RevisionOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -343,6 +359,7 @@ public interface RevisionOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -357,6 +374,7 @@ public interface RevisionOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -385,6 +403,7 @@ public interface RevisionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -400,6 +419,7 @@ public interface RevisionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -434,6 +454,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for launchStage.
    */
   int getLaunchStageValue();
+
   /**
    *
    *
@@ -469,6 +490,7 @@ public interface RevisionOrBuilder
    * @return The service.
    */
   java.lang.String getService();
+
   /**
    *
    *
@@ -496,6 +518,7 @@ public interface RevisionOrBuilder
    * @return Whether the scaling field is set.
    */
   boolean hasScaling();
+
   /**
    *
    *
@@ -508,6 +531,7 @@ public interface RevisionOrBuilder
    * @return The scaling.
    */
   com.google.cloud.run.v2.RevisionScaling getScaling();
+
   /**
    *
    *
@@ -532,6 +556,7 @@ public interface RevisionOrBuilder
    * @return Whether the vpcAccess field is set.
    */
   boolean hasVpcAccess();
+
   /**
    *
    *
@@ -545,6 +570,7 @@ public interface RevisionOrBuilder
    * @return The vpcAccess.
    */
   com.google.cloud.run.v2.VpcAccess getVpcAccess();
+
   /**
    *
    *
@@ -582,6 +608,7 @@ public interface RevisionOrBuilder
    * @return Whether the timeout field is set.
    */
   boolean hasTimeout();
+
   /**
    *
    *
@@ -594,6 +621,7 @@ public interface RevisionOrBuilder
    * @return The timeout.
    */
   com.google.protobuf.Duration getTimeout();
+
   /**
    *
    *
@@ -619,6 +647,7 @@ public interface RevisionOrBuilder
    * @return The serviceAccount.
    */
   java.lang.String getServiceAccount();
+
   /**
    *
    *
@@ -645,6 +674,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 17;</code>
    */
   java.util.List<com.google.cloud.run.v2.Container> getContainersList();
+
   /**
    *
    *
@@ -656,6 +686,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 17;</code>
    */
   com.google.cloud.run.v2.Container getContainers(int index);
+
   /**
    *
    *
@@ -667,6 +698,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 17;</code>
    */
   int getContainersCount();
+
   /**
    *
    *
@@ -678,6 +710,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Container containers = 17;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ContainerOrBuilder> getContainersOrBuilderList();
+
   /**
    *
    *
@@ -700,6 +733,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 18;</code>
    */
   java.util.List<com.google.cloud.run.v2.Volume> getVolumesList();
+
   /**
    *
    *
@@ -710,6 +744,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 18;</code>
    */
   com.google.cloud.run.v2.Volume getVolumes(int index);
+
   /**
    *
    *
@@ -720,6 +755,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 18;</code>
    */
   int getVolumesCount();
+
   /**
    *
    *
@@ -730,6 +766,7 @@ public interface RevisionOrBuilder
    * <code>repeated .google.cloud.run.v2.Volume volumes = 18;</code>
    */
   java.util.List<? extends com.google.cloud.run.v2.VolumeOrBuilder> getVolumesOrBuilderList();
+
   /**
    *
    *
@@ -753,6 +790,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for executionEnvironment.
    */
   int getExecutionEnvironmentValue();
+
   /**
    *
    *
@@ -780,6 +818,7 @@ public interface RevisionOrBuilder
    * @return The encryptionKey.
    */
   java.lang.String getEncryptionKey();
+
   /**
    *
    *
@@ -807,6 +846,7 @@ public interface RevisionOrBuilder
    * @return Whether the serviceMesh field is set.
    */
   boolean hasServiceMesh();
+
   /**
    *
    *
@@ -819,6 +859,7 @@ public interface RevisionOrBuilder
    * @return The serviceMesh.
    */
   com.google.cloud.run.v2.ServiceMesh getServiceMesh();
+
   /**
    *
    *
@@ -843,6 +884,7 @@ public interface RevisionOrBuilder
    * @return The enum numeric value on the wire for encryptionKeyRevocationAction.
    */
   int getEncryptionKeyRevocationActionValue();
+
   /**
    *
    *
@@ -870,6 +912,7 @@ public interface RevisionOrBuilder
    * @return Whether the encryptionKeyShutdownDuration field is set.
    */
   boolean hasEncryptionKeyShutdownDuration();
+
   /**
    *
    *
@@ -883,6 +926,7 @@ public interface RevisionOrBuilder
    * @return The encryptionKeyShutdownDuration.
    */
   com.google.protobuf.Duration getEncryptionKeyShutdownDuration();
+
   /**
    *
    *
@@ -924,6 +968,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.run.v2.Condition> getConditionsList();
+
   /**
    *
    *
@@ -938,6 +983,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   com.google.cloud.run.v2.Condition getConditions(int index);
+
   /**
    *
    *
@@ -952,6 +998,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   int getConditionsCount();
+
   /**
    *
    *
@@ -966,6 +1013,7 @@ public interface RevisionOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.cloud.run.v2.ConditionOrBuilder> getConditionsOrBuilderList();
+
   /**
    *
    *
@@ -1008,6 +1056,7 @@ public interface RevisionOrBuilder
    * @return The logUri.
    */
   java.lang.String getLogUri();
+
   /**
    *
    *
@@ -1061,6 +1110,7 @@ public interface RevisionOrBuilder
    * @return Whether the scalingStatus field is set.
    */
   boolean hasScalingStatus();
+
   /**
    *
    *
@@ -1075,6 +1125,7 @@ public interface RevisionOrBuilder
    * @return The scalingStatus.
    */
   com.google.cloud.run.v2.RevisionScalingStatus getScalingStatus();
+
   /**
    *
    *
@@ -1100,6 +1151,7 @@ public interface RevisionOrBuilder
    * @return Whether the nodeSelector field is set.
    */
   boolean hasNodeSelector();
+
   /**
    *
    *
@@ -1112,6 +1164,7 @@ public interface RevisionOrBuilder
    * @return The nodeSelector.
    */
   com.google.cloud.run.v2.NodeSelector getNodeSelector();
+
   /**
    *
    *
@@ -1136,6 +1189,7 @@ public interface RevisionOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

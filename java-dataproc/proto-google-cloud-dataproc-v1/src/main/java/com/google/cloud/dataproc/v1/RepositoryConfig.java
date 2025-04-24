@@ -33,6 +33,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.RepositoryConfig)
     RepositoryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RepositoryConfig.newBuilder() to construct.
   private RepositoryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int PYPI_REPOSITORY_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.dataproc.v1.PyPiRepositoryConfig pypiRepositoryConfig_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
   public boolean hasPypiRepositoryConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.dataproc.v1.PyPiRepositoryConfig.getDefaultInstance()
         : pypiRepositoryConfig_;
   }
+
   /**
    *
    *
@@ -284,6 +288,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -490,6 +495,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dataproc.v1.PyPiRepositoryConfig.Builder,
             com.google.cloud.dataproc.v1.PyPiRepositoryConfigOrBuilder>
         pypiRepositoryConfigBuilder_;
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
     public boolean hasPypiRepositoryConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -528,6 +535,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
         return pypiRepositoryConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +616,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +638,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -644,6 +656,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getPypiRepositoryConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -665,6 +678,7 @@ public final class RepositoryConfig extends com.google.protobuf.GeneratedMessage
             : pypiRepositoryConfig_;
       }
     }
+
     /**
      *
      *

@@ -38,6 +38,7 @@ public interface AnalyzeIamPolicyRequestOrBuilder
    * @return Whether the analysisQuery field is set.
    */
   boolean hasAnalysisQuery();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface AnalyzeIamPolicyRequestOrBuilder
    * @return The analysisQuery.
    */
   com.google.cloud.asset.v1.IamPolicyAnalysisQuery getAnalysisQuery();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AnalyzeIamPolicyRequestOrBuilder
    * @return The savedAnalysisQuery.
    */
   java.lang.String getSavedAnalysisQuery();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface AnalyzeIamPolicyRequestOrBuilder
    * @return Whether the executionTimeout field is set.
    */
   boolean hasExecutionTimeout();
+
   /**
    *
    *
@@ -168,6 +172,7 @@ public interface AnalyzeIamPolicyRequestOrBuilder
    * @return The executionTimeout.
    */
   com.google.protobuf.Duration getExecutionTimeout();
+
   /**
    *
    *

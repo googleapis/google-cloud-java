@@ -42,6 +42,7 @@ public interface UpdateFeatureRequestOrBuilder
    * @return Whether the feature field is set.
    */
   boolean hasFeature();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The feature.
    */
   com.google.cloud.aiplatform.v1.Feature getFeature();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface UpdateFeatureRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface UpdateFeatureRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

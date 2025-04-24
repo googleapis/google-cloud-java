@@ -41,6 +41,7 @@ public interface UpdateArtifactRequestOrBuilder
    * @return Whether the artifact field is set.
    */
   boolean hasArtifact();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface UpdateArtifactRequestOrBuilder
    * @return The artifact.
    */
   com.google.cloud.aiplatform.v1.Artifact getArtifact();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface UpdateArtifactRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public interface UpdateArtifactRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

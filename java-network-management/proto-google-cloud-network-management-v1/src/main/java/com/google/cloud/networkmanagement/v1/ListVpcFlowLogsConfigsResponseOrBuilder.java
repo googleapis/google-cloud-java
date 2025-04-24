@@ -36,6 +36,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    */
   java.util.List<com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig>
       getVpcFlowLogsConfigsList();
+
   /**
    *
    *
@@ -47,6 +48,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * </code>
    */
   com.google.cloud.networkmanagement.v1.VpcFlowLogsConfig getVpcFlowLogsConfigs(int index);
+
   /**
    *
    *
@@ -58,6 +60,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * </code>
    */
   int getVpcFlowLogsConfigsCount();
+
   /**
    *
    *
@@ -70,6 +73,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.networkmanagement.v1.VpcFlowLogsConfigOrBuilder>
       getVpcFlowLogsConfigsOrBuilderList();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * @return A list containing the unreachable.
    */
   java.util.List<java.lang.String> getUnreachableList();
+
   /**
    *
    *
@@ -132,6 +138,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * @return The count of unreachable.
    */
   int getUnreachableCount();
+
   /**
    *
    *
@@ -145,6 +152,7 @@ public interface ListVpcFlowLogsConfigsResponseOrBuilder
    * @return The unreachable at the given index.
    */
   java.lang.String getUnreachable(int index);
+
   /**
    *
    *

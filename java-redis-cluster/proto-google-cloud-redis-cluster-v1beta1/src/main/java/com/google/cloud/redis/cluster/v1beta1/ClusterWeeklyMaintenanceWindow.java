@@ -33,6 +33,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.redis.cluster.v1beta1.ClusterWeeklyMaintenanceWindow)
     ClusterWeeklyMaintenanceWindowOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ClusterWeeklyMaintenanceWindow.newBuilder() to construct.
   private ClusterWeeklyMaintenanceWindow(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int DAY_FIELD_NUMBER = 1;
   private int day_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
   public int getDayValue() {
     return day_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.type.TimeOfDay startTime_;
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
   public com.google.type.TimeOfDay getStartTime() {
     return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -320,6 +326,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -538,6 +545,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
     private int bitField0_;
 
     private int day_ = 0;
+
     /**
      *
      *
@@ -553,6 +561,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
     public int getDayValue() {
       return day_;
     }
+
     /**
      *
      *
@@ -571,6 +580,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -587,6 +597,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       com.google.type.DayOfWeek result = com.google.type.DayOfWeek.forNumber(day_);
       return result == null ? com.google.type.DayOfWeek.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -608,6 +619,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +644,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
             com.google.type.TimeOfDay.Builder,
             com.google.type.TimeOfDayOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -646,6 +659,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -664,6 +678,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -686,6 +701,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +721,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +749,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +769,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +784,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -781,6 +801,7 @@ public final class ClusterWeeklyMaintenanceWindow extends com.google.protobuf.Ge
         return startTime_ == null ? com.google.type.TimeOfDay.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *

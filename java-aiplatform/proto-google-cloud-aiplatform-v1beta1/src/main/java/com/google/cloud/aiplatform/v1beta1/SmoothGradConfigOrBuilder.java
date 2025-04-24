@@ -48,6 +48,7 @@ public interface SmoothGradConfigOrBuilder
    * @return Whether the noiseSigma field is set.
    */
   boolean hasNoiseSigma();
+
   /**
    *
    *
@@ -92,6 +93,7 @@ public interface SmoothGradConfigOrBuilder
    * @return Whether the featureNoiseSigma field is set.
    */
   boolean hasFeatureNoiseSigma();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface SmoothGradConfigOrBuilder
    * @return The featureNoiseSigma.
    */
   com.google.cloud.aiplatform.v1beta1.FeatureNoiseSigma getFeatureNoiseSigma();
+
   /**
    *
    *

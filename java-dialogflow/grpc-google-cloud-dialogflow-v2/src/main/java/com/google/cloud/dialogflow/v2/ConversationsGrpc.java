@@ -584,6 +584,19 @@ public final class ConversationsGrpc {
     return ConversationsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConversationsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConversationsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConversationsBlockingV2Stub>() {
+          @java.lang.Override
+          public ConversationsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConversationsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConversationsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1068,6 +1081,200 @@ public final class ConversationsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Conversations.
+   *
+   * <pre>
+   * Service for managing
+   * [Conversations][google.cloud.dialogflow.v2.Conversation].
+   * </pre>
+   */
+  public static final class ConversationsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConversationsBlockingV2Stub> {
+    private ConversationsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConversationsBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConversationsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new conversation. Conversations are auto-completed after 24
+     * hours.
+     * Conversation Lifecycle:
+     * There are two stages during a conversation: Automated Agent Stage and
+     * Assist Stage.
+     * For Automated Agent Stage, there will be a dialogflow agent responding to
+     * user queries.
+     * For Assist Stage, there's no dialogflow agent responding to user queries.
+     * But we will provide suggestions which are generated from conversation.
+     * If
+     * [Conversation.conversation_profile][google.cloud.dialogflow.v2.Conversation.conversation_profile]
+     * is configured for a dialogflow agent, conversation will start from
+     * `Automated Agent Stage`, otherwise, it will start from `Assist Stage`. And
+     * during `Automated Agent Stage`, once an
+     * [Intent][google.cloud.dialogflow.v2.Intent] with
+     * [Intent.live_agent_handoff][google.cloud.dialogflow.v2.Intent.live_agent_handoff]
+     * is triggered, conversation will transfer to Assist Stage.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation createConversation(
+        com.google.cloud.dialogflow.v2.CreateConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of all conversations in the specified project.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListConversationsResponse listConversations(
+        com.google.cloud.dialogflow.v2.ListConversationsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListConversationsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specific conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation getConversation(
+        com.google.cloud.dialogflow.v2.GetConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Completes the specified conversation. Finished conversations are purged
+     * from the database after 30 days.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Conversation completeConversation(
+        com.google.cloud.dialogflow.v2.CompleteConversationRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCompleteConversationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Data ingestion API.
+     * Ingests context references for an existing conversation.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.IngestContextReferencesResponse ingestContextReferences(
+        com.google.cloud.dialogflow.v2.IngestContextReferencesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getIngestContextReferencesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists messages that belong to a given conversation.
+     * `messages` are ordered by `create_time` in descending order. To fetch
+     * updates without duplication, send request with filter
+     * `create_time_epoch_microseconds &gt;
+     * [first item's create_time of previous request]` and empty page_token.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ListMessagesResponse listMessages(
+        com.google.cloud.dialogflow.v2.ListMessagesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMessagesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggests summary for a conversation based on specific historical messages.
+     * The range of the messages to be used for summary can be specified in the
+     * request.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.SuggestConversationSummaryResponse
+        suggestConversationSummary(
+            com.google.cloud.dialogflow.v2.SuggestConversationSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSuggestConversationSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a summary for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse generateStatelessSummary(
+        com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateStatelessSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates and returns a suggestion for a conversation that does not have a
+     * resource created for it.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionResponse
+        generateStatelessSuggestion(
+            com.google.cloud.dialogflow.v2.GenerateStatelessSuggestionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateStatelessSuggestionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get answers for the given query based on knowledge documents.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeResponse searchKnowledge(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchKnowledgeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates all the suggestions using generators configured in the
+     * conversation profile. A generator is used only if its trigger event is
+     * matched.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.GenerateSuggestionsResponse generateSuggestions(
+        com.google.cloud.dialogflow.v2.GenerateSuggestionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateSuggestionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Conversations.
    *
    * <pre>
    * Service for managing

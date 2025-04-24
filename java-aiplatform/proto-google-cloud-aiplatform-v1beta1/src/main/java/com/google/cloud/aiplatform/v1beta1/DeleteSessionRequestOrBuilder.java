@@ -30,7 +30,6 @@ public interface DeleteSessionRequestOrBuilder
    * <pre>
    * Required. The resource name of the session.
    * Format:
-   * `projects/{project}/locations/{location}/sessions/{session}` or
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * </pre>
    *
@@ -41,13 +40,13 @@ public interface DeleteSessionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
    * <pre>
    * Required. The resource name of the session.
    * Format:
-   * `projects/{project}/locations/{location}/sessions/{session}` or
    * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}`
    * </pre>
    *

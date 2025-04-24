@@ -36,6 +36,7 @@ public interface AllocationPolicyOrBuilder
    * @return Whether the location field is set.
    */
   boolean hasLocation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AllocationPolicyOrBuilder
    * @return The location.
    */
   com.google.cloud.batch.v1.AllocationPolicy.LocationPolicy getLocation();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface AllocationPolicyOrBuilder
    */
   java.util.List<com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate>
       getInstancesList();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    */
   com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplate getInstances(int index);
+
   /**
    *
    *
@@ -96,6 +100,7 @@ public interface AllocationPolicyOrBuilder
    * </code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface AllocationPolicyOrBuilder
   java.util.List<
           ? extends com.google.cloud.batch.v1.AllocationPolicy.InstancePolicyOrTemplateOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface AllocationPolicyOrBuilder
    * @return Whether the serviceAccount field is set.
    */
   boolean hasServiceAccount();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface AllocationPolicyOrBuilder
    * @return The serviceAccount.
    */
   com.google.cloud.batch.v1.ServiceAccount getServiceAccount();
+
   /**
    *
    *
@@ -209,6 +217,7 @@ public interface AllocationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -229,9 +238,11 @@ public interface AllocationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -252,6 +263,7 @@ public interface AllocationPolicyOrBuilder
    * <code>map&lt;string, string&gt; labels = 6;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -276,6 +288,7 @@ public interface AllocationPolicyOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -313,6 +326,7 @@ public interface AllocationPolicyOrBuilder
    * @return Whether the network field is set.
    */
   boolean hasNetwork();
+
   /**
    *
    *
@@ -329,6 +343,7 @@ public interface AllocationPolicyOrBuilder
    * @return The network.
    */
   com.google.cloud.batch.v1.AllocationPolicy.NetworkPolicy getNetwork();
+
   /**
    *
    *
@@ -356,6 +371,7 @@ public interface AllocationPolicyOrBuilder
    * @return Whether the placement field is set.
    */
   boolean hasPlacement();
+
   /**
    *
    *
@@ -368,6 +384,7 @@ public interface AllocationPolicyOrBuilder
    * @return The placement.
    */
   com.google.cloud.batch.v1.AllocationPolicy.PlacementPolicy getPlacement();
+
   /**
    *
    *
@@ -395,6 +412,7 @@ public interface AllocationPolicyOrBuilder
    * @return A list containing the tags.
    */
   java.util.List<java.lang.String> getTagsList();
+
   /**
    *
    *
@@ -411,6 +429,7 @@ public interface AllocationPolicyOrBuilder
    * @return The count of tags.
    */
   int getTagsCount();
+
   /**
    *
    *
@@ -428,6 +447,7 @@ public interface AllocationPolicyOrBuilder
    * @return The tags at the given index.
    */
   java.lang.String getTags(int index);
+
   /**
    *
    *

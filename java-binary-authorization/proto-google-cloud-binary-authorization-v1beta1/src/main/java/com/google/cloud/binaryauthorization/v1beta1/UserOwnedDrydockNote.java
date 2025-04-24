@@ -34,6 +34,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.cloud.binaryauthorization.v1beta1.UserOwnedDrydockNote)
     UserOwnedDrydockNoteOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UserOwnedDrydockNote.newBuilder() to construct.
   private UserOwnedDrydockNote(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object noteReference_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey>
       publicKeys_;
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       getPublicKeysList() {
     return publicKeys_;
   }
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       getPublicKeysOrBuilderList() {
     return publicKeys_;
   }
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   public int getPublicKeysCount() {
     return publicKeys_.size();
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
   public com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey getPublicKeys(int index) {
     return publicKeys_.get(index);
   }
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object delegationServiceAccountEmail_ = "";
+
   /**
    *
    *
@@ -290,6 +299,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -507,6 +517,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -774,6 +785,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object noteReference_ = "";
+
     /**
      *
      *
@@ -802,6 +814,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -830,6 +843,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -857,6 +871,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -880,6 +895,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +970,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return publicKeysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -980,6 +997,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return publicKeysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1006,6 +1024,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return publicKeysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1039,6 +1058,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1090,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1124,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1158,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1166,6 +1189,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1197,6 +1221,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1253,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1283,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1286,6 +1313,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1337,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         getPublicKeysBuilder(int index) {
       return getPublicKeysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1336,6 +1365,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return publicKeysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1364,6 +1394,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return java.util.Collections.unmodifiableList(publicKeys_);
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1420,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
           .addBuilder(
               com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1415,6 +1447,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
               index,
               com.google.cloud.binaryauthorization.v1beta1.AttestorPublicKey.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1457,6 +1490,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object delegationServiceAccountEmail_ = "";
+
     /**
      *
      *
@@ -1489,6 +1523,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1521,6 +1556,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1552,6 +1588,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1616,7 @@ public final class UserOwnedDrydockNote extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

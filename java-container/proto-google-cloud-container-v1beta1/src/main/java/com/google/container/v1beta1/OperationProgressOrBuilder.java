@@ -37,6 +37,7 @@ public interface OperationProgressOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface OperationProgressOrBuilder
    * @return The enum numeric value on the wire for status.
    */
   int getStatusValue();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress.Metric metrics = 3;</code>
    */
   java.util.List<com.google.container.v1beta1.OperationProgress.Metric> getMetricsList();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress.Metric metrics = 3;</code>
    */
   com.google.container.v1beta1.OperationProgress.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress.Metric metrics = 3;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface OperationProgressOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.OperationProgress.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress stages = 4;</code>
    */
   java.util.List<com.google.container.v1beta1.OperationProgress> getStagesList();
+
   /**
    *
    *
@@ -175,6 +182,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress stages = 4;</code>
    */
   com.google.container.v1beta1.OperationProgress getStages(int index);
+
   /**
    *
    *
@@ -185,6 +193,7 @@ public interface OperationProgressOrBuilder
    * <code>repeated .google.container.v1beta1.OperationProgress stages = 4;</code>
    */
   int getStagesCount();
+
   /**
    *
    *
@@ -196,6 +205,7 @@ public interface OperationProgressOrBuilder
    */
   java.util.List<? extends com.google.container.v1beta1.OperationProgressOrBuilder>
       getStagesOrBuilderList();
+
   /**
    *
    *

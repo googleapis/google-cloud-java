@@ -36,6 +36,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The hostname.
    */
   java.lang.String getHostname();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The username.
    */
   java.lang.String getUsername();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The password.
    */
   java.lang.String getPassword();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The database.
    */
   java.lang.String getDatabase();
+
   /**
    *
    *
@@ -154,6 +158,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The secretManagerStoredPassword.
    */
   java.lang.String getSecretManagerStoredPassword();
+
   /**
    *
    *
@@ -187,6 +192,7 @@ public interface PostgresqlProfileOrBuilder
    * @return Whether the sslConfig field is set.
    */
   boolean hasSslConfig();
+
   /**
    *
    *
@@ -204,6 +210,7 @@ public interface PostgresqlProfileOrBuilder
    * @return The sslConfig.
    */
   com.google.cloud.datastream.v1.PostgresqlSslConfig getSslConfig();
+
   /**
    *
    *

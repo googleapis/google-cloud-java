@@ -36,6 +36,7 @@ public interface UpdateBiReservationRequestOrBuilder
    * @return Whether the biReservation field is set.
    */
   boolean hasBiReservation();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateBiReservationRequestOrBuilder
    * @return The biReservation.
    */
   com.google.cloud.bigquery.reservation.v1.BiReservation getBiReservation();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UpdateBiReservationRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface UpdateBiReservationRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

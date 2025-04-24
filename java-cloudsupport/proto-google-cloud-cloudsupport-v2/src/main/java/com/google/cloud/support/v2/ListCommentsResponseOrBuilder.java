@@ -34,6 +34,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
    */
   java.util.List<com.google.cloud.support.v2.Comment> getCommentsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
    */
   com.google.cloud.support.v2.Comment getComments(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
    */
   int getCommentsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListCommentsResponseOrBuilder
    * <code>repeated .google.cloud.support.v2.Comment comments = 1;</code>
    */
   java.util.List<? extends com.google.cloud.support.v2.CommentOrBuilder> getCommentsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListCommentsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

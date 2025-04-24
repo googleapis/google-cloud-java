@@ -40,6 +40,7 @@ public interface WriteTensorboardExperimentDataRequestOrBuilder
    * @return The tensorboardExperiment.
    */
   java.lang.String getTensorboardExperiment();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface WriteTensorboardExperimentDataRequestOrBuilder
    */
   java.util.List<com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest>
       getWriteRunDataRequestsList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface WriteTensorboardExperimentDataRequestOrBuilder
    */
   com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequest getWriteRunDataRequests(
       int index);
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface WriteTensorboardExperimentDataRequestOrBuilder
    * </code>
    */
   int getWriteRunDataRequestsCount();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface WriteTensorboardExperimentDataRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.aiplatform.v1beta1.WriteTensorboardRunDataRequestOrBuilder>
       getWriteRunDataRequestsOrBuilderList();
+
   /**
    *
    *

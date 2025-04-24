@@ -34,6 +34,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.InsertNetworkEdgeSecurityServiceRequest)
     InsertNetworkEdgeSecurityServiceRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use InsertNetworkEdgeSecurityServiceRequest.newBuilder() to construct.
   private InsertNetworkEdgeSecurityServiceRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
   public static final int NETWORK_EDGE_SECURITY_SERVICE_RESOURCE_FIELD_NUMBER = 477548966;
   private com.google.cloud.compute.v1.NetworkEdgeSecurityService
       networkEdgeSecurityServiceResource_;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
   public boolean hasNetworkEdgeSecurityServiceResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         ? com.google.cloud.compute.v1.NetworkEdgeSecurityService.getDefaultInstance()
         : networkEdgeSecurityServiceResource_;
   }
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object project_ = "";
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object region_ = "";
+
   /**
    *
    *
@@ -211,6 +218,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -241,6 +249,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object requestId_ = "";
+
   /**
    *
    *
@@ -256,6 +265,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
   public boolean hasRequestId() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
 
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 242744629;
   private boolean validateOnly_ = false;
+
   /**
    *
    *
@@ -320,6 +332,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
   public boolean hasValidateOnly() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -552,6 +565,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -828,6 +842,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
             com.google.cloud.compute.v1.NetworkEdgeSecurityService.Builder,
             com.google.cloud.compute.v1.NetworkEdgeSecurityServiceOrBuilder>
         networkEdgeSecurityServiceResourceBuilder_;
+
     /**
      *
      *
@@ -844,6 +859,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     public boolean hasNetworkEdgeSecurityServiceResource() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -867,6 +883,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return networkEdgeSecurityServiceResourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -892,6 +909,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -914,6 +932,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -966,6 +986,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1004,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return getNetworkEdgeSecurityServiceResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1004,6 +1026,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
             : networkEdgeSecurityServiceResource_;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1056,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object project_ = "";
+
     /**
      *
      *
@@ -1057,6 +1081,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1106,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1149,6 +1177,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object region_ = "";
+
     /**
      *
      *
@@ -1173,6 +1202,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1239,6 +1271,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1265,6 +1298,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     }
 
     private java.lang.Object requestId_ = "";
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     public boolean hasRequestId() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1301,6 +1336,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1359,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1344,6 +1381,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1361,6 +1399,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1385,6 +1424,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     }
 
     private boolean validateOnly_;
+
     /**
      *
      *
@@ -1400,6 +1440,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     public boolean hasValidateOnly() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1415,6 +1456,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
     public boolean getValidateOnly() {
       return validateOnly_;
     }
+
     /**
      *
      *
@@ -1434,6 +1476,7 @@ public final class InsertNetworkEdgeSecurityServiceRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

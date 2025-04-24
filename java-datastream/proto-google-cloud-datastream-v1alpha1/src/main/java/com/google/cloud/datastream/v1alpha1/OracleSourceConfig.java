@@ -33,6 +33,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.datastream.v1alpha1.OracleSourceConfig)
     OracleSourceConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OracleSourceConfig.newBuilder() to construct.
   private OracleSourceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int ALLOWLIST_FIELD_NUMBER = 1;
   private com.google.cloud.datastream.v1alpha1.OracleRdbms allowlist_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasAllowlist() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()
         : allowlist_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
 
   public static final int REJECTLIST_FIELD_NUMBER = 2;
   private com.google.cloud.datastream.v1alpha1.OracleRdbms rejectlist_;
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasRejectlist() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.datastream.v1alpha1.OracleRdbms.getDefaultInstance()
         : rejectlist_;
   }
+
   /**
    *
    *
@@ -341,6 +348,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +571,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder>
         allowlistBuilder_;
+
     /**
      *
      *
@@ -577,6 +586,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasAllowlist() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -597,6 +607,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return allowlistBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -619,6 +630,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +680,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +700,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +715,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getAllowlistFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -718,6 +734,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             : allowlist_;
       }
     }
+
     /**
      *
      *
@@ -750,6 +767,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.datastream.v1alpha1.OracleRdbms.Builder,
             com.google.cloud.datastream.v1alpha1.OracleRdbmsOrBuilder>
         rejectlistBuilder_;
+
     /**
      *
      *
@@ -764,6 +782,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasRejectlist() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +803,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
         return rejectlistBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -806,6 +826,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +847,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +876,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +896,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -887,6 +911,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRejectlistFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -905,6 +930,7 @@ public final class OracleSourceConfig extends com.google.protobuf.GeneratedMessa
             : rejectlist_;
       }
     }
+
     /**
      *
      *

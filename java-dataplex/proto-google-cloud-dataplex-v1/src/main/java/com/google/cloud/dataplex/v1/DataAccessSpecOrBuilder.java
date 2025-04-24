@@ -39,6 +39,7 @@ public interface DataAccessSpecOrBuilder
    * @return A list containing the readers.
    */
   java.util.List<java.lang.String> getReadersList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface DataAccessSpecOrBuilder
    * @return The count of readers.
    */
   int getReadersCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface DataAccessSpecOrBuilder
    * @return The readers at the given index.
    */
   java.lang.String getReaders(int index);
+
   /**
    *
    *

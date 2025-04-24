@@ -39,6 +39,7 @@ public interface CreateRuntimeRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CreateRuntimeRequestOrBuilder
    * @return The runtimeId.
    */
   java.lang.String getRuntimeId();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface CreateRuntimeRequestOrBuilder
    * @return Whether the runtime field is set.
    */
   boolean hasRuntime();
+
   /**
    *
    *
@@ -106,6 +109,7 @@ public interface CreateRuntimeRequestOrBuilder
    * @return The runtime.
    */
   com.google.cloud.notebooks.v1.Runtime getRuntime();
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public interface CreateRuntimeRequestOrBuilder
    * @return The requestId.
    */
   java.lang.String getRequestId();
+
   /**
    *
    *

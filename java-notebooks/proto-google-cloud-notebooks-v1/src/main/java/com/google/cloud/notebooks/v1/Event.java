@@ -33,6 +33,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.notebooks.v1.Event)
     EventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Event.newBuilder() to construct.
   private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int EVENT_TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -164,6 +166,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>IDLE = 1;</code>
      */
     public static final int IDLE_VALUE = 1;
+
     /**
      *
      *
@@ -176,6 +179,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>HEARTBEAT = 2;</code>
      */
     public static final int HEARTBEAT_VALUE = 2;
+
     /**
      *
      *
@@ -187,6 +191,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * <code>HEALTH = 3;</code>
      */
     public static final int HEALTH_VALUE = 3;
+
     /**
      *
      *
@@ -291,6 +296,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int REPORT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp reportTime_;
+
   /**
    *
    *
@@ -306,6 +312,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReportTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -321,6 +328,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getReportTime() {
     return reportTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : reportTime_;
   }
+
   /**
    *
    *
@@ -337,6 +345,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -352,6 +361,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -396,6 +406,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public int getDetailsCount() {
     return internalGetDetails().getMap().size();
   }
+
   /**
    *
    *
@@ -412,12 +423,14 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetDetails().getMap().containsKey(key);
   }
+
   /** Use {@link #getDetailsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getDetails() {
     return getDetailsMap();
   }
+
   /**
    *
    *
@@ -431,6 +444,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
     return internalGetDetails().getMap();
   }
+
   /**
    *
    *
@@ -451,6 +465,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -660,6 +675,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -915,6 +931,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         reportTimeBuilder_;
+
     /**
      *
      *
@@ -929,6 +946,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReportTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -949,6 +967,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         return reportTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -971,6 +990,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -990,6 +1010,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1073,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReportTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1068,6 +1092,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
             : reportTime_;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1120,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1110,6 +1136,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1128,6 +1155,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1173,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.notebooks.v1.Event.EventType.forNumber(type_);
       return result == null ? com.google.cloud.notebooks.v1.Event.EventType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1166,6 +1195,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1209,6 +1239,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public int getDetailsCount() {
       return internalGetDetails().getMap().size();
     }
+
     /**
      *
      *
@@ -1225,12 +1256,14 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetDetails().getMap().containsKey(key);
     }
+
     /** Use {@link #getDetailsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getDetails() {
       return getDetailsMap();
     }
+
     /**
      *
      *
@@ -1244,6 +1277,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getDetailsMap() {
       return internalGetDetails().getMap();
     }
+
     /**
      *
      *
@@ -1264,6 +1298,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetDetails().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1290,6 +1325,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetails().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1306,12 +1342,14 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableDetails().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableDetails() {
       bitField0_ |= 0x00000004;
       return internalGetMutableDetails().getMutableMap();
     }
+
     /**
      *
      *
@@ -1332,6 +1370,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

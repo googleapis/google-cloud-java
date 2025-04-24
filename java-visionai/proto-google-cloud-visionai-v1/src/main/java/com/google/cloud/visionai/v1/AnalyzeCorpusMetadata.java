@@ -33,6 +33,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.visionai.v1.AnalyzeCorpusMetadata)
     AnalyzeCorpusMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AnalyzeCorpusMetadata.newBuilder() to construct.
   private AnalyzeCorpusMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.cloud.visionai.v1.OperationMetadata metadata_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.cloud.visionai.v1.OperationMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -276,6 +280,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -479,6 +484,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
             com.google.cloud.visionai.v1.OperationMetadata.Builder,
             com.google.cloud.visionai.v1.OperationMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +592,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +612,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -633,6 +646,7 @@ public final class AnalyzeCorpusMetadata extends com.google.protobuf.GeneratedMe
             : metadata_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class BackendServiceConnectionTrackingPolicy
     // @@protoc_insertion_point(message_implements:google.cloud.compute.v1.BackendServiceConnectionTrackingPolicy)
     BackendServiceConnectionTrackingPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BackendServiceConnectionTrackingPolicy.newBuilder() to construct.
   private BackendServiceConnectionTrackingPolicy(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -107,10 +108,13 @@ public final class BackendServiceConnectionTrackingPolicy
      * <code>UNDEFINED_CONNECTION_PERSISTENCE_ON_UNHEALTHY_BACKENDS = 0;</code>
      */
     public static final int UNDEFINED_CONNECTION_PERSISTENCE_ON_UNHEALTHY_BACKENDS_VALUE = 0;
+
     /** <code>ALWAYS_PERSIST = 38400900;</code> */
     public static final int ALWAYS_PERSIST_VALUE = 38400900;
+
     /** <code>DEFAULT_FOR_PROTOCOL = 145265356;</code> */
     public static final int DEFAULT_FOR_PROTOCOL_VALUE = 145265356;
+
     /** <code>NEVER_PERSIST = 138646241;</code> */
     public static final int NEVER_PERSIST_VALUE = 138646241;
 
@@ -246,10 +250,13 @@ public final class BackendServiceConnectionTrackingPolicy
      * <code>UNDEFINED_TRACKING_MODE = 0;</code>
      */
     public static final int UNDEFINED_TRACKING_MODE_VALUE = 0;
+
     /** <code>INVALID_TRACKING_MODE = 49234371;</code> */
     public static final int INVALID_TRACKING_MODE_VALUE = 49234371;
+
     /** <code>PER_CONNECTION = 85162848;</code> */
     public static final int PER_CONNECTION_VALUE = 85162848;
+
     /** <code>PER_SESSION = 182099252;</code> */
     public static final int PER_SESSION_VALUE = 182099252;
 
@@ -345,6 +352,7 @@ public final class BackendServiceConnectionTrackingPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object connectionPersistenceOnUnhealthyBackends_ = "";
+
   /**
    *
    *
@@ -361,6 +369,7 @@ public final class BackendServiceConnectionTrackingPolicy
   public boolean hasConnectionPersistenceOnUnhealthyBackends() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -385,6 +394,7 @@ public final class BackendServiceConnectionTrackingPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +422,7 @@ public final class BackendServiceConnectionTrackingPolicy
 
   public static final int ENABLE_STRONG_AFFINITY_FIELD_NUMBER = 24539924;
   private boolean enableStrongAffinity_ = false;
+
   /**
    *
    *
@@ -427,6 +438,7 @@ public final class BackendServiceConnectionTrackingPolicy
   public boolean hasEnableStrongAffinity() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -445,6 +457,7 @@ public final class BackendServiceConnectionTrackingPolicy
 
   public static final int IDLE_TIMEOUT_SEC_FIELD_NUMBER = 24977544;
   private int idleTimeoutSec_ = 0;
+
   /**
    *
    *
@@ -460,6 +473,7 @@ public final class BackendServiceConnectionTrackingPolicy
   public boolean hasIdleTimeoutSec() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -480,6 +494,7 @@ public final class BackendServiceConnectionTrackingPolicy
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object trackingMode_ = "";
+
   /**
    *
    *
@@ -496,6 +511,7 @@ public final class BackendServiceConnectionTrackingPolicy
   public boolean hasTrackingMode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -520,6 +536,7 @@ public final class BackendServiceConnectionTrackingPolicy
       return s;
     }
   }
+
   /**
    *
    *
@@ -759,6 +776,7 @@ public final class BackendServiceConnectionTrackingPolicy
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -998,6 +1016,7 @@ public final class BackendServiceConnectionTrackingPolicy
     private int bitField0_;
 
     private java.lang.Object connectionPersistenceOnUnhealthyBackends_ = "";
+
     /**
      *
      *
@@ -1013,6 +1032,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public boolean hasConnectionPersistenceOnUnhealthyBackends() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1036,6 +1056,7 @@ public final class BackendServiceConnectionTrackingPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1059,6 +1080,7 @@ public final class BackendServiceConnectionTrackingPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1103,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1123,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1150,7 @@ public final class BackendServiceConnectionTrackingPolicy
     }
 
     private boolean enableStrongAffinity_;
+
     /**
      *
      *
@@ -1141,6 +1166,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public boolean hasEnableStrongAffinity() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1156,6 +1182,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public boolean getEnableStrongAffinity() {
       return enableStrongAffinity_;
     }
+
     /**
      *
      *
@@ -1175,6 +1202,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1222,7 @@ public final class BackendServiceConnectionTrackingPolicy
     }
 
     private int idleTimeoutSec_;
+
     /**
      *
      *
@@ -1209,6 +1238,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public boolean hasIdleTimeoutSec() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1224,6 +1254,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public int getIdleTimeoutSec() {
       return idleTimeoutSec_;
     }
+
     /**
      *
      *
@@ -1243,6 +1274,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1294,7 @@ public final class BackendServiceConnectionTrackingPolicy
     }
 
     private java.lang.Object trackingMode_ = "";
+
     /**
      *
      *
@@ -1277,6 +1310,7 @@ public final class BackendServiceConnectionTrackingPolicy
     public boolean hasTrackingMode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1300,6 +1334,7 @@ public final class BackendServiceConnectionTrackingPolicy
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1323,6 +1358,7 @@ public final class BackendServiceConnectionTrackingPolicy
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1345,6 +1381,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1363,6 +1400,7 @@ public final class BackendServiceConnectionTrackingPolicy
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -432,6 +432,19 @@ public final class AgentsGrpc {
     return AgentsStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static AgentsBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<AgentsBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<AgentsBlockingV2Stub>() {
+          @java.lang.Override
+          public AgentsBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new AgentsBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return AgentsBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -902,6 +915,208 @@ public final class AgentsGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Agents.
+   *
+   * <pre>
+   * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].
+   * </pre>
+   */
+  public static final class AgentsBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<AgentsBlockingV2Stub> {
+    private AgentsBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected AgentsBlockingV2Stub build(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new AgentsBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Retrieves the specified agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Agent getAgent(
+        com.google.cloud.dialogflow.v2.GetAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates/updates the specified agent.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.Agent setAgent(
+        com.google.cloud.dialogflow.v2.SetAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the specified agent.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAgent(
+        com.google.cloud.dialogflow.v2.DeleteAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the list of agents.
+     * Since there is at most one conversational agent per project, this method is
+     * useful primarily for listing all agents across projects the caller has
+     * access to. One can achieve that with a wildcard project collection id "-".
+     * Refer to [List
+     * Sub-Collections](https://cloud.google.com/apis/design/design_patterns#list_sub-collections).
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.SearchAgentsResponse searchAgents(
+        com.google.cloud.dialogflow.v2.SearchAgentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchAgentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Trains the specified agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation trainAgent(
+        com.google.cloud.dialogflow.v2.TrainAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTrainAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the specified agent to a ZIP file.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`:
+     * [ExportAgentResponse][google.cloud.dialogflow.v2.ExportAgentResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportAgent(
+        com.google.cloud.dialogflow.v2.ExportAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified agent from a ZIP file.
+     * Uploads new intents and entity types without deleting the existing ones.
+     * Intents and entity types with the same name are replaced with the new
+     * versions from
+     * [ImportAgentRequest][google.cloud.dialogflow.v2.ImportAgentRequest]. After
+     * the import, the imported draft agent will be trained automatically (unless
+     * disabled in agent settings). However, once the import is done, training may
+     * not be completed yet. Please call
+     * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the
+     * operation it returns in order to train explicitly.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * The operation only tracks when importing is complete, not when it is done
+     * training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation importAgent(
+        com.google.cloud.dialogflow.v2.ImportAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores the specified agent from a ZIP file.
+     * Replaces the current agent version with a new one. All the intents and
+     * entity types in the older version are deleted. After the restore, the
+     * restored draft agent will be trained automatically (unless disabled in
+     * agent settings). However, once the restore is done, training may not be
+     * completed yet. Please call
+     * [TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent] and wait for the
+     * operation it returns in order to train explicitly.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/es/docs/how/long-running-operations).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`: An empty [Struct
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#struct)
+     * - `response`: An [Empty
+     *   message](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#empty)
+     * The operation only tracks when restoring is complete, not when it is done
+     * training.
+     * Note: You should always train an agent prior to sending it queries. See the
+     * [training
+     * documentation](https://cloud.google.com/dialogflow/es/docs/training).
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreAgent(
+        com.google.cloud.dialogflow.v2.RestoreAgentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreAgentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets agent validation result. Agent validation is performed during
+     * training time and is updated automatically when training is completed.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.ValidationResult getValidationResult(
+        com.google.cloud.dialogflow.v2.GetValidationResultRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetValidationResultMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Agents.
    *
    * <pre>
    * Service for managing [Agents][google.cloud.dialogflow.v2.Agent].

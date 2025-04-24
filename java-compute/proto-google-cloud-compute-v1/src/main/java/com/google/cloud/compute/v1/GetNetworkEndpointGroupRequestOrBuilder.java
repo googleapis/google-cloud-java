@@ -37,6 +37,7 @@ public interface GetNetworkEndpointGroupRequestOrBuilder
    * @return The networkEndpointGroup.
    */
   java.lang.String getNetworkEndpointGroup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GetNetworkEndpointGroupRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface GetNetworkEndpointGroupRequestOrBuilder
    * @return The zone.
    */
   java.lang.String getZone();
+
   /**
    *
    *

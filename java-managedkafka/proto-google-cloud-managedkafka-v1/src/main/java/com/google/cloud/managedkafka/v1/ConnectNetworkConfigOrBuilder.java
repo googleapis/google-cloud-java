@@ -46,6 +46,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return The primarySubnet.
    */
   java.lang.String getPrimarySubnet();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return A list containing the additionalSubnets.
    */
   java.util.List<java.lang.String> getAdditionalSubnetsList();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return The count of additionalSubnets.
    */
   int getAdditionalSubnetsCount();
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return The additionalSubnets at the given index.
    */
   java.lang.String getAdditionalSubnets(int index);
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return A list containing the dnsDomainNames.
    */
   java.util.List<java.lang.String> getDnsDomainNamesList();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return The count of dnsDomainNames.
    */
   int getDnsDomainNamesCount();
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public interface ConnectNetworkConfigOrBuilder
    * @return The dnsDomainNames at the given index.
    */
   java.lang.String getDnsDomainNames(int index);
+
   /**
    *
    *

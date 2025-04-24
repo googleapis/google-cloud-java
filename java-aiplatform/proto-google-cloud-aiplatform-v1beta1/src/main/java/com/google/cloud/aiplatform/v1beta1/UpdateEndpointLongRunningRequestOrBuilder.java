@@ -40,6 +40,7 @@ public interface UpdateEndpointLongRunningRequestOrBuilder
    * @return Whether the endpoint field is set.
    */
   boolean hasEndpoint();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface UpdateEndpointLongRunningRequestOrBuilder
    * @return The endpoint.
    */
   com.google.cloud.aiplatform.v1beta1.Endpoint getEndpoint();
+
   /**
    *
    *

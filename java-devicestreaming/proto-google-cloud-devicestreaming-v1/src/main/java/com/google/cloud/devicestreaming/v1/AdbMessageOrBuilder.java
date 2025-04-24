@@ -36,6 +36,7 @@ public interface AdbMessageOrBuilder
    * @return Whether the open field is set.
    */
   boolean hasOpen();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AdbMessageOrBuilder
    * @return The open.
    */
   com.google.cloud.devicestreaming.v1.Open getOpen();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface AdbMessageOrBuilder
    * @return Whether the streamData field is set.
    */
   boolean hasStreamData();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface AdbMessageOrBuilder
    * @return The streamData.
    */
   com.google.cloud.devicestreaming.v1.StreamData getStreamData();
+
   /**
    *
    *

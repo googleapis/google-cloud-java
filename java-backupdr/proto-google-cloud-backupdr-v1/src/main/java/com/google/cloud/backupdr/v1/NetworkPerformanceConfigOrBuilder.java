@@ -38,6 +38,7 @@ public interface NetworkPerformanceConfigOrBuilder
    * @return Whether the totalEgressBandwidthTier field is set.
    */
   boolean hasTotalEgressBandwidthTier();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface NetworkPerformanceConfigOrBuilder
    * @return The enum numeric value on the wire for totalEgressBandwidthTier.
    */
   int getTotalEgressBandwidthTierValue();
+
   /**
    *
    *

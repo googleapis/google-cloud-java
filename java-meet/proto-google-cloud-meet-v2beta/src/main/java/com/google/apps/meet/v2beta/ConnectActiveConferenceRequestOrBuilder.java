@@ -39,6 +39,7 @@ public interface ConnectActiveConferenceRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ConnectActiveConferenceRequestOrBuilder
    * @return The offer.
    */
   java.lang.String getOffer();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest)
     UpdateSearchAds360LinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSearchAds360LinkRequest.newBuilder() to construct.
   private UpdateSearchAds360LinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int SEARCH_ADS_360_LINK_FIELD_NUMBER = 1;
   private com.google.analytics.admin.v1alpha.SearchAds360Link searchAds360Link_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
   public boolean hasSearchAds360Link() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
         ? com.google.analytics.admin.v1alpha.SearchAds360Link.getDefaultInstance()
         : searchAds360Link_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -347,6 +354,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -575,6 +583,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
             com.google.analytics.admin.v1alpha.SearchAds360Link.Builder,
             com.google.analytics.admin.v1alpha.SearchAds360LinkOrBuilder>
         searchAds360LinkBuilder_;
+
     /**
      *
      *
@@ -589,6 +598,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
     public boolean hasSearchAds360Link() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -609,6 +619,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
         return searchAds360LinkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +663,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +713,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +729,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return getSearchAds360LinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -733,6 +749,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
             : searchAds360Link_;
       }
     }
+
     /**
      *
      *
@@ -765,6 +782,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -830,6 +850,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +873,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -882,6 +904,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +927,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -942,6 +967,7 @@ public final class UpdateSearchAds360LinkRequest extends com.google.protobuf.Gen
             : updateMask_;
       }
     }
+
     /**
      *
      *

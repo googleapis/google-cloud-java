@@ -36,6 +36,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the color field is set.
    */
   boolean hasColor();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The color.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Color getColor();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the denoise field is set.
    */
   boolean hasDenoise();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The denoise.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Denoise getDenoise();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the deblock field is set.
    */
   boolean hasDeblock();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The deblock.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deblock getDeblock();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the audio field is set.
    */
   boolean hasAudio();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The audio.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Audio getAudio();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the crop field is set.
    */
   boolean hasCrop();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The crop.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Crop getCrop();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the pad field is set.
    */
   boolean hasPad();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The pad.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Pad getPad();
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public interface PreprocessingConfigOrBuilder
    * @return Whether the deinterlace field is set.
    */
   boolean hasDeinterlace();
+
   /**
    *
    *
@@ -258,6 +271,7 @@ public interface PreprocessingConfigOrBuilder
    * @return The deinterlace.
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfig.Deinterlace getDeinterlace();
+
   /**
    *
    *

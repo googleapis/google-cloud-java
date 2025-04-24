@@ -33,6 +33,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.securitycenter.v1beta1.SetFindingStateRequest)
     SetFindingStateRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SetFindingStateRequest.newBuilder() to construct.
   private SetFindingStateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_ = 0;
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
 
   public static final int START_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -201,6 +208,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -401,6 +409,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -630,6 +639,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -732,6 +745,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +775,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -778,6 +793,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -798,6 +814,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +836,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
           ? com.google.cloud.securitycenter.v1beta1.Finding.State.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -842,6 +860,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -868,6 +887,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -883,6 +903,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -925,6 +947,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +997,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1018,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1025,6 +1052,7 @@ public final class SetFindingStateRequest extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *

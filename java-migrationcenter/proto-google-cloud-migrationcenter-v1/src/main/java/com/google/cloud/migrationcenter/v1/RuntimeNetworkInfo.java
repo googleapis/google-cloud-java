@@ -33,6 +33,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.RuntimeNetworkInfo)
     RuntimeNetworkInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RuntimeNetworkInfo.newBuilder() to construct.
   private RuntimeNetworkInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int SCAN_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp scanTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
   public boolean hasScanTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getScanTime() {
     return scanTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scanTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
 
   public static final int CONNECTIONS_FIELD_NUMBER = 2;
   private com.google.cloud.migrationcenter.v1.NetworkConnectionList connections_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
   public boolean hasConnections() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.migrationcenter.v1.NetworkConnectionList.getDefaultInstance()
         : connections_;
   }
+
   /**
    *
    *
@@ -338,6 +345,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -561,6 +569,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         scanTimeBuilder_;
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
     public boolean hasScanTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -593,6 +603,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
         return scanTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -615,6 +626,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +646,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +674,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +694,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +709,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getScanTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -710,6 +726,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
         return scanTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scanTime_;
       }
     }
+
     /**
      *
      *
@@ -742,6 +759,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
             com.google.cloud.migrationcenter.v1.NetworkConnectionList.Builder,
             com.google.cloud.migrationcenter.v1.NetworkConnectionListOrBuilder>
         connectionsBuilder_;
+
     /**
      *
      *
@@ -756,6 +774,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
     public boolean hasConnections() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -776,6 +795,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
         return connectionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -798,6 +818,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +839,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +869,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -866,6 +889,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +905,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getConnectionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -900,6 +925,7 @@ public final class RuntimeNetworkInfo extends com.google.protobuf.GeneratedMessa
             : connections_;
       }
     }
+
     /**
      *
      *

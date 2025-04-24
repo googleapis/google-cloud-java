@@ -96,6 +96,7 @@ public enum DenyAccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DENY_ACCESS_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int DENY_ACCESS_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -106,6 +107,7 @@ public enum DenyAccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DENY_ACCESS_STATE_DENIED = 1;</code>
    */
   public static final int DENY_ACCESS_STATE_DENIED_VALUE = 1;
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public enum DenyAccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DENY_ACCESS_STATE_NOT_DENIED = 2;</code>
    */
   public static final int DENY_ACCESS_STATE_NOT_DENIED_VALUE = 2;
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public enum DenyAccessState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DENY_ACCESS_STATE_UNKNOWN_CONDITIONAL = 3;</code>
    */
   public static final int DENY_ACCESS_STATE_UNKNOWN_CONDITIONAL_VALUE = 3;
+
   /**
    *
    *

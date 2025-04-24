@@ -35,6 +35,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence)
     DiscoveryCloudSqlGenerationCadenceOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DiscoveryCloudSqlGenerationCadence.newBuilder() to construct.
   private DiscoveryCloudSqlGenerationCadence(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -89,6 +90,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
                 .CloudSqlSchemaModification>
         getTypesList();
+
     /**
      *
      *
@@ -104,6 +106,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * @return The count of types.
      */
     int getTypesCount();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
             .CloudSqlSchemaModification
         getTypes(int index);
+
     /**
      *
      *
@@ -137,6 +141,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * @return A list containing the enum numeric values on the wire for types.
      */
     java.util.List<java.lang.Integer> getTypesValueList();
+
     /**
      *
      *
@@ -167,6 +172,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      * @return The enum numeric value on the wire for frequency.
      */
     int getFrequencyValue();
+
     /**
      *
      *
@@ -181,6 +187,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
      */
     com.google.privacy.dlp.v2.DataProfileUpdateFrequency getFrequency();
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence)
       SchemaModifiedCadenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SchemaModifiedCadence.newBuilder() to construct.
     private SchemaModifiedCadence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -283,6 +291,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
        * <code>SQL_SCHEMA_MODIFICATION_UNSPECIFIED = 0;</code>
        */
       public static final int SQL_SCHEMA_MODIFICATION_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -293,6 +302,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
        * <code>NEW_COLUMNS = 1;</code>
        */
       public static final int NEW_COLUMNS_VALUE = 1;
+
       /**
        *
        *
@@ -421,6 +431,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
                     : result;
               }
             };
+
     /**
      *
      *
@@ -445,6 +456,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
           com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
               .CloudSqlSchemaModification>(types_, types_converter_);
     }
+
     /**
      *
      *
@@ -463,6 +475,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public int getTypesCount() {
       return types_.size();
     }
+
     /**
      *
      *
@@ -484,6 +497,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         getTypes(int index) {
       return types_converter_.convert(types_.get(index));
     }
+
     /**
      *
      *
@@ -502,6 +516,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public java.util.List<java.lang.Integer> getTypesValueList() {
       return types_;
     }
+
     /**
      *
      *
@@ -526,6 +541,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
 
     public static final int FREQUENCY_FIELD_NUMBER = 2;
     private int frequency_ = 0;
+
     /**
      *
      *
@@ -542,6 +558,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public int getFrequencyValue() {
       return frequency_;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1016,6 +1034,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
           bitField0_ |= 0x00000001;
         }
       }
+
       /**
        *
        *
@@ -1039,6 +1058,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
                 .CloudSqlSchemaModification>(types_, types_converter_);
       }
+
       /**
        *
        *
@@ -1056,6 +1076,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       public int getTypesCount() {
         return types_.size();
       }
+
       /**
        *
        *
@@ -1076,6 +1097,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
           getTypes(int index) {
         return types_converter_.convert(types_.get(index));
       }
+
       /**
        *
        *
@@ -1105,6 +1127,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1132,6 +1155,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1162,6 +1186,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1182,6 +1207,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1199,6 +1225,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       public java.util.List<java.lang.Integer> getTypesValueList() {
         return java.util.Collections.unmodifiableList(types_);
       }
+
       /**
        *
        *
@@ -1217,6 +1244,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       public int getTypesValue(int index) {
         return types_.get(index);
       }
+
       /**
        *
        *
@@ -1239,6 +1267,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1260,6 +1289,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1285,6 +1315,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       }
 
       private int frequency_ = 0;
+
       /**
        *
        *
@@ -1301,6 +1332,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       public int getFrequencyValue() {
         return frequency_;
       }
+
       /**
        *
        *
@@ -1320,6 +1352,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1340,6 +1373,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1362,6 +1396,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1454,6 +1489,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
   public static final int SCHEMA_MODIFIED_CADENCE_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence.SchemaModifiedCadence
       schemaModifiedCadence_;
+
   /**
    *
    *
@@ -1471,6 +1507,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
   public boolean hasSchemaModifiedCadence() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1492,6 +1529,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             .getDefaultInstance()
         : schemaModifiedCadence_;
   }
+
   /**
    *
    *
@@ -1514,6 +1552,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
 
   public static final int REFRESH_FREQUENCY_FIELD_NUMBER = 2;
   private int refreshFrequency_ = 0;
+
   /**
    *
    *
@@ -1532,6 +1571,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
   public int getRefreshFrequencyValue() {
     return refreshFrequency_;
   }
+
   /**
    *
    *
@@ -1558,6 +1598,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
   public static final int INSPECT_TEMPLATE_MODIFIED_CADENCE_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence
       inspectTemplateModifiedCadence_;
+
   /**
    *
    *
@@ -1577,6 +1618,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
   public boolean hasInspectTemplateModifiedCadence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1599,6 +1641,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         ? com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.getDefaultInstance()
         : inspectTemplateModifiedCadence_;
   }
+
   /**
    *
    *
@@ -1817,6 +1860,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2069,6 +2113,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             com.google.privacy.dlp.v2.DiscoveryCloudSqlGenerationCadence
                 .SchemaModifiedCadenceOrBuilder>
         schemaModifiedCadenceBuilder_;
+
     /**
      *
      *
@@ -2085,6 +2130,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public boolean hasSchemaModifiedCadence() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2109,6 +2155,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         return schemaModifiedCadenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2134,6 +2181,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2157,6 +2205,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2189,6 +2238,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2260,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2228,6 +2279,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return getSchemaModifiedCadenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2251,6 +2303,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             : schemaModifiedCadence_;
       }
     }
+
     /**
      *
      *
@@ -2284,6 +2337,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     }
 
     private int refreshFrequency_ = 0;
+
     /**
      *
      *
@@ -2302,6 +2356,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public int getRefreshFrequencyValue() {
       return refreshFrequency_;
     }
+
     /**
      *
      *
@@ -2323,6 +2378,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2345,6 +2401,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
           ? com.google.privacy.dlp.v2.DataProfileUpdateFrequency.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -2369,6 +2426,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2397,6 +2455,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadence.Builder,
             com.google.privacy.dlp.v2.DiscoveryInspectTemplateModifiedCadenceOrBuilder>
         inspectTemplateModifiedCadenceBuilder_;
+
     /**
      *
      *
@@ -2415,6 +2474,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
     public boolean hasInspectTemplateModifiedCadence() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2440,6 +2500,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
         return inspectTemplateModifiedCadenceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2467,6 +2528,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2491,6 +2553,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2525,6 +2588,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       }
       return this;
     }
+
     /**
      *
      *
@@ -2548,6 +2612,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2567,6 +2632,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
       onChanged();
       return getInspectTemplateModifiedCadenceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2590,6 +2656,7 @@ public final class DiscoveryCloudSqlGenerationCadence extends com.google.protobu
             : inspectTemplateModifiedCadence_;
       }
     }
+
     /**
      *
      *

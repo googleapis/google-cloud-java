@@ -34,6 +34,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse)
     AssessDataResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AssessDataResponse.newBuilder() to construct.
   private AssessDataResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      * @return A list containing the errors.
      */
     java.util.List<java.lang.String> getErrorsList();
+
     /**
      *
      *
@@ -91,6 +93,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      * @return The count of errors.
      */
     int getErrorsCount();
+
     /**
      *
      *
@@ -104,6 +107,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      * @return The errors at the given index.
      */
     java.lang.String getErrors(int index);
+
     /**
      *
      *
@@ -118,6 +122,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.ByteString getErrorsBytes(int index);
   }
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.TuningValidationAssessmentResult)
       TuningValidationAssessmentResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TuningValidationAssessmentResult.newBuilder() to construct.
     private TuningValidationAssessmentResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -172,6 +178,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList errors_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -186,6 +193,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ProtocolStringList getErrorsList() {
       return errors_;
     }
+
     /**
      *
      *
@@ -200,6 +208,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public int getErrorsCount() {
       return errors_.size();
     }
+
     /**
      *
      *
@@ -215,6 +224,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public java.lang.String getErrors(int index) {
       return errors_.get(index);
     }
+
     /**
      *
      *
@@ -424,6 +434,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -649,6 +660,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -664,6 +676,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         errors_.makeImmutable();
         return errors_;
       }
+
       /**
        *
        *
@@ -678,6 +691,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public int getErrorsCount() {
         return errors_.size();
       }
+
       /**
        *
        *
@@ -693,6 +707,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public java.lang.String getErrors(int index) {
         return errors_.get(index);
       }
+
       /**
        *
        *
@@ -708,6 +723,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public com.google.protobuf.ByteString getErrorsBytes(int index) {
         return errors_.getByteString(index);
       }
+
       /**
        *
        *
@@ -731,6 +747,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -753,6 +770,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -772,6 +790,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -790,6 +809,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -916,6 +936,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      */
     long getBillableCharacterCount();
   }
+
   /**
    *
    *
@@ -932,6 +953,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.TuningResourceUsageAssessmentResult)
       TuningResourceUsageAssessmentResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TuningResourceUsageAssessmentResult.newBuilder() to construct.
     private TuningResourceUsageAssessmentResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -965,6 +987,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int TOKEN_COUNT_FIELD_NUMBER = 1;
     private long tokenCount_ = 0L;
+
     /**
      *
      *
@@ -983,6 +1006,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int BILLABLE_CHARACTER_COUNT_FIELD_NUMBER = 2;
     private long billableCharacterCount_ = 0L;
+
     /**
      *
      *
@@ -1194,6 +1218,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1418,6 +1443,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private long tokenCount_;
+
       /**
        *
        *
@@ -1433,6 +1459,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public long getTokenCount() {
         return tokenCount_;
       }
+
       /**
        *
        *
@@ -1452,6 +1479,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1471,6 +1499,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private long billableCharacterCount_;
+
       /**
        *
        *
@@ -1486,6 +1515,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public long getBillableCharacterCount() {
         return billableCharacterCount_;
       }
+
       /**
        *
        *
@@ -1505,6 +1535,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1599,6 +1630,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -1615,6 +1647,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionValidationAssessmentResult)
       BatchPredictionValidationAssessmentResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BatchPredictionValidationAssessmentResult.newBuilder() to construct.
     private BatchPredictionValidationAssessmentResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -1825,6 +1858,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2118,6 +2152,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
      */
     long getAudioTokenCount();
   }
+
   /**
    *
    *
@@ -2134,6 +2169,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.AssessDataResponse.BatchPredictionResourceUsageAssessmentResult)
       BatchPredictionResourceUsageAssessmentResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use BatchPredictionResourceUsageAssessmentResult.newBuilder() to construct.
     private BatchPredictionResourceUsageAssessmentResult(
         com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -2167,6 +2203,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int TOKEN_COUNT_FIELD_NUMBER = 1;
     private long tokenCount_ = 0L;
+
     /**
      *
      *
@@ -2185,6 +2222,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int AUDIO_TOKEN_COUNT_FIELD_NUMBER = 2;
     private long audioTokenCount_ = 0L;
+
     /**
      *
      *
@@ -2398,6 +2436,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2626,6 +2665,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private long tokenCount_;
+
       /**
        *
        *
@@ -2641,6 +2681,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public long getTokenCount() {
         return tokenCount_;
       }
+
       /**
        *
        *
@@ -2660,6 +2701,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2679,6 +2721,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
 
       private long audioTokenCount_;
+
       /**
        *
        *
@@ -2694,6 +2737,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       public long getAudioTokenCount() {
         return audioTokenCount_;
       }
+
       /**
        *
        *
@@ -2713,6 +2757,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2825,6 +2870,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     private AssessmentResultCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2862,6 +2908,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TUNING_VALIDATION_ASSESSMENT_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -2879,6 +2926,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasTuningValidationAssessmentResult() {
     return assessmentResultCase_ == 1;
   }
+
   /**
    *
    *
@@ -2903,6 +2951,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.AssessDataResponse.TuningValidationAssessmentResult
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2928,6 +2977,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int TUNING_RESOURCE_USAGE_ASSESSMENT_RESULT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2945,6 +2995,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasTuningResourceUsageAssessmentResult() {
     return assessmentResultCase_ == 2;
   }
+
   /**
    *
    *
@@ -2969,6 +3020,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
         .TuningResourceUsageAssessmentResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2994,6 +3046,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BATCH_PREDICTION_VALIDATION_ASSESSMENT_RESULT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -3011,6 +3064,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasBatchPredictionValidationAssessmentResult() {
     return assessmentResultCase_ == 3;
   }
+
   /**
    *
    *
@@ -3036,6 +3090,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
         .BatchPredictionValidationAssessmentResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3061,6 +3116,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_RESULT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -3078,6 +3134,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasBatchPredictionResourceUsageAssessmentResult() {
     return assessmentResultCase_ == 4;
   }
+
   /**
    *
    *
@@ -3103,6 +3160,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.AssessDataResponse
         .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3378,6 +3436,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3662,6 +3721,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.AssessDataResponse
                 .TuningValidationAssessmentResultOrBuilder>
         tuningValidationAssessmentResultBuilder_;
+
     /**
      *
      *
@@ -3679,6 +3739,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasTuningValidationAssessmentResult() {
       return assessmentResultCase_ == 1;
     }
+
     /**
      *
      *
@@ -3711,6 +3772,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .TuningValidationAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3737,6 +3799,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3761,6 +3824,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3802,6 +3866,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -3829,6 +3894,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -3845,6 +3911,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         getTuningValidationAssessmentResultBuilder() {
       return getTuningValidationAssessmentResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3872,6 +3939,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .TuningValidationAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3924,6 +3992,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.AssessDataResponse
                 .TuningResourceUsageAssessmentResultOrBuilder>
         tuningResourceUsageAssessmentResultBuilder_;
+
     /**
      *
      *
@@ -3941,6 +4010,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasTuningResourceUsageAssessmentResult() {
       return assessmentResultCase_ == 2;
     }
+
     /**
      *
      *
@@ -3974,6 +4044,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .TuningResourceUsageAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4000,6 +4071,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4024,6 +4096,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4065,6 +4138,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -4092,6 +4166,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4108,6 +4183,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         getTuningResourceUsageAssessmentResultBuilder() {
       return getTuningResourceUsageAssessmentResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4135,6 +4211,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .TuningResourceUsageAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4188,6 +4265,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.AssessDataResponse
                 .BatchPredictionValidationAssessmentResultOrBuilder>
         batchPredictionValidationAssessmentResultBuilder_;
+
     /**
      *
      *
@@ -4205,6 +4283,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasBatchPredictionValidationAssessmentResult() {
       return assessmentResultCase_ == 3;
     }
+
     /**
      *
      *
@@ -4238,6 +4317,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .BatchPredictionValidationAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4265,6 +4345,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4289,6 +4370,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4331,6 +4413,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -4358,6 +4441,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4374,6 +4458,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         getBatchPredictionValidationAssessmentResultBuilder() {
       return getBatchPredictionValidationAssessmentResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4402,6 +4487,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .BatchPredictionValidationAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4455,6 +4541,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.AssessDataResponse
                 .BatchPredictionResourceUsageAssessmentResultOrBuilder>
         batchPredictionResourceUsageAssessmentResultBuilder_;
+
     /**
      *
      *
@@ -4472,6 +4559,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasBatchPredictionResourceUsageAssessmentResult() {
       return assessmentResultCase_ == 4;
     }
+
     /**
      *
      *
@@ -4505,6 +4593,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4532,6 +4621,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4556,6 +4646,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4598,6 +4689,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       assessmentResultCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4625,6 +4717,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -4641,6 +4734,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
         getBatchPredictionResourceUsageAssessmentResultBuilder() {
       return getBatchPredictionResourceUsageAssessmentResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4669,6 +4763,7 @@ public final class AssessDataResponse extends com.google.protobuf.GeneratedMessa
             .BatchPredictionResourceUsageAssessmentResult.getDefaultInstance();
       }
     }
+
     /**
      *
      *

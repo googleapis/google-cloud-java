@@ -39,6 +39,7 @@ public interface AssessmentOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface AssessmentOrBuilder
    * @return Whether the event field is set.
    */
   boolean hasEvent();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface AssessmentOrBuilder
    * @return The event.
    */
   com.google.recaptchaenterprise.v1.Event getEvent();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface AssessmentOrBuilder
    * @return Whether the riskAnalysis field is set.
    */
   boolean hasRiskAnalysis();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public interface AssessmentOrBuilder
    * @return The riskAnalysis.
    */
   com.google.recaptchaenterprise.v1.RiskAnalysis getRiskAnalysis();
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public interface AssessmentOrBuilder
    * @return Whether the tokenProperties field is set.
    */
   boolean hasTokenProperties();
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public interface AssessmentOrBuilder
    * @return The tokenProperties.
    */
   com.google.recaptchaenterprise.v1.TokenProperties getTokenProperties();
+
   /**
    *
    *
@@ -193,6 +200,7 @@ public interface AssessmentOrBuilder
    * @return Whether the accountVerification field is set.
    */
   boolean hasAccountVerification();
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface AssessmentOrBuilder
    * @return The accountVerification.
    */
   com.google.recaptchaenterprise.v1.AccountVerificationInfo getAccountVerification();
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public interface AssessmentOrBuilder
    * @return Whether the accountDefenderAssessment field is set.
    */
   boolean hasAccountDefenderAssessment();
+
   /**
    *
    *
@@ -253,6 +263,7 @@ public interface AssessmentOrBuilder
    * @return The accountDefenderAssessment.
    */
   com.google.recaptchaenterprise.v1.AccountDefenderAssessment getAccountDefenderAssessment();
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public interface AssessmentOrBuilder
    * @return Whether the privatePasswordLeakVerification field is set.
    */
   boolean hasPrivatePasswordLeakVerification();
+
   /**
    *
    *
@@ -301,6 +313,7 @@ public interface AssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.PrivatePasswordLeakVerification
       getPrivatePasswordLeakVerification();
+
   /**
    *
    *
@@ -332,6 +345,7 @@ public interface AssessmentOrBuilder
    * @return Whether the firewallPolicyAssessment field is set.
    */
   boolean hasFirewallPolicyAssessment();
+
   /**
    *
    *
@@ -347,6 +361,7 @@ public interface AssessmentOrBuilder
    * @return The firewallPolicyAssessment.
    */
   com.google.recaptchaenterprise.v1.FirewallPolicyAssessment getFirewallPolicyAssessment();
+
   /**
    *
    *
@@ -377,6 +392,7 @@ public interface AssessmentOrBuilder
    * @return Whether the fraudPreventionAssessment field is set.
    */
   boolean hasFraudPreventionAssessment();
+
   /**
    *
    *
@@ -392,6 +408,7 @@ public interface AssessmentOrBuilder
    * @return The fraudPreventionAssessment.
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment getFraudPreventionAssessment();
+
   /**
    *
    *
@@ -422,6 +439,7 @@ public interface AssessmentOrBuilder
    * @return Whether the fraudSignals field is set.
    */
   boolean hasFraudSignals();
+
   /**
    *
    *
@@ -437,6 +455,7 @@ public interface AssessmentOrBuilder
    * @return The fraudSignals.
    */
   com.google.recaptchaenterprise.v1.FraudSignals getFraudSignals();
+
   /**
    *
    *
@@ -467,6 +486,7 @@ public interface AssessmentOrBuilder
    * @return Whether the phoneFraudAssessment field is set.
    */
   boolean hasPhoneFraudAssessment();
+
   /**
    *
    *
@@ -483,6 +503,7 @@ public interface AssessmentOrBuilder
    * @return The phoneFraudAssessment.
    */
   com.google.recaptchaenterprise.v1.PhoneFraudAssessment getPhoneFraudAssessment();
+
   /**
    *
    *
@@ -515,6 +536,7 @@ public interface AssessmentOrBuilder
    * @return Whether the assessmentEnvironment field is set.
    */
   boolean hasAssessmentEnvironment();
+
   /**
    *
    *
@@ -531,6 +553,7 @@ public interface AssessmentOrBuilder
    * @return The assessmentEnvironment.
    */
   com.google.recaptchaenterprise.v1.AssessmentEnvironment getAssessmentEnvironment();
+
   /**
    *
    *

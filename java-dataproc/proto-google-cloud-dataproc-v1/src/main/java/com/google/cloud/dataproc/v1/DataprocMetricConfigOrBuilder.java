@@ -36,6 +36,7 @@ public interface DataprocMetricConfigOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric> getMetricsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DataprocMetricConfigOrBuilder
    * </code>
    */
   com.google.cloud.dataproc.v1.DataprocMetricConfig.Metric getMetrics(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface DataprocMetricConfigOrBuilder
    * </code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface DataprocMetricConfigOrBuilder
    */
   java.util.List<? extends com.google.cloud.dataproc.v1.DataprocMetricConfig.MetricOrBuilder>
       getMetricsOrBuilderList();
+
   /**
    *
    *

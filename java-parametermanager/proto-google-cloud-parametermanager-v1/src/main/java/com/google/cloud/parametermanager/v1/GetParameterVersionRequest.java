@@ -33,6 +33,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.cloud.parametermanager.v1.GetParameterVersionRequest)
     GetParameterVersionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetParameterVersionRequest.newBuilder() to construct.
   private GetParameterVersionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
 
   public static final int VIEW_FIELD_NUMBER = 6;
   private int view_ = 0;
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -333,6 +338,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -534,6 +540,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -559,6 +566,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -584,6 +592,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -608,6 +617,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +666,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -696,6 +709,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +731,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
           com.google.cloud.parametermanager.v1.View.forNumber(view_);
       return result == null ? com.google.cloud.parametermanager.v1.View.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -742,6 +757,7 @@ public final class GetParameterVersionRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

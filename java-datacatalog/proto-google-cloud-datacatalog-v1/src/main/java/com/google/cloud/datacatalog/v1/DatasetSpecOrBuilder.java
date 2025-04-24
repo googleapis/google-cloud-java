@@ -36,6 +36,7 @@ public interface DatasetSpecOrBuilder
    * @return Whether the vertexDatasetSpec field is set.
    */
   boolean hasVertexDatasetSpec();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface DatasetSpecOrBuilder
    * @return The vertexDatasetSpec.
    */
   com.google.cloud.datacatalog.v1.VertexDatasetSpec getVertexDatasetSpec();
+
   /**
    *
    *

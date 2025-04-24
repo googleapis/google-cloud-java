@@ -34,6 +34,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.secretmanager.v1.AccessSecretVersionResponse)
     AccessSecretVersionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AccessSecretVersionResponse.newBuilder() to construct.
   private AccessSecretVersionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
 
   public static final int PAYLOAD_FIELD_NUMBER = 2;
   private com.google.cloud.secretmanager.v1.SecretPayload payload_;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
   public boolean hasPayload() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         ? com.google.cloud.secretmanager.v1.SecretPayload.getDefaultInstance()
         : payload_;
   }
+
   /**
    *
    *
@@ -346,6 +352,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +570,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -613,6 +622,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
             com.google.cloud.secretmanager.v1.SecretPayload.Builder,
             com.google.cloud.secretmanager.v1.SecretPayloadOrBuilder>
         payloadBuilder_;
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
     public boolean hasPayload() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -723,6 +737,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
         return payloadBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -745,6 +760,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +781,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +809,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +844,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class AccessSecretVersionResponse extends com.google.protobuf.Gener
             : payload_;
       }
     }
+
     /**
      *
      *

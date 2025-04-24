@@ -33,6 +33,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.MqttConfig)
     MqttConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MqttConfig.newBuilder() to construct.
   private MqttConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MQTT_ENABLED_STATE_FIELD_NUMBER = 1;
   private int mqttEnabledState_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
   public int getMqttEnabledStateValue() {
     return mqttEnabledState_;
   }
+
   /**
    *
    *
@@ -257,6 +260,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -437,6 +441,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int mqttEnabledState_ = 0;
+
     /**
      *
      *
@@ -453,6 +458,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
     public int getMqttEnabledStateValue() {
       return mqttEnabledState_;
     }
+
     /**
      *
      *
@@ -472,6 +478,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -490,6 +497,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.cloud.iot.v1.MqttState.forNumber(mqttEnabledState_);
       return result == null ? com.google.cloud.iot.v1.MqttState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -512,6 +520,7 @@ public final class MqttConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

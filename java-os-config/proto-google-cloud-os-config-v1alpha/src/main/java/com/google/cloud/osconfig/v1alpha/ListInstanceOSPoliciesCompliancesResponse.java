@@ -36,6 +36,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
     // @@protoc_insertion_point(message_implements:google.cloud.osconfig.v1alpha.ListInstanceOSPoliciesCompliancesResponse)
     ListInstanceOSPoliciesCompliancesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListInstanceOSPoliciesCompliancesResponse.newBuilder() to construct.
   private ListInstanceOSPoliciesCompliancesResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance>
       instanceOsPoliciesCompliances_;
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       getInstanceOsPoliciesCompliancesList() {
     return instanceOsPoliciesCompliances_;
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       getInstanceOsPoliciesCompliancesOrBuilderList() {
     return instanceOsPoliciesCompliances_;
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
   public int getInstanceOsPoliciesCompliancesCount() {
     return instanceOsPoliciesCompliances_.size();
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       getInstanceOsPoliciesCompliances(int index) {
     return instanceOsPoliciesCompliances_.get(index);
   }
+
   /**
    *
    *
@@ -159,6 +165,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -389,6 +397,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -685,6 +694,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return instanceOsPoliciesCompliancesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -703,6 +713,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return instanceOsPoliciesCompliancesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -722,6 +733,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return instanceOsPoliciesCompliancesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -747,6 +759,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +783,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -820,6 +835,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -931,6 +951,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -946,6 +967,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         getInstanceOsPoliciesCompliancesBuilder(int index) {
       return getInstanceOsPoliciesCompliancesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -965,6 +987,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return instanceOsPoliciesCompliancesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return java.util.Collections.unmodifiableList(instanceOsPoliciesCompliances_);
       }
     }
+
     /**
      *
      *
@@ -1002,6 +1026,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
           .addBuilder(
               com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1020,6 +1045,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
               index,
               com.google.cloud.osconfig.v1alpha.InstanceOSPoliciesCompliance.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1080,6 +1107,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1103,6 +1131,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1173,7 @@ public final class ListInstanceOSPoliciesCompliancesResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

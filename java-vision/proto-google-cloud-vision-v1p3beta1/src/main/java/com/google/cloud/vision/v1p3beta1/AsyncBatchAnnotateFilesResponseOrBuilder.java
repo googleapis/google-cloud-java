@@ -35,6 +35,7 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse responses = 1;</code>
    */
   java.util.List<com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse> getResponsesList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse responses = 1;</code>
    */
   com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse getResponses(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder
    * <code>repeated .google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse responses = 1;</code>
    */
   int getResponsesCount();
+
   /**
    *
    *
@@ -69,6 +72,7 @@ public interface AsyncBatchAnnotateFilesResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponseOrBuilder>
       getResponsesOrBuilderList();
+
   /**
    *
    *

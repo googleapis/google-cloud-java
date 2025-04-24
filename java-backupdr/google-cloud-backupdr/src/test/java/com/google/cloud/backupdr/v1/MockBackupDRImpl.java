@@ -74,7 +74,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListManagementServers, expected %s or %s",
+                  "Unrecognized response type %s for method ListManagementServers, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListManagementServersResponse.class.getName(),
                   Exception.class.getName())));
@@ -116,7 +117,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateManagementServer, expected %s or %s",
+                  "Unrecognized response type %s for method CreateManagementServer, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -137,7 +139,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteManagementServer, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteManagementServer, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -201,7 +204,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method FetchUsableBackupVaults, expected %s or %s",
+                  "Unrecognized response type %s for method FetchUsableBackupVaults, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   FetchUsableBackupVaultsResponse.class.getName(),
                   Exception.class.getName())));
@@ -536,7 +540,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateBackupPlanAssociation, expected %s or %s",
+                  "Unrecognized response type %s for method CreateBackupPlanAssociation, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -558,7 +563,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GetBackupPlanAssociation, expected %s or %s",
+                  "Unrecognized response type %s for method GetBackupPlanAssociation, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   BackupPlanAssociation.class.getName(),
                   Exception.class.getName())));
@@ -580,7 +586,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListBackupPlanAssociations, expected %s or %s",
+                  "Unrecognized response type %s for method ListBackupPlanAssociations, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListBackupPlanAssociationsResponse.class.getName(),
                   Exception.class.getName())));
@@ -601,7 +608,8 @@ public class MockBackupDRImpl extends BackupDRImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteBackupPlanAssociation, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteBackupPlanAssociation, expected"
+                      + " %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));

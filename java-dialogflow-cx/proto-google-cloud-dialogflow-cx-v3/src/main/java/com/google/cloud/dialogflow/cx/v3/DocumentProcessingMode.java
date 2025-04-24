@@ -76,6 +76,7 @@ public enum DocumentProcessingMode implements com.google.protobuf.ProtocolMessag
    * <code>DOCUMENT_PROCESSING_MODE_UNSPECIFIED = 0;</code>
    */
   public static final int DOCUMENT_PROCESSING_MODE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public enum DocumentProcessingMode implements com.google.protobuf.ProtocolMessag
    * <code>DOCUMENTS = 1;</code>
    */
   public static final int DOCUMENTS_VALUE = 1;
+
   /**
    *
    *
