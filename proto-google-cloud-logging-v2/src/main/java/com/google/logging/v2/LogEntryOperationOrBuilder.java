@@ -37,6 +37,7 @@ public interface LogEntryOperationOrBuilder
    * @return The id.
    */
   java.lang.String getId();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface LogEntryOperationOrBuilder
    * @return The producer.
    */
   java.lang.String getProducer();
+
   /**
    *
    *

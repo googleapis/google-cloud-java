@@ -44,6 +44,7 @@ public interface CreateBucketRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface CreateBucketRequestOrBuilder
    * @return The bucketId.
    */
   java.lang.String getBucketId();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface CreateBucketRequestOrBuilder
    * @return Whether the bucket field is set.
    */
   boolean hasBucket();
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public interface CreateBucketRequestOrBuilder
    * @return The bucket.
    */
   com.google.logging.v2.LogBucket getBucket();
+
   /**
    *
    *

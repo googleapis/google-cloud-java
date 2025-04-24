@@ -458,7 +458,8 @@ public class LogViewName implements ResourceName {
     private Builder(LogViewName logViewName) {
       Preconditions.checkArgument(
           Objects.equals(logViewName.pathTemplate, PROJECT_LOCATION_BUCKET_VIEW),
-          "toBuilder is only supported when LogViewName has the pattern of projects/{project}/locations/{location}/buckets/{bucket}/views/{view}");
+          "toBuilder is only supported when LogViewName has the pattern of"
+              + " projects/{project}/locations/{location}/buckets/{bucket}/views/{view}");
       this.project = logViewName.project;
       this.location = logViewName.location;
       this.bucket = logViewName.bucket;

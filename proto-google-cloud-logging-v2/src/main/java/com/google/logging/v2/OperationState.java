@@ -116,6 +116,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATION_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -126,6 +127,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_SCHEDULED = 1;</code>
    */
   public static final int OPERATION_STATE_SCHEDULED_VALUE = 1;
+
   /**
    *
    *
@@ -136,6 +138,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_WAITING_FOR_PERMISSIONS = 2;</code>
    */
   public static final int OPERATION_STATE_WAITING_FOR_PERMISSIONS_VALUE = 2;
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_RUNNING = 3;</code>
    */
   public static final int OPERATION_STATE_RUNNING_VALUE = 3;
+
   /**
    *
    *
@@ -156,6 +160,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_SUCCEEDED = 4;</code>
    */
   public static final int OPERATION_STATE_SUCCEEDED_VALUE = 4;
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public enum OperationState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_STATE_FAILED = 5;</code>
    */
   public static final int OPERATION_STATE_FAILED_VALUE = 5;
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogSplit)
     LogSplitOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogSplit.newBuilder() to construct.
   private LogSplit(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object uid_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_FIELD_NUMBER = 2;
   private int index_ = 0;
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TOTAL_SPLITS_FIELD_NUMBER = 3;
   private int totalSplits_ = 0;
+
   /**
    *
    *
@@ -332,6 +337,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -541,6 +547,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object uid_ = "";
+
     /**
      *
      *
@@ -565,6 +572,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -612,6 +621,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int index_;
+
     /**
      *
      *
@@ -674,6 +686,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     public int getIndex() {
       return index_;
     }
+
     /**
      *
      *
@@ -695,6 +708,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int totalSplits_;
+
     /**
      *
      *
@@ -731,6 +746,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
     public int getTotalSplits() {
       return totalSplits_;
     }
+
     /**
      *
      *
@@ -750,6 +766,7 @@ public final class LogSplit extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

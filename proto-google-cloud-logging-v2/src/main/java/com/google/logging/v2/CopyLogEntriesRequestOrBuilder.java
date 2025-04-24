@@ -40,6 +40,7 @@ public interface CopyLogEntriesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface CopyLogEntriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CopyLogEntriesRequestOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface SettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface SettingsOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -149,6 +151,7 @@ public interface SettingsOrBuilder
    * @return The kmsServiceAccountId.
    */
   java.lang.String getKmsServiceAccountId();
+
   /**
    *
    *
@@ -187,6 +190,7 @@ public interface SettingsOrBuilder
    * @return The storageLocation.
    */
   java.lang.String getStorageLocation();
+
   /**
    *
    *

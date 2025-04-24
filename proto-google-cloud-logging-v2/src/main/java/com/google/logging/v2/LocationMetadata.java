@@ -33,6 +33,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.logging.v2.LocationMetadata)
     LocationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LocationMetadata.newBuilder() to construct.
   private LocationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   public static final int LOG_ANALYTICS_ENABLED_FIELD_NUMBER = 1;
   private boolean logAnalyticsEnabled_ = false;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private boolean logAnalyticsEnabled_;
+
     /**
      *
      *
@@ -435,6 +439,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     public boolean getLogAnalyticsEnabled() {
       return logAnalyticsEnabled_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

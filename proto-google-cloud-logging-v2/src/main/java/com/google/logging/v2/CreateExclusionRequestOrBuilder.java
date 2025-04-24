@@ -48,6 +48,7 @@ public interface CreateExclusionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -87,6 +88,7 @@ public interface CreateExclusionRequestOrBuilder
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public interface CreateExclusionRequestOrBuilder
    * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
+
   /**
    *
    *

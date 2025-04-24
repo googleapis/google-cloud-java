@@ -33,6 +33,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.logging.v2.UpdateSinkRequest)
     UpdateSinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateSinkRequest.newBuilder() to construct.
   private UpdateSinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sinkName_ = "";
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int SINK_FIELD_NUMBER = 2;
   private com.google.logging.v2.LogSink sink_;
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasSink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   public com.google.logging.v2.LogSink getSink() {
     return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UNIQUE_WRITER_IDENTITY_FIELD_NUMBER = 3;
   private boolean uniqueWriterIdentity_ = false;
+
   /**
    *
    *
@@ -218,6 +225,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 4;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -249,6 +257,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -280,6 +289,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -505,6 +515,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +760,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object sinkName_ = "";
+
     /**
      *
      *
@@ -783,6 +795,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +830,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -850,6 +864,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +894,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -920,6 +936,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
             com.google.logging.v2.LogSink.Builder,
             com.google.logging.v2.LogSinkOrBuilder>
         sinkBuilder_;
+
     /**
      *
      *
@@ -935,6 +952,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasSink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -954,6 +972,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         return sinkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -977,6 +996,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1017,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1046,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1045,6 +1067,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1083,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1077,6 +1101,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         return sink_ == null ? com.google.logging.v2.LogSink.getDefaultInstance() : sink_;
       }
     }
+
     /**
      *
      *
@@ -1105,6 +1130,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private boolean uniqueWriterIdentity_;
+
     /**
      *
      *
@@ -1130,6 +1156,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public boolean getUniqueWriterIdentity() {
       return uniqueWriterIdentity_;
     }
+
     /**
      *
      *
@@ -1159,6 +1186,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1193,6 +1221,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -1223,6 +1252,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1259,6 +1289,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1297,6 +1328,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1364,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1375,6 +1408,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1410,6 +1444,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1440,6 +1475,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1474,6 +1510,7 @@ public final class UpdateSinkRequest extends com.google.protobuf.GeneratedMessag
             : updateMask_;
       }
     }
+
     /**
      *
      *

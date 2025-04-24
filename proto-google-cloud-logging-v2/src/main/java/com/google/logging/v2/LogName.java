@@ -326,7 +326,8 @@ public class LogName implements ResourceName {
     private Builder(LogName logName) {
       Preconditions.checkArgument(
           Objects.equals(logName.pathTemplate, PROJECT_LOG),
-          "toBuilder is only supported when LogName has the pattern of projects/{project}/logs/{log}");
+          "toBuilder is only supported when LogName has the pattern of"
+              + " projects/{project}/logs/{log}");
       this.project = logName.project;
       this.log = logName.log;
     }

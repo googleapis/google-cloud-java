@@ -37,6 +37,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogSink)
     LogSinkOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogSink.newBuilder() to construct.
   private LogSink(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <code>VERSION_FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int VERSION_FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -135,6 +137,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
      * <code>V2 = 1;</code>
      */
     public static final int V2_VALUE = 1;
+
     /**
      *
      *
@@ -246,6 +249,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     private OptionsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -280,6 +284,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -308,6 +313,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -341,6 +347,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object destination_ = "";
+
   /**
    *
    *
@@ -376,6 +383,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -416,6 +424,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -446,6 +455,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -481,6 +491,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -506,6 +517,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -534,6 +546,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DISABLED_FIELD_NUMBER = 19;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -555,6 +568,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogExclusion> exclusions_;
+
   /**
    *
    *
@@ -574,6 +588,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -594,6 +609,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       getExclusionsOrBuilderList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -613,6 +629,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public int getExclusionsCount() {
     return exclusions_.size();
   }
+
   /**
    *
    *
@@ -632,6 +649,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public com.google.logging.v2.LogExclusion getExclusions(int index) {
     return exclusions_.get(index);
   }
+
   /**
    *
    *
@@ -654,6 +672,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int OUTPUT_VERSION_FORMAT_FIELD_NUMBER = 6;
   private int outputVersionFormat_ = 0;
+
   /**
    *
    *
@@ -673,6 +692,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public int getOutputVersionFormatValue() {
     return outputVersionFormat_;
   }
+
   /**
    *
    *
@@ -699,6 +719,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object writerIdentity_ = "";
+
   /**
    *
    *
@@ -739,6 +760,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -782,6 +804,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INCLUDE_CHILDREN_FIELD_NUMBER = 9;
   private boolean includeChildren_ = false;
+
   /**
    *
    *
@@ -815,6 +838,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BIGQUERY_OPTIONS_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -832,6 +856,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBigqueryOptions() {
     return optionsCase_ == 12;
   }
+
   /**
    *
    *
@@ -852,6 +877,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -873,6 +899,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -891,6 +918,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -909,6 +937,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -928,6 +957,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -946,6 +976,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -964,6 +995,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -1266,6 +1298,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1704,6 +1737,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1731,6 +1765,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1758,6 +1793,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1784,6 +1820,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1806,6 +1843,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1835,6 +1873,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object destination_ = "";
+
     /**
      *
      *
@@ -1869,6 +1908,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1903,6 +1943,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1936,6 +1977,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1965,6 +2007,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2001,6 +2044,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -2030,6 +2074,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2059,6 +2104,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2087,6 +2133,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2158,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2142,6 +2190,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -2166,6 +2215,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2190,6 +2240,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2213,6 +2264,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2284,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2258,6 +2311,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -2274,6 +2328,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -2294,6 +2349,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2351,6 +2407,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return exclusionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2373,6 +2430,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return exclusionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2395,6 +2453,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return exclusionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2423,6 +2482,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2449,6 +2509,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2477,6 +2538,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2505,6 +2567,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2530,6 +2593,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2556,6 +2620,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2582,6 +2647,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2607,6 +2673,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2632,6 +2699,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2718,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.LogExclusion.Builder getExclusionsBuilder(int index) {
       return getExclusionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2672,6 +2741,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return exclusionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2695,6 +2765,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(exclusions_);
       }
     }
+
     /**
      *
      *
@@ -2714,6 +2785,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return getExclusionsFieldBuilder()
           .addBuilder(com.google.logging.v2.LogExclusion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2733,6 +2805,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       return getExclusionsFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogExclusion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2770,6 +2843,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int outputVersionFormat_ = 0;
+
     /**
      *
      *
@@ -2789,6 +2863,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public int getOutputVersionFormatValue() {
       return outputVersionFormat_;
     }
+
     /**
      *
      *
@@ -2811,6 +2886,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2832,6 +2908,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
           com.google.logging.v2.LogSink.VersionFormat.forNumber(outputVersionFormat_);
       return result == null ? com.google.logging.v2.LogSink.VersionFormat.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2857,6 +2934,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2880,6 +2958,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object writerIdentity_ = "";
+
     /**
      *
      *
@@ -2919,6 +2998,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2958,6 +3038,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2996,6 +3077,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3030,6 +3112,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3071,6 +3154,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean includeChildren_;
+
     /**
      *
      *
@@ -3102,6 +3186,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public boolean getIncludeChildren() {
       return includeChildren_;
     }
+
     /**
      *
      *
@@ -3137,6 +3222,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3176,6 +3262,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.BigQueryOptions.Builder,
             com.google.logging.v2.BigQueryOptionsOrBuilder>
         bigqueryOptionsBuilder_;
+
     /**
      *
      *
@@ -3193,6 +3280,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBigqueryOptions() {
       return optionsCase_ == 12;
     }
+
     /**
      *
      *
@@ -3220,6 +3308,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3244,6 +3333,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3266,6 +3356,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3300,6 +3391,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       optionsCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -3327,6 +3419,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3341,6 +3434,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.BigQueryOptions.Builder getBigqueryOptionsBuilder() {
       return getBigqueryOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3363,6 +3457,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.BigQueryOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3404,6 +3499,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -3422,6 +3518,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -3446,6 +3543,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3472,6 +3570,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3495,6 +3594,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3526,6 +3626,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3549,6 +3650,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3567,6 +3669,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3589,6 +3692,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -3625,6 +3729,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -3643,6 +3748,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000800) != 0);
     }
+
     /**
      *
      *
@@ -3667,6 +3773,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3693,6 +3800,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3716,6 +3824,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3747,6 +3856,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3770,6 +3880,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3788,6 +3899,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3810,6 +3922,7 @@ public final class LogSink extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *

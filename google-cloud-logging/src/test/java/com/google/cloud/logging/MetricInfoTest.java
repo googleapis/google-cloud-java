@@ -54,8 +54,7 @@ public class MetricInfoTest {
   public void testToBuilder() {
     compareMetricInfo(METRIC_INFO, METRIC_INFO.toBuilder().build());
     MetricInfo metricInfo =
-        METRIC_INFO
-            .toBuilder()
+        METRIC_INFO.toBuilder()
             .setName(NEW_NAME)
             .setDescription(NEW_DESCRIPTION)
             .setFilter(NEW_FILTER)

@@ -48,6 +48,7 @@ public interface LogBucketOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface LogBucketOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface LogBucketOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface LogBucketOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface LogBucketOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public interface LogBucketOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface LogBucketOrBuilder
    * @return The enum numeric value on the wire for lifecycleState.
    */
   int getLifecycleStateValue();
+
   /**
    *
    *
@@ -271,6 +278,7 @@ public interface LogBucketOrBuilder
    * @return A list containing the restrictedFields.
    */
   java.util.List<java.lang.String> getRestrictedFieldsList();
+
   /**
    *
    *
@@ -289,6 +297,7 @@ public interface LogBucketOrBuilder
    * @return The count of restrictedFields.
    */
   int getRestrictedFieldsCount();
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public interface LogBucketOrBuilder
    * @return The restrictedFields at the given index.
    */
   java.lang.String getRestrictedFields(int index);
+
   /**
    *
    *
@@ -338,6 +348,7 @@ public interface LogBucketOrBuilder
    * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
    */
   java.util.List<com.google.logging.v2.IndexConfig> getIndexConfigsList();
+
   /**
    *
    *
@@ -348,6 +359,7 @@ public interface LogBucketOrBuilder
    * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
    */
   com.google.logging.v2.IndexConfig getIndexConfigs(int index);
+
   /**
    *
    *
@@ -358,6 +370,7 @@ public interface LogBucketOrBuilder
    * <code>repeated .google.logging.v2.IndexConfig index_configs = 17;</code>
    */
   int getIndexConfigsCount();
+
   /**
    *
    *
@@ -369,6 +382,7 @@ public interface LogBucketOrBuilder
    */
   java.util.List<? extends com.google.logging.v2.IndexConfigOrBuilder>
       getIndexConfigsOrBuilderList();
+
   /**
    *
    *
@@ -396,6 +410,7 @@ public interface LogBucketOrBuilder
    * @return Whether the cmekSettings field is set.
    */
   boolean hasCmekSettings();
+
   /**
    *
    *
@@ -412,6 +427,7 @@ public interface LogBucketOrBuilder
    * @return The cmekSettings.
    */
   com.google.logging.v2.CmekSettings getCmekSettings();
+
   /**
    *
    *

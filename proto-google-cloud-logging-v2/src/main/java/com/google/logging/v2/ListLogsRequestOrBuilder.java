@@ -43,6 +43,7 @@ public interface ListLogsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -91,6 +92,7 @@ public interface ListLogsRequestOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
+
   /**
    *
    *
@@ -119,6 +121,7 @@ public interface ListLogsRequestOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
+
   /**
    *
    *
@@ -148,6 +151,7 @@ public interface ListLogsRequestOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
+
   /**
    *
    *
@@ -208,6 +212,7 @@ public interface ListLogsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

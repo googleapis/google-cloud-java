@@ -47,6 +47,7 @@ public interface DeleteBucketRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

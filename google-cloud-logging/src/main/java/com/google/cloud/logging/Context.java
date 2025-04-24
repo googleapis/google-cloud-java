@@ -43,6 +43,7 @@ public class Context {
   private final String traceId;
   private final String spanId;
   private final boolean traceSampled;
+
   /** A builder for {@see Context} objects. */
   public static final class Builder {
     private HttpRequest.Builder requestBuilder = HttpRequest.newBuilder();
@@ -185,7 +186,8 @@ public class Context {
         Matcher validator = W3C_TRACE_CONTEXT_FORMAT.matcher(Ascii.toLowerCase(traceParent));
         if (!validator.matches()) {
           throw new IllegalArgumentException(
-              "Invalid format of the header value. The value does not match W3C Trace Context version \"00\"");
+              "Invalid format of the header value. The value does not match W3C Trace Context"
+                  + " version \"00\"");
         }
         List<String> fields = Splitter.on('-').splitToList(traceParent);
         setTraceId(fields.get(1));

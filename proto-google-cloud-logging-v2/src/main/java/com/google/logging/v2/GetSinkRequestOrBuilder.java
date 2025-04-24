@@ -47,6 +47,7 @@ public interface GetSinkRequestOrBuilder
    * @return The sinkName.
    */
   java.lang.String getSinkName();
+
   /**
    *
    *

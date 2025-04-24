@@ -33,6 +33,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.logging.v2.TailLogEntriesRequest)
     TailLogEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TailLogEntriesRequest.newBuilder() to construct.
   private TailLogEntriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
   }
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   public int getResourceNamesCount() {
     return resourceNames_.size();
   }
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object filter_ = "";
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -238,6 +245,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
 
   public static final int BUFFER_WINDOW_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration bufferWindow_;
+
   /**
    *
    *
@@ -257,6 +265,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
   public boolean hasBufferWindow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -278,6 +287,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
         ? com.google.protobuf.Duration.getDefaultInstance()
         : bufferWindow_;
   }
+
   /**
    *
    *
@@ -487,6 +497,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -730,6 +741,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -757,6 +769,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       resourceNames_.makeImmutable();
       return resourceNames_;
     }
+
     /**
      *
      *
@@ -783,6 +796,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public int getResourceNamesCount() {
       return resourceNames_.size();
     }
+
     /**
      *
      *
@@ -810,6 +824,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
     }
+
     /**
      *
      *
@@ -837,6 +852,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -872,6 +888,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -906,6 +923,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -937,6 +955,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1004,6 +1024,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object filter_ = "";
+
     /**
      *
      *
@@ -1030,6 +1051,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1078,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1081,6 +1104,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1102,6 +1126,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1135,6 +1160,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         bufferWindowBuilder_;
+
     /**
      *
      *
@@ -1153,6 +1179,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
     public boolean hasBufferWindow() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1177,6 +1204,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
         return bufferWindowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1203,6 +1231,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1226,6 +1255,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1257,6 +1287,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1280,6 +1311,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1298,6 +1330,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getBufferWindowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1320,6 +1353,7 @@ public final class TailLogEntriesRequest extends com.google.protobuf.GeneratedMe
             : bufferWindow_;
       }
     }
+
     /**
      *
      *

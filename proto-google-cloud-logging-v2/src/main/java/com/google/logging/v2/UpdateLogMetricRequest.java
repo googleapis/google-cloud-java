@@ -33,6 +33,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.UpdateLogMetricRequest)
     UpdateLogMetricRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateLogMetricRequest.newBuilder() to construct.
   private UpdateLogMetricRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object metricName_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
 
   public static final int METRIC_FIELD_NUMBER = 2;
   private com.google.logging.v2.LogMetric metric_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
   public boolean hasMetric() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
   public com.google.logging.v2.LogMetric getMetric() {
     return metric_ == null ? com.google.logging.v2.LogMetric.getDefaultInstance() : metric_;
   }
+
   /**
    *
    *
@@ -350,6 +356,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -562,6 +569,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object metricName_ = "";
+
     /**
      *
      *
@@ -592,6 +600,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -622,6 +631,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -651,6 +661,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +687,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
             com.google.logging.v2.LogMetric.Builder,
             com.google.logging.v2.LogMetricOrBuilder>
         metricBuilder_;
+
     /**
      *
      *
@@ -728,6 +741,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
     public boolean hasMetric() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -747,6 +761,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
         return metricBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +806,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -818,6 +835,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -853,6 +872,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getMetricFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -870,6 +890,7 @@ public final class UpdateLogMetricRequest extends com.google.protobuf.GeneratedM
         return metric_ == null ? com.google.logging.v2.LogMetric.getDefaultInstance() : metric_;
       }
     }
+
     /**
      *
      *

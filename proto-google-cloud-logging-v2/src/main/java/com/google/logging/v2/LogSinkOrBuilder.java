@@ -41,6 +41,7 @@ public interface LogSinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface LogSinkOrBuilder
    * @return The destination.
    */
   java.lang.String getDestination();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface LogSinkOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -161,6 +164,7 @@ public interface LogSinkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -206,6 +210,7 @@ public interface LogSinkOrBuilder
    * </code>
    */
   java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList();
+
   /**
    *
    *
@@ -222,6 +227,7 @@ public interface LogSinkOrBuilder
    * </code>
    */
   com.google.logging.v2.LogExclusion getExclusions(int index);
+
   /**
    *
    *
@@ -238,6 +244,7 @@ public interface LogSinkOrBuilder
    * </code>
    */
   int getExclusionsCount();
+
   /**
    *
    *
@@ -255,6 +262,7 @@ public interface LogSinkOrBuilder
    */
   java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
       getExclusionsOrBuilderList();
+
   /**
    *
    *
@@ -288,6 +296,7 @@ public interface LogSinkOrBuilder
    */
   @java.lang.Deprecated
   int getOutputVersionFormatValue();
+
   /**
    *
    *
@@ -334,6 +343,7 @@ public interface LogSinkOrBuilder
    * @return The writerIdentity.
    */
   java.lang.String getWriterIdentity();
+
   /**
    *
    *
@@ -407,6 +417,7 @@ public interface LogSinkOrBuilder
    * @return Whether the bigqueryOptions field is set.
    */
   boolean hasBigqueryOptions();
+
   /**
    *
    *
@@ -421,6 +432,7 @@ public interface LogSinkOrBuilder
    * @return The bigqueryOptions.
    */
   com.google.logging.v2.BigQueryOptions getBigqueryOptions();
+
   /**
    *
    *
@@ -449,6 +461,7 @@ public interface LogSinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -464,6 +477,7 @@ public interface LogSinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -493,6 +507,7 @@ public interface LogSinkOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -508,6 +523,7 @@ public interface LogSinkOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *

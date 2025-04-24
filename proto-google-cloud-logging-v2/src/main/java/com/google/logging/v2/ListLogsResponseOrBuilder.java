@@ -38,6 +38,7 @@ public interface ListLogsResponseOrBuilder
    * @return A list containing the logNames.
    */
   java.util.List<java.lang.String> getLogNamesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListLogsResponseOrBuilder
    * @return The count of logNames.
    */
   int getLogNamesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface ListLogsResponseOrBuilder
    * @return The logNames at the given index.
    */
   java.lang.String getLogNames(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface ListLogsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

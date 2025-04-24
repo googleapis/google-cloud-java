@@ -52,6 +52,7 @@ public interface GetCmekSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

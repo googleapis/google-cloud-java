@@ -48,6 +48,7 @@ public interface CreateSinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface CreateSinkRequestOrBuilder
    * @return Whether the sink field is set.
    */
   boolean hasSink();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateSinkRequestOrBuilder
    * @return The sink.
    */
   com.google.logging.v2.LogSink getSink();
+
   /**
    *
    *

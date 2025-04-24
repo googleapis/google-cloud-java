@@ -34,6 +34,7 @@ public interface ListLogMetricsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogMetric> getMetricsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListLogMetricsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
   com.google.logging.v2.LogMetric getMetrics(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListLogMetricsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
   int getMetricsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListLogMetricsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogMetric metrics = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogMetricOrBuilder> getMetricsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListLogMetricsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

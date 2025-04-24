@@ -73,6 +73,7 @@ public enum IndexType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INDEX_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int INDEX_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum IndexType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>INDEX_TYPE_STRING = 1;</code>
    */
   public static final int INDEX_TYPE_STRING_VALUE = 1;
+
   /**
    *
    *

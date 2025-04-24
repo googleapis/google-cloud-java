@@ -33,6 +33,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.logging.v2.CreateBucketRequest)
     CreateBucketRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateBucketRequest.newBuilder() to construct.
   private CreateBucketRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object bucketId_ = "";
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +194,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
 
   public static final int BUCKET_FIELD_NUMBER = 3;
   private com.google.logging.v2.LogBucket bucket_;
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
   public boolean hasBucket() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
   public com.google.logging.v2.LogBucket getBucket() {
     return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
   }
+
   /**
    *
    *
@@ -421,6 +429,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -678,6 +688,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -708,6 +719,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -737,6 +749,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +775,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -794,6 +808,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object bucketId_ = "";
+
     /**
      *
      *
@@ -818,6 +833,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -842,6 +858,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -865,6 +882,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -884,6 +902,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -915,6 +934,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
             com.google.logging.v2.LogBucket.Builder,
             com.google.logging.v2.LogBucketOrBuilder>
         bucketBuilder_;
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
     public boolean hasBucket() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -953,6 +974,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return bucketBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -978,6 +1000,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1000,6 +1023,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1030,6 +1054,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1052,6 +1077,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1069,6 +1095,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return getBucketFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1088,6 +1115,7 @@ public final class CreateBucketRequest extends com.google.protobuf.GeneratedMess
         return bucket_ == null ? com.google.logging.v2.LogBucket.getDefaultInstance() : bucket_;
       }
     }
+
     /**
      *
      *

@@ -43,6 +43,7 @@ public interface CreateLinkRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateLinkRequestOrBuilder
    * @return Whether the link field is set.
    */
   boolean hasLink();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateLinkRequestOrBuilder
    * @return The link.
    */
   com.google.logging.v2.Link getLink();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateLinkRequestOrBuilder
    * @return The linkId.
    */
   java.lang.String getLinkId();
+
   /**
    *
    *

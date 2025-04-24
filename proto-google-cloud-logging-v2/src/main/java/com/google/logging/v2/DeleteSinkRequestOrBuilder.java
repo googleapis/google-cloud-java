@@ -48,6 +48,7 @@ public interface DeleteSinkRequestOrBuilder
    * @return The sinkName.
    */
   java.lang.String getSinkName();
+
   /**
    *
    *

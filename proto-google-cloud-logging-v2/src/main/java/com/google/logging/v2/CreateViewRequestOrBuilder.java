@@ -42,6 +42,7 @@ public interface CreateViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface CreateViewRequestOrBuilder
    * @return The viewId.
    */
   java.lang.String getViewId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateViewRequestOrBuilder
    * @return Whether the view field is set.
    */
   boolean hasView();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateViewRequestOrBuilder
    * @return The view.
    */
   com.google.logging.v2.LogView getView();
+
   /**
    *
    *

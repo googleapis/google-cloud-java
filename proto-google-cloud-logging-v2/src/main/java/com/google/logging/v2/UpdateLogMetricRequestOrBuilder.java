@@ -44,6 +44,7 @@ public interface UpdateLogMetricRequestOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface UpdateLogMetricRequestOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface UpdateLogMetricRequestOrBuilder
    * @return The metric.
    */
   com.google.logging.v2.LogMetric getMetric();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogBucket)
     LogBucketOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogBucket.newBuilder() to construct.
   private LogBucket(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -146,6 +149,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -212,6 +218,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -229,6 +236,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -247,6 +255,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int UPDATE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp updateTime_;
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -279,6 +289,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getUpdateTime() {
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETENTION_DAYS_FIELD_NUMBER = 11;
   private int retentionDays_ = 0;
+
   /**
    *
    *
@@ -317,6 +329,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOCKED_FIELD_NUMBER = 9;
   private boolean locked_ = false;
+
   /**
    *
    *
@@ -338,6 +351,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LIFECYCLE_STATE_FIELD_NUMBER = 12;
   private int lifecycleState_ = 0;
+
   /**
    *
    *
@@ -355,6 +369,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public int getLifecycleStateValue() {
     return lifecycleState_;
   }
+
   /**
    *
    *
@@ -377,6 +392,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYTICS_ENABLED_FIELD_NUMBER = 14;
   private boolean analyticsEnabled_ = false;
+
   /**
    *
    *
@@ -400,6 +416,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList restrictedFields_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -420,6 +437,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getRestrictedFieldsList() {
     return restrictedFields_;
   }
+
   /**
    *
    *
@@ -440,6 +458,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public int getRestrictedFieldsCount() {
     return restrictedFields_.size();
   }
+
   /**
    *
    *
@@ -461,6 +480,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getRestrictedFields(int index) {
     return restrictedFields_.get(index);
   }
+
   /**
    *
    *
@@ -487,6 +507,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.IndexConfig> indexConfigs_;
+
   /**
    *
    *
@@ -500,6 +521,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.logging.v2.IndexConfig> getIndexConfigsList() {
     return indexConfigs_;
   }
+
   /**
    *
    *
@@ -514,6 +536,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       getIndexConfigsOrBuilderList() {
     return indexConfigs_;
   }
+
   /**
    *
    *
@@ -527,6 +550,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public int getIndexConfigsCount() {
     return indexConfigs_.size();
   }
+
   /**
    *
    *
@@ -540,6 +564,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public com.google.logging.v2.IndexConfig getIndexConfigs(int index) {
     return indexConfigs_.get(index);
   }
+
   /**
    *
    *
@@ -556,6 +581,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CMEK_SETTINGS_FIELD_NUMBER = 19;
   private com.google.logging.v2.CmekSettings cmekSettings_;
+
   /**
    *
    *
@@ -575,6 +601,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCmekSettings() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -596,6 +623,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         ? com.google.logging.v2.CmekSettings.getDefaultInstance()
         : cmekSettings_;
   }
+
   /**
    *
    *
@@ -889,6 +917,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1288,6 +1317,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1322,6 +1352,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1387,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1389,6 +1421,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1418,6 +1451,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1488,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1476,6 +1511,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1498,6 +1534,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1556,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1536,6 +1574,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1565,6 +1604,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1582,6 +1622,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1605,6 +1646,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1672,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1652,6 +1695,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1682,6 +1726,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1704,6 +1749,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1721,6 +1767,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1742,6 +1789,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1777,6 +1825,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         updateTimeBuilder_;
+
     /**
      *
      *
@@ -1793,6 +1842,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1815,6 +1865,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return updateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1839,6 +1890,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1860,6 +1912,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1889,6 +1942,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1910,6 +1964,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1926,6 +1981,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1946,6 +2002,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             : updateTime_;
       }
     }
+
     /**
      *
      *
@@ -1975,6 +2032,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int retentionDays_;
+
     /**
      *
      *
@@ -1993,6 +2051,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public int getRetentionDays() {
       return retentionDays_;
     }
+
     /**
      *
      *
@@ -2015,6 +2074,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2037,6 +2097,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean locked_;
+
     /**
      *
      *
@@ -2055,6 +2116,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean getLocked() {
       return locked_;
     }
+
     /**
      *
      *
@@ -2077,6 +2139,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2099,6 +2162,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int lifecycleState_ = 0;
+
     /**
      *
      *
@@ -2116,6 +2180,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public int getLifecycleStateValue() {
       return lifecycleState_;
     }
+
     /**
      *
      *
@@ -2136,6 +2201,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2155,6 +2221,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
           com.google.logging.v2.LifecycleState.forNumber(lifecycleState_);
       return result == null ? com.google.logging.v2.LifecycleState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -2178,6 +2245,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2199,6 +2267,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean analyticsEnabled_;
+
     /**
      *
      *
@@ -2216,6 +2285,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean getAnalyticsEnabled() {
       return analyticsEnabled_;
     }
+
     /**
      *
      *
@@ -2237,6 +2307,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2266,6 +2337,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000100;
     }
+
     /**
      *
      *
@@ -2287,6 +2359,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       restrictedFields_.makeImmutable();
       return restrictedFields_;
     }
+
     /**
      *
      *
@@ -2307,6 +2380,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public int getRestrictedFieldsCount() {
       return restrictedFields_.size();
     }
+
     /**
      *
      *
@@ -2328,6 +2402,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getRestrictedFields(int index) {
       return restrictedFields_.get(index);
     }
+
     /**
      *
      *
@@ -2349,6 +2424,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getRestrictedFieldsBytes(int index) {
       return restrictedFields_.getByteString(index);
     }
+
     /**
      *
      *
@@ -2378,6 +2454,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2406,6 +2483,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2431,6 +2509,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2455,6 +2534,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2517,6 +2597,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return indexConfigsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2533,6 +2614,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return indexConfigsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2549,6 +2631,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return indexConfigsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2571,6 +2654,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2591,6 +2675,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2613,6 +2698,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2635,6 +2721,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2654,6 +2741,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2674,6 +2762,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2694,6 +2783,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2713,6 +2803,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2732,6 +2823,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2744,6 +2836,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.IndexConfig.Builder getIndexConfigsBuilder(int index) {
       return getIndexConfigsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2760,6 +2853,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return indexConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2777,6 +2871,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(indexConfigs_);
       }
     }
+
     /**
      *
      *
@@ -2790,6 +2885,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return getIndexConfigsFieldBuilder()
           .addBuilder(com.google.logging.v2.IndexConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2803,6 +2899,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       return getIndexConfigsFieldBuilder()
           .addBuilder(index, com.google.logging.v2.IndexConfig.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2839,6 +2936,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.CmekSettings.Builder,
             com.google.logging.v2.CmekSettingsOrBuilder>
         cmekSettingsBuilder_;
+
     /**
      *
      *
@@ -2857,6 +2955,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCmekSettings() {
       return ((bitField0_ & 0x00000400) != 0);
     }
+
     /**
      *
      *
@@ -2881,6 +2980,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
         return cmekSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2907,6 +3007,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2930,6 +3031,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2961,6 +3063,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -2984,6 +3087,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3002,6 +3106,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCmekSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3024,6 +3129,7 @@ public final class LogBucket extends com.google.protobuf.GeneratedMessageV3
             : cmekSettings_;
       }
     }
+
     /**
      *
      *

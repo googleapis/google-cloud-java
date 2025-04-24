@@ -33,6 +33,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.logging.v2.CreateLinkRequest)
     CreateLinkRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateLinkRequest.newBuilder() to construct.
   private CreateLinkRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int LINK_FIELD_NUMBER = 2;
   private com.google.logging.v2.Link link_;
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasLink() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
   public com.google.logging.v2.Link getLink() {
     return link_ == null ? com.google.logging.v2.Link.getDefaultInstance() : link_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object linkId_ = "";
+
   /**
    *
    *
@@ -205,6 +212,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -412,6 +420,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -668,6 +678,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -725,6 +737,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -749,6 +762,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +799,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
             com.google.logging.v2.Link.Builder,
             com.google.logging.v2.LinkOrBuilder>
         linkBuilder_;
+
     /**
      *
      *
@@ -799,6 +814,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasLink() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -817,6 +833,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return linkBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -839,6 +856,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +876,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -885,6 +904,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getLinkFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -934,6 +956,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return link_ == null ? com.google.logging.v2.Link.getDefaultInstance() : link_;
       }
     }
+
     /**
      *
      *
@@ -960,6 +983,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object linkId_ = "";
+
     /**
      *
      *
@@ -984,6 +1008,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1008,6 +1033,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1031,6 +1057,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1077,7 @@ public final class CreateLinkRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

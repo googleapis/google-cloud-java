@@ -48,6 +48,7 @@ public interface UpdateSinkRequestOrBuilder
    * @return The sinkName.
    */
   java.lang.String getSinkName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface UpdateSinkRequestOrBuilder
    * @return Whether the sink field is set.
    */
   boolean hasSink();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface UpdateSinkRequestOrBuilder
    * @return The sink.
    */
   com.google.logging.v2.LogSink getSink();
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public interface UpdateSinkRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -190,6 +194,7 @@ public interface UpdateSinkRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

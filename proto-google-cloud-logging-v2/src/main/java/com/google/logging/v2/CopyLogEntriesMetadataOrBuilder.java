@@ -36,6 +36,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return Whether the request field is set.
    */
   boolean hasRequest();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return The request.
    */
   com.google.logging.v2.CopyLogEntriesRequest getRequest();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface CopyLogEntriesMetadataOrBuilder
    * @return The writerIdentity.
    */
   java.lang.String getWriterIdentity();
+
   /**
    *
    *

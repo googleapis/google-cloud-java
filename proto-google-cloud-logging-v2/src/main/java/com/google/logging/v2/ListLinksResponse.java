@@ -33,6 +33,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListLinksResponse)
     ListLinksResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLinksResponse.newBuilder() to construct.
   private ListLinksResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.Link> links_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.logging.v2.Link> getLinksList() {
     return links_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.logging.v2.LinkOrBuilder> getLinksOrBuilderList() {
     return links_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
   public int getLinksCount() {
     return links_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
   public com.google.logging.v2.Link getLinks(int index) {
     return links_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -630,6 +639,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return linksBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -646,6 +656,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return linksBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return linksBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -684,6 +696,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +782,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +802,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +822,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +842,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +862,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +875,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.Link.Builder getLinksBuilder(int index) {
       return getLinksFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -870,6 +892,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return linksBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -886,6 +909,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(links_);
       }
     }
+
     /**
      *
      *
@@ -898,6 +922,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.Link.Builder addLinksBuilder() {
       return getLinksFieldBuilder().addBuilder(com.google.logging.v2.Link.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -911,6 +936,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       return getLinksFieldBuilder()
           .addBuilder(index, com.google.logging.v2.Link.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -942,6 +968,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -966,6 +993,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -990,6 +1018,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1042,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1032,6 +1062,7 @@ public final class ListLinksResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

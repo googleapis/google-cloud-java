@@ -34,6 +34,7 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogView> getViewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   com.google.logging.v2.LogView getViews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   int getViewsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListViewsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogView views = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogViewOrBuilder> getViewsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

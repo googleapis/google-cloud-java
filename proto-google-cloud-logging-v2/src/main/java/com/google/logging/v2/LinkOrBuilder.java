@@ -47,6 +47,7 @@ public interface LinkOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface LinkOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface LinkOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface LinkOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface LinkOrBuilder
    * @return The enum numeric value on the wire for lifecycleState.
    */
   int getLifecycleStateValue();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface LinkOrBuilder
    * @return Whether the bigqueryDataset field is set.
    */
   boolean hasBigqueryDataset();
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface LinkOrBuilder
    * @return The bigqueryDataset.
    */
   com.google.logging.v2.BigQueryDataset getBigqueryDataset();
+
   /**
    *
    *

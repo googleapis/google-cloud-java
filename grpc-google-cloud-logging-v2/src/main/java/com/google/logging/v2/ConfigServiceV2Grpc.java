@@ -1355,6 +1355,19 @@ public final class ConfigServiceV2Grpc {
     return ConfigServiceV2Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static ConfigServiceV2BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<ConfigServiceV2BlockingV2Stub>() {
+          @java.lang.Override
+          public ConfigServiceV2BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new ConfigServiceV2BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return ConfigServiceV2BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2487,6 +2500,508 @@ public final class ConfigServiceV2Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service ConfigServiceV2.
+   *
+   * <pre>
+   * Service for configuring sinks used to route log entries.
+   * </pre>
+   */
+  public static final class ConfigServiceV2BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<ConfigServiceV2BlockingV2Stub> {
+    private ConfigServiceV2BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected ConfigServiceV2BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new ConfigServiceV2BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists log buckets.
+     * </pre>
+     */
+    public com.google.logging.v2.ListBucketsResponse listBuckets(
+        com.google.logging.v2.ListBucketsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBucketsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a log bucket.
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket getBucket(
+        com.google.logging.v2.GetBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a log bucket asynchronously that can be used to store log entries.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBucketAsync(
+        com.google.logging.v2.CreateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBucketAsyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket asynchronously.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateBucketAsync(
+        com.google.logging.v2.UpdateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBucketAsyncMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a log bucket that can be used to store log entries. After a bucket
+     * has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket createBucket(
+        com.google.logging.v2.CreateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a log bucket.
+     * If the bucket has a `lifecycle_state` of `DELETE_REQUESTED`, then
+     * `FAILED_PRECONDITION` will be returned.
+     * After a bucket has been created, the bucket's location cannot be changed.
+     * </pre>
+     */
+    public com.google.logging.v2.LogBucket updateBucket(
+        com.google.logging.v2.UpdateBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a log bucket.
+     * Changes the bucket's `lifecycle_state` to the `DELETE_REQUESTED` state.
+     * After 7 days, the bucket will be purged and all log entries in the bucket
+     * will be permanently deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBucket(
+        com.google.logging.v2.DeleteBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Undeletes a log bucket. A bucket that has been deleted can be undeleted
+     * within the grace period of 7 days.
+     * </pre>
+     */
+    public com.google.protobuf.Empty undeleteBucket(
+        com.google.logging.v2.UndeleteBucketRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteBucketMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists views on a log bucket.
+     * </pre>
+     */
+    public com.google.logging.v2.ListViewsResponse listViews(
+        com.google.logging.v2.ListViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a view on a log bucket..
+     * </pre>
+     */
+    public com.google.logging.v2.LogView getView(com.google.logging.v2.GetViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a view over log entries in a log bucket. A bucket may contain a
+     * maximum of 30 views.
+     * </pre>
+     */
+    public com.google.logging.v2.LogView createView(
+        com.google.logging.v2.CreateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a view on a log bucket. This method replaces the following fields
+     * in the existing view with values from the new view: `filter`.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can update the view. If this occurs, please try again in a
+     * few minutes.
+     * </pre>
+     */
+    public com.google.logging.v2.LogView updateView(
+        com.google.logging.v2.UpdateViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a view on a log bucket.
+     * If an `UNAVAILABLE` error is returned, this indicates that system is not in
+     * a state where it can delete the view. If this occurs, please try again in a
+     * few minutes.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteView(com.google.logging.v2.DeleteViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists sinks.
+     * </pre>
+     */
+    public com.google.logging.v2.ListSinksResponse listSinks(
+        com.google.logging.v2.ListSinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a sink.
+     * </pre>
+     */
+    public com.google.logging.v2.LogSink getSink(com.google.logging.v2.GetSinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a sink that exports specified log entries to a destination. The
+     * export of newly-ingested log entries begins immediately, unless the sink's
+     * `writer_identity` is not permitted to write to the destination. A sink can
+     * export log entries only from the resource owning the sink.
+     * </pre>
+     */
+    public com.google.logging.v2.LogSink createSink(
+        com.google.logging.v2.CreateSinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a sink. This method replaces the following fields in the existing
+     * sink with values from the new sink: `destination`, and `filter`.
+     * The updated sink might also have a new `writer_identity`; see the
+     * `unique_writer_identity` field.
+     * </pre>
+     */
+    public com.google.logging.v2.LogSink updateSink(
+        com.google.logging.v2.UpdateSinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a sink. If the sink has a unique `writer_identity`, then that
+     * service account is also deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSink(com.google.logging.v2.DeleteSinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Asynchronously creates a linked dataset in BigQuery which makes it possible
+     * to use BigQuery to read the logs stored in the log bucket. A log bucket may
+     * currently only contain one link.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLink(
+        com.google.logging.v2.CreateLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a link. This will also delete the corresponding BigQuery linked
+     * dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteLink(
+        com.google.logging.v2.DeleteLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists links.
+     * </pre>
+     */
+    public com.google.logging.v2.ListLinksResponse listLinks(
+        com.google.logging.v2.ListLinksRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLinksMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a link.
+     * </pre>
+     */
+    public com.google.logging.v2.Link getLink(com.google.logging.v2.GetLinkRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLinkMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all the exclusions on the _Default sink in a parent resource.
+     * </pre>
+     */
+    public com.google.logging.v2.ListExclusionsResponse listExclusions(
+        com.google.logging.v2.ListExclusionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListExclusionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the description of an exclusion in the _Default sink.
+     * </pre>
+     */
+    public com.google.logging.v2.LogExclusion getExclusion(
+        com.google.logging.v2.GetExclusionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetExclusionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new exclusion in the _Default sink in a specified parent
+     * resource. Only log entries belonging to that resource can be excluded. You
+     * can have up to 10 exclusions in a resource.
+     * </pre>
+     */
+    public com.google.logging.v2.LogExclusion createExclusion(
+        com.google.logging.v2.CreateExclusionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateExclusionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Changes one or more properties of an existing exclusion in the _Default
+     * sink.
+     * </pre>
+     */
+    public com.google.logging.v2.LogExclusion updateExclusion(
+        com.google.logging.v2.UpdateExclusionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateExclusionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an exclusion in the _Default sink.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteExclusion(
+        com.google.logging.v2.DeleteExclusionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteExclusionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Logging CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can be configured for Google Cloud projects,
+     * folders, organizations and billing accounts. Once configured for an
+     * organization, it applies to all projects and folders in the Google Cloud
+     * organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.CmekSettings getCmekSettings(
+        com.google.logging.v2.GetCmekSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetCmekSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router CMEK settings for the given resource.
+     * Note: CMEK for the Log Router can currently only be configured for Google
+     * Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateCmekSettings][google.logging.v2.ConfigServiceV2.UpdateCmekSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.CmekSettings updateCmekSettings(
+        com.google.logging.v2.UpdateCmekSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateCmekSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can be get for Google Cloud projects,
+     * folders, organizations and billing accounts. Currently it can only be
+     * configured for organizations. Once configured for an organization, it
+     * applies to all projects and folders in the Google Cloud organization.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.Settings getSettings(
+        com.google.logging.v2.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the Log Router settings for the given resource.
+     * Note: Settings for the Log Router can currently only be configured for
+     * Google Cloud organizations. Once configured, it applies to all projects and
+     * folders in the Google Cloud organization.
+     * [UpdateSettings][google.logging.v2.ConfigServiceV2.UpdateSettings]
+     * will fail if 1) `kms_key_name` is invalid, or 2) the associated service
+     * account does not have the required
+     * `roles/cloudkms.cryptoKeyEncrypterDecrypter` role assigned for the key, or
+     * 3) access to the key is disabled. 4) `location_id` is not supported by
+     * Logging. 5) `location_id` violate OrgPolicy.
+     * See [Enabling CMEK for Log
+     * Router](https://cloud.google.com/logging/docs/routing/managed-encryption)
+     * for more information.
+     * </pre>
+     */
+    public com.google.logging.v2.Settings updateSettings(
+        com.google.logging.v2.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copies a set of log entries from a log bucket to a Cloud Storage bucket.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyLogEntries(
+        com.google.logging.v2.CopyLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyLogEntriesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service ConfigServiceV2.
    *
    * <pre>
    * Service for configuring sinks used to route log entries.

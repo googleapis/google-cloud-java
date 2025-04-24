@@ -147,7 +147,8 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMonitoredResourceDescriptors, expected %s or %s",
+                  "Unrecognized response type %s for method ListMonitoredResourceDescriptors,"
+                      + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMonitoredResourceDescriptorsResponse.class.getName(),
                   Exception.class.getName())));
@@ -191,7 +192,8 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method TailLogEntries, expected %s or %s",
+                          "Unrecognized response type %s for method TailLogEntries, expected %s or"
+                              + " %s",
                           response == null ? "null" : response.getClass().getName(),
                           TailLogEntriesResponse.class.getName(),
                           Exception.class.getName())));

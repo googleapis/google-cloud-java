@@ -49,6 +49,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -93,6 +94,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * @return Whether the cmekSettings field is set.
    */
   boolean hasCmekSettings();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * @return The cmekSettings.
    */
   com.google.logging.v2.CmekSettings getCmekSettings();
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public interface UpdateCmekSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

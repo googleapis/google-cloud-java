@@ -47,6 +47,7 @@ public interface UpdateExclusionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -85,6 +86,7 @@ public interface UpdateExclusionRequestOrBuilder
    * @return Whether the exclusion field is set.
    */
   boolean hasExclusion();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface UpdateExclusionRequestOrBuilder
    * @return The exclusion.
    */
   com.google.logging.v2.LogExclusion getExclusion();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface UpdateExclusionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -152,6 +156,7 @@ public interface UpdateExclusionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public interface LogSplitOrBuilder
    * @return The uid.
    */
   java.lang.String getUid();
+
   /**
    *
    *

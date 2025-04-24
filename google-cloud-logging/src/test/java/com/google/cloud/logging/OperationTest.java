@@ -46,8 +46,7 @@ public class OperationTest {
   public void testToBuilder() {
     compareLogOperation(OPERATION, OPERATION.toBuilder().build());
     Operation operation =
-        OPERATION
-            .toBuilder()
+        OPERATION.toBuilder()
             .setId("newId")
             .setProducer("newProducer")
             .setFirst(false)

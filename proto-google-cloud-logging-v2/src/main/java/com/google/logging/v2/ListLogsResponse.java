@@ -33,6 +33,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListLogsResponse)
     ListLogsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLogsResponse.newBuilder() to construct.
   private ListLogsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList logNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.ProtocolStringList getLogNamesList() {
     return logNames_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   public int getLogNamesCount() {
     return logNames_.size();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
   public java.lang.String getLogNames(int index) {
     return logNames_.get(index);
   }
+
   /**
    *
    *
@@ -140,6 +145,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -165,6 +171,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +372,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -578,6 +586,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -595,6 +604,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       logNames_.makeImmutable();
       return logNames_;
     }
+
     /**
      *
      *
@@ -611,6 +621,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public int getLogNamesCount() {
       return logNames_.size();
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public java.lang.String getLogNames(int index) {
       return logNames_.get(index);
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getLogNamesBytes(int index) {
       return logNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -670,6 +683,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +751,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -786,6 +804,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -810,6 +829,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +873,7 @@ public final class ListLogsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -43,6 +43,7 @@ public interface ListLinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface ListLinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

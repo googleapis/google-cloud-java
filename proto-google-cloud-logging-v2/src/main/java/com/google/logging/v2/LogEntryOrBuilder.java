@@ -58,6 +58,7 @@ public interface LogEntryOrBuilder
    * @return The logName.
    */
   java.lang.String getLogName();
+
   /**
    *
    *
@@ -110,6 +111,7 @@ public interface LogEntryOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -127,6 +129,7 @@ public interface LogEntryOrBuilder
    * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
+
   /**
    *
    *
@@ -162,6 +165,7 @@ public interface LogEntryOrBuilder
    * @return Whether the protoPayload field is set.
    */
   boolean hasProtoPayload();
+
   /**
    *
    *
@@ -181,6 +185,7 @@ public interface LogEntryOrBuilder
    * @return The protoPayload.
    */
   com.google.protobuf.Any getProtoPayload();
+
   /**
    *
    *
@@ -211,6 +216,7 @@ public interface LogEntryOrBuilder
    * @return Whether the textPayload field is set.
    */
   boolean hasTextPayload();
+
   /**
    *
    *
@@ -223,6 +229,7 @@ public interface LogEntryOrBuilder
    * @return The textPayload.
    */
   java.lang.String getTextPayload();
+
   /**
    *
    *
@@ -249,6 +256,7 @@ public interface LogEntryOrBuilder
    * @return Whether the jsonPayload field is set.
    */
   boolean hasJsonPayload();
+
   /**
    *
    *
@@ -262,6 +270,7 @@ public interface LogEntryOrBuilder
    * @return The jsonPayload.
    */
   com.google.protobuf.Struct getJsonPayload();
+
   /**
    *
    *
@@ -298,6 +307,7 @@ public interface LogEntryOrBuilder
    * @return Whether the timestamp field is set.
    */
   boolean hasTimestamp();
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public interface LogEntryOrBuilder
    * @return The timestamp.
    */
   com.google.protobuf.Timestamp getTimestamp();
+
   /**
    *
    *
@@ -359,6 +370,7 @@ public interface LogEntryOrBuilder
    * @return Whether the receiveTimestamp field is set.
    */
   boolean hasReceiveTimestamp();
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public interface LogEntryOrBuilder
    * @return The receiveTimestamp.
    */
   com.google.protobuf.Timestamp getReceiveTimestamp();
+
   /**
    *
    *
@@ -400,6 +413,7 @@ public interface LogEntryOrBuilder
    * @return The enum numeric value on the wire for severity.
    */
   int getSeverityValue();
+
   /**
    *
    *
@@ -437,6 +451,7 @@ public interface LogEntryOrBuilder
    * @return The insertId.
    */
   java.lang.String getInsertId();
+
   /**
    *
    *
@@ -475,6 +490,7 @@ public interface LogEntryOrBuilder
    * @return Whether the httpRequest field is set.
    */
   boolean hasHttpRequest();
+
   /**
    *
    *
@@ -490,6 +506,7 @@ public interface LogEntryOrBuilder
    * @return The httpRequest.
    */
   com.google.logging.type.HttpRequest getHttpRequest();
+
   /**
    *
    *
@@ -527,6 +544,7 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -550,9 +568,11 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -576,6 +596,7 @@ public interface LogEntryOrBuilder
    * <code>map&lt;string, string&gt; labels = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -603,6 +624,7 @@ public interface LogEntryOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -642,6 +664,7 @@ public interface LogEntryOrBuilder
    * @return Whether the operation field is set.
    */
   boolean hasOperation();
+
   /**
    *
    *
@@ -657,6 +680,7 @@ public interface LogEntryOrBuilder
    * @return The operation.
    */
   com.google.logging.v2.LogEntryOperation getOperation();
+
   /**
    *
    *
@@ -691,6 +715,7 @@ public interface LogEntryOrBuilder
    * @return The trace.
    */
   java.lang.String getTrace();
+
   /**
    *
    *
@@ -753,6 +778,7 @@ public interface LogEntryOrBuilder
    * @return The spanId.
    */
   java.lang.String getSpanId();
+
   /**
    *
    *
@@ -829,6 +855,7 @@ public interface LogEntryOrBuilder
    * @return Whether the sourceLocation field is set.
    */
   boolean hasSourceLocation();
+
   /**
    *
    *
@@ -844,6 +871,7 @@ public interface LogEntryOrBuilder
    * @return The sourceLocation.
    */
   com.google.logging.v2.LogEntrySourceLocation getSourceLocation();
+
   /**
    *
    *
@@ -871,6 +899,7 @@ public interface LogEntryOrBuilder
    * @return Whether the split field is set.
    */
   boolean hasSplit();
+
   /**
    *
    *
@@ -884,6 +913,7 @@ public interface LogEntryOrBuilder
    * @return The split.
    */
   com.google.logging.v2.LogSplit getSplit();
+
   /**
    *
    *

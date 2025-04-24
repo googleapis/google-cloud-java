@@ -36,6 +36,7 @@ public interface ListLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   com.google.logging.v2.LogEntry getEntries(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface ListLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ListLogEntriesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

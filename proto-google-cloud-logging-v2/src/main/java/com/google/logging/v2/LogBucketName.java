@@ -401,7 +401,8 @@ public class LogBucketName implements ResourceName {
     private Builder(LogBucketName logBucketName) {
       Preconditions.checkArgument(
           Objects.equals(logBucketName.pathTemplate, PROJECT_LOCATION_BUCKET),
-          "toBuilder is only supported when LogBucketName has the pattern of projects/{project}/locations/{location}/buckets/{bucket}");
+          "toBuilder is only supported when LogBucketName has the pattern of"
+              + " projects/{project}/locations/{location}/buckets/{bucket}");
       this.project = logBucketName.project;
       this.location = logBucketName.location;
       this.bucket = logBucketName.bucket;

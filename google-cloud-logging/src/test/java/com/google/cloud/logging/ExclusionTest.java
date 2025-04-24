@@ -61,8 +61,7 @@ public class ExclusionTest {
   public void testToBuilder() {
     compareExclusion(EXCLUSION, EXCLUSION.toBuilder().build());
     Exclusion exclusion =
-        EXCLUSION
-            .toBuilder()
+        EXCLUSION.toBuilder()
             .setName(NEW_EXCLUSION_NAME)
             .setDisabled(NEW_DISABLED)
             .setDescription(NEW_DESCRIPTION)
@@ -76,8 +75,7 @@ public class ExclusionTest {
     assertEquals(NEW_EXCLUSION_CREATED_TIME, exclusion.getCreateTime());
 
     exclusion =
-        exclusion
-            .toBuilder()
+        exclusion.toBuilder()
             .setName(EXCLUSION_NAME)
             .setDescription(DESCRIPTION)
             .setFilter(EXCLUSION_FILTER)

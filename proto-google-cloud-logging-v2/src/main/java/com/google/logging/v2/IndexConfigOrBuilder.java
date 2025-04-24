@@ -43,6 +43,7 @@ public interface IndexConfigOrBuilder
    * @return The fieldPath.
    */
   java.lang.String getFieldPath();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface IndexConfigOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public interface IndexConfigOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface IndexConfigOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *

@@ -47,6 +47,7 @@ public interface UndeleteBucketRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

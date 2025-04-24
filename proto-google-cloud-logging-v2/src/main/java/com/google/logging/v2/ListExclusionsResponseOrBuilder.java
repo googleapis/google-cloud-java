@@ -34,6 +34,7 @@ public interface ListExclusionsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListExclusionsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
   com.google.logging.v2.LogExclusion getExclusions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListExclusionsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogExclusion exclusions = 1;</code>
    */
   int getExclusionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListExclusionsResponseOrBuilder
    */
   java.util.List<? extends com.google.logging.v2.LogExclusionOrBuilder>
       getExclusionsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListExclusionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

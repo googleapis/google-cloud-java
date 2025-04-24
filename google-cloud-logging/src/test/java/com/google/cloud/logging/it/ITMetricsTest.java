@@ -64,8 +64,7 @@ public class ITMetricsTest extends BaseSystemTest {
     assertEquals("description", metric.getDescription());
     assertEquals(metric, logging.getMetric(name));
     metric =
-        metric
-            .toBuilder()
+        metric.toBuilder()
             .setDescription("newDescription")
             .setFilter("severity>=WARNING")
             .build()

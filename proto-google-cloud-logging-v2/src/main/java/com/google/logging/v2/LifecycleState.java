@@ -107,6 +107,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>LIFECYCLE_STATE_UNSPECIFIED = 0;</code>
    */
   public static final int LIFECYCLE_STATE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -117,6 +118,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ACTIVE = 1;</code>
    */
   public static final int ACTIVE_VALUE = 1;
+
   /**
    *
    *
@@ -128,6 +130,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>DELETE_REQUESTED = 2;</code>
    */
   public static final int DELETE_REQUESTED_VALUE = 2;
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>UPDATING = 3;</code>
    */
   public static final int UPDATING_VALUE = 3;
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public enum LifecycleState implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATING = 4;</code>
    */
   public static final int CREATING_VALUE = 4;
+
   /**
    *
    *

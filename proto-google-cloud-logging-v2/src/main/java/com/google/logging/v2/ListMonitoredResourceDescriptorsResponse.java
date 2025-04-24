@@ -34,6 +34,7 @@ public final class ListMonitoredResourceDescriptorsResponse
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListMonitoredResourceDescriptorsResponse)
     ListMonitoredResourceDescriptorsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMonitoredResourceDescriptorsResponse.newBuilder() to construct.
   private ListMonitoredResourceDescriptorsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -70,6 +71,7 @@ public final class ListMonitoredResourceDescriptorsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.api.MonitoredResourceDescriptor> resourceDescriptors_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListMonitoredResourceDescriptorsResponse
   public java.util.List<com.google.api.MonitoredResourceDescriptor> getResourceDescriptorsList() {
     return resourceDescriptors_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       getResourceDescriptorsOrBuilderList() {
     return resourceDescriptors_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class ListMonitoredResourceDescriptorsResponse
   public int getResourceDescriptorsCount() {
     return resourceDescriptors_.size();
   }
+
   /**
    *
    *
@@ -123,6 +128,7 @@ public final class ListMonitoredResourceDescriptorsResponse
   public com.google.api.MonitoredResourceDescriptor getResourceDescriptors(int index) {
     return resourceDescriptors_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class ListMonitoredResourceDescriptorsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -167,6 +174,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       return s;
     }
   }
+
   /**
    *
    *
@@ -365,6 +373,7 @@ public final class ListMonitoredResourceDescriptorsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -646,6 +655,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return resourceDescriptorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return resourceDescriptorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -678,6 +689,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return resourceDescriptorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +844,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -845,6 +864,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -864,6 +884,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -877,6 +898,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         int index) {
       return getResourceDescriptorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -894,6 +916,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return resourceDescriptorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -911,6 +934,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return java.util.Collections.unmodifiableList(resourceDescriptors_);
       }
     }
+
     /**
      *
      *
@@ -924,6 +948,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       return getResourceDescriptorsFieldBuilder()
           .addBuilder(com.google.api.MonitoredResourceDescriptor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -938,6 +963,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       return getResourceDescriptorsFieldBuilder()
           .addBuilder(index, com.google.api.MonitoredResourceDescriptor.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -973,6 +999,7 @@ public final class ListMonitoredResourceDescriptorsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -997,6 +1024,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1021,6 +1049,7 @@ public final class ListMonitoredResourceDescriptorsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1073,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1093,7 @@ public final class ListMonitoredResourceDescriptorsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *

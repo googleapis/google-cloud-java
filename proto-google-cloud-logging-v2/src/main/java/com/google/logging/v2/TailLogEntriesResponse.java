@@ -33,6 +33,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.TailLogEntriesResponse)
     TailLogEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TailLogEntriesResponse.newBuilder() to construct.
   private TailLogEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
      * @return The enum numeric value on the wire for reason.
      */
     int getReasonValue();
+
     /**
      *
      *
@@ -107,6 +109,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
      */
     int getSuppressedCount();
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       // @@protoc_insertion_point(message_implements:google.logging.v2.TailLogEntriesResponse.SuppressionInfo)
       SuppressionInfoOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SuppressionInfo.newBuilder() to construct.
     private SuppressionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -208,6 +212,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        * <code>REASON_UNSPECIFIED = 0;</code>
        */
       public static final int REASON_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -221,6 +226,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
        * <code>RATE_LIMIT = 1;</code>
        */
       public static final int RATE_LIMIT_VALUE = 1;
+
       /**
        *
        *
@@ -320,6 +326,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
 
     public static final int REASON_FIELD_NUMBER = 1;
     private int reason_ = 0;
+
     /**
      *
      *
@@ -335,6 +342,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     public int getReasonValue() {
       return reason_;
     }
+
     /**
      *
      *
@@ -357,6 +365,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
 
     public static final int SUPPRESSED_COUNT_FIELD_NUMBER = 2;
     private int suppressedCount_ = 0;
+
     /**
      *
      *
@@ -547,6 +556,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -748,6 +758,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       private int bitField0_;
 
       private int reason_ = 0;
+
       /**
        *
        *
@@ -763,6 +774,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       public int getReasonValue() {
         return reason_;
       }
+
       /**
        *
        *
@@ -781,6 +793,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -800,6 +813,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
             ? com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.Reason.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -822,6 +836,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -841,6 +856,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
 
       private int suppressedCount_;
+
       /**
        *
        *
@@ -856,6 +872,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       public int getSuppressedCount() {
         return suppressedCount_;
       }
+
       /**
        *
        *
@@ -875,6 +892,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -964,6 +982,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
+
   /**
    *
    *
@@ -979,6 +998,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.logging.v2.LogEntry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -995,6 +1015,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -1010,6 +1031,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -1025,6 +1047,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   public com.google.logging.v2.LogEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -1046,6 +1069,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo>
       suppressionInfo_;
+
   /**
    *
    *
@@ -1065,6 +1089,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       getSuppressionInfoList() {
     return suppressionInfo_;
   }
+
   /**
    *
    *
@@ -1085,6 +1110,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       getSuppressionInfoOrBuilderList() {
     return suppressionInfo_;
   }
+
   /**
    *
    *
@@ -1103,6 +1129,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
   public int getSuppressionInfoCount() {
     return suppressionInfo_.size();
   }
+
   /**
    *
    *
@@ -1122,6 +1149,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       int index) {
     return suppressionInfo_.get(index);
   }
+
   /**
    *
    *
@@ -1314,6 +1342,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1631,6 +1660,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1649,6 +1679,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1667,6 +1698,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1691,6 +1723,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1745,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1736,6 +1770,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1760,6 +1795,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1817,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1839,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1862,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1845,6 +1884,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1866,6 +1906,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1880,6 +1921,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1898,6 +1940,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1917,6 +1960,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -1932,6 +1976,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1947,6 +1992,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2020,6 +2066,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return suppressionInfoBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2042,6 +2089,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return suppressionInfoBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2065,6 +2113,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return suppressionInfoBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2094,6 +2143,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2121,6 +2171,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2201,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2179,6 +2231,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2205,6 +2258,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2232,6 +2286,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2259,6 +2314,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2284,6 +2340,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2309,6 +2366,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2328,6 +2386,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         getSuppressionInfoBuilder(int index) {
       return getSuppressionInfoFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2351,6 +2410,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return suppressionInfoBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2375,6 +2435,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(suppressionInfo_);
       }
     }
+
     /**
      *
      *
@@ -2396,6 +2457,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2418,6 +2480,7 @@ public final class TailLogEntriesResponse extends com.google.protobuf.GeneratedM
               index,
               com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo.getDefaultInstance());
     }
+
     /**
      *
      *

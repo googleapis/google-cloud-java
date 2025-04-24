@@ -264,8 +264,7 @@ public class LogEntryTest {
             .setStatus(500)
             .build();
     LogEntry logEntry =
-        STRING_ENTRY
-            .toBuilder()
+        STRING_ENTRY.toBuilder()
             .setPayload(StringPayload.of("otherPayload"))
             .setLogName("otherLogName")
             .setResource(MonitoredResource.newBuilder("global").build())
@@ -298,8 +297,7 @@ public class LogEntryTest {
         new SourceLocation.Builder().setFile("hey.java").build(), logEntry.getSourceLocation());
     assertEquals(StringPayload.of("otherPayload"), logEntry.getPayload());
     logEntry =
-        logEntry
-            .toBuilder()
+        logEntry.toBuilder()
             .setPayload(STRING_PAYLOAD)
             .setLogName(LOG_NAME)
             .setResource(RESOURCE)

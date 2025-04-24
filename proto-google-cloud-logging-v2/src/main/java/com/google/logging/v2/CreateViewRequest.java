@@ -33,6 +33,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.logging.v2.CreateViewRequest)
     CreateViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateViewRequest.newBuilder() to construct.
   private CreateViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object viewId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -185,6 +190,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private com.google.logging.v2.LogView view_;
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -215,6 +222,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
   public com.google.logging.v2.LogView getView() {
     return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
   }
+
   /**
    *
    *
@@ -410,6 +418,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -637,6 +646,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -665,6 +675,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -693,6 +704,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +756,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +787,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object viewId_ = "";
+
     /**
      *
      *
@@ -797,6 +812,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +837,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -844,6 +861,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +881,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
             com.google.logging.v2.LogView.Builder,
             com.google.logging.v2.LogViewOrBuilder>
         viewBuilder_;
+
     /**
      *
      *
@@ -908,6 +928,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasView() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -926,6 +947,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return viewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -948,6 +970,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1018,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1038,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1027,6 +1053,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1043,6 +1070,7 @@ public final class CreateViewRequest extends com.google.protobuf.GeneratedMessag
         return view_ == null ? com.google.logging.v2.LogView.getDefaultInstance() : view_;
       }
     }
+
     /**
      *
      *

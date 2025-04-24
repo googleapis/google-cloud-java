@@ -15,8 +15,9 @@ branchProtectionRules:
       - units (11)
       - 'Kokoro - Test: Integration'
       - cla/google
-      - 'Kokoro - Test: Java GraalVM Native Image'
-      - 'Kokoro - Test: Java 17 GraalVM Native Image'
+      - 'Kokoro - Test: Java GraalVM Native Image A'
+      - 'Kokoro - Test: Java GraalVM Native Image B'
+      - 'Kokoro - Test: Java GraalVM Native Image C'
       - javadoc
       - library_generation
       - unmanaged_dependency_check

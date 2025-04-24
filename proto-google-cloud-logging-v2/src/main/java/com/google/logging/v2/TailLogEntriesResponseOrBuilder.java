@@ -36,6 +36,7 @@ public interface TailLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TailLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   com.google.logging.v2.LogEntry getEntries(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface TailLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface TailLogEntriesResponseOrBuilder
    * <code>repeated .google.logging.v2.LogEntry entries = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface TailLogEntriesResponseOrBuilder
    */
   java.util.List<com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo>
       getSuppressionInfoList();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface TailLogEntriesResponseOrBuilder
    * </code>
    */
   com.google.logging.v2.TailLogEntriesResponse.SuppressionInfo getSuppressionInfo(int index);
+
   /**
    *
    *
@@ -131,6 +137,7 @@ public interface TailLogEntriesResponseOrBuilder
    * </code>
    */
   int getSuppressionInfoCount();
+
   /**
    *
    *
@@ -147,6 +154,7 @@ public interface TailLogEntriesResponseOrBuilder
    */
   java.util.List<? extends com.google.logging.v2.TailLogEntriesResponse.SuppressionInfoOrBuilder>
       getSuppressionInfoOrBuilderList();
+
   /**
    *
    *

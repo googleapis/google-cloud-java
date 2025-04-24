@@ -54,6 +54,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
+
   /**
    *
    *
@@ -84,6 +85,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
+
   /**
    *
    *
@@ -163,6 +166,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -197,6 +201,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return The orderBy.
    */
   java.lang.String getOrderBy();
+
   /**
    *
    *
@@ -246,6 +251,7 @@ public interface ListLogEntriesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -42,6 +42,7 @@ public interface CreateLogMetricRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CreateLogMetricRequestOrBuilder
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public interface CreateLogMetricRequestOrBuilder
    * @return The metric.
    */
   com.google.logging.v2.LogMetric getMetric();
+
   /**
    *
    *

@@ -340,7 +340,8 @@ public class LogExclusionName implements ResourceName {
     private Builder(LogExclusionName logExclusionName) {
       Preconditions.checkArgument(
           Objects.equals(logExclusionName.pathTemplate, PROJECT_EXCLUSION),
-          "toBuilder is only supported when LogExclusionName has the pattern of projects/{project}/exclusions/{exclusion}");
+          "toBuilder is only supported when LogExclusionName has the pattern of"
+              + " projects/{project}/exclusions/{exclusion}");
       this.project = logExclusionName.project;
       this.exclusion = logExclusionName.exclusion;
     }

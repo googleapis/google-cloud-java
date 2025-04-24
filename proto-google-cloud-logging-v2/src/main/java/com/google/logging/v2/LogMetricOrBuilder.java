@@ -48,6 +48,7 @@ public interface LogMetricOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface LogMetricOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -118,6 +120,7 @@ public interface LogMetricOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface LogMetricOrBuilder
    * @return The bucketName.
    */
   java.lang.String getBucketName();
+
   /**
    *
    *
@@ -226,6 +230,7 @@ public interface LogMetricOrBuilder
    * @return Whether the metricDescriptor field is set.
    */
   boolean hasMetricDescriptor();
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public interface LogMetricOrBuilder
    * @return The metricDescriptor.
    */
   com.google.api.MetricDescriptor getMetricDescriptor();
+
   /**
    *
    *
@@ -324,6 +330,7 @@ public interface LogMetricOrBuilder
    * @return The valueExtractor.
    */
   java.lang.String getValueExtractor();
+
   /**
    *
    *
@@ -380,6 +387,7 @@ public interface LogMetricOrBuilder
    * </code>
    */
   int getLabelExtractorsCount();
+
   /**
    *
    *
@@ -404,9 +412,11 @@ public interface LogMetricOrBuilder
    * </code>
    */
   boolean containsLabelExtractors(java.lang.String key);
+
   /** Use {@link #getLabelExtractorsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabelExtractors();
+
   /**
    *
    *
@@ -431,6 +441,7 @@ public interface LogMetricOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap();
+
   /**
    *
    *
@@ -459,6 +470,7 @@ public interface LogMetricOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -500,6 +512,7 @@ public interface LogMetricOrBuilder
    * @return Whether the bucketOptions field is set.
    */
   boolean hasBucketOptions();
+
   /**
    *
    *
@@ -516,6 +529,7 @@ public interface LogMetricOrBuilder
    * @return The bucketOptions.
    */
   com.google.api.Distribution.BucketOptions getBucketOptions();
+
   /**
    *
    *
@@ -546,6 +560,7 @@ public interface LogMetricOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -561,6 +576,7 @@ public interface LogMetricOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -590,6 +606,7 @@ public interface LogMetricOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -605,6 +622,7 @@ public interface LogMetricOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -635,6 +653,7 @@ public interface LogMetricOrBuilder
    */
   @java.lang.Deprecated
   int getVersionValue();
+
   /**
    *
    *

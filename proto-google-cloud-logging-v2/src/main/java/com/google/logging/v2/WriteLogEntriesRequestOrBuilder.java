@@ -54,6 +54,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * @return The logName.
    */
   java.lang.String getLogName();
+
   /**
    *
    *
@@ -105,6 +106,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * @return Whether the resource field is set.
    */
   boolean hasResource();
+
   /**
    *
    *
@@ -125,6 +127,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * @return The resource.
    */
   com.google.api.MonitoredResource getResource();
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -170,9 +174,11 @@ public interface WriteLogEntriesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -186,6 +192,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface WriteLogEntriesRequestOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -252,6 +260,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
+
   /**
    *
    *
@@ -287,6 +296,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * </code>
    */
   com.google.logging.v2.LogEntry getEntries(int index);
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * </code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -357,6 +368,7 @@ public interface WriteLogEntriesRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
+
   /**
    *
    *

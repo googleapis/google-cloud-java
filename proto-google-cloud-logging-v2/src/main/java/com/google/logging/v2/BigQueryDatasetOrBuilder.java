@@ -42,6 +42,7 @@ public interface BigQueryDatasetOrBuilder
    * @return The datasetId.
    */
   java.lang.String getDatasetId();
+
   /**
    *
    *

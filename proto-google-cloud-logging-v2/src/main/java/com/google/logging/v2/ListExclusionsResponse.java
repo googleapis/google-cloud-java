@@ -33,6 +33,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListExclusionsResponse)
     ListExclusionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListExclusionsResponse.newBuilder() to construct.
   private ListExclusionsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogExclusion> exclusions_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.logging.v2.LogExclusion> getExclusionsList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       getExclusionsOrBuilderList() {
     return exclusions_;
   }
+
   /**
    *
    *
@@ -108,6 +112,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
   public int getExclusionsCount() {
     return exclusions_.size();
   }
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
   public com.google.logging.v2.LogExclusion getExclusions(int index) {
     return exclusions_.get(index);
   }
+
   /**
    *
    *
@@ -139,6 +145,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -360,6 +368,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -634,6 +643,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return exclusionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -650,6 +660,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return exclusionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return exclusionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -708,6 +721,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +744,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +767,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.LogExclusion.Builder getExclusionsBuilder(int index) {
       return getExclusionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return exclusionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -894,6 +917,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(exclusions_);
       }
     }
+
     /**
      *
      *
@@ -907,6 +931,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       return getExclusionsFieldBuilder()
           .addBuilder(com.google.logging.v2.LogExclusion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -920,6 +945,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       return getExclusionsFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogExclusion.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -951,6 +977,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -975,6 +1002,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -999,6 +1027,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1051,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1041,6 +1071,7 @@ public final class ListExclusionsResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

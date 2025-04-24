@@ -43,8 +43,7 @@ public class SourceLocationTest {
   public void testToBuilder() {
     compareSourceLocation(SOURCE_LOCATION, SOURCE_LOCATION.toBuilder().build());
     SourceLocation sourceLocation =
-        SOURCE_LOCATION
-            .toBuilder()
+        SOURCE_LOCATION.toBuilder()
             .setFile("newFile")
             .setLine(43L)
             .setFunction("newFunction")

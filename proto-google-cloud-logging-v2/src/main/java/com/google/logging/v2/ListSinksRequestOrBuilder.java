@@ -43,6 +43,7 @@ public interface ListSinksRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListSinksRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

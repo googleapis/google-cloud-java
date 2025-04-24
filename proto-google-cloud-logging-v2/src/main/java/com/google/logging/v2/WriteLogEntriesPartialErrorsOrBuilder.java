@@ -39,6 +39,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
   int getLogEntryErrorsCount();
+
   /**
    *
    *
@@ -54,9 +55,11 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
   boolean containsLogEntryErrors(int key);
+
   /** Use {@link #getLogEntryErrorsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.Integer, com.google.rpc.Status> getLogEntryErrors();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
    * <code>map&lt;int32, .google.rpc.Status&gt; log_entry_errors = 1;</code>
    */
   java.util.Map<java.lang.Integer, com.google.rpc.Status> getLogEntryErrorsMap();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface WriteLogEntriesPartialErrorsOrBuilder
       int key,
       /* nullable */
       com.google.rpc.Status defaultValue);
+
   /**
    *
    *

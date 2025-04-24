@@ -47,6 +47,7 @@ public interface DeleteExclusionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

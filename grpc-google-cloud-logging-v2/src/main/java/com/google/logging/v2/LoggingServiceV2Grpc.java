@@ -313,6 +313,19 @@ public final class LoggingServiceV2Grpc {
     return LoggingServiceV2Stub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static LoggingServiceV2BlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<LoggingServiceV2BlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<LoggingServiceV2BlockingV2Stub>() {
+          @java.lang.Override
+          public LoggingServiceV2BlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new LoggingServiceV2BlockingV2Stub(channel, callOptions);
+          }
+        };
+    return LoggingServiceV2BlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -594,6 +607,122 @@ public final class LoggingServiceV2Grpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service LoggingServiceV2.
+   *
+   * <pre>
+   * Service for ingesting and querying logs.
+   * </pre>
+   */
+  public static final class LoggingServiceV2BlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<LoggingServiceV2BlockingV2Stub> {
+    private LoggingServiceV2BlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected LoggingServiceV2BlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new LoggingServiceV2BlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes all the log entries in a log for the _Default Log Bucket. The log
+     * reappears if it receives new entries. Log entries written shortly before
+     * the delete operation might not be deleted. Entries received after the
+     * delete operation with a timestamp before the operation will be deleted.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLog(com.google.logging.v2.DeleteLogRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLogMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Writes log entries to Logging. This API method is the
+     * only way to send log entries to Logging. This method
+     * is used, directly or indirectly, by the Logging agent
+     * (fluentd) and all logging libraries configured to use Logging.
+     * A single request may contain log entries for a maximum of 1000
+     * different resources (projects, organizations, billing accounts or
+     * folders)
+     * </pre>
+     */
+    public com.google.logging.v2.WriteLogEntriesResponse writeLogEntries(
+        com.google.logging.v2.WriteLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getWriteLogEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists log entries.  Use this method to retrieve log entries that originated
+     * from a project/folder/organization/billing account.  For ways to export log
+     * entries, see [Exporting
+     * Logs](https://cloud.google.com/logging/docs/export).
+     * </pre>
+     */
+    public com.google.logging.v2.ListLogEntriesResponse listLogEntries(
+        com.google.logging.v2.ListLogEntriesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLogEntriesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the descriptors for monitored resource types used by Logging.
+     * </pre>
+     */
+    public com.google.logging.v2.ListMonitoredResourceDescriptorsResponse
+        listMonitoredResourceDescriptors(
+            com.google.logging.v2.ListMonitoredResourceDescriptorsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMonitoredResourceDescriptorsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the logs in projects, organizations, folders, or billing accounts.
+     * Only logs that have entries are listed.
+     * </pre>
+     */
+    public com.google.logging.v2.ListLogsResponse listLogs(
+        com.google.logging.v2.ListLogsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLogsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streaming read of log entries as they are ingested. Until the stream is
+     * terminated, it will continue reading logs.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.logging.v2.TailLogEntriesRequest,
+            com.google.logging.v2.TailLogEntriesResponse>
+        tailLogEntries() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getTailLogEntriesMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service LoggingServiceV2.
    *
    * <pre>
    * Service for ingesting and querying logs.

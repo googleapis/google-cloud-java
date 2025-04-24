@@ -34,6 +34,7 @@ public interface ListBucketsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogBucket> getBucketsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBucketsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
    */
   com.google.logging.v2.LogBucket getBuckets(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBucketsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
    */
   int getBucketsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListBucketsResponseOrBuilder
    * <code>repeated .google.logging.v2.LogBucket buckets = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogBucketOrBuilder> getBucketsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBucketsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

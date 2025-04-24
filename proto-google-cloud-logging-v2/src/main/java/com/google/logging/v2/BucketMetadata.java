@@ -33,6 +33,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.logging.v2.BucketMetadata)
     BucketMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BucketMetadata.newBuilder() to construct.
   private BucketMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     private RequestCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -115,6 +117,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -207,6 +215,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -241,6 +251,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CREATE_BUCKET_REQUEST_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -256,6 +267,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateBucketRequest() {
     return requestCase_ == 4;
   }
+
   /**
    *
    *
@@ -274,6 +286,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.logging.v2.CreateBucketRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -292,6 +305,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int UPDATE_BUCKET_REQUEST_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -307,6 +321,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
   public boolean hasUpdateBucketRequest() {
     return requestCase_ == 5;
   }
+
   /**
    *
    *
@@ -325,6 +340,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.logging.v2.UpdateBucketRequest.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -566,6 +582,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -863,6 +880,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -895,6 +914,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1076,6 +1104,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1175,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1195,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1210,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1255,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1235,6 +1271,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1253,6 +1290,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1308,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
           com.google.logging.v2.OperationState.forNumber(state_);
       return result == null ? com.google.logging.v2.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1291,6 +1330,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1354,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.CreateBucketRequest.Builder,
             com.google.logging.v2.CreateBucketRequestOrBuilder>
         createBucketRequestBuilder_;
+
     /**
      *
      *
@@ -1329,6 +1370,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateBucketRequest() {
       return requestCase_ == 4;
     }
+
     /**
      *
      *
@@ -1354,6 +1396,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.CreateBucketRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1376,6 +1419,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1396,6 +1440,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1428,6 +1473,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1453,6 +1499,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1465,6 +1512,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.CreateBucketRequest.Builder getCreateBucketRequestBuilder() {
       return getCreateBucketRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1485,6 +1533,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.CreateBucketRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1523,6 +1572,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
             com.google.logging.v2.UpdateBucketRequest.Builder,
             com.google.logging.v2.UpdateBucketRequestOrBuilder>
         updateBucketRequestBuilder_;
+
     /**
      *
      *
@@ -1538,6 +1588,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public boolean hasUpdateBucketRequest() {
       return requestCase_ == 5;
     }
+
     /**
      *
      *
@@ -1563,6 +1614,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.UpdateBucketRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1585,6 +1637,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1605,6 +1658,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1637,6 +1691,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       requestCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -1662,6 +1717,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1674,6 +1730,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
     public com.google.logging.v2.UpdateBucketRequest.Builder getUpdateBucketRequestBuilder() {
       return getUpdateBucketRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1694,6 +1751,7 @@ public final class BucketMetadata extends com.google.protobuf.GeneratedMessageV3
         return com.google.logging.v2.UpdateBucketRequest.getDefaultInstance();
       }
     }
+
     /**
      *
      *

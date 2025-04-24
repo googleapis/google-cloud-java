@@ -72,8 +72,7 @@ public class MetricTest {
     initializeExpectedMetric(2);
     replay(logging);
     Metric builtMetric =
-        expectedMetric
-            .toBuilder()
+        expectedMetric.toBuilder()
             .setName(NEW_NAME)
             .setFilter(NEW_FILTER)
             .setDescription(NEW_DESCRIPTION)

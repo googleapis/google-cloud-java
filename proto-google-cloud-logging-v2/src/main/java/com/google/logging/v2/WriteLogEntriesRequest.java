@@ -33,6 +33,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.WriteLogEntriesRequest)
     WriteLogEntriesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WriteLogEntriesRequest.newBuilder() to construct.
   private WriteLogEntriesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object logName_ = "";
+
   /**
    *
    *
@@ -122,6 +124,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -166,6 +169,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   public static final int RESOURCE_FIELD_NUMBER = 2;
   private com.google.api.MonitoredResource resource_;
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public boolean hasResource() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -212,6 +217,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public com.google.api.MonitoredResource getResource() {
     return resource_ == null ? com.google.api.MonitoredResource.getDefaultInstance() : resource_;
   }
+
   /**
    *
    *
@@ -260,6 +266,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -279,12 +286,14 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -301,6 +310,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -324,6 +334,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -352,6 +363,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
+
   /**
    *
    *
@@ -390,6 +402,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.logging.v2.LogEntry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -429,6 +442,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -467,6 +481,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -505,6 +520,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
   public com.google.logging.v2.LogEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -546,6 +562,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   public static final int PARTIAL_SUCCESS_FIELD_NUMBER = 5;
   private boolean partialSuccess_ = false;
+
   /**
    *
    *
@@ -570,6 +587,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
 
   public static final int DRY_RUN_FIELD_NUMBER = 6;
   private boolean dryRun_ = false;
+
   /**
    *
    *
@@ -807,6 +825,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1146,6 +1165,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object logName_ = "";
+
     /**
      *
      *
@@ -1186,6 +1206,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1226,6 +1247,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1265,6 +1287,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1323,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1347,6 +1371,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             com.google.api.MonitoredResource.Builder,
             com.google.api.MonitoredResourceOrBuilder>
         resourceBuilder_;
+
     /**
      *
      *
@@ -1369,6 +1394,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public boolean hasResource() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1397,6 +1423,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return resourceBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1427,6 +1454,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1454,6 +1482,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1518,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1516,6 +1546,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1538,6 +1569,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1564,6 +1596,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
             : resource_;
       }
     }
+
     /**
      *
      *
@@ -1623,6 +1656,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -1642,12 +1676,14 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1664,6 +1700,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1687,6 +1724,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1716,6 +1754,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1735,12 +1774,14 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000004;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1764,6 +1805,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1881,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1880,6 +1923,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1921,6 +1965,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1968,6 +2013,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2012,6 +2058,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2059,6 +2106,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2106,6 +2154,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2150,6 +2199,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2194,6 +2244,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2239,6 +2290,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2283,6 +2335,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2327,6 +2380,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -2364,6 +2418,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2405,6 +2460,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2447,6 +2503,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -2485,6 +2542,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2523,6 +2581,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2579,6 +2638,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean partialSuccess_;
+
     /**
      *
      *
@@ -2600,6 +2660,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public boolean getPartialSuccess() {
       return partialSuccess_;
     }
+
     /**
      *
      *
@@ -2625,6 +2686,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2650,6 +2712,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     }
 
     private boolean dryRun_;
+
     /**
      *
      *
@@ -2667,6 +2730,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
     public boolean getDryRun() {
       return dryRun_;
     }
+
     /**
      *
      *
@@ -2688,6 +2752,7 @@ public final class WriteLogEntriesRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

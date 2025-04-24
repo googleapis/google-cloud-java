@@ -48,6 +48,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return A list containing the resourceNames.
    */
   java.util.List<java.lang.String> getResourceNamesList();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return The count of resourceNames.
    */
   int getResourceNamesCount();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return The resourceNames at the given index.
    */
   java.lang.String getResourceNames(int index);
+
   /**
    *
    *
@@ -139,6 +142,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return Whether the bufferWindow field is set.
    */
   boolean hasBufferWindow();
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public interface TailLogEntriesRequestOrBuilder
    * @return The bufferWindow.
    */
   com.google.protobuf.Duration getBufferWindow();
+
   /**
    *
    *

@@ -330,7 +330,8 @@ public class LogSinkName implements ResourceName {
     private Builder(LogSinkName logSinkName) {
       Preconditions.checkArgument(
           Objects.equals(logSinkName.pathTemplate, PROJECT_SINK),
-          "toBuilder is only supported when LogSinkName has the pattern of projects/{project}/sinks/{sink}");
+          "toBuilder is only supported when LogSinkName has the pattern of"
+              + " projects/{project}/sinks/{sink}");
       this.project = logSinkName.project;
       this.sink = logSinkName.sink;
     }

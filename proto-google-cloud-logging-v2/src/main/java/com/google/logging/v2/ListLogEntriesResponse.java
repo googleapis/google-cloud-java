@@ -33,6 +33,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListLogEntriesResponse)
     ListLogEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLogEntriesResponse.newBuilder() to construct.
   private ListLogEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogEntry> entries_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
   public java.util.List<com.google.logging.v2.LogEntry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -129,6 +134,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
   public com.google.logging.v2.LogEntry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -181,6 +188,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -384,6 +392,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +668,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -677,6 +687,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -695,6 +706,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -719,6 +731,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -764,6 +778,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +825,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -852,6 +870,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -894,6 +914,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +929,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
     public com.google.logging.v2.LogEntry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -926,6 +948,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -945,6 +968,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -960,6 +984,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -975,6 +1000,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       return getEntriesFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogEntry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1008,6 +1034,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -1039,6 +1066,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1070,6 +1098,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1156,7 @@ public final class ListLogEntriesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

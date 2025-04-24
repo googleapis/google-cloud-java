@@ -36,6 +36,7 @@ public interface LinkMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LinkMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface LinkMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface LinkMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface LinkMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface LinkMetadataOrBuilder
    * @return Whether the createLinkRequest field is set.
    */
   boolean hasCreateLinkRequest();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface LinkMetadataOrBuilder
    * @return The createLinkRequest.
    */
   com.google.logging.v2.CreateLinkRequest getCreateLinkRequest();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface LinkMetadataOrBuilder
    * @return Whether the deleteLinkRequest field is set.
    */
   boolean hasDeleteLinkRequest();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface LinkMetadataOrBuilder
    * @return The deleteLinkRequest.
    */
   com.google.logging.v2.DeleteLinkRequest getDeleteLinkRequest();
+
   /**
    *
    *

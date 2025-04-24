@@ -43,6 +43,7 @@ public interface GetLinkRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

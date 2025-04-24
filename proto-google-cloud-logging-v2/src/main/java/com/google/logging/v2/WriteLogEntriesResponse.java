@@ -33,6 +33,7 @@ public final class WriteLogEntriesResponse extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.logging.v2.WriteLogEntriesResponse)
     WriteLogEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use WriteLogEntriesResponse.newBuilder() to construct.
   private WriteLogEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class WriteLogEntriesResponse extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

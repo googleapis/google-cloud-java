@@ -179,12 +179,9 @@ public class GrpcLoggingRpc implements LoggingRpc {
           .setBatchingSettings(
               batchingSettings != null
                   ? batchingSettings
-                  : defaultBatchSettings
-                      .toBuilder()
+                  : defaultBatchSettings.toBuilder()
                       .setFlowControlSettings(
-                          defaultBatchSettings
-                              .getFlowControlSettings()
-                              .toBuilder()
+                          defaultBatchSettings.getFlowControlSettings().toBuilder()
                               .setLimitExceededBehavior(LimitExceededBehavior.Block)
                               .build())
                       .build());

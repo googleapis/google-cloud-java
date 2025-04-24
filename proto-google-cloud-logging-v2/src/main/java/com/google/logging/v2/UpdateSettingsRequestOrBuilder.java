@@ -46,6 +46,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return Whether the settings field is set.
    */
   boolean hasSettings();
+
   /**
    *
    *
@@ -103,6 +105,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The settings.
    */
   com.google.logging.v2.Settings getSettings();
+
   /**
    *
    *
@@ -138,6 +141,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface UpdateSettingsRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

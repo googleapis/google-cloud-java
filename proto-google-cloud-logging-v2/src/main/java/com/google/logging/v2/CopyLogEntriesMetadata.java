@@ -33,6 +33,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.CopyLogEntriesMetadata)
     CopyLogEntriesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CopyLogEntriesMetadata.newBuilder() to construct.
   private CopyLogEntriesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -174,6 +182,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -194,6 +203,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int CANCELLATION_REQUESTED_FIELD_NUMBER = 4;
   private boolean cancellationRequested_ = false;
+
   /**
    *
    *
@@ -212,6 +222,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int REQUEST_FIELD_NUMBER = 5;
   private com.google.logging.v2.CopyLogEntriesRequest request_;
+
   /**
    *
    *
@@ -227,6 +238,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasRequest() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -244,6 +256,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         ? com.google.logging.v2.CopyLogEntriesRequest.getDefaultInstance()
         : request_;
   }
+
   /**
    *
    *
@@ -262,6 +275,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_FIELD_NUMBER = 6;
   private int progress_ = 0;
+
   /**
    *
    *
@@ -282,6 +296,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object writerIdentity_ = "";
+
   /**
    *
    *
@@ -311,6 +326,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -569,6 +585,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -863,6 +880,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -877,6 +895,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -895,6 +914,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -917,6 +937,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +985,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1005,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1020,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1012,6 +1037,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1058,6 +1085,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1076,6 +1104,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1098,6 +1127,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1147,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1144,6 +1175,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1195,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1210,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1193,6 +1227,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -1220,6 +1255,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1235,6 +1271,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1253,6 +1290,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1270,6 +1308,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
           com.google.logging.v2.OperationState.forNumber(state_);
       return result == null ? com.google.logging.v2.OperationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1291,6 +1330,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1310,6 +1350,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     }
 
     private boolean cancellationRequested_;
+
     /**
      *
      *
@@ -1325,6 +1366,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public boolean getCancellationRequested() {
       return cancellationRequested_;
     }
+
     /**
      *
      *
@@ -1344,6 +1386,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1368,6 +1411,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
             com.google.logging.v2.CopyLogEntriesRequest.Builder,
             com.google.logging.v2.CopyLogEntriesRequestOrBuilder>
         requestBuilder_;
+
     /**
      *
      *
@@ -1382,6 +1426,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasRequest() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1402,6 +1447,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return requestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1424,6 +1470,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1490,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1470,6 +1518,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1489,6 +1538,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1553,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1521,6 +1572,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
             : request_;
       }
     }
+
     /**
      *
      *
@@ -1548,6 +1600,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     }
 
     private int progress_;
+
     /**
      *
      *
@@ -1563,6 +1616,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     public int getProgress() {
       return progress_;
     }
+
     /**
      *
      *
@@ -1582,6 +1636,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1601,6 +1656,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object writerIdentity_ = "";
+
     /**
      *
      *
@@ -1629,6 +1685,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1657,6 +1714,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1684,6 +1742,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1707,6 +1766,7 @@ public final class CopyLogEntriesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

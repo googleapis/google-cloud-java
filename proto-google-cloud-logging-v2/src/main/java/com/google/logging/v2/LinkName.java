@@ -458,7 +458,8 @@ public class LinkName implements ResourceName {
     private Builder(LinkName linkName) {
       Preconditions.checkArgument(
           Objects.equals(linkName.pathTemplate, PROJECT_LOCATION_BUCKET_LINK),
-          "toBuilder is only supported when LinkName has the pattern of projects/{project}/locations/{location}/buckets/{bucket}/links/{link}");
+          "toBuilder is only supported when LinkName has the pattern of"
+              + " projects/{project}/locations/{location}/buckets/{bucket}/links/{link}");
       this.project = linkName.project;
       this.location = linkName.location;
       this.bucket = linkName.bucket;

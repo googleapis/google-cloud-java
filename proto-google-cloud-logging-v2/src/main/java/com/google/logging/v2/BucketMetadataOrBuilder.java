@@ -36,6 +36,7 @@ public interface BucketMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface BucketMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface BucketMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface BucketMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface BucketMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface BucketMetadataOrBuilder
    * @return Whether the createBucketRequest field is set.
    */
   boolean hasCreateBucketRequest();
+
   /**
    *
    *
@@ -143,6 +149,7 @@ public interface BucketMetadataOrBuilder
    * @return The createBucketRequest.
    */
   com.google.logging.v2.CreateBucketRequest getCreateBucketRequest();
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public interface BucketMetadataOrBuilder
    * @return Whether the updateBucketRequest field is set.
    */
   boolean hasUpdateBucketRequest();
+
   /**
    *
    *
@@ -178,6 +186,7 @@ public interface BucketMetadataOrBuilder
    * @return The updateBucketRequest.
    */
   com.google.logging.v2.UpdateBucketRequest getUpdateBucketRequest();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListViewsResponse)
     ListViewsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListViewsResponse.newBuilder() to construct.
   private ListViewsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.logging.v2.LogView> views_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.logging.v2.LogView> getViewsList() {
     return views_;
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.logging.v2.LogViewOrBuilder> getViewsOrBuilderList() {
     return views_;
   }
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
   public int getViewsCount() {
     return views_.size();
   }
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
   public com.google.logging.v2.LogView getViews(int index) {
     return views_.get(index);
   }
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -163,6 +170,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +366,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -631,6 +640,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return viewsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return viewsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return viewsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -767,6 +783,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +803,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +823,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +843,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -843,6 +863,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -855,6 +876,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.LogView.Builder getViewsBuilder(int index) {
       return getViewsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return viewsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -888,6 +911,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(views_);
       }
     }
+
     /**
      *
      *
@@ -900,6 +924,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
     public com.google.logging.v2.LogView.Builder addViewsBuilder() {
       return getViewsFieldBuilder().addBuilder(com.google.logging.v2.LogView.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -913,6 +938,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       return getViewsFieldBuilder()
           .addBuilder(index, com.google.logging.v2.LogView.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -944,6 +970,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -968,6 +995,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -992,6 +1020,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1015,6 +1044,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1064,7 @@ public final class ListViewsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

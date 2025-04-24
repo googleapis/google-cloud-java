@@ -42,6 +42,7 @@ public interface UpdateViewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface UpdateViewRequestOrBuilder
    * @return Whether the view field is set.
    */
   boolean hasView();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface UpdateViewRequestOrBuilder
    * @return The view.
    */
   com.google.logging.v2.LogView getView();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface UpdateViewRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface UpdateViewRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

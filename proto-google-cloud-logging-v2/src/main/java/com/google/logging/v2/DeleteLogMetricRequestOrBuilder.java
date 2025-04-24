@@ -40,6 +40,7 @@ public interface DeleteLogMetricRequestOrBuilder
    * @return The metricName.
    */
   java.lang.String getMetricName();
+
   /**
    *
    *

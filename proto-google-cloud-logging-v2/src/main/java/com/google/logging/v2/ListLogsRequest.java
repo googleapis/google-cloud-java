@@ -33,6 +33,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.logging.v2.ListLogsRequest)
     ListLogsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListLogsRequest.newBuilder() to construct.
   private ListLogsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList resourceNames_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -165,6 +169,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getResourceNamesList() {
     return resourceNames_;
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   public int getResourceNamesCount() {
     return resourceNames_.size();
   }
+
   /**
    *
    *
@@ -226,6 +232,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getResourceNames(int index) {
     return resourceNames_.get(index);
   }
+
   /**
    *
    *
@@ -260,6 +267,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 2;
   private int pageSize_ = 0;
+
   /**
    *
    *
@@ -282,6 +290,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object pageToken_ = "";
+
   /**
    *
    *
@@ -308,6 +317,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -526,6 +536,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -759,6 +770,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -788,6 +800,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -817,6 +830,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -845,6 +859,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +884,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -939,6 +956,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       resourceNames_.makeImmutable();
       return resourceNames_;
     }
+
     /**
      *
      *
@@ -969,6 +987,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public int getResourceNamesCount() {
       return resourceNames_.size();
     }
+
     /**
      *
      *
@@ -1000,6 +1019,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getResourceNames(int index) {
       return resourceNames_.get(index);
     }
+
     /**
      *
      *
@@ -1031,6 +1051,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getResourceNamesBytes(int index) {
       return resourceNames_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1070,6 +1091,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1108,6 +1130,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1166,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1177,6 +1201,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1243,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private int pageSize_;
+
     /**
      *
      *
@@ -1235,6 +1261,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     public int getPageSize() {
       return pageSize_;
     }
+
     /**
      *
      *
@@ -1256,6 +1283,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1277,6 +1305,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object pageToken_ = "";
+
     /**
      *
      *
@@ -1302,6 +1331,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1327,6 +1357,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1351,6 +1382,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1403,7 @@ public final class ListLogsRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

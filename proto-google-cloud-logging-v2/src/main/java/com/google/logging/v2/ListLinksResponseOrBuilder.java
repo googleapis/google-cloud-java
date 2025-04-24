@@ -34,6 +34,7 @@ public interface ListLinksResponseOrBuilder
    * <code>repeated .google.logging.v2.Link links = 1;</code>
    */
   java.util.List<com.google.logging.v2.Link> getLinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListLinksResponseOrBuilder
    * <code>repeated .google.logging.v2.Link links = 1;</code>
    */
   com.google.logging.v2.Link getLinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListLinksResponseOrBuilder
    * <code>repeated .google.logging.v2.Link links = 1;</code>
    */
   int getLinksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListLinksResponseOrBuilder
    * <code>repeated .google.logging.v2.Link links = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LinkOrBuilder> getLinksOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListLinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

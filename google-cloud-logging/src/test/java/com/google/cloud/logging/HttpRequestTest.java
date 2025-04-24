@@ -102,8 +102,7 @@ public class HttpRequestTest {
   public void testToBuilder() {
     compareHttpRequest(HTTP_REQUEST, HTTP_REQUEST.toBuilder().build());
     HttpRequest httpRequest =
-        HTTP_REQUEST
-            .toBuilder()
+        HTTP_REQUEST.toBuilder()
             .setRequestMethod(RequestMethod.POST)
             .setRequestUrl("http://www.other-example.com")
             .setRequestSize(4)

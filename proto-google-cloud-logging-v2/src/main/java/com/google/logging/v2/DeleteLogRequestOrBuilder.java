@@ -50,6 +50,7 @@ public interface DeleteLogRequestOrBuilder
    * @return The logName.
    */
   java.lang.String getLogName();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListSinksResponseOrBuilder
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
   java.util.List<com.google.logging.v2.LogSink> getSinksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSinksResponseOrBuilder
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
   com.google.logging.v2.LogSink getSinks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSinksResponseOrBuilder
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
   int getSinksCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListSinksResponseOrBuilder
    * <code>repeated .google.logging.v2.LogSink sinks = 1;</code>
    */
   java.util.List<? extends com.google.logging.v2.LogSinkOrBuilder> getSinksOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListSinksResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

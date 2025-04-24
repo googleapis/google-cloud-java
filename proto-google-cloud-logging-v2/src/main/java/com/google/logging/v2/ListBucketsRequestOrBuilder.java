@@ -47,6 +47,7 @@ public interface ListBucketsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -86,6 +87,7 @@ public interface ListBucketsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

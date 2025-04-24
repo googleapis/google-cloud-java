@@ -40,6 +40,7 @@ public interface LogViewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface LogViewOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface LogViewOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface LogViewOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public interface LogViewOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface LogViewOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface LogViewOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *

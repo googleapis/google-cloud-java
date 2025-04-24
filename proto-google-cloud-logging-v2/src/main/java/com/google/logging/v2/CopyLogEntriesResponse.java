@@ -33,6 +33,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.logging.v2.CopyLogEntriesResponse)
     CopyLogEntriesResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CopyLogEntriesResponse.newBuilder() to construct.
   private CopyLogEntriesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
 
   public static final int LOG_ENTRIES_COPIED_COUNT_FIELD_NUMBER = 1;
   private long logEntriesCopiedCount_ = 0L;
+
   /**
    *
    *
@@ -238,6 +240,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -419,6 +422,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long logEntriesCopiedCount_;
+
     /**
      *
      *
@@ -434,6 +438,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
     public long getLogEntriesCopiedCount() {
       return logEntriesCopiedCount_;
     }
+
     /**
      *
      *
@@ -453,6 +458,7 @@ public final class CopyLogEntriesResponse extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

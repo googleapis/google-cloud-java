@@ -47,6 +47,7 @@ public interface UpdateBucketRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface UpdateBucketRequestOrBuilder
    * @return Whether the bucket field is set.
    */
   boolean hasBucket();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface UpdateBucketRequestOrBuilder
    * @return The bucket.
    */
   com.google.logging.v2.LogBucket getBucket();
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public interface UpdateBucketRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface UpdateBucketRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

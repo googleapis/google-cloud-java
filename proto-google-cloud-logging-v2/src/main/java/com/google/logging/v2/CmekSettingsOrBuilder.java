@@ -36,6 +36,7 @@ public interface CmekSettingsOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -88,6 +89,7 @@ public interface CmekSettingsOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -156,6 +158,7 @@ public interface CmekSettingsOrBuilder
    * @return The kmsKeyVersionName.
    */
   java.lang.String getKmsKeyVersionName();
+
   /**
    *
    *
@@ -208,6 +211,7 @@ public interface CmekSettingsOrBuilder
    * @return The serviceAccountId.
    */
   java.lang.String getServiceAccountId();
+
   /**
    *
    *

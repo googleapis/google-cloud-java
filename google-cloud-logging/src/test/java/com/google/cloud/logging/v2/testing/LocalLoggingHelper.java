@@ -35,6 +35,7 @@ public class LocalLoggingHelper {
     this.server =
         InProcessServerBuilder.forName(address).addService(loggingImpl.bindService()).build();
   }
+
   /** Starts the in-memory service. */
   public void start() {
     try {
@@ -43,18 +44,22 @@ public class LocalLoggingHelper {
       throw new RuntimeException(ex);
     }
   }
+
   /** Resets the state of the in-memory service. */
   public void reset() {
     loggingImpl.reset();
   }
+
   /** Returns the internal in-memory service. */
   public LocalLoggingImpl getLoggingImpl() {
     return loggingImpl;
   }
+
   /** Creates a channel for making requests to the in-memory service. */
   public ManagedChannel createChannel() {
     return InProcessChannelBuilder.forName(address).usePlaintext().build();
   }
+
   /** Shuts down the in-memory service. */
   public void shutdownNow() {
     server.shutdownNow();
