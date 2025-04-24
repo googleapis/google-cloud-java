@@ -15,14 +15,13 @@
  */
 package com.google.cloud.bigtable.data.v2.stub.metrics;
 
-import com.google.api.core.BetaApi;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import io.opencensus.stats.Stats;
 import io.opencensus.stats.View;
 import io.opencensus.stats.ViewManager;
 
-@BetaApi
+@Deprecated
 public class RpcViews {
   @VisibleForTesting
   private static final ImmutableSet<View> BIGTABLE_CLIENT_VIEWS_SET =
