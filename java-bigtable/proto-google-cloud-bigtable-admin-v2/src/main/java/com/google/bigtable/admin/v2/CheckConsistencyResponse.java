@@ -34,6 +34,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CheckConsistencyResponse)
     CheckConsistencyResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckConsistencyResponse.newBuilder() to construct.
   private CheckConsistencyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
 
   public static final int CONSISTENT_FIELD_NUMBER = 1;
   private boolean consistent_ = false;
+
   /**
    *
    *
@@ -241,6 +243,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean consistent_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
     public boolean getConsistent() {
       return consistent_;
     }
+
     /**
      *
      *
@@ -460,6 +465,7 @@ public final class CheckConsistencyResponse extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

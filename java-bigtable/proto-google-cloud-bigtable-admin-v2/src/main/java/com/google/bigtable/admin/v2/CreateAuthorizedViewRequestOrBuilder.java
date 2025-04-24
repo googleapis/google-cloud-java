@@ -40,6 +40,7 @@ public interface CreateAuthorizedViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface CreateAuthorizedViewRequestOrBuilder
    * @return The authorizedViewId.
    */
   java.lang.String getAuthorizedViewId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface CreateAuthorizedViewRequestOrBuilder
    * @return Whether the authorizedView field is set.
    */
   boolean hasAuthorizedView();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface CreateAuthorizedViewRequestOrBuilder
    * @return The authorizedView.
    */
   com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView();
+
   /**
    *
    *

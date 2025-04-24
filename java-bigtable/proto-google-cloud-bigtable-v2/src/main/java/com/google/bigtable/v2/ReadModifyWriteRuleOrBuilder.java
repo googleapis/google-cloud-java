@@ -37,6 +37,7 @@ public interface ReadModifyWriteRuleOrBuilder
    * @return The familyName.
    */
   java.lang.String getFamilyName();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface ReadModifyWriteRuleOrBuilder
    * @return Whether the appendValue field is set.
    */
   boolean hasAppendValue();
+
   /**
    *
    *
@@ -110,6 +112,7 @@ public interface ReadModifyWriteRuleOrBuilder
    * @return Whether the incrementAmount field is set.
    */
   boolean hasIncrementAmount();
+
   /**
    *
    *

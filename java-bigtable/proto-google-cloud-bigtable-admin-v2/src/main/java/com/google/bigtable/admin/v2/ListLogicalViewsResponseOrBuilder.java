@@ -34,6 +34,7 @@ public interface ListLogicalViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.LogicalView logical_views = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.LogicalView> getLogicalViewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListLogicalViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.LogicalView logical_views = 1;</code>
    */
   com.google.bigtable.admin.v2.LogicalView getLogicalViews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListLogicalViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.LogicalView logical_views = 1;</code>
    */
   int getLogicalViewsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListLogicalViewsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.LogicalViewOrBuilder>
       getLogicalViewsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListLogicalViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Snapshot snapshots = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.Snapshot> getSnapshotsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Snapshot snapshots = 1;</code>
    */
   com.google.bigtable.admin.v2.Snapshot getSnapshots(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSnapshotsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Snapshot snapshots = 1;</code>
    */
   int getSnapshotsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListSnapshotsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.SnapshotOrBuilder>
       getSnapshotsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

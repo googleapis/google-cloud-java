@@ -35,6 +35,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.StreamContinuationToken)
     StreamContinuationTokenOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamContinuationToken.newBuilder() to construct.
   private StreamContinuationToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
   private int bitField0_;
   public static final int PARTITION_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.StreamPartition partition_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
   public boolean hasPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
         ? com.google.bigtable.v2.StreamPartition.getDefaultInstance()
         : partition_;
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object token_ = "";
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -340,6 +346,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
             com.google.bigtable.v2.StreamPartition.Builder,
             com.google.bigtable.v2.StreamPartitionOrBuilder>
         partitionBuilder_;
+
     /**
      *
      *
@@ -573,6 +581,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
     public boolean hasPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
         return partitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -615,6 +625,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +673,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -694,6 +708,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -712,6 +727,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
             : partition_;
       }
     }
+
     /**
      *
      *
@@ -739,6 +755,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
     }
 
     private java.lang.Object token_ = "";
+
     /**
      *
      *
@@ -761,6 +778,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -783,6 +801,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -804,6 +823,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -821,6 +841,7 @@ public final class StreamContinuationToken extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *

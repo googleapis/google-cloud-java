@@ -36,6 +36,7 @@ public interface ColumnMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ColumnMetadataOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface ColumnMetadataOrBuilder
    * @return The type.
    */
   com.google.bigtable.v2.Type getType();
+
   /**
    *
    *

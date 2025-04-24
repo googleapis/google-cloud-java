@@ -33,6 +33,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CreateClusterMetadata)
     CreateClusterMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateClusterMetadata.newBuilder() to construct.
   private CreateClusterMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,6 +113,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
      *
@@ -119,6 +121,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
      */
     com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State getState();
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CreateClusterMetadata.TableProgress)
       TableProgressOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableProgress.newBuilder() to construct.
     private TableProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -214,6 +218,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
       /** <code>STATE_UNSPECIFIED = 0;</code> */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -224,6 +229,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
        * <code>PENDING = 1;</code>
        */
       public static final int PENDING_VALUE = 1;
+
       /**
        *
        *
@@ -234,6 +240,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
        * <code>COPYING = 2;</code>
        */
       public static final int COPYING_VALUE = 2;
+
       /**
        *
        *
@@ -244,6 +251,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
        * <code>COMPLETED = 3;</code>
        */
       public static final int COMPLETED_VALUE = 3;
+
       /**
        *
        *
@@ -348,6 +356,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
     public static final int ESTIMATED_SIZE_BYTES_FIELD_NUMBER = 2;
     private long estimatedSizeBytes_ = 0L;
+
     /**
      *
      *
@@ -366,6 +375,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
     public static final int ESTIMATED_COPIED_BYTES_FIELD_NUMBER = 3;
     private long estimatedCopiedBytes_ = 0L;
+
     /**
      *
      *
@@ -386,6 +396,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
     public static final int STATE_FIELD_NUMBER = 4;
     private int state_ = 0;
+
     /**
      * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
      *
@@ -395,6 +406,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public int getStateValue() {
       return state_;
     }
+
     /**
      * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
      *
@@ -595,6 +607,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -813,6 +826,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private long estimatedSizeBytes_;
+
       /**
        *
        *
@@ -828,6 +842,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       public long getEstimatedSizeBytes() {
         return estimatedSizeBytes_;
       }
+
       /**
        *
        *
@@ -847,6 +862,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -866,6 +882,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
 
       private long estimatedCopiedBytes_;
+
       /**
        *
        *
@@ -883,6 +900,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       public long getEstimatedCopiedBytes() {
         return estimatedCopiedBytes_;
       }
+
       /**
        *
        *
@@ -904,6 +922,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -925,6 +944,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
 
       private int state_ = 0;
+
       /**
        * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
        *
@@ -934,6 +954,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       public int getStateValue() {
         return state_;
       }
+
       /**
        * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
        *
@@ -946,6 +967,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
        *
@@ -960,6 +982,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             ? com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State.UNRECOGNIZED
             : result;
       }
+
       /**
        * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
        *
@@ -976,6 +999,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        * <code>.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress.State state = 4;</code>
        *
@@ -1058,6 +1082,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.CreateClusterRequest originalRequest_;
+
   /**
    *
    *
@@ -1073,6 +1098,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasOriginalRequest() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1090,6 +1116,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.bigtable.admin.v2.CreateClusterRequest.getDefaultInstance()
         : originalRequest_;
   }
+
   /**
    *
    *
@@ -1108,6 +1135,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp requestTime_;
+
   /**
    *
    *
@@ -1123,6 +1151,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasRequestTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -1138,6 +1167,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
+
   /**
    *
    *
@@ -1154,6 +1184,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int FINISH_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp finishTime_;
+
   /**
    *
    *
@@ -1169,6 +1200,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasFinishTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -1184,6 +1216,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
+
   /**
    *
    *
@@ -1234,6 +1267,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
   public int getTablesCount() {
     return internalGetTables().getMap().size();
   }
+
   /**
    *
    *
@@ -1259,6 +1293,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     }
     return internalGetTables().getMap().containsKey(key);
   }
+
   /** Use {@link #getTablesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -1267,6 +1302,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       getTables() {
     return getTablesMap();
   }
+
   /**
    *
    *
@@ -1291,6 +1327,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       getTablesMap() {
     return internalGetTables().getMap();
   }
+
   /**
    *
    *
@@ -1323,6 +1360,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         map = internalGetTables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -1568,6 +1606,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1854,6 +1893,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             com.google.bigtable.admin.v2.CreateClusterRequest.Builder,
             com.google.bigtable.admin.v2.CreateClusterRequestOrBuilder>
         originalRequestBuilder_;
+
     /**
      *
      *
@@ -1868,6 +1908,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasOriginalRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1888,6 +1929,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         return originalRequestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1910,6 +1952,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1930,6 +1973,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +2002,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1977,6 +2022,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1991,6 +2037,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2010,6 +2057,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             : originalRequest_;
       }
     }
+
     /**
      *
      *
@@ -2042,6 +2090,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestTimeBuilder_;
+
     /**
      *
      *
@@ -2056,6 +2105,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasRequestTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2076,6 +2126,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         return requestTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2098,6 +2149,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2117,6 +2169,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2144,6 +2197,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2163,6 +2217,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2177,6 +2232,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2195,6 +2251,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             : requestTime_;
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2284,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finishTimeBuilder_;
+
     /**
      *
      *
@@ -2241,6 +2299,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasFinishTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2261,6 +2320,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         return finishTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2283,6 +2343,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2302,6 +2363,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2329,6 +2391,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -2348,6 +2411,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2362,6 +2426,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2380,6 +2445,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
             : finishTime_;
       }
     }
+
     /**
      *
      *
@@ -2427,7 +2493,8 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
           defaultEntry() {
         return TablesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final TablesConverter tablesConverter = new TablesConverter();
 
@@ -2467,6 +2534,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
     public int getTablesCount() {
       return internalGetTables().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2492,6 +2560,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       }
       return internalGetTables().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getTablesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -2500,6 +2569,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         getTables() {
       return getTablesMap();
     }
+
     /**
      *
      *
@@ -2524,6 +2594,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
         getTablesMap() {
       return internalGetTables().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2557,6 +2628,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
           map = internalGetMutableTables().ensureBuilderMap();
       return map.containsKey(key) ? tablesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2596,6 +2668,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutableTables().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2621,6 +2694,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       internalGetMutableTables().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<
@@ -2629,6 +2703,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return internalGetMutableTables().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2660,6 +2735,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -2693,6 +2769,7 @@ public final class CreateClusterMetadata extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *

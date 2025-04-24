@@ -20,7 +20,9 @@ import java.util.List;
 /** Provides information about the schema of a {@link ResultSet}. */
 public interface ResultSetMetadata {
 
-  /** @return full list of {@link ColumnMetadata} for each column in the {@link ResultSet}. */
+  /**
+   * @return full list of {@link ColumnMetadata} for each column in the {@link ResultSet}.
+   */
   List<ColumnMetadata> getColumns();
 
   /**

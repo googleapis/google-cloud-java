@@ -105,6 +105,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
   private int numDataChanges = 0;
   private int numNonCellMods = 0;
   private int numCellChunks = 0; // 1 for non-chunked cell.
+
   /**
    * Expected total size of a chunked SetCell value, given by the {@link
    * ReadChangeStreamResponse.MutationChunk.ChunkInfo}. This value should be the same for all chunks
@@ -215,6 +216,7 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
   boolean hasCompleteChangeStreamRecord() {
     return completeChangeStreamRecord != null && currentState == AWAITING_STREAM_RECORD_CONSUME;
   }
+
   /**
    * Checks if the state machine is in the middle of processing a change stream record.
    *
@@ -340,7 +342,8 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
           } else if (dataChange.getType() == Type.USER) {
             validate(
                 !dataChange.getSourceClusterId().isEmpty(),
-                "AWAITING_NEW_STREAM_RECORD: User initiated data change missing source cluster id.");
+                "AWAITING_NEW_STREAM_RECORD: User initiated data change missing source cluster"
+                    + " id.");
             builder.startUserMutation(
                 dataChange.getRowKey(),
                 dataChange.getSourceClusterId(),
@@ -371,13 +374,15 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
         @Override
         State handleHeartbeat(ReadChangeStreamResponse.Heartbeat heartbeat) {
           throw new IllegalStateException(
-              "AWAITING_NEW_DATA_CHANGE: Can't handle a Heartbeat in the middle of building a ChangeStreamMutation.");
+              "AWAITING_NEW_DATA_CHANGE: Can't handle a Heartbeat in the middle of building a"
+                  + " ChangeStreamMutation.");
         }
 
         @Override
         State handleCloseStream(ReadChangeStreamResponse.CloseStream closeStream) {
           throw new IllegalStateException(
-              "AWAITING_NEW_DATA_CHANGE: Can't handle a CloseStream in the middle of building a ChangeStreamMutation.");
+              "AWAITING_NEW_DATA_CHANGE: Can't handle a CloseStream in the middle of building a"
+                  + " ChangeStreamMutation.");
         }
 
         @Override
@@ -417,7 +422,8 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   // Case 1_2_1
                   validate(
                       chunk.getChunkInfo().getChunkedValueSize() > 0,
-                      "AWAITING_NEW_DATA_CHANGE: First chunk of a chunked cell must have a positive chunked value size.");
+                      "AWAITING_NEW_DATA_CHANGE: First chunk of a chunked cell must have a positive"
+                          + " chunked value size.");
                   expectedTotalSizeOfChunkedSetCell = chunk.getChunkInfo().getChunkedValueSize();
                   actualTotalSizeOfChunkedSetCell = 0;
                   builder.startCell(
@@ -428,12 +434,14 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   // Case 1_2_2
                   validate(
                       index == 0,
-                      "AWAITING_NEW_DATA_CHANGE: Non-first chunked SetCell must be the first mod of a DataChange.");
+                      "AWAITING_NEW_DATA_CHANGE: Non-first chunked SetCell must be the first mod of"
+                          + " a DataChange.");
                 }
                 // Concatenate the cell value of this mod into the builder.
                 validate(
                     chunk.getChunkInfo().getChunkedValueSize() == expectedTotalSizeOfChunkedSetCell,
-                    "AWAITING_NEW_DATA_CHANGE: Chunked cell value size must be the same for all chunks.");
+                    "AWAITING_NEW_DATA_CHANGE: Chunked cell value size must be the same for all"
+                        + " chunks.");
                 numCellChunks++;
                 builder.cellValue(setCell.getValue());
                 actualTotalSizeOfChunkedSetCell += setCell.getValue().size();
@@ -454,8 +462,8 @@ final class ChangeStreamStateMachine<ChangeStreamRecordT> {
                   // in the following ReadChangeStream response.
                   validate(
                       index == dataChange.getChunksCount() - 1,
-                      "AWAITING_NEW_DATA_CHANGE: Current mod is a chunked SetCell "
-                          + "but not the last chunk, but it's not the last mod of the current response.");
+                      "AWAITING_NEW_DATA_CHANGE: Current mod is a chunked SetCell but not the last"
+                          + " chunk, but it's not the last mod of the current response.");
                   return AWAITING_NEW_DATA_CHANGE;
                 }
               }

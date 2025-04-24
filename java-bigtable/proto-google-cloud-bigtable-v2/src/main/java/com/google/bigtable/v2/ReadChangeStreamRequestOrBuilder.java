@@ -41,6 +41,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The partition.
    */
   com.google.bigtable.v2.StreamPartition getPartition();
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -188,6 +194,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return Whether the continuationTokens field is set.
    */
   boolean hasContinuationTokens();
+
   /**
    *
    *
@@ -209,6 +216,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The continuationTokens.
    */
   com.google.bigtable.v2.StreamContinuationTokens getContinuationTokens();
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return Whether the heartbeatDuration field is set.
    */
   boolean hasHeartbeatDuration();
+
   /**
    *
    *
@@ -296,6 +307,7 @@ public interface ReadChangeStreamRequestOrBuilder
    * @return The heartbeatDuration.
    */
   com.google.protobuf.Duration getHeartbeatDuration();
+
   /**
    *
    *

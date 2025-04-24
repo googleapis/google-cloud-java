@@ -40,6 +40,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.FeatureFlags)
     FeatureFlagsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FeatureFlags.newBuilder() to construct.
   private FeatureFlags(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVERSE_SCANS_FIELD_NUMBER = 1;
   private boolean reverseScans_ = false;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MUTATE_ROWS_RATE_LIMIT_FIELD_NUMBER = 3;
   private boolean mutateRowsRateLimit_ = false;
+
   /**
    *
    *
@@ -109,6 +112,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int MUTATE_ROWS_RATE_LIMIT2_FIELD_NUMBER = 5;
   private boolean mutateRowsRateLimit2_ = false;
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LAST_SCANNED_ROW_RESPONSES_FIELD_NUMBER = 4;
   private boolean lastScannedRowResponses_ = false;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROUTING_COOKIE_FIELD_NUMBER = 6;
   private boolean routingCookie_ = false;
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RETRY_INFO_FIELD_NUMBER = 7;
   private boolean retryInfo_ = false;
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CLIENT_SIDE_METRICS_ENABLED_FIELD_NUMBER = 8;
   private boolean clientSideMetricsEnabled_ = false;
+
   /**
    *
    *
@@ -204,6 +212,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TRAFFIC_DIRECTOR_ENABLED_FIELD_NUMBER = 9;
   private boolean trafficDirectorEnabled_ = false;
+
   /**
    *
    *
@@ -222,6 +231,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECT_ACCESS_REQUESTED_FIELD_NUMBER = 10;
   private boolean directAccessRequested_ = false;
+
   /**
    *
    *
@@ -467,6 +477,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -758,6 +769,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean reverseScans_;
+
     /**
      *
      *
@@ -774,6 +786,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getReverseScans() {
       return reverseScans_;
     }
+
     /**
      *
      *
@@ -794,6 +807,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean mutateRowsRateLimit_;
+
     /**
      *
      *
@@ -831,6 +846,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getMutateRowsRateLimit() {
       return mutateRowsRateLimit_;
     }
+
     /**
      *
      *
@@ -852,6 +868,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +890,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean mutateRowsRateLimit2_;
+
     /**
      *
      *
@@ -890,6 +908,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getMutateRowsRateLimit2() {
       return mutateRowsRateLimit2_;
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +952,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean lastScannedRowResponses_;
+
     /**
      *
      *
@@ -948,6 +969,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getLastScannedRowResponses() {
       return lastScannedRowResponses_;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1011,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean routingCookie_;
+
     /**
      *
      *
@@ -1004,6 +1028,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getRoutingCookie() {
       return routingCookie_;
     }
+
     /**
      *
      *
@@ -1024,6 +1049,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1044,6 +1070,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean retryInfo_;
+
     /**
      *
      *
@@ -1060,6 +1087,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getRetryInfo() {
       return retryInfo_;
     }
+
     /**
      *
      *
@@ -1080,6 +1108,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1129,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean clientSideMetricsEnabled_;
+
     /**
      *
      *
@@ -1115,6 +1145,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getClientSideMetricsEnabled() {
       return clientSideMetricsEnabled_;
     }
+
     /**
      *
      *
@@ -1134,6 +1165,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1185,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean trafficDirectorEnabled_;
+
     /**
      *
      *
@@ -1168,6 +1201,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getTrafficDirectorEnabled() {
       return trafficDirectorEnabled_;
     }
+
     /**
      *
      *
@@ -1187,6 +1221,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1206,6 +1241,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean directAccessRequested_;
+
     /**
      *
      *
@@ -1221,6 +1257,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
     public boolean getDirectAccessRequested() {
       return directAccessRequested_;
     }
+
     /**
      *
      *
@@ -1240,6 +1277,7 @@ public final class FeatureFlags extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

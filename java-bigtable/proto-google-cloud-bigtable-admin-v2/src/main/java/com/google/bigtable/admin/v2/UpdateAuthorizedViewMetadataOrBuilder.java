@@ -37,6 +37,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest getOriginalRequest();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface UpdateAuthorizedViewMetadataOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *

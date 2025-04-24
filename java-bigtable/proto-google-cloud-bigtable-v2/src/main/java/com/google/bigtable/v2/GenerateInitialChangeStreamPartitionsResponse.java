@@ -35,6 +35,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse)
     GenerateInitialChangeStreamPartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateInitialChangeStreamPartitionsResponse.newBuilder() to construct.
   private GenerateInitialChangeStreamPartitionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
   private int bitField0_;
   public static final int PARTITION_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.StreamPartition partition_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
   public boolean hasPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
         ? com.google.bigtable.v2.StreamPartition.getDefaultInstance()
         : partition_;
   }
+
   /**
    *
    *
@@ -281,6 +285,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -492,6 +497,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
             com.google.bigtable.v2.StreamPartition.Builder,
             com.google.bigtable.v2.StreamPartitionOrBuilder>
         partitionBuilder_;
+
     /**
      *
      *
@@ -506,6 +512,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
     public boolean hasPartition() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -526,6 +533,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
         return partitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -548,6 +556,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -567,6 +576,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +604,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -613,6 +624,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -627,6 +639,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -645,6 +658,7 @@ public final class GenerateInitialChangeStreamPartitionsResponse
             : partition_;
       }
     }
+
     /**
      *
      *

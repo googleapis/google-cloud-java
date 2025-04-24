@@ -38,6 +38,7 @@ public interface PartialUpdateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PartialUpdateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.bigtable.admin.v2.Cluster getCluster();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface PartialUpdateClusterRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface PartialUpdateClusterRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

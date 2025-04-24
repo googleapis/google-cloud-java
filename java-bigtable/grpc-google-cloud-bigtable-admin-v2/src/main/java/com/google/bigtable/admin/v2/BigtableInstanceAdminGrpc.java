@@ -1466,6 +1466,19 @@ public final class BigtableInstanceAdminGrpc {
     return BigtableInstanceAdminStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BigtableInstanceAdminBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BigtableInstanceAdminBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigtableInstanceAdminBlockingV2Stub>() {
+          @java.lang.Override
+          public BigtableInstanceAdminBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigtableInstanceAdminBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BigtableInstanceAdminBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2547,6 +2560,458 @@ public final class BigtableInstanceAdminGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BigtableInstanceAdmin.
+   *
+   * <pre>
+   * Service for creating, configuring, and deleting Cloud Bigtable Instances and
+   * Clusters. Provides access to the Instance and Cluster schemas only, not the
+   * tables' metadata or data stored in those tables.
+   * </pre>
+   */
+  public static final class BigtableInstanceAdminBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BigtableInstanceAdminBlockingV2Stub> {
+    private BigtableInstanceAdminBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BigtableInstanceAdminBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BigtableInstanceAdminBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create an instance within a project.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createInstance(
+        com.google.bigtable.admin.v2.CreateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Instance getInstance(
+        com.google.bigtable.admin.v2.GetInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about instances in a project.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListInstancesResponse listInstances(
+        com.google.bigtable.admin.v2.ListInstancesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListInstancesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an instance within a project. This method updates only the display
+     * name and type for an Instance. To update other Instance properties, such as
+     * labels, use PartialUpdateInstance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Instance updateInstance(
+        com.google.bigtable.admin.v2.Instance request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates an instance within a project. This method can modify all
+     * fields of an Instance and is the preferred way to update an Instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation partialUpdateInstance(
+        com.google.bigtable.admin.v2.PartialUpdateInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPartialUpdateInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Delete an instance from a project.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteInstance(
+        com.google.bigtable.admin.v2.DeleteInstanceRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteInstanceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a cluster within an instance.
+     * Note that exactly one of Cluster.serve_nodes and
+     * Cluster.cluster_config.cluster_autoscaling_config can be set. If
+     * serve_nodes is set to non-zero, then the cluster is manually scaled. If
+     * cluster_config.cluster_autoscaling_config is non-empty, then autoscaling is
+     * enabled.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createCluster(
+        com.google.bigtable.admin.v2.CreateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a cluster.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Cluster getCluster(
+        com.google.bigtable.admin.v2.GetClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about clusters in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListClustersResponse listClusters(
+        com.google.bigtable.admin.v2.ListClustersRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListClustersMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a cluster within an instance.
+     * Note that UpdateCluster does not support updating
+     * cluster_config.cluster_autoscaling_config. In order to update it, you
+     * must use PartialUpdateCluster.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateCluster(
+        com.google.bigtable.admin.v2.Cluster request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Partially updates a cluster within a project. This method is the preferred
+     * way to update a Cluster.
+     * To enable and update autoscaling, set
+     * cluster_config.cluster_autoscaling_config. When autoscaling is enabled,
+     * serve_nodes is treated as an OUTPUT_ONLY field, meaning that updates to it
+     * are ignored. Note that an update cannot simultaneously set serve_nodes to
+     * non-zero and cluster_config.cluster_autoscaling_config to non-empty, and
+     * also specify both in the update_mask.
+     * To disable autoscaling, clear cluster_config.cluster_autoscaling_config,
+     * and explicitly set a serve_node count via the update_mask.
+     * </pre>
+     */
+    public com.google.longrunning.Operation partialUpdateCluster(
+        com.google.bigtable.admin.v2.PartialUpdateClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPartialUpdateClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a cluster from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteCluster(
+        com.google.bigtable.admin.v2.DeleteClusterRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteClusterMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates an app profile within an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.AppProfile createAppProfile(
+        com.google.bigtable.admin.v2.CreateAppProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAppProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about an app profile.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.AppProfile getAppProfile(
+        com.google.bigtable.admin.v2.GetAppProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAppProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about app profiles in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListAppProfilesResponse listAppProfiles(
+        com.google.bigtable.admin.v2.ListAppProfilesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAppProfilesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an app profile within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAppProfile(
+        com.google.bigtable.admin.v2.UpdateAppProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAppProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an app profile from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAppProfile(
+        com.google.bigtable.admin.v2.DeleteAppProfileRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAppProfileMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for an instance resource. Returns an empty
+     * policy if an instance exists but does not have a policy set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on an instance resource. Replaces any
+     * existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified instance resource.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists hot tablets in a cluster, within the time range provided. Hot
+     * tablets are ordered based on CPU usage.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListHotTabletsResponse listHotTablets(
+        com.google.bigtable.admin.v2.ListHotTabletsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListHotTabletsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createLogicalView(
+        com.google.bigtable.admin.v2.CreateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a logical view.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.LogicalView getLogicalView(
+        com.google.bigtable.admin.v2.GetLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about logical views in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListLogicalViewsResponse listLogicalViews(
+        com.google.bigtable.admin.v2.ListLogicalViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListLogicalViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a logical view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateLogicalView(
+        com.google.bigtable.admin.v2.UpdateLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a logical view from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteLogicalView(
+        com.google.bigtable.admin.v2.DeleteLogicalViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteLogicalViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createMaterializedView(
+        com.google.bigtable.admin.v2.CreateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information about a materialized view.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.MaterializedView getMaterializedView(
+        com.google.bigtable.admin.v2.GetMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists information about materialized views in an instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListMaterializedViewsResponse listMaterializedViews(
+        com.google.bigtable.admin.v2.ListMaterializedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMaterializedViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a materialized view within an instance.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateMaterializedView(
+        com.google.bigtable.admin.v2.UpdateMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateMaterializedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a materialized view from an instance.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMaterializedView(
+        com.google.bigtable.admin.v2.DeleteMaterializedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMaterializedViewMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BigtableInstanceAdmin.
    *
    * <pre>
    * Service for creating, configuring, and deleting Cloud Bigtable Instances and

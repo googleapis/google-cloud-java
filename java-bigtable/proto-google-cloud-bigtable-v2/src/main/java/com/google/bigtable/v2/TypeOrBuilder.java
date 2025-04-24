@@ -36,6 +36,7 @@ public interface TypeOrBuilder
    * @return Whether the bytesType field is set.
    */
   boolean hasBytesType();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface TypeOrBuilder
    * @return The bytesType.
    */
   com.google.bigtable.v2.Type.Bytes getBytesType();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface TypeOrBuilder
    * @return Whether the stringType field is set.
    */
   boolean hasStringType();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface TypeOrBuilder
    * @return The stringType.
    */
   com.google.bigtable.v2.Type.String getStringType();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface TypeOrBuilder
    * @return Whether the int64Type field is set.
    */
   boolean hasInt64Type();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface TypeOrBuilder
    * @return The int64Type.
    */
   com.google.bigtable.v2.Type.Int64 getInt64Type();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface TypeOrBuilder
    * @return Whether the float32Type field is set.
    */
   boolean hasFloat32Type();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface TypeOrBuilder
    * @return The float32Type.
    */
   com.google.bigtable.v2.Type.Float32 getFloat32Type();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface TypeOrBuilder
    * @return Whether the float64Type field is set.
    */
   boolean hasFloat64Type();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface TypeOrBuilder
    * @return The float64Type.
    */
   com.google.bigtable.v2.Type.Float64 getFloat64Type();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface TypeOrBuilder
    * @return Whether the boolType field is set.
    */
   boolean hasBoolType();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface TypeOrBuilder
    * @return The boolType.
    */
   com.google.bigtable.v2.Type.Bool getBoolType();
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public interface TypeOrBuilder
    * @return Whether the timestampType field is set.
    */
   boolean hasTimestampType();
+
   /**
    *
    *
@@ -258,6 +271,7 @@ public interface TypeOrBuilder
    * @return The timestampType.
    */
   com.google.bigtable.v2.Type.Timestamp getTimestampType();
+
   /**
    *
    *
@@ -281,6 +295,7 @@ public interface TypeOrBuilder
    * @return Whether the dateType field is set.
    */
   boolean hasDateType();
+
   /**
    *
    *
@@ -293,6 +308,7 @@ public interface TypeOrBuilder
    * @return The dateType.
    */
   com.google.bigtable.v2.Type.Date getDateType();
+
   /**
    *
    *
@@ -316,6 +332,7 @@ public interface TypeOrBuilder
    * @return Whether the aggregateType field is set.
    */
   boolean hasAggregateType();
+
   /**
    *
    *
@@ -328,6 +345,7 @@ public interface TypeOrBuilder
    * @return The aggregateType.
    */
   com.google.bigtable.v2.Type.Aggregate getAggregateType();
+
   /**
    *
    *
@@ -351,6 +369,7 @@ public interface TypeOrBuilder
    * @return Whether the structType field is set.
    */
   boolean hasStructType();
+
   /**
    *
    *
@@ -363,6 +382,7 @@ public interface TypeOrBuilder
    * @return The structType.
    */
   com.google.bigtable.v2.Type.Struct getStructType();
+
   /**
    *
    *
@@ -386,6 +406,7 @@ public interface TypeOrBuilder
    * @return Whether the arrayType field is set.
    */
   boolean hasArrayType();
+
   /**
    *
    *
@@ -398,6 +419,7 @@ public interface TypeOrBuilder
    * @return The arrayType.
    */
   com.google.bigtable.v2.Type.Array getArrayType();
+
   /**
    *
    *
@@ -421,6 +443,7 @@ public interface TypeOrBuilder
    * @return Whether the mapType field is set.
    */
   boolean hasMapType();
+
   /**
    *
    *
@@ -433,6 +456,7 @@ public interface TypeOrBuilder
    * @return The mapType.
    */
   com.google.bigtable.v2.Type.Map getMapType();
+
   /**
    *
    *

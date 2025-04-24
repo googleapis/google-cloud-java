@@ -91,7 +91,8 @@ public class BigtableUnaryOperationCallableTest {
     verify(callable.logger).log(Mockito.any(), msgCaptor.capture());
     assertThat(msgCaptor.getValue())
         .isEqualTo(
-            "Received response after future is resolved for a Fake.method unary operation. previous: first, New response: second");
+            "Received response after future is resolved for a Fake.method unary operation."
+                + " previous: first, New response: second");
 
     assertThat(call.getController().isCancelled()).isTrue();
   }

@@ -35,6 +35,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest)
     GenerateInitialChangeStreamPartitionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateInitialChangeStreamPartitionsRequest.newBuilder() to construct.
   private GenerateInitialChangeStreamPartitionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableName_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appProfileId_ = "";
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -353,6 +358,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +566,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
     private int bitField0_;
 
     private java.lang.Object tableName_ = "";
+
     /**
      *
      *
@@ -587,6 +594,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -614,6 +622,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -640,6 +649,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +672,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -691,6 +702,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
     }
 
     private java.lang.Object appProfileId_ = "";
+
     /**
      *
      *
@@ -715,6 +727,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -739,6 +752,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +796,7 @@ public final class GenerateInitialChangeStreamPartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

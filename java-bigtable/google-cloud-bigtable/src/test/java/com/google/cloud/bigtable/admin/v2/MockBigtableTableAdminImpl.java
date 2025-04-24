@@ -136,7 +136,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateTableFromSnapshot, expected %s or %s",
+                  "Unrecognized response type %s for method CreateTableFromSnapshot, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -259,7 +260,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateAuthorizedView, expected %s or %s",
+                  "Unrecognized response type %s for method CreateAuthorizedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -323,7 +325,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateAuthorizedView, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateAuthorizedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -344,7 +347,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteAuthorizedView, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteAuthorizedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));
@@ -365,7 +369,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ModifyColumnFamilies, expected %s or %s",
+                  "Unrecognized response type %s for method ModifyColumnFamilies, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Table.class.getName(),
                   Exception.class.getName())));
@@ -407,7 +412,8 @@ public class MockBigtableTableAdminImpl extends BigtableTableAdminImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method GenerateConsistencyToken, expected %s or %s",
+                  "Unrecognized response type %s for method GenerateConsistencyToken, expected %s"
+                      + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   GenerateConsistencyTokenResponse.class.getName(),
                   Exception.class.getName())));

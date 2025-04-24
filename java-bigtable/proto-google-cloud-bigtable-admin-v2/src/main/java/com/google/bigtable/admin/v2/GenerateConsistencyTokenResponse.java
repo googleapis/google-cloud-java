@@ -34,6 +34,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.GenerateConsistencyTokenResponse)
     GenerateConsistencyTokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GenerateConsistencyTokenResponse.newBuilder() to construct.
   private GenerateConsistencyTokenResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object consistencyToken_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -276,6 +279,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -464,6 +468,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object consistencyToken_ = "";
+
     /**
      *
      *
@@ -486,6 +491,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -508,6 +514,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -529,6 +536,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -546,6 +554,7 @@ public final class GenerateConsistencyTokenResponse extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

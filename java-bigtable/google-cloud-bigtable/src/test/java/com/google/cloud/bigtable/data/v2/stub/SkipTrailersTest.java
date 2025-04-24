@@ -229,6 +229,7 @@ public class SkipTrailersTest {
       return Optional.ofNullable(callCounts.get(op)).map(AtomicInteger::get).orElse(0);
     }
   }
+
   /**
    * Hack the srvice definition to allow grpc server to simulate delayed trailers. This will augment
    * the bigtable service definition to promote unary rpcs to server streaming

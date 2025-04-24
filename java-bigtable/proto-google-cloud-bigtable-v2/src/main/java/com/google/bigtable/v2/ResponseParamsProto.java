@@ -41,11 +41,14 @@ public final class ResponseParamsProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/bigtable/v2/response_params.pro"
-          + "to\022\022google.bigtable.v2\"Z\n\016ResponseParams"
-          + "\022\024\n\007zone_id\030\001 \001(\tH\000\210\001\001\022\027\n\ncluster_id\030\002 \001"
-          + "(\tH\001\210\001\001B\n\n\010_zone_idB\r\n\013_cluster_idB\275\001\n\026c"
-          + "om.google.bigtable.v2B\023ResponseParamsPro"
+      "\n"
+          + "(google/bigtable/v2/response_params.proto\022\022google.bigtable.v2\"Z\n"
+          + "\016ResponseParams\022\024\n"
+          + "\007zone_id\030\001 \001(\tH\000\210\001\001\022\027\n\n"
+          + "cluster_id\030\002 \001(\tH\001\210\001\001B\n\n"
+          + "\010_zone_idB\r\n"
+          + "\013_cluster_idB\275\001\n"
+          + "\026com.google.bigtable.v2B\023ResponseParamsPro"
           + "toP\001Z8cloud.google.com/go/bigtable/apiv2"
           + "/bigtablepb;bigtablepb\252\002\030Google.Cloud.Bi"
           + "gtable.V2\312\002\030Google\\Cloud\\Bigtable\\V2\352\002\033G"

@@ -34,6 +34,7 @@ public interface ArrayValueOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 1;</code>
    */
   java.util.List<com.google.bigtable.v2.Value> getValuesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ArrayValueOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 1;</code>
    */
   com.google.bigtable.v2.Value getValues(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ArrayValueOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 1;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ArrayValueOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 1;</code>
    */
   java.util.List<? extends com.google.bigtable.v2.ValueOrBuilder> getValuesOrBuilderList();
+
   /**
    *
    *

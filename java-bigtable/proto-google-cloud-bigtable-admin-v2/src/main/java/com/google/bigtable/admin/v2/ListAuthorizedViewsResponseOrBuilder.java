@@ -34,6 +34,7 @@ public interface ListAuthorizedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AuthorizedView authorized_views = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.AuthorizedView> getAuthorizedViewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAuthorizedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AuthorizedView authorized_views = 1;</code>
    */
   com.google.bigtable.admin.v2.AuthorizedView getAuthorizedViews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAuthorizedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AuthorizedView authorized_views = 1;</code>
    */
   int getAuthorizedViewsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAuthorizedViewsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.AuthorizedViewOrBuilder>
       getAuthorizedViewsOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListAuthorizedViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

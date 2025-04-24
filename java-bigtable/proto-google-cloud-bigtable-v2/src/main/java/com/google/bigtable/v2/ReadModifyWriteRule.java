@@ -34,6 +34,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadModifyWriteRule)
     ReadModifyWriteRuleOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadModifyWriteRule.newBuilder() to construct.
   private ReadModifyWriteRule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     private RuleCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object familyName_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
 
   public static final int COLUMN_QUALIFIER_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   }
 
   public static final int APPEND_VALUE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -205,6 +211,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   public boolean hasAppendValue() {
     return ruleCase_ == 3;
   }
+
   /**
    *
    *
@@ -227,6 +234,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   }
 
   public static final int INCREMENT_AMOUNT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
   public boolean hasIncrementAmount() {
     return ruleCase_ == 4;
   }
+
   /**
    *
    *
@@ -474,6 +483,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -721,6 +731,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object familyName_ = "";
+
     /**
      *
      *
@@ -744,6 +755,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -767,6 +779,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +821,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +847,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.ByteString columnQualifier_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -849,6 +865,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getColumnQualifier() {
       return columnQualifier_;
     }
+
     /**
      *
      *
@@ -872,6 +889,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +926,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     public boolean hasAppendValue() {
       return ruleCase_ == 3;
     }
+
     /**
      *
      *
@@ -927,6 +946,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -950,6 +970,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1010,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
     public boolean hasIncrementAmount() {
       return ruleCase_ == 4;
     }
+
     /**
      *
      *
@@ -1009,6 +1031,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       }
       return 0L;
     }
+
     /**
      *
      *
@@ -1031,6 +1054,7 @@ public final class ReadModifyWriteRule extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

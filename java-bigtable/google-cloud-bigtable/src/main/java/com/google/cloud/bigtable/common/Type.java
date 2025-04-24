@@ -209,25 +209,29 @@ public interface Type {
     @Override
     public List<Field> getFields() {
       throw new UnsupportedOperationException(
-          "Attempting to access schema of Schemaless Struct. These structs should only be used for typing of StructReader data access calls.");
+          "Attempting to access schema of Schemaless Struct. These structs should only be used for"
+              + " typing of StructReader data access calls.");
     }
 
     @Override
     public SqlType<?> getType(int fieldIndex) {
       throw new UnsupportedOperationException(
-          "Attempting to access schema of Schemaless Struct. These structs should only be used for typing of StructReader data access calls.");
+          "Attempting to access schema of Schemaless Struct. These structs should only be used for"
+              + " typing of StructReader data access calls.");
     }
 
     @Override
     public SqlType<?> getType(java.lang.String fieldName) {
       throw new UnsupportedOperationException(
-          "Attempting to access schema of Schemaless Struct. These structs should only be used for typing of StructReader data access calls.");
+          "Attempting to access schema of Schemaless Struct. These structs should only be used for"
+              + " typing of StructReader data access calls.");
     }
 
     @Override
     public int getColumnIndex(java.lang.String fieldName) {
       throw new UnsupportedOperationException(
-          "Attempting to access schema of Schemaless Struct. These structs should only be used for typing of StructReader data access calls.");
+          "Attempting to access schema of Schemaless Struct. These structs should only be used for"
+              + " typing of StructReader data access calls.");
     }
 
     @Override

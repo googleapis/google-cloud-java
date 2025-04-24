@@ -41,6 +41,7 @@ public interface ColumnFamilyOrBuilder
    * @return Whether the gcRule field is set.
    */
   boolean hasGcRule();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface ColumnFamilyOrBuilder
    * @return The gcRule.
    */
   com.google.bigtable.admin.v2.GcRule getGcRule();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface ColumnFamilyOrBuilder
    * @return Whether the valueType field is set.
    */
   boolean hasValueType();
+
   /**
    *
    *
@@ -116,6 +119,7 @@ public interface ColumnFamilyOrBuilder
    * @return The valueType.
    */
   com.google.bigtable.admin.v2.Type getValueType();
+
   /**
    *
    *

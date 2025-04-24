@@ -34,6 +34,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.Column)
     ColumnOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Column.newBuilder() to construct.
   private Column(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
   public static final int QUALIFIER_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString qualifier_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.Cell> cells_;
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.bigtable.v2.Cell> getCellsList() {
     return cells_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.bigtable.v2.CellOrBuilder> getCellsOrBuilderList() {
     return cells_;
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   public int getCellsCount() {
     return cells_.size();
   }
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.v2.Cell getCells(int index) {
     return cells_.get(index);
   }
+
   /**
    *
    *
@@ -323,6 +330,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +568,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString qualifier_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -579,6 +588,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getQualifier() {
       return qualifier_;
     }
+
     /**
      *
      *
@@ -604,6 +614,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +668,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -673,6 +685,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -689,6 +702,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +745,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +768,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +791,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +811,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +851,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +871,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -869,6 +891,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +904,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Cell.Builder getCellsBuilder(int index) {
       return getCellsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -897,6 +921,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return cellsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -913,6 +938,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(cells_);
       }
     }
+
     /**
      *
      *
@@ -925,6 +951,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.Cell.Builder addCellsBuilder() {
       return getCellsFieldBuilder().addBuilder(com.google.bigtable.v2.Cell.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -938,6 +965,7 @@ public final class Column extends com.google.protobuf.GeneratedMessageV3
       return getCellsFieldBuilder()
           .addBuilder(index, com.google.bigtable.v2.Cell.getDefaultInstance());
     }
+
     /**
      *
      *

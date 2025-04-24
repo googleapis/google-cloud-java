@@ -34,6 +34,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Table)
     TableOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Table.newBuilder() to construct.
   private Table(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -125,6 +126,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>TIMESTAMP_GRANULARITY_UNSPECIFIED = 0;</code>
      */
     public static final int TIMESTAMP_GRANULARITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -304,6 +306,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int VIEW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -314,6 +317,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>NAME_ONLY = 1;</code>
      */
     public static final int NAME_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -324,6 +328,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_VIEW = 2;</code>
      */
     public static final int SCHEMA_VIEW_VALUE = 2;
+
     /**
      *
      *
@@ -335,6 +340,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>REPLICATION_VIEW = 3;</code>
      */
     public static final int REPLICATION_VIEW_VALUE = 3;
+
     /**
      *
      *
@@ -345,6 +351,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * <code>ENCRYPTION_VIEW = 5;</code>
      */
     public static final int ENCRYPTION_VIEW_VALUE = 5;
+
     /**
      *
      *
@@ -464,6 +471,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return The enum numeric value on the wire for replicationState.
      */
     int getReplicationStateValue();
+
     /**
      *
      *
@@ -495,6 +503,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> getEncryptionInfoList();
+
     /**
      *
      *
@@ -511,6 +520,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo(int index);
+
     /**
      *
      *
@@ -527,6 +537,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getEncryptionInfoCount();
+
     /**
      *
      *
@@ -544,6 +555,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.bigtable.admin.v2.EncryptionInfoOrBuilder>
         getEncryptionInfoOrBuilderList();
+
     /**
      *
      *
@@ -561,6 +573,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.EncryptionInfoOrBuilder getEncryptionInfoOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -575,6 +588,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Table.ClusterState)
       ClusterStateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClusterState.newBuilder() to construct.
     private ClusterState(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -697,6 +711,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>STATE_NOT_KNOWN = 0;</code>
        */
       public static final int STATE_NOT_KNOWN_VALUE = 0;
+
       /**
        *
        *
@@ -709,6 +724,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>INITIALIZING = 1;</code>
        */
       public static final int INITIALIZING_VALUE = 1;
+
       /**
        *
        *
@@ -720,6 +736,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>PLANNED_MAINTENANCE = 2;</code>
        */
       public static final int PLANNED_MAINTENANCE_VALUE = 2;
+
       /**
        *
        *
@@ -731,6 +748,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>UNPLANNED_MAINTENANCE = 3;</code>
        */
       public static final int UNPLANNED_MAINTENANCE_VALUE = 3;
+
       /**
        *
        *
@@ -743,6 +761,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
        * <code>READY = 4;</code>
        */
       public static final int READY_VALUE = 4;
+
       /**
        *
        *
@@ -852,6 +871,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     public static final int REPLICATION_STATE_FIELD_NUMBER = 1;
     private int replicationState_ = 0;
+
     /**
      *
      *
@@ -869,6 +889,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getReplicationStateValue() {
       return replicationState_;
     }
+
     /**
      *
      *
@@ -896,6 +917,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> encryptionInfo_;
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.bigtable.admin.v2.EncryptionInfo> getEncryptionInfoList() {
       return encryptionInfo_;
     }
+
     /**
      *
      *
@@ -935,6 +958,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getEncryptionInfoOrBuilderList() {
       return encryptionInfo_;
     }
+
     /**
      *
      *
@@ -954,6 +978,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getEncryptionInfoCount() {
       return encryptionInfo_.size();
     }
+
     /**
      *
      *
@@ -973,6 +998,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo(int index) {
       return encryptionInfo_.get(index);
     }
+
     /**
      *
      *
@@ -1169,6 +1195,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1415,6 +1442,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private int replicationState_ = 0;
+
       /**
        *
        *
@@ -1432,6 +1460,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       public int getReplicationStateValue() {
         return replicationState_;
       }
+
       /**
        *
        *
@@ -1452,6 +1481,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1475,6 +1505,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             ? com.google.bigtable.admin.v2.Table.ClusterState.ReplicationState.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1499,6 +1530,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1558,6 +1590,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return encryptionInfoBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -1580,6 +1613,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return encryptionInfoBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -1602,6 +1636,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return encryptionInfoBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -1631,6 +1666,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1657,6 +1693,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1685,6 +1722,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1714,6 +1752,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1740,6 +1779,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1766,6 +1806,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1792,6 +1833,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1817,6 +1859,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1842,6 +1885,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1861,6 +1905,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           int index) {
         return getEncryptionInfoFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -1884,6 +1929,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return encryptionInfoBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -1907,6 +1953,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(encryptionInfo_);
         }
       }
+
       /**
        *
        *
@@ -1926,6 +1973,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return getEncryptionInfoFieldBuilder()
             .addBuilder(com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -1946,6 +1994,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return getEncryptionInfoFieldBuilder()
             .addBuilder(index, com.google.bigtable.admin.v2.EncryptionInfo.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -2070,6 +2119,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the retentionPeriod field is set.
      */
     boolean hasRetentionPeriod();
+
     /**
      *
      *
@@ -2085,6 +2135,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return The retentionPeriod.
      */
     com.google.protobuf.Duration getRetentionPeriod();
+
     /**
      *
      *
@@ -2113,6 +2164,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the frequency field is set.
      */
     boolean hasFrequency();
+
     /**
      *
      *
@@ -2127,6 +2179,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      * @return The frequency.
      */
     com.google.protobuf.Duration getFrequency();
+
     /**
      *
      *
@@ -2140,6 +2193,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.DurationOrBuilder getFrequencyOrBuilder();
   }
+
   /**
    *
    *
@@ -2154,6 +2208,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Table.AutomatedBackupPolicy)
       AutomatedBackupPolicyOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AutomatedBackupPolicy.newBuilder() to construct.
     private AutomatedBackupPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2185,6 +2240,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int RETENTION_PERIOD_FIELD_NUMBER = 1;
     private com.google.protobuf.Duration retentionPeriod_;
+
     /**
      *
      *
@@ -2203,6 +2259,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRetentionPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2223,6 +2280,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Duration.getDefaultInstance()
           : retentionPeriod_;
     }
+
     /**
      *
      *
@@ -2244,6 +2302,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
     public static final int FREQUENCY_FIELD_NUMBER = 2;
     private com.google.protobuf.Duration frequency_;
+
     /**
      *
      *
@@ -2261,6 +2320,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFrequency() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2278,6 +2338,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Duration getFrequency() {
       return frequency_ == null ? com.google.protobuf.Duration.getDefaultInstance() : frequency_;
     }
+
     /**
      *
      *
@@ -2474,6 +2535,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2701,6 +2763,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           retentionPeriodBuilder_;
+
       /**
        *
        *
@@ -2718,6 +2781,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRetentionPeriod() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2741,6 +2805,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return retentionPeriodBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2766,6 +2831,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2788,6 +2854,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2818,6 +2885,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2840,6 +2908,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2857,6 +2926,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getRetentionPeriodFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2878,6 +2948,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               : retentionPeriod_;
         }
       }
+
       /**
        *
        *
@@ -2913,6 +2984,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Duration.Builder,
               com.google.protobuf.DurationOrBuilder>
           frequencyBuilder_;
+
       /**
        *
        *
@@ -2929,6 +3001,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       public boolean hasFrequency() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -2951,6 +3024,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           return frequencyBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2975,6 +3049,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2996,6 +3071,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3025,6 +3101,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -3046,6 +3123,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3062,6 +3140,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getFrequencyFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3082,6 +3161,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
               : frequency_;
         }
       }
+
       /**
        *
        *
@@ -3191,6 +3271,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     private AutomatedBackupConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3225,6 +3306,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3250,6 +3332,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3311,6 +3394,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getClusterStatesCount() {
     return internalGetClusterStates().getMap().size();
   }
+
   /**
    *
    *
@@ -3333,6 +3417,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetClusterStates().getMap().containsKey(key);
   }
+
   /** Use {@link #getClusterStatesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -3340,6 +3425,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getClusterStates() {
     return getClusterStatesMap();
   }
+
   /**
    *
    *
@@ -3360,6 +3446,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getClusterStatesMap() {
     return internalGetClusterStates().getMap();
   }
+
   /**
    *
    *
@@ -3387,6 +3474,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         internalGetClusterStates().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3448,6 +3536,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getColumnFamiliesCount() {
     return internalGetColumnFamilies().getMap().size();
   }
+
   /**
    *
    *
@@ -3465,6 +3554,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetColumnFamilies().getMap().containsKey(key);
   }
+
   /** Use {@link #getColumnFamiliesMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
@@ -3472,6 +3562,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getColumnFamilies() {
     return getColumnFamiliesMap();
   }
+
   /**
    *
    *
@@ -3487,6 +3578,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       getColumnFamiliesMap() {
     return internalGetColumnFamilies().getMap();
   }
+
   /**
    *
    *
@@ -3509,6 +3601,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         internalGetColumnFamilies().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -3534,6 +3627,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GRANULARITY_FIELD_NUMBER = 4;
   private int granularity_ = 0;
+
   /**
    *
    *
@@ -3554,6 +3648,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public int getGranularityValue() {
     return granularity_;
   }
+
   /**
    *
    *
@@ -3581,6 +3676,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int RESTORE_INFO_FIELD_NUMBER = 6;
   private com.google.bigtable.admin.v2.RestoreInfo restoreInfo_;
+
   /**
    *
    *
@@ -3599,6 +3695,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRestoreInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3619,6 +3716,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         ? com.google.bigtable.admin.v2.RestoreInfo.getDefaultInstance()
         : restoreInfo_;
   }
+
   /**
    *
    *
@@ -3640,6 +3738,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CHANGE_STREAM_CONFIG_FIELD_NUMBER = 8;
   private com.google.bigtable.admin.v2.ChangeStreamConfig changeStreamConfig_;
+
   /**
    *
    *
@@ -3657,6 +3756,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasChangeStreamConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -3676,6 +3776,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         ? com.google.bigtable.admin.v2.ChangeStreamConfig.getDefaultInstance()
         : changeStreamConfig_;
   }
+
   /**
    *
    *
@@ -3696,6 +3797,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETION_PROTECTION_FIELD_NUMBER = 9;
   private boolean deletionProtection_ = false;
+
   /**
    *
    *
@@ -3720,6 +3822,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AUTOMATED_BACKUP_POLICY_FIELD_NUMBER = 13;
+
   /**
    *
    *
@@ -3737,6 +3840,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAutomatedBackupPolicy() {
     return automatedBackupConfigCase_ == 13;
   }
+
   /**
    *
    *
@@ -3757,6 +3861,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3779,6 +3884,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_KEY_SCHEMA_FIELD_NUMBER = 15;
   private com.google.bigtable.admin.v2.Type.Struct rowKeySchema_;
+
   /**
    *
    *
@@ -3849,6 +3955,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRowKeySchema() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -3921,6 +4028,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         ? com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance()
         : rowKeySchema_;
   }
+
   /**
    *
    *
@@ -4276,6 +4384,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4672,6 +4781,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4696,6 +4806,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4720,6 +4831,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4743,6 +4855,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4762,6 +4875,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4807,7 +4921,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ClusterStatesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ClusterStatesConverter clusterStatesConverter =
         new ClusterStatesConverter();
@@ -4848,6 +4963,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getClusterStatesCount() {
       return internalGetClusterStates().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -4870,6 +4986,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetClusterStates().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getClusterStatesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -4877,6 +4994,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getClusterStates() {
       return getClusterStatesMap();
     }
+
     /**
      *
      *
@@ -4897,6 +5015,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getClusterStatesMap() {
       return internalGetClusterStates().getImmutableMap();
     }
+
     /**
      *
      *
@@ -4924,6 +5043,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           map = internalGetMutableClusterStates().ensureBuilderMap();
       return map.containsKey(key) ? clusterStatesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -4958,6 +5078,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterStates().clear();
       return this;
     }
+
     /**
      *
      *
@@ -4980,6 +5101,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableClusterStates().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
@@ -4987,6 +5109,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return internalGetMutableClusterStates().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -5014,6 +5137,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -5041,6 +5165,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -5092,7 +5217,8 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           defaultEntry() {
         return ColumnFamiliesDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ColumnFamiliesConverter columnFamiliesConverter =
         new ColumnFamiliesConverter();
@@ -5133,6 +5259,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getColumnFamiliesCount() {
       return internalGetColumnFamilies().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -5150,6 +5277,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetColumnFamilies().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getColumnFamiliesMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -5157,6 +5285,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getColumnFamilies() {
       return getColumnFamiliesMap();
     }
+
     /**
      *
      *
@@ -5172,6 +5301,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getColumnFamiliesMap() {
       return internalGetColumnFamilies().getImmutableMap();
     }
+
     /**
      *
      *
@@ -5194,6 +5324,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           internalGetMutableColumnFamilies().ensureBuilderMap();
       return map.containsKey(key) ? columnFamiliesConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -5223,6 +5354,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableColumnFamilies().clear();
       return this;
     }
+
     /**
      *
      *
@@ -5240,6 +5372,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableColumnFamilies().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily>
@@ -5247,6 +5380,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return internalGetMutableColumnFamilies().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -5269,6 +5403,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5291,6 +5426,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *
@@ -5318,6 +5454,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int granularity_ = 0;
+
     /**
      *
      *
@@ -5338,6 +5475,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public int getGranularityValue() {
       return granularity_;
     }
+
     /**
      *
      *
@@ -5361,6 +5499,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5385,6 +5524,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Table.TimestampGranularity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -5411,6 +5551,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5440,6 +5581,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.RestoreInfo.Builder,
             com.google.bigtable.admin.v2.RestoreInfoOrBuilder>
         restoreInfoBuilder_;
+
     /**
      *
      *
@@ -5457,6 +5599,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRestoreInfo() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -5480,6 +5623,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return restoreInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5505,6 +5649,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5528,6 +5673,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5558,6 +5704,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5580,6 +5727,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5597,6 +5745,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRestoreInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5618,6 +5767,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : restoreInfo_;
       }
     }
+
     /**
      *
      *
@@ -5653,6 +5803,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.ChangeStreamConfig.Builder,
             com.google.bigtable.admin.v2.ChangeStreamConfigOrBuilder>
         changeStreamConfigBuilder_;
+
     /**
      *
      *
@@ -5669,6 +5820,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasChangeStreamConfig() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -5691,6 +5843,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return changeStreamConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -5715,6 +5868,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5737,6 +5891,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5767,6 +5922,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5788,6 +5944,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5804,6 +5961,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getChangeStreamConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5825,6 +5983,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : changeStreamConfig_;
       }
     }
+
     /**
      *
      *
@@ -5854,6 +6013,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deletionProtection_;
+
     /**
      *
      *
@@ -5876,6 +6036,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeletionProtection() {
       return deletionProtection_;
     }
+
     /**
      *
      *
@@ -5902,6 +6063,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5932,6 +6094,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.Builder,
             com.google.bigtable.admin.v2.Table.AutomatedBackupPolicyOrBuilder>
         automatedBackupPolicyBuilder_;
+
     /**
      *
      *
@@ -5949,6 +6112,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutomatedBackupPolicy() {
       return automatedBackupConfigCase_ == 13;
     }
+
     /**
      *
      *
@@ -5976,6 +6140,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6001,6 +6166,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       automatedBackupConfigCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -6023,6 +6189,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       automatedBackupConfigCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -6060,6 +6227,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       automatedBackupConfigCase_ = 13;
       return this;
     }
+
     /**
      *
      *
@@ -6087,6 +6255,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6102,6 +6271,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         getAutomatedBackupPolicyBuilder() {
       return getAutomatedBackupPolicyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6125,6 +6295,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -6167,6 +6338,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Struct.Builder,
             com.google.bigtable.admin.v2.Type.StructOrBuilder>
         rowKeySchemaBuilder_;
+
     /**
      *
      *
@@ -6236,6 +6408,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRowKeySchema() {
       return ((bitField0_ & 0x00000100) != 0);
     }
+
     /**
      *
      *
@@ -6311,6 +6484,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
         return rowKeySchemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -6388,6 +6562,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6463,6 +6638,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6545,6 +6721,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -6619,6 +6796,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -6688,6 +6866,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRowKeySchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -6761,6 +6940,7 @@ public final class Table extends com.google.protobuf.GeneratedMessageV3
             : rowKeySchema_;
       }
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.FullReadStatsView)
     FullReadStatsViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FullReadStatsView.newBuilder() to construct.
   private FullReadStatsView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int READ_ITERATION_STATS_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.ReadIterationStats readIterationStats_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
   public boolean hasReadIterationStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         ? com.google.bigtable.v2.ReadIterationStats.getDefaultInstance()
         : readIterationStats_;
   }
+
   /**
    *
    *
@@ -123,6 +127,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
 
   public static final int REQUEST_LATENCY_STATS_FIELD_NUMBER = 2;
   private com.google.bigtable.v2.RequestLatencyStats requestLatencyStats_;
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
   public boolean hasRequestLatencyStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         ? com.google.bigtable.v2.RequestLatencyStats.getDefaultInstance()
         : requestLatencyStats_;
   }
+
   /**
    *
    *
@@ -351,6 +358,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +588,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
             com.google.bigtable.v2.ReadIterationStats.Builder,
             com.google.bigtable.v2.ReadIterationStatsOrBuilder>
         readIterationStatsBuilder_;
+
     /**
      *
      *
@@ -597,6 +606,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     public boolean hasReadIterationStats() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -620,6 +630,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         return readIterationStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +712,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +735,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +753,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getReadIterationStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -759,6 +775,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
             : readIterationStats_;
       }
     }
+
     /**
      *
      *
@@ -794,6 +811,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
             com.google.bigtable.v2.RequestLatencyStats.Builder,
             com.google.bigtable.v2.RequestLatencyStatsOrBuilder>
         requestLatencyStatsBuilder_;
+
     /**
      *
      *
@@ -809,6 +827,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
     public boolean hasRequestLatencyStats() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -830,6 +849,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
         return requestLatencyStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -853,6 +873,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -874,6 +895,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -903,6 +925,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -923,6 +946,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -938,6 +962,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getRequestLatencyStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -957,6 +982,7 @@ public final class FullReadStatsView extends com.google.protobuf.GeneratedMessag
             : requestLatencyStats_;
       }
     }
+
     /**
      *
      *

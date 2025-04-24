@@ -36,6 +36,7 @@ public interface RowRangeOrBuilder
    * @return Whether the startKeyClosed field is set.
    */
   boolean hasStartKeyClosed();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RowRangeOrBuilder
    * @return Whether the startKeyOpen field is set.
    */
   boolean hasStartKeyOpen();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface RowRangeOrBuilder
    * @return Whether the endKeyOpen field is set.
    */
   boolean hasEndKeyOpen();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface RowRangeOrBuilder
    * @return Whether the endKeyClosed field is set.
    */
   boolean hasEndKeyClosed();
+
   /**
    *
    *

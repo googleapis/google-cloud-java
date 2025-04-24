@@ -36,6 +36,7 @@ public interface ResultSetMetadataOrBuilder
    * @return Whether the protoSchema field is set.
    */
   boolean hasProtoSchema();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResultSetMetadataOrBuilder
    * @return The protoSchema.
    */
   com.google.bigtable.v2.ProtoSchema getProtoSchema();
+
   /**
    *
    *

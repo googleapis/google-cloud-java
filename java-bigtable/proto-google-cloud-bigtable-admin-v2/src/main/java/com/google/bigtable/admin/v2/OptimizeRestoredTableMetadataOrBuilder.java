@@ -36,6 +36,7 @@ public interface OptimizeRestoredTableMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface OptimizeRestoredTableMetadataOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -73,6 +75,7 @@ public interface OptimizeRestoredTableMetadataOrBuilder
    * @return The progress.
    */
   com.google.bigtable.admin.v2.OperationProgress getProgress();
+
   /**
    *
    *

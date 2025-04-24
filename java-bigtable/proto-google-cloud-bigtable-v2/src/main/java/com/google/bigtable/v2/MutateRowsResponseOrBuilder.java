@@ -34,6 +34,7 @@ public interface MutateRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
   java.util.List<com.google.bigtable.v2.MutateRowsResponse.Entry> getEntriesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface MutateRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
   com.google.bigtable.v2.MutateRowsResponse.Entry getEntries(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface MutateRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.MutateRowsResponse.Entry entries = 1;</code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface MutateRowsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.MutateRowsResponse.EntryOrBuilder>
       getEntriesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface MutateRowsResponseOrBuilder
    * @return Whether the rateLimitInfo field is set.
    */
   boolean hasRateLimitInfo();
+
   /**
    *
    *
@@ -104,6 +109,7 @@ public interface MutateRowsResponseOrBuilder
    * @return The rateLimitInfo.
    */
   com.google.bigtable.v2.RateLimitInfo getRateLimitInfo();
+
   /**
    *
    *

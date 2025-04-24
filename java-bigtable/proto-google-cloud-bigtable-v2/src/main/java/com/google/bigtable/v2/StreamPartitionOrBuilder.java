@@ -37,6 +37,7 @@ public interface StreamPartitionOrBuilder
    * @return Whether the rowRange field is set.
    */
   boolean hasRowRange();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface StreamPartitionOrBuilder
    * @return The rowRange.
    */
   com.google.bigtable.v2.RowRange getRowRange();
+
   /**
    *
    *

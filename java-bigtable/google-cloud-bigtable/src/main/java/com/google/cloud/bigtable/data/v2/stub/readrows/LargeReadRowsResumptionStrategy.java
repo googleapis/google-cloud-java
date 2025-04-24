@@ -159,7 +159,8 @@ public class LargeReadRowsResumptionStrategy<RowT>
     if (originalRequest.getRowsLimit() > 0) {
       Preconditions.checkState(
           originalRequest.getRowsLimit() > numProcessed,
-          "Processed rows and number of large rows should not exceed the row limit in the original request");
+          "Processed rows and number of large rows should not exceed the row limit in the original"
+              + " request");
       builder.setRowsLimit(originalRequest.getRowsLimit() - numProcessed);
     }
 

@@ -33,6 +33,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateMaterializedViewRequest)
     UpdateMaterializedViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateMaterializedViewRequest.newBuilder() to construct.
   private UpdateMaterializedViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
   private int bitField0_;
   public static final int MATERIALIZED_VIEW_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.MaterializedView materializedView_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
   public boolean hasMaterializedView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
         ? com.google.bigtable.admin.v2.MaterializedView.getDefaultInstance()
         : materializedView_;
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -358,6 +365,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -582,6 +590,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
             com.google.bigtable.admin.v2.MaterializedView.Builder,
             com.google.bigtable.admin.v2.MaterializedViewOrBuilder>
         materializedViewBuilder_;
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
     public boolean hasMaterializedView() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -628,6 +638,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
         return materializedViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -656,6 +667,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +729,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -741,6 +755,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return getMaterializedViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
             : materializedView_;
       }
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -838,6 +856,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -882,6 +902,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -902,6 +923,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +952,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +973,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -965,6 +989,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -984,6 +1009,7 @@ public final class UpdateMaterializedViewRequest extends com.google.protobuf.Gen
             : updateMask_;
       }
     }
+
     /**
      *
      *

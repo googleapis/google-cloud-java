@@ -34,6 +34,7 @@ public interface StreamContinuationTokensOrBuilder
    * <code>repeated .google.bigtable.v2.StreamContinuationToken tokens = 1;</code>
    */
   java.util.List<com.google.bigtable.v2.StreamContinuationToken> getTokensList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface StreamContinuationTokensOrBuilder
    * <code>repeated .google.bigtable.v2.StreamContinuationToken tokens = 1;</code>
    */
   com.google.bigtable.v2.StreamContinuationToken getTokens(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface StreamContinuationTokensOrBuilder
    * <code>repeated .google.bigtable.v2.StreamContinuationToken tokens = 1;</code>
    */
   int getTokensCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface StreamContinuationTokensOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.StreamContinuationTokenOrBuilder>
       getTokensOrBuilderList();
+
   /**
    *
    *

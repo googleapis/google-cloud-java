@@ -34,6 +34,7 @@ public final class DataBoostReadLocalWrites extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.DataBoostReadLocalWrites)
     DataBoostReadLocalWritesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DataBoostReadLocalWrites.newBuilder() to construct.
   private DataBoostReadLocalWrites(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class DataBoostReadLocalWrites extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface CreateLogicalViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateLogicalViewRequestOrBuilder
    * @return The logicalViewId.
    */
   java.lang.String getLogicalViewId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateLogicalViewRequestOrBuilder
    * @return Whether the logicalView field is set.
    */
   boolean hasLogicalView();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateLogicalViewRequestOrBuilder
    * @return The logicalView.
    */
   com.google.bigtable.admin.v2.LogicalView getLogicalView();
+
   /**
    *
    *

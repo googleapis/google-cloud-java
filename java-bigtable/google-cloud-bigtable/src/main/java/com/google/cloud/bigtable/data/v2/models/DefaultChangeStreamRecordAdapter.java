@@ -94,7 +94,8 @@ public class DefaultChangeStreamRecordAdapter
     public ChangeStreamRecord onCloseStream(ReadChangeStreamResponse.CloseStream closeStream) {
       Preconditions.checkState(
           this.changeStreamMutationBuilder == null,
-          "Can not create a CloseStream when there is an existing ChangeStreamMutation being built.");
+          "Can not create a CloseStream when there is an existing ChangeStreamMutation being"
+              + " built.");
       return CloseStream.fromProto(closeStream);
     }
 

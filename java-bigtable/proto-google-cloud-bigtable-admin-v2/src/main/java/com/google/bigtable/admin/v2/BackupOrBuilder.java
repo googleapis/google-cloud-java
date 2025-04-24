@@ -45,6 +45,7 @@ public interface BackupOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public interface BackupOrBuilder
    * @return The sourceTable.
    */
   java.lang.String getSourceTable();
+
   /**
    *
    *
@@ -115,6 +117,7 @@ public interface BackupOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface BackupOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface BackupOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -204,6 +209,7 @@ public interface BackupOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -221,6 +227,7 @@ public interface BackupOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -251,6 +258,7 @@ public interface BackupOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public interface BackupOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -334,6 +344,7 @@ public interface BackupOrBuilder
    * @return Whether the encryptionInfo field is set.
    */
   boolean hasEncryptionInfo();
+
   /**
    *
    *
@@ -348,6 +359,7 @@ public interface BackupOrBuilder
    * @return The encryptionInfo.
    */
   com.google.bigtable.admin.v2.EncryptionInfo getEncryptionInfo();
+
   /**
    *
    *
@@ -373,6 +385,7 @@ public interface BackupOrBuilder
    * @return The enum numeric value on the wire for backupType.
    */
   int getBackupTypeValue();
+
   /**
    *
    *
@@ -405,6 +418,7 @@ public interface BackupOrBuilder
    * @return Whether the hotToStandardTime field is set.
    */
   boolean hasHotToStandardTime();
+
   /**
    *
    *
@@ -424,6 +438,7 @@ public interface BackupOrBuilder
    * @return The hotToStandardTime.
    */
   com.google.protobuf.Timestamp getHotToStandardTime();
+
   /**
    *
    *

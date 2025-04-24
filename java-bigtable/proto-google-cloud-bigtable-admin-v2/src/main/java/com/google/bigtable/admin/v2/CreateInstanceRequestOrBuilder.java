@@ -39,6 +39,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The instanceId.
    */
   java.lang.String getInstanceId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return Whether the instance field is set.
    */
   boolean hasInstance();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateInstanceRequestOrBuilder
    * @return The instance.
    */
   com.google.bigtable.admin.v2.Instance getInstance();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface CreateInstanceRequestOrBuilder
    * </code>
    */
   int getClustersCount();
+
   /**
    *
    *
@@ -158,9 +163,11 @@ public interface CreateInstanceRequestOrBuilder
    * </code>
    */
   boolean containsClusters(java.lang.String key);
+
   /** Use {@link #getClustersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClusters();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface CreateInstanceRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClustersMap();
+
   /**
    *
    *
@@ -195,6 +203,7 @@ public interface CreateInstanceRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.admin.v2.Cluster defaultValue);
+
   /**
    *
    *

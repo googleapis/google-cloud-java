@@ -36,6 +36,7 @@ public interface PartialResultSetOrBuilder
    * @return Whether the protoRowsBatch field is set.
    */
   boolean hasProtoRowsBatch();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PartialResultSetOrBuilder
    * @return The protoRowsBatch.
    */
   com.google.bigtable.v2.ProtoRowsBatch getProtoRowsBatch();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface PartialResultSetOrBuilder
    * @return Whether the batchChecksum field is set.
    */
   boolean hasBatchChecksum();
+
   /**
    *
    *

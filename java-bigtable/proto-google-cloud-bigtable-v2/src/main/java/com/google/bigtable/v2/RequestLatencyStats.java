@@ -35,6 +35,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.RequestLatencyStats)
     RequestLatencyStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RequestLatencyStats.newBuilder() to construct.
   private RequestLatencyStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
   private int bitField0_;
   public static final int FRONTEND_SERVER_LATENCY_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration frontendServerLatency_;
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
   public boolean hasFrontendServerLatency() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
         ? com.google.protobuf.Duration.getDefaultInstance()
         : frontendServerLatency_;
   }
+
   /**
    *
    *
@@ -327,6 +331,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -535,6 +540,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         frontendServerLatencyBuilder_;
+
     /**
      *
      *
@@ -565,6 +571,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
     public boolean hasFrontendServerLatency() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -601,6 +608,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
         return frontendServerLatencyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -639,6 +647,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +683,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -717,6 +727,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -752,6 +763,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +794,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
       onChanged();
       return getFrontendServerLatencyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -816,6 +829,7 @@ public final class RequestLatencyStats extends com.google.protobuf.GeneratedMess
             : frontendServerLatency_;
       }
     }
+
     /**
      *
      *

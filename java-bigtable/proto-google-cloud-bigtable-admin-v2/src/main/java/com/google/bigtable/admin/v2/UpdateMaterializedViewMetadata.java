@@ -33,6 +33,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateMaterializedViewMetadata)
     UpdateMaterializedViewMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateMaterializedViewMetadata.newBuilder() to construct.
   private UpdateMaterializedViewMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -65,6 +66,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   private int bitField0_;
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.UpdateMaterializedViewRequest originalRequest_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   public boolean hasOriginalRequest() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         ? com.google.bigtable.admin.v2.UpdateMaterializedViewRequest.getDefaultInstance()
         : originalRequest_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -402,6 +412,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +655,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
             com.google.bigtable.admin.v2.UpdateMaterializedViewRequest.Builder,
             com.google.bigtable.admin.v2.UpdateMaterializedViewRequestOrBuilder>
         originalRequestBuilder_;
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
     public boolean hasOriginalRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -680,6 +693,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         return originalRequestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -704,6 +718,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +772,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +793,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +810,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -812,6 +831,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
             : originalRequest_;
       }
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -859,6 +880,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -899,6 +922,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -918,6 +942,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +970,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -964,6 +990,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -978,6 +1005,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -994,6 +1022,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -1026,6 +1055,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -1040,6 +1070,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1058,6 +1089,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1112,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1132,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1126,6 +1160,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       }
       return this;
     }
+
     /**
      *
      *
@@ -1145,6 +1180,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1159,6 +1195,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1175,6 +1212,7 @@ public final class UpdateMaterializedViewMetadata extends com.google.protobuf.Ge
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

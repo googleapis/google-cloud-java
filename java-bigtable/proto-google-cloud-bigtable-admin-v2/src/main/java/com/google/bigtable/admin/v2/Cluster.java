@@ -35,6 +35,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster)
     ClusterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Cluster.newBuilder() to construct.
   private Cluster(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -149,6 +150,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_NOT_KNOWN = 0;</code>
      */
     public static final int STATE_NOT_KNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -159,6 +161,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 1;</code>
      */
     public static final int READY_VALUE = 1;
+
     /**
      *
      *
@@ -171,6 +174,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>CREATING = 2;</code>
      */
     public static final int CREATING_VALUE = 2;
+
     /**
      *
      *
@@ -185,6 +189,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>RESIZING = 3;</code>
      */
     public static final int RESIZING_VALUE = 3;
+
     /**
      *
      *
@@ -340,6 +345,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>NODE_SCALING_FACTOR_UNSPECIFIED = 0;</code>
      */
     public static final int NODE_SCALING_FACTOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -350,6 +356,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>NODE_SCALING_FACTOR_1X = 1;</code>
      */
     public static final int NODE_SCALING_FACTOR_1X_VALUE = 1;
+
     /**
      *
      *
@@ -468,6 +475,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscalingLimits field is set.
      */
     boolean hasAutoscalingLimits();
+
     /**
      *
      *
@@ -482,6 +490,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return The autoscalingLimits.
      */
     com.google.bigtable.admin.v2.AutoscalingLimits getAutoscalingLimits();
+
     /**
      *
      *
@@ -509,6 +518,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the autoscalingTargets field is set.
      */
     boolean hasAutoscalingTargets();
+
     /**
      *
      *
@@ -523,6 +533,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return The autoscalingTargets.
      */
     com.google.bigtable.admin.v2.AutoscalingTargets getAutoscalingTargets();
+
     /**
      *
      *
@@ -536,6 +547,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder getAutoscalingTargetsOrBuilder();
   }
+
   /**
    *
    *
@@ -550,6 +562,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig)
       ClusterAutoscalingConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClusterAutoscalingConfig.newBuilder() to construct.
     private ClusterAutoscalingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -581,6 +594,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int AUTOSCALING_LIMITS_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.AutoscalingLimits autoscalingLimits_;
+
     /**
      *
      *
@@ -598,6 +612,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutoscalingLimits() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -617,6 +632,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.AutoscalingLimits.getDefaultInstance()
           : autoscalingLimits_;
     }
+
     /**
      *
      *
@@ -637,6 +653,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AUTOSCALING_TARGETS_FIELD_NUMBER = 2;
     private com.google.bigtable.admin.v2.AutoscalingTargets autoscalingTargets_;
+
     /**
      *
      *
@@ -654,6 +671,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAutoscalingTargets() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -673,6 +691,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.AutoscalingTargets.getDefaultInstance()
           : autoscalingTargets_;
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1110,6 +1130,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.AutoscalingLimits.Builder,
               com.google.bigtable.admin.v2.AutoscalingLimitsOrBuilder>
           autoscalingLimitsBuilder_;
+
       /**
        *
        *
@@ -1126,6 +1147,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAutoscalingLimits() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1148,6 +1170,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return autoscalingLimitsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1172,6 +1195,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1194,6 +1218,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1224,6 +1249,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1245,6 +1271,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1261,6 +1288,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAutoscalingLimitsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1282,6 +1310,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               : autoscalingLimits_;
         }
       }
+
       /**
        *
        *
@@ -1316,6 +1345,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.AutoscalingTargets.Builder,
               com.google.bigtable.admin.v2.AutoscalingTargetsOrBuilder>
           autoscalingTargetsBuilder_;
+
       /**
        *
        *
@@ -1332,6 +1362,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public boolean hasAutoscalingTargets() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1354,6 +1385,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return autoscalingTargetsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1378,6 +1410,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1400,6 +1433,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1431,6 +1465,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1452,6 +1487,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1469,6 +1505,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getAutoscalingTargetsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1490,6 +1527,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               : autoscalingTargets_;
         }
       }
+
       /**
        *
        *
@@ -1604,6 +1642,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the clusterAutoscalingConfig field is set.
      */
     boolean hasClusterAutoscalingConfig();
+
     /**
      *
      *
@@ -1618,6 +1657,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return The clusterAutoscalingConfig.
      */
     com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig getClusterAutoscalingConfig();
+
     /**
      *
      *
@@ -1632,6 +1672,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder
         getClusterAutoscalingConfigOrBuilder();
   }
+
   /**
    *
    *
@@ -1646,6 +1687,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.ClusterConfig)
       ClusterConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ClusterConfig.newBuilder() to construct.
     private ClusterConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1677,6 +1719,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int CLUSTER_AUTOSCALING_CONFIG_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig clusterAutoscalingConfig_;
+
     /**
      *
      *
@@ -1694,6 +1737,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClusterAutoscalingConfig() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1714,6 +1758,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.getDefaultInstance()
           : clusterAutoscalingConfig_;
     }
+
     /**
      *
      *
@@ -1901,6 +1946,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2112,6 +2158,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfig.Builder,
               com.google.bigtable.admin.v2.Cluster.ClusterAutoscalingConfigOrBuilder>
           clusterAutoscalingConfigBuilder_;
+
       /**
        *
        *
@@ -2128,6 +2175,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       public boolean hasClusterAutoscalingConfig() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2151,6 +2199,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return clusterAutoscalingConfigBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2176,6 +2225,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2198,6 +2248,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2230,6 +2281,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2251,6 +2303,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2268,6 +2321,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getClusterAutoscalingConfigFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2289,6 +2343,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
               : clusterAutoscalingConfig_;
         }
       }
+
       /**
        *
        *
@@ -2406,6 +2461,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * @return The kmsKeyName.
      */
     java.lang.String getKmsKeyName();
+
     /**
      *
      *
@@ -2427,6 +2483,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getKmsKeyNameBytes();
   }
+
   /**
    *
    *
@@ -2442,6 +2499,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Cluster.EncryptionConfig)
       EncryptionConfigOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use EncryptionConfig.newBuilder() to construct.
     private EncryptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2476,6 +2534,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kmsKeyName_ = "";
+
     /**
      *
      *
@@ -2507,6 +2566,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -2700,6 +2760,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2888,6 +2949,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private java.lang.Object kmsKeyName_ = "";
+
       /**
        *
        *
@@ -2918,6 +2980,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2948,6 +3011,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2977,6 +3041,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3002,6 +3067,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3114,6 +3180,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     private ConfigCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -3148,6 +3215,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -3172,6 +3240,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3201,6 +3270,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object location_ = "";
+
   /**
    *
    *
@@ -3229,6 +3299,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -3260,6 +3331,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
+
   /**
    *
    *
@@ -3277,6 +3349,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -3299,6 +3372,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERVE_NODES_FIELD_NUMBER = 4;
   private int serveNodes_ = 0;
+
   /**
    *
    *
@@ -3319,6 +3393,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int NODE_SCALING_FACTOR_FIELD_NUMBER = 9;
   private int nodeScalingFactor_ = 0;
+
   /**
    *
    *
@@ -3336,6 +3411,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public int getNodeScalingFactorValue() {
     return nodeScalingFactor_;
   }
+
   /**
    *
    *
@@ -3359,6 +3435,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int CLUSTER_CONFIG_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -3374,6 +3451,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasClusterConfig() {
     return configCase_ == 7;
   }
+
   /**
    *
    *
@@ -3392,6 +3470,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -3411,6 +3490,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEFAULT_STORAGE_TYPE_FIELD_NUMBER = 5;
   private int defaultStorageType_ = 0;
+
   /**
    *
    *
@@ -3429,6 +3509,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public int getDefaultStorageTypeValue() {
     return defaultStorageType_;
   }
+
   /**
    *
    *
@@ -3452,6 +3533,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ENCRYPTION_CONFIG_FIELD_NUMBER = 6;
   private com.google.bigtable.admin.v2.Cluster.EncryptionConfig encryptionConfig_;
+
   /**
    *
    *
@@ -3469,6 +3551,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEncryptionConfig() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -3488,6 +3571,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         ? com.google.bigtable.admin.v2.Cluster.EncryptionConfig.getDefaultInstance()
         : encryptionConfig_;
   }
+
   /**
    *
    *
@@ -3753,6 +3837,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -4080,6 +4165,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -4103,6 +4189,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4126,6 +4213,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4148,6 +4236,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4166,6 +4255,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4191,6 +4281,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object location_ = "";
+
     /**
      *
      *
@@ -4218,6 +4309,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4245,6 +4337,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4271,6 +4364,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4293,6 +4387,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4322,6 +4417,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -4339,6 +4435,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4359,6 +4456,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4378,6 +4476,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.Cluster.State.forNumber(state_);
       return result == null ? com.google.bigtable.admin.v2.Cluster.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4401,6 +4500,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4422,6 +4522,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int serveNodes_;
+
     /**
      *
      *
@@ -4439,6 +4540,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public int getServeNodes() {
       return serveNodes_;
     }
+
     /**
      *
      *
@@ -4460,6 +4562,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4481,6 +4584,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int nodeScalingFactor_ = 0;
+
     /**
      *
      *
@@ -4498,6 +4602,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public int getNodeScalingFactorValue() {
       return nodeScalingFactor_;
     }
+
     /**
      *
      *
@@ -4518,6 +4623,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4539,6 +4645,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Cluster.NodeScalingFactor.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -4563,6 +4670,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4588,6 +4696,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder,
             com.google.bigtable.admin.v2.Cluster.ClusterConfigOrBuilder>
         clusterConfigBuilder_;
+
     /**
      *
      *
@@ -4603,6 +4712,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasClusterConfig() {
       return configCase_ == 7;
     }
+
     /**
      *
      *
@@ -4628,6 +4738,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4650,6 +4761,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4670,6 +4782,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4702,6 +4815,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       configCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -4727,6 +4841,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4739,6 +4854,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Cluster.ClusterConfig.Builder getClusterConfigBuilder() {
       return getClusterConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4759,6 +4875,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Cluster.ClusterConfig.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4793,6 +4910,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int defaultStorageType_ = 0;
+
     /**
      *
      *
@@ -4811,6 +4929,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public int getDefaultStorageTypeValue() {
       return defaultStorageType_;
     }
+
     /**
      *
      *
@@ -4832,6 +4951,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4852,6 +4972,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.StorageType.forNumber(defaultStorageType_);
       return result == null ? com.google.bigtable.admin.v2.StorageType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -4876,6 +4997,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4903,6 +5025,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Cluster.EncryptionConfig.Builder,
             com.google.bigtable.admin.v2.Cluster.EncryptionConfigOrBuilder>
         encryptionConfigBuilder_;
+
     /**
      *
      *
@@ -4919,6 +5042,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncryptionConfig() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4941,6 +5065,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
         return encryptionConfigBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4966,6 +5091,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4988,6 +5114,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5019,6 +5146,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5040,6 +5168,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -5057,6 +5186,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getEncryptionConfigFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -5078,6 +5208,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
             : encryptionConfig_;
       }
     }
+
     /**
      *
      *

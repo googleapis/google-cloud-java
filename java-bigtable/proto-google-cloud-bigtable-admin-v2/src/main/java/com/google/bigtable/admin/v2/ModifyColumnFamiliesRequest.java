@@ -34,6 +34,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
     ModifyColumnFamiliesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ModifyColumnFamiliesRequest.newBuilder() to construct.
   private ModifyColumnFamiliesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return The id.
      */
     java.lang.String getId();
+
     /**
      *
      *
@@ -108,6 +110,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return Whether the create field is set.
      */
     boolean hasCreate();
+
     /**
      *
      *
@@ -121,6 +124,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return The create.
      */
     com.google.bigtable.admin.v2.ColumnFamily getCreate();
+
     /**
      *
      *
@@ -146,6 +150,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return Whether the update field is set.
      */
     boolean hasUpdate();
+
     /**
      *
      *
@@ -159,6 +164,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return The update.
      */
     com.google.bigtable.admin.v2.ColumnFamily getUpdate();
+
     /**
      *
      *
@@ -184,6 +190,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return Whether the drop field is set.
      */
     boolean hasDrop();
+
     /**
      *
      *
@@ -213,6 +220,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return Whether the updateMask field is set.
      */
     boolean hasUpdateMask();
+
     /**
      *
      *
@@ -228,6 +236,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
      * @return The updateMask.
      */
     com.google.protobuf.FieldMask getUpdateMask();
+
     /**
      *
      *
@@ -244,6 +253,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
     com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase getModCase();
   }
+
   /**
    *
    *
@@ -258,6 +268,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
       ModificationOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Modification.newBuilder() to construct.
     private Modification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -307,6 +318,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       private ModCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -345,6 +357,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object id_ = "";
+
     /**
      *
      *
@@ -368,6 +381,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -393,6 +407,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     public static final int CREATE_FIELD_NUMBER = 2;
+
     /**
      *
      *
@@ -409,6 +424,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public boolean hasCreate() {
       return modCase_ == 2;
     }
+
     /**
      *
      *
@@ -428,6 +444,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -447,6 +464,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     public static final int UPDATE_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -463,6 +481,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public boolean hasUpdate() {
       return modCase_ == 3;
     }
+
     /**
      *
      *
@@ -482,6 +501,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -501,6 +521,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     public static final int DROP_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -517,6 +538,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public boolean hasDrop() {
       return modCase_ == 4;
     }
+
     /**
      *
      *
@@ -539,6 +561,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
     public static final int UPDATE_MASK_FIELD_NUMBER = 6;
     private com.google.protobuf.FieldMask updateMask_;
+
     /**
      *
      *
@@ -557,6 +580,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -575,6 +599,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public com.google.protobuf.FieldMask getUpdateMask() {
       return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
     }
+
     /**
      *
      *
@@ -822,6 +847,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1123,6 +1149,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       private int bitField0_;
 
       private java.lang.Object id_ = "";
+
       /**
        *
        *
@@ -1145,6 +1172,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1167,6 +1195,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1188,6 +1217,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1205,6 +1235,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1233,6 +1264,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.bigtable.admin.v2.ColumnFamily.Builder,
               com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
           createBuilder_;
+
       /**
        *
        *
@@ -1249,6 +1281,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public boolean hasCreate() {
         return modCase_ == 2;
       }
+
       /**
        *
        *
@@ -1275,6 +1308,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1298,6 +1332,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1318,6 +1353,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1351,6 +1387,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 2;
         return this;
       }
+
       /**
        *
        *
@@ -1377,6 +1414,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -1390,6 +1428,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public com.google.bigtable.admin.v2.ColumnFamily.Builder getCreateBuilder() {
         return getCreateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1411,6 +1450,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1450,6 +1490,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.bigtable.admin.v2.ColumnFamily.Builder,
               com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
           updateBuilder_;
+
       /**
        *
        *
@@ -1466,6 +1507,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public boolean hasUpdate() {
         return modCase_ == 3;
       }
+
       /**
        *
        *
@@ -1492,6 +1534,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1515,6 +1558,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1535,6 +1579,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1568,6 +1613,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         modCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -1594,6 +1640,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -1607,6 +1654,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public com.google.bigtable.admin.v2.ColumnFamily.Builder getUpdateBuilder() {
         return getUpdateFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1628,6 +1676,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -1677,6 +1726,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public boolean hasDrop() {
         return modCase_ == 4;
       }
+
       /**
        *
        *
@@ -1695,6 +1745,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
         return false;
       }
+
       /**
        *
        *
@@ -1715,6 +1766,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1742,6 +1794,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.protobuf.FieldMask.Builder,
               com.google.protobuf.FieldMaskOrBuilder>
           updateMaskBuilder_;
+
       /**
        *
        *
@@ -1759,6 +1812,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       public boolean hasUpdateMask() {
         return ((bitField0_ & 0x00000010) != 0);
       }
+
       /**
        *
        *
@@ -1782,6 +1836,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
           return updateMaskBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1807,6 +1862,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1829,6 +1885,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1859,6 +1916,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -1881,6 +1939,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1898,6 +1957,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         onChanged();
         return getUpdateMaskFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1919,6 +1979,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               : updateMask_;
         }
       }
+
       /**
        *
        *
@@ -2020,6 +2081,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2047,6 +2109,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       return s;
     }
   }
+
   /**
    *
    *
@@ -2080,6 +2143,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
   @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
       modifications_;
+
   /**
    *
    *
@@ -2099,6 +2163,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       getModificationsList() {
     return modifications_;
   }
+
   /**
    *
    *
@@ -2119,6 +2184,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       getModificationsOrBuilderList() {
     return modifications_;
   }
+
   /**
    *
    *
@@ -2137,6 +2203,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
   public int getModificationsCount() {
     return modifications_.size();
   }
+
   /**
    *
    *
@@ -2156,6 +2223,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       int index) {
     return modifications_.get(index);
   }
+
   /**
    *
    *
@@ -2178,6 +2246,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
 
   public static final int IGNORE_WARNINGS_FIELD_NUMBER = 3;
   private boolean ignoreWarnings_ = false;
+
   /**
    *
    *
@@ -2374,6 +2443,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -2635,6 +2705,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -2661,6 +2732,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2687,6 +2759,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2712,6 +2785,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2733,6 +2807,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2801,6 +2876,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return modificationsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -2822,6 +2898,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return modificationsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -2844,6 +2921,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return modificationsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -2872,6 +2950,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2899,6 +2978,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2927,6 +3007,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2955,6 +3036,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -2981,6 +3063,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3008,6 +3091,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3035,6 +3119,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3059,6 +3144,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3083,6 +3169,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -3101,6 +3188,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         getModificationsBuilder(int index) {
       return getModificationsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -3123,6 +3211,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return modificationsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -3147,6 +3236,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
         return java.util.Collections.unmodifiableList(modifications_);
       }
     }
+
     /**
      *
      *
@@ -3168,6 +3258,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3190,6 +3281,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
               com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -3231,6 +3323,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     }
 
     private boolean ignoreWarnings_;
+
     /**
      *
      *
@@ -3246,6 +3339,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
     public boolean getIgnoreWarnings() {
       return ignoreWarnings_;
     }
+
     /**
      *
      *
@@ -3265,6 +3359,7 @@ public final class ModifyColumnFamiliesRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

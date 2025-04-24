@@ -33,6 +33,7 @@ public final class PingAndWarmResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.PingAndWarmResponse)
     PingAndWarmResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PingAndWarmResponse.newBuilder() to construct.
   private PingAndWarmResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -211,6 +212,7 @@ public final class PingAndWarmResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

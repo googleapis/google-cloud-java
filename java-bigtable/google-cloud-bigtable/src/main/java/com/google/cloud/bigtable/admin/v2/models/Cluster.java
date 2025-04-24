@@ -177,6 +177,7 @@ public class Cluster {
         .getAutoscalingTargets()
         .getCpuUtilizationPercent();
   }
+
   /**
    * Get the storage utilization that the Autoscaler should be trying to achieve. This number is
    * limited between 2560 (2.5TiB) and 5120 (5TiB) for a SSD cluster and between 8192 (8TiB) and

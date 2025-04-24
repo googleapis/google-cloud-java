@@ -312,12 +312,14 @@ public final class BigtableBatchingCallSettings
           batchingSettings.getElementCountThreshold() == null
               || flowControlSettings.getMaxOutstandingElementCount()
                   > batchingSettings.getElementCountThreshold(),
-          "if batch elementCountThreshold is set in BatchingSettings, flow control maxOutstandingElementCount must be > elementCountThreshold");
+          "if batch elementCountThreshold is set in BatchingSettings, flow control"
+              + " maxOutstandingElementCount must be > elementCountThreshold");
       Preconditions.checkArgument(
           batchingSettings.getRequestByteThreshold() == null
               || flowControlSettings.getMaxOutstandingRequestBytes()
                   > batchingSettings.getRequestByteThreshold(),
-          "if batch requestByteThreshold is set in BatchingSettings, flow control maxOutstandingRequestBytes must be > getRequestByteThreshold");
+          "if batch requestByteThreshold is set in BatchingSettings, flow control"
+              + " maxOutstandingRequestBytes must be > getRequestByteThreshold");
       // Combine static FlowControlSettings with latency based throttling settings to create
       // DynamicFlowControlSettings.
       if (isLatencyBasedThrottlingEnabled()) {

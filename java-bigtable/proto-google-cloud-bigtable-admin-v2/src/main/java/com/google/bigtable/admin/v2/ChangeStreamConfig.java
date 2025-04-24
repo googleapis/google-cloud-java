@@ -33,6 +33,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ChangeStreamConfig)
     ChangeStreamConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ChangeStreamConfig.newBuilder() to construct.
   private ChangeStreamConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int RETENTION_PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration retentionPeriod_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
   public boolean hasRetentionPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
         ? com.google.protobuf.Duration.getDefaultInstance()
         : retentionPeriod_;
   }
+
   /**
    *
    *
@@ -288,6 +292,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -492,6 +497,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         retentionPeriodBuilder_;
+
     /**
      *
      *
@@ -510,6 +516,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
     public boolean hasRetentionPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -534,6 +541,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
         return retentionPeriodBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -560,6 +568,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -637,6 +648,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRetentionPeriodFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -677,6 +690,7 @@ public final class ChangeStreamConfig extends com.google.protobuf.GeneratedMessa
             : retentionPeriod_;
       }
     }
+
     /**
      *
      *

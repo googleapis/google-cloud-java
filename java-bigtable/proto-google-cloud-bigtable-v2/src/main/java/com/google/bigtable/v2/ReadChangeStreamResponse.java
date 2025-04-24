@@ -34,6 +34,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse)
     ReadChangeStreamResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadChangeStreamResponse.newBuilder() to construct.
   private ReadChangeStreamResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the chunkInfo field is set.
      */
     boolean hasChunkInfo();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The chunkInfo.
      */
     com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.ChunkInfo getChunkInfo();
+
     /**
      *
      *
@@ -123,6 +126,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the mutation field is set.
      */
     boolean hasMutation();
+
     /**
      *
      *
@@ -137,6 +141,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The mutation.
      */
     com.google.bigtable.v2.Mutation getMutation();
+
     /**
      *
      *
@@ -150,6 +155,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     com.google.bigtable.v2.MutationOrBuilder getMutationOrBuilder();
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse.MutationChunk)
       MutationChunkOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use MutationChunk.newBuilder() to construct.
     private MutationChunk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -237,6 +244,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        */
       boolean getLastChunk();
     }
+
     /**
      *
      *
@@ -253,6 +261,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.ChunkInfo)
         ChunkInfoOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use ChunkInfo.newBuilder() to construct.
       private ChunkInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -284,6 +293,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
       public static final int CHUNKED_VALUE_SIZE_FIELD_NUMBER = 1;
       private int chunkedValueSize_ = 0;
+
       /**
        *
        *
@@ -302,6 +312,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
       public static final int CHUNKED_VALUE_OFFSET_FIELD_NUMBER = 2;
       private int chunkedValueOffset_ = 0;
+
       /**
        *
        *
@@ -321,6 +332,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
       public static final int LAST_CHUNK_FIELD_NUMBER = 3;
       private boolean lastChunk_ = false;
+
       /**
        *
        *
@@ -525,6 +537,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -749,6 +762,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         private int bitField0_;
 
         private int chunkedValueSize_;
+
         /**
          *
          *
@@ -764,6 +778,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         public int getChunkedValueSize() {
           return chunkedValueSize_;
         }
+
         /**
          *
          *
@@ -783,6 +798,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -802,6 +818,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
 
         private int chunkedValueOffset_;
+
         /**
          *
          *
@@ -818,6 +835,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         public int getChunkedValueOffset() {
           return chunkedValueOffset_;
         }
+
         /**
          *
          *
@@ -838,6 +856,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -858,6 +877,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
 
         private boolean lastChunk_;
+
         /**
          *
          *
@@ -873,6 +893,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         public boolean getLastChunk() {
           return lastChunk_;
         }
+
         /**
          *
          *
@@ -892,6 +913,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -981,6 +1003,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int CHUNK_INFO_FIELD_NUMBER = 1;
     private com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.ChunkInfo chunkInfo_;
+
     /**
      *
      *
@@ -998,6 +1021,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasChunkInfo() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1018,6 +1042,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               .getDefaultInstance()
           : chunkInfo_;
     }
+
     /**
      *
      *
@@ -1040,6 +1065,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int MUTATION_FIELD_NUMBER = 2;
     private com.google.bigtable.v2.Mutation mutation_;
+
     /**
      *
      *
@@ -1057,6 +1083,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasMutation() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1074,6 +1101,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.Mutation getMutation() {
       return mutation_ == null ? com.google.bigtable.v2.Mutation.getDefaultInstance() : mutation_;
     }
+
     /**
      *
      *
@@ -1270,6 +1298,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1499,6 +1528,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.ChunkInfo.Builder,
               com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.ChunkInfoOrBuilder>
           chunkInfoBuilder_;
+
       /**
        *
        *
@@ -1515,6 +1545,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasChunkInfo() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1539,6 +1570,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return chunkInfoBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1564,6 +1596,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1587,6 +1620,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1619,6 +1653,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -1640,6 +1675,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1657,6 +1693,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getChunkInfoFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1679,6 +1716,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : chunkInfo_;
         }
       }
+
       /**
        *
        *
@@ -1713,6 +1751,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.bigtable.v2.Mutation.Builder,
               com.google.bigtable.v2.MutationOrBuilder>
           mutationBuilder_;
+
       /**
        *
        *
@@ -1729,6 +1768,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasMutation() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -1751,6 +1791,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return mutationBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1775,6 +1816,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1796,6 +1838,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1825,6 +1868,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -1846,6 +1890,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1862,6 +1907,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getMutationFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1882,6 +1928,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : mutation_;
         }
       }
+
       /**
        *
        *
@@ -1994,6 +2041,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
+
     /**
      *
      *
@@ -2020,6 +2068,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The sourceClusterId.
      */
     java.lang.String getSourceClusterId();
+
     /**
      *
      *
@@ -2061,6 +2110,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the commitTimestamp field is set.
      */
     boolean hasCommitTimestamp();
+
     /**
      *
      *
@@ -2073,6 +2123,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The commitTimestamp.
      */
     com.google.protobuf.Timestamp getCommitTimestamp();
+
     /**
      *
      *
@@ -2115,6 +2166,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.ReadChangeStreamResponse.MutationChunk chunks = 6;</code>
      */
     java.util.List<com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk> getChunksList();
+
     /**
      *
      *
@@ -2127,6 +2179,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.ReadChangeStreamResponse.MutationChunk chunks = 6;</code>
      */
     com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk getChunks(int index);
+
     /**
      *
      *
@@ -2139,6 +2192,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.ReadChangeStreamResponse.MutationChunk chunks = 6;</code>
      */
     int getChunksCount();
+
     /**
      *
      *
@@ -2152,6 +2206,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunkOrBuilder>
         getChunksOrBuilderList();
+
     /**
      *
      *
@@ -2193,6 +2248,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The token.
      */
     java.lang.String getToken();
+
     /**
      *
      *
@@ -2224,6 +2280,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the estimatedLowWatermark field is set.
      */
     boolean hasEstimatedLowWatermark();
+
     /**
      *
      *
@@ -2241,6 +2298,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The estimatedLowWatermark.
      */
     com.google.protobuf.Timestamp getEstimatedLowWatermark();
+
     /**
      *
      *
@@ -2257,6 +2315,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     com.google.protobuf.TimestampOrBuilder getEstimatedLowWatermarkOrBuilder();
   }
+
   /**
    *
    *
@@ -2276,6 +2335,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse.DataChange)
       DataChangeOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use DataChange.newBuilder() to construct.
     private DataChange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2374,6 +2434,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * <code>TYPE_UNSPECIFIED = 0;</code>
        */
       public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2384,6 +2445,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * <code>USER = 1;</code>
        */
       public static final int USER_VALUE = 1;
+
       /**
        *
        *
@@ -2395,6 +2457,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
        * <code>GARBAGE_COLLECTION = 2;</code>
        */
       public static final int GARBAGE_COLLECTION_VALUE = 2;
+
       /**
        *
        *
@@ -2496,6 +2559,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
+
     /**
      *
      *
@@ -2511,6 +2575,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -2535,6 +2600,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object sourceClusterId_ = "";
+
     /**
      *
      *
@@ -2559,6 +2625,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return s;
       }
     }
+
     /**
      *
      *
@@ -2586,6 +2653,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int ROW_KEY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -2606,6 +2674,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int COMMIT_TIMESTAMP_FIELD_NUMBER = 4;
     private com.google.protobuf.Timestamp commitTimestamp_;
+
     /**
      *
      *
@@ -2621,6 +2690,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasCommitTimestamp() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -2638,6 +2708,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : commitTimestamp_;
     }
+
     /**
      *
      *
@@ -2656,6 +2727,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int TIEBREAKER_FIELD_NUMBER = 5;
     private int tiebreaker_ = 0;
+
     /**
      *
      *
@@ -2682,6 +2754,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk> chunks_;
+
     /**
      *
      *
@@ -2698,6 +2771,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getChunksList() {
       return chunks_;
     }
+
     /**
      *
      *
@@ -2715,6 +2789,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getChunksOrBuilderList() {
       return chunks_;
     }
+
     /**
      *
      *
@@ -2730,6 +2805,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public int getChunksCount() {
       return chunks_.size();
     }
+
     /**
      *
      *
@@ -2745,6 +2821,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk getChunks(int index) {
       return chunks_.get(index);
     }
+
     /**
      *
      *
@@ -2764,6 +2841,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int DONE_FIELD_NUMBER = 8;
     private boolean done_ = false;
+
     /**
      *
      *
@@ -2785,6 +2863,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object token_ = "";
+
     /**
      *
      *
@@ -2809,6 +2888,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return s;
       }
     }
+
     /**
      *
      *
@@ -2836,6 +2916,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int ESTIMATED_LOW_WATERMARK_FIELD_NUMBER = 10;
     private com.google.protobuf.Timestamp estimatedLowWatermark_;
+
     /**
      *
      *
@@ -2856,6 +2937,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasEstimatedLowWatermark() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2878,6 +2960,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : estimatedLowWatermark_;
     }
+
     /**
      *
      *
@@ -3150,6 +3233,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3529,6 +3613,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       private int bitField0_;
 
       private int type_ = 0;
+
       /**
        *
        *
@@ -3544,6 +3629,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public int getTypeValue() {
         return type_;
       }
+
       /**
        *
        *
@@ -3562,6 +3648,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3581,6 +3668,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             ? com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Type.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -3603,6 +3691,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3622,6 +3711,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
 
       private java.lang.Object sourceClusterId_ = "";
+
       /**
        *
        *
@@ -3645,6 +3735,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3668,6 +3759,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3690,6 +3782,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3708,6 +3801,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3733,6 +3827,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
 
       private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -3750,6 +3845,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public com.google.protobuf.ByteString getRowKey() {
         return rowKey_;
       }
+
       /**
        *
        *
@@ -3773,6 +3869,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3799,6 +3896,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           commitTimestampBuilder_;
+
       /**
        *
        *
@@ -3813,6 +3911,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasCommitTimestamp() {
         return ((bitField0_ & 0x00000008) != 0);
       }
+
       /**
        *
        *
@@ -3833,6 +3932,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return commitTimestampBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -3855,6 +3955,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3874,6 +3975,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3901,6 +4003,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -3920,6 +4023,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3934,6 +4038,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getCommitTimestampFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -3952,6 +4057,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : commitTimestamp_;
         }
       }
+
       /**
        *
        *
@@ -3979,6 +4085,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
 
       private int tiebreaker_;
+
       /**
        *
        *
@@ -4000,6 +4107,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public int getTiebreaker() {
         return tiebreaker_;
       }
+
       /**
        *
        *
@@ -4025,6 +4133,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4087,6 +4196,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return chunksBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -4106,6 +4216,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return chunksBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -4125,6 +4236,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return chunksBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -4151,6 +4263,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4175,6 +4288,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4201,6 +4315,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4227,6 +4342,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4250,6 +4366,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4274,6 +4391,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4299,6 +4417,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4321,6 +4440,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4343,6 +4463,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4359,6 +4480,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           int index) {
         return getChunksFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -4379,6 +4501,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return chunksBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -4400,6 +4523,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(chunks_);
         }
       }
+
       /**
        *
        *
@@ -4418,6 +4542,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             .addBuilder(
                 com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4437,6 +4562,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
                 index,
                 com.google.bigtable.v2.ReadChangeStreamResponse.MutationChunk.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -4472,6 +4598,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
 
       private boolean done_;
+
       /**
        *
        *
@@ -4488,6 +4615,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean getDone() {
         return done_;
       }
+
       /**
        *
        *
@@ -4508,6 +4636,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4528,6 +4657,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
 
       private java.lang.Object token_ = "";
+
       /**
        *
        *
@@ -4551,6 +4681,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -4574,6 +4705,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -4596,6 +4728,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4614,6 +4747,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4644,6 +4778,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           estimatedLowWatermarkBuilder_;
+
       /**
        *
        *
@@ -4663,6 +4798,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasEstimatedLowWatermark() {
         return ((bitField0_ & 0x00000100) != 0);
       }
+
       /**
        *
        *
@@ -4688,6 +4824,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return estimatedLowWatermarkBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4715,6 +4852,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4740,6 +4878,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4772,6 +4911,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -4796,6 +4936,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4815,6 +4956,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getEstimatedLowWatermarkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4838,6 +4980,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : estimatedLowWatermark_;
         }
       }
+
       /**
        *
        *
@@ -4952,6 +5095,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the continuationToken field is set.
      */
     boolean hasContinuationToken();
+
     /**
      *
      *
@@ -4965,6 +5109,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The continuationToken.
      */
     com.google.bigtable.v2.StreamContinuationToken getContinuationToken();
+
     /**
      *
      *
@@ -4994,6 +5139,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the estimatedLowWatermark field is set.
      */
     boolean hasEstimatedLowWatermark();
+
     /**
      *
      *
@@ -5011,6 +5157,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The estimatedLowWatermark.
      */
     com.google.protobuf.Timestamp getEstimatedLowWatermark();
+
     /**
      *
      *
@@ -5027,6 +5174,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     com.google.protobuf.TimestampOrBuilder getEstimatedLowWatermarkOrBuilder();
   }
+
   /**
    *
    *
@@ -5042,6 +5190,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse.Heartbeat)
       HeartbeatOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Heartbeat.newBuilder() to construct.
     private Heartbeat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5073,6 +5222,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int CONTINUATION_TOKEN_FIELD_NUMBER = 1;
     private com.google.bigtable.v2.StreamContinuationToken continuationToken_;
+
     /**
      *
      *
@@ -5089,6 +5239,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasContinuationToken() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -5107,6 +5258,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           ? com.google.bigtable.v2.StreamContinuationToken.getDefaultInstance()
           : continuationToken_;
     }
+
     /**
      *
      *
@@ -5126,6 +5278,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     public static final int ESTIMATED_LOW_WATERMARK_FIELD_NUMBER = 2;
     private com.google.protobuf.Timestamp estimatedLowWatermark_;
+
     /**
      *
      *
@@ -5146,6 +5299,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasEstimatedLowWatermark() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -5168,6 +5322,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : estimatedLowWatermark_;
     }
+
     /**
      *
      *
@@ -5370,6 +5525,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5604,6 +5760,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.bigtable.v2.StreamContinuationToken.Builder,
               com.google.bigtable.v2.StreamContinuationTokenOrBuilder>
           continuationTokenBuilder_;
+
       /**
        *
        *
@@ -5619,6 +5776,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasContinuationToken() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -5640,6 +5798,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return continuationTokenBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5663,6 +5822,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5684,6 +5844,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5713,6 +5874,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -5733,6 +5895,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5748,6 +5911,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getContinuationTokenFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5768,6 +5932,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : continuationToken_;
         }
       }
+
       /**
        *
        *
@@ -5801,6 +5966,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           estimatedLowWatermarkBuilder_;
+
       /**
        *
        *
@@ -5820,6 +5986,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasEstimatedLowWatermark() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -5845,6 +6012,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return estimatedLowWatermarkBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -5872,6 +6040,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5897,6 +6066,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5929,6 +6099,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -5953,6 +6124,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5972,6 +6144,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getEstimatedLowWatermarkFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5995,6 +6168,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
               : estimatedLowWatermark_;
         }
       }
+
       /**
        *
        *
@@ -6107,6 +6281,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -6119,6 +6294,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -6141,6 +6317,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
      */
     java.util.List<com.google.bigtable.v2.StreamContinuationToken> getContinuationTokensList();
+
     /**
      *
      *
@@ -6152,6 +6329,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
      */
     com.google.bigtable.v2.StreamContinuationToken getContinuationTokens(int index);
+
     /**
      *
      *
@@ -6163,6 +6341,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamContinuationToken continuation_tokens = 2;</code>
      */
     int getContinuationTokensCount();
+
     /**
      *
      *
@@ -6175,6 +6354,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.bigtable.v2.StreamContinuationTokenOrBuilder>
         getContinuationTokensOrBuilderList();
+
     /**
      *
      *
@@ -6200,6 +6380,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
      */
     java.util.List<com.google.bigtable.v2.StreamPartition> getNewPartitionsList();
+
     /**
      *
      *
@@ -6212,6 +6393,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
      */
     com.google.bigtable.v2.StreamPartition getNewPartitions(int index);
+
     /**
      *
      *
@@ -6224,6 +6406,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      * <code>repeated .google.bigtable.v2.StreamPartition new_partitions = 3;</code>
      */
     int getNewPartitionsCount();
+
     /**
      *
      *
@@ -6237,6 +6420,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     java.util.List<? extends com.google.bigtable.v2.StreamPartitionOrBuilder>
         getNewPartitionsOrBuilderList();
+
     /**
      *
      *
@@ -6250,6 +6434,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
      */
     com.google.bigtable.v2.StreamPartitionOrBuilder getNewPartitionsOrBuilder(int index);
   }
+
   /**
    *
    *
@@ -6283,6 +6468,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamResponse.CloseStream)
       CloseStreamOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloseStream.newBuilder() to construct.
     private CloseStream(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6317,6 +6503,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     private int bitField0_;
     public static final int STATUS_FIELD_NUMBER = 1;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -6332,6 +6519,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -6347,6 +6535,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -6365,6 +6554,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.v2.StreamContinuationToken> continuationTokens_;
+
     /**
      *
      *
@@ -6380,6 +6570,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getContinuationTokensList() {
       return continuationTokens_;
     }
+
     /**
      *
      *
@@ -6395,6 +6586,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getContinuationTokensOrBuilderList() {
       return continuationTokens_;
     }
+
     /**
      *
      *
@@ -6409,6 +6601,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public int getContinuationTokensCount() {
       return continuationTokens_.size();
     }
+
     /**
      *
      *
@@ -6423,6 +6616,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.StreamContinuationToken getContinuationTokens(int index) {
       return continuationTokens_.get(index);
     }
+
     /**
      *
      *
@@ -6443,6 +6637,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.v2.StreamPartition> newPartitions_;
+
     /**
      *
      *
@@ -6458,6 +6653,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public java.util.List<com.google.bigtable.v2.StreamPartition> getNewPartitionsList() {
       return newPartitions_;
     }
+
     /**
      *
      *
@@ -6474,6 +6670,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getNewPartitionsOrBuilderList() {
       return newPartitions_;
     }
+
     /**
      *
      *
@@ -6489,6 +6686,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public int getNewPartitionsCount() {
       return newPartitions_.size();
     }
+
     /**
      *
      *
@@ -6504,6 +6702,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.StreamPartition getNewPartitions(int index) {
       return newPartitions_.get(index);
     }
+
     /**
      *
      *
@@ -6709,6 +6908,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7055,6 +7255,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -7069,6 +7270,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -7087,6 +7289,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -7109,6 +7312,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7128,6 +7332,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7155,6 +7360,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7174,6 +7380,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7188,6 +7395,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7204,6 +7412,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -7263,6 +7472,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return continuationTokensBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -7280,6 +7490,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return continuationTokensBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -7297,6 +7508,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return continuationTokensBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -7321,6 +7533,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7342,6 +7555,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7365,6 +7579,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7389,6 +7604,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7410,6 +7626,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7431,6 +7648,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7452,6 +7670,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7472,6 +7691,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7492,6 +7712,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7506,6 +7727,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           int index) {
         return getContinuationTokensFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -7524,6 +7746,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return continuationTokensBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -7542,6 +7765,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(continuationTokens_);
         }
       }
+
       /**
        *
        *
@@ -7556,6 +7780,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return getContinuationTokensFieldBuilder()
             .addBuilder(com.google.bigtable.v2.StreamContinuationToken.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7571,6 +7796,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return getContinuationTokensFieldBuilder()
             .addBuilder(index, com.google.bigtable.v2.StreamContinuationToken.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7641,6 +7867,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return newPartitionsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -7659,6 +7886,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return newPartitionsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -7677,6 +7905,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return newPartitionsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -7701,6 +7930,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7723,6 +7953,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7747,6 +7978,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7771,6 +8003,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7793,6 +8026,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7815,6 +8049,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7837,6 +8072,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7858,6 +8094,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7879,6 +8116,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         }
         return this;
       }
+
       /**
        *
        *
@@ -7893,6 +8131,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       public com.google.bigtable.v2.StreamPartition.Builder getNewPartitionsBuilder(int index) {
         return getNewPartitionsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -7911,6 +8150,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return newPartitionsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -7930,6 +8170,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
           return java.util.Collections.unmodifiableList(newPartitions_);
         }
       }
+
       /**
        *
        *
@@ -7945,6 +8186,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return getNewPartitionsFieldBuilder()
             .addBuilder(com.google.bigtable.v2.StreamPartition.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -7960,6 +8202,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return getNewPartitionsFieldBuilder()
             .addBuilder(index, com.google.bigtable.v2.StreamPartition.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -8079,6 +8322,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     private StreamRecordCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -8114,6 +8358,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   }
 
   public static final int DATA_CHANGE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -8129,6 +8374,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   public boolean hasDataChange() {
     return streamRecordCase_ == 1;
   }
+
   /**
    *
    *
@@ -8147,6 +8393,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     }
     return com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8166,6 +8413,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   }
 
   public static final int HEARTBEAT_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -8181,6 +8429,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   public boolean hasHeartbeat() {
     return streamRecordCase_ == 2;
   }
+
   /**
    *
    *
@@ -8199,6 +8448,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     }
     return com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8218,6 +8468,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   }
 
   public static final int CLOSE_STREAM_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -8233,6 +8484,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
   public boolean hasCloseStream() {
     return streamRecordCase_ == 3;
   }
+
   /**
    *
    *
@@ -8251,6 +8503,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     }
     return com.google.bigtable.v2.ReadChangeStreamResponse.CloseStream.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8476,6 +8729,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8729,6 +8983,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.Builder,
             com.google.bigtable.v2.ReadChangeStreamResponse.DataChangeOrBuilder>
         dataChangeBuilder_;
+
     /**
      *
      *
@@ -8744,6 +8999,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasDataChange() {
       return streamRecordCase_ == 1;
     }
+
     /**
      *
      *
@@ -8769,6 +9025,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8791,6 +9048,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -8811,6 +9069,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -8846,6 +9105,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -8871,6 +9131,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -8884,6 +9145,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getDataChangeBuilder() {
       return getDataChangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8905,6 +9167,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.DataChange.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8944,6 +9207,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat.Builder,
             com.google.bigtable.v2.ReadChangeStreamResponse.HeartbeatOrBuilder>
         heartbeatBuilder_;
+
     /**
      *
      *
@@ -8959,6 +9223,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasHeartbeat() {
       return streamRecordCase_ == 2;
     }
+
     /**
      *
      *
@@ -8984,6 +9249,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9006,6 +9272,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9026,6 +9293,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9059,6 +9327,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -9084,6 +9353,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -9096,6 +9366,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat.Builder getHeartbeatBuilder() {
       return getHeartbeatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9117,6 +9388,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9156,6 +9428,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
             com.google.bigtable.v2.ReadChangeStreamResponse.CloseStream.Builder,
             com.google.bigtable.v2.ReadChangeStreamResponse.CloseStreamOrBuilder>
         closeStreamBuilder_;
+
     /**
      *
      *
@@ -9171,6 +9444,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
     public boolean hasCloseStream() {
       return streamRecordCase_ == 3;
     }
+
     /**
      *
      *
@@ -9196,6 +9470,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.CloseStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9219,6 +9494,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9239,6 +9515,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9274,6 +9551,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       streamRecordCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -9299,6 +9577,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -9312,6 +9591,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         getCloseStreamBuilder() {
       return getCloseStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9333,6 +9613,7 @@ public final class ReadChangeStreamResponse extends com.google.protobuf.Generate
         return com.google.bigtable.v2.ReadChangeStreamResponse.CloseStream.getDefaultInstance();
       }
     }
+
     /**
      *
      *

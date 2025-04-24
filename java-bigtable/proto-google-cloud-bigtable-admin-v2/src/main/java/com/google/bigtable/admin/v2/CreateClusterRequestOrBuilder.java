@@ -39,6 +39,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface CreateClusterRequestOrBuilder
    * @return Whether the cluster field is set.
    */
   boolean hasCluster();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CreateClusterRequestOrBuilder
    * @return The cluster.
    */
   com.google.bigtable.admin.v2.Cluster getCluster();
+
   /**
    *
    *

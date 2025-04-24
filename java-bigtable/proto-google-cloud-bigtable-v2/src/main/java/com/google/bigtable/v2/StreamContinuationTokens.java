@@ -35,6 +35,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.StreamContinuationTokens)
     StreamContinuationTokensOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamContinuationTokens.newBuilder() to construct.
   private StreamContinuationTokens(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.StreamContinuationToken> tokens_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
   public java.util.List<com.google.bigtable.v2.StreamContinuationToken> getTokensList() {
     return tokens_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       getTokensOrBuilderList() {
     return tokens_;
   }
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
   public int getTokensCount() {
     return tokens_.size();
   }
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
   public com.google.bigtable.v2.StreamContinuationToken getTokens(int index) {
     return tokens_.get(index);
   }
+
   /**
    *
    *
@@ -297,6 +303,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -560,6 +567,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
         return tokensBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
         return tokensBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -592,6 +601,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
         return tokensBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -634,6 +645,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -656,6 +668,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +712,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -718,6 +733,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +754,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -757,6 +774,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +807,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
     public com.google.bigtable.v2.StreamContinuationToken.Builder getTokensBuilder(int index) {
       return getTokensFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -804,6 +824,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
         return tokensBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -821,6 +842,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
         return java.util.Collections.unmodifiableList(tokens_);
       }
     }
+
     /**
      *
      *
@@ -834,6 +856,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       return getTokensFieldBuilder()
           .addBuilder(com.google.bigtable.v2.StreamContinuationToken.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -847,6 +870,7 @@ public final class StreamContinuationTokens extends com.google.protobuf.Generate
       return getTokensFieldBuilder()
           .addBuilder(index, com.google.bigtable.v2.StreamContinuationToken.getDefaultInstance());
     }
+
     /**
      *
      *

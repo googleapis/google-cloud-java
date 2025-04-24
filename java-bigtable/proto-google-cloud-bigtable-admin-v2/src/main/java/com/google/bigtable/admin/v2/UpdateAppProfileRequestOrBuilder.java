@@ -38,6 +38,7 @@ public interface UpdateAppProfileRequestOrBuilder
    * @return Whether the appProfile field is set.
    */
   boolean hasAppProfile();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateAppProfileRequestOrBuilder
    * @return The appProfile.
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateAppProfileRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface UpdateAppProfileRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

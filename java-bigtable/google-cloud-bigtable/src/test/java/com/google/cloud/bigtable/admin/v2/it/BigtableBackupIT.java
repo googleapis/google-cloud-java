@@ -104,10 +104,7 @@ public class BigtableBackupIT {
 
     tableAdminHot =
         BigtableTableAdminClient.create(
-            testEnvRule
-                .env()
-                .getTableAdminSettings()
-                .toBuilder()
+            testEnvRule.env().getTableAdminSettings().toBuilder()
                 .setInstanceId(newInstanceId)
                 .build());
 

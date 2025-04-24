@@ -38,6 +38,7 @@ public interface MaterializedViewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface MaterializedViewOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface MaterializedViewOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

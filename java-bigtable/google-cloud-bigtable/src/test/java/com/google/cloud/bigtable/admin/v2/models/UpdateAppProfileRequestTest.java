@@ -102,8 +102,7 @@ public class UpdateAppProfileRequestTest {
         .isEqualTo(
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(
-                    existingProto
-                        .toBuilder()
+                    existingProto.toBuilder()
                         .setStandardIsolation(
                             StandardIsolation.newBuilder()
                                 .setPriority(
@@ -136,8 +135,7 @@ public class UpdateAppProfileRequestTest {
         .isEqualTo(
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(
-                    existingProto
-                        .toBuilder()
+                    existingProto.toBuilder()
                         .setDataBoostIsolationReadOnly(
                             DataBoostIsolationReadOnly.newBuilder()
                                 .setComputeBillingOwner(
@@ -167,8 +165,7 @@ public class UpdateAppProfileRequestTest {
         .isEqualTo(
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(
-                    existingProto
-                        .toBuilder()
+                    existingProto.toBuilder()
                         .setMultiClusterRoutingUseAny(
                             MultiClusterRoutingUseAny.newBuilder()
                                 .setRowAffinity(

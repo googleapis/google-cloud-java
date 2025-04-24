@@ -33,6 +33,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ExecuteQueryRequest)
     ExecuteQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecuteQueryRequest.newBuilder() to construct.
   private ExecuteQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -96,6 +97,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     private DataFormatCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -130,6 +132,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object instanceName_ = "";
+
   /**
    *
    *
@@ -157,6 +160,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -189,6 +193,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appProfileId_ = "";
+
   /**
    *
    *
@@ -213,6 +218,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -242,6 +248,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -271,6 +278,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       return s;
     }
   }
+
   /**
    *
    *
@@ -303,6 +311,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
 
   public static final int PREPARED_QUERY_FIELD_NUMBER = 9;
   private com.google.protobuf.ByteString preparedQuery_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -328,6 +337,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
   }
 
   public static final int PROTO_FORMAT_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -347,6 +357,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
   public boolean hasProtoFormat() {
     return dataFormatCase_ == 4;
   }
+
   /**
    *
    *
@@ -369,6 +380,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
     return com.google.bigtable.v2.ProtoFormat.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -390,6 +402,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
 
   public static final int RESUME_TOKEN_FIELD_NUMBER = 8;
   private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -441,6 +454,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
   public int getParamsCount() {
     return internalGetParams().getMap().size();
   }
+
   /**
    *
    *
@@ -481,12 +495,14 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
     return internalGetParams().getMap().containsKey(key);
   }
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParams() {
     return getParamsMap();
   }
+
   /**
    *
    *
@@ -524,6 +540,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
   public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParamsMap() {
     return internalGetParams().getMap();
   }
+
   /**
    *
    *
@@ -569,6 +586,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         internalGetParams().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -851,6 +869,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1176,6 +1195,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private java.lang.Object instanceName_ = "";
+
     /**
      *
      *
@@ -1202,6 +1222,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1249,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1253,6 +1275,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1274,6 +1297,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1302,6 +1326,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object appProfileId_ = "";
+
     /**
      *
      *
@@ -1325,6 +1350,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1348,6 +1374,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1370,6 +1397,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1388,6 +1416,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1413,6 +1442,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -1441,6 +1471,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1469,6 +1500,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1496,6 +1528,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1519,6 +1552,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1583,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.ByteString preparedQuery_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1572,6 +1607,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getPreparedQuery() {
       return preparedQuery_;
     }
+
     /**
      *
      *
@@ -1601,6 +1637,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1632,6 +1669,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
             com.google.bigtable.v2.ProtoFormat.Builder,
             com.google.bigtable.v2.ProtoFormatOrBuilder>
         protoFormatBuilder_;
+
     /**
      *
      *
@@ -1651,6 +1689,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public boolean hasProtoFormat() {
       return dataFormatCase_ == 4;
     }
+
     /**
      *
      *
@@ -1680,6 +1719,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return com.google.bigtable.v2.ProtoFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1704,6 +1744,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       dataFormatCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1725,6 +1766,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       dataFormatCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1759,6 +1801,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       dataFormatCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1786,6 +1829,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -1800,6 +1844,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public com.google.bigtable.v2.ProtoFormat.Builder getProtoFormatBuilder() {
       return getProtoFormatFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1822,6 +1867,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
         return com.google.bigtable.v2.ProtoFormat.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1857,6 +1903,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     }
 
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1878,6 +1925,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public com.google.protobuf.ByteString getResumeToken() {
       return resumeToken_;
     }
+
     /**
      *
      *
@@ -1905,6 +1953,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1945,7 +1994,8 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
           defaultEntry() {
         return ParamsDefaultEntryHolder.defaultEntry;
       }
-    };
+    }
+    ;
 
     private static final ParamsConverter paramsConverter = new ParamsConverter();
 
@@ -1985,6 +2035,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public int getParamsCount() {
       return internalGetParams().ensureBuilderMap().size();
     }
+
     /**
      *
      *
@@ -2025,12 +2076,14 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       }
       return internalGetParams().ensureBuilderMap().containsKey(key);
     }
+
     /** Use {@link #getParamsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParams() {
       return getParamsMap();
     }
+
     /**
      *
      *
@@ -2068,6 +2121,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
     public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParamsMap() {
       return internalGetParams().getImmutableMap();
     }
+
     /**
      *
      *
@@ -2113,6 +2167,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
           internalGetMutableParams().ensureBuilderMap();
       return map.containsKey(key) ? paramsConverter.build(map.get(key)) : defaultValue;
     }
+
     /**
      *
      *
@@ -2164,6 +2219,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableParams().clear();
       return this;
     }
+
     /**
      *
      *
@@ -2204,12 +2260,14 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       internalGetMutableParams().ensureBuilderMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getMutableParams() {
       bitField0_ |= 0x00000040;
       return internalGetMutableParams().ensureMessageMap();
     }
+
     /**
      *
      *
@@ -2254,6 +2312,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *
@@ -2299,6 +2358,7 @@ public final class ExecuteQueryRequest extends com.google.protobuf.GeneratedMess
       bitField0_ |= 0x00000040;
       return this;
     }
+
     /**
      *
      *

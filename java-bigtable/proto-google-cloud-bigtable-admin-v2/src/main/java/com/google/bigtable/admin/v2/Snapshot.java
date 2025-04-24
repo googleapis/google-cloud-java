@@ -39,6 +39,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Snapshot)
     SnapshotOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Snapshot.newBuilder() to construct.
   private Snapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -126,6 +127,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_NOT_KNOWN = 0;</code>
      */
     public static final int STATE_NOT_KNOWN_VALUE = 0;
+
     /**
      *
      *
@@ -136,6 +138,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
      * <code>READY = 1;</code>
      */
     public static final int READY_VALUE = 1;
+
     /**
      *
      *
@@ -237,6 +240,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -262,6 +266,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -290,6 +295,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_TABLE_FIELD_NUMBER = 2;
   private com.google.bigtable.admin.v2.Table sourceTable_;
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSourceTable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -326,6 +333,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         ? com.google.bigtable.admin.v2.Table.getDefaultInstance()
         : sourceTable_;
   }
+
   /**
    *
    *
@@ -346,6 +354,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_SIZE_BYTES_FIELD_NUMBER = 3;
   private long dataSizeBytes_ = 0L;
+
   /**
    *
    *
@@ -367,6 +376,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CREATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -399,6 +410,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -416,6 +428,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETE_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp deleteTime_;
+
   /**
    *
    *
@@ -433,6 +446,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDeleteTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -450,6 +464,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getDeleteTime() {
     return deleteTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deleteTime_;
   }
+
   /**
    *
    *
@@ -468,6 +483,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 6;
   private int state_ = 0;
+
   /**
    *
    *
@@ -485,6 +501,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -509,6 +526,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
+
   /**
    *
    *
@@ -532,6 +550,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -782,6 +801,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1080,6 +1100,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -1104,6 +1125,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1128,6 +1150,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1151,6 +1174,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1170,6 +1194,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1201,6 +1226,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Table.Builder,
             com.google.bigtable.admin.v2.TableOrBuilder>
         sourceTableBuilder_;
+
     /**
      *
      *
@@ -1217,6 +1243,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSourceTable() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1239,6 +1266,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return sourceTableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1263,6 +1291,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1313,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1313,6 +1343,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1365,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1382,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getSourceTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1370,6 +1403,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             : sourceTable_;
       }
     }
+
     /**
      *
      *
@@ -1399,6 +1433,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long dataSizeBytes_;
+
     /**
      *
      *
@@ -1417,6 +1452,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public long getDataSizeBytes() {
       return dataSizeBytes_;
     }
+
     /**
      *
      *
@@ -1439,6 +1475,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1466,6 +1503,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1482,6 +1520,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1504,6 +1543,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1528,6 +1568,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1549,6 +1590,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1620,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1599,6 +1642,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1615,6 +1659,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1635,6 +1680,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1669,6 +1715,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         deleteTimeBuilder_;
+
     /**
      *
      *
@@ -1685,6 +1732,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDeleteTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1707,6 +1755,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return deleteTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1731,6 +1780,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1752,6 +1802,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1832,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1802,6 +1854,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1871,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1838,6 +1892,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
             : deleteTime_;
       }
     }
+
     /**
      *
      *
@@ -1867,6 +1922,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1884,6 +1940,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1904,6 +1961,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1923,6 +1981,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.Snapshot.State.forNumber(state_);
       return result == null ? com.google.bigtable.admin.v2.Snapshot.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1946,6 +2005,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2027,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object description_ = "";
+
     /**
      *
      *
@@ -1989,6 +2050,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2011,6 +2073,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2032,6 +2095,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2049,6 +2113,7 @@ public final class Snapshot extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

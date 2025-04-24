@@ -48,6 +48,7 @@ public interface ValueOrBuilder
    * @return Whether the type field is set.
    */
   boolean hasType();
+
   /**
    *
    *
@@ -72,6 +73,7 @@ public interface ValueOrBuilder
    * @return The type.
    */
   com.google.bigtable.v2.Type getType();
+
   /**
    *
    *
@@ -108,6 +110,7 @@ public interface ValueOrBuilder
    * @return Whether the rawValue field is set.
    */
   boolean hasRawValue();
+
   /**
    *
    *
@@ -135,6 +138,7 @@ public interface ValueOrBuilder
    * @return Whether the rawTimestampMicros field is set.
    */
   boolean hasRawTimestampMicros();
+
   /**
    *
    *
@@ -161,6 +165,7 @@ public interface ValueOrBuilder
    * @return Whether the bytesValue field is set.
    */
   boolean hasBytesValue();
+
   /**
    *
    *
@@ -186,6 +191,7 @@ public interface ValueOrBuilder
    * @return Whether the stringValue field is set.
    */
   boolean hasStringValue();
+
   /**
    *
    *
@@ -198,6 +204,7 @@ public interface ValueOrBuilder
    * @return The stringValue.
    */
   java.lang.String getStringValue();
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface ValueOrBuilder
    * @return Whether the intValue field is set.
    */
   boolean hasIntValue();
+
   /**
    *
    *
@@ -248,6 +256,7 @@ public interface ValueOrBuilder
    * @return Whether the boolValue field is set.
    */
   boolean hasBoolValue();
+
   /**
    *
    *
@@ -273,6 +282,7 @@ public interface ValueOrBuilder
    * @return Whether the floatValue field is set.
    */
   boolean hasFloatValue();
+
   /**
    *
    *
@@ -298,6 +308,7 @@ public interface ValueOrBuilder
    * @return Whether the timestampValue field is set.
    */
   boolean hasTimestampValue();
+
   /**
    *
    *
@@ -310,6 +321,7 @@ public interface ValueOrBuilder
    * @return The timestampValue.
    */
   com.google.protobuf.Timestamp getTimestampValue();
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public interface ValueOrBuilder
    * @return Whether the dateValue field is set.
    */
   boolean hasDateValue();
+
   /**
    *
    *
@@ -345,6 +358,7 @@ public interface ValueOrBuilder
    * @return The dateValue.
    */
   com.google.type.Date getDateValue();
+
   /**
    *
    *
@@ -372,6 +386,7 @@ public interface ValueOrBuilder
    * @return Whether the arrayValue field is set.
    */
   boolean hasArrayValue();
+
   /**
    *
    *
@@ -388,6 +403,7 @@ public interface ValueOrBuilder
    * @return The arrayValue.
    */
   com.google.bigtable.v2.ArrayValue getArrayValue();
+
   /**
    *
    *

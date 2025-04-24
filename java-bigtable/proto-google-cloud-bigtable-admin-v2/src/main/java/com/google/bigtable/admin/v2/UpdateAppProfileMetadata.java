@@ -33,6 +33,7 @@ public final class UpdateAppProfileMetadata extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateAppProfileMetadata)
     UpdateAppProfileMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAppProfileMetadata.newBuilder() to construct.
   private UpdateAppProfileMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class UpdateAppProfileMetadata extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -491,8 +491,7 @@ public class QueryTest {
   @Test(expected = IllegalArgumentException.class)
   public void testFromProtoWithInvalidAuthorizedViewId() {
     Query.fromProto(
-        ReadRowsRequest.getDefaultInstance()
-            .toBuilder()
+        ReadRowsRequest.getDefaultInstance().toBuilder()
             .setAuthorizedViewName("invalid-name")
             .build());
 
@@ -511,8 +510,7 @@ public class QueryTest {
   @Test(expected = IllegalArgumentException.class)
   public void testFromProtoWithBothTableAndAuthorizedViewId() {
     Query.fromProto(
-        ReadRowsRequest.getDefaultInstance()
-            .toBuilder()
+        ReadRowsRequest.getDefaultInstance().toBuilder()
             .setTableName(NameUtil.formatTableName(PROJECT_ID, INSTANCE_ID, TABLE_ID))
             .setAuthorizedViewName(
                 NameUtil.formatAuthorizedViewName(

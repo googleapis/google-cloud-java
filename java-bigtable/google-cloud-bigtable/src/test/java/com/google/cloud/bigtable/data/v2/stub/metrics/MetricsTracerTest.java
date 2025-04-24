@@ -124,9 +124,7 @@ public class MetricsTracerTest {
     BigtableClientContext bigtableClientContext =
         EnhancedBigtableStub.createBigtableClientContext(settings.getStubSettings());
     ClientContext clientContext =
-        bigtableClientContext
-            .getClientContext()
-            .toBuilder()
+        bigtableClientContext.getClientContext().toBuilder()
             .setTracerFactory(
                 EnhancedBigtableStub.createBigtableTracerFactory(
                     settings.getStubSettings(),

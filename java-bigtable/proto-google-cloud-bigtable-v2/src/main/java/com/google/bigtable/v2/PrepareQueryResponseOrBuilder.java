@@ -37,6 +37,7 @@ public interface PrepareQueryResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface PrepareQueryResponseOrBuilder
    * @return The metadata.
    */
   com.google.bigtable.v2.ResultSetMetadata getMetadata();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface PrepareQueryResponseOrBuilder
    * @return Whether the validUntil field is set.
    */
   boolean hasValidUntil();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface PrepareQueryResponseOrBuilder
    * @return The validUntil.
    */
   com.google.protobuf.Timestamp getValidUntil();
+
   /**
    *
    *

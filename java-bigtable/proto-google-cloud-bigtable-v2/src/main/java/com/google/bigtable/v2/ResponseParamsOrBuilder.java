@@ -36,6 +36,7 @@ public interface ResponseParamsOrBuilder
    * @return Whether the zoneId field is set.
    */
   boolean hasZoneId();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ResponseParamsOrBuilder
    * @return The zoneId.
    */
   java.lang.String getZoneId();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface ResponseParamsOrBuilder
    * @return Whether the clusterId field is set.
    */
   boolean hasClusterId();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface ResponseParamsOrBuilder
    * @return The clusterId.
    */
   java.lang.String getClusterId();
+
   /**
    *
    *

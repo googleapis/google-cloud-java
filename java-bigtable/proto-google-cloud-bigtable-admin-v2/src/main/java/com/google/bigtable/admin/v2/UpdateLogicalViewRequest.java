@@ -33,6 +33,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateLogicalViewRequest)
     UpdateLogicalViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateLogicalViewRequest.newBuilder() to construct.
   private UpdateLogicalViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
   private int bitField0_;
   public static final int LOGICAL_VIEW_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.LogicalView logicalView_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
   public boolean hasLogicalView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
         ? com.google.bigtable.admin.v2.LogicalView.getDefaultInstance()
         : logicalView_;
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -358,6 +365,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -581,6 +589,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
             com.google.bigtable.admin.v2.LogicalView.Builder,
             com.google.bigtable.admin.v2.LogicalViewOrBuilder>
         logicalViewBuilder_;
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
     public boolean hasLogicalView() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -627,6 +637,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
         return logicalViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -655,6 +666,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -739,6 +753,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return getLogicalViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
             : logicalView_;
       }
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -836,6 +854,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -857,6 +876,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -880,6 +900,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -900,6 +921,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +950,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -948,6 +971,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -963,6 +987,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -982,6 +1007,7 @@ public final class UpdateLogicalViewRequest extends com.google.protobuf.Generate
             : updateMask_;
       }
     }
+
     /**
      *
      *

@@ -72,6 +72,7 @@ public enum StorageType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>STORAGE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public enum StorageType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SSD = 1;</code>
    */
   public static final int SSD_VALUE = 1;
+
   /**
    *
    *

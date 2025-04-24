@@ -57,6 +57,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_row]
 
   // [START bigtable_reads_row_partial]
@@ -88,6 +89,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_row_partial]
 
   // [START bigtable_reads_rows]
@@ -117,6 +119,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_rows]
 
   // [START bigtable_reads_row_range]
@@ -146,6 +149,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_row_range]
 
   // [START bigtable_reads_row_ranges]
@@ -175,6 +179,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_row_ranges]
 
   // [START bigtable_reads_prefix]
@@ -201,6 +206,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_prefix]
 
   // [START bigtable_reverse_scan]
@@ -232,6 +238,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reverse_scan]
 
   // [START bigtable_reads_filter]
@@ -260,6 +267,7 @@ public class Reads {
           "Unable to initialize service client, as a network error occurred: \n" + e.toString());
     }
   }
+
   // [END bigtable_reads_filter]
   // [END_EXCLUDE]
 

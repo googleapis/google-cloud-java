@@ -39,6 +39,7 @@ public interface FullReadStatsViewOrBuilder
    * @return Whether the readIterationStats field is set.
    */
   boolean hasReadIterationStats();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface FullReadStatsViewOrBuilder
    * @return The readIterationStats.
    */
   com.google.bigtable.v2.ReadIterationStats getReadIterationStats();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface FullReadStatsViewOrBuilder
    * @return Whether the requestLatencyStats field is set.
    */
   boolean hasRequestLatencyStats();
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface FullReadStatsViewOrBuilder
    * @return The requestLatencyStats.
    */
   com.google.bigtable.v2.RequestLatencyStats getRequestLatencyStats();
+
   /**
    *
    *

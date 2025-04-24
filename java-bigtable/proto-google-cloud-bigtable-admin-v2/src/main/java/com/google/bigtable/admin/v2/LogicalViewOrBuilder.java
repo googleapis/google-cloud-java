@@ -38,6 +38,7 @@ public interface LogicalViewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface LogicalViewOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface LogicalViewOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -108,4 +111,17 @@ public interface LogicalViewOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to make the LogicalView protected against deletion.
+   * </pre>
+   *
+   * <code>bool deletion_protection = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtection.
+   */
+  boolean getDeletionProtection();
 }

@@ -39,6 +39,7 @@ public interface GetAppProfileRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

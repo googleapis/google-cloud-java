@@ -40,6 +40,7 @@ public final class RegexUtil {
   public static String literalRegex(final String value) {
     return literalRegex(ByteString.copyFromUtf8(value)).toStringUtf8();
   }
+
   /** Converts the value to a quoted regular expression. */
   public static ByteString literalRegex(ByteString value) {
     ByteString.Output output = ByteString.newOutput(value.size() * 2);

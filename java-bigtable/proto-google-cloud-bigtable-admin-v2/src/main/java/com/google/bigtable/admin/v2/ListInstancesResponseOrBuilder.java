@@ -34,6 +34,7 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Instance instances = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.Instance> getInstancesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Instance instances = 1;</code>
    */
   com.google.bigtable.admin.v2.Instance getInstances(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListInstancesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Instance instances = 1;</code>
    */
   int getInstancesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListInstancesResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.InstanceOrBuilder>
       getInstancesOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ListInstancesResponseOrBuilder
    * @return A list containing the failedLocations.
    */
   java.util.List<java.lang.String> getFailedLocationsList();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface ListInstancesResponseOrBuilder
    * @return The count of failedLocations.
    */
   int getFailedLocationsCount();
+
   /**
    *
    *
@@ -128,6 +134,7 @@ public interface ListInstancesResponseOrBuilder
    * @return The failedLocations at the given index.
    */
   java.lang.String getFailedLocations(int index);
+
   /**
    *
    *
@@ -159,6 +166,7 @@ public interface ListInstancesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

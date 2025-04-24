@@ -40,6 +40,7 @@ public interface GetMaterializedViewRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

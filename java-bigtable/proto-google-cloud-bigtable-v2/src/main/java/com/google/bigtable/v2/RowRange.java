@@ -33,6 +33,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.RowRange)
     RowRangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RowRange.newBuilder() to construct.
   private RowRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -76,6 +77,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     private StartKeyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -125,6 +127,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     private EndKeyCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -158,6 +161,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_KEY_CLOSED_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -173,6 +177,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartKeyClosed() {
     return startKeyCase_ == 1;
   }
+
   /**
    *
    *
@@ -193,6 +198,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_KEY_OPEN_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartKeyOpen() {
     return startKeyCase_ == 2;
   }
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_KEY_OPEN_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -243,6 +251,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndKeyOpen() {
     return endKeyCase_ == 3;
   }
+
   /**
    *
    *
@@ -263,6 +272,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_KEY_CLOSED_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -278,6 +288,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndKeyClosed() {
     return endKeyCase_ == 4;
   }
+
   /**
    *
    *
@@ -523,6 +534,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -798,6 +810,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartKeyClosed() {
       return startKeyCase_ == 1;
     }
+
     /**
      *
      *
@@ -815,6 +828,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -836,6 +850,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -870,6 +885,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartKeyOpen() {
       return startKeyCase_ == 2;
     }
+
     /**
      *
      *
@@ -887,6 +903,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -908,6 +925,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -942,6 +960,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndKeyOpen() {
       return endKeyCase_ == 3;
     }
+
     /**
      *
      *
@@ -959,6 +978,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -980,6 +1000,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1035,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndKeyClosed() {
       return endKeyCase_ == 4;
     }
+
     /**
      *
      *
@@ -1031,6 +1053,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1052,6 +1075,7 @@ public final class RowRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

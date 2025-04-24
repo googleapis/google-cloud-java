@@ -34,6 +34,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.Table> getTablesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
   com.google.bigtable.admin.v2.Table getTables(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
   int getTablesCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListTablesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Table tables = 1;</code>
    */
   java.util.List<? extends com.google.bigtable.admin.v2.TableOrBuilder> getTablesOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListTablesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

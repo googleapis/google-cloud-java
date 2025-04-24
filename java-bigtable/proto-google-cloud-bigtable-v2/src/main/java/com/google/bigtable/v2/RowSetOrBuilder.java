@@ -36,6 +36,7 @@ public interface RowSetOrBuilder
    * @return A list containing the rowKeys.
    */
   java.util.List<com.google.protobuf.ByteString> getRowKeysList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RowSetOrBuilder
    * @return The count of rowKeys.
    */
   int getRowKeysCount();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RowSetOrBuilder
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
   java.util.List<com.google.bigtable.v2.RowRange> getRowRangesList();
+
   /**
    *
    *
@@ -82,6 +85,7 @@ public interface RowSetOrBuilder
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
   com.google.bigtable.v2.RowRange getRowRanges(int index);
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface RowSetOrBuilder
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
   int getRowRangesCount();
+
   /**
    *
    *
@@ -102,6 +107,7 @@ public interface RowSetOrBuilder
    * <code>repeated .google.bigtable.v2.RowRange row_ranges = 2;</code>
    */
   java.util.List<? extends com.google.bigtable.v2.RowRangeOrBuilder> getRowRangesOrBuilderList();
+
   /**
    *
    *

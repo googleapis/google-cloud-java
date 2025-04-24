@@ -36,6 +36,7 @@ public interface StreamContinuationTokenOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StreamContinuationTokenOrBuilder
    * @return The partition.
    */
   com.google.bigtable.v2.StreamPartition getPartition();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface StreamContinuationTokenOrBuilder
    * @return The token.
    */
   java.lang.String getToken();
+
   /**
    *
    *

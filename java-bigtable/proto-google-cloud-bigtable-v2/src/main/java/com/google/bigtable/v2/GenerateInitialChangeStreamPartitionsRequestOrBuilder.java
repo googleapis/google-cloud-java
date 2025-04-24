@@ -41,6 +41,7 @@ public interface GenerateInitialChangeStreamPartitionsRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface GenerateInitialChangeStreamPartitionsRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *

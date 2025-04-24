@@ -34,6 +34,7 @@ public interface ListAppProfilesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.AppProfile> getAppProfilesList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListAppProfilesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfiles(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListAppProfilesResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
   int getAppProfilesCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListAppProfilesResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.AppProfileOrBuilder>
       getAppProfilesOrBuilderList();
+
   /**
    *
    *
@@ -90,6 +94,7 @@ public interface ListAppProfilesResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *
@@ -120,6 +125,7 @@ public interface ListAppProfilesResponseOrBuilder
    * @return A list containing the failedLocations.
    */
   java.util.List<java.lang.String> getFailedLocationsList();
+
   /**
    *
    *
@@ -135,6 +141,7 @@ public interface ListAppProfilesResponseOrBuilder
    * @return The count of failedLocations.
    */
   int getFailedLocationsCount();
+
   /**
    *
    *
@@ -151,6 +158,7 @@ public interface ListAppProfilesResponseOrBuilder
    * @return The failedLocations at the given index.
    */
   java.lang.String getFailedLocations(int index);
+
   /**
    *
    *

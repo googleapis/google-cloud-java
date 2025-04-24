@@ -173,8 +173,7 @@ public class BigtableDataClientFactoryTest {
     // Create 3 lightweight clients
     try (BigtableDataClientFactory factory =
             BigtableDataClientFactory.create(
-                defaultSettings
-                    .toBuilder()
+                defaultSettings.toBuilder()
                     .setMetricsProvider(NoopMetricsProvider.INSTANCE)
                     .build());
         BigtableDataClient ignored1 = factory.createForInstance("project1", "instance1");

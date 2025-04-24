@@ -39,6 +39,7 @@ public interface RestoreTableRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface RestoreTableRequestOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface RestoreTableRequestOrBuilder
    * @return Whether the backup field is set.
    */
   boolean hasBackup();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface RestoreTableRequestOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
+
   /**
    *
    *

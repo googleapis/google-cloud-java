@@ -38,6 +38,7 @@ public interface AuthorizedViewOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface AuthorizedViewOrBuilder
    * @return Whether the subsetView field is set.
    */
   boolean hasSubsetView();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface AuthorizedViewOrBuilder
    * @return The subsetView.
    */
   com.google.bigtable.admin.v2.AuthorizedView.SubsetView getSubsetView();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface AuthorizedViewOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *

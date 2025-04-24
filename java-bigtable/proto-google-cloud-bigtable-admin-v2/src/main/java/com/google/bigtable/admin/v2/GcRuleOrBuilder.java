@@ -36,6 +36,7 @@ public interface GcRuleOrBuilder
    * @return Whether the maxNumVersions field is set.
    */
   boolean hasMaxNumVersions();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface GcRuleOrBuilder
    * @return Whether the maxAge field is set.
    */
   boolean hasMaxAge();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface GcRuleOrBuilder
    * @return The maxAge.
    */
   com.google.protobuf.Duration getMaxAge();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface GcRuleOrBuilder
    * @return Whether the intersection field is set.
    */
   boolean hasIntersection();
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public interface GcRuleOrBuilder
    * @return The intersection.
    */
   com.google.bigtable.admin.v2.GcRule.Intersection getIntersection();
+
   /**
    *
    *
@@ -137,6 +142,7 @@ public interface GcRuleOrBuilder
    * @return Whether the union field is set.
    */
   boolean hasUnion();
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public interface GcRuleOrBuilder
    * @return The union.
    */
   com.google.bigtable.admin.v2.GcRule.Union getUnion();
+
   /**
    *
    *

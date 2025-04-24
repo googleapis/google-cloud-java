@@ -38,6 +38,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.SnapshotTableMetadata)
     SnapshotTableMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SnapshotTableMetadata.newBuilder() to construct.
   private SnapshotTableMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   private int bitField0_;
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.SnapshotTableRequest originalRequest_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasOriginalRequest() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
         ? com.google.bigtable.admin.v2.SnapshotTableRequest.getDefaultInstance()
         : originalRequest_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int REQUEST_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp requestTime_;
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasRequestTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +155,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
+
   /**
    *
    *
@@ -165,6 +172,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
 
   public static final int FINISH_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp finishTime_;
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   public boolean hasFinishTime() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -195,6 +204,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
+
   /**
    *
    *
@@ -401,6 +411,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -649,6 +660,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             com.google.bigtable.admin.v2.SnapshotTableRequest.Builder,
             com.google.bigtable.admin.v2.SnapshotTableRequestOrBuilder>
         originalRequestBuilder_;
+
     /**
      *
      *
@@ -663,6 +675,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasOriginalRequest() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
         return originalRequestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -705,6 +719,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -786,6 +804,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             : originalRequest_;
       }
     }
+
     /**
      *
      *
@@ -837,6 +857,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestTimeBuilder_;
+
     /**
      *
      *
@@ -851,6 +872,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasRequestTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -871,6 +893,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
         return requestTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -893,6 +916,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -912,6 +936,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +964,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -958,6 +984,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +999,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -990,6 +1018,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             : requestTime_;
       }
     }
+
     /**
      *
      *
@@ -1022,6 +1051,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finishTimeBuilder_;
+
     /**
      *
      *
@@ -1036,6 +1066,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
     public boolean hasFinishTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1056,6 +1087,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
         return finishTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1078,6 +1110,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1097,6 +1130,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1158,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1143,6 +1178,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1193,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1175,6 +1212,7 @@ public final class SnapshotTableMetadata extends com.google.protobuf.GeneratedMe
             : finishTime_;
       }
     }
+
     /**
      *
      *

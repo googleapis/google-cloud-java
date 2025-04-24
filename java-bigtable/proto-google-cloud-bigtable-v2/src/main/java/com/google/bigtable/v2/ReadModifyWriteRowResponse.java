@@ -33,6 +33,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadModifyWriteRowResponse)
     ReadModifyWriteRowResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadModifyWriteRowResponse.newBuilder() to construct.
   private ReadModifyWriteRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
   private int bitField0_;
   public static final int ROW_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.Row row_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
   public boolean hasRow() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
   public com.google.bigtable.v2.Row getRow() {
     return row_ == null ? com.google.bigtable.v2.Row.getDefaultInstance() : row_;
   }
+
   /**
    *
    *
@@ -272,6 +276,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
             com.google.bigtable.v2.Row.Builder,
             com.google.bigtable.v2.RowOrBuilder>
         rowBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
     public boolean hasRow() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -507,6 +514,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
         return rowBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -548,6 +557,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -575,6 +585,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -594,6 +605,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -608,6 +620,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
       onChanged();
       return getRowFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -624,6 +637,7 @@ public final class ReadModifyWriteRowResponse extends com.google.protobuf.Genera
         return row_ == null ? com.google.bigtable.v2.Row.getDefaultInstance() : row_;
       }
     }
+
     /**
      *
      *

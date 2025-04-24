@@ -42,6 +42,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * @return The authorizedViewName.
    */
   java.lang.String getAuthorizedViewName();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.bigtable.v2.ReadModifyWriteRule> getRulesList();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * </code>
    */
   com.google.bigtable.v2.ReadModifyWriteRule getRules(int index);
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    * </code>
    */
   int getRulesCount();
+
   /**
    *
    *
@@ -196,6 +202,7 @@ public interface ReadModifyWriteRowRequestOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.ReadModifyWriteRuleOrBuilder>
       getRulesOrBuilderList();
+
   /**
    *
    *

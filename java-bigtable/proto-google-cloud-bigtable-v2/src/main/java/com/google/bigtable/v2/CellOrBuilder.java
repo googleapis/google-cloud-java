@@ -69,6 +69,7 @@ public interface CellOrBuilder
    * @return A list containing the labels.
    */
   java.util.List<java.lang.String> getLabelsList();
+
   /**
    *
    *
@@ -81,6 +82,7 @@ public interface CellOrBuilder
    * @return The count of labels.
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface CellOrBuilder
    * @return The labels at the given index.
    */
   java.lang.String getLabels(int index);
+
   /**
    *
    *

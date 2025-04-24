@@ -36,6 +36,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.CreateClusterRequest getOriginalRequest();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface CreateClusterMetadataOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public interface CreateClusterMetadataOrBuilder
    * </code>
    */
   int getTablesCount();
+
   /**
    *
    *
@@ -167,10 +174,12 @@ public interface CreateClusterMetadataOrBuilder
    * </code>
    */
   boolean containsTables(java.lang.String key);
+
   /** Use {@link #getTablesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
       getTables();
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public interface CreateClusterMetadataOrBuilder
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress>
       getTablesMap();
+
   /**
    *
    *
@@ -214,6 +224,7 @@ public interface CreateClusterMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.admin.v2.CreateClusterMetadata.TableProgress defaultValue);
+
   /**
    *
    *

@@ -102,7 +102,8 @@ public final class CreateClusterRequest {
     Preconditions.checkState(staticClusterSize.getClusterSize() > 0, "Serve nodes must be > 0");
     if (proto.getCluster().getClusterConfig().hasClusterAutoscalingConfig()) {
       throw new IllegalArgumentException(
-          "Autoscaling is already set. To enable manual scaling, do not set the max nodes, min nodes, and CPU percentage.");
+          "Autoscaling is already set. To enable manual scaling, do not set the max nodes, min"
+              + " nodes, and CPU percentage.");
     }
     proto.getClusterBuilder().setServeNodes(staticClusterSize.getClusterSize());
     return this;

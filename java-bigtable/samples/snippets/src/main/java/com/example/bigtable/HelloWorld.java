@@ -224,6 +224,7 @@ public class HelloWorld {
     readRowFilter(tableId, filter);
     readFilter(tableId, filter);
   }
+
   // [END bigtable_hw_create_filter]
 
   // [START bigtable_hw_get_with_filter]
@@ -234,6 +235,7 @@ public class HelloWorld {
     printRow(row);
     System.out.println("Row filter completed.");
   }
+
   // [END bigtable_hw_get_with_filter]
 
   // [START bigtable_hw_scan_with_filter]
@@ -245,6 +247,7 @@ public class HelloWorld {
     }
     System.out.println("Table filter completed.");
   }
+
   // [END bigtable_hw_scan_with_filter]
 
   /** Demonstrates how to delete a table. */

@@ -34,6 +34,7 @@ public interface ListMaterializedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.MaterializedView materialized_views = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.MaterializedView> getMaterializedViewsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListMaterializedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.MaterializedView materialized_views = 1;</code>
    */
   com.google.bigtable.admin.v2.MaterializedView getMaterializedViews(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListMaterializedViewsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.MaterializedView materialized_views = 1;</code>
    */
   int getMaterializedViewsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListMaterializedViewsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.MaterializedViewOrBuilder>
       getMaterializedViewsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListMaterializedViewsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

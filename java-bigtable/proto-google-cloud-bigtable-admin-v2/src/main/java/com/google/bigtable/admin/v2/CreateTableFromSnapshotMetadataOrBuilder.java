@@ -37,6 +37,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest getOriginalRequest();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
+
   /**
    *
    *
@@ -87,6 +90,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface CreateTableFromSnapshotMetadataOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *

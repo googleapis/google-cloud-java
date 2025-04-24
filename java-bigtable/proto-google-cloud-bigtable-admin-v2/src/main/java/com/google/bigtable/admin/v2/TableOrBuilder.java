@@ -38,6 +38,7 @@ public interface TableOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface TableOrBuilder
    * </code>
    */
   int getClusterStatesCount();
+
   /**
    *
    *
@@ -85,10 +87,12 @@ public interface TableOrBuilder
    * </code>
    */
   boolean containsClusterStates(java.lang.String key);
+
   /** Use {@link #getClusterStatesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
       getClusterStates();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface TableOrBuilder
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Table.ClusterState>
       getClusterStatesMap();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface TableOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.admin.v2.Table.ClusterState defaultValue);
+
   /**
    *
    *
@@ -154,6 +160,7 @@ public interface TableOrBuilder
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
   int getColumnFamiliesCount();
+
   /**
    *
    *
@@ -165,9 +172,11 @@ public interface TableOrBuilder
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
   boolean containsColumnFamilies(java.lang.String key);
+
   /** Use {@link #getColumnFamiliesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamilies();
+
   /**
    *
    *
@@ -179,6 +188,7 @@ public interface TableOrBuilder
    * <code>map&lt;string, .google.bigtable.admin.v2.ColumnFamily&gt; column_families = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.admin.v2.ColumnFamily> getColumnFamiliesMap();
+
   /**
    *
    *
@@ -194,6 +204,7 @@ public interface TableOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.admin.v2.ColumnFamily defaultValue);
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface TableOrBuilder
    * @return The enum numeric value on the wire for granularity.
    */
   int getGranularityValue();
+
   /**
    *
    *
@@ -256,6 +268,7 @@ public interface TableOrBuilder
    * @return Whether the restoreInfo field is set.
    */
   boolean hasRestoreInfo();
+
   /**
    *
    *
@@ -271,6 +284,7 @@ public interface TableOrBuilder
    * @return The restoreInfo.
    */
   com.google.bigtable.admin.v2.RestoreInfo getRestoreInfo();
+
   /**
    *
    *
@@ -299,6 +313,7 @@ public interface TableOrBuilder
    * @return Whether the changeStreamConfig field is set.
    */
   boolean hasChangeStreamConfig();
+
   /**
    *
    *
@@ -313,6 +328,7 @@ public interface TableOrBuilder
    * @return The changeStreamConfig.
    */
   com.google.bigtable.admin.v2.ChangeStreamConfig getChangeStreamConfig();
+
   /**
    *
    *
@@ -360,6 +376,7 @@ public interface TableOrBuilder
    * @return Whether the automatedBackupPolicy field is set.
    */
   boolean hasAutomatedBackupPolicy();
+
   /**
    *
    *
@@ -374,6 +391,7 @@ public interface TableOrBuilder
    * @return The automatedBackupPolicy.
    */
   com.google.bigtable.admin.v2.Table.AutomatedBackupPolicy getAutomatedBackupPolicy();
+
   /**
    *
    *
@@ -455,6 +473,7 @@ public interface TableOrBuilder
    * @return Whether the rowKeySchema field is set.
    */
   boolean hasRowKeySchema();
+
   /**
    *
    *
@@ -522,6 +541,7 @@ public interface TableOrBuilder
    * @return The rowKeySchema.
    */
   com.google.bigtable.admin.v2.Type.Struct getRowKeySchema();
+
   /**
    *
    *

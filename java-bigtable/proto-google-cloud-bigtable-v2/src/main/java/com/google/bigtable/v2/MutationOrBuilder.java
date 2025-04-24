@@ -36,6 +36,7 @@ public interface MutationOrBuilder
    * @return Whether the setCell field is set.
    */
   boolean hasSetCell();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MutationOrBuilder
    * @return The setCell.
    */
   com.google.bigtable.v2.Mutation.SetCell getSetCell();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface MutationOrBuilder
    * @return Whether the addToCell field is set.
    */
   boolean hasAddToCell();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface MutationOrBuilder
    * @return The addToCell.
    */
   com.google.bigtable.v2.Mutation.AddToCell getAddToCell();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface MutationOrBuilder
    * @return Whether the mergeToCell field is set.
    */
   boolean hasMergeToCell();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface MutationOrBuilder
    * @return The mergeToCell.
    */
   com.google.bigtable.v2.Mutation.MergeToCell getMergeToCell();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface MutationOrBuilder
    * @return Whether the deleteFromColumn field is set.
    */
   boolean hasDeleteFromColumn();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface MutationOrBuilder
    * @return The deleteFromColumn.
    */
   com.google.bigtable.v2.Mutation.DeleteFromColumn getDeleteFromColumn();
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public interface MutationOrBuilder
    * @return Whether the deleteFromFamily field is set.
    */
   boolean hasDeleteFromFamily();
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public interface MutationOrBuilder
    * @return The deleteFromFamily.
    */
   com.google.bigtable.v2.Mutation.DeleteFromFamily getDeleteFromFamily();
+
   /**
    *
    *
@@ -211,6 +221,7 @@ public interface MutationOrBuilder
    * @return Whether the deleteFromRow field is set.
    */
   boolean hasDeleteFromRow();
+
   /**
    *
    *
@@ -223,6 +234,7 @@ public interface MutationOrBuilder
    * @return The deleteFromRow.
    */
   com.google.bigtable.v2.Mutation.DeleteFromRow getDeleteFromRow();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ValueRange)
     ValueRangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValueRange.newBuilder() to construct.
   private ValueRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     private StartValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -127,6 +129,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     private EndValueCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -160,6 +163,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_VALUE_CLOSED_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -175,6 +179,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartValueClosed() {
     return startValueCase_ == 1;
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int START_VALUE_OPEN_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -210,6 +216,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStartValueOpen() {
     return startValueCase_ == 2;
   }
+
   /**
    *
    *
@@ -230,6 +237,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_VALUE_CLOSED_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -245,6 +253,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndValueClosed() {
     return endValueCase_ == 3;
   }
+
   /**
    *
    *
@@ -265,6 +274,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int END_VALUE_OPEN_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -280,6 +290,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
   public boolean hasEndValueOpen() {
     return endValueCase_ == 4;
   }
+
   /**
    *
    *
@@ -525,6 +536,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -801,6 +813,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartValueClosed() {
       return startValueCase_ == 1;
     }
+
     /**
      *
      *
@@ -818,6 +831,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -839,6 +853,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -873,6 +888,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStartValueOpen() {
       return startValueCase_ == 2;
     }
+
     /**
      *
      *
@@ -890,6 +906,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -911,6 +928,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +963,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndValueClosed() {
       return endValueCase_ == 3;
     }
+
     /**
      *
      *
@@ -962,6 +981,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -983,6 +1003,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1038,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEndValueOpen() {
       return endValueCase_ == 4;
     }
+
     /**
      *
      *
@@ -1034,6 +1056,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1055,6 +1078,7 @@ public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

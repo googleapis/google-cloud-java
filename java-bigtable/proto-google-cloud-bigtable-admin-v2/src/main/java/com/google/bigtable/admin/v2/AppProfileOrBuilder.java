@@ -37,6 +37,7 @@ public interface AppProfileOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface AppProfileOrBuilder
    * @return The etag.
    */
   java.lang.String getEtag();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface AppProfileOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public interface AppProfileOrBuilder
    * @return Whether the multiClusterRoutingUseAny field is set.
    */
   boolean hasMultiClusterRoutingUseAny();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface AppProfileOrBuilder
    * @return The multiClusterRoutingUseAny.
    */
   com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny getMultiClusterRoutingUseAny();
+
   /**
    *
    *
@@ -170,6 +175,7 @@ public interface AppProfileOrBuilder
    * @return Whether the singleClusterRouting field is set.
    */
   boolean hasSingleClusterRouting();
+
   /**
    *
    *
@@ -183,6 +189,7 @@ public interface AppProfileOrBuilder
    * @return The singleClusterRouting.
    */
   com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting getSingleClusterRouting();
+
   /**
    *
    *
@@ -214,6 +221,7 @@ public interface AppProfileOrBuilder
    */
   @java.lang.Deprecated
   boolean hasPriority();
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface AppProfileOrBuilder
    */
   @java.lang.Deprecated
   int getPriorityValue();
+
   /**
    *
    *
@@ -264,6 +273,7 @@ public interface AppProfileOrBuilder
    * @return Whether the standardIsolation field is set.
    */
   boolean hasStandardIsolation();
+
   /**
    *
    *
@@ -277,6 +287,7 @@ public interface AppProfileOrBuilder
    * @return The standardIsolation.
    */
   com.google.bigtable.admin.v2.AppProfile.StandardIsolation getStandardIsolation();
+
   /**
    *
    *
@@ -305,6 +316,7 @@ public interface AppProfileOrBuilder
    * @return Whether the dataBoostIsolationReadOnly field is set.
    */
   boolean hasDataBoostIsolationReadOnly();
+
   /**
    *
    *
@@ -321,6 +333,7 @@ public interface AppProfileOrBuilder
    */
   com.google.bigtable.admin.v2.AppProfile.DataBoostIsolationReadOnly
       getDataBoostIsolationReadOnly();
+
   /**
    *
    *

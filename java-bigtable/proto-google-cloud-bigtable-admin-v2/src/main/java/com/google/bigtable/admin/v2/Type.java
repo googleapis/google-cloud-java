@@ -54,6 +54,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type)
     TypeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Type.newBuilder() to construct.
   private Type(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -99,6 +100,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encoding field is set.
      */
     boolean hasEncoding();
+
     /**
      *
      *
@@ -111,6 +113,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     com.google.bigtable.admin.v2.Type.Bytes.Encoding getEncoding();
+
     /**
      *
      *
@@ -122,6 +125,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.Bytes.EncodingOrBuilder getEncodingOrBuilder();
   }
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Bytes)
       BytesOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Bytes.newBuilder() to construct.
     private Bytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -182,6 +187,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the raw field is set.
        */
       boolean hasRaw();
+
       /**
        *
        *
@@ -194,6 +200,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The raw.
        */
       com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw getRaw();
+
       /**
        *
        *
@@ -207,6 +214,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       com.google.bigtable.admin.v2.Type.Bytes.Encoding.EncodingCase getEncodingCase();
     }
+
     /**
      *
      *
@@ -221,6 +229,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Bytes.Encoding)
         EncodingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Encoding.newBuilder() to construct.
       private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -253,6 +262,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Bytes.Encoding.Raw)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -271,6 +281,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Bytes.Encoding.Raw)
           RawOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Raw.newBuilder() to construct.
         private Raw(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -453,6 +464,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -698,6 +710,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private EncodingCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -729,6 +742,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int RAW_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -744,6 +758,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasRaw() {
         return encodingCase_ == 1;
       }
+
       /**
        *
        *
@@ -762,6 +777,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -954,6 +970,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -1175,6 +1192,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw.Builder,
                 com.google.bigtable.admin.v2.Type.Bytes.Encoding.RawOrBuilder>
             rawBuilder_;
+
         /**
          *
          *
@@ -1190,6 +1208,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasRaw() {
           return encodingCase_ == 1;
         }
+
         /**
          *
          *
@@ -1215,6 +1234,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -1237,6 +1257,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -1257,6 +1278,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -1290,6 +1312,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -1315,6 +1338,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -1327,6 +1351,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw.Builder getRawBuilder() {
           return getRawFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -1347,6 +1372,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Bytes.Encoding.Raw.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -1447,6 +1473,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENCODING_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type.Bytes.Encoding encoding_;
+
     /**
      *
      *
@@ -1462,6 +1489,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncoding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1479,6 +1507,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.Bytes.Encoding.getDefaultInstance()
           : encoding_;
     }
+
     /**
      *
      *
@@ -1659,6 +1688,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1865,6 +1895,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Bytes.Encoding.Builder,
               com.google.bigtable.admin.v2.Type.Bytes.EncodingOrBuilder>
           encodingBuilder_;
+
       /**
        *
        *
@@ -1879,6 +1910,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEncoding() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1899,6 +1931,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return encodingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1921,6 +1954,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1941,6 +1975,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1969,6 +2004,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -1988,6 +2024,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2002,6 +2039,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEncodingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2020,6 +2058,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : encoding_;
         }
       }
+
       /**
        *
        *
@@ -2127,6 +2166,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encoding field is set.
      */
     boolean hasEncoding();
+
     /**
      *
      *
@@ -2139,6 +2179,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     com.google.bigtable.admin.v2.Type.String.Encoding getEncoding();
+
     /**
      *
      *
@@ -2150,6 +2191,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.String.EncodingOrBuilder getEncodingOrBuilder();
   }
+
   /**
    *
    *
@@ -2165,6 +2207,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String)
       StringOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use String.newBuilder() to construct.
     private String(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2215,6 +2258,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       boolean hasUtf8Raw();
+
       /**
        *
        *
@@ -2232,6 +2276,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        */
       @java.lang.Deprecated
       com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw getUtf8Raw();
+
       /**
        *
        *
@@ -2258,6 +2303,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the utf8Bytes field is set.
        */
       boolean hasUtf8Bytes();
+
       /**
        *
        *
@@ -2270,6 +2316,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The utf8Bytes.
        */
       com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes getUtf8Bytes();
+
       /**
        *
        *
@@ -2283,6 +2330,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       com.google.bigtable.admin.v2.Type.String.Encoding.EncodingCase getEncodingCase();
     }
+
     /**
      *
      *
@@ -2297,6 +2345,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String.Encoding)
         EncodingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Encoding.newBuilder() to construct.
       private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2330,6 +2379,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -2345,6 +2395,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw)
           Utf8RawOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Utf8Raw.newBuilder() to construct.
         private Utf8Raw(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -2527,6 +2578,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -2762,6 +2814,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -2788,6 +2841,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes)
           Utf8BytesOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Utf8Bytes.newBuilder() to construct.
         private Utf8Bytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -2972,6 +3026,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -3234,6 +3289,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private EncodingCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -3267,6 +3323,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int UTF8_RAW_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -3287,6 +3344,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUtf8Raw() {
         return encodingCase_ == 1;
       }
+
       /**
        *
        *
@@ -3310,6 +3368,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -3332,6 +3391,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int UTF8_BYTES_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -3347,6 +3407,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUtf8Bytes() {
         return encodingCase_ == 2;
       }
+
       /**
        *
        *
@@ -3365,6 +3426,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -3576,6 +3638,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3814,6 +3877,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.Builder,
                 com.google.bigtable.admin.v2.Type.String.Encoding.Utf8RawOrBuilder>
             utf8RawBuilder_;
+
         /**
          *
          *
@@ -3834,6 +3898,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasUtf8Raw() {
           return encodingCase_ == 1;
         }
+
         /**
          *
          *
@@ -3864,6 +3929,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -3889,6 +3955,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -3912,6 +3979,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -3950,6 +4018,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -3978,6 +4047,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -3994,6 +4064,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getUtf8RawBuilder() {
           return getUtf8RawFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -4018,6 +4089,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Raw.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -4059,6 +4131,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.Builder,
                 com.google.bigtable.admin.v2.Type.String.Encoding.Utf8BytesOrBuilder>
             utf8BytesBuilder_;
+
         /**
          *
          *
@@ -4074,6 +4147,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasUtf8Bytes() {
           return encodingCase_ == 2;
         }
+
         /**
          *
          *
@@ -4099,6 +4173,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -4122,6 +4197,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4142,6 +4218,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4177,6 +4254,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -4202,6 +4280,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -4215,6 +4294,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getUtf8BytesBuilder() {
           return getUtf8BytesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -4236,6 +4316,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.String.Encoding.Utf8Bytes.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -4337,6 +4418,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENCODING_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type.String.Encoding encoding_;
+
     /**
      *
      *
@@ -4352,6 +4434,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncoding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4369,6 +4452,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.String.Encoding.getDefaultInstance()
           : encoding_;
     }
+
     /**
      *
      *
@@ -4550,6 +4634,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -4756,6 +4841,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.String.Encoding.Builder,
               com.google.bigtable.admin.v2.Type.String.EncodingOrBuilder>
           encodingBuilder_;
+
       /**
        *
        *
@@ -4770,6 +4856,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEncoding() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -4790,6 +4877,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return encodingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -4812,6 +4900,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4832,6 +4921,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4860,6 +4950,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -4879,6 +4970,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -4893,6 +4985,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEncodingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4911,6 +5004,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : encoding_;
         }
       }
+
       /**
        *
        *
@@ -5018,6 +5112,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encoding field is set.
      */
     boolean hasEncoding();
+
     /**
      *
      *
@@ -5030,6 +5125,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     com.google.bigtable.admin.v2.Type.Int64.Encoding getEncoding();
+
     /**
      *
      *
@@ -5041,6 +5137,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.Int64.EncodingOrBuilder getEncodingOrBuilder();
   }
+
   /**
    *
    *
@@ -5056,6 +5153,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Int64)
       Int64OrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Int64.newBuilder() to construct.
     private Int64(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5102,6 +5200,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the bigEndianBytes field is set.
        */
       boolean hasBigEndianBytes();
+
       /**
        *
        *
@@ -5115,6 +5214,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The bigEndianBytes.
        */
       com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes getBigEndianBytes();
+
       /**
        *
        *
@@ -5142,6 +5242,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the orderedCodeBytes field is set.
        */
       boolean hasOrderedCodeBytes();
+
       /**
        *
        *
@@ -5156,6 +5257,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The orderedCodeBytes.
        */
       com.google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytes getOrderedCodeBytes();
+
       /**
        *
        *
@@ -5172,6 +5274,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       com.google.bigtable.admin.v2.Type.Int64.Encoding.EncodingCase getEncodingCase();
     }
+
     /**
      *
      *
@@ -5186,6 +5289,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Int64.Encoding)
         EncodingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Encoding.newBuilder() to construct.
       private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -5234,6 +5338,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Deprecated
         boolean hasBytesType();
+
         /**
          *
          *
@@ -5249,6 +5354,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          */
         @java.lang.Deprecated
         com.google.bigtable.admin.v2.Type.Bytes getBytesType();
+
         /**
          *
          *
@@ -5261,6 +5367,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         @java.lang.Deprecated
         com.google.bigtable.admin.v2.Type.BytesOrBuilder getBytesTypeOrBuilder();
       }
+
       /**
        *
        *
@@ -5285,6 +5392,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes)
           BigEndianBytesOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use BigEndianBytes.newBuilder() to construct.
         private BigEndianBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -5316,6 +5424,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
         public static final int BYTES_TYPE_FIELD_NUMBER = 1;
         private com.google.bigtable.admin.v2.Type.Bytes bytesType_;
+
         /**
          *
          *
@@ -5334,6 +5443,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasBytesType() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -5354,6 +5464,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               ? com.google.bigtable.admin.v2.Type.Bytes.getDefaultInstance()
               : bytesType_;
         }
+
         /**
          *
          *
@@ -5541,6 +5652,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -5765,6 +5877,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   com.google.bigtable.admin.v2.Type.Bytes.Builder,
                   com.google.bigtable.admin.v2.Type.BytesOrBuilder>
               bytesTypeBuilder_;
+
           /**
            *
            *
@@ -5782,6 +5895,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public boolean hasBytesType() {
             return ((bitField0_ & 0x00000001) != 0);
           }
+
           /**
            *
            *
@@ -5805,6 +5919,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               return bytesTypeBuilder_.getMessage();
             }
           }
+
           /**
            *
            *
@@ -5828,6 +5943,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5849,6 +5965,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5877,6 +5994,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             }
             return this;
           }
+
           /**
            *
            *
@@ -5897,6 +6015,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -5912,6 +6031,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return getBytesTypeFieldBuilder().getBuilder();
           }
+
           /**
            *
            *
@@ -5931,6 +6051,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                   : bytesType_;
             }
           }
+
           /**
            *
            *
@@ -6028,6 +6149,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytes)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -6047,6 +6169,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytes)
           OrderedCodeBytesOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use OrderedCodeBytes.newBuilder() to construct.
         private OrderedCodeBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -6231,6 +6354,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -6491,6 +6615,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private EncodingCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -6524,6 +6649,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int BIG_ENDIAN_BYTES_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -6540,6 +6666,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasBigEndianBytes() {
         return encodingCase_ == 1;
       }
+
       /**
        *
        *
@@ -6559,6 +6686,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -6579,6 +6707,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ORDERED_CODE_BYTES_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -6596,6 +6725,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOrderedCodeBytes() {
         return encodingCase_ == 2;
       }
+
       /**
        *
        *
@@ -6618,6 +6748,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytes
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -6831,6 +6962,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -7071,6 +7203,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytes.Builder,
                 com.google.bigtable.admin.v2.Type.Int64.Encoding.BigEndianBytesOrBuilder>
             bigEndianBytesBuilder_;
+
         /**
          *
          *
@@ -7087,6 +7220,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasBigEndianBytes() {
           return encodingCase_ == 1;
         }
+
         /**
          *
          *
@@ -7115,6 +7249,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -7139,6 +7274,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -7161,6 +7297,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -7198,6 +7335,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -7224,6 +7362,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7238,6 +7377,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getBigEndianBytesBuilder() {
           return getBigEndianBytesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -7261,6 +7401,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -7302,6 +7443,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytes.Builder,
                 com.google.bigtable.admin.v2.Type.Int64.Encoding.OrderedCodeBytesOrBuilder>
             orderedCodeBytesBuilder_;
+
         /**
          *
          *
@@ -7319,6 +7461,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasOrderedCodeBytes() {
           return encodingCase_ == 2;
         }
+
         /**
          *
          *
@@ -7349,6 +7492,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -7374,6 +7518,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -7397,6 +7542,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -7435,6 +7581,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -7462,6 +7609,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -7477,6 +7625,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getOrderedCodeBytesBuilder() {
           return getOrderedCodeBytesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -7501,6 +7650,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -7605,6 +7755,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENCODING_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type.Int64.Encoding encoding_;
+
     /**
      *
      *
@@ -7620,6 +7771,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncoding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -7637,6 +7789,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.Int64.Encoding.getDefaultInstance()
           : encoding_;
     }
+
     /**
      *
      *
@@ -7817,6 +7970,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8023,6 +8177,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Int64.Encoding.Builder,
               com.google.bigtable.admin.v2.Type.Int64.EncodingOrBuilder>
           encodingBuilder_;
+
       /**
        *
        *
@@ -8037,6 +8192,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEncoding() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -8057,6 +8213,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return encodingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -8079,6 +8236,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8099,6 +8257,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8127,6 +8286,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -8146,6 +8306,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8160,6 +8321,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEncodingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -8178,6 +8340,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : encoding_;
         }
       }
+
       /**
        *
        *
@@ -8272,6 +8435,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Bool)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -8287,6 +8451,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Bool)
       BoolOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Bool.newBuilder() to construct.
     private Bool(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8465,6 +8630,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -8694,6 +8860,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Float32)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -8709,6 +8876,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Float32)
       Float32OrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Float32.newBuilder() to construct.
     private Float32(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8888,6 +9056,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9117,6 +9286,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Float64)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -9132,6 +9302,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Float64)
       Float64OrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Float64.newBuilder() to construct.
     private Float64(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9311,6 +9482,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -9553,6 +9725,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encoding field is set.
      */
     boolean hasEncoding();
+
     /**
      *
      *
@@ -9565,6 +9738,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     com.google.bigtable.admin.v2.Type.Timestamp.Encoding getEncoding();
+
     /**
      *
      *
@@ -9576,6 +9750,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.Timestamp.EncodingOrBuilder getEncodingOrBuilder();
   }
+
   /**
    *
    *
@@ -9591,6 +9766,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Timestamp)
       TimestampOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Timestamp.newBuilder() to construct.
     private Timestamp(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9641,6 +9817,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the unixMicrosInt64 field is set.
        */
       boolean hasUnixMicrosInt64();
+
       /**
        *
        *
@@ -9658,6 +9835,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The unixMicrosInt64.
        */
       com.google.bigtable.admin.v2.Type.Int64.Encoding getUnixMicrosInt64();
+
       /**
        *
        *
@@ -9676,6 +9854,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       com.google.bigtable.admin.v2.Type.Timestamp.Encoding.EncodingCase getEncodingCase();
     }
+
     /**
      *
      *
@@ -9690,6 +9869,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Timestamp.Encoding)
         EncodingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Encoding.newBuilder() to construct.
       private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -9734,6 +9914,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private EncodingCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -9765,6 +9946,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int UNIX_MICROS_INT64_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -9785,6 +9967,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasUnixMicrosInt64() {
         return encodingCase_ == 1;
       }
+
       /**
        *
        *
@@ -9808,6 +9991,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.Int64.Encoding.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -10007,6 +10191,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -10230,6 +10415,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Int64.Encoding.Builder,
                 com.google.bigtable.admin.v2.Type.Int64.EncodingOrBuilder>
             unixMicrosInt64Builder_;
+
         /**
          *
          *
@@ -10250,6 +10436,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasUnixMicrosInt64() {
           return encodingCase_ == 1;
         }
+
         /**
          *
          *
@@ -10280,6 +10467,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Int64.Encoding.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10307,6 +10495,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -10332,6 +10521,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -10371,6 +10561,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -10401,6 +10592,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -10419,6 +10611,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getUnixMicrosInt64Builder() {
           return getUnixMicrosInt64FieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -10445,6 +10638,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Int64.Encoding.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -10550,6 +10744,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ENCODING_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type.Timestamp.Encoding encoding_;
+
     /**
      *
      *
@@ -10565,6 +10760,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncoding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -10582,6 +10778,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.Timestamp.Encoding.getDefaultInstance()
           : encoding_;
     }
+
     /**
      *
      *
@@ -10763,6 +10960,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10969,6 +11167,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Timestamp.Encoding.Builder,
               com.google.bigtable.admin.v2.Type.Timestamp.EncodingOrBuilder>
           encodingBuilder_;
+
       /**
        *
        *
@@ -10983,6 +11182,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEncoding() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -11003,6 +11203,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return encodingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -11025,6 +11226,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11045,6 +11247,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11073,6 +11276,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -11092,6 +11296,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11106,6 +11311,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEncodingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -11124,6 +11330,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : encoding_;
         }
       }
+
       /**
        *
        *
@@ -11218,6 +11425,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Date)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -11233,6 +11441,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Date)
       DateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Date.newBuilder() to construct.
     private Date(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11411,6 +11620,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11651,6 +11861,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
      */
     java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> getFieldsList();
+
     /**
      *
      *
@@ -11661,6 +11872,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
      */
     com.google.bigtable.admin.v2.Type.Struct.Field getFields(int index);
+
     /**
      *
      *
@@ -11671,6 +11883,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated .google.bigtable.admin.v2.Type.Struct.Field fields = 1;</code>
      */
     int getFieldsCount();
+
     /**
      *
      *
@@ -11682,6 +11895,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.List<? extends com.google.bigtable.admin.v2.Type.Struct.FieldOrBuilder>
         getFieldsOrBuilderList();
+
     /**
      *
      *
@@ -11705,6 +11919,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the encoding field is set.
      */
     boolean hasEncoding();
+
     /**
      *
      *
@@ -11717,6 +11932,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The encoding.
      */
     com.google.bigtable.admin.v2.Type.Struct.Encoding getEncoding();
+
     /**
      *
      *
@@ -11728,6 +11944,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.Struct.EncodingOrBuilder getEncodingOrBuilder();
   }
+
   /**
    *
    *
@@ -11745,6 +11962,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct)
       StructOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Struct.newBuilder() to construct.
     private Struct(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11793,6 +12011,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The fieldName.
        */
       java.lang.String getFieldName();
+
       /**
        *
        *
@@ -11819,6 +12038,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the type field is set.
        */
       boolean hasType();
+
       /**
        *
        *
@@ -11831,6 +12051,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The type.
        */
       com.google.bigtable.admin.v2.Type getType();
+
       /**
        *
        *
@@ -11842,6 +12063,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        */
       com.google.bigtable.admin.v2.TypeOrBuilder getTypeOrBuilder();
     }
+
     /**
      *
      *
@@ -11856,6 +12078,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Field)
         FieldOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Field.newBuilder() to construct.
       private Field(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -11891,6 +12114,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object fieldName_ = "";
+
       /**
        *
        *
@@ -11915,6 +12139,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return s;
         }
       }
+
       /**
        *
        *
@@ -11942,6 +12167,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       public static final int TYPE_FIELD_NUMBER = 2;
       private com.google.bigtable.admin.v2.Type type_;
+
       /**
        *
        *
@@ -11957,6 +12183,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -11972,6 +12199,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Type getType() {
         return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
       }
+
       /**
        *
        *
@@ -12160,6 +12388,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -12376,6 +12605,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private int bitField0_;
 
         private java.lang.Object fieldName_ = "";
+
         /**
          *
          *
@@ -12399,6 +12629,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -12422,6 +12653,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -12444,6 +12676,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12462,6 +12695,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12492,6 +12726,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Builder,
                 com.google.bigtable.admin.v2.TypeOrBuilder>
             typeBuilder_;
+
         /**
          *
          *
@@ -12506,6 +12741,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasType() {
           return ((bitField0_ & 0x00000002) != 0);
         }
+
         /**
          *
          *
@@ -12524,6 +12760,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return typeBuilder_.getMessage();
           }
         }
+
         /**
          *
          *
@@ -12546,6 +12783,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12565,6 +12803,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12592,6 +12831,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -12611,6 +12851,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -12625,6 +12866,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           onChanged();
           return getTypeFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -12641,6 +12883,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return type_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : type_;
           }
         }
+
         /**
          *
          *
@@ -12748,6 +12991,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the singleton field is set.
        */
       boolean hasSingleton();
+
       /**
        *
        *
@@ -12760,6 +13004,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The singleton.
        */
       com.google.bigtable.admin.v2.Type.Struct.Encoding.Singleton getSingleton();
+
       /**
        *
        *
@@ -12784,6 +13029,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the delimitedBytes field is set.
        */
       boolean hasDelimitedBytes();
+
       /**
        *
        *
@@ -12797,6 +13043,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The delimitedBytes.
        */
       com.google.bigtable.admin.v2.Type.Struct.Encoding.DelimitedBytes getDelimitedBytes();
+
       /**
        *
        *
@@ -12824,6 +13071,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return Whether the orderedCodeBytes field is set.
        */
       boolean hasOrderedCodeBytes();
+
       /**
        *
        *
@@ -12838,6 +13086,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
        * @return The orderedCodeBytes.
        */
       com.google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytes getOrderedCodeBytes();
+
       /**
        *
        *
@@ -12854,6 +13103,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
       com.google.bigtable.admin.v2.Type.Struct.Encoding.EncodingCase getEncodingCase();
     }
+
     /**
      *
      *
@@ -12868,6 +13118,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Encoding)
         EncodingOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Encoding.newBuilder() to construct.
       private Encoding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -12900,6 +13151,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Struct.Encoding.Singleton)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -12915,6 +13167,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Encoding.Singleton)
           SingletonOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use Singleton.newBuilder() to construct.
         private Singleton(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -13099,6 +13352,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -13351,6 +13605,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
          */
         com.google.protobuf.ByteString getDelimiter();
       }
+
       /**
        *
        *
@@ -13380,6 +13635,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Encoding.DelimitedBytes)
           DelimitedBytesOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use DelimitedBytes.newBuilder() to construct.
         private DelimitedBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -13412,6 +13668,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
         public static final int DELIMITER_FIELD_NUMBER = 1;
         private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
         /**
          *
          *
@@ -13594,6 +13851,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -13802,6 +14060,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           private int bitField0_;
 
           private com.google.protobuf.ByteString delimiter_ = com.google.protobuf.ByteString.EMPTY;
+
           /**
            *
            *
@@ -13818,6 +14077,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           public com.google.protobuf.ByteString getDelimiter() {
             return delimiter_;
           }
+
           /**
            *
            *
@@ -13840,6 +14100,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             onChanged();
             return this;
           }
+
           /**
            *
            *
@@ -13930,6 +14191,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           extends
           // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytes)
           com.google.protobuf.MessageOrBuilder {}
+
       /**
        *
        *
@@ -13984,6 +14246,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytes)
           OrderedCodeBytesOrBuilder {
         private static final long serialVersionUID = 0L;
+
         // Use OrderedCodeBytes.newBuilder() to construct.
         private OrderedCodeBytes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
           super(builder);
@@ -14169,6 +14432,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           Builder builder = new Builder(parent);
           return builder;
         }
+
         /**
          *
          *
@@ -14465,6 +14729,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         private EncodingCase(int value) {
           this.value = value;
         }
+
         /**
          * @param value The number of the enum to look for.
          * @return The enum associated with the given number.
@@ -14500,6 +14765,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int SINGLETON_FIELD_NUMBER = 1;
+
       /**
        *
        *
@@ -14515,6 +14781,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSingleton() {
         return encodingCase_ == 1;
       }
+
       /**
        *
        *
@@ -14533,6 +14800,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return com.google.bigtable.admin.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
       }
+
       /**
        *
        *
@@ -14552,6 +14820,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int DELIMITED_BYTES_FIELD_NUMBER = 2;
+
       /**
        *
        *
@@ -14568,6 +14837,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasDelimitedBytes() {
         return encodingCase_ == 2;
       }
+
       /**
        *
        *
@@ -14588,6 +14858,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Struct.Encoding.DelimitedBytes
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -14609,6 +14880,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
 
       public static final int ORDERED_CODE_BYTES_FIELD_NUMBER = 3;
+
       /**
        *
        *
@@ -14626,6 +14898,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasOrderedCodeBytes() {
         return encodingCase_ == 3;
       }
+
       /**
        *
        *
@@ -14648,6 +14921,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytes
             .getDefaultInstance();
       }
+
       /**
        *
        *
@@ -14879,6 +15153,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -15136,6 +15411,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.Singleton.Builder,
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.SingletonOrBuilder>
             singletonBuilder_;
+
         /**
          *
          *
@@ -15151,6 +15427,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasSingleton() {
           return encodingCase_ == 1;
         }
+
         /**
          *
          *
@@ -15176,6 +15453,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15199,6 +15477,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -15219,6 +15498,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -15254,6 +15534,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 1;
           return this;
         }
+
         /**
          *
          *
@@ -15279,6 +15560,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -15292,6 +15574,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getSingletonBuilder() {
           return getSingletonFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -15313,6 +15596,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             return com.google.bigtable.admin.v2.Type.Struct.Encoding.Singleton.getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15352,6 +15636,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.DelimitedBytes.Builder,
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.DelimitedBytesOrBuilder>
             delimitedBytesBuilder_;
+
         /**
          *
          *
@@ -15368,6 +15653,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasDelimitedBytes() {
           return encodingCase_ == 2;
         }
+
         /**
          *
          *
@@ -15397,6 +15683,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15421,6 +15708,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15443,6 +15731,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15480,6 +15769,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 2;
           return this;
         }
+
         /**
          *
          *
@@ -15506,6 +15796,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -15520,6 +15811,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getDelimitedBytesBuilder() {
           return getDelimitedBytesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -15543,6 +15835,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15584,6 +15877,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytes.Builder,
                 com.google.bigtable.admin.v2.Type.Struct.Encoding.OrderedCodeBytesOrBuilder>
             orderedCodeBytesBuilder_;
+
         /**
          *
          *
@@ -15601,6 +15895,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         public boolean hasOrderedCodeBytes() {
           return encodingCase_ == 3;
         }
+
         /**
          *
          *
@@ -15631,6 +15926,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15656,6 +15952,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -15679,6 +15976,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -15717,6 +16015,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           encodingCase_ = 3;
           return this;
         }
+
         /**
          *
          *
@@ -15744,6 +16043,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           }
           return this;
         }
+
         /**
          *
          *
@@ -15759,6 +16059,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             getOrderedCodeBytesBuilder() {
           return getOrderedCodeBytesFieldBuilder().getBuilder();
         }
+
         /**
          *
          *
@@ -15783,6 +16084,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
                 .getDefaultInstance();
           }
         }
+
         /**
          *
          *
@@ -15889,6 +16191,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> fields_;
+
     /**
      *
      *
@@ -15902,6 +16205,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.bigtable.admin.v2.Type.Struct.Field> getFieldsList() {
       return fields_;
     }
+
     /**
      *
      *
@@ -15916,6 +16220,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         getFieldsOrBuilderList() {
       return fields_;
     }
+
     /**
      *
      *
@@ -15929,6 +16234,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public int getFieldsCount() {
       return fields_.size();
     }
+
     /**
      *
      *
@@ -15942,6 +16248,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Struct.Field getFields(int index) {
       return fields_.get(index);
     }
+
     /**
      *
      *
@@ -15958,6 +16265,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     public static final int ENCODING_FIELD_NUMBER = 2;
     private com.google.bigtable.admin.v2.Type.Struct.Encoding encoding_;
+
     /**
      *
      *
@@ -15973,6 +16281,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasEncoding() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -15990,6 +16299,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.Struct.Encoding.getDefaultInstance()
           : encoding_;
     }
+
     /**
      *
      *
@@ -16182,6 +16492,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -16479,6 +16790,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return fieldsBuilder_.getMessageList();
         }
       }
+
       /**
        *
        *
@@ -16495,6 +16807,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return fieldsBuilder_.getCount();
         }
       }
+
       /**
        *
        *
@@ -16511,6 +16824,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return fieldsBuilder_.getMessage(index);
         }
       }
+
       /**
        *
        *
@@ -16533,6 +16847,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16553,6 +16868,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16575,6 +16891,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16597,6 +16914,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16617,6 +16935,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16637,6 +16956,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16657,6 +16977,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16676,6 +16997,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16695,6 +17017,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16707,6 +17030,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Type.Struct.Field.Builder getFieldsBuilder(int index) {
         return getFieldsFieldBuilder().getBuilder(index);
       }
+
       /**
        *
        *
@@ -16723,6 +17047,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return fieldsBuilder_.getMessageOrBuilder(index);
         }
       }
+
       /**
        *
        *
@@ -16740,6 +17065,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return java.util.Collections.unmodifiableList(fields_);
         }
       }
+
       /**
        *
        *
@@ -16753,6 +17079,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return getFieldsFieldBuilder()
             .addBuilder(com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -16766,6 +17093,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return getFieldsFieldBuilder()
             .addBuilder(index, com.google.bigtable.admin.v2.Type.Struct.Field.getDefaultInstance());
       }
+
       /**
        *
        *
@@ -16803,6 +17131,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Struct.Encoding.Builder,
               com.google.bigtable.admin.v2.Type.Struct.EncodingOrBuilder>
           encodingBuilder_;
+
       /**
        *
        *
@@ -16817,6 +17146,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasEncoding() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -16837,6 +17167,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return encodingBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -16859,6 +17190,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16879,6 +17211,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16907,6 +17240,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -16926,6 +17260,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -16940,6 +17275,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getEncodingFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -16958,6 +17294,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : encoding_;
         }
       }
+
       /**
        *
        *
@@ -17065,6 +17402,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the elementType field is set.
      */
     boolean hasElementType();
+
     /**
      *
      *
@@ -17077,6 +17415,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The elementType.
      */
     com.google.bigtable.admin.v2.Type getElementType();
+
     /**
      *
      *
@@ -17088,6 +17427,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.TypeOrBuilder getElementTypeOrBuilder();
   }
+
   /**
    *
    *
@@ -17103,6 +17443,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Array)
       ArrayOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Array.newBuilder() to construct.
     private Array(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -17134,6 +17475,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type elementType_;
+
     /**
      *
      *
@@ -17149,6 +17491,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasElementType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -17166,6 +17509,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
           : elementType_;
     }
+
     /**
      *
      *
@@ -17346,6 +17690,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -17553,6 +17898,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Builder,
               com.google.bigtable.admin.v2.TypeOrBuilder>
           elementTypeBuilder_;
+
       /**
        *
        *
@@ -17567,6 +17913,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasElementType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -17587,6 +17934,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return elementTypeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -17609,6 +17957,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17628,6 +17977,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17655,6 +18005,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -17674,6 +18025,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -17688,6 +18040,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getElementTypeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -17706,6 +18059,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : elementType_;
         }
       }
+
       /**
        *
        *
@@ -17814,6 +18168,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the keyType field is set.
      */
     boolean hasKeyType();
+
     /**
      *
      *
@@ -17827,6 +18182,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The keyType.
      */
     com.google.bigtable.admin.v2.Type getKeyType();
+
     /**
      *
      *
@@ -17851,6 +18207,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the valueType field is set.
      */
     boolean hasValueType();
+
     /**
      *
      *
@@ -17863,6 +18220,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The valueType.
      */
     com.google.bigtable.admin.v2.Type getValueType();
+
     /**
      *
      *
@@ -17874,6 +18232,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.TypeOrBuilder getValueTypeOrBuilder();
   }
+
   /**
    *
    *
@@ -17894,6 +18253,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Map)
       MapOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Map.newBuilder() to construct.
     private Map(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -17925,6 +18285,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int KEY_TYPE_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type keyType_;
+
     /**
      *
      *
@@ -17941,6 +18302,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasKeyType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -17957,6 +18319,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type getKeyType() {
       return keyType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : keyType_;
     }
+
     /**
      *
      *
@@ -17974,6 +18337,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     public static final int VALUE_TYPE_FIELD_NUMBER = 2;
     private com.google.bigtable.admin.v2.Type valueType_;
+
     /**
      *
      *
@@ -17989,6 +18353,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -18006,6 +18371,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
           : valueType_;
     }
+
     /**
      *
      *
@@ -18200,6 +18566,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -18430,6 +18797,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Builder,
               com.google.bigtable.admin.v2.TypeOrBuilder>
           keyTypeBuilder_;
+
       /**
        *
        *
@@ -18445,6 +18813,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasKeyType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -18466,6 +18835,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return keyTypeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18489,6 +18859,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18509,6 +18880,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18537,6 +18909,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18557,6 +18930,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18572,6 +18946,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getKeyTypeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18591,6 +18966,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : keyType_;
         }
       }
+
       /**
        *
        *
@@ -18624,6 +19000,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Builder,
               com.google.bigtable.admin.v2.TypeOrBuilder>
           valueTypeBuilder_;
+
       /**
        *
        *
@@ -18638,6 +19015,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasValueType() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -18658,6 +19036,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return valueTypeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -18680,6 +19059,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18699,6 +19079,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18726,6 +19107,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -18745,6 +19127,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -18759,6 +19142,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getValueTypeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -18777,6 +19161,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : valueType_;
         }
       }
+
       /**
        *
        *
@@ -18886,6 +19271,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the inputType field is set.
      */
     boolean hasInputType();
+
     /**
      *
      *
@@ -18900,6 +19286,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The inputType.
      */
     com.google.bigtable.admin.v2.Type getInputType();
+
     /**
      *
      *
@@ -18929,6 +19316,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateType field is set.
      */
     boolean hasStateType();
+
     /**
      *
      *
@@ -18945,6 +19333,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The stateType.
      */
     com.google.bigtable.admin.v2.Type getStateType();
+
     /**
      *
      *
@@ -18972,6 +19361,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sum field is set.
      */
     boolean hasSum();
+
     /**
      *
      *
@@ -18984,6 +19374,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The sum.
      */
     com.google.bigtable.admin.v2.Type.Aggregate.Sum getSum();
+
     /**
      *
      *
@@ -19009,6 +19400,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the hllppUniqueCount field is set.
      */
     boolean hasHllppUniqueCount();
+
     /**
      *
      *
@@ -19024,6 +19416,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
         getHllppUniqueCount();
+
     /**
      *
      *
@@ -19050,6 +19443,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the max field is set.
      */
     boolean hasMax();
+
     /**
      *
      *
@@ -19062,6 +19456,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The max.
      */
     com.google.bigtable.admin.v2.Type.Aggregate.Max getMax();
+
     /**
      *
      *
@@ -19085,6 +19480,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the min field is set.
      */
     boolean hasMin();
+
     /**
      *
      *
@@ -19097,6 +19493,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
      * @return The min.
      */
     com.google.bigtable.admin.v2.Type.Aggregate.Min getMin();
+
     /**
      *
      *
@@ -19110,6 +19507,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     com.google.bigtable.admin.v2.Type.Aggregate.AggregatorCase getAggregatorCase();
   }
+
   /**
    *
    *
@@ -19128,6 +19526,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate)
       AggregateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Aggregate.newBuilder() to construct.
     private Aggregate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -19160,6 +19559,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.Sum)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -19176,6 +19576,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.Sum)
         SumOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Sum.newBuilder() to construct.
       private Sum(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -19355,6 +19756,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -19586,6 +19988,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.Max)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -19602,6 +20005,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.Max)
         MaxOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Max.newBuilder() to construct.
       private Max(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -19781,6 +20185,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -20012,6 +20417,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.Min)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -20028,6 +20434,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.Min)
         MinOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use Min.newBuilder() to construct.
       private Min(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -20207,6 +20614,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -20438,6 +20846,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         extends
         // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -20459,6 +20868,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount)
         HyperLogLogPlusPlusUniqueCountOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use HyperLogLogPlusPlusUniqueCount.newBuilder() to construct.
       private HyperLogLogPlusPlusUniqueCount(
           com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -20651,6 +21061,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -20919,6 +21330,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       private AggregatorCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -20957,6 +21369,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     public static final int INPUT_TYPE_FIELD_NUMBER = 1;
     private com.google.bigtable.admin.v2.Type inputType_;
+
     /**
      *
      *
@@ -20974,6 +21387,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInputType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -20993,6 +21407,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
           : inputType_;
     }
+
     /**
      *
      *
@@ -21013,6 +21428,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
 
     public static final int STATE_TYPE_FIELD_NUMBER = 2;
     private com.google.bigtable.admin.v2.Type stateType_;
+
     /**
      *
      *
@@ -21032,6 +21448,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStateType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -21053,6 +21470,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           ? com.google.bigtable.admin.v2.Type.getDefaultInstance()
           : stateType_;
     }
+
     /**
      *
      *
@@ -21074,6 +21492,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int SUM_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -21089,6 +21508,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSum() {
       return aggregatorCase_ == 4;
     }
+
     /**
      *
      *
@@ -21107,6 +21527,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -21125,6 +21546,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int HLLPP_UNIQUE_COUNT_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -21142,6 +21564,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasHllppUniqueCount() {
       return aggregatorCase_ == 5;
     }
+
     /**
      *
      *
@@ -21165,6 +21588,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       return com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -21188,6 +21612,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MAX_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -21203,6 +21628,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMax() {
       return aggregatorCase_ == 6;
     }
+
     /**
      *
      *
@@ -21221,6 +21647,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -21239,6 +21666,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final int MIN_FIELD_NUMBER = 7;
+
     /**
      *
      *
@@ -21254,6 +21682,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMin() {
       return aggregatorCase_ == 7;
     }
+
     /**
      *
      *
@@ -21272,6 +21701,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -21542,6 +21972,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -21867,6 +22298,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Builder,
               com.google.bigtable.admin.v2.TypeOrBuilder>
           inputTypeBuilder_;
+
       /**
        *
        *
@@ -21883,6 +22315,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasInputType() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -21905,6 +22338,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return inputTypeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -21929,6 +22363,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21950,6 +22385,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -21979,6 +22415,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22000,6 +22437,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -22016,6 +22454,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getInputTypeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -22036,6 +22475,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : inputType_;
         }
       }
+
       /**
        *
        *
@@ -22070,6 +22510,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Builder,
               com.google.bigtable.admin.v2.TypeOrBuilder>
           stateTypeBuilder_;
+
       /**
        *
        *
@@ -22088,6 +22529,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasStateType() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -22112,6 +22554,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return stateTypeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -22138,6 +22581,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -22161,6 +22605,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -22192,6 +22637,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22215,6 +22661,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -22233,6 +22680,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getStateTypeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -22255,6 +22703,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               : stateType_;
         }
       }
+
       /**
        *
        *
@@ -22290,6 +22739,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Aggregate.Sum.Builder,
               com.google.bigtable.admin.v2.Type.Aggregate.SumOrBuilder>
           sumBuilder_;
+
       /**
        *
        *
@@ -22305,6 +22755,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSum() {
         return aggregatorCase_ == 4;
       }
+
       /**
        *
        *
@@ -22330,6 +22781,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22352,6 +22804,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -22372,6 +22825,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -22405,6 +22859,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -22430,6 +22885,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22442,6 +22898,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Type.Aggregate.Sum.Builder getSumBuilder() {
         return getSumFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -22462,6 +22919,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Sum.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22500,6 +22958,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCount.Builder,
               com.google.bigtable.admin.v2.Type.Aggregate.HyperLogLogPlusPlusUniqueCountOrBuilder>
           hllppUniqueCountBuilder_;
+
       /**
        *
        *
@@ -22517,6 +22976,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasHllppUniqueCount() {
         return aggregatorCase_ == 5;
       }
+
       /**
        *
        *
@@ -22548,6 +23008,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22573,6 +23034,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -22596,6 +23058,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -22635,6 +23098,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -22662,6 +23126,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22677,6 +23142,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           getHllppUniqueCountBuilder() {
         return getHllppUniqueCountFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -22702,6 +23168,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22747,6 +23214,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder,
               com.google.bigtable.admin.v2.Type.Aggregate.MaxOrBuilder>
           maxBuilder_;
+
       /**
        *
        *
@@ -22762,6 +23230,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMax() {
         return aggregatorCase_ == 6;
       }
+
       /**
        *
        *
@@ -22787,6 +23256,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22809,6 +23279,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -22829,6 +23300,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -22862,6 +23334,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -22887,6 +23360,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -22899,6 +23373,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Type.Aggregate.Max.Builder getMaxBuilder() {
         return getMaxFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -22919,6 +23394,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Max.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -22957,6 +23433,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
               com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder,
               com.google.bigtable.admin.v2.Type.Aggregate.MinOrBuilder>
           minBuilder_;
+
       /**
        *
        *
@@ -22972,6 +23449,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public boolean hasMin() {
         return aggregatorCase_ == 7;
       }
+
       /**
        *
        *
@@ -22997,6 +23475,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -23019,6 +23498,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -23039,6 +23519,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -23072,6 +23553,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         aggregatorCase_ = 7;
         return this;
       }
+
       /**
        *
        *
@@ -23097,6 +23579,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -23109,6 +23592,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       public com.google.bigtable.admin.v2.Type.Aggregate.Min.Builder getMinBuilder() {
         return getMinFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -23129,6 +23613,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
           return com.google.bigtable.admin.v2.Type.Aggregate.Min.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -23253,6 +23738,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     private KindCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -23306,6 +23792,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BYTES_TYPE_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -23321,6 +23808,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBytesType() {
     return kindCase_ == 1;
   }
+
   /**
    *
    *
@@ -23339,6 +23827,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Bytes.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23357,6 +23846,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRING_TYPE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -23372,6 +23862,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStringType() {
     return kindCase_ == 2;
   }
+
   /**
    *
    *
@@ -23390,6 +23881,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.String.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23408,6 +23900,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int INT64_TYPE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -23423,6 +23916,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasInt64Type() {
     return kindCase_ == 5;
   }
+
   /**
    *
    *
@@ -23441,6 +23935,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Int64.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23459,6 +23954,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT32_TYPE_FIELD_NUMBER = 12;
+
   /**
    *
    *
@@ -23474,6 +23970,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFloat32Type() {
     return kindCase_ == 12;
   }
+
   /**
    *
    *
@@ -23492,6 +23989,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23510,6 +24008,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FLOAT64_TYPE_FIELD_NUMBER = 9;
+
   /**
    *
    *
@@ -23525,6 +24024,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFloat64Type() {
     return kindCase_ == 9;
   }
+
   /**
    *
    *
@@ -23543,6 +24043,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23561,6 +24062,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BOOL_TYPE_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -23576,6 +24078,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBoolType() {
     return kindCase_ == 8;
   }
+
   /**
    *
    *
@@ -23594,6 +24097,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23612,6 +24116,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TIMESTAMP_TYPE_FIELD_NUMBER = 10;
+
   /**
    *
    *
@@ -23627,6 +24132,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTimestampType() {
     return kindCase_ == 10;
   }
+
   /**
    *
    *
@@ -23645,6 +24151,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23663,6 +24170,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int DATE_TYPE_FIELD_NUMBER = 11;
+
   /**
    *
    *
@@ -23678,6 +24186,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDateType() {
     return kindCase_ == 11;
   }
+
   /**
    *
    *
@@ -23696,6 +24205,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23714,6 +24224,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AGGREGATE_TYPE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -23729,6 +24240,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAggregateType() {
     return kindCase_ == 6;
   }
+
   /**
    *
    *
@@ -23747,6 +24259,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Aggregate.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23765,6 +24278,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int STRUCT_TYPE_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -23780,6 +24294,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasStructType() {
     return kindCase_ == 7;
   }
+
   /**
    *
    *
@@ -23798,6 +24313,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23816,6 +24332,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARRAY_TYPE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -23831,6 +24348,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArrayType() {
     return kindCase_ == 3;
   }
+
   /**
    *
    *
@@ -23849,6 +24367,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -23867,6 +24386,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int MAP_TYPE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -23882,6 +24402,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
   public boolean hasMapType() {
     return kindCase_ == 4;
   }
+
   /**
    *
    *
@@ -23900,6 +24421,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -24254,6 +24776,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -24678,6 +25201,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Bytes.Builder,
             com.google.bigtable.admin.v2.Type.BytesOrBuilder>
         bytesTypeBuilder_;
+
     /**
      *
      *
@@ -24693,6 +25217,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBytesType() {
       return kindCase_ == 1;
     }
+
     /**
      *
      *
@@ -24718,6 +25243,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Bytes.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -24740,6 +25266,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -24759,6 +25286,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -24791,6 +25319,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -24816,6 +25345,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -24828,6 +25358,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Bytes.Builder getBytesTypeBuilder() {
       return getBytesTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -24848,6 +25379,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Bytes.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -24884,6 +25416,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.String.Builder,
             com.google.bigtable.admin.v2.Type.StringOrBuilder>
         stringTypeBuilder_;
+
     /**
      *
      *
@@ -24899,6 +25432,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStringType() {
       return kindCase_ == 2;
     }
+
     /**
      *
      *
@@ -24924,6 +25458,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.String.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -24946,6 +25481,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -24965,6 +25501,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -24997,6 +25534,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -25022,6 +25560,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25034,6 +25573,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.String.Builder getStringTypeBuilder() {
       return getStringTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25054,6 +25594,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.String.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25092,6 +25633,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Int64.Builder,
             com.google.bigtable.admin.v2.Type.Int64OrBuilder>
         int64TypeBuilder_;
+
     /**
      *
      *
@@ -25107,6 +25649,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasInt64Type() {
       return kindCase_ == 5;
     }
+
     /**
      *
      *
@@ -25132,6 +25675,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Int64.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25154,6 +25698,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -25173,6 +25718,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -25205,6 +25751,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -25230,6 +25777,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25242,6 +25790,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Int64.Builder getInt64TypeBuilder() {
       return getInt64TypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25262,6 +25811,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Int64.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25298,6 +25848,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Float32.Builder,
             com.google.bigtable.admin.v2.Type.Float32OrBuilder>
         float32TypeBuilder_;
+
     /**
      *
      *
@@ -25313,6 +25864,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFloat32Type() {
       return kindCase_ == 12;
     }
+
     /**
      *
      *
@@ -25338,6 +25890,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25360,6 +25913,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -25380,6 +25934,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -25412,6 +25967,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 12;
       return this;
     }
+
     /**
      *
      *
@@ -25437,6 +25993,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25449,6 +26006,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Float32.Builder getFloat32TypeBuilder() {
       return getFloat32TypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25469,6 +26027,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Float32.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25507,6 +26066,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Float64.Builder,
             com.google.bigtable.admin.v2.Type.Float64OrBuilder>
         float64TypeBuilder_;
+
     /**
      *
      *
@@ -25522,6 +26082,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFloat64Type() {
       return kindCase_ == 9;
     }
+
     /**
      *
      *
@@ -25547,6 +26108,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25569,6 +26131,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -25589,6 +26152,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -25621,6 +26185,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 9;
       return this;
     }
+
     /**
      *
      *
@@ -25646,6 +26211,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25658,6 +26224,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Float64.Builder getFloat64TypeBuilder() {
       return getFloat64TypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25678,6 +26245,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Float64.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25716,6 +26284,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Bool.Builder,
             com.google.bigtable.admin.v2.Type.BoolOrBuilder>
         boolTypeBuilder_;
+
     /**
      *
      *
@@ -25731,6 +26300,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBoolType() {
       return kindCase_ == 8;
     }
+
     /**
      *
      *
@@ -25756,6 +26326,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25778,6 +26349,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -25797,6 +26369,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -25829,6 +26402,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -25854,6 +26428,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -25866,6 +26441,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Bool.Builder getBoolTypeBuilder() {
       return getBoolTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -25886,6 +26462,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Bool.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25922,6 +26499,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Timestamp.Builder,
             com.google.bigtable.admin.v2.Type.TimestampOrBuilder>
         timestampTypeBuilder_;
+
     /**
      *
      *
@@ -25937,6 +26515,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTimestampType() {
       return kindCase_ == 10;
     }
+
     /**
      *
      *
@@ -25962,6 +26541,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -25984,6 +26564,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -26004,6 +26585,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -26036,6 +26618,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 10;
       return this;
     }
+
     /**
      *
      *
@@ -26061,6 +26644,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -26073,6 +26657,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Timestamp.Builder getTimestampTypeBuilder() {
       return getTimestampTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -26093,6 +26678,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26131,6 +26717,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Date.Builder,
             com.google.bigtable.admin.v2.Type.DateOrBuilder>
         dateTypeBuilder_;
+
     /**
      *
      *
@@ -26146,6 +26733,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDateType() {
       return kindCase_ == 11;
     }
+
     /**
      *
      *
@@ -26171,6 +26759,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26193,6 +26782,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -26212,6 +26802,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -26244,6 +26835,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 11;
       return this;
     }
+
     /**
      *
      *
@@ -26269,6 +26861,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -26281,6 +26874,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Date.Builder getDateTypeBuilder() {
       return getDateTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -26301,6 +26895,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Date.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26337,6 +26932,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Aggregate.Builder,
             com.google.bigtable.admin.v2.Type.AggregateOrBuilder>
         aggregateTypeBuilder_;
+
     /**
      *
      *
@@ -26352,6 +26948,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAggregateType() {
       return kindCase_ == 6;
     }
+
     /**
      *
      *
@@ -26377,6 +26974,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Aggregate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26399,6 +26997,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -26419,6 +27018,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -26451,6 +27051,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -26476,6 +27077,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -26488,6 +27090,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Aggregate.Builder getAggregateTypeBuilder() {
       return getAggregateTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -26508,6 +27111,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Aggregate.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26546,6 +27150,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Struct.Builder,
             com.google.bigtable.admin.v2.Type.StructOrBuilder>
         structTypeBuilder_;
+
     /**
      *
      *
@@ -26561,6 +27166,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasStructType() {
       return kindCase_ == 7;
     }
+
     /**
      *
      *
@@ -26586,6 +27192,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26608,6 +27215,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -26627,6 +27235,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -26659,6 +27268,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -26684,6 +27294,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -26696,6 +27307,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Struct.Builder getStructTypeBuilder() {
       return getStructTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -26716,6 +27328,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Struct.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26754,6 +27367,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Array.Builder,
             com.google.bigtable.admin.v2.Type.ArrayOrBuilder>
         arrayTypeBuilder_;
+
     /**
      *
      *
@@ -26769,6 +27383,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrayType() {
       return kindCase_ == 3;
     }
+
     /**
      *
      *
@@ -26794,6 +27409,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26816,6 +27432,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -26835,6 +27452,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -26867,6 +27485,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -26892,6 +27511,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -26904,6 +27524,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Array.Builder getArrayTypeBuilder() {
       return getArrayTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -26924,6 +27545,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Array.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -26960,6 +27582,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Map.Builder,
             com.google.bigtable.admin.v2.Type.MapOrBuilder>
         mapTypeBuilder_;
+
     /**
      *
      *
@@ -26975,6 +27598,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public boolean hasMapType() {
       return kindCase_ == 4;
     }
+
     /**
      *
      *
@@ -27000,6 +27624,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -27022,6 +27647,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -27041,6 +27667,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -27072,6 +27699,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       kindCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -27097,6 +27725,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -27109,6 +27738,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.Type.Map.Builder getMapTypeBuilder() {
       return getMapTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -27129,6 +27759,7 @@ public final class Type extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.Type.Map.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -40,6 +40,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return The cluster.
    */
   java.lang.String getCluster();
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return The snapshotId.
    */
   java.lang.String getSnapshotId();
+
   /**
    *
    *
@@ -136,6 +139,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return Whether the ttl field is set.
    */
   boolean hasTtl();
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return The ttl.
    */
   com.google.protobuf.Duration getTtl();
+
   /**
    *
    *
@@ -177,6 +182,7 @@ public interface SnapshotTableRequestOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

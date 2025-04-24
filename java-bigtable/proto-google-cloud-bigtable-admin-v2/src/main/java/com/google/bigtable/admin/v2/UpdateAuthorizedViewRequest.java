@@ -34,6 +34,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateAuthorizedViewRequest)
     UpdateAuthorizedViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateAuthorizedViewRequest.newBuilder() to construct.
   private UpdateAuthorizedViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   private int bitField0_;
   public static final int AUTHORIZED_VIEW_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.AuthorizedView authorizedView_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   public boolean hasAuthorizedView() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -107,6 +110,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
         ? com.google.bigtable.admin.v2.AuthorizedView.getDefaultInstance()
         : authorizedView_;
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
 
   public static final int IGNORE_WARNINGS_FIELD_NUMBER = 3;
   private boolean ignoreWarnings_ = false;
+
   /**
    *
    *
@@ -402,6 +410,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -639,6 +648,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
             com.google.bigtable.admin.v2.AuthorizedView.Builder,
             com.google.bigtable.admin.v2.AuthorizedViewOrBuilder>
         authorizedViewBuilder_;
+
     /**
      *
      *
@@ -658,6 +668,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     public boolean hasAuthorizedView() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -683,6 +694,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
         return authorizedViewBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -710,6 +722,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -768,6 +782,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +807,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +827,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return getAuthorizedViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -834,6 +851,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
             : authorizedView_;
       }
     }
+
     /**
      *
      *
@@ -871,6 +889,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -892,6 +911,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -919,6 +939,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -948,6 +969,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -974,6 +996,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -1034,6 +1058,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1080,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1080,6 +1106,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1114,6 +1141,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     }
 
     private boolean ignoreWarnings_;
+
     /**
      *
      *
@@ -1130,6 +1158,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
     public boolean getIgnoreWarnings() {
       return ignoreWarnings_;
     }
+
     /**
      *
      *
@@ -1150,6 +1179,7 @@ public final class UpdateAuthorizedViewRequest extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

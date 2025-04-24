@@ -37,6 +37,7 @@ public interface RowFilterOrBuilder
    * @return Whether the chain field is set.
    */
   boolean hasChain();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RowFilterOrBuilder
    * @return The chain.
    */
   com.google.bigtable.v2.RowFilter.Chain getChain();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RowFilterOrBuilder
    * @return Whether the interleave field is set.
    */
   boolean hasInterleave();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface RowFilterOrBuilder
    * @return The interleave.
    */
   com.google.bigtable.v2.RowFilter.Interleave getInterleave();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface RowFilterOrBuilder
    * @return Whether the condition field is set.
    */
   boolean hasCondition();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface RowFilterOrBuilder
    * @return The condition.
    */
   com.google.bigtable.v2.RowFilter.Condition getCondition();
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public interface RowFilterOrBuilder
    * @return Whether the sink field is set.
    */
   boolean hasSink();
+
   /**
    *
    *
@@ -292,6 +299,7 @@ public interface RowFilterOrBuilder
    * @return Whether the passAllFilter field is set.
    */
   boolean hasPassAllFilter();
+
   /**
    *
    *
@@ -319,6 +327,7 @@ public interface RowFilterOrBuilder
    * @return Whether the blockAllFilter field is set.
    */
   boolean hasBlockAllFilter();
+
   /**
    *
    *
@@ -351,6 +360,7 @@ public interface RowFilterOrBuilder
    * @return Whether the rowKeyRegexFilter field is set.
    */
   boolean hasRowKeyRegexFilter();
+
   /**
    *
    *
@@ -383,6 +393,7 @@ public interface RowFilterOrBuilder
    * @return Whether the rowSampleFilter field is set.
    */
   boolean hasRowSampleFilter();
+
   /**
    *
    *
@@ -414,6 +425,7 @@ public interface RowFilterOrBuilder
    * @return Whether the familyNameRegexFilter field is set.
    */
   boolean hasFamilyNameRegexFilter();
+
   /**
    *
    *
@@ -431,6 +443,7 @@ public interface RowFilterOrBuilder
    * @return The familyNameRegexFilter.
    */
   java.lang.String getFamilyNameRegexFilter();
+
   /**
    *
    *
@@ -466,6 +479,7 @@ public interface RowFilterOrBuilder
    * @return Whether the columnQualifierRegexFilter field is set.
    */
   boolean hasColumnQualifierRegexFilter();
+
   /**
    *
    *
@@ -496,6 +510,7 @@ public interface RowFilterOrBuilder
    * @return Whether the columnRangeFilter field is set.
    */
   boolean hasColumnRangeFilter();
+
   /**
    *
    *
@@ -508,6 +523,7 @@ public interface RowFilterOrBuilder
    * @return The columnRangeFilter.
    */
   com.google.bigtable.v2.ColumnRange getColumnRangeFilter();
+
   /**
    *
    *
@@ -531,6 +547,7 @@ public interface RowFilterOrBuilder
    * @return Whether the timestampRangeFilter field is set.
    */
   boolean hasTimestampRangeFilter();
+
   /**
    *
    *
@@ -543,6 +560,7 @@ public interface RowFilterOrBuilder
    * @return The timestampRangeFilter.
    */
   com.google.bigtable.v2.TimestampRange getTimestampRangeFilter();
+
   /**
    *
    *
@@ -570,6 +588,7 @@ public interface RowFilterOrBuilder
    * @return Whether the valueRegexFilter field is set.
    */
   boolean hasValueRegexFilter();
+
   /**
    *
    *
@@ -599,6 +618,7 @@ public interface RowFilterOrBuilder
    * @return Whether the valueRangeFilter field is set.
    */
   boolean hasValueRangeFilter();
+
   /**
    *
    *
@@ -611,6 +631,7 @@ public interface RowFilterOrBuilder
    * @return The valueRangeFilter.
    */
   com.google.bigtable.v2.ValueRange getValueRangeFilter();
+
   /**
    *
    *
@@ -636,6 +657,7 @@ public interface RowFilterOrBuilder
    * @return Whether the cellsPerRowOffsetFilter field is set.
    */
   boolean hasCellsPerRowOffsetFilter();
+
   /**
    *
    *
@@ -665,6 +687,7 @@ public interface RowFilterOrBuilder
    * @return Whether the cellsPerRowLimitFilter field is set.
    */
   boolean hasCellsPerRowLimitFilter();
+
   /**
    *
    *
@@ -697,6 +720,7 @@ public interface RowFilterOrBuilder
    * @return Whether the cellsPerColumnLimitFilter field is set.
    */
   boolean hasCellsPerColumnLimitFilter();
+
   /**
    *
    *
@@ -727,6 +751,7 @@ public interface RowFilterOrBuilder
    * @return Whether the stripValueTransformer field is set.
    */
   boolean hasStripValueTransformer();
+
   /**
    *
    *
@@ -764,6 +789,7 @@ public interface RowFilterOrBuilder
    * @return Whether the applyLabelTransformer field is set.
    */
   boolean hasApplyLabelTransformer();
+
   /**
    *
    *
@@ -788,6 +814,7 @@ public interface RowFilterOrBuilder
    * @return The applyLabelTransformer.
    */
   java.lang.String getApplyLabelTransformer();
+
   /**
    *
    *

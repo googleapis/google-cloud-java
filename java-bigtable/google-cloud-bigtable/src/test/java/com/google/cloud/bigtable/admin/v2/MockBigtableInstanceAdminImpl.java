@@ -198,7 +198,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PartialUpdateInstance, expected %s or %s",
+                  "Unrecognized response type %s for method PartialUpdateInstance, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -322,7 +323,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method PartialUpdateCluster, expected %s or %s",
+                  "Unrecognized response type %s for method PartialUpdateCluster, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -656,7 +658,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method CreateMaterializedView, expected %s or %s",
+                  "Unrecognized response type %s for method CreateMaterializedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -699,7 +702,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method ListMaterializedViews, expected %s or %s",
+                  "Unrecognized response type %s for method ListMaterializedViews, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   ListMaterializedViewsResponse.class.getName(),
                   Exception.class.getName())));
@@ -720,7 +724,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method UpdateMaterializedView, expected %s or %s",
+                  "Unrecognized response type %s for method UpdateMaterializedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Operation.class.getName(),
                   Exception.class.getName())));
@@ -741,7 +746,8 @@ public class MockBigtableInstanceAdminImpl extends BigtableInstanceAdminImplBase
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteMaterializedView, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteMaterializedView, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

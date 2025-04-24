@@ -52,6 +52,7 @@ public interface RequestLatencyStatsOrBuilder
    * @return Whether the frontendServerLatency field is set.
    */
   boolean hasFrontendServerLatency();
+
   /**
    *
    *
@@ -80,6 +81,7 @@ public interface RequestLatencyStatsOrBuilder
    * @return The frontendServerLatency.
    */
   com.google.protobuf.Duration getFrontendServerLatency();
+
   /**
    *
    *

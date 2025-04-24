@@ -36,6 +36,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return The sourceTable.
    */
   java.lang.String getSourceTable();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public interface CreateBackupMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

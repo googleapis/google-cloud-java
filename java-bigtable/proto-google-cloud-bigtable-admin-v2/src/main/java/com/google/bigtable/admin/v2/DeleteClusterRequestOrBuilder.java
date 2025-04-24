@@ -39,6 +39,7 @@ public interface DeleteClusterRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

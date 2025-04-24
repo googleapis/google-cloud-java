@@ -33,6 +33,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.SampleRowKeysResponse)
     SampleRowKeysResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SampleRowKeysResponse.newBuilder() to construct.
   private SampleRowKeysResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
 
   public static final int ROW_KEY_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
 
   public static final int OFFSET_BYTES_FIELD_NUMBER = 2;
   private long offsetBytes_ = 0L;
+
   /**
    *
    *
@@ -276,6 +279,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -470,6 +474,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private com.google.protobuf.ByteString rowKey_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -491,6 +496,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     public com.google.protobuf.ByteString getRowKey() {
       return rowKey_;
     }
+
     /**
      *
      *
@@ -518,6 +524,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -543,6 +550,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     }
 
     private long offsetBytes_;
+
     /**
      *
      *
@@ -561,6 +569,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
     public long getOffsetBytes() {
       return offsetBytes_;
     }
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class SampleRowKeysResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

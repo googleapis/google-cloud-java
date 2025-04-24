@@ -42,6 +42,7 @@ public interface UpdateMaterializedViewRequestOrBuilder
    * @return Whether the materializedView field is set.
    */
   boolean hasMaterializedView();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateMaterializedViewRequestOrBuilder
    * @return The materializedView.
    */
   com.google.bigtable.admin.v2.MaterializedView getMaterializedView();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateMaterializedViewRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateMaterializedViewRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

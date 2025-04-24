@@ -40,6 +40,7 @@ public interface ExecuteQueryRequestOrBuilder
    * @return The instanceName.
    */
   java.lang.String getInstanceName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface ExecuteQueryRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface ExecuteQueryRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -158,6 +161,7 @@ public interface ExecuteQueryRequestOrBuilder
    */
   @java.lang.Deprecated
   boolean hasProtoFormat();
+
   /**
    *
    *
@@ -174,6 +178,7 @@ public interface ExecuteQueryRequestOrBuilder
    */
   @java.lang.Deprecated
   com.google.bigtable.v2.ProtoFormat getProtoFormat();
+
   /**
    *
    *
@@ -240,6 +245,7 @@ public interface ExecuteQueryRequestOrBuilder
    * </code>
    */
   int getParamsCount();
+
   /**
    *
    *
@@ -274,9 +280,11 @@ public interface ExecuteQueryRequestOrBuilder
    * </code>
    */
   boolean containsParams(java.lang.String key);
+
   /** Use {@link #getParamsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParams();
+
   /**
    *
    *
@@ -311,6 +319,7 @@ public interface ExecuteQueryRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.v2.Value> getParamsMap();
+
   /**
    *
    *
@@ -349,6 +358,7 @@ public interface ExecuteQueryRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.v2.Value defaultValue);
+
   /**
    *
    *

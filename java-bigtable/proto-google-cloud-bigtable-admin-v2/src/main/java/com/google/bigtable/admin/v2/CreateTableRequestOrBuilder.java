@@ -39,6 +39,7 @@ public interface CreateTableRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateTableRequestOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface CreateTableRequestOrBuilder
    * @return Whether the table field is set.
    */
   boolean hasTable();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateTableRequestOrBuilder
    * @return The table.
    */
   com.google.bigtable.admin.v2.Table getTable();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface CreateTableRequestOrBuilder
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.CreateTableRequest.Split> getInitialSplitsList();
+
   /**
    *
    *
@@ -172,6 +177,7 @@ public interface CreateTableRequestOrBuilder
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
   com.google.bigtable.admin.v2.CreateTableRequest.Split getInitialSplits(int index);
+
   /**
    *
    *
@@ -197,6 +203,7 @@ public interface CreateTableRequestOrBuilder
    * <code>repeated .google.bigtable.admin.v2.CreateTableRequest.Split initial_splits = 4;</code>
    */
   int getInitialSplitsCount();
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public interface CreateTableRequestOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.CreateTableRequest.SplitOrBuilder>
       getInitialSplitsOrBuilderList();
+
   /**
    *
    *

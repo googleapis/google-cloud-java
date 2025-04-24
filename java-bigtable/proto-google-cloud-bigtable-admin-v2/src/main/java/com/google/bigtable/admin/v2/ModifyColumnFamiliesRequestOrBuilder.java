@@ -40,6 +40,7 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    */
   java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
       getModificationsList();
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    * </code>
    */
   com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(int index);
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface ModifyColumnFamiliesRequestOrBuilder
    * </code>
    */
   int getModificationsCount();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface ModifyColumnFamiliesRequestOrBuilder
   java.util.List<
           ? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
       getModificationsOrBuilderList();
+
   /**
    *
    *

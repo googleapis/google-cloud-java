@@ -39,6 +39,7 @@ public interface CreateAppProfileRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateAppProfileRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateAppProfileRequestOrBuilder
    * @return Whether the appProfile field is set.
    */
   boolean hasAppProfile();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface CreateAppProfileRequestOrBuilder
    * @return The appProfile.
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfile();
+
   /**
    *
    *

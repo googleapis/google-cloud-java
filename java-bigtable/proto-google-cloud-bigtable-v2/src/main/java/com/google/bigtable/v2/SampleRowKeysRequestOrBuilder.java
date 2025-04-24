@@ -41,6 +41,7 @@ public interface SampleRowKeysRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface SampleRowKeysRequestOrBuilder
    * @return The authorizedViewName.
    */
   java.lang.String getAuthorizedViewName();
+
   /**
    *
    *
@@ -113,6 +115,7 @@ public interface SampleRowKeysRequestOrBuilder
    * @return The materializedViewName.
    */
   java.lang.String getMaterializedViewName();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface SampleRowKeysRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *

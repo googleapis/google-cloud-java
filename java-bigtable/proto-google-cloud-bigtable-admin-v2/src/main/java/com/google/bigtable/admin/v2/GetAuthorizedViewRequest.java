@@ -34,6 +34,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.GetAuthorizedViewRequest)
     GetAuthorizedViewRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetAuthorizedViewRequest.newBuilder() to construct.
   private GetAuthorizedViewRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
 
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_ = 0;
+
   /**
    *
    *
@@ -144,6 +148,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -340,6 +345,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -538,6 +544,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -590,6 +598,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -615,6 +624,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +646,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -682,6 +694,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
           ? com.google.bigtable.admin.v2.AuthorizedView.ResponseView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -749,6 +764,7 @@ public final class GetAuthorizedViewRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

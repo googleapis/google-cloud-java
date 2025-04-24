@@ -36,6 +36,7 @@ public interface GenerateConsistencyTokenResponseOrBuilder
    * @return The consistencyToken.
    */
   java.lang.String getConsistencyToken();
+
   /**
    *
    *

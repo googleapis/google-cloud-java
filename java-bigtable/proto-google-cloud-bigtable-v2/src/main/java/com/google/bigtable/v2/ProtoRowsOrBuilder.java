@@ -36,6 +36,7 @@ public interface ProtoRowsOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 2;</code>
    */
   java.util.List<com.google.bigtable.v2.Value> getValuesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProtoRowsOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 2;</code>
    */
   com.google.bigtable.v2.Value getValues(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ProtoRowsOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 2;</code>
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface ProtoRowsOrBuilder
    * <code>repeated .google.bigtable.v2.Value values = 2;</code>
    */
   java.util.List<? extends com.google.bigtable.v2.ValueOrBuilder> getValuesOrBuilderList();
+
   /**
    *
    *

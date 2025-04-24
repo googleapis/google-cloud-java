@@ -35,6 +35,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AuthorizedView)
     AuthorizedViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AuthorizedView.newBuilder() to construct.
   private AuthorizedView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -130,6 +131,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * <code>RESPONSE_VIEW_UNSPECIFIED = 0;</code>
      */
     public static final int RESPONSE_VIEW_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -140,6 +142,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * <code>NAME_ONLY = 1;</code>
      */
     public static final int NAME_ONLY_VALUE = 1;
+
     /**
      *
      *
@@ -151,6 +154,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * <code>BASIC = 2;</code>
      */
     public static final int BASIC_VALUE = 2;
+
     /**
      *
      *
@@ -264,6 +268,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the qualifiers.
      */
     java.util.List<com.google.protobuf.ByteString> getQualifiersList();
+
     /**
      *
      *
@@ -276,6 +281,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return The count of qualifiers.
      */
     int getQualifiersCount();
+
     /**
      *
      *
@@ -306,6 +312,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the qualifierPrefixes.
      */
     java.util.List<com.google.protobuf.ByteString> getQualifierPrefixesList();
+
     /**
      *
      *
@@ -322,6 +329,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return The count of qualifierPrefixes.
      */
     int getQualifierPrefixesCount();
+
     /**
      *
      *
@@ -340,6 +348,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.ByteString getQualifierPrefixes(int index);
   }
+
   /**
    *
    *
@@ -354,6 +363,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AuthorizedView.FamilySubsets)
       FamilySubsetsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use FamilySubsets.newBuilder() to construct.
     private FamilySubsets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -390,6 +400,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> qualifiers_ =
         emptyList(com.google.protobuf.ByteString.class);
+
     /**
      *
      *
@@ -405,6 +416,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.protobuf.ByteString> getQualifiersList() {
       return qualifiers_;
     }
+
     /**
      *
      *
@@ -419,6 +431,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public int getQualifiersCount() {
       return qualifiers_.size();
     }
+
     /**
      *
      *
@@ -440,6 +453,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString>
         qualifierPrefixes_ = emptyList(com.google.protobuf.ByteString.class);
+
     /**
      *
      *
@@ -459,6 +473,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.protobuf.ByteString> getQualifierPrefixesList() {
       return qualifierPrefixes_;
     }
+
     /**
      *
      *
@@ -477,6 +492,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public int getQualifierPrefixesCount() {
       return qualifierPrefixes_.size();
     }
+
     /**
      *
      *
@@ -684,6 +700,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -910,6 +927,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -925,6 +943,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         qualifiers_.makeImmutable();
         return qualifiers_;
       }
+
       /**
        *
        *
@@ -939,6 +958,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public int getQualifiersCount() {
         return qualifiers_.size();
       }
+
       /**
        *
        *
@@ -954,6 +974,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQualifiers(int index) {
         return qualifiers_.get(index);
       }
+
       /**
        *
        *
@@ -977,6 +998,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -999,6 +1021,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1019,6 +1042,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1046,6 +1070,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000002;
       }
+
       /**
        *
        *
@@ -1065,6 +1090,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         qualifierPrefixes_.makeImmutable();
         return qualifierPrefixes_;
       }
+
       /**
        *
        *
@@ -1083,6 +1109,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public int getQualifierPrefixesCount() {
         return qualifierPrefixes_.size();
       }
+
       /**
        *
        *
@@ -1102,6 +1129,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getQualifierPrefixes(int index) {
         return qualifierPrefixes_.get(index);
       }
+
       /**
        *
        *
@@ -1129,6 +1157,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1155,6 +1184,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1179,6 +1209,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1283,6 +1314,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the rowPrefixes.
      */
     java.util.List<com.google.protobuf.ByteString> getRowPrefixesList();
+
     /**
      *
      *
@@ -1296,6 +1328,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * @return The count of rowPrefixes.
      */
     int getRowPrefixesCount();
+
     /**
      *
      *
@@ -1324,6 +1357,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     int getFamilySubsetsCount();
+
     /**
      *
      *
@@ -1337,10 +1371,12 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     boolean containsFamilySubsets(java.lang.String key);
+
     /** Use {@link #getFamilySubsetsMap()} instead. */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets>
         getFamilySubsets();
+
     /**
      *
      *
@@ -1355,6 +1391,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
      */
     java.util.Map<java.lang.String, com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets>
         getFamilySubsetsMap();
+
     /**
      *
      *
@@ -1372,6 +1409,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         java.lang.String key,
         /* nullable */
         com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets defaultValue);
+
     /**
      *
      *
@@ -1387,6 +1425,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     com.google.bigtable.admin.v2.AuthorizedView.FamilySubsets getFamilySubsetsOrThrow(
         java.lang.String key);
   }
+
   /**
    *
    *
@@ -1401,6 +1440,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AuthorizedView.SubsetView)
       SubsetViewOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use SubsetView.newBuilder() to construct.
     private SubsetView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1448,6 +1488,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString> rowPrefixes_ =
         emptyList(com.google.protobuf.ByteString.class);
+
     /**
      *
      *
@@ -1464,6 +1505,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public java.util.List<com.google.protobuf.ByteString> getRowPrefixesList() {
       return rowPrefixes_;
     }
+
     /**
      *
      *
@@ -1479,6 +1521,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public int getRowPrefixesCount() {
       return rowPrefixes_.size();
     }
+
     /**
      *
      *
@@ -1532,6 +1575,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public int getFamilySubsetsCount() {
       return internalGetFamilySubsets().getMap().size();
     }
+
     /**
      *
      *
@@ -1551,6 +1595,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetFamilySubsets().getMap().containsKey(key);
     }
+
     /** Use {@link #getFamilySubsetsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
@@ -1559,6 +1604,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         getFamilySubsets() {
       return getFamilySubsetsMap();
     }
+
     /**
      *
      *
@@ -1577,6 +1623,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         getFamilySubsetsMap() {
       return internalGetFamilySubsets().getMap();
     }
+
     /**
      *
      *
@@ -1602,6 +1649,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
           map = internalGetFamilySubsets().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1817,6 +1865,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -2064,6 +2113,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -2080,6 +2130,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         rowPrefixes_.makeImmutable();
         return rowPrefixes_;
       }
+
       /**
        *
        *
@@ -2095,6 +2146,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public int getRowPrefixesCount() {
         return rowPrefixes_.size();
       }
+
       /**
        *
        *
@@ -2111,6 +2163,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getRowPrefixes(int index) {
         return rowPrefixes_.get(index);
       }
+
       /**
        *
        *
@@ -2135,6 +2188,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2158,6 +2212,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2179,6 +2234,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2218,7 +2274,8 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
             defaultEntry() {
           return FamilySubsetsDefaultEntryHolder.defaultEntry;
         }
-      };
+      }
+      ;
 
       private static final FamilySubsetsConverter familySubsetsConverter =
           new FamilySubsetsConverter();
@@ -2259,6 +2316,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       public int getFamilySubsetsCount() {
         return internalGetFamilySubsets().ensureBuilderMap().size();
       }
+
       /**
        *
        *
@@ -2278,6 +2336,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         }
         return internalGetFamilySubsets().ensureBuilderMap().containsKey(key);
       }
+
       /** Use {@link #getFamilySubsetsMap()} instead. */
       @java.lang.Override
       @java.lang.Deprecated
@@ -2286,6 +2345,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
           getFamilySubsets() {
         return getFamilySubsetsMap();
       }
+
       /**
        *
        *
@@ -2304,6 +2364,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
           getFamilySubsetsMap() {
         return internalGetFamilySubsets().getImmutableMap();
       }
+
       /**
        *
        *
@@ -2331,6 +2392,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
             map = internalGetMutableFamilySubsets().ensureBuilderMap();
         return map.containsKey(key) ? familySubsetsConverter.build(map.get(key)) : defaultValue;
       }
+
       /**
        *
        *
@@ -2364,6 +2426,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableFamilySubsets().clear();
         return this;
       }
+
       /**
        *
        *
@@ -2383,6 +2446,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableFamilySubsets().ensureBuilderMap().remove(key);
         return this;
       }
+
       /** Use alternate mutation accessors instead. */
       @java.lang.Deprecated
       public java.util.Map<
@@ -2391,6 +2455,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return internalGetMutableFamilySubsets().ensureMessageMap();
       }
+
       /**
        *
        *
@@ -2415,6 +2480,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -2441,6 +2507,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         return this;
       }
+
       /**
        *
        *
@@ -2552,6 +2619,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     private AuthorizedViewCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2586,6 +2654,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2611,6 +2680,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2638,6 +2708,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int SUBSET_VIEW_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -2653,6 +2724,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
   public boolean hasSubsetView() {
     return authorizedViewCase_ == 2;
   }
+
   /**
    *
    *
@@ -2671,6 +2743,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.AuthorizedView.SubsetView.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2692,6 +2765,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -2717,6 +2791,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2745,6 +2820,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DELETION_PROTECTION_FIELD_NUMBER = 4;
   private boolean deletionProtection_ = false;
+
   /**
    *
    *
@@ -2965,6 +3041,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3223,6 +3300,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3247,6 +3325,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3271,6 +3350,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3294,6 +3374,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3313,6 +3394,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3343,6 +3425,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.AuthorizedView.SubsetView.Builder,
             com.google.bigtable.admin.v2.AuthorizedView.SubsetViewOrBuilder>
         subsetViewBuilder_;
+
     /**
      *
      *
@@ -3358,6 +3441,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSubsetView() {
       return authorizedViewCase_ == 2;
     }
+
     /**
      *
      *
@@ -3383,6 +3467,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.AuthorizedView.SubsetView.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3405,6 +3490,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       authorizedViewCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3425,6 +3511,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       authorizedViewCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3458,6 +3545,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       authorizedViewCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -3483,6 +3571,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3495,6 +3584,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.AuthorizedView.SubsetView.Builder getSubsetViewBuilder() {
       return getSubsetViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3516,6 +3606,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.AuthorizedView.SubsetView.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -3551,6 +3642,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -3575,6 +3667,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3599,6 +3692,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3622,6 +3716,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3641,6 +3736,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3667,6 +3763,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean deletionProtection_;
+
     /**
      *
      *
@@ -3684,6 +3781,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
     public boolean getDeletionProtection() {
       return deletionProtection_;
     }
+
     /**
      *
      *
@@ -3705,6 +3803,7 @@ public final class AuthorizedView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

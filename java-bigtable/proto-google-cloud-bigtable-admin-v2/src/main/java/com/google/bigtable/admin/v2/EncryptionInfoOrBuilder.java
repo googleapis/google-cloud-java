@@ -38,6 +38,7 @@ public interface EncryptionInfoOrBuilder
    * @return The enum numeric value on the wire for encryptionType.
    */
   int getEncryptionTypeValue();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface EncryptionInfoOrBuilder
    * @return Whether the encryptionStatus field is set.
    */
   boolean hasEncryptionStatus();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface EncryptionInfoOrBuilder
    * @return The encryptionStatus.
    */
   com.google.rpc.Status getEncryptionStatus();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface EncryptionInfoOrBuilder
    * @return The kmsKeyVersion.
    */
   java.lang.String getKmsKeyVersion();
+
   /**
    *
    *

@@ -62,6 +62,7 @@ public enum RestoreSourceType implements com.google.protobuf.ProtocolMessageEnum
    * <code>RESTORE_SOURCE_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int RESTORE_SOURCE_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.RequestStats)
     RequestStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RequestStats.newBuilder() to construct.
   private RequestStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     private StatsViewCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int FULL_READ_STATS_VIEW_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFullReadStatsView() {
     return statsViewCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -336,6 +341,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -556,6 +562,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.v2.FullReadStatsView.Builder,
             com.google.bigtable.v2.FullReadStatsViewOrBuilder>
         fullReadStatsViewBuilder_;
+
     /**
      *
      *
@@ -572,6 +579,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFullReadStatsView() {
       return statsViewCase_ == 1;
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -621,6 +630,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       statsViewCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -642,6 +652,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       statsViewCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       statsViewCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.v2.FullReadStatsView.Builder getFullReadStatsViewBuilder() {
       return getFullReadStatsViewFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class RequestStats extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.v2.FullReadStatsView.getDefaultInstance();
       }
     }
+
     /**
      *
      *

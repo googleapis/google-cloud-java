@@ -36,6 +36,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.PartialUpdateInstanceRequest getOriginalRequest();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface UpdateInstanceMetadataOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *

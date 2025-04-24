@@ -36,6 +36,7 @@ public interface RestoreTableMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RestoreTableMetadataOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -80,12 +82,14 @@ public interface RestoreTableMetadataOrBuilder
    * @return Whether the backupInfo field is set.
    */
   boolean hasBackupInfo();
+
   /**
    * <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code>
    *
    * @return The backupInfo.
    */
   com.google.bigtable.admin.v2.BackupInfo getBackupInfo();
+
   /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
   com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder();
 
@@ -109,6 +113,7 @@ public interface RestoreTableMetadataOrBuilder
    * @return The optimizeTableOperationName.
    */
   java.lang.String getOptimizeTableOperationName();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface RestoreTableMetadataOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -158,6 +164,7 @@ public interface RestoreTableMetadataOrBuilder
    * @return The progress.
    */
   com.google.bigtable.admin.v2.OperationProgress getProgress();
+
   /**
    *
    *

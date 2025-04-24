@@ -34,6 +34,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Backup backups = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.Backup> getBackupsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Backup backups = 1;</code>
    */
   com.google.bigtable.admin.v2.Backup getBackups(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Backup backups = 1;</code>
    */
   int getBackupsCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListBackupsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Backup backups = 1;</code>
    */
   java.util.List<? extends com.google.bigtable.admin.v2.BackupOrBuilder> getBackupsOrBuilderList();
+
   /**
    *
    *
@@ -89,6 +93,7 @@ public interface ListBackupsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

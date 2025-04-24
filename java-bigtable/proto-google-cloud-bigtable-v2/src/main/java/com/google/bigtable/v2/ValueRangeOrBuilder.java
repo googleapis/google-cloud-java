@@ -36,6 +36,7 @@ public interface ValueRangeOrBuilder
    * @return Whether the startValueClosed field is set.
    */
   boolean hasStartValueClosed();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ValueRangeOrBuilder
    * @return Whether the startValueOpen field is set.
    */
   boolean hasStartValueOpen();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ValueRangeOrBuilder
    * @return Whether the endValueClosed field is set.
    */
   boolean hasEndValueClosed();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ValueRangeOrBuilder
    * @return Whether the endValueOpen field is set.
    */
   boolean hasEndValueOpen();
+
   /**
    *
    *

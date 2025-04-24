@@ -33,6 +33,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AutoscalingTargets)
     AutoscalingTargetsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingTargets.newBuilder() to construct.
   private AutoscalingTargets(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
 
   public static final int CPU_UTILIZATION_PERCENT_FIELD_NUMBER = 2;
   private int cpuUtilizationPercent_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
 
   public static final int STORAGE_UTILIZATION_GIB_PER_NODE_FIELD_NUMBER = 3;
   private int storageUtilizationGibPerNode_ = 0;
+
   /**
    *
    *
@@ -274,6 +277,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -469,6 +473,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private int cpuUtilizationPercent_;
+
     /**
      *
      *
@@ -487,6 +492,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     public int getCpuUtilizationPercent() {
       return cpuUtilizationPercent_;
     }
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     }
 
     private int storageUtilizationGibPerNode_;
+
     /**
      *
      *
@@ -551,6 +559,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
     public int getStorageUtilizationGibPerNode() {
       return storageUtilizationGibPerNode_;
     }
+
     /**
      *
      *
@@ -575,6 +584,7 @@ public final class AutoscalingTargets extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

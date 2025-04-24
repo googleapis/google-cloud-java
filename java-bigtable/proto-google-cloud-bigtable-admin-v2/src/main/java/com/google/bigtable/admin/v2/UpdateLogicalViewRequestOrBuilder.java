@@ -42,6 +42,7 @@ public interface UpdateLogicalViewRequestOrBuilder
    * @return Whether the logicalView field is set.
    */
   boolean hasLogicalView();
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public interface UpdateLogicalViewRequestOrBuilder
    * @return The logicalView.
    */
   com.google.bigtable.admin.v2.LogicalView getLogicalView();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface UpdateLogicalViewRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface UpdateLogicalViewRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

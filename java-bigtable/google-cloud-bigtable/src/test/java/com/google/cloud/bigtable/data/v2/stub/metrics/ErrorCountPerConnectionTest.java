@@ -160,8 +160,8 @@ public class ErrorCountPerConnectionTest {
         builder.setTransportChannelProvider(
             ((InstantiatingGrpcChannelProvider) builder.getTransportChannelProvider())
                 .toBuilder()
-                .setChannelPoolSettings(ChannelPoolSettings.staticallySized(2))
-                .build());
+                    .setChannelPoolSettings(ChannelPoolSettings.staticallySized(2))
+                    .build());
     long totalErrorCount = 0;
     try (EnhancedBigtableStub stub = EnhancedBigtableStub.create(builderWithTwoChannels.build())) {
       for (int i = 0; i < 20; i++) {

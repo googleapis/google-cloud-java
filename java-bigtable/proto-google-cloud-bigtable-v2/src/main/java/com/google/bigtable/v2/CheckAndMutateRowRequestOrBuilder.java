@@ -42,6 +42,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * @return The authorizedViewName.
    */
   java.lang.String getAuthorizedViewName();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -154,6 +157,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * @return Whether the predicateFilter field is set.
    */
   boolean hasPredicateFilter();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * @return The predicateFilter.
    */
   com.google.bigtable.v2.RowFilter getPredicateFilter();
+
   /**
    *
    *
@@ -197,6 +202,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
   java.util.List<com.google.bigtable.v2.Mutation> getTrueMutationsList();
+
   /**
    *
    *
@@ -211,6 +217,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
   com.google.bigtable.v2.Mutation getTrueMutations(int index);
+
   /**
    *
    *
@@ -225,6 +232,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
   int getTrueMutationsCount();
+
   /**
    *
    *
@@ -240,6 +248,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
       getTrueMutationsOrBuilderList();
+
   /**
    *
    *
@@ -269,6 +278,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
   java.util.List<com.google.bigtable.v2.Mutation> getFalseMutationsList();
+
   /**
    *
    *
@@ -283,6 +293,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
   com.google.bigtable.v2.Mutation getFalseMutations(int index);
+
   /**
    *
    *
@@ -297,6 +308,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
   int getFalseMutationsCount();
+
   /**
    *
    *
@@ -312,6 +324,7 @@ public interface CheckAndMutateRowRequestOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
       getFalseMutationsOrBuilderList();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.CopyBackupRequest)
     CopyBackupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CopyBackupRequest.newBuilder() to construct.
   private CopyBackupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -130,6 +133,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object backupId_ = "";
+
   /**
    *
    *
@@ -158,6 +162,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -191,6 +196,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object sourceBackup_ = "";
+
   /**
    *
    *
@@ -222,6 +228,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -256,6 +263,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -276,6 +284,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -296,6 +305,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -506,6 +516,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -749,6 +760,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -775,6 +787,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -801,6 +814,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -826,6 +840,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +862,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +891,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object backupId_ = "";
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -929,6 +947,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -955,6 +974,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -977,6 +997,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1006,6 +1027,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object sourceBackup_ = "";
+
     /**
      *
      *
@@ -1036,6 +1058,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1066,6 +1089,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1095,6 +1119,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1145,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -1176,6 +1203,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1201,6 +1229,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1228,6 +1257,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1282,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1284,6 +1315,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1340,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1360,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1350,6 +1384,7 @@ public final class CopyBackupRequest extends com.google.protobuf.GeneratedMessag
             : expireTime_;
       }
     }
+
     /**
      *
      *

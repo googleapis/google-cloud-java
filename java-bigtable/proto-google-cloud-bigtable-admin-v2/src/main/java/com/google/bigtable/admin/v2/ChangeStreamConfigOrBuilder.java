@@ -40,6 +40,7 @@ public interface ChangeStreamConfigOrBuilder
    * @return Whether the retentionPeriod field is set.
    */
   boolean hasRetentionPeriod();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface ChangeStreamConfigOrBuilder
    * @return The retentionPeriod.
    */
   com.google.protobuf.Duration getRetentionPeriod();
+
   /**
    *
    *

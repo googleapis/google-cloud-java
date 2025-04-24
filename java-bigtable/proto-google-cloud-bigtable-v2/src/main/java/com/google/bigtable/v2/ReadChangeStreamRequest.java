@@ -34,6 +34,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadChangeStreamRequest)
     ReadChangeStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadChangeStreamRequest.newBuilder() to construct.
   private ReadChangeStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     private StartFromCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object tableName_ = "";
+
   /**
    *
    *
@@ -147,6 +150,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -180,6 +184,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object appProfileId_ = "";
+
   /**
    *
    *
@@ -205,6 +210,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       return s;
     }
   }
+
   /**
    *
    *
@@ -233,6 +239,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
 
   public static final int PARTITION_FIELD_NUMBER = 3;
   private com.google.bigtable.v2.StreamPartition partition_;
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public boolean hasPartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -265,6 +273,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         ? com.google.bigtable.v2.StreamPartition.getDefaultInstance()
         : partition_;
   }
+
   /**
    *
    *
@@ -282,6 +291,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   }
 
   public static final int START_TIME_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public boolean hasStartTime() {
     return startFromCase_ == 4;
   }
+
   /**
    *
    *
@@ -321,6 +332,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -342,6 +354,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   }
 
   public static final int CONTINUATION_TOKENS_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -366,6 +379,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public boolean hasContinuationTokens() {
     return startFromCase_ == 6;
   }
+
   /**
    *
    *
@@ -393,6 +407,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     }
     return com.google.bigtable.v2.StreamContinuationTokens.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -421,6 +436,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
 
   public static final int END_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -438,6 +454,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -455,6 +472,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -473,6 +491,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
 
   public static final int HEARTBEAT_DURATION_FIELD_NUMBER = 7;
   private com.google.protobuf.Duration heartbeatDuration_;
+
   /**
    *
    *
@@ -489,6 +508,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
   public boolean hasHeartbeatDuration() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -507,6 +527,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         ? com.google.protobuf.Duration.getDefaultInstance()
         : heartbeatDuration_;
   }
+
   /**
    *
    *
@@ -773,6 +794,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1106,6 +1128,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     private int bitField0_;
 
     private java.lang.Object tableName_ = "";
+
     /**
      *
      *
@@ -1133,6 +1156,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1160,6 +1184,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1211,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1208,6 +1234,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1237,6 +1264,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     }
 
     private java.lang.Object appProfileId_ = "";
+
     /**
      *
      *
@@ -1261,6 +1289,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1285,6 +1314,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1308,6 +1338,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1327,6 +1358,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1358,6 +1390,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             com.google.bigtable.v2.StreamPartition.Builder,
             com.google.bigtable.v2.StreamPartitionOrBuilder>
         partitionBuilder_;
+
     /**
      *
      *
@@ -1372,6 +1405,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public boolean hasPartition() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1392,6 +1426,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return partitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1414,6 +1449,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1433,6 +1469,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1460,6 +1497,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1479,6 +1517,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1493,6 +1532,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return getPartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1511,6 +1551,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             : partition_;
       }
     }
+
     /**
      *
      *
@@ -1542,6 +1583,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -1560,6 +1602,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public boolean hasStartTime() {
       return startFromCase_ == 4;
     }
+
     /**
      *
      *
@@ -1588,6 +1631,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1613,6 +1657,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1635,6 +1680,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1669,6 +1715,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1697,6 +1744,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1712,6 +1760,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1735,6 +1784,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1774,6 +1824,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             com.google.bigtable.v2.StreamContinuationTokens.Builder,
             com.google.bigtable.v2.StreamContinuationTokensOrBuilder>
         continuationTokensBuilder_;
+
     /**
      *
      *
@@ -1798,6 +1849,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public boolean hasContinuationTokens() {
       return startFromCase_ == 6;
     }
+
     /**
      *
      *
@@ -1832,6 +1884,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return com.google.bigtable.v2.StreamContinuationTokens.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1863,6 +1916,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1892,6 +1946,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1933,6 +1988,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       startFromCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -1967,6 +2023,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -1988,6 +2045,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public com.google.bigtable.v2.StreamContinuationTokens.Builder getContinuationTokensBuilder() {
       return getContinuationTokensFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2018,6 +2076,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return com.google.bigtable.v2.StreamContinuationTokens.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2066,6 +2125,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -2082,6 +2142,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -2102,6 +2163,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2126,6 +2188,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2210,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2176,6 +2240,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2197,6 +2262,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2213,6 +2279,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2231,6 +2298,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *
@@ -2265,6 +2333,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         heartbeatDurationBuilder_;
+
     /**
      *
      *
@@ -2280,6 +2349,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
     public boolean hasHeartbeatDuration() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2301,6 +2371,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
         return heartbeatDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2324,6 +2395,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2344,6 +2416,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2372,6 +2445,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       }
       return this;
     }
+
     /**
      *
      *
@@ -2392,6 +2466,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2407,6 +2482,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
       onChanged();
       return getHeartbeatDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2426,6 +2502,7 @@ public final class ReadChangeStreamRequest extends com.google.protobuf.Generated
             : heartbeatDuration_;
       }
     }
+
     /**
      *
      *

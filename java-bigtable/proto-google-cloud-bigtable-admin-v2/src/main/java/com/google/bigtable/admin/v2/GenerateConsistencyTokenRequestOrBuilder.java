@@ -40,6 +40,7 @@ public interface GenerateConsistencyTokenRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

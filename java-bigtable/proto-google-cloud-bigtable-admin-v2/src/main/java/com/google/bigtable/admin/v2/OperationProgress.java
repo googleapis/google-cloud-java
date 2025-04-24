@@ -34,6 +34,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.OperationProgress)
     OperationProgressOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OperationProgress.newBuilder() to construct.
   private OperationProgress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   private int bitField0_;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 1;
   private int progressPercent_ = 0;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   public static final int START_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp startTime_;
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public boolean hasStartTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getStartTime() {
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
 
   public static final int END_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp endTime_;
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public boolean hasEndTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Timestamp getEndTime() {
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
+
   /**
    *
    *
@@ -364,6 +372,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +603,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int progressPercent_;
+
     /**
      *
      *
@@ -610,6 +620,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public int getProgressPercent() {
       return progressPercent_;
     }
+
     /**
      *
      *
@@ -630,6 +641,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         startTimeBuilder_;
+
     /**
      *
      *
@@ -669,6 +682,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public boolean hasStartTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -687,6 +701,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return startTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -709,6 +724,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -728,6 +744,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -755,6 +772,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -774,6 +792,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +807,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -804,6 +824,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
+
     /**
      *
      *
@@ -836,6 +857,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         endTimeBuilder_;
+
     /**
      *
      *
@@ -851,6 +873,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
     public boolean hasEndTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -870,6 +893,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return endTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -893,6 +917,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +938,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -941,6 +967,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +988,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -976,6 +1004,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -993,6 +1022,7 @@ public final class OperationProgress extends com.google.protobuf.GeneratedMessag
         return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
+
     /**
      *
      *

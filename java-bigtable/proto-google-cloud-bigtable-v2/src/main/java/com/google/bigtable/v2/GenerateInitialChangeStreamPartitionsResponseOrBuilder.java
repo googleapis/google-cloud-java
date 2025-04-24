@@ -36,6 +36,7 @@ public interface GenerateInitialChangeStreamPartitionsResponseOrBuilder
    * @return Whether the partition field is set.
    */
   boolean hasPartition();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface GenerateInitialChangeStreamPartitionsResponseOrBuilder
    * @return The partition.
    */
   com.google.bigtable.v2.StreamPartition getPartition();
+
   /**
    *
    *

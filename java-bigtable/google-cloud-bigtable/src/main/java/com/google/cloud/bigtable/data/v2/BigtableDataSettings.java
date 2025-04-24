@@ -326,6 +326,7 @@ public final class BigtableDataSettings {
   /** Builder for BigtableDataSettings. */
   public static class Builder {
     private final EnhancedBigtableStubSettings.Builder stubSettings;
+
     /**
      * Initializes a new Builder with sane defaults for all settings.
      *

@@ -36,6 +36,7 @@ public interface ColumnRangeOrBuilder
    * @return The familyName.
    */
   java.lang.String getFamilyName();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface ColumnRangeOrBuilder
    * @return Whether the startQualifierClosed field is set.
    */
   boolean hasStartQualifierClosed();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface ColumnRangeOrBuilder
    * @return Whether the startQualifierOpen field is set.
    */
   boolean hasStartQualifierOpen();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface ColumnRangeOrBuilder
    * @return Whether the endQualifierClosed field is set.
    */
   boolean hasEndQualifierClosed();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface ColumnRangeOrBuilder
    * @return Whether the endQualifierOpen field is set.
    */
   boolean hasEndQualifierOpen();
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.UpdateTableRequest)
     UpdateTableRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use UpdateTableRequest.newBuilder() to construct.
   private UpdateTableRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   private int bitField0_;
   public static final int TABLE_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.Table table_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasTable() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -99,6 +102,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   public com.google.bigtable.admin.v2.Table getTable() {
     return table_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : table_;
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
+
   /**
    *
    *
@@ -145,6 +150,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
 
   public static final int IGNORE_WARNINGS_FIELD_NUMBER = 3;
   private boolean ignoreWarnings_ = false;
+
   /**
    *
    *
@@ -405,6 +413,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +650,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
             com.google.bigtable.admin.v2.Table.Builder,
             com.google.bigtable.admin.v2.TableOrBuilder>
         tableBuilder_;
+
     /**
      *
      *
@@ -657,6 +667,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasTable() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -677,6 +688,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
         return tableBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -701,6 +713,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +765,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +787,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +804,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getTableFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
         return table_ == null ? com.google.bigtable.admin.v2.Table.getDefaultInstance() : table_;
       }
     }
+
     /**
      *
      *
@@ -840,6 +858,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
+
     /**
      *
      *
@@ -867,6 +886,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -900,6 +920,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
         return updateMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -935,6 +956,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +989,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1007,6 +1030,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1063,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1066,6 +1091,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1097,6 +1123,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
             : updateMask_;
       }
     }
+
     /**
      *
      *
@@ -1137,6 +1164,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     }
 
     private boolean ignoreWarnings_;
+
     /**
      *
      *
@@ -1152,6 +1180,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
     public boolean getIgnoreWarnings() {
       return ignoreWarnings_;
     }
+
     /**
      *
      *
@@ -1171,6 +1200,7 @@ public final class UpdateTableRequest extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

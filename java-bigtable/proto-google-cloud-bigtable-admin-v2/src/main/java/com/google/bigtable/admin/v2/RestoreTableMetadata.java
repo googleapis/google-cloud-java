@@ -34,6 +34,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.RestoreTableMetadata)
     RestoreTableMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RestoreTableMetadata.newBuilder() to construct.
   private RestoreTableMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     private SourceInfoCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -117,6 +119,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -140,6 +143,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -166,6 +170,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 2;
   private int sourceType_ = 0;
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
   public int getSourceTypeValue() {
     return sourceType_;
   }
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
   }
 
   public static final int BACKUP_INFO_FIELD_NUMBER = 3;
+
   /**
    * <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code>
    *
@@ -209,6 +216,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasBackupInfo() {
     return sourceInfoCase_ == 3;
   }
+
   /**
    * <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code>
    *
@@ -221,6 +229,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     }
     return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
   }
+
   /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
   @java.lang.Override
   public com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder() {
@@ -234,6 +243,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object optimizeTableOperationName_ = "";
+
   /**
    *
    *
@@ -265,6 +275,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       return s;
     }
   }
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
 
   public static final int PROGRESS_FIELD_NUMBER = 5;
   private com.google.bigtable.admin.v2.OperationProgress progress_;
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -335,6 +348,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         ? com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -574,6 +588,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -861,6 +876,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -883,6 +899,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -905,6 +922,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -926,6 +944,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -943,6 +962,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +987,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private int sourceType_ = 0;
+
     /**
      *
      *
@@ -982,6 +1003,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     public int getSourceTypeValue() {
       return sourceType_;
     }
+
     /**
      *
      *
@@ -1000,6 +1022,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1040,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
           com.google.bigtable.admin.v2.RestoreSourceType.forNumber(sourceType_);
       return result == null ? com.google.bigtable.admin.v2.RestoreSourceType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1038,6 +1062,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1061,6 +1086,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
             com.google.bigtable.admin.v2.BackupInfo.Builder,
             com.google.bigtable.admin.v2.BackupInfoOrBuilder>
         backupInfoBuilder_;
+
     /**
      * <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code>
      *
@@ -1070,6 +1096,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasBackupInfo() {
       return sourceInfoCase_ == 3;
     }
+
     /**
      * <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code>
      *
@@ -1089,6 +1116,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
       }
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     public Builder setBackupInfo(com.google.bigtable.admin.v2.BackupInfo value) {
       if (backupInfoBuilder_ == null) {
@@ -1103,6 +1131,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       sourceInfoCase_ = 3;
       return this;
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     public Builder setBackupInfo(com.google.bigtable.admin.v2.BackupInfo.Builder builderForValue) {
       if (backupInfoBuilder_ == null) {
@@ -1114,6 +1143,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       sourceInfoCase_ = 3;
       return this;
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     public Builder mergeBackupInfo(com.google.bigtable.admin.v2.BackupInfo value) {
       if (backupInfoBuilder_ == null) {
@@ -1138,6 +1168,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       sourceInfoCase_ = 3;
       return this;
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     public Builder clearBackupInfo() {
       if (backupInfoBuilder_ == null) {
@@ -1155,10 +1186,12 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     public com.google.bigtable.admin.v2.BackupInfo.Builder getBackupInfoBuilder() {
       return getBackupInfoFieldBuilder().getBuilder();
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     @java.lang.Override
     public com.google.bigtable.admin.v2.BackupInfoOrBuilder getBackupInfoOrBuilder() {
@@ -1171,6 +1204,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
       }
     }
+
     /** <code>.google.bigtable.admin.v2.BackupInfo backup_info = 3;</code> */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.bigtable.admin.v2.BackupInfo,
@@ -1197,6 +1231,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     }
 
     private java.lang.Object optimizeTableOperationName_ = "";
+
     /**
      *
      *
@@ -1227,6 +1262,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1257,6 +1293,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1286,6 +1323,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1311,6 +1349,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1387,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
             com.google.bigtable.admin.v2.OperationProgress.Builder,
             com.google.bigtable.admin.v2.OperationProgressOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -1364,6 +1404,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1386,6 +1427,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1410,6 +1452,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1432,6 +1475,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1461,6 +1505,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1482,6 +1527,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1544,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1518,6 +1565,7 @@ public final class RestoreTableMetadata extends com.google.protobuf.GeneratedMes
             : progress_;
       }
     }
+
     /**
      *
      *

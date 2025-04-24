@@ -34,6 +34,7 @@ public interface ReadRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
    */
   java.util.List<com.google.bigtable.v2.ReadRowsResponse.CellChunk> getChunksList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ReadRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
    */
   com.google.bigtable.v2.ReadRowsResponse.CellChunk getChunks(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ReadRowsResponseOrBuilder
    * <code>repeated .google.bigtable.v2.ReadRowsResponse.CellChunk chunks = 1;</code>
    */
   int getChunksCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ReadRowsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.ReadRowsResponse.CellChunkOrBuilder>
       getChunksOrBuilderList();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the requestStats field is set.
    */
   boolean hasRequestStats();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The requestStats.
    */
   com.google.bigtable.v2.RequestStats getRequestStats();
+
   /**
    *
    *

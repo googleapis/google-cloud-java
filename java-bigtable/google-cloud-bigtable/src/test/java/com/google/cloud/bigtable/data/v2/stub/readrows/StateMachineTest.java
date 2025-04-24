@@ -59,8 +59,7 @@ public class StateMachineTest {
       stateMachine.consumeRow();
 
       stateMachine.handleChunk(
-          chunk
-              .toBuilder()
+          chunk.toBuilder()
               .setRowKey(ByteString.copyFromUtf8("my-key3"))
               .setValueSize(123) // invalid value size
               .build());

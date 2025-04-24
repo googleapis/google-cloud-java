@@ -111,7 +111,8 @@ public class TestEnvRule implements TestRule {
       default:
         throw new IllegalArgumentException(
             String.format(
-                "Unknown env: %s. Please set the system property %s to either 'emulator' or 'cloud'.",
+                "Unknown env: %s. Please set the system property %s to either 'emulator' or"
+                    + " 'cloud'.",
                 env, ENV_PROPERTY));
     }
     testEnv.start();

@@ -36,6 +36,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.OptimizeRestoredTableMetadata)
     OptimizeRestoredTableMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use OptimizeRestoredTableMetadata.newBuilder() to construct.
   private OptimizeRestoredTableMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
 
   public static final int PROGRESS_FIELD_NUMBER = 2;
   private com.google.bigtable.admin.v2.OperationProgress progress_;
+
   /**
    *
    *
@@ -135,6 +139,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -152,6 +157,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         ? com.google.bigtable.admin.v2.OperationProgress.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -342,6 +348,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -558,6 +565,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +633,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -669,6 +681,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
             com.google.bigtable.admin.v2.OperationProgress.Builder,
             com.google.bigtable.admin.v2.OperationProgressOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -683,6 +696,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -703,6 +717,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -725,6 +740,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -745,6 +761,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -772,6 +789,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       }
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +809,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +824,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -823,6 +843,7 @@ public final class OptimizeRestoredTableMetadata extends com.google.protobuf.Gen
             : progress_;
       }
     }
+
     /**
      *
      *

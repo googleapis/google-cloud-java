@@ -39,6 +39,7 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * @return The tableId.
    */
   java.lang.String getTableId();
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public interface CreateTableFromSnapshotRequestOrBuilder
    * @return The sourceSnapshot.
    */
   java.lang.String getSourceSnapshot();
+
   /**
    *
    *

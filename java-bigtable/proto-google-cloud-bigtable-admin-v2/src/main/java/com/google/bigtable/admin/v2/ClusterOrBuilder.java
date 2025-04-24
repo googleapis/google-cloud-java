@@ -37,6 +37,7 @@ public interface ClusterOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface ClusterOrBuilder
    * @return The location.
    */
   java.lang.String getLocation();
+
   /**
    *
    *
@@ -100,6 +102,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for nodeScalingFactor.
    */
   int getNodeScalingFactorValue();
+
   /**
    *
    *
@@ -171,6 +175,7 @@ public interface ClusterOrBuilder
    * @return Whether the clusterConfig field is set.
    */
   boolean hasClusterConfig();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface ClusterOrBuilder
    * @return The clusterConfig.
    */
   com.google.bigtable.admin.v2.Cluster.ClusterConfig getClusterConfig();
+
   /**
    *
    *
@@ -209,6 +215,7 @@ public interface ClusterOrBuilder
    * @return The enum numeric value on the wire for defaultStorageType.
    */
   int getDefaultStorageTypeValue();
+
   /**
    *
    *
@@ -239,6 +246,7 @@ public interface ClusterOrBuilder
    * @return Whether the encryptionConfig field is set.
    */
   boolean hasEncryptionConfig();
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public interface ClusterOrBuilder
    * @return The encryptionConfig.
    */
   com.google.bigtable.admin.v2.Cluster.EncryptionConfig getEncryptionConfig();
+
   /**
    *
    *

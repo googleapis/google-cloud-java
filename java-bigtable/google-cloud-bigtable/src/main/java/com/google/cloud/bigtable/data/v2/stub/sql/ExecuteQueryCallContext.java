@@ -120,7 +120,9 @@ public class ExecuteQueryCallContext {
     try {
       Preconditions.checkState(
           latestPrepareResponse.prepareFuture().isDone(),
-          "Unexpected attempt to finalize metadata with unresolved prepare response. This should never as this is called after we receive ExecuteQuery responses, which requires the future to be resolved");
+          "Unexpected attempt to finalize metadata with unresolved prepare response. This should"
+              + " never as this is called after we receive ExecuteQuery responses, which requires"
+              + " the future to be resolved");
       PrepareResponse response =
           ApiExceptions.callAndTranslateApiException(latestPrepareResponse.prepareFuture());
       metadataFuture.set(response.resultSetMetadata());

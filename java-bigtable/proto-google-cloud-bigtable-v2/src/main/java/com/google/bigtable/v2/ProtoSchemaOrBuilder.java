@@ -34,6 +34,7 @@ public interface ProtoSchemaOrBuilder
    * <code>repeated .google.bigtable.v2.ColumnMetadata columns = 1;</code>
    */
   java.util.List<com.google.bigtable.v2.ColumnMetadata> getColumnsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ProtoSchemaOrBuilder
    * <code>repeated .google.bigtable.v2.ColumnMetadata columns = 1;</code>
    */
   com.google.bigtable.v2.ColumnMetadata getColumns(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ProtoSchemaOrBuilder
    * <code>repeated .google.bigtable.v2.ColumnMetadata columns = 1;</code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ProtoSchemaOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.ColumnMetadataOrBuilder>
       getColumnsOrBuilderList();
+
   /**
    *
    *

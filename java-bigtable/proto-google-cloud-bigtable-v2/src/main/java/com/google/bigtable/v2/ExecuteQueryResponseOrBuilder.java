@@ -37,6 +37,7 @@ public interface ExecuteQueryResponseOrBuilder
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface ExecuteQueryResponseOrBuilder
    * @return The metadata.
    */
   com.google.bigtable.v2.ResultSetMetadata getMetadata();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface ExecuteQueryResponseOrBuilder
    * @return Whether the results field is set.
    */
   boolean hasResults();
+
   /**
    *
    *
@@ -90,6 +93,7 @@ public interface ExecuteQueryResponseOrBuilder
    * @return The results.
    */
   com.google.bigtable.v2.PartialResultSet getResults();
+
   /**
    *
    *

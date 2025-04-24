@@ -658,8 +658,9 @@ public final class ProtoRowsMergingStateMachineTest {
           assertWithMessage(
                   "Unknown TypeCase "
                       + typeCase.name()
-                      + " seen. Check if SerializedProtoRowsMergingStateMachine.validateValueAndType"
-                      + " supports all types.")
+                      + " seen. Check if"
+                      + " SerializedProtoRowsMergingStateMachine.validateValueAndType supports all"
+                      + " types.")
               .fail();
       }
     }

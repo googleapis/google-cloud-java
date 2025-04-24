@@ -38,6 +38,7 @@ public interface SnapshotOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface SnapshotOrBuilder
    * @return Whether the sourceTable field is set.
    */
   boolean hasSourceTable();
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public interface SnapshotOrBuilder
    * @return The sourceTable.
    */
   com.google.bigtable.admin.v2.Table getSourceTable();
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public interface SnapshotOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface SnapshotOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface SnapshotOrBuilder
    * @return Whether the deleteTime field is set.
    */
   boolean hasDeleteTime();
+
   /**
    *
    *
@@ -176,6 +182,7 @@ public interface SnapshotOrBuilder
    * @return The deleteTime.
    */
   com.google.protobuf.Timestamp getDeleteTime();
+
   /**
    *
    *
@@ -203,6 +210,7 @@ public interface SnapshotOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -230,6 +238,7 @@ public interface SnapshotOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *

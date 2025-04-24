@@ -152,14 +152,16 @@ class BigtableUnaryOperationCallable<ReqT, RespT> extends UnaryCallable<ReqT, Re
         RespT prev = Futures.getDone(this);
         String msg =
             String.format(
-                "Received response after future is resolved for a %s unary operation. previous: %s, New response: %s",
+                "Received response after future is resolved for a %s unary operation. previous: %s,"
+                    + " New response: %s",
                 spanName, prev, resp);
         logger.log(Level.WARNING, msg);
       } catch (ExecutionException e) {
         // Should never happen
         String msg =
             String.format(
-                "Received response after future resolved as a failure for a %s unary operation. New response: %s",
+                "Received response after future resolved as a failure for a %s unary operation. New"
+                    + " response: %s",
                 spanName, resp);
         logger.log(Level.WARNING, msg, e.getCause());
       }

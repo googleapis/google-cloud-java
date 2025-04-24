@@ -156,9 +156,10 @@ public class ExecuteQueryIT {
   public void allTypes() {
     PreparedStatement preparedStatement =
         dataClient.prepareStatement(
-            "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as f32Col, "
-                + "CAST(1.3 AS FLOAT64) as f64Col, true as boolCol, TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, "
-                + "DATE(2024, 06, 01) as dateCol, STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
+            "SELECT 'stringVal' AS strCol, b'foo' as bytesCol, 1 AS intCol, CAST(1.2 AS FLOAT32) as"
+                + " f32Col, CAST(1.3 AS FLOAT64) as f64Col, true as boolCol,"
+                + " TIMESTAMP_FROM_UNIX_MILLIS(1000) AS tsCol, DATE(2024, 06, 01) as dateCol,"
+                + " STRUCT(1 as a, \"foo\" as b) AS structCol, [1,2,3] AS arrCol, "
                 + cf
                 + " as mapCol FROM `"
                 + tableId

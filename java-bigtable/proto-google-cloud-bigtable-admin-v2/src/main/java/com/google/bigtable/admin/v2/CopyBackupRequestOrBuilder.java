@@ -40,6 +40,7 @@ public interface CopyBackupRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -74,6 +75,7 @@ public interface CopyBackupRequestOrBuilder
    * @return The backupId.
    */
   java.lang.String getBackupId();
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public interface CopyBackupRequestOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
+
   /**
    *
    *
@@ -150,6 +153,7 @@ public interface CopyBackupRequestOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -167,6 +171,7 @@ public interface CopyBackupRequestOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ResultSetMetadata)
     ResultSetMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ResultSetMetadata.newBuilder() to construct.
   private ResultSetMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     private SchemaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROTO_SCHEMA_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
   public boolean hasProtoSchema() {
     return schemaCase_ == 1;
   }
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     }
     return com.google.bigtable.v2.ProtoSchema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -331,6 +336,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -548,6 +554,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
             com.google.bigtable.v2.ProtoSchema.Builder,
             com.google.bigtable.v2.ProtoSchemaOrBuilder>
         protoSchemaBuilder_;
+
     /**
      *
      *
@@ -563,6 +570,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     public boolean hasProtoSchema() {
       return schemaCase_ == 1;
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.bigtable.v2.ProtoSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -610,6 +619,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
       schemaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -629,6 +639,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
       schemaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
       schemaCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
     public com.google.bigtable.v2.ProtoSchema.Builder getProtoSchemaBuilder() {
       return getProtoSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -718,6 +732,7 @@ public final class ResultSetMetadata extends com.google.protobuf.GeneratedMessag
         return com.google.bigtable.v2.ProtoSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class StandardReadRemoteWrites extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.StandardReadRemoteWrites)
     StandardReadRemoteWritesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StandardReadRemoteWrites.newBuilder() to construct.
   private StandardReadRemoteWrites(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -213,6 +214,7 @@ public final class StandardReadRemoteWrites extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

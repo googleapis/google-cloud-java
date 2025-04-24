@@ -35,6 +35,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ReadIterationStats)
     ReadIterationStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadIterationStats.newBuilder() to construct.
   private ReadIterationStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
 
   public static final int ROWS_SEEN_COUNT_FIELD_NUMBER = 1;
   private long rowsSeenCount_ = 0L;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
 
   public static final int ROWS_RETURNED_COUNT_FIELD_NUMBER = 2;
   private long rowsReturnedCount_ = 0L;
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
 
   public static final int CELLS_SEEN_COUNT_FIELD_NUMBER = 3;
   private long cellsSeenCount_ = 0L;
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
 
   public static final int CELLS_RETURNED_COUNT_FIELD_NUMBER = 4;
   private long cellsReturnedCount_ = 0L;
+
   /**
    *
    *
@@ -323,6 +328,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -545,6 +551,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
 
     private long rowsSeenCount_;
+
     /**
      *
      *
@@ -561,6 +568,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     public long getRowsSeenCount() {
       return rowsSeenCount_;
     }
+
     /**
      *
      *
@@ -581,6 +589,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     }
 
     private long rowsReturnedCount_;
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     public long getRowsReturnedCount() {
       return rowsReturnedCount_;
     }
+
     /**
      *
      *
@@ -635,6 +646,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +666,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     }
 
     private long cellsSeenCount_;
+
     /**
      *
      *
@@ -670,6 +683,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     public long getCellsSeenCount() {
       return cellsSeenCount_;
     }
+
     /**
      *
      *
@@ -690,6 +704,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -710,6 +725,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     }
 
     private long cellsReturnedCount_;
+
     /**
      *
      *
@@ -725,6 +741,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
     public long getCellsReturnedCount() {
       return cellsReturnedCount_;
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class ReadIterationStats extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *

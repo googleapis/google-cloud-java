@@ -33,6 +33,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.RateLimitInfo)
     RateLimitInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RateLimitInfo.newBuilder() to construct.
   private RateLimitInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PERIOD_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration period_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPeriod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Duration getPeriod() {
     return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FACTOR_FIELD_NUMBER = 2;
   private double factor_ = 0D;
+
   /**
    *
    *
@@ -323,6 +328,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -537,6 +543,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         periodBuilder_;
+
     /**
      *
      *
@@ -556,6 +563,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPeriod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
         return periodBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -630,6 +640,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPeriodFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -726,6 +740,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
         return period_ == null ? com.google.protobuf.Duration.getDefaultInstance() : period_;
       }
     }
+
     /**
      *
      *
@@ -758,6 +773,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double factor_;
+
     /**
      *
      *
@@ -781,6 +797,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
     public double getFactor() {
       return factor_;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class RateLimitInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

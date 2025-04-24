@@ -190,6 +190,7 @@ final class StateMachine<RowT> {
   boolean hasCompleteRow() {
     return currentState == AWAITING_ROW_CONSUME;
   }
+
   /**
    * Checks if the state machine is in the middle of processing a row.
    *
@@ -352,7 +353,8 @@ final class StateMachine<RowT> {
                 "AWAITING_NEW_CELL: can't commit when valueSize indicates more data");
             validate(
                 !chunk.getValue().isEmpty(),
-                "AWAITING_NEW_CELL: must have data when valueSize promises more data in the next chunk");
+                "AWAITING_NEW_CELL: must have data when valueSize promises more data in the next"
+                    + " chunk");
 
             expectedCellSize = chunk.getValueSize();
             remainingCellBytes = expectedCellSize - chunk.getValue().size();

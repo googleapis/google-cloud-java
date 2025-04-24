@@ -36,6 +36,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return Whether the requestTime field is set.
    */
   boolean hasRequestTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return The requestTime.
    */
   com.google.protobuf.Timestamp getRequestTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return Whether the finishTime field is set.
    */
   boolean hasFinishTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return The finishTime.
    */
   com.google.protobuf.Timestamp getFinishTime();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface PartialUpdateClusterMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.PartialUpdateClusterRequest getOriginalRequest();
+
   /**
    *
    *

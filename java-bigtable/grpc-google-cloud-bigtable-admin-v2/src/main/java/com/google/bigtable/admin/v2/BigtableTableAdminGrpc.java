@@ -1387,6 +1387,19 @@ public final class BigtableTableAdminGrpc {
     return BigtableTableAdminStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BigtableTableAdminBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BigtableTableAdminBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigtableTableAdminBlockingV2Stub>() {
+          @java.lang.Override
+          public BigtableTableAdminBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigtableTableAdminBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BigtableTableAdminBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -2487,6 +2500,475 @@ public final class BigtableTableAdminGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BigtableTableAdmin.
+   *
+   * <pre>
+   * Service for creating, configuring, and deleting Cloud Bigtable tables.
+   * Provides access to the table schemas only, not the data stored within
+   * the tables.
+   * </pre>
+   */
+  public static final class BigtableTableAdminBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BigtableTableAdminBlockingV2Stub> {
+    private BigtableTableAdminBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BigtableTableAdminBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BigtableTableAdminBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new table in the specified instance.
+     * The table can be created with a full set of initial column families,
+     * specified in the request.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Table createTable(
+        com.google.bigtable.admin.v2.CreateTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new table from the specified snapshot. The target table must
+     * not exist. The snapshot and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createTableFromSnapshot(
+        com.google.bigtable.admin.v2.CreateTableFromSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTableFromSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all tables served from a specified instance.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListTablesResponse listTables(
+        com.google.bigtable.admin.v2.ListTablesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTablesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified table.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Table getTable(
+        com.google.bigtable.admin.v2.GetTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a specified table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateTable(
+        com.google.bigtable.admin.v2.UpdateTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified table and all of its data.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTable(
+        com.google.bigtable.admin.v2.DeleteTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a specified table which was accidentally deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation undeleteTable(
+        com.google.bigtable.admin.v2.UndeleteTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUndeleteTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createAuthorizedView(
+        com.google.bigtable.admin.v2.CreateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all AuthorizedViews from a specific table.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListAuthorizedViewsResponse listAuthorizedViews(
+        com.google.bigtable.admin.v2.ListAuthorizedViewsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListAuthorizedViewsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets information from a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.AuthorizedView getAuthorizedView(
+        com.google.bigtable.admin.v2.GetAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an AuthorizedView in a table.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateAuthorizedView(
+        com.google.bigtable.admin.v2.UpdateAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes a specified AuthorizedView.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteAuthorizedView(
+        com.google.bigtable.admin.v2.DeleteAuthorizedViewRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteAuthorizedViewMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Performs a series of column family modifications on the specified table.
+     * Either all or none of the modifications will occur before this method
+     * returns, but data requests received prior to that point may see a table
+     * where only some modifications have taken effect.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Table modifyColumnFamilies(
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyColumnFamiliesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently drop/delete a row range from a specified table. The request can
+     * specify whether to delete all rows in a table, or only those that match a
+     * particular prefix.
+     * </pre>
+     */
+    public com.google.protobuf.Empty dropRowRange(
+        com.google.bigtable.admin.v2.DropRowRangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDropRowRangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generates a consistency token for a Table, which can be used in
+     * CheckConsistency to check whether mutations to the table that finished
+     * before this call started have been replicated. The tokens will be available
+     * for 90 days.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.GenerateConsistencyTokenResponse generateConsistencyToken(
+        com.google.bigtable.admin.v2.GenerateConsistencyTokenRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateConsistencyTokenMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Checks replication consistency based on a consistency token, that is, if
+     * replication has caught up based on the conditions specified in the token
+     * and the check request.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.CheckConsistencyResponse checkConsistency(
+        com.google.bigtable.admin.v2.CheckConsistencyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckConsistencyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new snapshot in the specified cluster from the specified
+     * source table. The cluster and the table must be in the same instance.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
+     * </pre>
+     */
+    public com.google.longrunning.Operation snapshotTable(
+        com.google.bigtable.admin.v2.SnapshotTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSnapshotTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata information about the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Snapshot getSnapshot(
+        com.google.bigtable.admin.v2.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all snapshots associated with the specified cluster.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListSnapshotsResponse listSnapshots(
+        com.google.bigtable.admin.v2.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Permanently deletes the specified snapshot.
+     * Note: This is a private alpha release of Cloud Bigtable snapshots. This
+     * feature is not currently available to most Cloud Bigtable customers. This
+     * feature might be changed in backward-incompatible ways and is not
+     * recommended for production use. It is not subject to any SLA or deprecation
+     * policy.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSnapshot(
+        com.google.bigtable.admin.v2.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Starts creating a new Cloud Bigtable Backup.  The returned backup
+     * [long-running operation][google.longrunning.Operation] can be used to
+     * track creation of the backup. The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [CreateBackupMetadata][google.bigtable.admin.v2.CreateBackupMetadata]. The
+     * [response][google.longrunning.Operation.response] field type is
+     * [Backup][google.bigtable.admin.v2.Backup], if successful. Cancelling the
+     * returned operation will stop the creation and delete the backup.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createBackup(
+        com.google.bigtable.admin.v2.CreateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metadata on a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Backup getBackup(
+        com.google.bigtable.admin.v2.GetBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a pending or completed Cloud Bigtable Backup.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.Backup updateBackup(
+        com.google.bigtable.admin.v2.UpdateBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a pending or completed Cloud Bigtable backup.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteBackup(
+        com.google.bigtable.admin.v2.DeleteBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists Cloud Bigtable backups. Returns both completed and pending
+     * backups.
+     * </pre>
+     */
+    public com.google.bigtable.admin.v2.ListBackupsResponse listBackups(
+        com.google.bigtable.admin.v2.ListBackupsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListBackupsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Create a new table by restoring from a completed backup.  The
+     * returned table [long-running operation][google.longrunning.Operation] can
+     * be used to track the progress of the operation, and to cancel it.  The
+     * [metadata][google.longrunning.Operation.metadata] field type is
+     * [RestoreTableMetadata][google.bigtable.admin.v2.RestoreTableMetadata].  The
+     * [response][google.longrunning.Operation.response] type is
+     * [Table][google.bigtable.admin.v2.Table], if successful.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreTable(
+        com.google.bigtable.admin.v2.RestoreTableRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreTableMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Copy a Cloud Bigtable backup to a new backup in the destination cluster
+     * located in the destination instance and project.
+     * </pre>
+     */
+    public com.google.longrunning.Operation copyBackup(
+        com.google.bigtable.admin.v2.CopyBackupRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCopyBackupMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the access control policy for a Table or Backup resource.
+     * Returns an empty policy if the resource exists but does not have a policy
+     * set.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy getIamPolicy(com.google.iam.v1.GetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the access control policy on a Table or Backup resource.
+     * Replaces any existing policy.
+     * </pre>
+     */
+    public com.google.iam.v1.Policy setIamPolicy(com.google.iam.v1.SetIamPolicyRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSetIamPolicyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns permissions that the caller has on the specified Table or Backup
+     * resource.
+     * </pre>
+     */
+    public com.google.iam.v1.TestIamPermissionsResponse testIamPermissions(
+        com.google.iam.v1.TestIamPermissionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getTestIamPermissionsMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BigtableTableAdmin.
    *
    * <pre>
    * Service for creating, configuring, and deleting Cloud Bigtable tables.

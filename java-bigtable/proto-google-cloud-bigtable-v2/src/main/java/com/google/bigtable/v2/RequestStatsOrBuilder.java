@@ -37,6 +37,7 @@ public interface RequestStatsOrBuilder
    * @return Whether the fullReadStatsView field is set.
    */
   boolean hasFullReadStatsView();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface RequestStatsOrBuilder
    * @return The fullReadStatsView.
    */
   com.google.bigtable.v2.FullReadStatsView getFullReadStatsView();
+
   /**
    *
    *

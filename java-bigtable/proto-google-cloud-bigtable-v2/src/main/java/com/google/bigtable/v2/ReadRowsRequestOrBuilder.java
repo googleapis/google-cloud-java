@@ -41,6 +41,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The authorizedViewName.
    */
   java.lang.String getAuthorizedViewName();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The materializedViewName.
    */
   java.lang.String getMaterializedViewName();
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface ReadRowsRequestOrBuilder
    * @return Whether the rows field is set.
    */
   boolean hasRows();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The rows.
    */
   com.google.bigtable.v2.RowSet getRows();
+
   /**
    *
    *
@@ -207,6 +213,7 @@ public interface ReadRowsRequestOrBuilder
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The filter.
    */
   com.google.bigtable.v2.RowFilter getFilter();
+
   /**
    *
    *
@@ -258,6 +266,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The enum numeric value on the wire for requestStatsView.
    */
   int getRequestStatsViewValue();
+
   /**
    *
    *

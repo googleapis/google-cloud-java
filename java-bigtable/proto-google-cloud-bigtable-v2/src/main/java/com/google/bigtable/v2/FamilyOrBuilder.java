@@ -41,6 +41,7 @@ public interface FamilyOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface FamilyOrBuilder
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
   java.util.List<com.google.bigtable.v2.Column> getColumnsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface FamilyOrBuilder
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
   com.google.bigtable.v2.Column getColumns(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface FamilyOrBuilder
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
   int getColumnsCount();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface FamilyOrBuilder
    * <code>repeated .google.bigtable.v2.Column columns = 2;</code>
    */
   java.util.List<? extends com.google.bigtable.v2.ColumnOrBuilder> getColumnsOrBuilderList();
+
   /**
    *
    *

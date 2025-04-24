@@ -39,6 +39,7 @@ public interface CreateMaterializedViewRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -68,6 +69,7 @@ public interface CreateMaterializedViewRequestOrBuilder
    * @return The materializedViewId.
    */
   java.lang.String getMaterializedViewId();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface CreateMaterializedViewRequestOrBuilder
    * @return Whether the materializedView field is set.
    */
   boolean hasMaterializedView();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface CreateMaterializedViewRequestOrBuilder
    * @return The materializedView.
    */
   com.google.bigtable.admin.v2.MaterializedView getMaterializedView();
+
   /**
    *
    *

@@ -50,6 +50,7 @@ public interface RowOrBuilder
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
   java.util.List<com.google.bigtable.v2.Family> getFamiliesList();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface RowOrBuilder
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
   com.google.bigtable.v2.Family getFamilies(int index);
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface RowOrBuilder
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
   int getFamiliesCount();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RowOrBuilder
    * <code>repeated .google.bigtable.v2.Family families = 2;</code>
    */
   java.util.List<? extends com.google.bigtable.v2.FamilyOrBuilder> getFamiliesOrBuilderList();
+
   /**
    *
    *

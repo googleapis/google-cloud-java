@@ -37,6 +37,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return Whether the originalRequest field is set.
    */
   boolean hasOriginalRequest();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return The originalRequest.
    */
   com.google.bigtable.admin.v2.UpdateLogicalViewRequest getOriginalRequest();
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -86,6 +89,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -121,6 +126,7 @@ public interface UpdateLogicalViewMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ColumnFamily)
     ColumnFamilyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ColumnFamily.newBuilder() to construct.
   private ColumnFamily(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int GC_RULE_FIELD_NUMBER = 1;
   private com.google.bigtable.admin.v2.GcRule gcRule_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGcRule() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.admin.v2.GcRule getGcRule() {
     return gcRule_ == null ? com.google.bigtable.admin.v2.GcRule.getDefaultInstance() : gcRule_;
   }
+
   /**
    *
    *
@@ -125,6 +129,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_TYPE_FIELD_NUMBER = 3;
   private com.google.bigtable.admin.v2.Type valueType_;
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   public boolean hasValueType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -173,6 +179,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
   public com.google.bigtable.admin.v2.Type getValueType() {
     return valueType_ == null ? com.google.bigtable.admin.v2.Type.getDefaultInstance() : valueType_;
   }
+
   /**
    *
    *
@@ -374,6 +381,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -595,6 +603,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.GcRule.Builder,
             com.google.bigtable.admin.v2.GcRuleOrBuilder>
         gcRuleBuilder_;
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGcRule() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
         return gcRuleBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +700,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -720,6 +733,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGcRuleFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -784,6 +800,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
         return gcRule_ == null ? com.google.bigtable.admin.v2.GcRule.getDefaultInstance() : gcRule_;
       }
     }
+
     /**
      *
      *
@@ -821,6 +838,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.Type.Builder,
             com.google.bigtable.admin.v2.TypeOrBuilder>
         valueTypeBuilder_;
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
     public boolean hasValueType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -873,6 +892,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
         return valueTypeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -904,6 +924,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +953,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -996,6 +1019,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1019,6 +1043,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getValueTypeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class ColumnFamily extends com.google.protobuf.GeneratedMessageV3
             : valueType_;
       }
     }
+
     /**
      *
      *

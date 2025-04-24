@@ -33,6 +33,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.MutateRowsResponse)
     MutateRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MutateRowsResponse.newBuilder() to construct.
   private MutateRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -97,6 +98,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the status field is set.
      */
     boolean hasStatus();
+
     /**
      *
      *
@@ -112,6 +114,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      * @return The status.
      */
     com.google.rpc.Status getStatus();
+
     /**
      *
      *
@@ -126,6 +129,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.rpc.StatusOrBuilder getStatusOrBuilder();
   }
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.bigtable.v2.MutateRowsResponse.Entry)
       EntryOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Entry.newBuilder() to construct.
     private Entry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -171,6 +176,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int INDEX_FIELD_NUMBER = 1;
     private long index_ = 0L;
+
     /**
      *
      *
@@ -190,6 +196,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
     public static final int STATUS_FIELD_NUMBER = 2;
     private com.google.rpc.Status status_;
+
     /**
      *
      *
@@ -208,6 +215,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasStatus() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -226,6 +234,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status getStatus() {
       return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
     }
+
     /**
      *
      *
@@ -417,6 +426,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       private int bitField0_;
 
       private long index_;
+
       /**
        *
        *
@@ -647,6 +658,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       public long getIndex() {
         return index_;
       }
+
       /**
        *
        *
@@ -667,6 +679,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -690,6 +703,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
           statusBuilder_;
+
       /**
        *
        *
@@ -707,6 +721,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasStatus() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -728,6 +743,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
           return statusBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -753,6 +769,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -775,6 +792,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -805,6 +823,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -827,6 +846,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -844,6 +864,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getStatusFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -863,6 +884,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
           return status_ == null ? com.google.rpc.Status.getDefaultInstance() : status_;
         }
       }
+
       /**
        *
        *
@@ -958,6 +980,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.v2.MutateRowsResponse.Entry> entries_;
+
   /**
    *
    *
@@ -971,6 +994,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.bigtable.v2.MutateRowsResponse.Entry> getEntriesList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -985,6 +1009,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       getEntriesOrBuilderList() {
     return entries_;
   }
+
   /**
    *
    *
@@ -998,6 +1023,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   public int getEntriesCount() {
     return entries_.size();
   }
+
   /**
    *
    *
@@ -1011,6 +1037,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   public com.google.bigtable.v2.MutateRowsResponse.Entry getEntries(int index) {
     return entries_.get(index);
   }
+
   /**
    *
    *
@@ -1027,6 +1054,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int RATE_LIMIT_INFO_FIELD_NUMBER = 3;
   private com.google.bigtable.v2.RateLimitInfo rateLimitInfo_;
+
   /**
    *
    *
@@ -1044,6 +1072,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasRateLimitInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1063,6 +1092,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.bigtable.v2.RateLimitInfo.getDefaultInstance()
         : rateLimitInfo_;
   }
+
   /**
    *
    *
@@ -1256,6 +1286,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1548,6 +1579,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1564,6 +1596,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1580,6 +1613,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1602,6 +1636,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1622,6 +1657,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1644,6 +1680,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1666,6 +1703,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1686,6 +1724,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1706,6 +1745,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1726,6 +1766,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1745,6 +1786,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1806,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1776,6 +1819,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.bigtable.v2.MutateRowsResponse.Entry.Builder getEntriesBuilder(int index) {
       return getEntriesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1792,6 +1836,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return entriesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1809,6 +1854,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(entries_);
       }
     }
+
     /**
      *
      *
@@ -1822,6 +1868,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       return getEntriesFieldBuilder()
           .addBuilder(com.google.bigtable.v2.MutateRowsResponse.Entry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1835,6 +1882,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       return getEntriesFieldBuilder()
           .addBuilder(index, com.google.bigtable.v2.MutateRowsResponse.Entry.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1872,6 +1920,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
             com.google.bigtable.v2.RateLimitInfo.Builder,
             com.google.bigtable.v2.RateLimitInfoOrBuilder>
         rateLimitInfoBuilder_;
+
     /**
      *
      *
@@ -1888,6 +1937,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasRateLimitInfo() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1910,6 +1960,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
         return rateLimitInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1934,6 +1985,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1955,6 +2007,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1984,6 +2037,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2059,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2076,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getRateLimitInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2041,6 +2097,7 @@ public final class MutateRowsResponse extends com.google.protobuf.GeneratedMessa
             : rateLimitInfo_;
       }
     }
+
     /**
      *
      *

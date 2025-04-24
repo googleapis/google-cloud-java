@@ -75,7 +75,8 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         meter
             .histogramBuilder(OPERATION_LATENCIES_NAME)
             .setDescription(
-                "Total time until final operation success or failure, including retries and backoff.")
+                "Total time until final operation success or failure, including retries and"
+                    + " backoff.")
             .setUnit(MILLISECOND)
             .build();
     attemptLatenciesHistogram =
@@ -94,21 +95,26 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         meter
             .histogramBuilder(SERVER_LATENCIES_NAME)
             .setDescription(
-                "The latency measured from the moment that the RPC entered the Google data center until the RPC was completed.")
+                "The latency measured from the moment that the RPC entered the Google data center"
+                    + " until the RPC was completed.")
             .setUnit(MILLISECOND)
             .build();
     firstResponseLatenciesHistogram =
         meter
             .histogramBuilder(FIRST_RESPONSE_LATENCIES_NAME)
             .setDescription(
-                "Latency from operation start until the response headers were received. The publishing of the measurement will be delayed until the attempt response has been received.")
+                "Latency from operation start until the response headers were received. The"
+                    + " publishing of the measurement will be delayed until the attempt response"
+                    + " has been received.")
             .setUnit(MILLISECOND)
             .build();
     clientBlockingLatenciesHistogram =
         meter
             .histogramBuilder(CLIENT_BLOCKING_LATENCIES_NAME)
             .setDescription(
-                "The artificial latency introduced by the client to limit the number of outstanding requests. The publishing of the measurement will be delayed until the attempt trailers have been received.")
+                "The artificial latency introduced by the client to limit the number of outstanding"
+                    + " requests. The publishing of the measurement will be delayed until the"
+                    + " attempt trailers have been received.")
             .setUnit(MILLISECOND)
             .build();
     applicationBlockingLatenciesHistogram =
@@ -122,14 +128,17 @@ public class BuiltinMetricsTracerFactory extends BaseApiTracerFactory {
         meter
             .histogramBuilder(REMAINING_DEADLINE_NAME)
             .setDescription(
-                "The remaining deadline when the request is sent to grpc. This will either be the operation timeout, or the remaining deadline from operation timeout after retries and back offs.")
+                "The remaining deadline when the request is sent to grpc. This will either be the"
+                    + " operation timeout, or the remaining deadline from operation timeout after"
+                    + " retries and back offs.")
             .setUnit(MILLISECOND)
             .build();
     connectivityErrorCounter =
         meter
             .counterBuilder(CONNECTIVITY_ERROR_COUNT_NAME)
             .setDescription(
-                "Number of requests that failed to reach the Google datacenter. (Requests without google response headers")
+                "Number of requests that failed to reach the Google datacenter. (Requests without"
+                    + " google response headers")
             .setUnit(COUNT)
             .build();
     retryCounter =

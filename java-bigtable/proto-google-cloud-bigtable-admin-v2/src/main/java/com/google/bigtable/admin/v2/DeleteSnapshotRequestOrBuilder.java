@@ -40,6 +40,7 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public interface BackupInfoOrBuilder
    * @return The backup.
    */
   java.lang.String getBackup();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface BackupInfoOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface BackupInfoOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BackupInfoOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public interface BackupInfoOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface BackupInfoOrBuilder
    * @return The sourceTable.
    */
   java.lang.String getSourceTable();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface BackupInfoOrBuilder
    * @return The sourceBackup.
    */
   java.lang.String getSourceBackup();
+
   /**
    *
    *

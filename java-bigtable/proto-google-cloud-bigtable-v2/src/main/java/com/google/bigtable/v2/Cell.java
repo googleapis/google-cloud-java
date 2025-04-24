@@ -33,6 +33,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.Cell)
     CellOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Cell.newBuilder() to construct.
   private Cell(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TIMESTAMP_MICROS_FIELD_NUMBER = 1;
   private long timestampMicros_ = 0L;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
 
   public static final int VALUE_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList labels_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -124,6 +128,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getLabelsList() {
     return labels_;
   }
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   public int getLabelsCount() {
     return labels_.size();
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getLabels(int index) {
     return labels_.get(index);
   }
+
   /**
    *
    *
@@ -351,6 +358,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -563,6 +571,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long timestampMicros_;
+
     /**
      *
      *
@@ -583,6 +592,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public long getTimestampMicros() {
       return timestampMicros_;
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -631,6 +642,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -648,6 +660,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getValue() {
       return value_;
     }
+
     /**
      *
      *
@@ -671,6 +684,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -700,6 +714,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000004;
     }
+
     /**
      *
      *
@@ -715,6 +730,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       labels_.makeImmutable();
       return labels_;
     }
+
     /**
      *
      *
@@ -729,6 +745,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public int getLabelsCount() {
       return labels_.size();
     }
+
     /**
      *
      *
@@ -744,6 +761,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getLabels(int index) {
       return labels_.get(index);
     }
+
     /**
      *
      *
@@ -759,6 +777,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getLabelsBytes(int index) {
       return labels_.getByteString(index);
     }
+
     /**
      *
      *
@@ -782,6 +801,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -804,6 +824,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +844,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +863,7 @@ public final class Cell extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -33,6 +33,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.LogicalView)
     LogicalViewOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LogicalView.newBuilder() to construct.
   private LogicalView(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object query_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object etag_ = "";
+
   /**
    *
    *
@@ -201,6 +207,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -228,6 +235,25 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DELETION_PROTECTION_FIELD_NUMBER = 6;
+  private boolean deletionProtection_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Set to true to make the LogicalView protected against deletion.
+   * </pre>
+   *
+   * <code>bool deletion_protection = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The deletionProtection.
+   */
+  @java.lang.Override
+  public boolean getDeletionProtection() {
+    return deletionProtection_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -251,6 +277,9 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, etag_);
     }
+    if (deletionProtection_ != false) {
+      output.writeBool(6, deletionProtection_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -268,6 +297,9 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, etag_);
+    }
+    if (deletionProtection_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, deletionProtection_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -287,6 +319,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getQuery().equals(other.getQuery())) return false;
     if (!getEtag().equals(other.getEtag())) return false;
+    if (getDeletionProtection() != other.getDeletionProtection()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -304,6 +337,8 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getQuery().hashCode();
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    hash = (37 * hash) + DELETION_PROTECTION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDeletionProtection());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -404,6 +439,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -446,6 +482,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       query_ = "";
       etag_ = "";
+      deletionProtection_ = false;
       return this;
     }
 
@@ -490,6 +527,9 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.deletionProtection_ = deletionProtection_;
       }
     }
 
@@ -553,6 +593,9 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getDeletionProtection() != false) {
+        setDeletionProtection(other.getDeletionProtection());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -597,6 +640,12 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 48:
+              {
+                deletionProtection_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -617,6 +666,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -641,6 +691,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -665,6 +716,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -688,6 +740,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -707,6 +760,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -733,6 +787,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object query_ = "";
+
     /**
      *
      *
@@ -755,6 +810,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -777,6 +833,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -798,6 +855,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +873,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +898,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object etag_ = "";
+
     /**
      *
      *
@@ -864,6 +924,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -889,6 +950,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -913,6 +975,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -933,6 +996,7 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -955,6 +1019,62 @@ public final class LogicalView extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       etag_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean deletionProtection_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to make the LogicalView protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The deletionProtection.
+     */
+    @java.lang.Override
+    public boolean getDeletionProtection() {
+      return deletionProtection_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to make the LogicalView protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The deletionProtection to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDeletionProtection(boolean value) {
+
+      deletionProtection_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Set to true to make the LogicalView protected against deletion.
+     * </pre>
+     *
+     * <code>bool deletion_protection = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDeletionProtection() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      deletionProtection_ = false;
       onChanged();
       return this;
     }

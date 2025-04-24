@@ -33,6 +33,7 @@ public final class MutateRowResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.MutateRowResponse)
     MutateRowResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MutateRowResponse.newBuilder() to construct.
   private MutateRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -210,6 +211,7 @@ public final class MutateRowResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

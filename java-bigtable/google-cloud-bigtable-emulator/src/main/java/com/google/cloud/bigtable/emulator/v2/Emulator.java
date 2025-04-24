@@ -43,6 +43,7 @@ public class Emulator {
   public static Emulator createFromPath(Path path) {
     return new Emulator(EmulatorController.createFromPath(path));
   }
+
   /**
    * Create a new instance of emulator. The emulator will use the bundled binaries in this jar.
    * Please note that the emulator is created in a stopped state, please use {@link #start()} after
@@ -116,6 +117,7 @@ public class Emulator {
     }
     return adminChannel;
   }
+
   // <editor-fold desc="Helpers">
 
   /** Creates a {@link io.grpc.ManagedChannelBuilder} preconfigured for the emulator's port. */

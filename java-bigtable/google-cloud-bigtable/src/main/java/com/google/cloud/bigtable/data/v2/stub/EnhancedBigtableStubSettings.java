@@ -725,6 +725,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   public UnaryCallSettings<PrepareQueryRequest, PrepareResponse> prepareQuerySettings() {
     return prepareQuerySettings;
   }
+
   /**
    * Returns the object with the settings used for calls to PingAndWarm.
    *
@@ -822,8 +823,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       sampleRowKeysSettings
           .setRetryableCodes(IDEMPOTENT_RETRY_CODES)
           .setRetrySettings(
-              IDEMPOTENT_RETRY_SETTINGS
-                  .toBuilder()
+              IDEMPOTENT_RETRY_SETTINGS.toBuilder()
                   .setInitialRpcTimeout(Duration.ofMinutes(5))
                   .setMaxRpcTimeout(Duration.ofMinutes(5))
                   .build());
@@ -952,6 +952,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       prepareQuerySettings = settings.prepareQuerySettings().toBuilder();
       featureFlags = settings.featureFlags.toBuilder();
     }
+
     // <editor-fold desc="Private Helpers">
 
     /**
@@ -963,6 +964,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       dest.setRetryableCodes(source.getRetryableCodes());
       dest.setRetrySettings(source.getRetrySettings());
     }
+
     // </editor-fold>
 
     // <editor-fold desc="Public API">

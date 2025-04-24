@@ -39,6 +39,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ListSnapshotsResponse)
     ListSnapshotsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListSnapshotsResponse.newBuilder() to construct.
   private ListSnapshotsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -74,6 +75,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.bigtable.admin.v2.Snapshot> snapshots_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public java.util.List<com.google.bigtable.admin.v2.Snapshot> getSnapshotsList() {
     return snapshots_;
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       getSnapshotsOrBuilderList() {
     return snapshots_;
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public int getSnapshotsCount() {
     return snapshots_.size();
   }
+
   /**
    *
    *
@@ -127,6 +132,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
   public com.google.bigtable.admin.v2.Snapshot getSnapshots(int index) {
     return snapshots_.get(index);
   }
+
   /**
    *
    *
@@ -145,6 +151,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -366,6 +374,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -648,6 +657,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -664,6 +674,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -680,6 +691,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -702,6 +714,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +781,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -825,6 +843,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -863,6 +883,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -875,6 +896,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     public com.google.bigtable.admin.v2.Snapshot.Builder getSnapshotsBuilder(int index) {
       return getSnapshotsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -891,6 +913,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return snapshotsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -908,6 +931,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return java.util.Collections.unmodifiableList(snapshots_);
       }
     }
+
     /**
      *
      *
@@ -921,6 +945,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       return getSnapshotsFieldBuilder()
           .addBuilder(com.google.bigtable.admin.v2.Snapshot.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -934,6 +959,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       return getSnapshotsFieldBuilder()
           .addBuilder(index, com.google.bigtable.admin.v2.Snapshot.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -965,6 +991,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -989,6 +1016,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1013,6 +1041,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1036,6 +1065,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1085,7 @@ public final class ListSnapshotsResponse extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

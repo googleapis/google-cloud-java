@@ -33,6 +33,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.PrepareQueryResponse)
     PrepareQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PrepareQueryResponse.newBuilder() to construct.
   private PrepareQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
   private int bitField0_;
   public static final int METADATA_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.ResultSetMetadata metadata_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
   public boolean hasMetadata() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
         ? com.google.bigtable.v2.ResultSetMetadata.getDefaultInstance()
         : metadata_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
 
   public static final int PREPARED_QUERY_FIELD_NUMBER = 2;
   private com.google.protobuf.ByteString preparedQuery_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
 
   public static final int VALID_UNTIL_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp validUntil_;
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
   public boolean hasValidUntil() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -172,6 +179,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.Timestamp getValidUntil() {
     return validUntil_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : validUntil_;
   }
+
   /**
    *
    *
@@ -375,6 +383,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -609,6 +618,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
             com.google.bigtable.v2.ResultSetMetadata.Builder,
             com.google.bigtable.v2.ResultSetMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     public boolean hasMetadata() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
         return metadataBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -668,6 +680,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +701,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +730,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -770,6 +787,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
             : metadata_;
       }
     }
+
     /**
      *
      *
@@ -798,6 +816,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     }
 
     private com.google.protobuf.ByteString preparedQuery_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -814,6 +833,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getPreparedQuery() {
       return preparedQuery_;
     }
+
     /**
      *
      *
@@ -836,6 +856,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +882,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         validUntilBuilder_;
+
     /**
      *
      *
@@ -877,6 +899,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
     public boolean hasValidUntil() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -899,6 +922,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
         return validUntilBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -923,6 +947,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -944,6 +969,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -973,6 +999,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -994,6 +1021,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1010,6 +1038,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
       onChanged();
       return getValidUntilFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1030,6 +1059,7 @@ public final class PrepareQueryResponse extends com.google.protobuf.GeneratedMes
             : validUntil_;
       }
     }
+
     /**
      *
      *

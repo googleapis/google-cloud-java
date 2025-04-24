@@ -36,6 +36,7 @@ public interface RestoreInfoOrBuilder
    * @return The enum numeric value on the wire for sourceType.
    */
   int getSourceTypeValue();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface RestoreInfoOrBuilder
    * @return Whether the backupInfo field is set.
    */
   boolean hasBackupInfo();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface RestoreInfoOrBuilder
    * @return The backupInfo.
    */
   com.google.bigtable.admin.v2.BackupInfo getBackupInfo();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.CheckAndMutateRowResponse)
     CheckAndMutateRowResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CheckAndMutateRowResponse.newBuilder() to construct.
   private CheckAndMutateRowResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
 
   public static final int PREDICATE_MATCHED_FIELD_NUMBER = 1;
   private boolean predicateMatched_ = false;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
     private int bitField0_;
 
     private boolean predicateMatched_;
+
     /**
      *
      *
@@ -437,6 +441,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
     public boolean getPredicateMatched() {
       return predicateMatched_;
     }
+
     /**
      *
      *
@@ -457,6 +462,7 @@ public final class CheckAndMutateRowResponse extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

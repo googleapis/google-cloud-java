@@ -194,7 +194,7 @@ final class ProtoRowsMergingStateMachine {
       return;
     }
     switch (type.getCode()) {
-        // Primitive types
+      // Primitive types
       case STRING:
         checkExpectedKind(value, Value.KindCase.STRING_VALUE, type);
         break;
@@ -217,7 +217,7 @@ final class ProtoRowsMergingStateMachine {
       case DATE:
         checkExpectedKind(value, Value.KindCase.DATE_VALUE, type);
         break;
-        // Complex types
+      // Complex types
       case ARRAY:
         checkExpectedKind(value, Value.KindCase.ARRAY_VALUE, type);
         SqlType.Array<?> arrayType = (SqlType.Array<?>) type;

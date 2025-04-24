@@ -206,9 +206,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     BigtableClientContext bigtableClientContext = createBigtableClientContext(settings);
     OpenTelemetry openTelemetry = bigtableClientContext.getOpenTelemetry();
     ClientContext contextWithTracer =
-        bigtableClientContext
-            .getClientContext()
-            .toBuilder()
+        bigtableClientContext.getClientContext().toBuilder()
             .setTracerFactory(createBigtableTracerFactory(settings, openTelemetry))
             .build();
     return new EnhancedBigtableStub(settings, contextWithTracer);
@@ -444,7 +442,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
               .withRetrySettings(settings.readRowSettings().getRetrySettings()),
           clientContext.getTracerFactory(),
           getSpanName("ReadRow"),
-          /*allowNoResponses=*/ true);
+          /* allowNoResponses= */ true);
     }
   }
 
@@ -1499,6 +1497,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
   public UnaryCallable<PrepareQueryRequest, PrepareResponse> prepareQueryCallable() {
     return prepareQueryCallable;
   }
+
   // </editor-fold>
 
   private SpanName getSpanName(String methodName) {

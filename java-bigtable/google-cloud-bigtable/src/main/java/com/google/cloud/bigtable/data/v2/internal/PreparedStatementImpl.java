@@ -88,7 +88,8 @@ public class PreparedStatementImpl implements PreparedStatement {
   public void assertUsingSameStub(EnhancedBigtableStub stub) {
     Preconditions.checkArgument(
         this.stub == stub,
-        "executeQuery must be called from the same client instance that created the PreparedStatement being used.");
+        "executeQuery must be called from the same client instance that created the"
+            + " PreparedStatement being used.");
   }
 
   /**

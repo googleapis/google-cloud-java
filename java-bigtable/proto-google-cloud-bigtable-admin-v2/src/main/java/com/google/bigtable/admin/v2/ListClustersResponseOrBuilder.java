@@ -34,6 +34,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Cluster clusters = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.Cluster> getClustersList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Cluster clusters = 1;</code>
    */
   com.google.bigtable.admin.v2.Cluster getClusters(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListClustersResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.Cluster clusters = 1;</code>
    */
   int getClustersCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface ListClustersResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.ClusterOrBuilder>
       getClustersOrBuilderList();
+
   /**
    *
    *
@@ -92,6 +96,7 @@ public interface ListClustersResponseOrBuilder
    * @return A list containing the failedLocations.
    */
   java.util.List<java.lang.String> getFailedLocationsList();
+
   /**
    *
    *
@@ -108,6 +113,7 @@ public interface ListClustersResponseOrBuilder
    * @return The count of failedLocations.
    */
   int getFailedLocationsCount();
+
   /**
    *
    *
@@ -125,6 +131,7 @@ public interface ListClustersResponseOrBuilder
    * @return The failedLocations at the given index.
    */
   java.lang.String getFailedLocations(int index);
+
   /**
    *
    *
@@ -155,6 +162,7 @@ public interface ListClustersResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

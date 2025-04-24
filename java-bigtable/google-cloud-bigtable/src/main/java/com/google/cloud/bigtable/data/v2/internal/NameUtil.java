@@ -122,7 +122,8 @@ public class NameUtil {
       @Nonnull String materializedViewName) {
     if (tableName.isEmpty() && authorizedViewName.isEmpty() && materializedViewName.isEmpty()) {
       throw new IllegalArgumentException(
-          "Either table name, authorized view name or materialized view name must be specified. Table name: "
+          "Either table name, authorized view name or materialized view name must be specified."
+              + " Table name: "
               + tableName
               + ", authorized view name: "
               + authorizedViewName
@@ -141,7 +142,8 @@ public class NameUtil {
     }
     if (names > 1) {
       throw new IllegalArgumentException(
-          "Only one of table name, authorized view name and materialized view name can be specified at the same time. Table name: "
+          "Only one of table name, authorized view name and materialized view name can be specified"
+              + " at the same time. Table name: "
               + tableName
               + ", authorized view name: "
               + authorizedViewName

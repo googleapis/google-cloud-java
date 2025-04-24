@@ -36,6 +36,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return Whether the dataChange field is set.
    */
   boolean hasDataChange();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return The dataChange.
    */
   com.google.bigtable.v2.ReadChangeStreamResponse.DataChange getDataChange();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return Whether the heartbeat field is set.
    */
   boolean hasHeartbeat();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return The heartbeat.
    */
   com.google.bigtable.v2.ReadChangeStreamResponse.Heartbeat getHeartbeat();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return Whether the closeStream field is set.
    */
   boolean hasCloseStream();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ReadChangeStreamResponseOrBuilder
    * @return The closeStream.
    */
   com.google.bigtable.v2.ReadChangeStreamResponse.CloseStream getCloseStream();
+
   /**
    *
    *

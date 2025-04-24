@@ -33,6 +33,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.PartialUpdateClusterMetadata)
     PartialUpdateClusterMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PartialUpdateClusterMetadata.newBuilder() to construct.
   private PartialUpdateClusterMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   private int bitField0_;
   public static final int REQUEST_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp requestTime_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   public boolean hasRequestTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   public com.google.protobuf.Timestamp getRequestTime() {
     return requestTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : requestTime_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
 
   public static final int FINISH_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp finishTime_;
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   public boolean hasFinishTime() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -140,6 +146,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   public com.google.protobuf.Timestamp getFinishTime() {
     return finishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : finishTime_;
   }
+
   /**
    *
    *
@@ -156,6 +163,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
 
   public static final int ORIGINAL_REQUEST_FIELD_NUMBER = 3;
   private com.google.bigtable.admin.v2.PartialUpdateClusterRequest originalRequest_;
+
   /**
    *
    *
@@ -171,6 +179,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
   public boolean hasOriginalRequest() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -188,6 +197,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
         ? com.google.bigtable.admin.v2.PartialUpdateClusterRequest.getDefaultInstance()
         : originalRequest_;
   }
+
   /**
    *
    *
@@ -398,6 +408,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +652,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         requestTimeBuilder_;
+
     /**
      *
      *
@@ -655,6 +667,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public boolean hasRequestTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -675,6 +688,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
         return requestTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -697,6 +711,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -716,6 +731,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +759,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -776,6 +794,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return getRequestTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -794,6 +813,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             : requestTime_;
       }
     }
+
     /**
      *
      *
@@ -826,6 +846,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         finishTimeBuilder_;
+
     /**
      *
      *
@@ -840,6 +861,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public boolean hasFinishTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -860,6 +882,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
         return finishTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -882,6 +905,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +925,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -928,6 +953,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -947,6 +973,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +988,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return getFinishTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -979,6 +1007,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             : finishTime_;
       }
     }
+
     /**
      *
      *
@@ -1011,6 +1040,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             com.google.bigtable.admin.v2.PartialUpdateClusterRequest.Builder,
             com.google.bigtable.admin.v2.PartialUpdateClusterRequestOrBuilder>
         originalRequestBuilder_;
+
     /**
      *
      *
@@ -1025,6 +1055,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
     public boolean hasOriginalRequest() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1045,6 +1076,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
         return originalRequestBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1068,6 +1100,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1121,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1151,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       }
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1171,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1151,6 +1187,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
       onChanged();
       return getOriginalRequestFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1170,6 +1207,7 @@ public final class PartialUpdateClusterMetadata extends com.google.protobuf.Gene
             : originalRequest_;
       }
     }
+
     /**
      *
      *

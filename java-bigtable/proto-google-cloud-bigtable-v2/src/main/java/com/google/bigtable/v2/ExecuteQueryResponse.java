@@ -33,6 +33,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ExecuteQueryResponse)
     ExecuteQueryResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecuteQueryResponse.newBuilder() to construct.
   private ExecuteQueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -78,6 +79,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int METADATA_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
   public boolean hasMetadata() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     }
     return com.google.bigtable.v2.ResultSetMetadata.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
   }
 
   public static final int RESULTS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -182,6 +188,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
   public boolean hasResults() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     }
     return com.google.bigtable.v2.PartialResultSet.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -410,6 +418,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -644,6 +653,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
             com.google.bigtable.v2.ResultSetMetadata.Builder,
             com.google.bigtable.v2.ResultSetMetadataOrBuilder>
         metadataBuilder_;
+
     /**
      *
      *
@@ -660,6 +670,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     public boolean hasMetadata() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -686,6 +697,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.v2.ResultSetMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -729,6 +742,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -788,6 +803,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +817,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     public com.google.bigtable.v2.ResultSetMetadata.Builder getMetadataBuilder() {
       return getMetadataFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.v2.ResultSetMetadata.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -861,6 +879,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
             com.google.bigtable.v2.PartialResultSet.Builder,
             com.google.bigtable.v2.PartialResultSetOrBuilder>
         resultsBuilder_;
+
     /**
      *
      *
@@ -878,6 +897,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     public boolean hasResults() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -905,6 +925,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.v2.PartialResultSet.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -929,6 +950,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +972,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1007,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
       }
       return this;
     }
+
     /**
      *
      *
@@ -1025,6 +1050,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
     public com.google.bigtable.v2.PartialResultSet.Builder getResultsBuilder() {
       return getResultsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1047,6 +1073,7 @@ public final class ExecuteQueryResponse extends com.google.protobuf.GeneratedMes
         return com.google.bigtable.v2.PartialResultSet.getDefaultInstance();
       }
     }
+
     /**
      *
      *

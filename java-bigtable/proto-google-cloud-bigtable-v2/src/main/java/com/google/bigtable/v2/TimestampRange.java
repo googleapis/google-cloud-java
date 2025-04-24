@@ -33,6 +33,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.TimestampRange)
     TimestampRangeOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use TimestampRange.newBuilder() to construct.
   private TimestampRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int START_TIMESTAMP_MICROS_FIELD_NUMBER = 1;
   private long startTimestampMicros_ = 0L;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
 
   public static final int END_TIMESTAMP_MICROS_FIELD_NUMBER = 2;
   private long endTimestampMicros_ = 0L;
+
   /**
    *
    *
@@ -263,6 +266,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -457,6 +461,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long startTimestampMicros_;
+
     /**
      *
      *
@@ -472,6 +477,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     public long getStartTimestampMicros() {
       return startTimestampMicros_;
     }
+
     /**
      *
      *
@@ -491,6 +497,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -510,6 +517,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long endTimestampMicros_;
+
     /**
      *
      *
@@ -525,6 +533,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
     public long getEndTimestampMicros() {
       return endTimestampMicros_;
     }
+
     /**
      *
      *
@@ -544,6 +553,7 @@ public final class TimestampRange extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

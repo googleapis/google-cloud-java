@@ -34,6 +34,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.StreamPartition)
     StreamPartitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamPartition.newBuilder() to construct.
   private StreamPartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
   private int bitField0_;
   public static final int ROW_RANGE_FIELD_NUMBER = 1;
   private com.google.bigtable.v2.RowRange rowRange_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
   public boolean hasRowRange() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
   public com.google.bigtable.v2.RowRange getRowRange() {
     return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
   }
+
   /**
    *
    *
@@ -275,6 +279,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -478,6 +483,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
             com.google.bigtable.v2.RowRange.Builder,
             com.google.bigtable.v2.RowRangeOrBuilder>
         rowRangeBuilder_;
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
     public boolean hasRowRange() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
         return rowRangeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -535,6 +543,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -555,6 +564,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -583,6 +593,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -603,6 +614,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -618,6 +630,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getRowRangeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class StreamPartition extends com.google.protobuf.GeneratedMessageV
         return rowRange_ == null ? com.google.bigtable.v2.RowRange.getDefaultInstance() : rowRange_;
       }
     }
+
     /**
      *
      *

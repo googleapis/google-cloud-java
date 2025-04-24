@@ -33,6 +33,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AutoscalingLimits)
     AutoscalingLimitsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AutoscalingLimits.newBuilder() to construct.
   private AutoscalingLimits(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
 
   public static final int MIN_SERVE_NODES_FIELD_NUMBER = 1;
   private int minServeNodes_ = 0;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
 
   public static final int MAX_SERVE_NODES_FIELD_NUMBER = 2;
   private int maxServeNodes_ = 0;
+
   /**
    *
    *
@@ -265,6 +268,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -459,6 +463,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private int minServeNodes_;
+
     /**
      *
      *
@@ -474,6 +479,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     public int getMinServeNodes() {
       return minServeNodes_;
     }
+
     /**
      *
      *
@@ -493,6 +499,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -512,6 +519,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     }
 
     private int maxServeNodes_;
+
     /**
      *
      *
@@ -527,6 +535,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
     public int getMaxServeNodes() {
       return maxServeNodes_;
     }
+
     /**
      *
      *
@@ -546,6 +555,7 @@ public final class AutoscalingLimits extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

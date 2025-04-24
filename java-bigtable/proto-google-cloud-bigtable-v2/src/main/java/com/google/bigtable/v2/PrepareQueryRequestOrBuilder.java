@@ -40,6 +40,7 @@ public interface PrepareQueryRequestOrBuilder
    * @return The instanceName.
    */
   java.lang.String getInstanceName();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface PrepareQueryRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -102,6 +104,7 @@ public interface PrepareQueryRequestOrBuilder
    * @return The query.
    */
   java.lang.String getQuery();
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public interface PrepareQueryRequestOrBuilder
    * @return Whether the protoFormat field is set.
    */
   boolean hasProtoFormat();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public interface PrepareQueryRequestOrBuilder
    * @return The protoFormat.
    */
   com.google.bigtable.v2.ProtoFormat getProtoFormat();
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public interface PrepareQueryRequestOrBuilder
    * </code>
    */
   int getParamTypesCount();
+
   /**
    *
    *
@@ -195,9 +201,11 @@ public interface PrepareQueryRequestOrBuilder
    * </code>
    */
   boolean containsParamTypes(java.lang.String key);
+
   /** Use {@link #getParamTypesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.bigtable.v2.Type> getParamTypes();
+
   /**
    *
    *
@@ -219,6 +227,7 @@ public interface PrepareQueryRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, com.google.bigtable.v2.Type> getParamTypesMap();
+
   /**
    *
    *
@@ -244,6 +253,7 @@ public interface PrepareQueryRequestOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.bigtable.v2.Type defaultValue);
+
   /**
    *
    *

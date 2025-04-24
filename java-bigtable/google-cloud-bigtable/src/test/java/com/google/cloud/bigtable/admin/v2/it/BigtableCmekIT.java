@@ -107,10 +107,7 @@ public class BigtableCmekIT {
     instanceAdmin = testEnvRule.env().getInstanceAdminClient();
     tableAdmin =
         BigtableTableAdminClient.create(
-            testEnvRule
-                .env()
-                .getTableAdminSettings()
-                .toBuilder()
+            testEnvRule.env().getTableAdminSettings().toBuilder()
                 .setInstanceId(instanceId)
                 .build());
 

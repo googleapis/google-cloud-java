@@ -34,6 +34,7 @@ public final class ProtoFormat extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ProtoFormat)
     ProtoFormatOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProtoFormat.newBuilder() to construct.
   private ProtoFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -210,6 +211,7 @@ public final class ProtoFormat extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

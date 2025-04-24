@@ -41,6 +41,7 @@ public interface RateLimitInfoOrBuilder
    * @return Whether the period field is set.
    */
   boolean hasPeriod();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface RateLimitInfoOrBuilder
    * @return The period.
    */
   com.google.protobuf.Duration getPeriod();
+
   /**
    *
    *

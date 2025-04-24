@@ -1889,6 +1889,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
             .setQuery("query107944136")
             .setEtag("etag3123477")
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1944,6 +1945,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
             .setQuery("query107944136")
             .setEtag("etag3123477")
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1999,6 +2001,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
             .setQuery("query107944136")
             .setEtag("etag3123477")
+            .setDeletionProtection(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -2039,6 +2042,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
             .setQuery("query107944136")
             .setEtag("etag3123477")
+            .setDeletionProtection(true)
             .build();
     mockBigtableInstanceAdmin.addResponse(expectedResponse);
 
@@ -2167,6 +2171,7 @@ public class BaseBigtableInstanceAdminClientTest {
             .setName(LogicalViewName.of("[PROJECT]", "[INSTANCE]", "[LOGICAL_VIEW]").toString())
             .setQuery("query107944136")
             .setEtag("etag3123477")
+            .setDeletionProtection(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

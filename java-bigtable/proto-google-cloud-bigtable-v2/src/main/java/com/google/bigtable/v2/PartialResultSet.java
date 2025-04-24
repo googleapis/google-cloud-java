@@ -65,6 +65,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.PartialResultSet)
     PartialResultSetOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PartialResultSet.newBuilder() to construct.
   private PartialResultSet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -112,6 +113,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     private PartialRowsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -143,6 +145,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int PROTO_ROWS_BATCH_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -158,6 +161,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
   public boolean hasProtoRowsBatch() {
     return partialRowsCase_ == 3;
   }
+
   /**
    *
    *
@@ -176,6 +180,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
     return com.google.bigtable.v2.ProtoRowsBatch.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
   public static final int BATCH_CHECKSUM_FIELD_NUMBER = 6;
   private int batchChecksum_ = 0;
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
   public boolean hasBatchChecksum() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -258,6 +265,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
   public static final int RESUME_TOKEN_FIELD_NUMBER = 5;
   private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -297,6 +305,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
   public static final int RESET_FIELD_NUMBER = 7;
   private boolean reset_ = false;
+
   /**
    *
    *
@@ -316,6 +325,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
 
   public static final int ESTIMATED_BATCH_SIZE_FIELD_NUMBER = 4;
   private int estimatedBatchSize_ = 0;
+
   /**
    *
    *
@@ -554,6 +564,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -858,6 +869,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
             com.google.bigtable.v2.ProtoRowsBatch.Builder,
             com.google.bigtable.v2.ProtoRowsBatchOrBuilder>
         protoRowsBatchBuilder_;
+
     /**
      *
      *
@@ -873,6 +885,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public boolean hasProtoRowsBatch() {
       return partialRowsCase_ == 3;
     }
+
     /**
      *
      *
@@ -898,6 +911,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
         return com.google.bigtable.v2.ProtoRowsBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -920,6 +934,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       partialRowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -940,6 +955,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       partialRowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +988,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       partialRowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -997,6 +1014,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1009,6 +1027,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public com.google.bigtable.v2.ProtoRowsBatch.Builder getProtoRowsBatchBuilder() {
       return getProtoRowsBatchFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1029,6 +1048,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
         return com.google.bigtable.v2.ProtoRowsBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1063,6 +1083,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
 
     private int batchChecksum_;
+
     /**
      *
      *
@@ -1093,6 +1114,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public boolean hasBatchChecksum() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1123,6 +1145,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public int getBatchChecksum() {
       return batchChecksum_;
     }
+
     /**
      *
      *
@@ -1157,6 +1180,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1215,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
 
     private com.google.protobuf.ByteString resumeToken_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1227,6 +1252,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getResumeToken() {
       return resumeToken_;
     }
+
     /**
      *
      *
@@ -1269,6 +1295,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1309,6 +1336,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean reset_;
+
     /**
      *
      *
@@ -1325,6 +1353,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public boolean getReset() {
       return reset_;
     }
+
     /**
      *
      *
@@ -1345,6 +1374,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1395,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     }
 
     private int estimatedBatchSize_;
+
     /**
      *
      *
@@ -1388,6 +1419,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
     public int getEstimatedBatchSize() {
       return estimatedBatchSize_;
     }
+
     /**
      *
      *
@@ -1415,6 +1447,7 @@ public final class PartialResultSet extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

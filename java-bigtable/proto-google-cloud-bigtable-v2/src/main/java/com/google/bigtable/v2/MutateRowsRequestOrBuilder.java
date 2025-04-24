@@ -42,6 +42,7 @@ public interface MutateRowsRequestOrBuilder
    * @return The tableName.
    */
   java.lang.String getTableName();
+
   /**
    *
    *
@@ -79,6 +80,7 @@ public interface MutateRowsRequestOrBuilder
    * @return The authorizedViewName.
    */
   java.lang.String getAuthorizedViewName();
+
   /**
    *
    *
@@ -111,6 +113,7 @@ public interface MutateRowsRequestOrBuilder
    * @return The appProfileId.
    */
   java.lang.String getAppProfileId();
+
   /**
    *
    *
@@ -141,6 +144,7 @@ public interface MutateRowsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.bigtable.v2.MutateRowsRequest.Entry> getEntriesList();
+
   /**
    *
    *
@@ -157,6 +161,7 @@ public interface MutateRowsRequestOrBuilder
    * </code>
    */
   com.google.bigtable.v2.MutateRowsRequest.Entry getEntries(int index);
+
   /**
    *
    *
@@ -173,6 +178,7 @@ public interface MutateRowsRequestOrBuilder
    * </code>
    */
   int getEntriesCount();
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public interface MutateRowsRequestOrBuilder
    */
   java.util.List<? extends com.google.bigtable.v2.MutateRowsRequest.EntryOrBuilder>
       getEntriesOrBuilderList();
+
   /**
    *
    *

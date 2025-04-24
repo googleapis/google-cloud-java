@@ -38,6 +38,7 @@ public interface CopyBackupMetadataOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface CopyBackupMetadataOrBuilder
    * @return Whether the sourceBackupInfo field is set.
    */
   boolean hasSourceBackupInfo();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CopyBackupMetadataOrBuilder
    * @return The sourceBackupInfo.
    */
   com.google.bigtable.admin.v2.BackupInfo getSourceBackupInfo();
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public interface CopyBackupMetadataOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface CopyBackupMetadataOrBuilder
    * @return The progress.
    */
   com.google.bigtable.admin.v2.OperationProgress getProgress();
+
   /**
    *
    *

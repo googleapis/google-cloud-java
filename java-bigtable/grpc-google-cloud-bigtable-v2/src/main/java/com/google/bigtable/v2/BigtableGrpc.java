@@ -526,6 +526,19 @@ public final class BigtableGrpc {
     return BigtableStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BigtableBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BigtableBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigtableBlockingV2Stub>() {
+          @java.lang.Override
+          public BigtableBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigtableBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BigtableBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -974,6 +987,201 @@ public final class BigtableGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Bigtable.
+   *
+   * <pre>
+   * Service for reading from and writing to existing Bigtable tables.
+   * </pre>
+   */
+  public static final class BigtableBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BigtableBlockingV2Stub> {
+    private BigtableBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BigtableBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BigtableBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Streams back the contents of all requested rows in key order, optionally
+     * applying the same Reader filter to each. Depending on their size,
+     * rows and cells may be broken up across multiple responses, but
+     * atomicity of each row will still be preserved. See the
+     * ReadRowsResponse documentation for details.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.bigtable.v2.ReadRowsResponse> readRows(
+        com.google.bigtable.v2.ReadRowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getReadRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a sample of row keys in the table. The returned row keys will
+     * delimit contiguous sections of the table of approximately equal size,
+     * which can be used to break up the data for distributed tasks like
+     * mapreduces.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.bigtable.v2.SampleRowKeysResponse>
+        sampleRowKeys(com.google.bigtable.v2.SampleRowKeysRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getSampleRowKeysMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Mutates a row atomically. Cells already present in the row are left
+     * unchanged unless explicitly changed by `mutation`.
+     * </pre>
+     */
+    public com.google.bigtable.v2.MutateRowResponse mutateRow(
+        com.google.bigtable.v2.MutateRowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMutateRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Mutates multiple rows in a batch. Each individual row is mutated
+     * atomically as in MutateRow, but the entire batch is not executed
+     * atomically.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.bigtable.v2.MutateRowsResponse> mutateRows(
+        com.google.bigtable.v2.MutateRowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getMutateRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Mutates a row atomically based on the output of a predicate Reader filter.
+     * </pre>
+     */
+    public com.google.bigtable.v2.CheckAndMutateRowResponse checkAndMutateRow(
+        com.google.bigtable.v2.CheckAndMutateRowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCheckAndMutateRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Warm up associated instance metadata for this connection.
+     * This call is not required but may be useful for connection keep-alive.
+     * </pre>
+     */
+    public com.google.bigtable.v2.PingAndWarmResponse pingAndWarm(
+        com.google.bigtable.v2.PingAndWarmRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPingAndWarmMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies a row atomically on the server. The method reads the latest
+     * existing timestamp and value from the specified columns and writes a new
+     * entry based on pre-defined read/modify/write rules. The new value for the
+     * timestamp is the greater of the existing timestamp or the current server
+     * time. The method returns the new contents of all modified cells.
+     * </pre>
+     */
+    public com.google.bigtable.v2.ReadModifyWriteRowResponse readModifyWriteRow(
+        com.google.bigtable.v2.ReadModifyWriteRowRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getReadModifyWriteRowMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
+     * Returns the current list of partitions that make up the table's
+     * change stream. The union of partitions will cover the entire keyspace.
+     * Partitions can be read with `ReadChangeStream`.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsResponse>
+        generateInitialChangeStreamPartitions(
+            com.google.bigtable.v2.GenerateInitialChangeStreamPartitionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(),
+          getGenerateInitialChangeStreamPartitionsMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * NOTE: This API is intended to be used by Apache Beam BigtableIO.
+     * Reads changes from a table's change stream. Changes will
+     * reflect both user-initiated mutations and mutations that are caused by
+     * garbage collection.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.bigtable.v2.ReadChangeStreamResponse>
+        readChangeStream(com.google.bigtable.v2.ReadChangeStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getReadChangeStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Prepares a GoogleSQL query for execution on a particular Bigtable instance.
+     * </pre>
+     */
+    public com.google.bigtable.v2.PrepareQueryResponse prepareQuery(
+        com.google.bigtable.v2.PrepareQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPrepareQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Executes a SQL query against a particular Bigtable instance.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<?, com.google.bigtable.v2.ExecuteQueryResponse>
+        executeQuery(com.google.bigtable.v2.ExecuteQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getExecuteQueryMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Bigtable.
    *
    * <pre>
    * Service for reading from and writing to existing Bigtable tables.

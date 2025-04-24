@@ -40,6 +40,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return The consistencyToken.
    */
   java.lang.String getConsistencyToken();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return Whether the standardReadRemoteWrites field is set.
    */
   boolean hasStandardReadRemoteWrites();
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return The standardReadRemoteWrites.
    */
   com.google.bigtable.admin.v2.StandardReadRemoteWrites getStandardReadRemoteWrites();
+
   /**
    *
    *
@@ -142,6 +146,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return Whether the dataBoostReadLocalWrites field is set.
    */
   boolean hasDataBoostReadLocalWrites();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface CheckConsistencyRequestOrBuilder
    * @return The dataBoostReadLocalWrites.
    */
   com.google.bigtable.admin.v2.DataBoostReadLocalWrites getDataBoostReadLocalWrites();
+
   /**
    *
    *

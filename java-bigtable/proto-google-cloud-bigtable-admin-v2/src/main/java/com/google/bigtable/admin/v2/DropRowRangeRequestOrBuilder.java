@@ -40,6 +40,7 @@ public interface DropRowRangeRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface DropRowRangeRequestOrBuilder
    * @return Whether the rowKeyPrefix field is set.
    */
   boolean hasRowKeyPrefix();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface DropRowRangeRequestOrBuilder
    * @return Whether the deleteAllDataFromTable field is set.
    */
   boolean hasDeleteAllDataFromTable();
+
   /**
    *
    *

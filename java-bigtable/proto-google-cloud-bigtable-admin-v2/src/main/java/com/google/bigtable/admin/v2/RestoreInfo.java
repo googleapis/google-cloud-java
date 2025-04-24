@@ -33,6 +33,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.RestoreInfo)
     RestoreInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RestoreInfo.newBuilder() to construct.
   private RestoreInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     private SourceInfoCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -111,6 +113,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 1;
   private int sourceType_ = 0;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
   public int getSourceTypeValue() {
     return sourceType_;
   }
+
   /**
    *
    *
@@ -145,6 +149,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int BACKUP_INFO_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -161,6 +166,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
   public boolean hasBackupInfo() {
     return sourceInfoCase_ == 2;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -384,6 +391,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -610,6 +618,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int sourceType_ = 0;
+
     /**
      *
      *
@@ -625,6 +634,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     public int getSourceTypeValue() {
       return sourceType_;
     }
+
     /**
      *
      *
@@ -643,6 +653,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -660,6 +671,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.bigtable.admin.v2.RestoreSourceType.forNumber(sourceType_);
       return result == null ? com.google.bigtable.admin.v2.RestoreSourceType.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -681,6 +693,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -704,6 +717,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.BackupInfo.Builder,
             com.google.bigtable.admin.v2.BackupInfoOrBuilder>
         backupInfoBuilder_;
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     public boolean hasBackupInfo() {
       return sourceInfoCase_ == 2;
     }
+
     /**
      *
      *
@@ -746,6 +761,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       sourceInfoCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -789,6 +806,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       sourceInfoCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       sourceInfoCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +867,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -861,6 +881,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
     public com.google.bigtable.admin.v2.BackupInfo.Builder getBackupInfoBuilder() {
       return getBackupInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -882,6 +903,7 @@ public final class RestoreInfo extends com.google.protobuf.GeneratedMessageV3
         return com.google.bigtable.admin.v2.BackupInfo.getDefaultInstance();
       }
     }
+
     /**
      *
      *

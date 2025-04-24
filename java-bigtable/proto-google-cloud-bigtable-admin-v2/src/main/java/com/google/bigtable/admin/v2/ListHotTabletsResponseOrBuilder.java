@@ -38,6 +38,7 @@ public interface ListHotTabletsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.HotTablet hot_tablets = 1;</code>
    */
   java.util.List<com.google.bigtable.admin.v2.HotTablet> getHotTabletsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ListHotTabletsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.HotTablet hot_tablets = 1;</code>
    */
   com.google.bigtable.admin.v2.HotTablet getHotTablets(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface ListHotTabletsResponseOrBuilder
    * <code>repeated .google.bigtable.admin.v2.HotTablet hot_tablets = 1;</code>
    */
   int getHotTabletsCount();
+
   /**
    *
    *
@@ -81,6 +84,7 @@ public interface ListHotTabletsResponseOrBuilder
    */
   java.util.List<? extends com.google.bigtable.admin.v2.HotTabletOrBuilder>
       getHotTabletsOrBuilderList();
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface ListHotTabletsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -250,8 +250,7 @@ class MetricsTracer extends BigtableTracer {
 
   private TagContextBuilder newTagCtxBuilder() {
     TagContextBuilder tagCtx =
-        tagger
-            .toBuilder(parentContext)
+        tagger.toBuilder(parentContext)
             .putLocal(RpcMeasureConstants.BIGTABLE_OP, TagValue.create(spanName.toString()));
 
     // Copy client level tags in
