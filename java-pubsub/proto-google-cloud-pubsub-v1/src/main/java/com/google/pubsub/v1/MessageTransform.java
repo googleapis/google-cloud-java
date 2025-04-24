@@ -33,6 +33,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.MessageTransform)
     MessageTransformOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MessageTransform.newBuilder() to construct.
   private MessageTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -77,6 +78,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     private TransformCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -108,6 +110,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int JAVASCRIPT_UDF_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
   public boolean hasJavascriptUdf() {
     return transformCase_ == 2;
   }
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     }
     return com.google.pubsub.v1.JavaScriptUDF.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
 
   public static final int ENABLED_FIELD_NUMBER = 3;
   private boolean enabled_ = false;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
 
   public static final int DISABLED_FIELD_NUMBER = 4;
   private boolean disabled_ = false;
+
   /**
    *
    *
@@ -398,6 +405,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -641,6 +649,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
             com.google.pubsub.v1.JavaScriptUDF.Builder,
             com.google.pubsub.v1.JavaScriptUDFOrBuilder>
         javascriptUdfBuilder_;
+
     /**
      *
      *
@@ -659,6 +668,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public boolean hasJavascriptUdf() {
       return transformCase_ == 2;
     }
+
     /**
      *
      *
@@ -687,6 +697,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
         return com.google.pubsub.v1.JavaScriptUDF.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -712,6 +723,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       transformCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +746,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       transformCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       transformCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +811,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -812,6 +827,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public com.google.pubsub.v1.JavaScriptUDF.Builder getJavascriptUdfBuilder() {
       return getJavascriptUdfFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -835,6 +851,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
         return com.google.pubsub.v1.JavaScriptUDF.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -870,6 +887,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean enabled_;
+
     /**
      *
      *
@@ -889,6 +907,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public boolean getEnabled() {
       return enabled_;
     }
+
     /**
      *
      *
@@ -912,6 +931,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -935,6 +955,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     }
 
     private boolean disabled_;
+
     /**
      *
      *
@@ -951,6 +972,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
     public boolean getDisabled() {
       return disabled_;
     }
+
     /**
      *
      *
@@ -971,6 +993,7 @@ public final class MessageTransform extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

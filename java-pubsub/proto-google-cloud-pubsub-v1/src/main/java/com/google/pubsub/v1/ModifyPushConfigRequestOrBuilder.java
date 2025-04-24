@@ -39,6 +39,7 @@ public interface ModifyPushConfigRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -73,6 +74,7 @@ public interface ModifyPushConfigRequestOrBuilder
    * @return Whether the pushConfig field is set.
    */
   boolean hasPushConfig();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface ModifyPushConfigRequestOrBuilder
    * @return The pushConfig.
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
+
   /**
    *
    *

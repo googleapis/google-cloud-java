@@ -39,6 +39,7 @@ public interface GetSnapshotRequestOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
+
   /**
    *
    *

@@ -698,6 +698,19 @@ public final class SubscriberGrpc {
     return SubscriberStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static SubscriberBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<SubscriberBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<SubscriberBlockingV2Stub>() {
+          @java.lang.Override
+          public SubscriberBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new SubscriberBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return SubscriberBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -1401,6 +1414,311 @@ public final class SubscriberGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Subscriber.
+   *
+   * <pre>
+   * The service that an application uses to manipulate subscriptions and to
+   * consume messages from a subscription via the `Pull` method or by
+   * establishing a bi-directional stream using the `StreamingPull` method.
+   * </pre>
+   */
+  public static final class SubscriberBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<SubscriberBlockingV2Stub> {
+    private SubscriberBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected SubscriberBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new SubscriberBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a subscription to a given topic. See the [resource name rules]
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
+     * If the subscription already exists, returns `ALREADY_EXISTS`.
+     * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
+     * If the name is not provided in the request, the server will assign a random
+     * name for this subscription on the same project as the topic, conforming
+     * to the [resource name format]
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). The
+     * generated name is populated in the returned Subscription object. Note that
+     * for REST API requests, you must specify a name in the request.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Subscription createSubscription(
+        com.google.pubsub.v1.Subscription request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the configuration details of a subscription.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Subscription getSubscription(
+        com.google.pubsub.v1.GetSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing subscription by updating the fields specified in the
+     * update mask. Note that certain properties of a subscription, such as its
+     * topic, are not modifiable.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Subscription updateSubscription(
+        com.google.pubsub.v1.UpdateSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists matching subscriptions.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListSubscriptionsResponse listSubscriptions(
+        com.google.pubsub.v1.ListSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing subscription. All messages retained in the subscription
+     * are immediately dropped. Calls to `Pull` after deletion will return
+     * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
+     * the same name, but the new one has no association with the old
+     * subscription or its topic unless the same topic is specified.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSubscription(
+        com.google.pubsub.v1.DeleteSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies the ack deadline for a specific message. This method is useful
+     * to indicate that more time is needed to process a message by the
+     * subscriber, or to make the message available for redelivery if the
+     * processing was interrupted. Note that this does not modify the
+     * subscription-level `ackDeadlineSeconds` used for subsequent messages.
+     * </pre>
+     */
+    public com.google.protobuf.Empty modifyAckDeadline(
+        com.google.pubsub.v1.ModifyAckDeadlineRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyAckDeadlineMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Acknowledges the messages associated with the `ack_ids` in the
+     * `AcknowledgeRequest`. The Pub/Sub system can remove the relevant messages
+     * from the subscription.
+     * Acknowledging a message whose ack deadline has expired may succeed,
+     * but such a message may be redelivered later. Acknowledging a message more
+     * than once will not result in an error.
+     * </pre>
+     */
+    public com.google.protobuf.Empty acknowledge(com.google.pubsub.v1.AcknowledgeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAcknowledgeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Pulls messages from the server.
+     * </pre>
+     */
+    public com.google.pubsub.v1.PullResponse pull(com.google.pubsub.v1.PullRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPullMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Establishes a stream with the server, which sends messages down to the
+     * client. The client streams acknowledgements and ack deadline modifications
+     * back to the server. The server will close the stream and return the status
+     * on any error. The server may close the stream with status `UNAVAILABLE` to
+     * reassign server-side resources, in which case, the client should
+     * re-establish the stream. Flow control can be achieved by configuring the
+     * underlying RPC channel.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.pubsub.v1.StreamingPullRequest, com.google.pubsub.v1.StreamingPullResponse>
+        streamingPull() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamingPullMethod(), getCallOptions());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Modifies the `PushConfig` for a specified subscription.
+     * This may be used to change a push subscription to a pull one (signified by
+     * an empty `PushConfig`) or vice versa, or change the endpoint URL and other
+     * attributes of a push subscription. Messages will accumulate for delivery
+     * continuously through the call regardless of changes to the `PushConfig`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty modifyPushConfig(
+        com.google.pubsub.v1.ModifyPushConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getModifyPushConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the configuration details of a snapshot. Snapshots are used in
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Snapshot getSnapshot(
+        com.google.pubsub.v1.GetSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the existing snapshots. Snapshots are used in [Seek](
+     * https://cloud.google.com/pubsub/docs/replay-overview) operations, which
+     * allow you to manage message acknowledgments in bulk. That is, you can set
+     * the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListSnapshotsResponse listSnapshots(
+        com.google.pubsub.v1.ListSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a snapshot from the requested subscription. Snapshots are used in
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * If the snapshot already exists, returns `ALREADY_EXISTS`.
+     * If the requested subscription doesn't exist, returns `NOT_FOUND`.
+     * If the backlog in the subscription is too old -- and the resulting snapshot
+     * would expire in less than 1 hour -- then `FAILED_PRECONDITION` is returned.
+     * See also the `Snapshot.expire_time` field. If the name is not provided in
+     * the request, the server will assign a random
+     * name for this snapshot on the same project as the subscription, conforming
+     * to the [resource name format]
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). The
+     * generated name is populated in the returned Snapshot object. Note that for
+     * REST API requests, you must specify a name in the request.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Snapshot createSnapshot(
+        com.google.pubsub.v1.CreateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing snapshot by updating the fields specified in the update
+     * mask. Snapshots are used in
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Snapshot updateSnapshot(
+        com.google.pubsub.v1.UpdateSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Removes an existing snapshot. Snapshots are used in [Seek]
+     * (https://cloud.google.com/pubsub/docs/replay-overview) operations, which
+     * allow you to manage message acknowledgments in bulk. That is, you can set
+     * the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * When the snapshot is deleted, all messages retained in the snapshot
+     * are immediately dropped. After a snapshot is deleted, a new one may be
+     * created with the same name, but the new one has no association with the old
+     * snapshot or its subscription, unless the same subscription is specified.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSnapshot(
+        com.google.pubsub.v1.DeleteSnapshotRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSnapshotMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Seeks an existing subscription to a point in time or to a given snapshot,
+     * whichever is provided in the request. Snapshots are used in [Seek]
+     * (https://cloud.google.com/pubsub/docs/replay-overview) operations, which
+     * allow you to manage message acknowledgments in bulk. That is, you can set
+     * the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot. Note that both the subscription and the
+     * snapshot must be on the same topic.
+     * </pre>
+     */
+    public com.google.pubsub.v1.SeekResponse seek(com.google.pubsub.v1.SeekRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSeekMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Subscriber.
    *
    * <pre>
    * The service that an application uses to manipulate subscriptions and to

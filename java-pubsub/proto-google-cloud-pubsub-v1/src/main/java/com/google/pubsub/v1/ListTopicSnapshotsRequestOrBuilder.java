@@ -39,6 +39,7 @@ public interface ListTopicSnapshotsRequestOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ListTopicSnapshotsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

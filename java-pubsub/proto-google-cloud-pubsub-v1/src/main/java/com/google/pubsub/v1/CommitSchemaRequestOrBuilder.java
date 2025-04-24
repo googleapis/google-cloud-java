@@ -39,6 +39,7 @@ public interface CommitSchemaRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface CommitSchemaRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface CommitSchemaRequestOrBuilder
    * @return The schema.
    */
   com.google.pubsub.v1.Schema getSchema();
+
   /**
    *
    *

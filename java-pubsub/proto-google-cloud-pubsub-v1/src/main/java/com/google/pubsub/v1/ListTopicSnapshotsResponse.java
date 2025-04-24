@@ -33,6 +33,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ListTopicSnapshotsResponse)
     ListTopicSnapshotsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListTopicSnapshotsResponse.newBuilder() to construct.
   private ListTopicSnapshotsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList snapshots_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   public com.google.protobuf.ProtocolStringList getSnapshotsList() {
     return snapshots_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   public int getSnapshotsCount() {
     return snapshots_.size();
   }
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
   public java.lang.String getSnapshots(int index) {
     return snapshots_.get(index);
   }
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
+
   /**
    *
    *
@@ -157,6 +163,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -358,6 +365,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -572,6 +580,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       snapshots_.makeImmutable();
       return snapshots_;
     }
+
     /**
      *
      *
@@ -601,6 +611,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     public int getSnapshotsCount() {
       return snapshots_.size();
     }
+
     /**
      *
      *
@@ -616,6 +627,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     public java.lang.String getSnapshots(int index) {
       return snapshots_.get(index);
     }
+
     /**
      *
      *
@@ -631,6 +643,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     public com.google.protobuf.ByteString getSnapshotsBytes(int index) {
       return snapshots_.getByteString(index);
     }
+
     /**
      *
      *
@@ -654,6 +667,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +690,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -695,6 +710,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -713,6 +729,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +755,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
     }
 
     private java.lang.Object nextPageToken_ = "";
+
     /**
      *
      *
@@ -762,6 +780,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -786,6 +805,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -809,6 +829,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +849,7 @@ public final class ListTopicSnapshotsResponse extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *

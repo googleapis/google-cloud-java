@@ -33,6 +33,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PublishResponse)
     PublishResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublishResponse.newBuilder() to construct.
   private PublishResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList messageIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   public com.google.protobuf.ProtocolStringList getMessageIdsList() {
     return messageIds_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   public int getMessageIdsCount() {
     return messageIds_.size();
   }
+
   /**
    *
    *
@@ -117,6 +121,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
   public java.lang.String getMessageIds(int index) {
     return messageIds_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +304,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -496,6 +502,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -513,6 +520,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       messageIds_.makeImmutable();
       return messageIds_;
     }
+
     /**
      *
      *
@@ -529,6 +537,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     public int getMessageIdsCount() {
       return messageIds_.size();
     }
+
     /**
      *
      *
@@ -546,6 +555,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     public java.lang.String getMessageIds(int index) {
       return messageIds_.get(index);
     }
+
     /**
      *
      *
@@ -563,6 +573,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getMessageIdsBytes(int index) {
       return messageIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -588,6 +599,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -612,6 +624,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -633,6 +646,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -653,6 +667,7 @@ public final class PublishResponse extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

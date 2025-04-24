@@ -36,6 +36,7 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * @return A list containing the snapshots.
    */
   java.util.List<java.lang.String> getSnapshotsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * @return The count of snapshots.
    */
   int getSnapshotsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * @return The snapshots at the given index.
    */
   java.lang.String getSnapshots(int index);
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface ListTopicSnapshotsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

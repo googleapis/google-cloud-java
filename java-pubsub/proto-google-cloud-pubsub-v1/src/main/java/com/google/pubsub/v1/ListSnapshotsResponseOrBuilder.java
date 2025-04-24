@@ -36,6 +36,7 @@ public interface ListSnapshotsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.Snapshot> getSnapshotsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListSnapshotsResponseOrBuilder
    * </code>
    */
   com.google.pubsub.v1.Snapshot getSnapshots(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListSnapshotsResponseOrBuilder
    * </code>
    */
   int getSnapshotsCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface ListSnapshotsResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.SnapshotOrBuilder> getSnapshotsOrBuilderList();
+
   /**
    *
    *
@@ -99,6 +103,7 @@ public interface ListSnapshotsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

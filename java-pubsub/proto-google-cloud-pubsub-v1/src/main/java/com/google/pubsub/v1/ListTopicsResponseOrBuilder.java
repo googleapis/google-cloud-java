@@ -35,6 +35,7 @@ public interface ListTopicsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.Topic> getTopicsList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface ListTopicsResponseOrBuilder
    * </code>
    */
   com.google.pubsub.v1.Topic getTopics(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface ListTopicsResponseOrBuilder
    * </code>
    */
   int getTopicsCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface ListTopicsResponseOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.TopicOrBuilder> getTopicsOrBuilderList();
+
   /**
    *
    *
@@ -93,6 +97,7 @@ public interface ListTopicsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

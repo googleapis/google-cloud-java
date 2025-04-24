@@ -422,6 +422,19 @@ public final class PublisherGrpc {
     return PublisherStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static PublisherBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<PublisherBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<PublisherBlockingV2Stub>() {
+          @java.lang.Override
+          public PublisherBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new PublisherBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return PublisherBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -793,6 +806,154 @@ public final class PublisherGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service Publisher.
+   *
+   * <pre>
+   * The service that an application uses to manipulate topics, and to send
+   * messages to a topic.
+   * </pre>
+   */
+  public static final class PublisherBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<PublisherBlockingV2Stub> {
+    private PublisherBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected PublisherBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new PublisherBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates the given topic with the given name. See the [resource name rules]
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
+     * </pre>
+     */
+    public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates an existing topic by updating the fields specified in the update
+     * mask. Note that certain properties of a topic are not modifiable.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Topic updateTopic(com.google.pubsub.v1.UpdateTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
+     * does not exist.
+     * </pre>
+     */
+    public com.google.pubsub.v1.PublishResponse publish(
+        com.google.pubsub.v1.PublishRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getPublishMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the configuration of a topic.
+     * </pre>
+     */
+    public com.google.pubsub.v1.Topic getTopic(com.google.pubsub.v1.GetTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists matching topics.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListTopicsResponse listTopics(
+        com.google.pubsub.v1.ListTopicsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTopicsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the names of the attached subscriptions on this topic.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListTopicSubscriptionsResponse listTopicSubscriptions(
+        com.google.pubsub.v1.ListTopicSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTopicSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the names of the snapshots on this topic. Snapshots are used in
+     * [Seek](https://cloud.google.com/pubsub/docs/replay-overview) operations,
+     * which allow you to manage message acknowledgments in bulk. That is, you can
+     * set the acknowledgment state of messages in an existing subscription to the
+     * state captured by a snapshot.
+     * </pre>
+     */
+    public com.google.pubsub.v1.ListTopicSnapshotsResponse listTopicSnapshots(
+        com.google.pubsub.v1.ListTopicSnapshotsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListTopicSnapshotsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
+     * does not exist. After a topic is deleted, a new topic may be created with
+     * the same name; this is an entirely new topic with none of the old
+     * configuration or subscriptions. Existing subscriptions to this topic are
+     * not deleted, but their `topic` field is set to `_deleted-topic_`.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteTopic(com.google.pubsub.v1.DeleteTopicRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteTopicMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Detaches a subscription from this topic. All messages retained in the
+     * subscription are dropped. Subsequent `Pull` and `StreamingPull` requests
+     * will return FAILED_PRECONDITION. If the subscription is a push
+     * subscription, pushes to the endpoint will stop.
+     * </pre>
+     */
+    public com.google.pubsub.v1.DetachSubscriptionResponse detachSubscription(
+        com.google.pubsub.v1.DetachSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDetachSubscriptionMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service Publisher.
    *
    * <pre>
    * The service that an application uses to manipulate topics, and to send

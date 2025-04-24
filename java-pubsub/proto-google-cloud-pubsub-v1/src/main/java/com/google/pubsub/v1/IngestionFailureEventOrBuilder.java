@@ -37,6 +37,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface IngestionFailureEventOrBuilder
    * @return Whether the cloudStorageFailure field is set.
    */
   boolean hasCloudStorageFailure();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The cloudStorageFailure.
    */
   com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure getCloudStorageFailure();
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public interface IngestionFailureEventOrBuilder
    * @return Whether the awsMskFailure field is set.
    */
   boolean hasAwsMskFailure();
+
   /**
    *
    *
@@ -146,6 +151,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The awsMskFailure.
    */
   com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason getAwsMskFailure();
+
   /**
    *
    *
@@ -174,6 +180,7 @@ public interface IngestionFailureEventOrBuilder
    * @return Whether the azureEventHubsFailure field is set.
    */
   boolean hasAzureEventHubsFailure();
+
   /**
    *
    *
@@ -188,6 +195,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The azureEventHubsFailure.
    */
   com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason getAzureEventHubsFailure();
+
   /**
    *
    *
@@ -216,6 +224,7 @@ public interface IngestionFailureEventOrBuilder
    * @return Whether the confluentCloudFailure field is set.
    */
   boolean hasConfluentCloudFailure();
+
   /**
    *
    *
@@ -230,6 +239,7 @@ public interface IngestionFailureEventOrBuilder
    * @return The confluentCloudFailure.
    */
   com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason getConfluentCloudFailure();
+
   /**
    *
    *

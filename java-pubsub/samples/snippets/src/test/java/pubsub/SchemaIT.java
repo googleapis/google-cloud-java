@@ -79,7 +79,7 @@ public class SchemaIT {
   }
 
   @Rule public Timeout globalTimeout = Timeout.seconds(600); // 10 minute timeout
-  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/*maxAttemptCount=*/ 3);
+  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/* maxAttemptCount= */ 3);
 
   @Before
   public void setUp() {

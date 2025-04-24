@@ -37,6 +37,7 @@ public interface SchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface SchemaOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public interface SchemaOrBuilder
    * @return The definition.
    */
   java.lang.String getDefinition();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface SchemaOrBuilder
    * @return The revisionId.
    */
   java.lang.String getRevisionId();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface SchemaOrBuilder
    * @return Whether the revisionCreateTime field is set.
    */
   boolean hasRevisionCreateTime();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface SchemaOrBuilder
    * @return The revisionCreateTime.
    */
   com.google.protobuf.Timestamp getRevisionCreateTime();
+
   /**
    *
    *

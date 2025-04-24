@@ -37,6 +37,7 @@ public interface BigQueryConfigOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
+
   /**
    *
    *
@@ -115,6 +116,7 @@ public interface BigQueryConfigOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -163,6 +165,7 @@ public interface BigQueryConfigOrBuilder
    * @return The serviceAccountEmail.
    */
   java.lang.String getServiceAccountEmail();
+
   /**
    *
    *

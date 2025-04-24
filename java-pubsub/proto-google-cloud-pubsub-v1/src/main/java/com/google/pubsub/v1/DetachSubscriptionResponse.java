@@ -34,6 +34,7 @@ public final class DetachSubscriptionResponse extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.DetachSubscriptionResponse)
     DetachSubscriptionResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DetachSubscriptionResponse.newBuilder() to construct.
   private DetachSubscriptionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class DetachSubscriptionResponse extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

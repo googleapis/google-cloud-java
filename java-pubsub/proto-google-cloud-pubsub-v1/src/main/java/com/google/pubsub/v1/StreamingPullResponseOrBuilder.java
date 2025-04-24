@@ -36,6 +36,7 @@ public interface StreamingPullResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StreamingPullResponseOrBuilder
    * </code>
    */
   com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface StreamingPullResponseOrBuilder
    * </code>
    */
   int getReceivedMessagesCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface StreamingPullResponseOrBuilder
    */
   java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList();
+
   /**
    *
    *
@@ -101,6 +105,7 @@ public interface StreamingPullResponseOrBuilder
    * @return Whether the acknowledgeConfirmation field is set.
    */
   boolean hasAcknowledgeConfirmation();
+
   /**
    *
    *
@@ -116,6 +121,7 @@ public interface StreamingPullResponseOrBuilder
    * @return The acknowledgeConfirmation.
    */
   com.google.pubsub.v1.StreamingPullResponse.AcknowledgeConfirmation getAcknowledgeConfirmation();
+
   /**
    *
    *
@@ -146,6 +152,7 @@ public interface StreamingPullResponseOrBuilder
    * @return Whether the modifyAckDeadlineConfirmation field is set.
    */
   boolean hasModifyAckDeadlineConfirmation();
+
   /**
    *
    *
@@ -162,6 +169,7 @@ public interface StreamingPullResponseOrBuilder
    */
   com.google.pubsub.v1.StreamingPullResponse.ModifyAckDeadlineConfirmation
       getModifyAckDeadlineConfirmation();
+
   /**
    *
    *
@@ -191,6 +199,7 @@ public interface StreamingPullResponseOrBuilder
    * @return Whether the subscriptionProperties field is set.
    */
   boolean hasSubscriptionProperties();
+
   /**
    *
    *
@@ -205,6 +214,7 @@ public interface StreamingPullResponseOrBuilder
    * @return The subscriptionProperties.
    */
   com.google.pubsub.v1.StreamingPullResponse.SubscriptionProperties getSubscriptionProperties();
+
   /**
    *
    *

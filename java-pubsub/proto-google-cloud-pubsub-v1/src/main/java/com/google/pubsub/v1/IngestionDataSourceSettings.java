@@ -33,6 +33,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings)
     IngestionDataSourceSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IngestionDataSourceSettings.newBuilder() to construct.
   private IngestionDataSourceSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -109,6 +111,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The streamArn.
      */
     java.lang.String getStreamArn();
+
     /**
      *
      *
@@ -135,6 +138,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The consumerArn.
      */
     java.lang.String getConsumerArn();
+
     /**
      *
      *
@@ -163,6 +167,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The awsRoleArn.
      */
     java.lang.String getAwsRoleArn();
+
     /**
      *
      *
@@ -193,6 +198,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The gcpServiceAccount.
      */
     java.lang.String getGcpServiceAccount();
+
     /**
      *
      *
@@ -209,6 +215,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getGcpServiceAccountBytes();
   }
+
   /**
    *
    *
@@ -223,6 +230,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis)
       AwsKinesisOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsKinesis.newBuilder() to construct.
     private AwsKinesis(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -350,6 +358,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -360,6 +369,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -378,6 +388,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>KINESIS_PERMISSION_DENIED = 2;</code>
        */
       public static final int KINESIS_PERMISSION_DENIED_VALUE = 2;
+
       /**
        *
        *
@@ -390,6 +401,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
        */
       public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+
       /**
        *
        *
@@ -400,6 +412,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STREAM_NOT_FOUND = 4;</code>
        */
       public static final int STREAM_NOT_FOUND_VALUE = 4;
+
       /**
        *
        *
@@ -504,6 +517,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -522,6 +536,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -549,6 +564,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object streamArn_ = "";
+
     /**
      *
      *
@@ -572,6 +588,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -600,6 +617,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object consumerArn_ = "";
+
     /**
      *
      *
@@ -624,6 +642,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -653,6 +672,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object awsRoleArn_ = "";
+
     /**
      *
      *
@@ -678,6 +698,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -708,6 +729,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcpServiceAccount_ = "";
+
     /**
      *
      *
@@ -734,6 +756,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -962,6 +985,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1210,6 +1234,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -1228,6 +1253,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -1249,6 +1275,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1271,6 +1298,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             ? com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -1296,6 +1324,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1318,6 +1347,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object streamArn_ = "";
+
       /**
        *
        *
@@ -1340,6 +1370,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1362,6 +1393,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1383,6 +1415,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1400,6 +1433,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1424,6 +1458,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object consumerArn_ = "";
+
       /**
        *
        *
@@ -1447,6 +1482,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1470,6 +1506,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1492,6 +1529,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1510,6 +1548,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1535,6 +1574,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object awsRoleArn_ = "";
+
       /**
        *
        *
@@ -1559,6 +1599,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1583,6 +1624,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1606,6 +1648,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1625,6 +1668,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1651,6 +1695,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object gcpServiceAccount_ = "";
+
       /**
        *
        *
@@ -1676,6 +1721,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1701,6 +1747,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1725,6 +1772,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1745,6 +1793,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1856,6 +1905,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -1886,6 +1936,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The bucket.
      */
     java.lang.String getBucket();
+
     /**
      *
      *
@@ -1915,6 +1966,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return Whether the textFormat field is set.
      */
     boolean hasTextFormat();
+
     /**
      *
      *
@@ -1929,6 +1981,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The textFormat.
      */
     com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.TextFormat getTextFormat();
+
     /**
      *
      *
@@ -1957,6 +2010,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return Whether the avroFormat field is set.
      */
     boolean hasAvroFormat();
+
     /**
      *
      *
@@ -1971,6 +2025,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The avroFormat.
      */
     com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormat getAvroFormat();
+
     /**
      *
      *
@@ -2001,6 +2056,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return Whether the pubsubAvroFormat field is set.
      */
     boolean hasPubsubAvroFormat();
+
     /**
      *
      *
@@ -2018,6 +2074,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.PubSubAvroFormat
         getPubsubAvroFormat();
+
     /**
      *
      *
@@ -2049,6 +2106,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return Whether the minimumObjectCreateTime field is set.
      */
     boolean hasMinimumObjectCreateTime();
+
     /**
      *
      *
@@ -2064,6 +2122,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The minimumObjectCreateTime.
      */
     com.google.protobuf.Timestamp getMinimumObjectCreateTime();
+
     /**
      *
      *
@@ -2092,6 +2151,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The matchGlob.
      */
     java.lang.String getMatchGlob();
+
     /**
      *
      *
@@ -2110,6 +2170,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.InputFormatCase
         getInputFormatCase();
   }
+
   /**
    *
    *
@@ -2124,6 +2185,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage)
       CloudStorageOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudStorage.newBuilder() to construct.
     private CloudStorage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2248,6 +2310,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -2258,6 +2321,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -2274,6 +2338,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>CLOUD_STORAGE_PERMISSION_DENIED = 2;</code>
        */
       public static final int CLOUD_STORAGE_PERMISSION_DENIED_VALUE = 2;
+
       /**
        *
        *
@@ -2286,6 +2351,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
        */
       public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+
       /**
        *
        *
@@ -2296,6 +2362,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>BUCKET_NOT_FOUND = 4;</code>
        */
       public static final int BUCKET_NOT_FOUND_VALUE = 4;
+
       /**
        *
        *
@@ -2416,6 +2483,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * @return Whether the delimiter field is set.
        */
       boolean hasDelimiter();
+
       /**
        *
        *
@@ -2428,6 +2496,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * @return The delimiter.
        */
       java.lang.String getDelimiter();
+
       /**
        *
        *
@@ -2441,6 +2510,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        */
       com.google.protobuf.ByteString getDelimiterBytes();
     }
+
     /**
      *
      *
@@ -2457,6 +2527,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.TextFormat)
         TextFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use TextFormat.newBuilder() to construct.
       private TextFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -2493,6 +2564,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
       @SuppressWarnings("serial")
       private volatile java.lang.Object delimiter_ = "";
+
       /**
        *
        *
@@ -2508,6 +2580,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public boolean hasDelimiter() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -2531,6 +2604,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return s;
         }
       }
+
       /**
        *
        *
@@ -2730,6 +2804,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -2933,6 +3008,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         private int bitField0_;
 
         private java.lang.Object delimiter_ = "";
+
         /**
          *
          *
@@ -2947,6 +3023,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         public boolean hasDelimiter() {
           return ((bitField0_ & 0x00000001) != 0);
         }
+
         /**
          *
          *
@@ -2969,6 +3046,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return (java.lang.String) ref;
           }
         }
+
         /**
          *
          *
@@ -2991,6 +3069,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             return (com.google.protobuf.ByteString) ref;
           }
         }
+
         /**
          *
          *
@@ -3012,6 +3091,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3029,6 +3109,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           onChanged();
           return this;
         }
+
         /**
          *
          *
@@ -3124,6 +3205,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         extends
         // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormat)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -3140,6 +3222,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormat)
         AvroFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use AvroFormat.newBuilder() to construct.
       private AvroFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3330,6 +3413,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -3575,6 +3659,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         extends
         // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.PubSubAvroFormat)
         com.google.protobuf.MessageOrBuilder {}
+
     /**
      *
      *
@@ -3593,6 +3678,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.PubSubAvroFormat)
         PubSubAvroFormatOrBuilder {
       private static final long serialVersionUID = 0L;
+
       // Use PubSubAvroFormat.newBuilder() to construct.
       private PubSubAvroFormat(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3786,6 +3872,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         Builder builder = new Builder(parent);
         return builder;
       }
+
       /**
        *
        *
@@ -4054,6 +4141,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private InputFormatCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4090,6 +4178,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -4108,6 +4197,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -4135,6 +4225,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -4160,6 +4251,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -4187,6 +4279,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
 
     public static final int TEXT_FORMAT_FIELD_NUMBER = 3;
+
     /**
      *
      *
@@ -4204,6 +4297,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasTextFormat() {
       return inputFormatCase_ == 3;
     }
+
     /**
      *
      *
@@ -4227,6 +4321,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.TextFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4250,6 +4345,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
 
     public static final int AVRO_FORMAT_FIELD_NUMBER = 4;
+
     /**
      *
      *
@@ -4267,6 +4363,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasAvroFormat() {
       return inputFormatCase_ == 4;
     }
+
     /**
      *
      *
@@ -4290,6 +4387,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4313,6 +4411,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
 
     public static final int PUBSUB_AVRO_FORMAT_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -4332,6 +4431,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasPubsubAvroFormat() {
       return inputFormatCase_ == 5;
     }
+
     /**
      *
      *
@@ -4357,6 +4457,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.PubSubAvroFormat
           .getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4383,6 +4484,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int MINIMUM_OBJECT_CREATE_TIME_FIELD_NUMBER = 6;
     private com.google.protobuf.Timestamp minimumObjectCreateTime_;
+
     /**
      *
      *
@@ -4401,6 +4503,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasMinimumObjectCreateTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -4421,6 +4524,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : minimumObjectCreateTime_;
     }
+
     /**
      *
      *
@@ -4444,6 +4548,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object matchGlob_ = "";
+
     /**
      *
      *
@@ -4469,6 +4574,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -4763,6 +4869,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5096,6 +5203,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -5114,6 +5222,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -5135,6 +5244,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5157,6 +5267,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             ? com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -5182,6 +5293,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5204,6 +5316,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object bucket_ = "";
+
       /**
        *
        *
@@ -5228,6 +5341,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5252,6 +5366,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5275,6 +5390,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5294,6 +5410,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5324,6 +5441,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.TextFormat.Builder,
               com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.TextFormatOrBuilder>
           textFormatBuilder_;
+
       /**
        *
        *
@@ -5341,6 +5459,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public boolean hasTextFormat() {
         return inputFormatCase_ == 3;
       }
+
       /**
        *
        *
@@ -5372,6 +5491,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5397,6 +5517,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5420,6 +5541,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5458,6 +5580,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 3;
         return this;
       }
+
       /**
        *
        *
@@ -5485,6 +5608,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -5500,6 +5624,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           getTextFormatBuilder() {
         return getTextFormatFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5525,6 +5650,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5569,6 +5695,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormat.Builder,
               com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.AvroFormatOrBuilder>
           avroFormatBuilder_;
+
       /**
        *
        *
@@ -5586,6 +5713,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public boolean hasAvroFormat() {
         return inputFormatCase_ == 4;
       }
+
       /**
        *
        *
@@ -5617,6 +5745,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5642,6 +5771,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5665,6 +5795,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5703,6 +5834,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 4;
         return this;
       }
+
       /**
        *
        *
@@ -5730,6 +5862,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -5745,6 +5878,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           getAvroFormatBuilder() {
         return getAvroFormatFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5770,6 +5904,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5816,6 +5951,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage
                   .PubSubAvroFormatOrBuilder>
           pubsubAvroFormatBuilder_;
+
       /**
        *
        *
@@ -5835,6 +5971,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public boolean hasPubsubAvroFormat() {
         return inputFormatCase_ == 5;
       }
+
       /**
        *
        *
@@ -5868,6 +6005,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5895,6 +6033,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5920,6 +6059,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5962,6 +6102,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         inputFormatCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5991,6 +6132,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -6008,6 +6150,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           getPubsubAvroFormatBuilder() {
         return getPubsubAvroFormatFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6035,6 +6178,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               .getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -6085,6 +6229,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           minimumObjectCreateTimeBuilder_;
+
       /**
        *
        *
@@ -6102,6 +6247,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public boolean hasMinimumObjectCreateTime() {
         return ((bitField0_ & 0x00000020) != 0);
       }
+
       /**
        *
        *
@@ -6125,6 +6271,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return minimumObjectCreateTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -6150,6 +6297,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6173,6 +6321,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6203,6 +6352,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         }
         return this;
       }
+
       /**
        *
        *
@@ -6225,6 +6375,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6242,6 +6393,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return getMinimumObjectCreateTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -6263,6 +6415,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
               : minimumObjectCreateTime_;
         }
       }
+
       /**
        *
        *
@@ -6293,6 +6446,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object matchGlob_ = "";
+
       /**
        *
        *
@@ -6317,6 +6471,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6341,6 +6496,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6364,6 +6520,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6383,6 +6540,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6495,6 +6653,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -6523,6 +6682,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The resourceGroup.
      */
     java.lang.String getResourceGroup();
+
     /**
      *
      *
@@ -6548,6 +6708,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The namespace.
      */
     java.lang.String getNamespace();
+
     /**
      *
      *
@@ -6573,6 +6734,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The eventHub.
      */
     java.lang.String getEventHub();
+
     /**
      *
      *
@@ -6599,6 +6761,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The clientId.
      */
     java.lang.String getClientId();
+
     /**
      *
      *
@@ -6626,6 +6789,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The tenantId.
      */
     java.lang.String getTenantId();
+
     /**
      *
      *
@@ -6652,6 +6816,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The subscriptionId.
      */
     java.lang.String getSubscriptionId();
+
     /**
      *
      *
@@ -6678,6 +6843,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The gcpServiceAccount.
      */
     java.lang.String getGcpServiceAccount();
+
     /**
      *
      *
@@ -6692,6 +6858,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getGcpServiceAccountBytes();
   }
+
   /**
    *
    *
@@ -6706,6 +6873,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs)
       AzureEventHubsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AzureEventHubs.newBuilder() to construct.
     private AzureEventHubs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6848,6 +7016,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -6858,6 +7027,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -6870,6 +7040,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>EVENT_HUBS_PERMISSION_DENIED = 2;</code>
        */
       public static final int EVENT_HUBS_PERMISSION_DENIED_VALUE = 2;
+
       /**
        *
        *
@@ -6880,6 +7051,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
        */
       public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+
       /**
        *
        *
@@ -6890,6 +7062,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>NAMESPACE_NOT_FOUND = 4;</code>
        */
       public static final int NAMESPACE_NOT_FOUND_VALUE = 4;
+
       /**
        *
        *
@@ -6900,6 +7073,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>EVENT_HUB_NOT_FOUND = 5;</code>
        */
       public static final int EVENT_HUB_NOT_FOUND_VALUE = 5;
+
       /**
        *
        *
@@ -6910,6 +7084,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>SUBSCRIPTION_NOT_FOUND = 6;</code>
        */
       public static final int SUBSCRIPTION_NOT_FOUND_VALUE = 6;
+
       /**
        *
        *
@@ -7018,6 +7193,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -7036,6 +7212,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -7063,6 +7240,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object resourceGroup_ = "";
+
     /**
      *
      *
@@ -7086,6 +7264,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7114,6 +7293,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object namespace_ = "";
+
     /**
      *
      *
@@ -7137,6 +7317,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7165,6 +7346,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object eventHub_ = "";
+
     /**
      *
      *
@@ -7188,6 +7370,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7216,6 +7399,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clientId_ = "";
+
     /**
      *
      *
@@ -7240,6 +7424,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7269,6 +7454,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tenantId_ = "";
+
     /**
      *
      *
@@ -7293,6 +7479,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7322,6 +7509,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object subscriptionId_ = "";
+
     /**
      *
      *
@@ -7345,6 +7533,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7373,6 +7562,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcpServiceAccount_ = "";
+
     /**
      *
      *
@@ -7397,6 +7587,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -7651,6 +7842,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -7946,6 +8138,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -7964,6 +8157,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -7985,6 +8179,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8007,6 +8202,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             ? com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -8032,6 +8228,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8054,6 +8251,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object resourceGroup_ = "";
+
       /**
        *
        *
@@ -8076,6 +8274,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8098,6 +8297,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8119,6 +8319,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8136,6 +8337,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8160,6 +8362,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object namespace_ = "";
+
       /**
        *
        *
@@ -8182,6 +8385,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8204,6 +8408,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8225,6 +8430,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8242,6 +8448,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8266,6 +8473,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object eventHub_ = "";
+
       /**
        *
        *
@@ -8288,6 +8496,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8310,6 +8519,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8331,6 +8541,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8348,6 +8559,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8372,6 +8584,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object clientId_ = "";
+
       /**
        *
        *
@@ -8395,6 +8608,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8418,6 +8632,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8440,6 +8655,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8458,6 +8674,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8483,6 +8700,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object tenantId_ = "";
+
       /**
        *
        *
@@ -8506,6 +8724,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8529,6 +8748,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8551,6 +8771,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8569,6 +8790,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8594,6 +8816,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object subscriptionId_ = "";
+
       /**
        *
        *
@@ -8616,6 +8839,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8638,6 +8862,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8659,6 +8884,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8676,6 +8902,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8700,6 +8927,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object gcpServiceAccount_ = "";
+
       /**
        *
        *
@@ -8723,6 +8951,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -8746,6 +8975,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -8768,6 +8998,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8786,6 +9017,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -8897,6 +9129,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -8926,6 +9159,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The clusterArn.
      */
     java.lang.String getClusterArn();
+
     /**
      *
      *
@@ -8953,6 +9187,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -8981,6 +9216,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The awsRoleArn.
      */
     java.lang.String getAwsRoleArn();
+
     /**
      *
      *
@@ -9011,6 +9247,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The gcpServiceAccount.
      */
     java.lang.String getGcpServiceAccount();
+
     /**
      *
      *
@@ -9027,6 +9264,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getGcpServiceAccountBytes();
   }
+
   /**
    *
    *
@@ -9041,6 +9279,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.AwsMsk)
       AwsMskOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsMsk.newBuilder() to construct.
     private AwsMsk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9158,6 +9397,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -9168,6 +9408,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -9178,6 +9419,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>MSK_PERMISSION_DENIED = 2;</code>
        */
       public static final int MSK_PERMISSION_DENIED_VALUE = 2;
+
       /**
        *
        *
@@ -9188,6 +9430,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
        */
       public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+
       /**
        *
        *
@@ -9198,6 +9441,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>CLUSTER_NOT_FOUND = 4;</code>
        */
       public static final int CLUSTER_NOT_FOUND_VALUE = 4;
+
       /**
        *
        *
@@ -9302,6 +9546,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -9320,6 +9565,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -9347,6 +9593,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clusterArn_ = "";
+
     /**
      *
      *
@@ -9371,6 +9618,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -9400,6 +9648,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -9424,6 +9673,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -9453,6 +9703,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object awsRoleArn_ = "";
+
     /**
      *
      *
@@ -9478,6 +9729,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -9508,6 +9760,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcpServiceAccount_ = "";
+
     /**
      *
      *
@@ -9534,6 +9787,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -9762,6 +10016,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -10007,6 +10262,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -10025,6 +10281,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -10046,6 +10303,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10068,6 +10326,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             ? com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -10092,6 +10351,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10114,6 +10374,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object clusterArn_ = "";
+
       /**
        *
        *
@@ -10137,6 +10398,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10160,6 +10422,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10182,6 +10445,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10200,6 +10464,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10225,6 +10490,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object topic_ = "";
+
       /**
        *
        *
@@ -10248,6 +10514,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10271,6 +10538,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10293,6 +10561,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10311,6 +10580,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10336,6 +10606,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object awsRoleArn_ = "";
+
       /**
        *
        *
@@ -10360,6 +10631,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10384,6 +10656,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10407,6 +10680,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10426,6 +10700,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10452,6 +10727,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object gcpServiceAccount_ = "";
+
       /**
        *
        *
@@ -10477,6 +10753,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -10502,6 +10779,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -10526,6 +10804,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10546,6 +10825,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -10656,6 +10936,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The enum numeric value on the wire for state.
      */
     int getStateValue();
+
     /**
      *
      *
@@ -10684,6 +10965,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The bootstrapServer.
      */
     java.lang.String getBootstrapServer();
+
     /**
      *
      *
@@ -10709,6 +10991,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The clusterId.
      */
     java.lang.String getClusterId();
+
     /**
      *
      *
@@ -10735,6 +11018,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The topic.
      */
     java.lang.String getTopic();
+
     /**
      *
      *
@@ -10763,6 +11047,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The identityPoolId.
      */
     java.lang.String getIdentityPoolId();
+
     /**
      *
      *
@@ -10791,6 +11076,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      * @return The gcpServiceAccount.
      */
     java.lang.String getGcpServiceAccount();
+
     /**
      *
      *
@@ -10805,6 +11091,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
      */
     com.google.protobuf.ByteString getGcpServiceAccountBytes();
   }
+
   /**
    *
    *
@@ -10819,6 +11106,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud)
       ConfluentCloudOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConfluentCloud.newBuilder() to construct.
     private ConfluentCloud(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10948,6 +11236,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>STATE_UNSPECIFIED = 0;</code>
        */
       public static final int STATE_UNSPECIFIED_VALUE = 0;
+
       /**
        *
        *
@@ -10958,6 +11247,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>ACTIVE = 1;</code>
        */
       public static final int ACTIVE_VALUE = 1;
+
       /**
        *
        *
@@ -10969,6 +11259,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>CONFLUENT_CLOUD_PERMISSION_DENIED = 2;</code>
        */
       public static final int CONFLUENT_CLOUD_PERMISSION_DENIED_VALUE = 2;
+
       /**
        *
        *
@@ -10979,6 +11270,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>PUBLISH_PERMISSION_DENIED = 3;</code>
        */
       public static final int PUBLISH_PERMISSION_DENIED_VALUE = 3;
+
       /**
        *
        *
@@ -10989,6 +11281,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>UNREACHABLE_BOOTSTRAP_SERVER = 4;</code>
        */
       public static final int UNREACHABLE_BOOTSTRAP_SERVER_VALUE = 4;
+
       /**
        *
        *
@@ -10999,6 +11292,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
        * <code>CLUSTER_NOT_FOUND = 5;</code>
        */
       public static final int CLUSTER_NOT_FOUND_VALUE = 5;
+
       /**
        *
        *
@@ -11105,6 +11399,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     public static final int STATE_FIELD_NUMBER = 1;
     private int state_ = 0;
+
     /**
      *
      *
@@ -11123,6 +11418,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -11150,6 +11446,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bootstrapServer_ = "";
+
     /**
      *
      *
@@ -11173,6 +11470,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -11201,6 +11499,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -11224,6 +11523,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -11252,6 +11552,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -11276,6 +11577,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -11305,6 +11607,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object identityPoolId_ = "";
+
     /**
      *
      *
@@ -11330,6 +11633,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -11360,6 +11664,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object gcpServiceAccount_ = "";
+
     /**
      *
      *
@@ -11384,6 +11689,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return s;
       }
     }
+
     /**
      *
      *
@@ -11620,6 +11926,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -11885,6 +12192,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       private int bitField0_;
 
       private int state_ = 0;
+
       /**
        *
        *
@@ -11903,6 +12211,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       public int getStateValue() {
         return state_;
       }
+
       /**
        *
        *
@@ -11924,6 +12233,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11946,6 +12256,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             ? com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.State.UNRECOGNIZED
             : result;
       }
+
       /**
        *
        *
@@ -11971,6 +12282,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -11993,6 +12305,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object bootstrapServer_ = "";
+
       /**
        *
        *
@@ -12015,6 +12328,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12037,6 +12351,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12058,6 +12373,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12075,6 +12391,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12099,6 +12416,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object clusterId_ = "";
+
       /**
        *
        *
@@ -12121,6 +12439,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12143,6 +12462,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12164,6 +12484,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12181,6 +12502,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12205,6 +12527,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object topic_ = "";
+
       /**
        *
        *
@@ -12228,6 +12551,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12251,6 +12575,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12273,6 +12598,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12291,6 +12617,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12316,6 +12643,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object identityPoolId_ = "";
+
       /**
        *
        *
@@ -12340,6 +12668,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12364,6 +12693,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12387,6 +12717,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12406,6 +12737,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12432,6 +12764,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
 
       private java.lang.Object gcpServiceAccount_ = "";
+
       /**
        *
        *
@@ -12455,6 +12788,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -12478,6 +12812,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -12500,6 +12835,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12518,6 +12854,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -12630,6 +12967,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     private SourceCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -12669,6 +13007,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   }
 
   public static final int AWS_KINESIS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -12686,6 +13025,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasAwsKinesis() {
     return sourceCase_ == 1;
   }
+
   /**
    *
    *
@@ -12706,6 +13046,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
     return com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12727,6 +13068,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   }
 
   public static final int CLOUD_STORAGE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -12744,6 +13086,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasCloudStorage() {
     return sourceCase_ == 2;
   }
+
   /**
    *
    *
@@ -12764,6 +13107,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
     return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12785,6 +13129,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   }
 
   public static final int AZURE_EVENT_HUBS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -12802,6 +13147,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasAzureEventHubs() {
     return sourceCase_ == 3;
   }
+
   /**
    *
    *
@@ -12822,6 +13168,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
     return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12843,6 +13190,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   }
 
   public static final int AWS_MSK_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -12860,6 +13208,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasAwsMsk() {
     return sourceCase_ == 5;
   }
+
   /**
    *
    *
@@ -12880,6 +13229,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
     return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12900,6 +13250,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   }
 
   public static final int CONFLUENT_CLOUD_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -12917,6 +13268,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasConfluentCloud() {
     return sourceCase_ == 6;
   }
+
   /**
    *
    *
@@ -12937,6 +13289,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     }
     return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -12959,6 +13312,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
 
   public static final int PLATFORM_LOGS_SETTINGS_FIELD_NUMBER = 4;
   private com.google.pubsub.v1.PlatformLogsSettings platformLogsSettings_;
+
   /**
    *
    *
@@ -12977,6 +13331,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
   public boolean hasPlatformLogsSettings() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -12997,6 +13352,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         ? com.google.pubsub.v1.PlatformLogsSettings.getDefaultInstance()
         : platformLogsSettings_;
   }
+
   /**
    *
    *
@@ -13268,6 +13624,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -13587,6 +13944,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis.Builder,
             com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesisOrBuilder>
         awsKinesisBuilder_;
+
     /**
      *
      *
@@ -13604,6 +13962,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasAwsKinesis() {
       return sourceCase_ == 1;
     }
+
     /**
      *
      *
@@ -13631,6 +13990,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13656,6 +14016,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13678,6 +14039,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13715,6 +14077,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -13742,6 +14105,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -13757,6 +14121,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         getAwsKinesisBuilder() {
       return getAwsKinesisFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -13780,6 +14145,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13821,6 +14187,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.Builder,
             com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorageOrBuilder>
         cloudStorageBuilder_;
+
     /**
      *
      *
@@ -13838,6 +14205,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasCloudStorage() {
       return sourceCase_ == 2;
     }
+
     /**
      *
      *
@@ -13865,6 +14233,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -13890,6 +14259,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13912,6 +14282,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13949,6 +14320,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -13976,6 +14348,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -13991,6 +14364,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         getCloudStorageBuilder() {
       return getCloudStorageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14014,6 +14388,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14055,6 +14430,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.Builder,
             com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubsOrBuilder>
         azureEventHubsBuilder_;
+
     /**
      *
      *
@@ -14072,6 +14448,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasAzureEventHubs() {
       return sourceCase_ == 3;
     }
+
     /**
      *
      *
@@ -14099,6 +14476,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14124,6 +14502,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -14146,6 +14525,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -14183,6 +14563,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -14210,6 +14591,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -14225,6 +14607,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         getAzureEventHubsBuilder() {
       return getAzureEventHubsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14248,6 +14631,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14289,6 +14673,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder,
             com.google.pubsub.v1.IngestionDataSourceSettings.AwsMskOrBuilder>
         awsMskBuilder_;
+
     /**
      *
      *
@@ -14306,6 +14691,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasAwsMsk() {
       return sourceCase_ == 5;
     }
+
     /**
      *
      *
@@ -14333,6 +14719,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14357,6 +14744,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14379,6 +14767,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14414,6 +14803,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -14441,6 +14831,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -14455,6 +14846,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.Builder getAwsMskBuilder() {
       return getAwsMskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14477,6 +14869,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14517,6 +14910,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.Builder,
             com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloudOrBuilder>
         confluentCloudBuilder_;
+
     /**
      *
      *
@@ -14534,6 +14928,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasConfluentCloud() {
       return sourceCase_ == 6;
     }
+
     /**
      *
      *
@@ -14561,6 +14956,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14586,6 +14982,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14608,6 +15005,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14645,6 +15043,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       sourceCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -14672,6 +15071,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -14687,6 +15087,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         getConfluentCloudBuilder() {
       return getConfluentCloudFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14710,6 +15111,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -14752,6 +15154,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             com.google.pubsub.v1.PlatformLogsSettings.Builder,
             com.google.pubsub.v1.PlatformLogsSettingsOrBuilder>
         platformLogsSettingsBuilder_;
+
     /**
      *
      *
@@ -14769,6 +15172,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
     public boolean hasPlatformLogsSettings() {
       return ((bitField0_ & 0x00000020) != 0);
     }
+
     /**
      *
      *
@@ -14792,6 +15196,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
         return platformLogsSettingsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -14817,6 +15222,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14840,6 +15246,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14871,6 +15278,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       }
       return this;
     }
+
     /**
      *
      *
@@ -14893,6 +15301,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -14910,6 +15319,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
       onChanged();
       return getPlatformLogsSettingsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -14931,6 +15341,7 @@ public final class IngestionDataSourceSettings extends com.google.protobuf.Gener
             : platformLogsSettings_;
       }
     }
+
     /**
      *
      *

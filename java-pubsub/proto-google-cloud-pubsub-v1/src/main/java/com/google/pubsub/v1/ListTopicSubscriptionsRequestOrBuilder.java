@@ -39,6 +39,7 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ListTopicSubscriptionsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DetachSubscriptionRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *

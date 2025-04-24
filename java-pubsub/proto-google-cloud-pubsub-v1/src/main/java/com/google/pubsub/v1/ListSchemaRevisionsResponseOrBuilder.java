@@ -34,6 +34,7 @@ public interface ListSchemaRevisionsResponseOrBuilder
    * <code>repeated .google.pubsub.v1.Schema schemas = 1;</code>
    */
   java.util.List<com.google.pubsub.v1.Schema> getSchemasList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface ListSchemaRevisionsResponseOrBuilder
    * <code>repeated .google.pubsub.v1.Schema schemas = 1;</code>
    */
   com.google.pubsub.v1.Schema getSchemas(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface ListSchemaRevisionsResponseOrBuilder
    * <code>repeated .google.pubsub.v1.Schema schemas = 1;</code>
    */
   int getSchemasCount();
+
   /**
    *
    *
@@ -64,6 +67,7 @@ public interface ListSchemaRevisionsResponseOrBuilder
    * <code>repeated .google.pubsub.v1.Schema schemas = 1;</code>
    */
   java.util.List<? extends com.google.pubsub.v1.SchemaOrBuilder> getSchemasOrBuilderList();
+
   /**
    *
    *
@@ -88,6 +92,7 @@ public interface ListSchemaRevisionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DeleteSubscriptionRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *

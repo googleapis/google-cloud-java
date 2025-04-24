@@ -38,6 +38,7 @@ public interface PublishResponseOrBuilder
    * @return A list containing the messageIds.
    */
   java.util.List<java.lang.String> getMessageIdsList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PublishResponseOrBuilder
    * @return The count of messageIds.
    */
   int getMessageIdsCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface PublishResponseOrBuilder
    * @return The messageIds at the given index.
    */
   java.lang.String getMessageIds(int index);
+
   /**
    *
    *

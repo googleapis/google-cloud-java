@@ -50,6 +50,7 @@ public final class StateProto {
      * @return The name.
      */
     java.lang.String getName();
+
     /**
      * <code>string name = 1;</code>
      *
@@ -63,6 +64,7 @@ public final class StateProto {
      * @return The postAbbr.
      */
     java.lang.String getPostAbbr();
+
     /**
      * <code>string post_abbr = 2;</code>
      *
@@ -70,12 +72,14 @@ public final class StateProto {
      */
     com.google.protobuf.ByteString getPostAbbrBytes();
   }
+
   /** Protobuf type {@code utilities.State} */
   public static final class State extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:utilities.State)
       StateOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use State.newBuilder() to construct.
     private State(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -108,6 +112,7 @@ public final class StateProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
+
     /**
      * <code>string name = 1;</code>
      *
@@ -125,6 +130,7 @@ public final class StateProto {
         return s;
       }
     }
+
     /**
      * <code>string name = 1;</code>
      *
@@ -147,6 +153,7 @@ public final class StateProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object postAbbr_ = "";
+
     /**
      * <code>string post_abbr = 2;</code>
      *
@@ -164,6 +171,7 @@ public final class StateProto {
         return s;
       }
     }
+
     /**
      * <code>string post_abbr = 2;</code>
      *
@@ -349,6 +357,7 @@ public final class StateProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code utilities.State} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -537,6 +546,7 @@ public final class StateProto {
       private int bitField0_;
 
       private java.lang.Object name_ = "";
+
       /**
        * <code>string name = 1;</code>
        *
@@ -553,6 +563,7 @@ public final class StateProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -569,6 +580,7 @@ public final class StateProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -584,6 +596,7 @@ public final class StateProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -595,6 +608,7 @@ public final class StateProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>string name = 1;</code>
        *
@@ -613,6 +627,7 @@ public final class StateProto {
       }
 
       private java.lang.Object postAbbr_ = "";
+
       /**
        * <code>string post_abbr = 2;</code>
        *
@@ -629,6 +644,7 @@ public final class StateProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        * <code>string post_abbr = 2;</code>
        *
@@ -645,6 +661,7 @@ public final class StateProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        * <code>string post_abbr = 2;</code>
        *
@@ -660,6 +677,7 @@ public final class StateProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>string post_abbr = 2;</code>
        *
@@ -671,6 +689,7 @@ public final class StateProto {
         onChanged();
         return this;
       }
+
       /**
        * <code>string post_abbr = 2;</code>
        *

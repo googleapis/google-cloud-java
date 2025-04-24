@@ -49,8 +49,7 @@ public class OpenTelemetryPublisherExample {
   public static void openTelemetryPublisherExample(String projectId, String topicId)
       throws IOException, ExecutionException, InterruptedException {
     Resource resource =
-        Resource.getDefault()
-            .toBuilder()
+        Resource.getDefault().toBuilder()
             .put(ResourceAttributes.SERVICE_NAME, "publisher-example")
             .build();
 

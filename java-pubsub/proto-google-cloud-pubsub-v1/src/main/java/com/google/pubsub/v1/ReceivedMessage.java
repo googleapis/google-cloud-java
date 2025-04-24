@@ -33,6 +33,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ReceivedMessage)
     ReceivedMessageOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReceivedMessage.newBuilder() to construct.
   private ReceivedMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object ackId_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
 
   public static final int MESSAGE_FIELD_NUMBER = 2;
   private com.google.pubsub.v1.PubsubMessage message_;
+
   /**
    *
    *
@@ -133,6 +137,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
   public boolean hasMessage() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -149,6 +154,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
   public com.google.pubsub.v1.PubsubMessage getMessage() {
     return message_ == null ? com.google.pubsub.v1.PubsubMessage.getDefaultInstance() : message_;
   }
+
   /**
    *
    *
@@ -166,6 +172,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
 
   public static final int DELIVERY_ATTEMPT_FIELD_NUMBER = 3;
   private int deliveryAttempt_ = 0;
+
   /**
    *
    *
@@ -377,6 +384,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -601,6 +609,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object ackId_ = "";
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -645,6 +655,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -666,6 +677,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
             com.google.pubsub.v1.PubsubMessage.Builder,
             com.google.pubsub.v1.PubsubMessageOrBuilder>
         messageBuilder_;
+
     /**
      *
      *
@@ -727,6 +741,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     public boolean hasMessage() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -748,6 +763,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
         return messageBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -771,6 +787,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -791,6 +808,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -819,6 +837,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -854,6 +874,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return getMessageFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -873,6 +894,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
             : message_;
       }
     }
+
     /**
      *
      *
@@ -901,6 +923,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     }
 
     private int deliveryAttempt_;
+
     /**
      *
      *
@@ -931,6 +954,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
     public int getDeliveryAttempt() {
       return deliveryAttempt_;
     }
+
     /**
      *
      *
@@ -965,6 +989,7 @@ public final class ReceivedMessage extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -39,6 +39,7 @@ public interface GetSubscriptionRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *

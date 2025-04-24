@@ -212,7 +212,8 @@ public class MockSchemaServiceImpl extends SchemaServiceImplBase {
       responseObserver.onError(
           new IllegalArgumentException(
               String.format(
-                  "Unrecognized response type %s for method DeleteSchemaRevision, expected %s or %s",
+                  "Unrecognized response type %s for method DeleteSchemaRevision, expected %s or"
+                      + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Schema.class.getName(),
                   Exception.class.getName())));

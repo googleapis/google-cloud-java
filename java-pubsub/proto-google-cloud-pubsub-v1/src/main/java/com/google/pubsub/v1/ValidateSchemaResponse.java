@@ -34,6 +34,7 @@ public final class ValidateSchemaResponse extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ValidateSchemaResponse)
     ValidateSchemaResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateSchemaResponse.newBuilder() to construct.
   private ValidateSchemaResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ValidateSchemaResponse extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

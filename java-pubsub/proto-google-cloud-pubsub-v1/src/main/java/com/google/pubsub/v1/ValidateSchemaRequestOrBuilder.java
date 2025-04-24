@@ -39,6 +39,7 @@ public interface ValidateSchemaRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ValidateSchemaRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ValidateSchemaRequestOrBuilder
    * @return The schema.
    */
   com.google.pubsub.v1.Schema getSchema();
+
   /**
    *
    *

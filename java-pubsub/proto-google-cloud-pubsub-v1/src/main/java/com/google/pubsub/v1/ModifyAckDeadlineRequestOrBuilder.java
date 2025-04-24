@@ -39,6 +39,7 @@ public interface ModifyAckDeadlineRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ModifyAckDeadlineRequestOrBuilder
    * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String> getAckIdsList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface ModifyAckDeadlineRequestOrBuilder
    * @return The count of ackIds.
    */
   int getAckIdsCount();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface ModifyAckDeadlineRequestOrBuilder
    * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
+
   /**
    *
    *

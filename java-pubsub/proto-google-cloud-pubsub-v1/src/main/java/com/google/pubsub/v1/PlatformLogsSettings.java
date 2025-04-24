@@ -33,6 +33,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PlatformLogsSettings)
     PlatformLogsSettingsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PlatformLogsSettings.newBuilder() to construct.
   private PlatformLogsSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -146,6 +147,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
      * <code>SEVERITY_UNSPECIFIED = 0;</code>
      */
     public static final int SEVERITY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -156,6 +158,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
      * <code>DISABLED = 1;</code>
      */
     public static final int DISABLED_VALUE = 1;
+
     /**
      *
      *
@@ -166,6 +169,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
      * <code>DEBUG = 2;</code>
      */
     public static final int DEBUG_VALUE = 2;
+
     /**
      *
      *
@@ -176,6 +180,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
      * <code>INFO = 3;</code>
      */
     public static final int INFO_VALUE = 3;
+
     /**
      *
      *
@@ -186,6 +191,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
      * <code>WARNING = 4;</code>
      */
     public static final int WARNING_VALUE = 4;
+
     /**
      *
      *
@@ -288,6 +294,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
 
   public static final int SEVERITY_FIELD_NUMBER = 1;
   private int severity_ = 0;
+
   /**
    *
    *
@@ -305,6 +312,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
   public int getSeverityValue() {
     return severity_;
   }
+
   /**
    *
    *
@@ -488,6 +496,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +678,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
     private int bitField0_;
 
     private int severity_ = 0;
+
     /**
      *
      *
@@ -686,6 +696,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
     public int getSeverityValue() {
       return severity_;
     }
+
     /**
      *
      *
@@ -706,6 +717,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -727,6 +739,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
           ? com.google.pubsub.v1.PlatformLogsSettings.Severity.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -750,6 +763,7 @@ public final class PlatformLogsSettings extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

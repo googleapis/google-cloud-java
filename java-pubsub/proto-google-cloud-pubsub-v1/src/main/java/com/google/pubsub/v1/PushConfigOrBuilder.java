@@ -37,6 +37,7 @@ public interface PushConfigOrBuilder
    * @return The pushEndpoint.
    */
   java.lang.String getPushEndpoint();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface PushConfigOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -113,9 +115,11 @@ public interface PushConfigOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public interface PushConfigOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
   /**
    *
    *
@@ -182,6 +187,7 @@ public interface PushConfigOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -230,6 +236,7 @@ public interface PushConfigOrBuilder
    * @return Whether the oidcToken field is set.
    */
   boolean hasOidcToken();
+
   /**
    *
    *
@@ -246,6 +253,7 @@ public interface PushConfigOrBuilder
    * @return The oidcToken.
    */
   com.google.pubsub.v1.PushConfig.OidcToken getOidcToken();
+
   /**
    *
    *
@@ -277,6 +285,7 @@ public interface PushConfigOrBuilder
    * @return Whether the pubsubWrapper field is set.
    */
   boolean hasPubsubWrapper();
+
   /**
    *
    *
@@ -293,6 +302,7 @@ public interface PushConfigOrBuilder
    * @return The pubsubWrapper.
    */
   com.google.pubsub.v1.PushConfig.PubsubWrapper getPubsubWrapper();
+
   /**
    *
    *
@@ -322,6 +332,7 @@ public interface PushConfigOrBuilder
    * @return Whether the noWrapper field is set.
    */
   boolean hasNoWrapper();
+
   /**
    *
    *
@@ -336,6 +347,7 @@ public interface PushConfigOrBuilder
    * @return The noWrapper.
    */
   com.google.pubsub.v1.PushConfig.NoWrapper getNoWrapper();
+
   /**
    *
    *

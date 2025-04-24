@@ -39,6 +39,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return Whether the name field is set.
    */
   boolean hasName();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return Whether the schema field is set.
    */
   boolean hasSchema();
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return The schema.
    */
   com.google.pubsub.v1.Schema getSchema();
+
   /**
    *
    *
@@ -158,6 +163,7 @@ public interface ValidateMessageRequestOrBuilder
    * @return The enum numeric value on the wire for encoding.
    */
   int getEncodingValue();
+
   /**
    *
    *

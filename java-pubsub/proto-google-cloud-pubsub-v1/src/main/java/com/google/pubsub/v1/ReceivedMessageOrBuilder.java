@@ -36,6 +36,7 @@ public interface ReceivedMessageOrBuilder
    * @return The ackId.
    */
   java.lang.String getAckId();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ReceivedMessageOrBuilder
    * @return Whether the message field is set.
    */
   boolean hasMessage();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface ReceivedMessageOrBuilder
    * @return The message.
    */
   com.google.pubsub.v1.PubsubMessage getMessage();
+
   /**
    *
    *

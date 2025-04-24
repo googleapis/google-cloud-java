@@ -39,6 +39,7 @@ public interface GetTopicRequestOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *

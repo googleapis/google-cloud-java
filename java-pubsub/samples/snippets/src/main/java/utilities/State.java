@@ -46,7 +46,12 @@ public class State extends org.apache.avro.specific.SpecificRecordBase
   public static final org.apache.avro.Schema SCHEMA$ =
       new org.apache.avro.Schema.Parser()
           .parse(
-              "{\"type\":\"record\",\"name\":\"State\",\"namespace\":\"utilities\",\"doc\":\"A list of states in the United States of America.\",\"fields\":[{\"name\":\"name\",\"type\":\"string\",\"doc\":\"The common name of the state.\"},{\"name\":\"post_abbr\",\"type\":\"string\",\"doc\":\"The postal code abbreviation of the state.\"}]}");
+              "{\"type\":\"record\",\"name\":\"State\",\"namespace\":\"utilities\",\"doc\":\"A list"
+                  + " of states in the United States of"
+                  + " America.\",\"fields\":[{\"name\":\"name\",\"type\":\"string\",\"doc\":\"The"
+                  + " common name of the"
+                  + " state.\"},{\"name\":\"post_abbr\",\"type\":\"string\",\"doc\":\"The postal"
+                  + " code abbreviation of the state.\"}]}");
 
   public static org.apache.avro.Schema getClassSchema() {
     return SCHEMA$;
@@ -113,6 +118,7 @@ public class State extends org.apache.avro.specific.SpecificRecordBase
 
   /** The common name of the state. */
   private java.lang.CharSequence name;
+
   /** The postal code abbreviation of the state. */
   private java.lang.CharSequence post_abbr;
 
@@ -140,6 +146,7 @@ public class State extends org.apache.avro.specific.SpecificRecordBase
   public org.apache.avro.Schema getSchema() {
     return SCHEMA$;
   }
+
   // Used by DatumWriter.  Applications should not call.
   public java.lang.Object get(int field$) {
     switch (field$) {
@@ -247,6 +254,7 @@ public class State extends org.apache.avro.specific.SpecificRecordBase
 
     /** The common name of the state. */
     private java.lang.CharSequence name;
+
     /** The postal code abbreviation of the state. */
     private java.lang.CharSequence post_abbr;
 

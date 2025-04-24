@@ -72,7 +72,7 @@ public class SubscribeWithAvroSchemaExample {
           try {
             switch (encoding) {
               case "BINARY":
-                decoder = DecoderFactory.get().directBinaryDecoder(inputStream, /*reuse=*/ null);
+                decoder = DecoderFactory.get().directBinaryDecoder(inputStream, /* reuse= */ null);
                 System.out.println("Receiving a binary-encoded message:");
                 break;
               case "JSON":

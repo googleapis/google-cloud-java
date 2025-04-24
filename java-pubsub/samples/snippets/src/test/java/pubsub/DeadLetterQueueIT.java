@@ -68,7 +68,7 @@ public class DeadLetterQueueIT {
   }
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300); // 5 minute timeout
-  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/*maxAttemptCount=*/ 3);
+  @Rule public MultipleAttemptsRule retryRule = new MultipleAttemptsRule(/* maxAttemptCount= */ 3);
 
   @BeforeClass
   public static void checkRequirements() {

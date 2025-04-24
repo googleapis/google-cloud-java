@@ -33,6 +33,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.MessageStoragePolicy)
     MessageStoragePolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MessageStoragePolicy.newBuilder() to construct.
   private MessageStoragePolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList allowedPersistenceRegions_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   public com.google.protobuf.ProtocolStringList getAllowedPersistenceRegionsList() {
     return allowedPersistenceRegions_;
   }
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   public int getAllowedPersistenceRegionsCount() {
     return allowedPersistenceRegions_.size();
   }
+
   /**
    *
    *
@@ -132,6 +136,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
   public java.lang.String getAllowedPersistenceRegions(int index) {
     return allowedPersistenceRegions_.get(index);
   }
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
 
   public static final int ENFORCE_IN_TRANSIT_FIELD_NUMBER = 2;
   private boolean enforceInTransit_ = false;
+
   /**
    *
    *
@@ -354,6 +360,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -566,6 +573,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -588,6 +596,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       allowedPersistenceRegions_.makeImmutable();
       return allowedPersistenceRegions_;
     }
+
     /**
      *
      *
@@ -609,6 +618,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public int getAllowedPersistenceRegionsCount() {
       return allowedPersistenceRegions_.size();
     }
+
     /**
      *
      *
@@ -631,6 +641,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public java.lang.String getAllowedPersistenceRegions(int index) {
       return allowedPersistenceRegions_.get(index);
     }
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public com.google.protobuf.ByteString getAllowedPersistenceRegionsBytes(int index) {
       return allowedPersistenceRegions_.getByteString(index);
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -712,6 +725,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -763,6 +778,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +811,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     }
 
     private boolean enforceInTransit_;
+
     /**
      *
      *
@@ -814,6 +831,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
     public boolean getEnforceInTransit() {
       return enforceInTransit_;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class MessageStoragePolicy extends com.google.protobuf.GeneratedMes
       onChanged();
       return this;
     }
+
     /**
      *
      *

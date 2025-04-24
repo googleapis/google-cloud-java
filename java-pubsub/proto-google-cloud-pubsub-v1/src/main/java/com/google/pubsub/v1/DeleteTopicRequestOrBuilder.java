@@ -39,6 +39,7 @@ public interface DeleteTopicRequestOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *

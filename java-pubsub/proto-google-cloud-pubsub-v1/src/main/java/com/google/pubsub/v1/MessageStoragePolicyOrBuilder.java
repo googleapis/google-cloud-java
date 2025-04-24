@@ -43,6 +43,7 @@ public interface MessageStoragePolicyOrBuilder
    * @return A list containing the allowedPersistenceRegions.
    */
   java.util.List<java.lang.String> getAllowedPersistenceRegionsList();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface MessageStoragePolicyOrBuilder
    * @return The count of allowedPersistenceRegions.
    */
   int getAllowedPersistenceRegionsCount();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface MessageStoragePolicyOrBuilder
    * @return The allowedPersistenceRegions at the given index.
    */
   java.lang.String getAllowedPersistenceRegions(int index);
+
   /**
    *
    *

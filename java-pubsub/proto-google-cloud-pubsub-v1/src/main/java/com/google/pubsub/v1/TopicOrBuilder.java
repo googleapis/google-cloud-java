@@ -41,6 +41,7 @@ public interface TopicOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -81,9 +83,11 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -95,6 +99,7 @@ public interface TopicOrBuilder
    * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -110,6 +115,7 @@ public interface TopicOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -138,6 +144,7 @@ public interface TopicOrBuilder
    * @return Whether the messageStoragePolicy field is set.
    */
   boolean hasMessageStoragePolicy();
+
   /**
    *
    *
@@ -154,6 +161,7 @@ public interface TopicOrBuilder
    * @return The messageStoragePolicy.
    */
   com.google.pubsub.v1.MessageStoragePolicy getMessageStoragePolicy();
+
   /**
    *
    *
@@ -184,6 +192,7 @@ public interface TopicOrBuilder
    * @return The kmsKeyName.
    */
   java.lang.String getKmsKeyName();
+
   /**
    *
    *
@@ -214,6 +223,7 @@ public interface TopicOrBuilder
    * @return Whether the schemaSettings field is set.
    */
   boolean hasSchemaSettings();
+
   /**
    *
    *
@@ -228,6 +238,7 @@ public interface TopicOrBuilder
    * @return The schemaSettings.
    */
   com.google.pubsub.v1.SchemaSettings getSchemaSettings();
+
   /**
    *
    *
@@ -277,6 +288,7 @@ public interface TopicOrBuilder
    * @return Whether the messageRetentionDuration field is set.
    */
   boolean hasMessageRetentionDuration();
+
   /**
    *
    *
@@ -299,6 +311,7 @@ public interface TopicOrBuilder
    * @return The messageRetentionDuration.
    */
   com.google.protobuf.Duration getMessageRetentionDuration();
+
   /**
    *
    *
@@ -333,6 +346,7 @@ public interface TopicOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -361,6 +375,7 @@ public interface TopicOrBuilder
    * @return Whether the ingestionDataSourceSettings field is set.
    */
   boolean hasIngestionDataSourceSettings();
+
   /**
    *
    *
@@ -375,6 +390,7 @@ public interface TopicOrBuilder
    * @return The ingestionDataSourceSettings.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings getIngestionDataSourceSettings();
+
   /**
    *
    *
@@ -402,6 +418,7 @@ public interface TopicOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList();
+
   /**
    *
    *
@@ -415,6 +432,7 @@ public interface TopicOrBuilder
    * </code>
    */
   com.google.pubsub.v1.MessageTransform getMessageTransforms(int index);
+
   /**
    *
    *
@@ -428,6 +446,7 @@ public interface TopicOrBuilder
    * </code>
    */
   int getMessageTransformsCount();
+
   /**
    *
    *
@@ -442,6 +461,7 @@ public interface TopicOrBuilder
    */
   java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
       getMessageTransformsOrBuilderList();
+
   /**
    *
    *

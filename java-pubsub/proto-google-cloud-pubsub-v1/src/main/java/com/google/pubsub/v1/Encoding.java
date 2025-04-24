@@ -73,6 +73,7 @@ public enum Encoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ENCODING_UNSPECIFIED = 0;</code>
    */
   public static final int ENCODING_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -83,6 +84,7 @@ public enum Encoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>JSON = 1;</code>
    */
   public static final int JSON_VALUE = 1;
+
   /**
    *
    *

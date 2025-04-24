@@ -41,6 +41,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface StreamingPullRequestOrBuilder
    * @return A list containing the ackIds.
    */
   java.util.List<java.lang.String> getAckIdsList();
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The count of ackIds.
    */
   int getAckIdsCount();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The ackIds at the given index.
    */
   java.lang.String getAckIds(int index);
+
   /**
    *
    *
@@ -153,6 +157,7 @@ public interface StreamingPullRequestOrBuilder
    * @return A list containing the modifyDeadlineSeconds.
    */
   java.util.List<java.lang.Integer> getModifyDeadlineSecondsList();
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The count of modifyDeadlineSeconds.
    */
   int getModifyDeadlineSecondsCount();
+
   /**
    *
    *
@@ -218,6 +224,7 @@ public interface StreamingPullRequestOrBuilder
    * @return A list containing the modifyDeadlineAckIds.
    */
   java.util.List<java.lang.String> getModifyDeadlineAckIdsList();
+
   /**
    *
    *
@@ -235,6 +242,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The count of modifyDeadlineAckIds.
    */
   int getModifyDeadlineAckIdsCount();
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The modifyDeadlineAckIds at the given index.
    */
   java.lang.String getModifyDeadlineAckIds(int index);
+
   /**
    *
    *
@@ -305,6 +314,7 @@ public interface StreamingPullRequestOrBuilder
    * @return The clientId.
    */
   java.lang.String getClientId();
+
   /**
    *
    *

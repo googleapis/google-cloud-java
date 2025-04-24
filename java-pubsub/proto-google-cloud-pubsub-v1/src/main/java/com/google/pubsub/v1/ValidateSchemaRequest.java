@@ -33,6 +33,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ValidateSchemaRequest)
     ValidateSchemaRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateSchemaRequest.newBuilder() to construct.
   private ValidateSchemaRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
 
   public static final int SCHEMA_FIELD_NUMBER = 2;
   private com.google.pubsub.v1.Schema schema_;
+
   /**
    *
    *
@@ -138,6 +142,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
   public boolean hasSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
   public com.google.pubsub.v1.Schema getSchema() {
     return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
   }
+
   /**
    *
    *
@@ -340,6 +346,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -552,6 +559,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -577,6 +585,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -602,6 +611,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -646,6 +657,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.Schema.Builder,
             com.google.pubsub.v1.SchemaOrBuilder>
         schemaBuilder_;
+
     /**
      *
      *
@@ -692,6 +705,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
     public boolean hasSchema() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -710,6 +724,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
         return schemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -732,6 +747,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -751,6 +767,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -778,6 +795,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +815,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +830,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -827,6 +847,7 @@ public final class ValidateSchemaRequest extends com.google.protobuf.GeneratedMe
         return schema_ == null ? com.google.pubsub.v1.Schema.getDefaultInstance() : schema_;
       }
     }
+
     /**
      *
      *

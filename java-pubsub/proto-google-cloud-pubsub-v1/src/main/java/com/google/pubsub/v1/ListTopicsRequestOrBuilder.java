@@ -39,6 +39,7 @@ public interface ListTopicsRequestOrBuilder
    * @return The project.
    */
   java.lang.String getProject();
+
   /**
    *
    *
@@ -82,6 +83,7 @@ public interface ListTopicsRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

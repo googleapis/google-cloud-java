@@ -41,6 +41,7 @@ public interface DeleteSchemaRevisionRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -77,6 +78,7 @@ public interface DeleteSchemaRevisionRequestOrBuilder
    */
   @java.lang.Deprecated
   java.lang.String getRevisionId();
+
   /**
    *
    *

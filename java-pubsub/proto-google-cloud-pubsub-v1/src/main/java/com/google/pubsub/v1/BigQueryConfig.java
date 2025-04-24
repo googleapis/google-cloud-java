@@ -33,6 +33,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.BigQueryConfig)
     BigQueryConfigOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BigQueryConfig.newBuilder() to construct.
   private BigQueryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -154,6 +155,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>STATE_UNSPECIFIED = 0;</code>
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -164,6 +166,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>ACTIVE = 1;</code>
      */
     public static final int ACTIVE_VALUE = 1;
+
     /**
      *
      *
@@ -179,6 +182,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>PERMISSION_DENIED = 2;</code>
      */
     public static final int PERMISSION_DENIED_VALUE = 2;
+
     /**
      *
      *
@@ -189,6 +193,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>NOT_FOUND = 3;</code>
      */
     public static final int NOT_FOUND_VALUE = 3;
+
     /**
      *
      *
@@ -199,6 +204,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>SCHEMA_MISMATCH = 4;</code>
      */
     public static final int SCHEMA_MISMATCH_VALUE = 4;
+
     /**
      *
      *
@@ -304,6 +310,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
+
   /**
    *
    *
@@ -328,6 +335,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -355,6 +363,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_TOPIC_SCHEMA_FIELD_NUMBER = 2;
   private boolean useTopicSchema_ = false;
+
   /**
    *
    *
@@ -375,6 +384,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int WRITE_METADATA_FIELD_NUMBER = 3;
   private boolean writeMetadata_ = false;
+
   /**
    *
    *
@@ -397,6 +407,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DROP_UNKNOWN_FIELDS_FIELD_NUMBER = 4;
   private boolean dropUnknownFields_ = false;
+
   /**
    *
    *
@@ -419,6 +430,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int STATE_FIELD_NUMBER = 5;
   private int state_ = 0;
+
   /**
    *
    *
@@ -437,6 +449,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -460,6 +473,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   public static final int USE_TABLE_SCHEMA_FIELD_NUMBER = 6;
   private boolean useTableSchema_ = false;
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serviceAccountEmail_ = "";
+
   /**
    *
    *
@@ -510,6 +525,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -750,6 +766,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1012,6 +1029,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -1035,6 +1053,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1058,6 +1077,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1080,6 +1100,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1098,6 +1119,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1145,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean useTopicSchema_;
+
     /**
      *
      *
@@ -1140,6 +1163,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getUseTopicSchema() {
       return useTopicSchema_;
     }
+
     /**
      *
      *
@@ -1161,6 +1185,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1182,6 +1207,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean writeMetadata_;
+
     /**
      *
      *
@@ -1201,6 +1227,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getWriteMetadata() {
       return writeMetadata_;
     }
+
     /**
      *
      *
@@ -1224,6 +1251,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1247,6 +1275,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean dropUnknownFields_;
+
     /**
      *
      *
@@ -1266,6 +1295,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getDropUnknownFields() {
       return dropUnknownFields_;
     }
+
     /**
      *
      *
@@ -1289,6 +1319,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1312,6 +1343,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -1330,6 +1362,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -1351,6 +1384,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1371,6 +1405,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
           com.google.pubsub.v1.BigQueryConfig.State.forNumber(state_);
       return result == null ? com.google.pubsub.v1.BigQueryConfig.State.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1395,6 +1430,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1417,6 +1453,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private boolean useTableSchema_;
+
     /**
      *
      *
@@ -1434,6 +1471,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     public boolean getUseTableSchema() {
       return useTableSchema_;
     }
+
     /**
      *
      *
@@ -1455,6 +1493,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1476,6 +1515,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serviceAccountEmail_ = "";
+
     /**
      *
      *
@@ -1503,6 +1543,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1530,6 +1571,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1556,6 +1598,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1578,6 +1621,7 @@ public final class BigQueryConfig extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

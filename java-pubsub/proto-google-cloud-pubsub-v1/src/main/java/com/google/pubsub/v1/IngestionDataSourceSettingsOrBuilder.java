@@ -38,6 +38,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the awsKinesis field is set.
    */
   boolean hasAwsKinesis();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The awsKinesis.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.AwsKinesis getAwsKinesis();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the cloudStorage field is set.
    */
   boolean hasCloudStorage();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The cloudStorage.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.CloudStorage getCloudStorage();
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the azureEventHubs field is set.
    */
   boolean hasAzureEventHubs();
+
   /**
    *
    *
@@ -134,6 +139,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The azureEventHubs.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.AzureEventHubs getAzureEventHubs();
+
   /**
    *
    *
@@ -162,6 +168,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the awsMsk field is set.
    */
   boolean hasAwsMsk();
+
   /**
    *
    *
@@ -176,6 +183,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The awsMsk.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.AwsMsk getAwsMsk();
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the confluentCloud field is set.
    */
   boolean hasConfluentCloud();
+
   /**
    *
    *
@@ -217,6 +226,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The confluentCloud.
    */
   com.google.pubsub.v1.IngestionDataSourceSettings.ConfluentCloud getConfluentCloud();
+
   /**
    *
    *
@@ -246,6 +256,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return Whether the platformLogsSettings field is set.
    */
   boolean hasPlatformLogsSettings();
+
   /**
    *
    *
@@ -261,6 +272,7 @@ public interface IngestionDataSourceSettingsOrBuilder
    * @return The platformLogsSettings.
    */
   com.google.pubsub.v1.PlatformLogsSettings getPlatformLogsSettings();
+
   /**
    *
    *

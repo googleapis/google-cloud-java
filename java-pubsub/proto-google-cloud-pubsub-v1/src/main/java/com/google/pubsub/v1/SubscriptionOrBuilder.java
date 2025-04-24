@@ -41,6 +41,7 @@ public interface SubscriptionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SubscriptionOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -106,6 +108,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the pushConfig field is set.
    */
   boolean hasPushConfig();
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public interface SubscriptionOrBuilder
    * @return The pushConfig.
    */
   com.google.pubsub.v1.PushConfig getPushConfig();
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the bigqueryConfig field is set.
    */
   boolean hasBigqueryConfig();
+
   /**
    *
    *
@@ -163,6 +168,7 @@ public interface SubscriptionOrBuilder
    * @return The bigqueryConfig.
    */
   com.google.pubsub.v1.BigQueryConfig getBigqueryConfig();
+
   /**
    *
    *
@@ -192,6 +198,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the cloudStorageConfig field is set.
    */
   boolean hasCloudStorageConfig();
+
   /**
    *
    *
@@ -207,6 +214,7 @@ public interface SubscriptionOrBuilder
    * @return The cloudStorageConfig.
    */
   com.google.pubsub.v1.CloudStorageConfig getCloudStorageConfig();
+
   /**
    *
    *
@@ -289,6 +297,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the messageRetentionDuration field is set.
    */
   boolean hasMessageRetentionDuration();
+
   /**
    *
    *
@@ -307,6 +316,7 @@ public interface SubscriptionOrBuilder
    * @return The messageRetentionDuration.
    */
   com.google.protobuf.Duration getMessageRetentionDuration();
+
   /**
    *
    *
@@ -335,6 +345,7 @@ public interface SubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -346,9 +357,11 @@ public interface SubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -360,6 +373,7 @@ public interface SubscriptionOrBuilder
    * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -375,6 +389,7 @@ public interface SubscriptionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -423,6 +438,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the expirationPolicy field is set.
    */
   boolean hasExpirationPolicy();
+
   /**
    *
    *
@@ -443,6 +459,7 @@ public interface SubscriptionOrBuilder
    * @return The expirationPolicy.
    */
   com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy();
+
   /**
    *
    *
@@ -478,6 +495,7 @@ public interface SubscriptionOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -516,6 +534,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the deadLetterPolicy field is set.
    */
   boolean hasDeadLetterPolicy();
+
   /**
    *
    *
@@ -537,6 +556,7 @@ public interface SubscriptionOrBuilder
    * @return The deadLetterPolicy.
    */
   com.google.pubsub.v1.DeadLetterPolicy getDeadLetterPolicy();
+
   /**
    *
    *
@@ -577,6 +597,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the retryPolicy field is set.
    */
   boolean hasRetryPolicy();
+
   /**
    *
    *
@@ -597,6 +618,7 @@ public interface SubscriptionOrBuilder
    * @return The retryPolicy.
    */
   com.google.pubsub.v1.RetryPolicy getRetryPolicy();
+
   /**
    *
    *
@@ -676,6 +698,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the topicMessageRetentionDuration field is set.
    */
   boolean hasTopicMessageRetentionDuration();
+
   /**
    *
    *
@@ -695,6 +718,7 @@ public interface SubscriptionOrBuilder
    * @return The topicMessageRetentionDuration.
    */
   com.google.protobuf.Duration getTopicMessageRetentionDuration();
+
   /**
    *
    *
@@ -728,6 +752,7 @@ public interface SubscriptionOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *
@@ -759,6 +784,7 @@ public interface SubscriptionOrBuilder
    * @return Whether the analyticsHubSubscriptionInfo field is set.
    */
   boolean hasAnalyticsHubSubscriptionInfo();
+
   /**
    *
    *
@@ -774,6 +800,7 @@ public interface SubscriptionOrBuilder
    * @return The analyticsHubSubscriptionInfo.
    */
   com.google.pubsub.v1.Subscription.AnalyticsHubSubscriptionInfo getAnalyticsHubSubscriptionInfo();
+
   /**
    *
    *
@@ -802,6 +829,7 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.MessageTransform> getMessageTransformsList();
+
   /**
    *
    *
@@ -815,6 +843,7 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   com.google.pubsub.v1.MessageTransform getMessageTransforms(int index);
+
   /**
    *
    *
@@ -828,6 +857,7 @@ public interface SubscriptionOrBuilder
    * </code>
    */
   int getMessageTransformsCount();
+
   /**
    *
    *
@@ -842,6 +872,7 @@ public interface SubscriptionOrBuilder
    */
   java.util.List<? extends com.google.pubsub.v1.MessageTransformOrBuilder>
       getMessageTransformsOrBuilderList();
+
   /**
    *
    *

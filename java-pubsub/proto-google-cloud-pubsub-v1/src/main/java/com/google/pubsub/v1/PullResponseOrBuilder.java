@@ -40,6 +40,7 @@ public interface PullResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.ReceivedMessage> getReceivedMessagesList();
+
   /**
    *
    *
@@ -56,6 +57,7 @@ public interface PullResponseOrBuilder
    * </code>
    */
   com.google.pubsub.v1.ReceivedMessage getReceivedMessages(int index);
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface PullResponseOrBuilder
    * </code>
    */
   int getReceivedMessagesCount();
+
   /**
    *
    *
@@ -89,6 +92,7 @@ public interface PullResponseOrBuilder
    */
   java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList();
+
   /**
    *
    *

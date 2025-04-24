@@ -33,6 +33,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PublishRequest)
     PublishRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PublishRequest.newBuilder() to construct.
   private PublishRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.pubsub.v1.PubsubMessage> messages_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList() {
     return messages_;
   }
+
   /**
    *
    *
@@ -156,6 +161,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       getMessagesOrBuilderList() {
     return messages_;
   }
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public int getMessagesCount() {
     return messages_.size();
   }
+
   /**
    *
    *
@@ -186,6 +193,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.pubsub.v1.PubsubMessage getMessages(int index) {
     return messages_.get(index);
   }
+
   /**
    *
    *
@@ -370,6 +378,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -612,6 +621,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -637,6 +647,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -662,6 +673,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -686,6 +698,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +719,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -766,6 +780,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -826,6 +843,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -848,6 +866,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -872,6 +891,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -896,6 +916,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -939,6 +961,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -961,6 +984,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -982,6 +1006,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1003,6 +1028,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1043,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.pubsub.v1.PubsubMessage.Builder getMessagesBuilder(int index) {
       return getMessagesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1035,6 +1062,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return messagesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1054,6 +1082,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(messages_);
       }
     }
+
     /**
      *
      *
@@ -1069,6 +1098,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       return getMessagesFieldBuilder()
           .addBuilder(com.google.pubsub.v1.PubsubMessage.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1084,6 +1114,7 @@ public final class PublishRequest extends com.google.protobuf.GeneratedMessageV3
       return getMessagesFieldBuilder()
           .addBuilder(index, com.google.pubsub.v1.PubsubMessage.getDefaultInstance());
     }
+
     /**
      *
      *

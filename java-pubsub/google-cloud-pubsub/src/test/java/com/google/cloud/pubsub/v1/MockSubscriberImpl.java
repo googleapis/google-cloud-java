@@ -265,7 +265,8 @@ public class MockSubscriberImpl extends SubscriberImplBase {
               responseObserver.onError(
                   new IllegalArgumentException(
                       String.format(
-                          "Unrecognized response type %s for method StreamingPull, expected %s or %s",
+                          "Unrecognized response type %s for method StreamingPull, expected %s or"
+                              + " %s",
                           response == null ? "null" : response.getClass().getName(),
                           StreamingPullResponse.class.getName(),
                           Exception.class.getName())));

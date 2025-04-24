@@ -33,6 +33,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ValidateMessageRequest)
     ValidateMessageRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ValidateMessageRequest.newBuilder() to construct.
   private ValidateMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     private SchemaSpecCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -118,6 +120,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -144,6 +147,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -172,6 +176,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int NAME_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -188,6 +193,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   public boolean hasName() {
     return schemaSpecCase_ == 2;
   }
+
   /**
    *
    *
@@ -217,6 +223,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -248,6 +255,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   public boolean hasSchema() {
     return schemaSpecCase_ == 3;
   }
+
   /**
    *
    *
@@ -281,6 +290,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     }
     return com.google.pubsub.v1.Schema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -300,6 +310,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
 
   public static final int MESSAGE_FIELD_NUMBER = 4;
   private com.google.protobuf.ByteString message_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -318,6 +329,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
 
   public static final int ENCODING_FIELD_NUMBER = 5;
   private int encoding_ = 0;
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
   public int getEncodingValue() {
     return encoding_;
   }
+
   /**
    *
    *
@@ -564,6 +577,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -832,6 +846,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -857,6 +872,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -882,6 +898,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -906,6 +923,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -926,6 +944,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -969,6 +988,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public boolean hasName() {
       return schemaSpecCase_ == 2;
     }
+
     /**
      *
      *
@@ -999,6 +1019,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1029,6 +1050,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1052,6 +1074,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1073,6 +1096,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1127,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
             com.google.pubsub.v1.Schema.Builder,
             com.google.pubsub.v1.SchemaOrBuilder>
         schemaBuilder_;
+
     /**
      *
      *
@@ -1118,6 +1143,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public boolean hasSchema() {
       return schemaSpecCase_ == 3;
     }
+
     /**
      *
      *
@@ -1143,6 +1169,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return com.google.pubsub.v1.Schema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1192,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       schemaSpecCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1212,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       schemaSpecCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1215,6 +1244,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       schemaSpecCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1270,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1252,6 +1283,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.pubsub.v1.Schema.Builder getSchemaBuilder() {
       return getSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1272,6 +1304,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
         return com.google.pubsub.v1.Schema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1304,6 +1337,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     }
 
     private com.google.protobuf.ByteString message_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -1319,6 +1353,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public com.google.protobuf.ByteString getMessage() {
       return message_;
     }
+
     /**
      *
      *
@@ -1340,6 +1375,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1359,6 +1395,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     }
 
     private int encoding_ = 0;
+
     /**
      *
      *
@@ -1374,6 +1411,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
     public int getEncodingValue() {
       return encoding_;
     }
+
     /**
      *
      *
@@ -1392,6 +1430,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1408,6 +1447,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       com.google.pubsub.v1.Encoding result = com.google.pubsub.v1.Encoding.forNumber(encoding_);
       return result == null ? com.google.pubsub.v1.Encoding.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1429,6 +1469,7 @@ public final class ValidateMessageRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

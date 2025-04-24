@@ -33,6 +33,7 @@ public final class SeekResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.SeekResponse)
     SeekResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SeekResponse.newBuilder() to construct.
   private SeekResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -209,6 +210,7 @@ public final class SeekResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

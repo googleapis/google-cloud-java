@@ -33,6 +33,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.Schema)
     SchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Schema.newBuilder() to construct.
   private Schema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      * <code>PROTOCOL_BUFFER = 1;</code>
      */
     public static final int PROTOCOL_BUFFER_VALUE = 1;
+
     /**
      *
      *
@@ -226,6 +229,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -250,6 +254,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -277,6 +282,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_ = 0;
+
   /**
    *
    *
@@ -292,6 +298,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public int getTypeValue() {
     return type_;
   }
+
   /**
    *
    *
@@ -313,6 +320,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object definition_ = "";
+
   /**
    *
    *
@@ -338,6 +346,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -368,6 +377,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object revisionId_ = "";
+
   /**
    *
    *
@@ -393,6 +403,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -421,6 +432,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int REVISION_CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp revisionCreateTime_;
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasRevisionCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -457,6 +470,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Timestamp.getDefaultInstance()
         : revisionCreateTime_;
   }
+
   /**
    *
    *
@@ -673,6 +687,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -928,6 +943,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -951,6 +967,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -974,6 +991,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -996,6 +1014,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1033,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1059,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int type_ = 0;
+
     /**
      *
      *
@@ -1054,6 +1075,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public int getTypeValue() {
       return type_;
     }
+
     /**
      *
      *
@@ -1072,6 +1094,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1088,6 +1111,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       com.google.pubsub.v1.Schema.Type result = com.google.pubsub.v1.Schema.Type.forNumber(type_);
       return result == null ? com.google.pubsub.v1.Schema.Type.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -1109,6 +1133,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1128,6 +1153,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object definition_ = "";
+
     /**
      *
      *
@@ -1152,6 +1178,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1203,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1199,6 +1227,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1218,6 +1247,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1274,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object revisionId_ = "";
+
     /**
      *
      *
@@ -1268,6 +1299,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1292,6 +1324,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1315,6 +1348,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1334,6 +1368,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1365,6 +1400,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         revisionCreateTimeBuilder_;
+
     /**
      *
      *
@@ -1381,6 +1417,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasRevisionCreateTime() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1403,6 +1440,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         return revisionCreateTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1427,6 +1465,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1448,6 +1487,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1477,6 +1517,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1498,6 +1539,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1514,6 +1556,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getRevisionCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1534,6 +1577,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
             : revisionCreateTime_;
       }
     }
+
     /**
      *
      *

@@ -34,6 +34,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent)
     IngestionFailureEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use IngestionFailureEvent.newBuilder() to construct.
   private IngestionFailureEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       extends
       // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.ApiViolationReason)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -90,6 +92,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.ApiViolationReason)
       ApiViolationReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ApiViolationReason.newBuilder() to construct.
     private ApiViolationReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -270,6 +273,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -512,6 +516,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       extends
       // @@protoc_insertion_point(interface_extends:google.pubsub.v1.IngestionFailureEvent.AvroFailureReason)
       com.google.protobuf.MessageOrBuilder {}
+
   /**
    *
    *
@@ -527,6 +532,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AvroFailureReason)
       AvroFailureReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AvroFailureReason.newBuilder() to construct.
     private AvroFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -707,6 +713,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -955,6 +962,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The bucket.
      */
     java.lang.String getBucket();
+
     /**
      *
      *
@@ -981,6 +989,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The objectName.
      */
     java.lang.String getObjectName();
+
     /**
      *
      *
@@ -1023,6 +1032,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the avroFailureReason field is set.
      */
     boolean hasAvroFailureReason();
+
     /**
      *
      *
@@ -1037,6 +1047,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The avroFailureReason.
      */
     com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReason getAvroFailureReason();
+
     /**
      *
      *
@@ -1066,6 +1077,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the apiViolationReason field is set.
      */
     boolean hasApiViolationReason();
+
     /**
      *
      *
@@ -1081,6 +1093,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The apiViolationReason.
      */
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+
     /**
      *
      *
@@ -1098,6 +1111,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.ReasonCase getReasonCase();
   }
+
   /**
    *
    *
@@ -1112,6 +1126,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure)
       CloudStorageFailureOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use CloudStorageFailure.newBuilder() to construct.
     private CloudStorageFailure(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1160,6 +1175,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private ReasonCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -1196,6 +1212,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object bucket_ = "";
+
     /**
      *
      *
@@ -1219,6 +1236,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -1247,6 +1265,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object objectName_ = "";
+
     /**
      *
      *
@@ -1271,6 +1290,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -1298,6 +1318,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int OBJECT_GENERATION_FIELD_NUMBER = 3;
     private long objectGeneration_ = 0L;
+
     /**
      *
      *
@@ -1316,6 +1337,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     public static final int AVRO_FAILURE_REASON_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -1333,6 +1355,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasAvroFailureReason() {
       return reasonCase_ == 5;
     }
+
     /**
      *
      *
@@ -1353,6 +1376,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReason.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1374,6 +1398,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     public static final int API_VIOLATION_REASON_FIELD_NUMBER = 6;
+
     /**
      *
      *
@@ -1392,6 +1417,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasApiViolationReason() {
       return reasonCase_ == 6;
     }
+
     /**
      *
      *
@@ -1413,6 +1439,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -1654,6 +1681,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1938,6 +1966,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object bucket_ = "";
+
       /**
        *
        *
@@ -1960,6 +1989,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1982,6 +2012,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2003,6 +2034,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2020,6 +2052,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2044,6 +2077,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object objectName_ = "";
+
       /**
        *
        *
@@ -2067,6 +2101,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -2090,6 +2125,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -2112,6 +2148,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2130,6 +2167,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2155,6 +2193,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long objectGeneration_;
+
       /**
        *
        *
@@ -2171,6 +2210,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getObjectGeneration() {
         return objectGeneration_;
       }
+
       /**
        *
        *
@@ -2191,6 +2231,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2215,6 +2256,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReason.Builder,
               com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReasonOrBuilder>
           avroFailureReasonBuilder_;
+
       /**
        *
        *
@@ -2232,6 +2274,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public boolean hasAvroFailureReason() {
         return reasonCase_ == 5;
       }
+
       /**
        *
        *
@@ -2259,6 +2302,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2284,6 +2328,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2306,6 +2351,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2343,6 +2389,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -2370,6 +2417,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -2385,6 +2433,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           getAvroFailureReasonBuilder() {
         return getAvroFailureReasonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2408,6 +2457,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.AvroFailureReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2449,6 +2499,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
           apiViolationReasonBuilder_;
+
       /**
        *
        *
@@ -2467,6 +2518,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public boolean hasApiViolationReason() {
         return reasonCase_ == 6;
       }
+
       /**
        *
        *
@@ -2495,6 +2547,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2521,6 +2574,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -2544,6 +2598,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -2582,6 +2637,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 6;
         return this;
       }
+
       /**
        *
        *
@@ -2610,6 +2666,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -2626,6 +2683,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           getApiViolationReasonBuilder() {
         return getApiViolationReasonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2650,6 +2708,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -2771,6 +2830,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The clusterArn.
      */
     java.lang.String getClusterArn();
+
     /**
      *
      *
@@ -2796,6 +2856,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The kafkaTopic.
      */
     java.lang.String getKafkaTopic();
+
     /**
      *
      *
@@ -2851,6 +2912,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the apiViolationReason field is set.
      */
     boolean hasApiViolationReason();
+
     /**
      *
      *
@@ -2866,6 +2928,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The apiViolationReason.
      */
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+
     /**
      *
      *
@@ -2883,6 +2946,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.ReasonCase getReasonCase();
   }
+
   /**
    *
    *
@@ -2897,6 +2961,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason)
       AwsMskFailureReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AwsMskFailureReason.newBuilder() to construct.
     private AwsMskFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2944,6 +3009,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private ReasonCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -2978,6 +3044,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clusterArn_ = "";
+
     /**
      *
      *
@@ -3001,6 +3068,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -3029,6 +3097,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kafkaTopic_ = "";
+
     /**
      *
      *
@@ -3052,6 +3121,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -3078,6 +3148,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int PARTITION_ID_FIELD_NUMBER = 3;
     private long partitionId_ = 0L;
+
     /**
      *
      *
@@ -3096,6 +3167,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int OFFSET_FIELD_NUMBER = 4;
     private long offset_ = 0L;
+
     /**
      *
      *
@@ -3114,6 +3186,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -3132,6 +3205,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasApiViolationReason() {
       return reasonCase_ == 5;
     }
+
     /**
      *
      *
@@ -3153,6 +3227,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -3387,6 +3462,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -3666,6 +3742,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object clusterArn_ = "";
+
       /**
        *
        *
@@ -3688,6 +3765,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3710,6 +3788,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3731,6 +3810,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3748,6 +3828,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3772,6 +3853,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object kafkaTopic_ = "";
+
       /**
        *
        *
@@ -3794,6 +3876,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -3816,6 +3899,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -3837,6 +3921,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3854,6 +3939,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3878,6 +3964,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long partitionId_;
+
       /**
        *
        *
@@ -3893,6 +3980,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getPartitionId() {
         return partitionId_;
       }
+
       /**
        *
        *
@@ -3912,6 +4000,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3931,6 +4020,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long offset_;
+
       /**
        *
        *
@@ -3947,6 +4037,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getOffset() {
         return offset_;
       }
+
       /**
        *
        *
@@ -3967,6 +4058,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -3991,6 +4083,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
           apiViolationReasonBuilder_;
+
       /**
        *
        *
@@ -4009,6 +4102,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public boolean hasApiViolationReason() {
         return reasonCase_ == 5;
       }
+
       /**
        *
        *
@@ -4037,6 +4131,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4063,6 +4158,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -4086,6 +4182,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -4124,6 +4221,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -4152,6 +4250,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -4168,6 +4267,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           getApiViolationReasonBuilder() {
         return getApiViolationReasonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -4192,6 +4292,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -4313,6 +4414,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The namespace.
      */
     java.lang.String getNamespace();
+
     /**
      *
      *
@@ -4338,6 +4440,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The eventHub.
      */
     java.lang.String getEventHub();
+
     /**
      *
      *
@@ -4393,6 +4496,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the apiViolationReason field is set.
      */
     boolean hasApiViolationReason();
+
     /**
      *
      *
@@ -4408,6 +4512,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The apiViolationReason.
      */
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+
     /**
      *
      *
@@ -4426,6 +4531,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.ReasonCase
         getReasonCase();
   }
+
   /**
    *
    *
@@ -4441,6 +4547,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason)
       AzureEventHubsFailureReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AzureEventHubsFailureReason.newBuilder() to construct.
     private AzureEventHubsFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4488,6 +4595,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private ReasonCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -4522,6 +4630,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object namespace_ = "";
+
     /**
      *
      *
@@ -4545,6 +4654,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -4573,6 +4683,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object eventHub_ = "";
+
     /**
      *
      *
@@ -4596,6 +4707,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -4622,6 +4734,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int PARTITION_ID_FIELD_NUMBER = 3;
     private long partitionId_ = 0L;
+
     /**
      *
      *
@@ -4640,6 +4753,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int OFFSET_FIELD_NUMBER = 4;
     private long offset_ = 0L;
+
     /**
      *
      *
@@ -4658,6 +4772,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -4676,6 +4791,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasApiViolationReason() {
       return reasonCase_ == 5;
     }
+
     /**
      *
      *
@@ -4697,6 +4813,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -4933,6 +5050,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -5218,6 +5336,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object namespace_ = "";
+
       /**
        *
        *
@@ -5240,6 +5359,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5262,6 +5382,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5283,6 +5404,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5300,6 +5422,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5324,6 +5447,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object eventHub_ = "";
+
       /**
        *
        *
@@ -5346,6 +5470,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -5368,6 +5493,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -5389,6 +5515,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5406,6 +5533,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5430,6 +5558,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long partitionId_;
+
       /**
        *
        *
@@ -5445,6 +5574,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getPartitionId() {
         return partitionId_;
       }
+
       /**
        *
        *
@@ -5464,6 +5594,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5483,6 +5614,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long offset_;
+
       /**
        *
        *
@@ -5499,6 +5631,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getOffset() {
         return offset_;
       }
+
       /**
        *
        *
@@ -5519,6 +5652,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -5543,6 +5677,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
           apiViolationReasonBuilder_;
+
       /**
        *
        *
@@ -5561,6 +5696,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public boolean hasApiViolationReason() {
         return reasonCase_ == 5;
       }
+
       /**
        *
        *
@@ -5589,6 +5725,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5615,6 +5752,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5638,6 +5776,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5676,6 +5815,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -5704,6 +5844,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -5720,6 +5861,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           getApiViolationReasonBuilder() {
         return getApiViolationReasonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -5744,6 +5886,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -5866,6 +6009,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The clusterId.
      */
     java.lang.String getClusterId();
+
     /**
      *
      *
@@ -5891,6 +6035,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The kafkaTopic.
      */
     java.lang.String getKafkaTopic();
+
     /**
      *
      *
@@ -5946,6 +6091,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return Whether the apiViolationReason field is set.
      */
     boolean hasApiViolationReason();
+
     /**
      *
      *
@@ -5961,6 +6107,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
      * @return The apiViolationReason.
      */
     com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason getApiViolationReason();
+
     /**
      *
      *
@@ -5979,6 +6126,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.ReasonCase
         getReasonCase();
   }
+
   /**
    *
    *
@@ -5994,6 +6142,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       // @@protoc_insertion_point(message_implements:google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason)
       ConfluentCloudFailureReasonOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ConfluentCloudFailureReason.newBuilder() to construct.
     private ConfluentCloudFailureReason(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6041,6 +6190,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private ReasonCase(int value) {
         this.value = value;
       }
+
       /**
        * @param value The number of the enum to look for.
        * @return The enum associated with the given number.
@@ -6075,6 +6225,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object clusterId_ = "";
+
     /**
      *
      *
@@ -6098,6 +6249,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -6126,6 +6278,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object kafkaTopic_ = "";
+
     /**
      *
      *
@@ -6149,6 +6302,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return s;
       }
     }
+
     /**
      *
      *
@@ -6175,6 +6329,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int PARTITION_ID_FIELD_NUMBER = 3;
     private long partitionId_ = 0L;
+
     /**
      *
      *
@@ -6193,6 +6348,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
     public static final int OFFSET_FIELD_NUMBER = 4;
     private long offset_ = 0L;
+
     /**
      *
      *
@@ -6211,6 +6367,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     public static final int API_VIOLATION_REASON_FIELD_NUMBER = 5;
+
     /**
      *
      *
@@ -6229,6 +6386,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasApiViolationReason() {
       return reasonCase_ == 5;
     }
+
     /**
      *
      *
@@ -6250,6 +6408,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
     }
+
     /**
      *
      *
@@ -6486,6 +6645,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -6771,6 +6931,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       private int bitField0_;
 
       private java.lang.Object clusterId_ = "";
+
       /**
        *
        *
@@ -6793,6 +6954,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6815,6 +6977,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6836,6 +6999,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6853,6 +7017,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6877,6 +7042,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private java.lang.Object kafkaTopic_ = "";
+
       /**
        *
        *
@@ -6899,6 +7065,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -6921,6 +7088,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -6942,6 +7110,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6959,6 +7128,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -6983,6 +7153,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long partitionId_;
+
       /**
        *
        *
@@ -6998,6 +7169,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getPartitionId() {
         return partitionId_;
       }
+
       /**
        *
        *
@@ -7017,6 +7189,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7036,6 +7209,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
 
       private long offset_;
+
       /**
        *
        *
@@ -7052,6 +7226,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public long getOffset() {
         return offset_;
       }
+
       /**
        *
        *
@@ -7072,6 +7247,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -7096,6 +7272,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.Builder,
               com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReasonOrBuilder>
           apiViolationReasonBuilder_;
+
       /**
        *
        *
@@ -7114,6 +7291,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       public boolean hasApiViolationReason() {
         return reasonCase_ == 5;
       }
+
       /**
        *
        *
@@ -7142,6 +7320,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7168,6 +7347,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7191,6 +7371,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7229,6 +7410,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         reasonCase_ = 5;
         return this;
       }
+
       /**
        *
        *
@@ -7257,6 +7439,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         }
         return this;
       }
+
       /**
        *
        *
@@ -7273,6 +7456,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           getApiViolationReasonBuilder() {
         return getApiViolationReasonFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -7297,6 +7481,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
           return com.google.pubsub.v1.IngestionFailureEvent.ApiViolationReason.getDefaultInstance();
         }
       }
+
       /**
        *
        *
@@ -7421,6 +7606,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     private FailureCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -7461,6 +7647,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object topic_ = "";
+
   /**
    *
    *
@@ -7485,6 +7672,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -7514,6 +7702,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -7537,6 +7726,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -7562,6 +7752,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CLOUD_STORAGE_FAILURE_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -7579,6 +7770,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   public boolean hasCloudStorageFailure() {
     return failureCase_ == 3;
   }
+
   /**
    *
    *
@@ -7599,6 +7791,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
     return com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7620,6 +7813,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int AWS_MSK_FAILURE_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -7637,6 +7831,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   public boolean hasAwsMskFailure() {
     return failureCase_ == 4;
   }
+
   /**
    *
    *
@@ -7657,6 +7852,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
     return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7678,6 +7874,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int AZURE_EVENT_HUBS_FAILURE_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -7695,6 +7892,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   public boolean hasAzureEventHubsFailure() {
     return failureCase_ == 5;
   }
+
   /**
    *
    *
@@ -7717,6 +7915,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     return com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -7739,6 +7938,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   }
 
   public static final int CONFLUENT_CLOUD_FAILURE_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -7756,6 +7956,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
   public boolean hasConfluentCloudFailure() {
     return failureCase_ == 6;
   }
+
   /**
    *
    *
@@ -7778,6 +7979,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     return com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -8040,6 +8242,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -8338,6 +8541,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object topic_ = "";
+
     /**
      *
      *
@@ -8361,6 +8565,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8384,6 +8589,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8406,6 +8612,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8424,6 +8631,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8449,6 +8657,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -8471,6 +8680,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -8493,6 +8703,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -8514,6 +8725,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8531,6 +8743,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -8559,6 +8772,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.Builder,
             com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailureOrBuilder>
         cloudStorageFailureBuilder_;
+
     /**
      *
      *
@@ -8576,6 +8790,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasCloudStorageFailure() {
       return failureCase_ == 3;
     }
+
     /**
      *
      *
@@ -8603,6 +8818,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8628,6 +8844,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -8650,6 +8867,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -8687,6 +8905,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -8714,6 +8933,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -8729,6 +8949,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         getCloudStorageFailureBuilder() {
       return getCloudStorageFailureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8752,6 +8973,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return com.google.pubsub.v1.IngestionFailureEvent.CloudStorageFailure.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8793,6 +9015,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.Builder,
             com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReasonOrBuilder>
         awsMskFailureBuilder_;
+
     /**
      *
      *
@@ -8810,6 +9033,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasAwsMskFailure() {
       return failureCase_ == 4;
     }
+
     /**
      *
      *
@@ -8837,6 +9061,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -8862,6 +9087,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -8884,6 +9110,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -8921,6 +9148,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -8948,6 +9176,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -8963,6 +9192,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         getAwsMskFailureBuilder() {
       return getAwsMskFailureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -8986,6 +9216,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         return com.google.pubsub.v1.IngestionFailureEvent.AwsMskFailureReason.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9027,6 +9258,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReason.Builder,
             com.google.pubsub.v1.IngestionFailureEvent.AzureEventHubsFailureReasonOrBuilder>
         azureEventHubsFailureBuilder_;
+
     /**
      *
      *
@@ -9044,6 +9276,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasAzureEventHubsFailure() {
       return failureCase_ == 5;
     }
+
     /**
      *
      *
@@ -9074,6 +9307,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9099,6 +9333,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -9122,6 +9357,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -9160,6 +9396,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -9187,6 +9424,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -9202,6 +9440,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         getAzureEventHubsFailureBuilder() {
       return getAzureEventHubsFailureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9226,6 +9465,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9268,6 +9508,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReason.Builder,
             com.google.pubsub.v1.IngestionFailureEvent.ConfluentCloudFailureReasonOrBuilder>
         confluentCloudFailureBuilder_;
+
     /**
      *
      *
@@ -9285,6 +9526,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
     public boolean hasConfluentCloudFailure() {
       return failureCase_ == 6;
     }
+
     /**
      *
      *
@@ -9315,6 +9557,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -9340,6 +9583,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -9363,6 +9607,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -9401,6 +9646,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       failureCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -9428,6 +9674,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -9443,6 +9690,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
         getConfluentCloudFailureBuilder() {
       return getConfluentCloudFailureFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -9467,6 +9715,7 @@ public final class IngestionFailureEvent extends com.google.protobuf.GeneratedMe
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *

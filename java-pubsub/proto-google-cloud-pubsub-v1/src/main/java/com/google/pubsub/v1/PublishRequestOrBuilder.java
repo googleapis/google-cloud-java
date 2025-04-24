@@ -39,6 +39,7 @@ public interface PublishRequestOrBuilder
    * @return The topic.
    */
   java.lang.String getTopic();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface PublishRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface PublishRequestOrBuilder
    * </code>
    */
   com.google.pubsub.v1.PubsubMessage getMessages(int index);
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface PublishRequestOrBuilder
    * </code>
    */
   int getMessagesCount();
+
   /**
    *
    *
@@ -103,6 +107,7 @@ public interface PublishRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> getMessagesOrBuilderList();
+
   /**
    *
    *

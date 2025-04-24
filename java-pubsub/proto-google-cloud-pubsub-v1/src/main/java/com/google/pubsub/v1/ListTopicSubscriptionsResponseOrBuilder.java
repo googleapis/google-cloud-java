@@ -39,6 +39,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * @return A list containing the subscriptions.
    */
   java.util.List<java.lang.String> getSubscriptionsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * @return The count of subscriptions.
    */
   int getSubscriptionsCount();
+
   /**
    *
    *
@@ -70,6 +72,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * @return The subscriptions at the given index.
    */
   java.lang.String getSubscriptions(int index);
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public interface ListTopicSubscriptionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

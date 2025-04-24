@@ -38,6 +38,7 @@ public interface RetryPolicyOrBuilder
    * @return Whether the minimumBackoff field is set.
    */
   boolean hasMinimumBackoff();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface RetryPolicyOrBuilder
    * @return The minimumBackoff.
    */
   com.google.protobuf.Duration getMinimumBackoff();
+
   /**
    *
    *
@@ -80,6 +82,7 @@ public interface RetryPolicyOrBuilder
    * @return Whether the maximumBackoff field is set.
    */
   boolean hasMaximumBackoff();
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public interface RetryPolicyOrBuilder
    * @return The maximumBackoff.
    */
   com.google.protobuf.Duration getMaximumBackoff();
+
   /**
    *
    *

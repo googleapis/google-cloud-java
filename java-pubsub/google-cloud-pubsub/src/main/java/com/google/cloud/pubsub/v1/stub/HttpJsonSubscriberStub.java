@@ -1223,7 +1223,8 @@ public class HttpJsonSubscriberStub extends SubscriberStub {
   public BidiStreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable() {
     throw new UnsupportedOperationException(
-        "Not implemented: streamingPullCallable(). REST transport is not implemented for this method yet.");
+        "Not implemented: streamingPullCallable(). REST transport is not implemented for this"
+            + " method yet.");
   }
 
   @Override

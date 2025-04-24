@@ -34,6 +34,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.ExpirationPolicy)
     ExpirationPolicyOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExpirationPolicy.newBuilder() to construct.
   private ExpirationPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -65,6 +66,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
   private int bitField0_;
   public static final int TTL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration ttl_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
   public boolean hasTtl() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -105,6 +108,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Duration getTtl() {
     return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
   }
+
   /**
    *
    *
@@ -286,6 +290,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -489,6 +494,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         ttlBuilder_;
+
     /**
      *
      *
@@ -508,6 +514,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
     public boolean hasTtl() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -531,6 +538,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
         return ttlBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -558,6 +566,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -582,6 +591,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -614,6 +624,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -638,6 +649,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -657,6 +669,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getTtlFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -678,6 +691,7 @@ public final class ExpirationPolicy extends com.google.protobuf.GeneratedMessage
         return ttl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : ttl_;
       }
     }
+
     /**
      *
      *

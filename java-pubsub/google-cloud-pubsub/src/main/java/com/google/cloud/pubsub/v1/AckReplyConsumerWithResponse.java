@@ -34,7 +34,8 @@ import com.google.api.core.BetaApi;
  * processing code is idempotent, as you may receive any given message more than once.
  */
 @BetaApi(
-    "This is a preview feature. For more details, see https://cloud.google.com/pubsub/docs/exactly-once-delivery.")
+    "This is a preview feature. For more details, see"
+        + " https://cloud.google.com/pubsub/docs/exactly-once-delivery.")
 public interface AckReplyConsumerWithResponse {
   /**
    * Acknowledges that the message has been successfully processed. The service will not send the

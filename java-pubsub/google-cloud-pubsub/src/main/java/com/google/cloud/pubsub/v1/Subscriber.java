@@ -185,9 +185,7 @@ public class Subscriber extends AbstractApiService implements SubscriberInterfac
 
     flowController =
         new FlowController(
-            builder
-                .flowControlSettings
-                .toBuilder()
+            builder.flowControlSettings.toBuilder()
                 .setLimitExceededBehavior(LimitExceededBehavior.Block)
                 .build());
 

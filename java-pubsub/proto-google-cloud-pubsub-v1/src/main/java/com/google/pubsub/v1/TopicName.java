@@ -217,7 +217,8 @@ public class TopicName implements ResourceName {
     private Builder(TopicName topicName) {
       Preconditions.checkArgument(
           Objects.equals(topicName.pathTemplate, PROJECT_TOPIC),
-          "toBuilder is only supported when TopicName has the pattern of projects/{project}/topics/{topic}");
+          "toBuilder is only supported when TopicName has the pattern of"
+              + " projects/{project}/topics/{topic}");
       this.project = topicName.project;
       this.topic = topicName.topic;
     }

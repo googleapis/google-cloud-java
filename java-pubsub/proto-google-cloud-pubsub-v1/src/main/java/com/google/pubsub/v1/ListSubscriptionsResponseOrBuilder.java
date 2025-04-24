@@ -36,6 +36,7 @@ public interface ListSubscriptionsResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.pubsub.v1.Subscription> getSubscriptionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListSubscriptionsResponseOrBuilder
    * </code>
    */
   com.google.pubsub.v1.Subscription getSubscriptions(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface ListSubscriptionsResponseOrBuilder
    * </code>
    */
   int getSubscriptionsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface ListSubscriptionsResponseOrBuilder
    */
   java.util.List<? extends com.google.pubsub.v1.SubscriptionOrBuilder>
       getSubscriptionsOrBuilderList();
+
   /**
    *
    *
@@ -100,6 +104,7 @@ public interface ListSubscriptionsResponseOrBuilder
    * @return The nextPageToken.
    */
   java.lang.String getNextPageToken();
+
   /**
    *
    *

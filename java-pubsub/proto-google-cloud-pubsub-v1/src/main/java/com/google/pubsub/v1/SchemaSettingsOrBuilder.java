@@ -41,6 +41,7 @@ public interface SchemaSettingsOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface SchemaSettingsOrBuilder
    * @return The enum numeric value on the wire for encoding.
    */
   int getEncodingValue();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public interface SchemaSettingsOrBuilder
    * @return The firstRevisionId.
    */
   java.lang.String getFirstRevisionId();
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public interface SchemaSettingsOrBuilder
    * @return The lastRevisionId.
    */
   java.lang.String getLastRevisionId();
+
   /**
    *
    *

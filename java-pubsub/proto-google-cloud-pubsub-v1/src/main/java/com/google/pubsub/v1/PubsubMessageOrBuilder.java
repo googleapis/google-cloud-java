@@ -51,6 +51,7 @@ public interface PubsubMessageOrBuilder
    * </code>
    */
   int getAttributesCount();
+
   /**
    *
    *
@@ -64,9 +65,11 @@ public interface PubsubMessageOrBuilder
    * </code>
    */
   boolean containsAttributes(java.lang.String key);
+
   /** Use {@link #getAttributesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getAttributes();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface PubsubMessageOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAttributesMap();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface PubsubMessageOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface PubsubMessageOrBuilder
    * @return The messageId.
    */
   java.lang.String getMessageId();
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public interface PubsubMessageOrBuilder
    * @return Whether the publishTime field is set.
    */
   boolean hasPublishTime();
+
   /**
    *
    *
@@ -170,6 +177,7 @@ public interface PubsubMessageOrBuilder
    * @return The publishTime.
    */
   com.google.protobuf.Timestamp getPublishTime();
+
   /**
    *
    *
@@ -202,6 +210,7 @@ public interface PubsubMessageOrBuilder
    * @return The orderingKey.
    */
   java.lang.String getOrderingKey();
+
   /**
    *
    *

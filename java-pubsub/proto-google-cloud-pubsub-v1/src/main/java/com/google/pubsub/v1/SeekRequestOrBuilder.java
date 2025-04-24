@@ -38,6 +38,7 @@ public interface SeekRequestOrBuilder
    * @return The subscription.
    */
   java.lang.String getSubscription();
+
   /**
    *
    *
@@ -75,6 +76,7 @@ public interface SeekRequestOrBuilder
    * @return Whether the time field is set.
    */
   boolean hasTime();
+
   /**
    *
    *
@@ -97,6 +99,7 @@ public interface SeekRequestOrBuilder
    * @return The time.
    */
   com.google.protobuf.Timestamp getTime();
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public interface SeekRequestOrBuilder
    * @return Whether the snapshot field is set.
    */
   boolean hasSnapshot();
+
   /**
    *
    *
@@ -150,6 +154,7 @@ public interface SeekRequestOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
+
   /**
    *
    *

@@ -39,6 +39,7 @@ public interface DeleteSnapshotRequestOrBuilder
    * @return The snapshot.
    */
   java.lang.String getSnapshot();
+
   /**
    *
    *
