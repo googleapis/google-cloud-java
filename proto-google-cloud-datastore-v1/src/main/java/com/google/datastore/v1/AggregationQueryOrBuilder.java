@@ -36,6 +36,7 @@ public interface AggregationQueryOrBuilder
    * @return Whether the nestedQuery field is set.
    */
   boolean hasNestedQuery();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface AggregationQueryOrBuilder
    * @return The nestedQuery.
    */
   com.google.datastore.v1.Query getNestedQuery();
+
   /**
    *
    *
@@ -76,6 +78,7 @@ public interface AggregationQueryOrBuilder
    * </code>
    */
   java.util.List<com.google.datastore.v1.AggregationQuery.Aggregation> getAggregationsList();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface AggregationQueryOrBuilder
    * </code>
    */
   com.google.datastore.v1.AggregationQuery.Aggregation getAggregations(int index);
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public interface AggregationQueryOrBuilder
    * </code>
    */
   int getAggregationsCount();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface AggregationQueryOrBuilder
    */
   java.util.List<? extends com.google.datastore.v1.AggregationQuery.AggregationOrBuilder>
       getAggregationsOrBuilderList();
+
   /**
    *
    *

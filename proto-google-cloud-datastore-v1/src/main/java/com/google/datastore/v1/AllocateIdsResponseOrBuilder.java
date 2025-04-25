@@ -35,6 +35,7 @@ public interface AllocateIdsResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
   java.util.List<com.google.datastore.v1.Key> getKeysList();
+
   /**
    *
    *
@@ -46,6 +47,7 @@ public interface AllocateIdsResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
   com.google.datastore.v1.Key getKeys(int index);
+
   /**
    *
    *
@@ -57,6 +59,7 @@ public interface AllocateIdsResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
   int getKeysCount();
+
   /**
    *
    *
@@ -68,6 +71,7 @@ public interface AllocateIdsResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
   java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
+
   /**
    *
    *

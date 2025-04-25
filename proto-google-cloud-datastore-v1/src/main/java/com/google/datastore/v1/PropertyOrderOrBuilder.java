@@ -36,6 +36,7 @@ public interface PropertyOrderOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface PropertyOrderOrBuilder
    * @return The property.
    */
   com.google.datastore.v1.PropertyReference getProperty();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface PropertyOrderOrBuilder
    * @return The enum numeric value on the wire for direction.
    */
   int getDirectionValue();
+
   /**
    *
    *

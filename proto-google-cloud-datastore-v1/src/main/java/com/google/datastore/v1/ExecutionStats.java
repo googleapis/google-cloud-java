@@ -33,6 +33,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ExecutionStats)
     ExecutionStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExecutionStats.newBuilder() to construct.
   private ExecutionStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int RESULTS_RETURNED_FIELD_NUMBER = 1;
   private long resultsReturned_ = 0L;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXECUTION_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration executionDuration_;
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExecutionDuration() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.Duration.getDefaultInstance()
         : executionDuration_;
   }
+
   /**
    *
    *
@@ -133,6 +138,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_OPERATIONS_FIELD_NUMBER = 4;
   private long readOperations_ = 0L;
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DEBUG_STATS_FIELD_NUMBER = 5;
   private com.google.protobuf.Struct debugStats_;
+
   /**
    *
    *
@@ -177,6 +184,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasDebugStats() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -203,6 +211,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getDebugStats() {
     return debugStats_ == null ? com.google.protobuf.Struct.getDefaultInstance() : debugStats_;
   }
+
   /**
    *
    *
@@ -423,6 +432,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -669,6 +679,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private long resultsReturned_;
+
     /**
      *
      *
@@ -685,6 +696,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     public long getResultsReturned() {
       return resultsReturned_;
     }
+
     /**
      *
      *
@@ -705,6 +717,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -730,6 +743,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Duration.Builder,
             com.google.protobuf.DurationOrBuilder>
         executionDurationBuilder_;
+
     /**
      *
      *
@@ -744,6 +758,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExecutionDuration() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -764,6 +779,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
         return executionDurationBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -786,6 +802,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -805,6 +822,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -832,6 +850,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -851,6 +870,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -865,6 +885,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExecutionDurationFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -883,6 +904,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
             : executionDuration_;
       }
     }
+
     /**
      *
      *
@@ -910,6 +932,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long readOperations_;
+
     /**
      *
      *
@@ -925,6 +948,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     public long getReadOperations() {
       return readOperations_;
     }
+
     /**
      *
      *
@@ -944,6 +968,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Struct.Builder,
             com.google.protobuf.StructOrBuilder>
         debugStatsBuilder_;
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasDebugStats() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1022,6 +1049,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
         return debugStatsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1055,6 +1083,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1085,6 +1114,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1123,6 +1153,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1153,6 +1184,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1178,6 +1210,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getDebugStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1205,6 +1238,7 @@ public final class ExecutionStats extends com.google.protobuf.GeneratedMessageV3
         return debugStats_ == null ? com.google.protobuf.Struct.getDefaultInstance() : debugStats_;
       }
     }
+
     /**
      *
      *

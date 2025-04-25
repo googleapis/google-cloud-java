@@ -50,6 +50,7 @@ public interface ExecutionStatsOrBuilder
    * @return Whether the executionDuration field is set.
    */
   boolean hasExecutionDuration();
+
   /**
    *
    *
@@ -62,6 +63,7 @@ public interface ExecutionStatsOrBuilder
    * @return The executionDuration.
    */
   com.google.protobuf.Duration getExecutionDuration();
+
   /**
    *
    *
@@ -109,6 +111,7 @@ public interface ExecutionStatsOrBuilder
    * @return Whether the debugStats field is set.
    */
   boolean hasDebugStats();
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public interface ExecutionStatsOrBuilder
    * @return The debugStats.
    */
   com.google.protobuf.Struct getDebugStats();
+
   /**
    *
    *

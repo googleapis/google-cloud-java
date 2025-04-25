@@ -36,6 +36,7 @@ public interface AllocateIdsRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface AllocateIdsRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface AllocateIdsRequestOrBuilder
    * </code>
    */
   java.util.List<com.google.datastore.v1.Key> getKeysList();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface AllocateIdsRequestOrBuilder
    * </code>
    */
   com.google.datastore.v1.Key getKeys(int index);
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public interface AllocateIdsRequestOrBuilder
    * </code>
    */
   int getKeysCount();
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public interface AllocateIdsRequestOrBuilder
    * </code>
    */
   java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
+
   /**
    *
    *

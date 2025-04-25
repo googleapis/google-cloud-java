@@ -36,6 +36,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return Whether the transactionOptions field is set.
    */
   boolean hasTransactionOptions();
+
   /**
    *
    *
@@ -104,6 +107,7 @@ public interface BeginTransactionRequestOrBuilder
    * @return The transactionOptions.
    */
   com.google.datastore.v1.TransactionOptions getTransactionOptions();
+
   /**
    *
    *

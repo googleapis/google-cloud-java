@@ -36,6 +36,7 @@ public interface RollbackRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface RollbackRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *

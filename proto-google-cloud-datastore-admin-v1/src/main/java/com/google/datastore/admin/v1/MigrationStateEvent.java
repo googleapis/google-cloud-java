@@ -35,6 +35,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.datastore.admin.v1.MigrationStateEvent)
     MigrationStateEventOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MigrationStateEvent.newBuilder() to construct.
   private MigrationStateEvent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
 
   public static final int STATE_FIELD_NUMBER = 1;
   private int state_ = 0;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
   public int getStateValue() {
     return state_;
   }
+
   /**
    *
    *
@@ -261,6 +264,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -445,6 +449,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
     private int bitField0_;
 
     private int state_ = 0;
+
     /**
      *
      *
@@ -460,6 +465,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
     public int getStateValue() {
       return state_;
     }
+
     /**
      *
      *
@@ -478,6 +484,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -495,6 +502,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
           com.google.datastore.admin.v1.MigrationState.forNumber(state_);
       return result == null ? com.google.datastore.admin.v1.MigrationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -516,6 +524,7 @@ public final class MigrationStateEvent extends com.google.protobuf.GeneratedMess
       onChanged();
       return this;
     }
+
     /**
      *
      *

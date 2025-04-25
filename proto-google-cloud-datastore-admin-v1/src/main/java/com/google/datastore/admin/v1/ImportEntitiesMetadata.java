@@ -33,6 +33,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.datastore.admin.v1.ImportEntitiesMetadata)
     ImportEntitiesMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportEntitiesMetadata.newBuilder() to construct.
   private ImportEntitiesMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
   private int bitField0_;
   public static final int COMMON_FIELD_NUMBER = 1;
   private com.google.datastore.admin.v1.CommonMetadata common_;
+
   /**
    *
    *
@@ -81,6 +83,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasCommon() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         ? com.google.datastore.admin.v1.CommonMetadata.getDefaultInstance()
         : common_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_ENTITIES_FIELD_NUMBER = 2;
   private com.google.datastore.admin.v1.Progress progressEntities_;
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressEntities() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -148,6 +154,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         ? com.google.datastore.admin.v1.Progress.getDefaultInstance()
         : progressEntities_;
   }
+
   /**
    *
    *
@@ -166,6 +173,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int PROGRESS_BYTES_FIELD_NUMBER = 3;
   private com.google.datastore.admin.v1.Progress progressBytes_;
+
   /**
    *
    *
@@ -181,6 +189,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasProgressBytes() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -198,6 +207,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         ? com.google.datastore.admin.v1.Progress.getDefaultInstance()
         : progressBytes_;
   }
+
   /**
    *
    *
@@ -216,6 +226,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
 
   public static final int ENTITY_FILTER_FIELD_NUMBER = 4;
   private com.google.datastore.admin.v1.EntityFilter entityFilter_;
+
   /**
    *
    *
@@ -231,6 +242,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
   public boolean hasEntityFilter() {
     return ((bitField0_ & 0x00000008) != 0);
   }
+
   /**
    *
    *
@@ -248,6 +260,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         ? com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()
         : entityFilter_;
   }
+
   /**
    *
    *
@@ -268,6 +281,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputUrl_ = "";
+
   /**
    *
    *
@@ -294,6 +308,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -536,6 +551,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -815,6 +831,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             com.google.datastore.admin.v1.CommonMetadata.Builder,
             com.google.datastore.admin.v1.CommonMetadataOrBuilder>
         commonBuilder_;
+
     /**
      *
      *
@@ -829,6 +846,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasCommon() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -849,6 +867,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return commonBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -890,6 +910,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -917,6 +938,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -936,6 +958,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +973,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getCommonFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -968,6 +992,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             : common_;
       }
     }
+
     /**
      *
      *
@@ -1000,6 +1025,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             com.google.datastore.admin.v1.Progress.Builder,
             com.google.datastore.admin.v1.ProgressOrBuilder>
         progressEntitiesBuilder_;
+
     /**
      *
      *
@@ -1014,6 +1040,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressEntities() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1034,6 +1061,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return progressEntitiesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1056,6 +1084,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1076,6 +1105,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1133,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1122,6 +1153,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1136,6 +1168,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressEntitiesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1154,6 +1187,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             : progressEntities_;
       }
     }
+
     /**
      *
      *
@@ -1186,6 +1220,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             com.google.datastore.admin.v1.Progress.Builder,
             com.google.datastore.admin.v1.ProgressOrBuilder>
         progressBytesBuilder_;
+
     /**
      *
      *
@@ -1200,6 +1235,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasProgressBytes() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1220,6 +1256,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return progressBytesBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1242,6 +1279,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1262,6 +1300,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1289,6 +1328,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1308,6 +1348,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1322,6 +1363,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getProgressBytesFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1340,6 +1382,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             : progressBytes_;
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1415,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             com.google.datastore.admin.v1.EntityFilter.Builder,
             com.google.datastore.admin.v1.EntityFilterOrBuilder>
         entityFilterBuilder_;
+
     /**
      *
      *
@@ -1386,6 +1430,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     public boolean hasEntityFilter() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1406,6 +1451,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return entityFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1428,6 +1474,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1448,6 +1495,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1523,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -1494,6 +1543,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1508,6 +1558,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return getEntityFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1526,6 +1577,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
             : entityFilter_;
       }
     }
+
     /**
      *
      *
@@ -1553,6 +1605,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object inputUrl_ = "";
+
     /**
      *
      *
@@ -1578,6 +1631,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1603,6 +1657,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1627,6 +1682,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1647,6 +1703,7 @@ public final class ImportEntitiesMetadata extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

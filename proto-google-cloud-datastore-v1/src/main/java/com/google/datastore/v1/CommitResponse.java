@@ -33,6 +33,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.CommitResponse)
     CommitResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CommitResponse.newBuilder() to construct.
   private CommitResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.MutationResult> mutationResults_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.datastore.v1.MutationResult> getMutationResultsList() {
     return mutationResults_;
   }
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       getMutationResultsOrBuilderList() {
     return mutationResults_;
   }
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   public int getMutationResultsCount() {
     return mutationResults_.size();
   }
+
   /**
    *
    *
@@ -125,6 +130,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.datastore.v1.MutationResult getMutationResults(int index) {
     return mutationResults_.get(index);
   }
+
   /**
    *
    *
@@ -142,6 +148,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int INDEX_UPDATES_FIELD_NUMBER = 4;
   private int indexUpdates_ = 0;
+
   /**
    *
    *
@@ -161,6 +168,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
 
   public static final int COMMIT_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp commitTime_;
+
   /**
    *
    *
@@ -176,6 +184,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCommitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -191,6 +200,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getCommitTime() {
     return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
+
   /**
    *
    *
@@ -388,6 +398,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -692,6 +703,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return mutationResultsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return mutationResultsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -726,6 +739,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return mutationResultsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -749,6 +763,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -770,6 +785,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -793,6 +809,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +833,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -837,6 +855,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -858,6 +877,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -879,6 +899,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -899,6 +920,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +941,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -932,6 +955,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.MutationResult.Builder getMutationResultsBuilder(int index) {
       return getMutationResultsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -949,6 +973,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return mutationResultsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -967,6 +992,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(mutationResults_);
       }
     }
+
     /**
      *
      *
@@ -981,6 +1007,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       return getMutationResultsFieldBuilder()
           .addBuilder(com.google.datastore.v1.MutationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -995,6 +1022,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       return getMutationResultsFieldBuilder()
           .addBuilder(index, com.google.datastore.v1.MutationResult.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1031,6 +1059,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int indexUpdates_;
+
     /**
      *
      *
@@ -1047,6 +1076,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public int getIndexUpdates() {
       return indexUpdates_;
     }
+
     /**
      *
      *
@@ -1067,6 +1097,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1092,6 +1123,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         commitTimeBuilder_;
+
     /**
      *
      *
@@ -1106,6 +1138,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCommitTime() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1126,6 +1159,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
         return commitTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1148,6 +1182,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1202,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1194,6 +1230,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1213,6 +1250,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1227,6 +1265,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1245,6 +1284,7 @@ public final class CommitResponse extends com.google.protobuf.GeneratedMessageV3
             : commitTime_;
       }
     }
+
     /**
      *
      *

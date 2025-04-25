@@ -36,6 +36,7 @@ public interface EntityFilterOrBuilder
    * @return A list containing the kinds.
    */
   java.util.List<java.lang.String> getKindsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface EntityFilterOrBuilder
    * @return The count of kinds.
    */
   int getKindsCount();
+
   /**
    *
    *
@@ -61,6 +63,7 @@ public interface EntityFilterOrBuilder
    * @return The kinds at the given index.
    */
   java.lang.String getKinds(int index);
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface EntityFilterOrBuilder
    * @return A list containing the namespaceIds.
    */
   java.util.List<java.lang.String> getNamespaceIdsList();
+
   /**
    *
    *
@@ -111,6 +115,7 @@ public interface EntityFilterOrBuilder
    * @return The count of namespaceIds.
    */
   int getNamespaceIdsCount();
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public interface EntityFilterOrBuilder
    * @return The namespaceIds at the given index.
    */
   java.lang.String getNamespaceIds(int index);
+
   /**
    *
    *

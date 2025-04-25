@@ -39,6 +39,7 @@ public interface MigrationProgressEventOrBuilder
    * @return The enum numeric value on the wire for step.
    */
   int getStepValue();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface MigrationProgressEventOrBuilder
    * @return Whether the prepareStepDetails field is set.
    */
   boolean hasPrepareStepDetails();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface MigrationProgressEventOrBuilder
    * @return The prepareStepDetails.
    */
   com.google.datastore.admin.v1.MigrationProgressEvent.PrepareStepDetails getPrepareStepDetails();
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public interface MigrationProgressEventOrBuilder
    * @return Whether the redirectWritesStepDetails field is set.
    */
   boolean hasRedirectWritesStepDetails();
+
   /**
    *
    *
@@ -126,6 +130,7 @@ public interface MigrationProgressEventOrBuilder
    */
   com.google.datastore.admin.v1.MigrationProgressEvent.RedirectWritesStepDetails
       getRedirectWritesStepDetails();
+
   /**
    *
    *

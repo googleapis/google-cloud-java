@@ -33,6 +33,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.PropertyOrder)
     PropertyOrderOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PropertyOrder.newBuilder() to construct.
   private PropertyOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * <code>DIRECTION_UNSPECIFIED = 0;</code>
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
      * <code>ASCENDING = 1;</code>
      */
     public static final int ASCENDING_VALUE = 1;
+
     /**
      *
      *
@@ -223,6 +226,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.datastore.v1.PropertyReference property_;
+
   /**
    *
    *
@@ -238,6 +242,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -255,6 +260,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
         ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
         : property_;
   }
+
   /**
    *
    *
@@ -273,6 +279,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DIRECTION_FIELD_NUMBER = 2;
   private int direction_ = 0;
+
   /**
    *
    *
@@ -288,6 +295,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
   public int getDirectionValue() {
     return direction_;
   }
+
   /**
    *
    *
@@ -479,6 +487,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -694,6 +703,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.PropertyReference.Builder,
             com.google.datastore.v1.PropertyReferenceOrBuilder>
         propertyBuilder_;
+
     /**
      *
      *
@@ -708,6 +718,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -728,6 +739,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -750,6 +762,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +782,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -815,6 +830,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -829,6 +845,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -847,6 +864,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int direction_ = 0;
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
     public int getDirectionValue() {
       return direction_;
     }
+
     /**
      *
      *
@@ -907,6 +927,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -924,6 +945,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
           com.google.datastore.v1.PropertyOrder.Direction.forNumber(direction_);
       return result == null ? com.google.datastore.v1.PropertyOrder.Direction.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -945,6 +967,7 @@ public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

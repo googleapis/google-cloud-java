@@ -39,6 +39,7 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
    */
   int getAggregatePropertiesCount();
+
   /**
    *
    *
@@ -54,9 +55,11 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
    */
   boolean containsAggregateProperties(java.lang.String key);
+
   /** Use {@link #getAggregatePropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.datastore.v1.Value> getAggregateProperties();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface AggregationResultOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; aggregate_properties = 2;</code>
    */
   java.util.Map<java.lang.String, com.google.datastore.v1.Value> getAggregatePropertiesMap();
+
   /**
    *
    *
@@ -91,6 +95,7 @@ public interface AggregationResultOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.datastore.v1.Value defaultValue);
+
   /**
    *
    *

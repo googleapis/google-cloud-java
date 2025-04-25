@@ -344,6 +344,19 @@ public final class DatastoreAdminGrpc {
     return DatastoreAdminStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static DatastoreAdminBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<DatastoreAdminBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<DatastoreAdminBlockingV2Stub>() {
+          @java.lang.Override
+          public DatastoreAdminBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new DatastoreAdminBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return DatastoreAdminBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -772,6 +785,173 @@ public final class DatastoreAdminGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service DatastoreAdmin.
+   *
+   * <pre>
+   * Google Cloud Datastore Admin API
+   * The Datastore Admin API provides several admin services for Cloud Datastore.
+   * Concepts: Project, namespace, kind, and entity as defined in the Google Cloud
+   * Datastore API.
+   * Operation: An Operation represents work being performed in the background.
+   * EntityFilter: Allows specifying a subset of entities in a project. This is
+   * specified as a combination of kinds and namespaces (either or both of which
+   * may be all).
+   * Export/Import Service:
+   * - The Export/Import service provides the ability to copy all or a subset of
+   * entities to/from Google Cloud Storage.
+   * - Exported data may be imported into Cloud Datastore for any Google Cloud
+   * Platform project. It is not restricted to the export source project. It is
+   * possible to export from one project and then import into another.
+   * - Exported data can also be loaded into Google BigQuery for analysis.
+   * - Exports and imports are performed asynchronously. An Operation resource is
+   * created for each export/import. The state (including any errors encountered)
+   * of the export/import may be queried via the Operation resource.
+   * Index Service:
+   * - The index service manages Cloud Datastore composite indexes.
+   * - Index creation and deletion are performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * Operation Service:
+   * - The Operations collection provides a record of actions performed for the
+   * specified project (including any operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * - An operation that is not yet done may be cancelled. The request to cancel
+   * is asynchronous and the operation may continue to run for some time after the
+   * request to cancel is made.
+   * - An operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection.
+   * - ListOperations returns all pending operations, but not completed
+   * operations.
+   * - Operations are created by service DatastoreAdmin, but are accessed via
+   * service google.longrunning.Operations.
+   * </pre>
+   */
+  public static final class DatastoreAdminBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<DatastoreAdminBlockingV2Stub> {
+    private DatastoreAdminBlockingV2Stub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected DatastoreAdminBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new DatastoreAdminBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports a copy of all or a subset of entities from Google Cloud Datastore
+     * to another storage system, such as Google Cloud Storage. Recent updates to
+     * entities may not be reflected in the export. The export occurs in the
+     * background and its progress can be monitored and managed via the
+     * Operation resource that is created. The output of an export may only be
+     * used once the associated operation is done. If an export operation is
+     * cancelled before completion it may leave partial data behind in Google
+     * Cloud Storage.
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportEntities(
+        com.google.datastore.admin.v1.ExportEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports entities into Google Cloud Datastore. Existing entities with the
+     * same key are overwritten. The import occurs in the background and its
+     * progress can be monitored and managed via the Operation resource that is
+     * created. If an ImportEntities operation is cancelled, it is possible
+     * that a subset of the data has already been imported to Cloud Datastore.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importEntities(
+        com.google.datastore.admin.v1.ImportEntitiesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportEntitiesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates the specified index.
+     * A newly created index's initial state is `CREATING`. On completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the
+     * state will be `READY`. If the index already exists, the call will return an
+     * `ALREADY_EXISTS` status.
+     * During index creation, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, removing the index with
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex], then
+     * re-creating the index with [create]
+     * [google.datastore.admin.v1.DatastoreAdmin.CreateIndex].
+     * Indexes with a single property cannot be created.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createIndex(
+        com.google.datastore.admin.v1.CreateIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes an existing index.
+     * An index can only be deleted if it is in a `READY` or `ERROR` state. On
+     * successful execution of the request, the index will be in a `DELETING`
+     * [state][google.datastore.admin.v1.Index.State]. And on completion of the
+     * returned [google.longrunning.Operation][google.longrunning.Operation], the
+     * index will be removed.
+     * During index deletion, the process could result in an error, in which
+     * case the index will move to the `ERROR` state. The process can be recovered
+     * by fixing the data that caused the error, followed by calling
+     * [delete][google.datastore.admin.v1.DatastoreAdmin.DeleteIndex] again.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteIndex(
+        com.google.datastore.admin.v1.DeleteIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets an index.
+     * </pre>
+     */
+    public com.google.datastore.admin.v1.Index getIndex(
+        com.google.datastore.admin.v1.GetIndexRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetIndexMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the indexes that match the specified filters.  Datastore uses an
+     * eventually consistent query to fetch the list of indexes and may
+     * occasionally return stale results.
+     * </pre>
+     */
+    public com.google.datastore.admin.v1.ListIndexesResponse listIndexes(
+        com.google.datastore.admin.v1.ListIndexesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListIndexesMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service DatastoreAdmin.
    *
    * <pre>
    * Google Cloud Datastore Admin API

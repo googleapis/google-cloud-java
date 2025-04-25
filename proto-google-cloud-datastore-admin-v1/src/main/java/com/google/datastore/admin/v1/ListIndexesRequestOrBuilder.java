@@ -36,6 +36,7 @@ public interface ListIndexesRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -55,6 +56,7 @@ public interface ListIndexesRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    * <code>string filter = 3;</code>
    *
@@ -88,6 +90,7 @@ public interface ListIndexesRequestOrBuilder
    * @return The pageToken.
    */
   java.lang.String getPageToken();
+
   /**
    *
    *

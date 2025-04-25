@@ -33,6 +33,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.datastore.v1.RollbackRequest)
     RollbackRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RollbackRequest.newBuilder() to construct.
   private RollbackRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -69,6 +70,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       return s;
     }
   }
+
   /**
    *
    *
@@ -175,6 +180,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
 
   public static final int TRANSACTION_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -368,6 +374,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -579,6 +586,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -601,6 +609,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -644,6 +654,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +672,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -685,6 +697,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private java.lang.Object databaseId_ = "";
+
     /**
      *
      *
@@ -710,6 +723,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -735,6 +749,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +795,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +823,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     }
 
     private com.google.protobuf.ByteString transaction_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -822,6 +840,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
     public com.google.protobuf.ByteString getTransaction() {
       return transaction_;
     }
+
     /**
      *
      *
@@ -844,6 +863,7 @@ public final class RollbackRequest extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *

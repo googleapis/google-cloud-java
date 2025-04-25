@@ -36,6 +36,7 @@ public interface IndexOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface IndexOrBuilder
    * @return The indexId.
    */
   java.lang.String getIndexId();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface IndexOrBuilder
    * @return The kind.
    */
   java.lang.String getKind();
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for ancestor.
    */
   int getAncestorValue();
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public interface IndexOrBuilder
    * </code>
    */
   java.util.List<com.google.datastore.admin.v1.Index.IndexedProperty> getPropertiesList();
+
   /**
    *
    *
@@ -162,6 +167,7 @@ public interface IndexOrBuilder
    * </code>
    */
   com.google.datastore.admin.v1.Index.IndexedProperty getProperties(int index);
+
   /**
    *
    *
@@ -178,6 +184,7 @@ public interface IndexOrBuilder
    * </code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -195,6 +202,7 @@ public interface IndexOrBuilder
    */
   java.util.List<? extends com.google.datastore.admin.v1.Index.IndexedPropertyOrBuilder>
       getPropertiesOrBuilderList();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface IndexOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

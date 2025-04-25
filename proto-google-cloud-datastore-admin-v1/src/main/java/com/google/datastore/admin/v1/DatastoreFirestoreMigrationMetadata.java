@@ -41,6 +41,7 @@ public final class DatastoreFirestoreMigrationMetadata
     // @@protoc_insertion_point(message_implements:google.datastore.admin.v1.DatastoreFirestoreMigrationMetadata)
     DatastoreFirestoreMigrationMetadataOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use DatastoreFirestoreMigrationMetadata.newBuilder() to construct.
   private DatastoreFirestoreMigrationMetadata(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,6 +76,7 @@ public final class DatastoreFirestoreMigrationMetadata
 
   public static final int MIGRATION_STATE_FIELD_NUMBER = 1;
   private int migrationState_ = 0;
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class DatastoreFirestoreMigrationMetadata
   public int getMigrationStateValue() {
     return migrationState_;
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class DatastoreFirestoreMigrationMetadata
 
   public static final int MIGRATION_STEP_FIELD_NUMBER = 2;
   private int migrationStep_ = 0;
+
   /**
    *
    *
@@ -128,6 +132,7 @@ public final class DatastoreFirestoreMigrationMetadata
   public int getMigrationStepValue() {
     return migrationStep_;
   }
+
   /**
    *
    *
@@ -321,6 +326,7 @@ public final class DatastoreFirestoreMigrationMetadata
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -528,6 +534,7 @@ public final class DatastoreFirestoreMigrationMetadata
     private int bitField0_;
 
     private int migrationState_ = 0;
+
     /**
      *
      *
@@ -544,6 +551,7 @@ public final class DatastoreFirestoreMigrationMetadata
     public int getMigrationStateValue() {
       return migrationState_;
     }
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class DatastoreFirestoreMigrationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class DatastoreFirestoreMigrationMetadata
           com.google.datastore.admin.v1.MigrationState.forNumber(migrationState_);
       return result == null ? com.google.datastore.admin.v1.MigrationState.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -603,6 +613,7 @@ public final class DatastoreFirestoreMigrationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -623,6 +634,7 @@ public final class DatastoreFirestoreMigrationMetadata
     }
 
     private int migrationStep_ = 0;
+
     /**
      *
      *
@@ -639,6 +651,7 @@ public final class DatastoreFirestoreMigrationMetadata
     public int getMigrationStepValue() {
       return migrationStep_;
     }
+
     /**
      *
      *
@@ -658,6 +671,7 @@ public final class DatastoreFirestoreMigrationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +690,7 @@ public final class DatastoreFirestoreMigrationMetadata
           com.google.datastore.admin.v1.MigrationStep.forNumber(migrationStep_);
       return result == null ? com.google.datastore.admin.v1.MigrationStep.UNRECOGNIZED : result;
     }
+
     /**
      *
      *
@@ -698,6 +713,7 @@ public final class DatastoreFirestoreMigrationMetadata
       onChanged();
       return this;
     }
+
     /**
      *
      *

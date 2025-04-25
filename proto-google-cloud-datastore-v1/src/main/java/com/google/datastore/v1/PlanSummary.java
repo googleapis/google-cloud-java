@@ -33,6 +33,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.PlanSummary)
     PlanSummaryOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PlanSummary.newBuilder() to construct.
   private PlanSummary(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Struct> indexesUsed_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.Struct> getIndexesUsedList() {
     return indexesUsed_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       getIndexesUsedOrBuilderList() {
     return indexesUsed_;
   }
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
   public int getIndexesUsedCount() {
     return indexesUsed_.size();
   }
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Struct getIndexesUsed(int index) {
     return indexesUsed_.get(index);
   }
+
   /**
    *
    *
@@ -313,6 +319,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -574,6 +581,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
         return indexesUsedBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -594,6 +602,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
         return indexesUsedBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -614,6 +623,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
         return indexesUsedBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -640,6 +650,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -663,6 +674,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -738,6 +752,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -785,6 +801,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -831,6 +849,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -847,6 +866,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Struct.Builder getIndexesUsedBuilder(int index) {
       return getIndexesUsedFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -867,6 +887,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
         return indexesUsedBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -888,6 +909,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(indexesUsed_);
       }
     }
+
     /**
      *
      *
@@ -905,6 +927,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       return getIndexesUsedFieldBuilder()
           .addBuilder(com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -922,6 +945,7 @@ public final class PlanSummary extends com.google.protobuf.GeneratedMessageV3
       return getIndexesUsedFieldBuilder()
           .addBuilder(index, com.google.protobuf.Struct.getDefaultInstance());
     }
+
     /**
      *
      *

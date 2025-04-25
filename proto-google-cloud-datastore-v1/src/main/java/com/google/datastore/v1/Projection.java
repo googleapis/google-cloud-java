@@ -33,6 +33,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.Projection)
     ProjectionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use Projection.newBuilder() to construct.
   private Projection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.datastore.v1.PropertyReference property_;
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProperty() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
         ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
         : property_;
   }
+
   /**
    *
    *
@@ -274,6 +278,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -475,6 +480,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.PropertyReference.Builder,
             com.google.datastore.v1.PropertyReferenceOrBuilder>
         propertyBuilder_;
+
     /**
      *
      *
@@ -489,6 +495,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProperty() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -509,6 +516,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
         return propertyBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -531,6 +539,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -550,6 +559,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +587,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -596,6 +607,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -610,6 +622,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -628,6 +641,7 @@ public final class Projection extends com.google.protobuf.GeneratedMessageV3
             : property_;
       }
     }
+
     /**
      *
      *

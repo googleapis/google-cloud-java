@@ -36,6 +36,7 @@ public interface CommitRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface CommitRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public interface CommitRequestOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -119,6 +122,7 @@ public interface CommitRequestOrBuilder
    * @return Whether the transaction field is set.
    */
   boolean hasTransaction();
+
   /**
    *
    *
@@ -149,6 +153,7 @@ public interface CommitRequestOrBuilder
    * @return Whether the singleUseTransaction field is set.
    */
   boolean hasSingleUseTransaction();
+
   /**
    *
    *
@@ -164,6 +169,7 @@ public interface CommitRequestOrBuilder
    * @return The singleUseTransaction.
    */
   com.google.datastore.v1.TransactionOptions getSingleUseTransaction();
+
   /**
    *
    *
@@ -200,6 +206,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
   java.util.List<com.google.datastore.v1.Mutation> getMutationsList();
+
   /**
    *
    *
@@ -222,6 +229,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
   com.google.datastore.v1.Mutation getMutations(int index);
+
   /**
    *
    *
@@ -244,6 +252,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
   int getMutationsCount();
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public interface CommitRequestOrBuilder
    * <code>repeated .google.datastore.v1.Mutation mutations = 6;</code>
    */
   java.util.List<? extends com.google.datastore.v1.MutationOrBuilder> getMutationsOrBuilderList();
+
   /**
    *
    *

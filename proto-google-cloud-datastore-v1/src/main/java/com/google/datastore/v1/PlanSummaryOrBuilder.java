@@ -38,6 +38,7 @@ public interface PlanSummaryOrBuilder
    * <code>repeated .google.protobuf.Struct indexes_used = 1;</code>
    */
   java.util.List<com.google.protobuf.Struct> getIndexesUsedList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface PlanSummaryOrBuilder
    * <code>repeated .google.protobuf.Struct indexes_used = 1;</code>
    */
   com.google.protobuf.Struct getIndexesUsed(int index);
+
   /**
    *
    *
@@ -66,6 +68,7 @@ public interface PlanSummaryOrBuilder
    * <code>repeated .google.protobuf.Struct indexes_used = 1;</code>
    */
   int getIndexesUsedCount();
+
   /**
    *
    *
@@ -80,6 +83,7 @@ public interface PlanSummaryOrBuilder
    * <code>repeated .google.protobuf.Struct indexes_used = 1;</code>
    */
   java.util.List<? extends com.google.protobuf.StructOrBuilder> getIndexesUsedOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     // @@protoc_insertion_point(message_implements:google.datastore.v1.CompositeFilter)
     CompositeFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CompositeFilter.newBuilder() to construct.
   private CompositeFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * <code>OPERATOR_UNSPECIFIED = 0;</code>
      */
     public static final int OPERATOR_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
      * <code>AND = 1;</code>
      */
     public static final int AND_VALUE = 1;
+
     /**
      *
      *
@@ -223,6 +226,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
 
   public static final int OP_FIELD_NUMBER = 1;
   private int op_ = 0;
+
   /**
    *
    *
@@ -238,6 +242,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
   public int getOpValue() {
     return op_;
   }
+
   /**
    *
    *
@@ -260,6 +265,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Filter> filters_;
+
   /**
    *
    *
@@ -277,6 +283,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
   public java.util.List<com.google.datastore.v1.Filter> getFiltersList() {
     return filters_;
   }
+
   /**
    *
    *
@@ -295,6 +302,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       getFiltersOrBuilderList() {
     return filters_;
   }
+
   /**
    *
    *
@@ -312,6 +320,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
   public int getFiltersCount() {
     return filters_.size();
   }
+
   /**
    *
    *
@@ -329,6 +338,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
   public com.google.datastore.v1.Filter getFilters(int index) {
     return filters_.get(index);
   }
+
   /**
    *
    *
@@ -516,6 +526,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -756,6 +767,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     private int bitField0_;
 
     private int op_ = 0;
+
     /**
      *
      *
@@ -771,6 +783,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     public int getOpValue() {
       return op_;
     }
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +822,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
           ? com.google.datastore.v1.CompositeFilter.Operator.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -829,6 +844,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -883,6 +899,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         return filtersBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -903,6 +920,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         return filtersBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -923,6 +941,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         return filtersBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -949,6 +968,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -972,6 +992,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1019,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1046,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1047,6 +1070,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1070,6 +1094,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1094,6 +1119,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1117,6 +1143,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1140,6 +1167,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       }
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1184,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
     public com.google.datastore.v1.Filter.Builder getFiltersBuilder(int index) {
       return getFiltersFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1176,6 +1205,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         return filtersBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1197,6 +1227,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
         return java.util.Collections.unmodifiableList(filters_);
       }
     }
+
     /**
      *
      *
@@ -1214,6 +1245,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       return getFiltersFieldBuilder()
           .addBuilder(com.google.datastore.v1.Filter.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1231,6 +1263,7 @@ public final class CompositeFilter extends com.google.protobuf.GeneratedMessageV
       return getFiltersFieldBuilder()
           .addBuilder(index, com.google.datastore.v1.Filter.getDefaultInstance());
     }
+
     /**
      *
      *

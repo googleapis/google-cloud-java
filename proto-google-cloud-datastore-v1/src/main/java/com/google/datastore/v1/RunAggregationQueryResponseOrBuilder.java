@@ -36,6 +36,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the batch field is set.
    */
   boolean hasBatch();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The batch.
    */
   com.google.datastore.v1.AggregationResultBatch getBatch();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The query.
    */
   com.google.datastore.v1.AggregationQuery getQuery();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return Whether the explainMetrics field is set.
    */
   boolean hasExplainMetrics();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface RunAggregationQueryResponseOrBuilder
    * @return The explainMetrics.
    */
   com.google.datastore.v1.ExplainMetrics getExplainMetrics();
+
   /**
    *
    *

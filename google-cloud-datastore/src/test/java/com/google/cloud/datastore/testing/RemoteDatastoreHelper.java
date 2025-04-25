@@ -104,7 +104,7 @@ public class RemoteDatastoreHelper {
   }
 
   public static RemoteDatastoreHelper create(String databaseId) {
-    return create(databaseId, /*openTelemetrySdk=*/ null);
+    return create(databaseId, /* openTelemetrySdk= */ null);
   }
 
   private static RetrySettings retrySettings() {

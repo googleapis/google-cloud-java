@@ -23,7 +23,9 @@ import java.util.Objects;
 /** Represents an {@link Aggregation} which returns count. */
 public class CountAggregation extends Aggregation {
 
-  /** @param alias Alias to used when running this aggregation. */
+  /**
+   * @param alias Alias to used when running this aggregation.
+   */
   public CountAggregation(String alias) {
     super(alias);
   }

@@ -24,6 +24,7 @@ import com.google.common.hash.Hashing;
 class EndToEndChecksumHandler {
   /** The checksum http header on http requests */
   static final String HTTP_REQUEST_CHECKSUM_HEADER = "x-request-checksum-348659783";
+
   /** The checksum http header on http responses */
   static final String HTTP_RESPONSE_CHECKSUM_HEADER = "x-response-checksum-348659783";
 

@@ -36,6 +36,7 @@ public interface CommonMetadataOrBuilder
    * @return Whether the startTime field is set.
    */
   boolean hasStartTime();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface CommonMetadataOrBuilder
    * @return The startTime.
    */
   com.google.protobuf.Timestamp getStartTime();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface CommonMetadataOrBuilder
    * @return Whether the endTime field is set.
    */
   boolean hasEndTime();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface CommonMetadataOrBuilder
    * @return The endTime.
    */
   com.google.protobuf.Timestamp getEndTime();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface CommonMetadataOrBuilder
    * @return The enum numeric value on the wire for operationType.
    */
   int getOperationTypeValue();
+
   /**
    *
    *
@@ -132,6 +137,7 @@ public interface CommonMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   int getLabelsCount();
+
   /**
    *
    *
@@ -143,9 +149,11 @@ public interface CommonMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   boolean containsLabels(java.lang.String key);
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getLabels();
+
   /**
    *
    *
@@ -157,6 +165,7 @@ public interface CommonMetadataOrBuilder
    * <code>map&lt;string, string&gt; labels = 4;</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
   /**
    *
    *
@@ -172,6 +181,7 @@ public interface CommonMetadataOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -196,6 +206,7 @@ public interface CommonMetadataOrBuilder
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
+
   /**
    *
    *

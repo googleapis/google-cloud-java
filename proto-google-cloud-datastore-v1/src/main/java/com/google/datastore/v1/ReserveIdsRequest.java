@@ -34,6 +34,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ReserveIdsRequest)
     ReserveIdsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReserveIdsRequest.newBuilder() to construct.
   private ReserveIdsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -178,6 +183,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
+
   /**
    *
    *
@@ -193,6 +199,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -223,6 +231,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
   public int getKeysCount() {
     return keys_.size();
   }
+
   /**
    *
    *
@@ -238,6 +247,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
+
   /**
    *
    *
@@ -433,6 +443,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -691,6 +702,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -713,6 +725,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -735,6 +748,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -773,6 +788,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -797,6 +813,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object databaseId_ = "";
+
     /**
      *
      *
@@ -822,6 +839,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -847,6 +865,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -871,6 +890,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -891,6 +911,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -950,6 +971,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return keysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -968,6 +990,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return keysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -986,6 +1009,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return keysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1010,6 +1034,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1031,6 +1056,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1055,6 +1081,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1079,6 +1106,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1100,6 +1128,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1121,6 +1150,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1172,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1163,6 +1194,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1216,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1198,6 +1231,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1216,6 +1250,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1234,6 +1269,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(keys_);
       }
     }
+
     /**
      *
      *
@@ -1248,6 +1284,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1263,6 +1300,7 @@ public final class ReserveIdsRequest extends com.google.protobuf.GeneratedMessag
       return getKeysFieldBuilder()
           .addBuilder(index, com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *

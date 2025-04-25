@@ -240,8 +240,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Callable<T> transactionCallable =
         (getOptions().getOpenTelemetryOptions().isEnabled()
             ? new TracedReadWriteTransactionCallable<T>(
-                this, callable, /*transactionOptions=*/ null, span)
-            : new ReadWriteTransactionCallable<T>(this, callable, /*transactionOptions=*/ null));
+                this, callable, /* transactionOptions= */ null, span)
+            : new ReadWriteTransactionCallable<T>(this, callable, /* transactionOptions= */ null));
     try (Scope ignored = span.makeCurrent()) {
       return RetryHelper.runWithRetries(
           transactionCallable,

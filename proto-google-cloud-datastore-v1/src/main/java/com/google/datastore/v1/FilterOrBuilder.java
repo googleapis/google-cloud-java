@@ -36,6 +36,7 @@ public interface FilterOrBuilder
    * @return Whether the compositeFilter field is set.
    */
   boolean hasCompositeFilter();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface FilterOrBuilder
    * @return The compositeFilter.
    */
   com.google.datastore.v1.CompositeFilter getCompositeFilter();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface FilterOrBuilder
    * @return Whether the propertyFilter field is set.
    */
   boolean hasPropertyFilter();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface FilterOrBuilder
    * @return The propertyFilter.
    */
   com.google.datastore.v1.PropertyFilter getPropertyFilter();
+
   /**
    *
    *

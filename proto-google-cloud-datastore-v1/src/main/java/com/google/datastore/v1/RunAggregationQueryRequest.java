@@ -34,6 +34,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     // @@protoc_insertion_point(message_implements:google.datastore.v1.RunAggregationQueryRequest)
     RunAggregationQueryRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RunAggregationQueryRequest.newBuilder() to construct.
   private RunAggregationQueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     private QueryTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -119,6 +121,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -142,6 +145,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -170,6 +174,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
+
   /**
    *
    *
@@ -196,6 +201,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       return s;
     }
   }
+
   /**
    *
    *
@@ -225,6 +231,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
 
   public static final int PARTITION_ID_FIELD_NUMBER = 2;
   private com.google.datastore.v1.PartitionId partitionId_;
+
   /**
    *
    *
@@ -243,6 +250,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   public boolean hasPartitionId() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -263,6 +271,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         ? com.google.datastore.v1.PartitionId.getDefaultInstance()
         : partitionId_;
   }
+
   /**
    *
    *
@@ -284,6 +293,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
 
   public static final int READ_OPTIONS_FIELD_NUMBER = 1;
   private com.google.datastore.v1.ReadOptions readOptions_;
+
   /**
    *
    *
@@ -299,6 +309,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   public boolean hasReadOptions() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -316,6 +327,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
         : readOptions_;
   }
+
   /**
    *
    *
@@ -333,6 +345,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   }
 
   public static final int AGGREGATION_QUERY_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -348,6 +361,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   public boolean hasAggregationQuery() {
     return queryTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -366,6 +380,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     }
     return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -384,6 +399,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   }
 
   public static final int GQL_QUERY_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -399,6 +415,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   public boolean hasGqlQuery() {
     return queryTypeCase_ == 7;
   }
+
   /**
    *
    *
@@ -417,6 +434,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     }
     return com.google.datastore.v1.GqlQuery.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -436,6 +454,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
 
   public static final int EXPLAIN_OPTIONS_FIELD_NUMBER = 11;
   private com.google.datastore.v1.ExplainOptions explainOptions_;
+
   /**
    *
    *
@@ -454,6 +473,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
   public boolean hasExplainOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -474,6 +494,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         ? com.google.datastore.v1.ExplainOptions.getDefaultInstance()
         : explainOptions_;
   }
+
   /**
    *
    *
@@ -742,6 +763,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1075,6 +1097,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -1097,6 +1120,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1119,6 +1143,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1140,6 +1165,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1157,6 +1183,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1181,6 +1208,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     }
 
     private java.lang.Object databaseId_ = "";
+
     /**
      *
      *
@@ -1206,6 +1234,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1231,6 +1260,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1255,6 +1285,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1275,6 +1306,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1307,6 +1339,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             com.google.datastore.v1.PartitionId.Builder,
             com.google.datastore.v1.PartitionIdOrBuilder>
         partitionIdBuilder_;
+
     /**
      *
      *
@@ -1324,6 +1357,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public boolean hasPartitionId() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1347,6 +1381,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return partitionIdBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1372,6 +1407,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1394,6 +1430,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1424,6 +1461,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1446,6 +1484,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1502,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return getPartitionIdFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1484,6 +1524,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             : partitionId_;
       }
     }
+
     /**
      *
      *
@@ -1519,6 +1560,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             com.google.datastore.v1.ReadOptions.Builder,
             com.google.datastore.v1.ReadOptionsOrBuilder>
         readOptionsBuilder_;
+
     /**
      *
      *
@@ -1533,6 +1575,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public boolean hasReadOptions() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1553,6 +1596,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return readOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1575,6 +1619,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1594,6 +1639,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1667,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1640,6 +1687,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1654,6 +1702,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1672,6 +1721,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             : readOptions_;
       }
     }
+
     /**
      *
      *
@@ -1703,6 +1753,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             com.google.datastore.v1.AggregationQuery.Builder,
             com.google.datastore.v1.AggregationQueryOrBuilder>
         aggregationQueryBuilder_;
+
     /**
      *
      *
@@ -1718,6 +1769,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public boolean hasAggregationQuery() {
       return queryTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1743,6 +1795,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1765,6 +1818,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1785,6 +1839,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1817,6 +1872,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1842,6 +1898,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -1854,6 +1911,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public com.google.datastore.v1.AggregationQuery.Builder getAggregationQueryBuilder() {
       return getAggregationQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1874,6 +1932,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return com.google.datastore.v1.AggregationQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1971,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             com.google.datastore.v1.GqlQuery.Builder,
             com.google.datastore.v1.GqlQueryOrBuilder>
         gqlQueryBuilder_;
+
     /**
      *
      *
@@ -1927,6 +1987,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public boolean hasGqlQuery() {
       return queryTypeCase_ == 7;
     }
+
     /**
      *
      *
@@ -1952,6 +2013,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return com.google.datastore.v1.GqlQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1974,6 +2036,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -1993,6 +2056,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2025,6 +2089,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       queryTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2115,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2062,6 +2128,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public com.google.datastore.v1.GqlQuery.Builder getGqlQueryBuilder() {
       return getGqlQueryFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2082,6 +2149,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return com.google.datastore.v1.GqlQuery.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2119,6 +2187,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             com.google.datastore.v1.ExplainOptions.Builder,
             com.google.datastore.v1.ExplainOptionsOrBuilder>
         explainOptionsBuilder_;
+
     /**
      *
      *
@@ -2136,6 +2205,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
     public boolean hasExplainOptions() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -2159,6 +2229,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
         return explainOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2184,6 +2255,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2207,6 +2279,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2237,6 +2310,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       }
       return this;
     }
+
     /**
      *
      *
@@ -2259,6 +2333,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2276,6 +2351,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
       onChanged();
       return getExplainOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2297,6 +2373,7 @@ public final class RunAggregationQueryRequest extends com.google.protobuf.Genera
             : explainOptions_;
       }
     }
+
     /**
      *
      *

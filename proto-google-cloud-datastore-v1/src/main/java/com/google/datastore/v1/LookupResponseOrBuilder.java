@@ -36,6 +36,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
   java.util.List<com.google.datastore.v1.EntityResult> getFoundList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
   com.google.datastore.v1.EntityResult getFound(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
   int getFoundCount();
+
   /**
    *
    *
@@ -72,6 +75,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
   java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> getFoundOrBuilderList();
+
   /**
    *
    *
@@ -97,6 +101,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
   java.util.List<com.google.datastore.v1.EntityResult> getMissingList();
+
   /**
    *
    *
@@ -109,6 +114,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
   com.google.datastore.v1.EntityResult getMissing(int index);
+
   /**
    *
    *
@@ -121,6 +127,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
   int getMissingCount();
+
   /**
    *
    *
@@ -133,6 +140,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
   java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> getMissingOrBuilderList();
+
   /**
    *
    *
@@ -158,6 +166,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
   java.util.List<com.google.datastore.v1.Key> getDeferredList();
+
   /**
    *
    *
@@ -170,6 +179,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
   com.google.datastore.v1.Key getDeferred(int index);
+
   /**
    *
    *
@@ -182,6 +192,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
   int getDeferredCount();
+
   /**
    *
    *
@@ -194,6 +205,7 @@ public interface LookupResponseOrBuilder
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
   java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getDeferredOrBuilderList();
+
   /**
    *
    *
@@ -238,6 +250,7 @@ public interface LookupResponseOrBuilder
    * @return Whether the readTime field is set.
    */
   boolean hasReadTime();
+
   /**
    *
    *
@@ -250,6 +263,7 @@ public interface LookupResponseOrBuilder
    * @return The readTime.
    */
   com.google.protobuf.Timestamp getReadTime();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ReadOptions)
     ReadOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadOptions.newBuilder() to construct.
   private ReadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -114,6 +115,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>READ_CONSISTENCY_UNSPECIFIED = 0;</code>
      */
     public static final int READ_CONSISTENCY_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -124,6 +126,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
      * <code>STRONG = 1;</code>
      */
     public static final int STRONG_VALUE = 1;
+
     /**
      *
      *
@@ -239,6 +242,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     private ConsistencyTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -276,6 +280,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int READ_CONSISTENCY_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -290,6 +295,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadConsistency() {
     return consistencyTypeCase_ == 1;
   }
+
   /**
    *
    *
@@ -307,6 +313,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     }
     return 0;
   }
+
   /**
    *
    *
@@ -331,6 +338,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int TRANSACTION_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -348,6 +356,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTransaction() {
     return consistencyTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -370,6 +379,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int NEW_TRANSACTION_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -391,6 +401,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasNewTransaction() {
     return consistencyTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -415,6 +426,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -439,6 +451,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -459,6 +472,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadTime() {
     return consistencyTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -482,6 +496,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -721,6 +736,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -987,6 +1003,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadConsistency() {
       return consistencyTypeCase_ == 1;
     }
+
     /**
      *
      *
@@ -1005,6 +1022,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1023,6 +1041,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1065,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.datastore.v1.ReadOptions.ReadConsistency.READ_CONSISTENCY_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1067,6 +1087,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1103,6 +1124,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTransaction() {
       return consistencyTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1122,6 +1144,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return com.google.protobuf.ByteString.EMPTY;
     }
+
     /**
      *
      *
@@ -1145,6 +1168,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1172,6 +1196,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.TransactionOptions.Builder,
             com.google.datastore.v1.TransactionOptionsOrBuilder>
         newTransactionBuilder_;
+
     /**
      *
      *
@@ -1193,6 +1218,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasNewTransaction() {
       return consistencyTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1224,6 +1250,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
         return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1252,6 +1279,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1278,6 +1306,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1317,6 +1346,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1348,6 +1378,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1366,6 +1397,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.TransactionOptions.Builder getNewTransactionBuilder() {
       return getNewTransactionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1392,6 +1424,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
         return com.google.datastore.v1.TransactionOptions.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1436,6 +1469,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         readTimeBuilder_;
+
     /**
      *
      *
@@ -1456,6 +1490,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadTime() {
       return consistencyTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1486,6 +1521,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1513,6 +1549,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1574,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1574,6 +1612,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       consistencyTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1604,6 +1643,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1621,6 +1661,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
       return getReadTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1646,6 +1687,7 @@ public final class ReadOptions extends com.google.protobuf.GeneratedMessageV3
         return com.google.protobuf.Timestamp.getDefaultInstance();
       }
     }
+
     /**
      *
      *

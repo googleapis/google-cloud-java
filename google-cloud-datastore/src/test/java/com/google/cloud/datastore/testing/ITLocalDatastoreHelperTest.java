@@ -118,8 +118,7 @@ public class ITLocalDatastoreHelperTest {
     assertLocalDatastoreHelpersEquivelent(helper, actualHelper);
     Path dataDir = Files.createTempDirectory("gcd_data_dir");
     actualHelper =
-        helper
-            .toBuilder()
+        helper.toBuilder()
             .setConsistency(0.85)
             .setPort(9091)
             .setStoreOnDisk(true)

@@ -37,6 +37,7 @@ public interface MutationOrBuilder
    * @return Whether the insert field is set.
    */
   boolean hasInsert();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MutationOrBuilder
    * @return The insert.
    */
   com.google.datastore.v1.Entity getInsert();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface MutationOrBuilder
    * @return Whether the update field is set.
    */
   boolean hasUpdate();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface MutationOrBuilder
    * @return The update.
    */
   com.google.datastore.v1.Entity getUpdate();
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public interface MutationOrBuilder
    * @return Whether the upsert field is set.
    */
   boolean hasUpsert();
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public interface MutationOrBuilder
    * @return The upsert.
    */
   com.google.datastore.v1.Entity getUpsert();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface MutationOrBuilder
    * @return Whether the delete field is set.
    */
   boolean hasDelete();
+
   /**
    *
    *
@@ -164,6 +171,7 @@ public interface MutationOrBuilder
    * @return The delete.
    */
   com.google.datastore.v1.Key getDelete();
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public interface MutationOrBuilder
    * @return Whether the baseVersion field is set.
    */
   boolean hasBaseVersion();
+
   /**
    *
    *
@@ -219,6 +228,7 @@ public interface MutationOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -233,6 +243,7 @@ public interface MutationOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -262,6 +273,7 @@ public interface MutationOrBuilder
    * @return The enum numeric value on the wire for conflictResolutionStrategy.
    */
   int getConflictResolutionStrategyValue();
+
   /**
    *
    *
@@ -298,6 +310,7 @@ public interface MutationOrBuilder
    * @return Whether the propertyMask field is set.
    */
   boolean hasPropertyMask();
+
   /**
    *
    *
@@ -317,6 +330,7 @@ public interface MutationOrBuilder
    * @return The propertyMask.
    */
   com.google.datastore.v1.PropertyMask getPropertyMask();
+
   /**
    *
    *
@@ -351,6 +365,7 @@ public interface MutationOrBuilder
    * </code>
    */
   java.util.List<com.google.datastore.v1.PropertyTransform> getPropertyTransformsList();
+
   /**
    *
    *
@@ -367,6 +382,7 @@ public interface MutationOrBuilder
    * </code>
    */
   com.google.datastore.v1.PropertyTransform getPropertyTransforms(int index);
+
   /**
    *
    *
@@ -383,6 +399,7 @@ public interface MutationOrBuilder
    * </code>
    */
   int getPropertyTransformsCount();
+
   /**
    *
    *
@@ -400,6 +417,7 @@ public interface MutationOrBuilder
    */
   java.util.List<? extends com.google.datastore.v1.PropertyTransformOrBuilder>
       getPropertyTransformsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.LookupRequest)
     LookupRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use LookupRequest.newBuilder() to construct.
   private LookupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object databaseId_ = "";
+
   /**
    *
    *
@@ -147,6 +151,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -176,6 +181,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_OPTIONS_FIELD_NUMBER = 1;
   private com.google.datastore.v1.ReadOptions readOptions_;
+
   /**
    *
    *
@@ -191,6 +197,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadOptions() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -208,6 +215,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.datastore.v1.ReadOptions.getDefaultInstance()
         : readOptions_;
   }
+
   /**
    *
    *
@@ -228,6 +236,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
+
   /**
    *
    *
@@ -242,6 +251,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -256,6 +266,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -270,6 +281,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public int getKeysCount() {
     return keys_.size();
   }
+
   /**
    *
    *
@@ -284,6 +296,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
+
   /**
    *
    *
@@ -301,6 +314,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
 
   public static final int PROPERTY_MASK_FIELD_NUMBER = 5;
   private com.google.datastore.v1.PropertyMask propertyMask_;
+
   /**
    *
    *
@@ -321,6 +335,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
   public boolean hasPropertyMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -343,6 +358,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         ? com.google.datastore.v1.PropertyMask.getDefaultInstance()
         : propertyMask_;
   }
+
   /**
    *
    *
@@ -569,6 +585,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -877,6 +894,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -899,6 +917,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -921,6 +940,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -942,6 +962,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -959,6 +980,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -983,6 +1005,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object databaseId_ = "";
+
     /**
      *
      *
@@ -1008,6 +1031,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1033,6 +1057,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1057,6 +1082,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1109,6 +1136,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.ReadOptions.Builder,
             com.google.datastore.v1.ReadOptionsOrBuilder>
         readOptionsBuilder_;
+
     /**
      *
      *
@@ -1123,6 +1151,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadOptions() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1143,6 +1172,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return readOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1165,6 +1195,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1215,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1211,6 +1243,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1230,6 +1263,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1244,6 +1278,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1262,6 +1297,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             : readOptions_;
       }
     }
+
     /**
      *
      *
@@ -1320,6 +1356,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return keysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1337,6 +1374,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return keysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1354,6 +1392,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return keysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1377,6 +1416,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1397,6 +1437,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1420,6 +1461,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1443,6 +1485,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1463,6 +1506,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1483,6 +1527,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1548,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1523,6 +1569,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1543,6 +1590,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1556,6 +1604,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1573,6 +1622,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1590,6 +1640,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(keys_);
       }
     }
+
     /**
      *
      *
@@ -1603,6 +1654,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1617,6 +1669,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       return getKeysFieldBuilder()
           .addBuilder(index, com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1654,6 +1707,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.datastore.v1.PropertyMask.Builder,
             com.google.datastore.v1.PropertyMaskOrBuilder>
         propertyMaskBuilder_;
+
     /**
      *
      *
@@ -1673,6 +1727,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
     public boolean hasPropertyMask() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1698,6 +1753,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
         return propertyMaskBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1725,6 +1781,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1806,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1781,6 +1839,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1805,6 +1864,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1884,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getPropertyMaskFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1847,6 +1908,7 @@ public final class LookupRequest extends com.google.protobuf.GeneratedMessageV3
             : propertyMask_;
       }
     }
+
     /**
      *
      *

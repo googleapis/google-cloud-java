@@ -36,6 +36,7 @@ public interface CompositeFilterOrBuilder
    * @return The enum numeric value on the wire for op.
    */
   int getOpValue();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface CompositeFilterOrBuilder
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
   java.util.List<com.google.datastore.v1.Filter> getFiltersList();
+
   /**
    *
    *
@@ -77,6 +79,7 @@ public interface CompositeFilterOrBuilder
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
   com.google.datastore.v1.Filter getFilters(int index);
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface CompositeFilterOrBuilder
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
   int getFiltersCount();
+
   /**
    *
    *
@@ -105,6 +109,7 @@ public interface CompositeFilterOrBuilder
    * <code>repeated .google.datastore.v1.Filter filters = 2;</code>
    */
   java.util.List<? extends com.google.datastore.v1.FilterOrBuilder> getFiltersOrBuilderList();
+
   /**
    *
    *

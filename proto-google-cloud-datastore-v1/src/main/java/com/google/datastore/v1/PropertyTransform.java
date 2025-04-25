@@ -33,6 +33,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.datastore.v1.PropertyTransform)
     PropertyTransformOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use PropertyTransform.newBuilder() to construct.
   private PropertyTransform(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -108,6 +109,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
      * <code>SERVER_VALUE_UNSPECIFIED = 0;</code>
      */
     public static final int SERVER_VALUE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -223,6 +225,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     private TransformTypeCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -267,6 +270,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object property_ = "";
+
   /**
    *
    *
@@ -297,6 +301,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -329,6 +334,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int SET_TO_SERVER_VALUE_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -343,6 +349,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasSetToServerValue() {
     return transformTypeCase_ == 2;
   }
+
   /**
    *
    *
@@ -360,6 +367,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return 0;
   }
+
   /**
    *
    *
@@ -384,6 +392,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int INCREMENT_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -408,6 +417,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasIncrement() {
     return transformTypeCase_ == 3;
   }
+
   /**
    *
    *
@@ -435,6 +445,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return com.google.datastore.v1.Value.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -462,6 +473,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MAXIMUM_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -489,6 +501,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasMaximum() {
     return transformTypeCase_ == 4;
   }
+
   /**
    *
    *
@@ -519,6 +532,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return com.google.datastore.v1.Value.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -549,6 +563,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int MINIMUM_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -576,6 +591,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasMinimum() {
     return transformTypeCase_ == 5;
   }
+
   /**
    *
    *
@@ -606,6 +622,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return com.google.datastore.v1.Value.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -636,6 +653,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int APPEND_MISSING_ELEMENTS_FIELD_NUMBER = 6;
+
   /**
    *
    *
@@ -662,6 +680,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasAppendMissingElements() {
     return transformTypeCase_ == 6;
   }
+
   /**
    *
    *
@@ -691,6 +710,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return com.google.datastore.v1.ArrayValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -720,6 +740,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int REMOVE_ALL_FROM_ARRAY_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -744,6 +765,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
   public boolean hasRemoveAllFromArray() {
     return transformTypeCase_ == 7;
   }
+
   /**
    *
    *
@@ -771,6 +793,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     }
     return com.google.datastore.v1.ArrayValue.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1055,6 +1078,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1365,6 +1389,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object property_ = "";
+
     /**
      *
      *
@@ -1394,6 +1419,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1449,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1451,6 +1478,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1475,6 +1503,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1520,6 +1549,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasSetToServerValue() {
       return transformTypeCase_ == 2;
     }
+
     /**
      *
      *
@@ -1538,6 +1568,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return 0;
     }
+
     /**
      *
      *
@@ -1556,6 +1587,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1579,6 +1611,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return com.google.datastore.v1.PropertyTransform.ServerValue.SERVER_VALUE_UNSPECIFIED;
     }
+
     /**
      *
      *
@@ -1601,6 +1634,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1626,6 +1660,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
             com.google.datastore.v1.Value.Builder,
             com.google.datastore.v1.ValueOrBuilder>
         incrementBuilder_;
+
     /**
      *
      *
@@ -1650,6 +1685,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasIncrement() {
       return transformTypeCase_ == 3;
     }
+
     /**
      *
      *
@@ -1684,6 +1720,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1715,6 +1752,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1743,6 +1781,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1784,6 +1823,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1818,6 +1858,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1839,6 +1880,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.Value.Builder getIncrementBuilder() {
       return getIncrementFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1868,6 +1910,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1913,6 +1956,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
             com.google.datastore.v1.Value.Builder,
             com.google.datastore.v1.ValueOrBuilder>
         maximumBuilder_;
+
     /**
      *
      *
@@ -1940,6 +1984,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasMaximum() {
       return transformTypeCase_ == 4;
     }
+
     /**
      *
      *
@@ -1977,6 +2022,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2011,6 +2057,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2042,6 +2089,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2086,6 +2134,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2123,6 +2172,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2147,6 +2197,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.Value.Builder getMaximumBuilder() {
       return getMaximumFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2179,6 +2230,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2227,6 +2279,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
             com.google.datastore.v1.Value.Builder,
             com.google.datastore.v1.ValueOrBuilder>
         minimumBuilder_;
+
     /**
      *
      *
@@ -2254,6 +2307,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasMinimum() {
       return transformTypeCase_ == 5;
     }
+
     /**
      *
      *
@@ -2291,6 +2345,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2325,6 +2380,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2356,6 +2412,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2400,6 +2457,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -2437,6 +2495,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2461,6 +2520,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.Value.Builder getMinimumBuilder() {
       return getMinimumFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2493,6 +2553,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.Value.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2541,6 +2602,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
             com.google.datastore.v1.ArrayValue.Builder,
             com.google.datastore.v1.ArrayValueOrBuilder>
         appendMissingElementsBuilder_;
+
     /**
      *
      *
@@ -2567,6 +2629,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasAppendMissingElements() {
       return transformTypeCase_ == 6;
     }
+
     /**
      *
      *
@@ -2603,6 +2666,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2636,6 +2700,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2667,6 +2732,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2710,6 +2776,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 6;
       return this;
     }
+
     /**
      *
      *
@@ -2746,6 +2813,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2769,6 +2837,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.ArrayValue.Builder getAppendMissingElementsBuilder() {
       return getAppendMissingElementsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2800,6 +2869,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2849,6 +2919,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
             com.google.datastore.v1.ArrayValue.Builder,
             com.google.datastore.v1.ArrayValueOrBuilder>
         removeAllFromArrayBuilder_;
+
     /**
      *
      *
@@ -2873,6 +2944,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public boolean hasRemoveAllFromArray() {
       return transformTypeCase_ == 7;
     }
+
     /**
      *
      *
@@ -2907,6 +2979,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2938,6 +3011,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2967,6 +3041,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3008,6 +3083,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       transformTypeCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -3042,6 +3118,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -3063,6 +3140,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
     public com.google.datastore.v1.ArrayValue.Builder getRemoveAllFromArrayBuilder() {
       return getRemoveAllFromArrayFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3092,6 +3170,7 @@ public final class PropertyTransform extends com.google.protobuf.GeneratedMessag
         return com.google.datastore.v1.ArrayValue.getDefaultInstance();
       }
     }
+
     /**
      *
      *

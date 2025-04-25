@@ -41,6 +41,7 @@ public interface EntityOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
+
   /**
    *
    *
@@ -58,6 +59,7 @@ public interface EntityOrBuilder
    * @return The key.
    */
   com.google.datastore.v1.Key getKey();
+
   /**
    *
    *
@@ -89,6 +91,7 @@ public interface EntityOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
   int getPropertiesCount();
+
   /**
    *
    *
@@ -104,9 +107,11 @@ public interface EntityOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
   boolean containsProperties(java.lang.String key);
+
   /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, com.google.datastore.v1.Value> getProperties();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface EntityOrBuilder
    * <code>map&lt;string, .google.datastore.v1.Value&gt; properties = 3;</code>
    */
   java.util.Map<java.lang.String, com.google.datastore.v1.Value> getPropertiesMap();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface EntityOrBuilder
       java.lang.String key,
       /* nullable */
       com.google.datastore.v1.Value defaultValue);
+
   /**
    *
    *

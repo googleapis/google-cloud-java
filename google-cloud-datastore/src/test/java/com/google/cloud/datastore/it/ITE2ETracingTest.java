@@ -201,7 +201,7 @@ public class ITE2ETracingTest {
             if (dfsContainsCallStack(
                 childSpan,
                 expectedCallStack.subList(
-                    /*fromIndexInclusive=*/ 1, /*toIndexExclusive*/ callStackListSize))) {
+                    /* fromIndexInclusive= */ 1, /*toIndexExclusive*/ callStackListSize))) {
               return true;
             }
           }
@@ -808,7 +808,7 @@ public class ITE2ETracingTest {
 
     fetchAndValidateTrace(
         customSpanContext.getTraceId(),
-        /*numExpectedSpans=*/ 3,
+        /* numExpectedSpans= */ 3,
         Arrays.asList(
             Collections.singletonList(SPAN_NAME_BEGIN_TRANSACTION),
             Collections.singletonList(SPAN_NAME_TRANSACTION_LOOKUP),
@@ -848,7 +848,7 @@ public class ITE2ETracingTest {
 
     fetchAndValidateTrace(
         customSpanContext.getTraceId(),
-        /*numExpectedSpans=*/ 3,
+        /* numExpectedSpans= */ 3,
         Arrays.asList(
             Collections.singletonList(SPAN_NAME_BEGIN_TRANSACTION),
             Collections.singletonList(SPAN_NAME_TRANSACTION_RUN_QUERY),
@@ -903,7 +903,7 @@ public class ITE2ETracingTest {
 
     fetchAndValidateTrace(
         customSpanContext.getTraceId(),
-        /*numExpectedSpans=*/ 3,
+        /* numExpectedSpans= */ 3,
         Arrays.asList(
             Collections.singletonList(SPAN_NAME_BEGIN_TRANSACTION),
             Collections.singletonList(SPAN_NAME_TRANSACTION_LOOKUP),
@@ -958,7 +958,7 @@ public class ITE2ETracingTest {
 
     fetchAndValidateTrace(
         customSpanContext.getTraceId(),
-        /*numExpectedSpans=*/ 3,
+        /* numExpectedSpans= */ 3,
         Arrays.asList(
             Collections.singletonList(SPAN_NAME_BEGIN_TRANSACTION),
             Collections.singletonList(SPAN_NAME_TRANSACTION_LOOKUP),
@@ -1000,7 +1000,7 @@ public class ITE2ETracingTest {
 
     fetchAndValidateTrace(
         customSpanContext.getTraceId(),
-        /*numExpectedSpans=*/ 4,
+        /* numExpectedSpans= */ 4,
         Arrays.asList(
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_BEGIN_TRANSACTION),
             Arrays.asList(SPAN_NAME_TRANSACTION_RUN, SPAN_NAME_RUN_QUERY),

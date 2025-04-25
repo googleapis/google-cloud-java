@@ -34,6 +34,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.datastore.admin.v1.ImportEntitiesRequest)
     ImportEntitiesRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ImportEntitiesRequest.newBuilder() to construct.
   private ImportEntitiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object projectId_ = "";
+
   /**
    *
    *
@@ -105,6 +107,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -155,6 +158,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
   public int getLabelsCount() {
     return internalGetLabels().getMap().size();
   }
+
   /**
    *
    *
@@ -171,12 +175,14 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     }
     return internalGetLabels().getMap().containsKey(key);
   }
+
   /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
+
   /**
    *
    *
@@ -190,6 +196,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
+
   /**
    *
    *
@@ -210,6 +217,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -235,6 +243,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputUrl_ = "";
+
   /**
    *
    *
@@ -271,6 +280,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -310,6 +320,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
 
   public static final int ENTITY_FILTER_FIELD_NUMBER = 4;
   private com.google.datastore.admin.v1.EntityFilter entityFilter_;
+
   /**
    *
    *
@@ -328,6 +339,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
   public boolean hasEntityFilter() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -348,6 +360,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         ? com.google.datastore.admin.v1.EntityFilter.getDefaultInstance()
         : entityFilter_;
   }
+
   /**
    *
    *
@@ -566,6 +579,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -837,6 +851,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -859,6 +874,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -881,6 +897,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -902,6 +919,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -919,6 +937,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -967,6 +986,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     public int getLabelsCount() {
       return internalGetLabels().getMap().size();
     }
+
     /**
      *
      *
@@ -983,12 +1003,14 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       }
       return internalGetLabels().getMap().containsKey(key);
     }
+
     /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
+
     /**
      *
      *
@@ -1002,6 +1024,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
+
     /**
      *
      *
@@ -1022,6 +1045,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1048,6 +1072,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1064,12 +1089,14 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       bitField0_ |= 0x00000002;
       return internalGetMutableLabels().getMutableMap();
     }
+
     /**
      *
      *
@@ -1090,6 +1117,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       bitField0_ |= 0x00000002;
       return this;
     }
+
     /**
      *
      *
@@ -1106,6 +1134,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     }
 
     private java.lang.Object inputUrl_ = "";
+
     /**
      *
      *
@@ -1141,6 +1170,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1206,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1210,6 +1241,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1240,6 +1272,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1282,6 +1315,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
             com.google.datastore.admin.v1.EntityFilter.Builder,
             com.google.datastore.admin.v1.EntityFilterOrBuilder>
         entityFilterBuilder_;
+
     /**
      *
      *
@@ -1299,6 +1333,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
     public boolean hasEntityFilter() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1322,6 +1357,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
         return entityFilterBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1347,6 +1383,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1370,6 +1407,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1400,6 +1438,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       }
       return this;
     }
+
     /**
      *
      *
@@ -1422,6 +1461,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1439,6 +1479,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return getEntityFilterFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1460,6 +1501,7 @@ public final class ImportEntitiesRequest extends com.google.protobuf.GeneratedMe
             : entityFilter_;
       }
     }
+
     /**
      *
      *

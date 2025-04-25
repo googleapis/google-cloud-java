@@ -36,6 +36,7 @@ public interface ProjectionOrBuilder
    * @return Whether the property field is set.
    */
   boolean hasProperty();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ProjectionOrBuilder
    * @return The property.
    */
   com.google.datastore.v1.PropertyReference getProperty();
+
   /**
    *
    *

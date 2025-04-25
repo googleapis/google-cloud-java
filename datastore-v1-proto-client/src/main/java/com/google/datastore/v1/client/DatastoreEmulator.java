@@ -262,6 +262,7 @@ public class DatastoreEmulator extends Datastore {
   static class StartupMonitor extends Thread {
     private final InputStream inputStream;
     private volatile boolean success = false;
+
     /** This latch will reach 0 once server startup has completed. */
     private final CountDownLatch startupCompleteLatch = new CountDownLatch(1);
 

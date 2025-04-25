@@ -36,6 +36,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return Whether the common field is set.
    */
   boolean hasCommon();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return The common.
    */
   com.google.datastore.admin.v1.CommonMetadata getCommon();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return Whether the progressEntities field is set.
    */
   boolean hasProgressEntities();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return The progressEntities.
    */
   com.google.datastore.admin.v1.Progress getProgressEntities();
+
   /**
    *
    *
@@ -106,6 +110,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return Whether the progressBytes field is set.
    */
   boolean hasProgressBytes();
+
   /**
    *
    *
@@ -118,6 +123,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return The progressBytes.
    */
   com.google.datastore.admin.v1.Progress getProgressBytes();
+
   /**
    *
    *
@@ -141,6 +147,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return Whether the entityFilter field is set.
    */
   boolean hasEntityFilter();
+
   /**
    *
    *
@@ -153,6 +160,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return The entityFilter.
    */
   com.google.datastore.admin.v1.EntityFilter getEntityFilter();
+
   /**
    *
    *
@@ -180,6 +188,7 @@ public interface ExportEntitiesMetadataOrBuilder
    * @return The outputUrlPrefix.
    */
   java.lang.String getOutputUrlPrefix();
+
   /**
    *
    *

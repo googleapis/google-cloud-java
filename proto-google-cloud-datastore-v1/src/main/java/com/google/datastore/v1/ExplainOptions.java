@@ -33,6 +33,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ExplainOptions)
     ExplainOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ExplainOptions.newBuilder() to construct.
   private ExplainOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ANALYZE_FIELD_NUMBER = 1;
   private boolean analyze_ = false;
+
   /**
    *
    *
@@ -243,6 +245,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -424,6 +427,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private boolean analyze_;
+
     /**
      *
      *
@@ -445,6 +449,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
     public boolean getAnalyze() {
       return analyze_;
     }
+
     /**
      *
      *
@@ -470,6 +475,7 @@ public final class ExplainOptions extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

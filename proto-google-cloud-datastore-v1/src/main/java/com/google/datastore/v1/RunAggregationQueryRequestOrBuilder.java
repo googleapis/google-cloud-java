@@ -36,6 +36,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The projectId.
    */
   java.lang.String getProjectId();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The databaseId.
    */
   java.lang.String getDatabaseId();
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the partitionId field is set.
    */
   boolean hasPartitionId();
+
   /**
    *
    *
@@ -110,6 +113,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The partitionId.
    */
   com.google.datastore.v1.PartitionId getPartitionId();
+
   /**
    *
    *
@@ -136,6 +140,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the readOptions field is set.
    */
   boolean hasReadOptions();
+
   /**
    *
    *
@@ -148,6 +153,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The readOptions.
    */
   com.google.datastore.v1.ReadOptions getReadOptions();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the aggregationQuery field is set.
    */
   boolean hasAggregationQuery();
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The aggregationQuery.
    */
   com.google.datastore.v1.AggregationQuery getAggregationQuery();
+
   /**
    *
    *
@@ -206,6 +214,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the gqlQuery field is set.
    */
   boolean hasGqlQuery();
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The gqlQuery.
    */
   com.google.datastore.v1.GqlQuery getGqlQuery();
+
   /**
    *
    *
@@ -244,6 +254,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return Whether the explainOptions field is set.
    */
   boolean hasExplainOptions();
+
   /**
    *
    *
@@ -259,6 +270,7 @@ public interface RunAggregationQueryRequestOrBuilder
    * @return The explainOptions.
    */
   com.google.datastore.v1.ExplainOptions getExplainOptions();
+
   /**
    *
    *

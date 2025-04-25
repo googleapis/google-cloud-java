@@ -36,6 +36,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the batch field is set.
    */
   boolean hasBatch();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface RunQueryResponseOrBuilder
    * @return The batch.
    */
   com.google.datastore.v1.QueryResultBatch getBatch();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the query field is set.
    */
   boolean hasQuery();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface RunQueryResponseOrBuilder
    * @return The query.
    */
   com.google.datastore.v1.Query getQuery();
+
   /**
    *
    *
@@ -127,6 +131,7 @@ public interface RunQueryResponseOrBuilder
    * @return Whether the explainMetrics field is set.
    */
   boolean hasExplainMetrics();
+
   /**
    *
    *
@@ -141,6 +146,7 @@ public interface RunQueryResponseOrBuilder
    * @return The explainMetrics.
    */
   com.google.datastore.v1.ExplainMetrics getExplainMetrics();
+
   /**
    *
    *

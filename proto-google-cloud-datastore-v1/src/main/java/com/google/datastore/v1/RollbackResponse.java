@@ -35,6 +35,7 @@ public final class RollbackResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.datastore.v1.RollbackResponse)
     RollbackResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use RollbackResponse.newBuilder() to construct.
   private RollbackResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class RollbackResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

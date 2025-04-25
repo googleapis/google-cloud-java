@@ -37,6 +37,7 @@ public interface MutationResultOrBuilder
    * @return Whether the key field is set.
    */
   boolean hasKey();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface MutationResultOrBuilder
    * @return The key.
    */
   com.google.datastore.v1.Key getKey();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface MutationResultOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -103,6 +106,7 @@ public interface MutationResultOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface MutationResultOrBuilder
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
+
   /**
    *
    *
@@ -144,6 +149,7 @@ public interface MutationResultOrBuilder
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface MutationResultOrBuilder
    * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
    */
   java.util.List<com.google.datastore.v1.Value> getTransformResultsList();
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public interface MutationResultOrBuilder
    * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
    */
   com.google.datastore.v1.Value getTransformResults(int index);
+
   /**
    *
    *
@@ -208,6 +216,7 @@ public interface MutationResultOrBuilder
    * <code>repeated .google.datastore.v1.Value transform_results = 8;</code>
    */
   int getTransformResultsCount();
+
   /**
    *
    *
@@ -221,6 +230,7 @@ public interface MutationResultOrBuilder
    */
   java.util.List<? extends com.google.datastore.v1.ValueOrBuilder>
       getTransformResultsOrBuilderList();
+
   /**
    *
    *

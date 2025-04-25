@@ -123,6 +123,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>MIGRATION_STEP_UNSPECIFIED = 0;</code>
    */
   public static final int MIGRATION_STEP_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -133,6 +134,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PREPARE = 6;</code>
    */
   public static final int PREPARE_VALUE = 6;
+
   /**
    *
    *
@@ -143,6 +145,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>START = 1;</code>
    */
   public static final int START_VALUE = 1;
+
   /**
    *
    *
@@ -153,6 +156,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>APPLY_WRITES_SYNCHRONOUSLY = 7;</code>
    */
   public static final int APPLY_WRITES_SYNCHRONOUSLY_VALUE = 7;
+
   /**
    *
    *
@@ -164,6 +168,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>COPY_AND_VERIFY = 2;</code>
    */
   public static final int COPY_AND_VERIFY_VALUE = 2;
+
   /**
    *
    *
@@ -174,6 +179,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIRECT_EVENTUALLY_CONSISTENT_READS = 3;</code>
    */
   public static final int REDIRECT_EVENTUALLY_CONSISTENT_READS_VALUE = 3;
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public enum MigrationStep implements com.google.protobuf.ProtocolMessageEnum {
    * <code>REDIRECT_STRONGLY_CONSISTENT_READS = 4;</code>
    */
   public static final int REDIRECT_STRONGLY_CONSISTENT_READS_VALUE = 4;
+
   /**
    *
    *

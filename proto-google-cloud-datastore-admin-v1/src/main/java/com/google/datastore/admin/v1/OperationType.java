@@ -92,6 +92,7 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>OPERATION_TYPE_UNSPECIFIED = 0;</code>
    */
   public static final int OPERATION_TYPE_UNSPECIFIED_VALUE = 0;
+
   /**
    *
    *
@@ -102,6 +103,7 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>EXPORT_ENTITIES = 1;</code>
    */
   public static final int EXPORT_ENTITIES_VALUE = 1;
+
   /**
    *
    *
@@ -112,6 +114,7 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>IMPORT_ENTITIES = 2;</code>
    */
   public static final int IMPORT_ENTITIES_VALUE = 2;
+
   /**
    *
    *
@@ -122,6 +125,7 @@ public enum OperationType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>CREATE_INDEX = 3;</code>
    */
   public static final int CREATE_INDEX_VALUE = 3;
+
   /**
    *
    *

@@ -34,6 +34,7 @@ public final class ReserveIdsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.datastore.v1.ReserveIdsResponse)
     ReserveIdsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReserveIdsResponse.newBuilder() to construct.
   private ReserveIdsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -212,6 +213,7 @@ public final class ReserveIdsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *

@@ -28,12 +28,16 @@ public class DatastoreException extends Exception {
     this.code = code;
   }
 
-  /** @return the canonical error code */
+  /**
+   * @return the canonical error code
+   */
   public Code getCode() {
     return code;
   }
 
-  /** @return the datastore method name */
+  /**
+   * @return the datastore method name
+   */
   public String getMethodName() {
     return methodName;
   }

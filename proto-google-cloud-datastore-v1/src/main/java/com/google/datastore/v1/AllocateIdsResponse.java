@@ -34,6 +34,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(message_implements:google.datastore.v1.AllocateIdsResponse)
     AllocateIdsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AllocateIdsResponse.newBuilder() to construct.
   private AllocateIdsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.datastore.v1.Key> keys_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<com.google.datastore.v1.Key> getKeysList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
   public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
+
   /**
    *
    *
@@ -110,6 +114,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
   public int getKeysCount() {
     return keys_.size();
   }
+
   /**
    *
    *
@@ -124,6 +129,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
   public com.google.datastore.v1.Key getKeys(int index) {
     return keys_.get(index);
   }
+
   /**
    *
    *
@@ -300,6 +306,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -559,6 +566,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
         return keysBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -576,6 +584,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
         return keysBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -593,6 +602,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
         return keysBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -616,6 +626,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -636,6 +647,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -659,6 +671,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -682,6 +695,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -702,6 +716,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +737,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +758,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -762,6 +779,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +800,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       }
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +814,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     public com.google.datastore.v1.Key.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -812,6 +832,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -829,6 +850,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
         return java.util.Collections.unmodifiableList(keys_);
       }
     }
+
     /**
      *
      *
@@ -842,6 +864,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
     public com.google.datastore.v1.Key.Builder addKeysBuilder() {
       return getKeysFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -856,6 +879,7 @@ public final class AllocateIdsResponse extends com.google.protobuf.GeneratedMess
       return getKeysFieldBuilder()
           .addBuilder(index, com.google.datastore.v1.Key.getDefaultInstance());
     }
+
     /**
      *
      *

@@ -51,6 +51,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.datastore.admin.v1.EntityFilter)
     EntityFilterOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use EntityFilter.newBuilder() to construct.
   private EntityFilter(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -87,6 +88,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList kinds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getKindsList() {
     return kinds_;
   }
+
   /**
    *
    *
@@ -115,6 +118,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public int getKindsCount() {
     return kinds_.size();
   }
+
   /**
    *
    *
@@ -130,6 +134,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getKinds(int index) {
     return kinds_.get(index);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList namespaceIds_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -171,6 +177,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.ProtocolStringList getNamespaceIdsList() {
     return namespaceIds_;
   }
+
   /**
    *
    *
@@ -191,6 +198,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public int getNamespaceIdsCount() {
     return namespaceIds_.size();
   }
+
   /**
    *
    *
@@ -212,6 +220,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
   public java.lang.String getNamespaceIds(int index) {
     return namespaceIds_.get(index);
   }
+
   /**
    *
    *
@@ -416,6 +425,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -654,6 +664,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -669,6 +680,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       kinds_.makeImmutable();
       return kinds_;
     }
+
     /**
      *
      *
@@ -683,6 +695,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public int getKindsCount() {
       return kinds_.size();
     }
+
     /**
      *
      *
@@ -698,6 +711,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getKinds(int index) {
       return kinds_.get(index);
     }
+
     /**
      *
      *
@@ -713,6 +727,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getKindsBytes(int index) {
       return kinds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -736,6 +751,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -758,6 +774,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -777,6 +794,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -795,6 +813,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +847,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -849,6 +869,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       namespaceIds_.makeImmutable();
       return namespaceIds_;
     }
+
     /**
      *
      *
@@ -869,6 +890,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public int getNamespaceIdsCount() {
       return namespaceIds_.size();
     }
+
     /**
      *
      *
@@ -890,6 +912,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getNamespaceIds(int index) {
       return namespaceIds_.get(index);
     }
+
     /**
      *
      *
@@ -911,6 +934,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getNamespaceIdsBytes(int index) {
       return namespaceIds_.getByteString(index);
     }
+
     /**
      *
      *
@@ -940,6 +964,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -968,6 +993,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -993,6 +1019,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1044,7 @@ public final class EntityFilter extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -42,6 +42,7 @@ public class TaskList {
 
   // Create a Key factory to construct keys associated with this project.
   private final KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+
   // [END datastore_build_service]
 
   // [START datastore_add_entity]
@@ -65,6 +66,7 @@ public class TaskList {
     datastore.put(task);
     return key;
   }
+
   // [END datastore_add_entity]
 
   // [START datastore_update_entity]
@@ -90,6 +92,7 @@ public class TaskList {
       }
     }
   }
+
   // [END datastore_update_entity]
 
   // [START datastore_retrieve_entities]
@@ -103,6 +106,7 @@ public class TaskList {
         Query.newEntityQueryBuilder().setKind("Task").setOrderBy(OrderBy.asc("created")).build();
     return datastore.run(query);
   }
+
   // [END datastore_retrieve_entities]
 
   // [START datastore_delete_entity]
@@ -115,6 +119,7 @@ public class TaskList {
   void deleteTask(long id) {
     datastore.delete(keyFactory.newKey(id));
   }
+
   // [END datastore_delete_entity]
 
   /**
