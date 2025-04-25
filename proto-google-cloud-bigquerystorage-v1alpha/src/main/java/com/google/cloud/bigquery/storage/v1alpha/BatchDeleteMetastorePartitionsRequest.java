@@ -36,6 +36,7 @@ public final class BatchDeleteMetastorePartitionsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.BatchDeleteMetastorePartitionsRequest)
     BatchDeleteMetastorePartitionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchDeleteMetastorePartitionsRequest.newBuilder() to construct.
   private BatchDeleteMetastorePartitionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,6 +75,7 @@ public final class BatchDeleteMetastorePartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -101,6 +103,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -134,6 +137,7 @@ public final class BatchDeleteMetastorePartitionsRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues>
       partitionValues_;
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       getPartitionValuesList() {
     return partitionValues_;
   }
+
   /**
    *
    *
@@ -169,6 +174,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       getPartitionValuesOrBuilderList() {
     return partitionValues_;
   }
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public final class BatchDeleteMetastorePartitionsRequest
   public int getPartitionValuesCount() {
     return partitionValues_.size();
   }
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       int index) {
     return partitionValues_.get(index);
   }
+
   /**
    *
    *
@@ -224,6 +232,7 @@ public final class BatchDeleteMetastorePartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceId_ = "";
+
   /**
    *
    *
@@ -251,6 +260,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -467,6 +477,7 @@ public final class BatchDeleteMetastorePartitionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -744,6 +755,7 @@ public final class BatchDeleteMetastorePartitionsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -770,6 +782,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -796,6 +809,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -821,6 +835,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -842,6 +857,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -908,6 +924,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return partitionValuesBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -927,6 +944,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return partitionValuesBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -947,6 +965,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return partitionValuesBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -973,6 +992,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -998,6 +1018,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1024,6 +1045,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1050,6 +1072,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1074,6 +1097,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1099,6 +1123,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1124,6 +1149,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1146,6 +1172,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1195,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1184,6 +1212,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         getPartitionValuesBuilder(int index) {
       return getPartitionValuesFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1204,6 +1233,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return partitionValuesBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1255,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return java.util.Collections.unmodifiableList(partitionValues_);
       }
     }
+
     /**
      *
      *
@@ -1244,6 +1275,7 @@ public final class BatchDeleteMetastorePartitionsRequest
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1264,6 +1296,7 @@ public final class BatchDeleteMetastorePartitionsRequest
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1303,6 +1336,7 @@ public final class BatchDeleteMetastorePartitionsRequest
     }
 
     private java.lang.Object traceId_ = "";
+
     /**
      *
      *
@@ -1329,6 +1363,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1355,6 +1390,7 @@ public final class BatchDeleteMetastorePartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1380,6 +1416,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1401,6 +1438,7 @@ public final class BatchDeleteMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

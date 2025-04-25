@@ -38,6 +38,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The enum numeric value on the wire for mode.
    */
   int getModeValue();
+
   /**
    *
    *
@@ -124,6 +127,7 @@ public interface TableFieldSchemaOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1.TableFieldSchema> getFieldsList();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface TableFieldSchemaOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1.TableFieldSchema getFields(int index);
+
   /**
    *
    *
@@ -150,6 +155,7 @@ public interface TableFieldSchemaOrBuilder
    * </code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -164,6 +170,7 @@ public interface TableFieldSchemaOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1.TableFieldSchemaOrBuilder>
       getFieldsOrBuilderList();
+
   /**
    *
    *
@@ -190,6 +197,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The description.
    */
   java.lang.String getDescription();
+
   /**
    *
    *
@@ -297,6 +305,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The defaultValueExpression.
    */
   java.lang.String getDefaultValueExpression();
+
   /**
    *
    *
@@ -330,6 +339,7 @@ public interface TableFieldSchemaOrBuilder
    * @return Whether the rangeElementType field is set.
    */
   boolean hasRangeElementType();
+
   /**
    *
    *
@@ -349,6 +359,7 @@ public interface TableFieldSchemaOrBuilder
    * @return The rangeElementType.
    */
   com.google.cloud.bigquery.storage.v1.TableFieldSchema.FieldElementType getRangeElementType();
+
   /**
    *
    *

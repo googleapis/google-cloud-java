@@ -1652,6 +1652,7 @@ public class JsonStreamWriterTest {
     assertTrue(
         ex.getMessage()
             .contains(
-                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is supported."));
+                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is"
+                    + " supported."));
   }
 }

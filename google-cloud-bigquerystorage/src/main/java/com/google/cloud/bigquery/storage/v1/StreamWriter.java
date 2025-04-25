@@ -261,7 +261,7 @@ public class StreamWriter implements AutoCloseable {
                   builder.retrySettings,
                   builder.enableRequestProfiler,
                   builder.enableOpenTelemetry,
-                  /*isMultiplexing=*/ false));
+                  /* isMultiplexing= */ false));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(
@@ -475,8 +475,8 @@ public class StreamWriter implements AutoCloseable {
       AppendRequestAndResponse requestWrapper =
           new AppendRequestAndResponse(
               AppendRowsRequest.newBuilder().build(),
-              /*StreamWriter=*/ this,
-              /*RetrySettings=*/ null,
+              /* StreamWriter= */ this,
+              /* RetrySettings= */ null,
               requestUniqueId);
       requestWrapper.appendResult.setException(
           new Exceptions.StreamWriterClosedException(
@@ -508,27 +508,37 @@ public class StreamWriter implements AutoCloseable {
     return singleConnectionOrConnectionPool.getInflightWaitSeconds(this);
   }
 
-  /** @return a unique Id for the writer. */
+  /**
+   * @return a unique Id for the writer.
+   */
   public String getWriterId() {
     return singleConnectionOrConnectionPool.getWriterId(writerId);
   }
 
-  /** @return name of the Stream that this writer is working on. */
+  /**
+   * @return name of the Stream that this writer is working on.
+   */
   public String getStreamName() {
     return streamName;
   }
 
-  /** @return the passed in user schema. */
+  /**
+   * @return the passed in user schema.
+   */
   public ProtoSchema getProtoSchema() {
     return writerSchema;
   }
 
-  /** @return the location of the destination. */
+  /**
+   * @return the location of the destination.
+   */
   public String getLocation() {
     return location;
   }
 
-  /** @return the missing value interpretation map used for the writer. */
+  /**
+   * @return the missing value interpretation map used for the writer.
+   */
   public Map<String, AppendRowsRequest.MissingValueInterpretation>
       getMissingValueInterpretationMap() {
     return missingValueInterpretationMap;
@@ -549,7 +559,9 @@ public class StreamWriter implements AutoCloseable {
     }
   }
 
-  /** @return if user explicitly closed the writer. */
+  /**
+   * @return if user explicitly closed the writer.
+   */
   public boolean isUserClosed() {
     return userClosed.get();
   }
@@ -598,7 +610,9 @@ public class StreamWriter implements AutoCloseable {
     ConnectionWorker.MAXIMUM_REQUEST_CALLBACK_WAIT_TIME = waitTime;
   }
 
-  /** @return the default stream name associated with tableName */
+  /**
+   * @return the default stream name associated with tableName
+   */
   public static String getDefaultStreamName(TableName tableName) {
     return tableName + defaultStreamMatching;
   }

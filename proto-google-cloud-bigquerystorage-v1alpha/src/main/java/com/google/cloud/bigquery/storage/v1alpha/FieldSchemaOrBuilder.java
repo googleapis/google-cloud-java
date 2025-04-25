@@ -37,6 +37,7 @@ public interface FieldSchemaOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -64,6 +65,7 @@ public interface FieldSchemaOrBuilder
    * @return The type.
    */
   java.lang.String getType();
+
   /**
    *
    *

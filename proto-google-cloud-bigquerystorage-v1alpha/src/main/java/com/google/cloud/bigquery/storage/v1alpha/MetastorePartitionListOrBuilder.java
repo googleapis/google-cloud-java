@@ -36,6 +36,7 @@ public interface MetastorePartitionListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition> getPartitionsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface MetastorePartitionListOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getPartitions(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface MetastorePartitionListOrBuilder
    * </code>
    */
   int getPartitionsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface MetastorePartitionListOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionOrBuilder>
       getPartitionsOrBuilderList();
+
   /**
    *
    *

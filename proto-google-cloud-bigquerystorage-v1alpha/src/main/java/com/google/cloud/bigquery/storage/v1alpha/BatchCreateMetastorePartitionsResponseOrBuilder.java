@@ -34,6 +34,7 @@ public interface BatchCreateMetastorePartitionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition> getPartitionsList();
+
   /**
    *
    *
@@ -44,6 +45,7 @@ public interface BatchCreateMetastorePartitionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getPartitions(int index);
+
   /**
    *
    *
@@ -54,6 +56,7 @@ public interface BatchCreateMetastorePartitionsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1alpha.MetastorePartition partitions = 1;</code>
    */
   int getPartitionsCount();
+
   /**
    *
    *
@@ -65,6 +68,7 @@ public interface BatchCreateMetastorePartitionsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionOrBuilder>
       getPartitionsOrBuilderList();
+
   /**
    *
    *

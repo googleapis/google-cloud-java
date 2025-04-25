@@ -33,6 +33,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.MetastorePartitionList)
     MetastorePartitionListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetastorePartitionList.newBuilder() to construct.
   private MetastorePartitionList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition> partitions_;
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       getPartitionsList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       getPartitionsOrBuilderList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -115,6 +119,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
   public int getPartitionsCount() {
     return partitions_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
   public com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getPartitions(int index) {
     return partitions_.get(index);
   }
+
   /**
    *
    *
@@ -309,6 +315,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -580,6 +587,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -616,6 +625,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -641,6 +651,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -664,6 +675,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -689,6 +701,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +727,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -736,6 +750,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -759,6 +774,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -782,6 +798,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -803,6 +820,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -824,6 +842,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
       }
       return this;
     }
+
     /**
      *
      *
@@ -839,6 +858,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         getPartitionsBuilder(int index) {
       return getPartitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -858,6 +878,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         return partitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
         return java.util.Collections.unmodifiableList(partitions_);
       }
     }
+
     /**
      *
      *
@@ -895,6 +917,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
           .addBuilder(
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -913,6 +936,7 @@ public final class MetastorePartitionList extends com.google.protobuf.GeneratedM
               index,
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *

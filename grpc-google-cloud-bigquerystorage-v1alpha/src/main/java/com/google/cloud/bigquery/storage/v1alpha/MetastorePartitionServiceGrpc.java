@@ -329,6 +329,19 @@ public final class MetastorePartitionServiceGrpc {
     return MetastorePartitionServiceStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static MetastorePartitionServiceBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<MetastorePartitionServiceBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<MetastorePartitionServiceBlockingV2Stub>() {
+          @java.lang.Override
+          public MetastorePartitionServiceBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new MetastorePartitionServiceBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return MetastorePartitionServiceBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -589,6 +602,108 @@ public final class MetastorePartitionServiceGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service MetastorePartitionService.
+   *
+   * <pre>
+   * BigQuery Metastore Partition Service API.
+   *  This service is used for managing metastore partitions in BigQuery
+   *  metastore. The service supports only batch operations for write.
+   * </pre>
+   */
+  public static final class MetastorePartitionServiceBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<MetastorePartitionServiceBlockingV2Stub> {
+    private MetastorePartitionServiceBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected MetastorePartitionServiceBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new MetastorePartitionServiceBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Adds metastore partitions to a table.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1alpha.BatchCreateMetastorePartitionsResponse
+        batchCreateMetastorePartitions(
+            com.google.cloud.bigquery.storage.v1alpha.BatchCreateMetastorePartitionsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateMetastorePartitionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes metastore partitions from a table.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteMetastorePartitions(
+        com.google.cloud.bigquery.storage.v1alpha.BatchDeleteMetastorePartitionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteMetastorePartitionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates metastore partitions in a table.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1alpha.BatchUpdateMetastorePartitionsResponse
+        batchUpdateMetastorePartitions(
+            com.google.cloud.bigquery.storage.v1alpha.BatchUpdateMetastorePartitionsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateMetastorePartitionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets metastore partitions from a table.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1alpha.ListMetastorePartitionsResponse
+        listMetastorePartitions(
+            com.google.cloud.bigquery.storage.v1alpha.ListMetastorePartitionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMetastorePartitionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is a bi-di streaming rpc method that allows the client to send
+     * a stream of partitions and commit all of them atomically at the end.
+     * If the commit is successful, the server will return a
+     * response and close the stream. If the commit fails (due to duplicate
+     * partitions or other reason), the server will close the stream with an
+     * error. This method is only available via the gRPC API (not REST).
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            com.google.cloud.bigquery.storage.v1alpha.StreamMetastorePartitionsRequest,
+            com.google.cloud.bigquery.storage.v1alpha.StreamMetastorePartitionsResponse>
+        streamMetastorePartitions() {
+      return io.grpc.stub.ClientCalls.blockingBidiStreamingCall(
+          getChannel(), getStreamMetastorePartitionsMethod(), getCallOptions());
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service
+   * MetastorePartitionService.
    *
    * <pre>
    * BigQuery Metastore Partition Service API.

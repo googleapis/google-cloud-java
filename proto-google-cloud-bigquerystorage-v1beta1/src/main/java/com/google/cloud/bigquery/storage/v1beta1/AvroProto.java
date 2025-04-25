@@ -46,6 +46,7 @@ public final class AvroProto {
      * @return The schema.
      */
     java.lang.String getSchema();
+
     /**
      *
      *
@@ -60,6 +61,7 @@ public final class AvroProto {
      */
     com.google.protobuf.ByteString getSchemaBytes();
   }
+
   /**
    *
    *
@@ -74,6 +76,7 @@ public final class AvroProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.AvroSchema)
       AvroSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AvroSchema.newBuilder() to construct.
     private AvroSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -108,6 +111,7 @@ public final class AvroProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -132,6 +136,7 @@ public final class AvroProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -318,6 +323,7 @@ public final class AvroProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -509,6 +515,7 @@ public final class AvroProto {
       private int bitField0_;
 
       private java.lang.Object schema_ = "";
+
       /**
        *
        *
@@ -532,6 +539,7 @@ public final class AvroProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -555,6 +563,7 @@ public final class AvroProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -577,6 +586,7 @@ public final class AvroProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -595,6 +605,7 @@ public final class AvroProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -717,6 +728,7 @@ public final class AvroProto {
      */
     long getRowCount();
   }
+
   /**
    *
    *
@@ -731,6 +743,7 @@ public final class AvroProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.AvroRows)
       AvroRowsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AvroRows.newBuilder() to construct.
     private AvroRows(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -764,6 +777,7 @@ public final class AvroProto {
     public static final int SERIALIZED_BINARY_ROWS_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString serializedBinaryRows_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -782,6 +796,7 @@ public final class AvroProto {
 
     public static final int ROW_COUNT_FIELD_NUMBER = 2;
     private long rowCount_ = 0L;
+
     /**
      *
      *
@@ -968,6 +983,7 @@ public final class AvroProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1170,6 +1186,7 @@ public final class AvroProto {
 
       private com.google.protobuf.ByteString serializedBinaryRows_ =
           com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -1185,6 +1202,7 @@ public final class AvroProto {
       public com.google.protobuf.ByteString getSerializedBinaryRows() {
         return serializedBinaryRows_;
       }
+
       /**
        *
        *
@@ -1206,6 +1224,7 @@ public final class AvroProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1225,6 +1244,7 @@ public final class AvroProto {
       }
 
       private long rowCount_;
+
       /**
        *
        *
@@ -1240,6 +1260,7 @@ public final class AvroProto {
       public long getRowCount() {
         return rowCount_;
       }
+
       /**
        *
        *
@@ -1259,6 +1280,7 @@ public final class AvroProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *

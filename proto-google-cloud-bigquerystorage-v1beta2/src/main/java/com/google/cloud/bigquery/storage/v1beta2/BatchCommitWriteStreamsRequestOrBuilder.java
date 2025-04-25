@@ -37,6 +37,7 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -63,6 +64,7 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    * @return A list containing the writeStreams.
    */
   java.util.List<java.lang.String> getWriteStreamsList();
+
   /**
    *
    *
@@ -75,6 +77,7 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    * @return The count of writeStreams.
    */
   int getWriteStreamsCount();
+
   /**
    *
    *
@@ -88,6 +91,7 @@ public interface BatchCommitWriteStreamsRequestOrBuilder
    * @return The writeStreams at the given index.
    */
   java.lang.String getWriteStreams(int index);
+
   /**
    *
    *

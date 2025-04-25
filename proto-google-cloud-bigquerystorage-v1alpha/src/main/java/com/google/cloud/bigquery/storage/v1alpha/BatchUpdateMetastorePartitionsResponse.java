@@ -35,6 +35,7 @@ public final class BatchUpdateMetastorePartitionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.BatchUpdateMetastorePartitionsResponse)
     BatchUpdateMetastorePartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateMetastorePartitionsResponse.newBuilder() to construct.
   private BatchUpdateMetastorePartitionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BatchUpdateMetastorePartitionsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition> partitions_;
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       getPartitionsList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -102,6 +105,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       getPartitionsOrBuilderList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -116,6 +120,7 @@ public final class BatchUpdateMetastorePartitionsResponse
   public int getPartitionsCount() {
     return partitions_.size();
   }
+
   /**
    *
    *
@@ -130,6 +135,7 @@ public final class BatchUpdateMetastorePartitionsResponse
   public com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getPartitions(int index) {
     return partitions_.get(index);
   }
+
   /**
    *
    *
@@ -316,6 +322,7 @@ public final class BatchUpdateMetastorePartitionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -600,6 +607,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         return partitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -618,6 +626,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         return partitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -636,6 +645,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         return partitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -684,6 +695,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -709,6 +721,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -734,6 +747,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -756,6 +770,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -779,6 +794,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -802,6 +818,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -823,6 +840,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -844,6 +862,7 @@ public final class BatchUpdateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +878,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         getPartitionsBuilder(int index) {
       return getPartitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         return partitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -898,6 +919,7 @@ public final class BatchUpdateMetastorePartitionsResponse
         return java.util.Collections.unmodifiableList(partitions_);
       }
     }
+
     /**
      *
      *
@@ -915,6 +937,7 @@ public final class BatchUpdateMetastorePartitionsResponse
           .addBuilder(
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -933,6 +956,7 @@ public final class BatchUpdateMetastorePartitionsResponse
               index,
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *

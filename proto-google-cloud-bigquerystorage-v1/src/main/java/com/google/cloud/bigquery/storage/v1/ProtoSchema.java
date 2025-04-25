@@ -33,6 +33,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.ProtoSchema)
     ProtoSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProtoSchema.newBuilder() to construct.
   private ProtoSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -64,6 +65,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROTO_DESCRIPTOR_FIELD_NUMBER = 1;
   private com.google.protobuf.DescriptorProtos.DescriptorProto protoDescriptor_;
+
   /**
    *
    *
@@ -87,6 +89,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProtoDescriptor() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -112,6 +115,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
         ? com.google.protobuf.DescriptorProtos.DescriptorProto.getDefaultInstance()
         : protoDescriptor_;
   }
+
   /**
    *
    *
@@ -307,6 +311,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +521,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.DescriptorProtos.DescriptorProto.Builder,
             com.google.protobuf.DescriptorProtos.DescriptorProtoOrBuilder>
         protoDescriptorBuilder_;
+
     /**
      *
      *
@@ -538,6 +544,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProtoDescriptor() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -566,6 +573,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
         return protoDescriptorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -596,6 +604,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +633,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -661,6 +671,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -711,6 +723,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProtoDescriptorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -738,6 +751,7 @@ public final class ProtoSchema extends com.google.protobuf.GeneratedMessageV3
             : protoDescriptor_;
       }
     }
+
     /**
      *
      *

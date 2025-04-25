@@ -39,6 +39,7 @@ public interface CreateReadSessionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateReadSessionRequestOrBuilder
    * @return Whether the readSession field is set.
    */
   boolean hasReadSession();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateReadSessionRequestOrBuilder
    * @return The readSession.
    */
   com.google.cloud.bigquery.storage.v1.ReadSession getReadSession();
+
   /**
    *
    *

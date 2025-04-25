@@ -69,6 +69,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The writeStream.
    */
   java.lang.String getWriteStream();
+
   /**
    *
    *
@@ -130,6 +131,7 @@ public interface AppendRowsRequestOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
+
   /**
    *
    *
@@ -145,6 +147,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The offset.
    */
   com.google.protobuf.Int64Value getOffset();
+
   /**
    *
    *
@@ -171,6 +174,7 @@ public interface AppendRowsRequestOrBuilder
    * @return Whether the protoRows field is set.
    */
   boolean hasProtoRows();
+
   /**
    *
    *
@@ -183,6 +187,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The protoRows.
    */
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ProtoData getProtoRows();
+
   /**
    *
    *
@@ -207,6 +212,7 @@ public interface AppendRowsRequestOrBuilder
    * @return Whether the arrowRows field is set.
    */
   boolean hasArrowRows();
+
   /**
    *
    *
@@ -220,6 +226,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The arrowRows.
    */
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.ArrowData getArrowRows();
+
   /**
    *
    *
@@ -245,6 +252,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *
@@ -288,6 +296,7 @@ public interface AppendRowsRequestOrBuilder
    * </code>
    */
   int getMissingValueInterpretationsCount();
+
   /**
    *
    *
@@ -317,12 +326,14 @@ public interface AppendRowsRequestOrBuilder
    * </code>
    */
   boolean containsMissingValueInterpretations(java.lang.String key);
+
   /** Use {@link #getMissingValueInterpretationsMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<
           java.lang.String,
           com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
       getMissingValueInterpretations();
+
   /**
    *
    *
@@ -355,6 +366,7 @@ public interface AppendRowsRequestOrBuilder
           java.lang.String,
           com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation>
       getMissingValueInterpretationsMap();
+
   /**
    *
    *
@@ -390,6 +402,7 @@ public interface AppendRowsRequestOrBuilder
           /* nullable */
           com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
               defaultValue);
+
   /**
    *
    *
@@ -420,9 +433,11 @@ public interface AppendRowsRequestOrBuilder
    */
   com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation
       getMissingValueInterpretationsOrThrow(java.lang.String key);
+
   /** Use {@link #getMissingValueInterpretationsValueMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.Integer> getMissingValueInterpretationsValue();
+
   /**
    *
    *
@@ -452,6 +467,7 @@ public interface AppendRowsRequestOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.Integer> getMissingValueInterpretationsValueMap();
+
   /**
    *
    *
@@ -481,6 +497,7 @@ public interface AppendRowsRequestOrBuilder
    * </code>
    */
   int getMissingValueInterpretationsValueOrDefault(java.lang.String key, int defaultValue);
+
   /**
    *
    *
@@ -533,6 +550,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The enum numeric value on the wire for defaultMissingValueInterpretation.
    */
   int getDefaultMissingValueInterpretationValue();
+
   /**
    *
    *

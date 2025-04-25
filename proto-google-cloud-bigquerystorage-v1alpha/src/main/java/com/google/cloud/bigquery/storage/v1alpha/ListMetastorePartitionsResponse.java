@@ -33,6 +33,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.ListMetastorePartitionsResponse)
     ListMetastorePartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ListMetastorePartitionsResponse.newBuilder() to construct.
   private ListMetastorePartitionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -80,6 +81,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -113,6 +115,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
   }
 
   public static final int PARTITIONS_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -128,6 +131,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
   public boolean hasPartitions() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     }
     return com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
   }
 
   public static final int STREAMS_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
   public boolean hasStreams() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     }
     return com.google.cloud.bigquery.storage.v1alpha.StreamList.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -408,6 +416,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -655,6 +664,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
             com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionList.Builder,
             com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionListOrBuilder>
         partitionsBuilder_;
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     public boolean hasPartitions() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -697,6 +708,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -720,6 +732,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -740,6 +753,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -775,6 +789,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -800,6 +815,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +829,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
         getPartitionsBuilder() {
       return getPartitionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -835,6 +852,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -874,6 +892,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
             com.google.cloud.bigquery.storage.v1alpha.StreamList.Builder,
             com.google.cloud.bigquery.storage.v1alpha.StreamListOrBuilder>
         streamsBuilder_;
+
     /**
      *
      *
@@ -889,6 +908,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     public boolean hasStreams() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
         return com.google.cloud.bigquery.storage.v1alpha.StreamList.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -936,6 +957,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +978,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -989,6 +1012,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1014,6 +1038,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1026,6 +1051,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
     public com.google.cloud.bigquery.storage.v1alpha.StreamList.Builder getStreamsBuilder() {
       return getStreamsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1046,6 +1072,7 @@ public final class ListMetastorePartitionsResponse extends com.google.protobuf.G
         return com.google.cloud.bigquery.storage.v1alpha.StreamList.getDefaultInstance();
       }
     }
+
     /**
      *
      *

@@ -438,8 +438,7 @@ public class JsonToProtoMessage implements ToProtoConverter<Object> {
           case DATETIME:
           case TIMESTAMP:
             fieldSchema =
-                fieldSchema
-                    .toBuilder()
+                fieldSchema.toBuilder()
                     .addFields(
                         TableFieldSchema.newBuilder()
                             .setName("start")

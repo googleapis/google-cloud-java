@@ -70,7 +70,7 @@ public class ITBigQueryWriteNonQuotaRetryTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET).setDescription(DESCRIPTION).build();
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
     TableInfo tableInfo =
@@ -115,8 +115,8 @@ public class ITBigQueryWriteNonQuotaRetryTest {
         DATASET,
         NON_QUOTA_RETRY_PROJECT_ID,
         WriteStream.Type.COMMITTED,
-        /* requestCount=*/ 901,
-        /* rowBatchSize=*/ 1);
+        /* requestCount= */ 901,
+        /* rowBatchSize= */ 1);
   }
 
   @Test
@@ -127,8 +127,8 @@ public class ITBigQueryWriteNonQuotaRetryTest {
         client,
         DATASET,
         NON_QUOTA_RETRY_PROJECT_ID,
-        /* requestCount=*/ 901,
-        /* rowBatchSize=*/ 1);
+        /* requestCount= */ 901,
+        /* rowBatchSize= */ 1);
   }
 
   // Moved to ITBigQueryWriteNonQuotaRetryTest from ITBigQueryWriteManualClientTest, as it requires

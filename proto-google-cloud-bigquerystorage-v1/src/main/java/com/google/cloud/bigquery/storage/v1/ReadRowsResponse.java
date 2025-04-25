@@ -34,6 +34,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.ReadRowsResponse)
     ReadRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadRowsResponse.newBuilder() to construct.
   private ReadRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     private RowsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -129,6 +131,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     private SchemaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -162,6 +165,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AVRO_ROWS_FIELD_NUMBER = 3;
+
   /**
    *
    *
@@ -177,6 +181,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasAvroRows() {
     return rowsCase_ == 3;
   }
+
   /**
    *
    *
@@ -195,6 +200,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.bigquery.storage.v1.AvroRows.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -213,6 +219,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ARROW_RECORD_BATCH_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -228,6 +235,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasArrowRecordBatch() {
     return rowsCase_ == 4;
   }
+
   /**
    *
    *
@@ -246,6 +254,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -266,6 +275,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int ROW_COUNT_FIELD_NUMBER = 6;
   private long rowCount_ = 0L;
+
   /**
    *
    *
@@ -284,6 +294,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int STATS_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.storage.v1.StreamStats stats_;
+
   /**
    *
    *
@@ -299,6 +310,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasStats() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -316,6 +328,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.bigquery.storage.v1.StreamStats.getDefaultInstance()
         : stats_;
   }
+
   /**
    *
    *
@@ -334,6 +347,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int THROTTLE_STATE_FIELD_NUMBER = 5;
   private com.google.cloud.bigquery.storage.v1.ThrottleState throttleState_;
+
   /**
    *
    *
@@ -350,6 +364,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasThrottleState() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -368,6 +383,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         ? com.google.cloud.bigquery.storage.v1.ThrottleState.getDefaultInstance()
         : throttleState_;
   }
+
   /**
    *
    *
@@ -386,6 +402,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int AVRO_SCHEMA_FIELD_NUMBER = 7;
+
   /**
    *
    *
@@ -403,6 +420,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasAvroSchema() {
     return schemaCase_ == 7;
   }
+
   /**
    *
    *
@@ -423,6 +441,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -443,6 +462,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   }
 
   public static final int ARROW_SCHEMA_FIELD_NUMBER = 8;
+
   /**
    *
    *
@@ -460,6 +480,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasArrowSchema() {
     return schemaCase_ == 8;
   }
+
   /**
    *
    *
@@ -480,6 +501,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
     return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -501,6 +523,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
 
   public static final int UNCOMPRESSED_BYTE_SIZE_FIELD_NUMBER = 9;
   private long uncompressedByteSize_ = 0L;
+
   /**
    *
    *
@@ -530,6 +553,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
   public boolean hasUncompressedByteSize() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -840,6 +864,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1211,6 +1236,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.AvroRows.Builder,
             com.google.cloud.bigquery.storage.v1.AvroRowsOrBuilder>
         avroRowsBuilder_;
+
     /**
      *
      *
@@ -1226,6 +1252,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasAvroRows() {
       return rowsCase_ == 3;
     }
+
     /**
      *
      *
@@ -1251,6 +1278,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.AvroRows.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1273,6 +1301,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1293,6 +1322,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1325,6 +1355,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 3;
       return this;
     }
+
     /**
      *
      *
@@ -1350,6 +1381,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1362,6 +1394,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.storage.v1.AvroRows.Builder getAvroRowsBuilder() {
       return getAvroRowsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1382,6 +1415,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.AvroRows.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1420,6 +1454,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.Builder,
             com.google.cloud.bigquery.storage.v1.ArrowRecordBatchOrBuilder>
         arrowRecordBatchBuilder_;
+
     /**
      *
      *
@@ -1435,6 +1470,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasArrowRecordBatch() {
       return rowsCase_ == 4;
     }
+
     /**
      *
      *
@@ -1460,6 +1496,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1483,6 +1520,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1503,6 +1541,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1537,6 +1576,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -1562,6 +1602,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1575,6 +1616,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         getArrowRecordBatchBuilder() {
       return getArrowRecordBatchFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1596,6 +1638,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1630,6 +1673,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private long rowCount_;
+
     /**
      *
      *
@@ -1645,6 +1689,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public long getRowCount() {
       return rowCount_;
     }
+
     /**
      *
      *
@@ -1664,6 +1709,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1688,6 +1734,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.StreamStats.Builder,
             com.google.cloud.bigquery.storage.v1.StreamStatsOrBuilder>
         statsBuilder_;
+
     /**
      *
      *
@@ -1702,6 +1749,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasStats() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1722,6 +1770,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return statsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1744,6 +1793,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1814,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1791,6 +1842,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -1810,6 +1862,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1824,6 +1877,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getStatsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1842,6 +1896,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             : stats_;
       }
     }
+
     /**
      *
      *
@@ -1874,6 +1929,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.ThrottleState.Builder,
             com.google.cloud.bigquery.storage.v1.ThrottleStateOrBuilder>
         throttleStateBuilder_;
+
     /**
      *
      *
@@ -1889,6 +1945,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasThrottleState() {
       return ((bitField0_ & 0x00000010) != 0);
     }
+
     /**
      *
      *
@@ -1910,6 +1967,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return throttleStateBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1933,6 +1991,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1954,6 +2013,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2043,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2003,6 +2064,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2018,6 +2080,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getThrottleStateFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2037,6 +2100,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             : throttleState_;
       }
     }
+
     /**
      *
      *
@@ -2069,6 +2133,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.AvroSchema.Builder,
             com.google.cloud.bigquery.storage.v1.AvroSchemaOrBuilder>
         avroSchemaBuilder_;
+
     /**
      *
      *
@@ -2086,6 +2151,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasAvroSchema() {
       return schemaCase_ == 7;
     }
+
     /**
      *
      *
@@ -2113,6 +2179,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2137,6 +2204,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2159,6 +2227,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2262,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 7;
       return this;
     }
+
     /**
      *
      *
@@ -2220,6 +2290,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2234,6 +2305,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.storage.v1.AvroSchema.Builder getAvroSchemaBuilder() {
       return getAvroSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2256,6 +2328,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.AvroSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2296,6 +2369,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
             com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder,
             com.google.cloud.bigquery.storage.v1.ArrowSchemaOrBuilder>
         arrowSchemaBuilder_;
+
     /**
      *
      *
@@ -2313,6 +2387,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasArrowSchema() {
       return schemaCase_ == 8;
     }
+
     /**
      *
      *
@@ -2340,6 +2415,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2364,6 +2440,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2386,6 +2463,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2420,6 +2498,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       schemaCase_ = 8;
       return this;
     }
+
     /**
      *
      *
@@ -2447,6 +2526,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -2461,6 +2541,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public com.google.cloud.bigquery.storage.v1.ArrowSchema.Builder getArrowSchemaBuilder() {
       return getArrowSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2483,6 +2564,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
         return com.google.cloud.bigquery.storage.v1.ArrowSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2519,6 +2601,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     }
 
     private long uncompressedByteSize_;
+
     /**
      *
      *
@@ -2548,6 +2631,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public boolean hasUncompressedByteSize() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -2577,6 +2661,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
     public long getUncompressedByteSize() {
       return uncompressedByteSize_;
     }
+
     /**
      *
      *
@@ -2610,6 +2695,7 @@ public final class ReadRowsResponse extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

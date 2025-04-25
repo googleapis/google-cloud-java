@@ -36,6 +36,7 @@ public interface StorageErrorOrBuilder
    * @return The enum numeric value on the wire for code.
    */
   int getCodeValue();
+
   /**
    *
    *
@@ -61,6 +62,7 @@ public interface StorageErrorOrBuilder
    * @return The entity.
    */
   java.lang.String getEntity();
+
   /**
    *
    *
@@ -86,6 +88,7 @@ public interface StorageErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

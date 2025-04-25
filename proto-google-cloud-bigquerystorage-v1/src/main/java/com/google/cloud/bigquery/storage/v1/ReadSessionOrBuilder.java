@@ -37,6 +37,7 @@ public interface ReadSessionOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface ReadSessionOrBuilder
    * @return Whether the expireTime field is set.
    */
   boolean hasExpireTime();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface ReadSessionOrBuilder
    * @return The expireTime.
    */
   com.google.protobuf.Timestamp getExpireTime();
+
   /**
    *
    *
@@ -113,6 +116,7 @@ public interface ReadSessionOrBuilder
    * @return The enum numeric value on the wire for dataFormat.
    */
   int getDataFormatValue();
+
   /**
    *
    *
@@ -143,6 +147,7 @@ public interface ReadSessionOrBuilder
    * @return Whether the avroSchema field is set.
    */
   boolean hasAvroSchema();
+
   /**
    *
    *
@@ -157,6 +162,7 @@ public interface ReadSessionOrBuilder
    * @return The avroSchema.
    */
   com.google.cloud.bigquery.storage.v1.AvroSchema getAvroSchema();
+
   /**
    *
    *
@@ -184,6 +190,7 @@ public interface ReadSessionOrBuilder
    * @return Whether the arrowSchema field is set.
    */
   boolean hasArrowSchema();
+
   /**
    *
    *
@@ -198,6 +205,7 @@ public interface ReadSessionOrBuilder
    * @return The arrowSchema.
    */
   com.google.cloud.bigquery.storage.v1.ArrowSchema getArrowSchema();
+
   /**
    *
    *
@@ -226,6 +234,7 @@ public interface ReadSessionOrBuilder
    * @return The table.
    */
   java.lang.String getTable();
+
   /**
    *
    *
@@ -257,6 +266,7 @@ public interface ReadSessionOrBuilder
    * @return Whether the tableModifiers field is set.
    */
   boolean hasTableModifiers();
+
   /**
    *
    *
@@ -272,6 +282,7 @@ public interface ReadSessionOrBuilder
    * @return The tableModifiers.
    */
   com.google.cloud.bigquery.storage.v1.ReadSession.TableModifiers getTableModifiers();
+
   /**
    *
    *
@@ -301,6 +312,7 @@ public interface ReadSessionOrBuilder
    * @return Whether the readOptions field is set.
    */
   boolean hasReadOptions();
+
   /**
    *
    *
@@ -315,6 +327,7 @@ public interface ReadSessionOrBuilder
    * @return The readOptions.
    */
   com.google.cloud.bigquery.storage.v1.ReadSession.TableReadOptions getReadOptions();
+
   /**
    *
    *
@@ -346,6 +359,7 @@ public interface ReadSessionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1.ReadStream> getStreamsList();
+
   /**
    *
    *
@@ -363,6 +377,7 @@ public interface ReadSessionOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1.ReadStream getStreams(int index);
+
   /**
    *
    *
@@ -380,6 +395,7 @@ public interface ReadSessionOrBuilder
    * </code>
    */
   int getStreamsCount();
+
   /**
    *
    *
@@ -398,6 +414,7 @@ public interface ReadSessionOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1.ReadStreamOrBuilder>
       getStreamsOrBuilderList();
+
   /**
    *
    *
@@ -483,6 +500,7 @@ public interface ReadSessionOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

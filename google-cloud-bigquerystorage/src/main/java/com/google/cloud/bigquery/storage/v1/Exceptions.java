@@ -401,6 +401,7 @@ public final class Exceptions {
       super(jsonFieldName);
     }
   }
+
   /**
    * Input data object has unknown field to the schema of the SchemaAwareStreamWriter. User can
    * either turn on IgnoreUnknownFields option on the SchemaAwareStreamWriter, or if they don't want

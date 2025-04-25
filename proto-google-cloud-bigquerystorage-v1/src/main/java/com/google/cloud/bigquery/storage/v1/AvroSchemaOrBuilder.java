@@ -37,6 +37,7 @@ public interface AvroSchemaOrBuilder
    * @return The schema.
    */
   java.lang.String getSchema();
+
   /**
    *
    *

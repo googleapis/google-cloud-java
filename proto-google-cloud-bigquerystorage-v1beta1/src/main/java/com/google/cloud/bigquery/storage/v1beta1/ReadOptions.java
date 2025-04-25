@@ -91,6 +91,7 @@ public final class ReadOptions {
      * @return A list containing the selectedFields.
      */
     java.util.List<java.lang.String> getSelectedFieldsList();
+
     /**
      *
      *
@@ -149,6 +150,7 @@ public final class ReadOptions {
      * @return The count of selectedFields.
      */
     int getSelectedFieldsCount();
+
     /**
      *
      *
@@ -208,6 +210,7 @@ public final class ReadOptions {
      * @return The selectedFields at the given index.
      */
     java.lang.String getSelectedFields(int index);
+
     /**
      *
      *
@@ -289,6 +292,7 @@ public final class ReadOptions {
      * @return The rowRestriction.
      */
     java.lang.String getRowRestriction();
+
     /**
      *
      *
@@ -311,6 +315,7 @@ public final class ReadOptions {
      */
     com.google.protobuf.ByteString getRowRestrictionBytes();
   }
+
   /**
    *
    *
@@ -325,6 +330,7 @@ public final class ReadOptions {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableReadOptions)
       TableReadOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableReadOptions.newBuilder() to construct.
     private TableReadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -361,6 +367,7 @@ public final class ReadOptions {
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList selectedFields_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -421,6 +428,7 @@ public final class ReadOptions {
     public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
       return selectedFields_;
     }
+
     /**
      *
      *
@@ -481,6 +489,7 @@ public final class ReadOptions {
     public int getSelectedFieldsCount() {
       return selectedFields_.size();
     }
+
     /**
      *
      *
@@ -542,6 +551,7 @@ public final class ReadOptions {
     public java.lang.String getSelectedFields(int index) {
       return selectedFields_.get(index);
     }
+
     /**
      *
      *
@@ -608,6 +618,7 @@ public final class ReadOptions {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rowRestriction_ = "";
+
     /**
      *
      *
@@ -640,6 +651,7 @@ public final class ReadOptions {
         return s;
       }
     }
+
     /**
      *
      *
@@ -852,6 +864,7 @@ public final class ReadOptions {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1079,6 +1092,7 @@ public final class ReadOptions {
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1140,6 +1154,7 @@ public final class ReadOptions {
         selectedFields_.makeImmutable();
         return selectedFields_;
       }
+
       /**
        *
        *
@@ -1200,6 +1215,7 @@ public final class ReadOptions {
       public int getSelectedFieldsCount() {
         return selectedFields_.size();
       }
+
       /**
        *
        *
@@ -1261,6 +1277,7 @@ public final class ReadOptions {
       public java.lang.String getSelectedFields(int index) {
         return selectedFields_.get(index);
       }
+
       /**
        *
        *
@@ -1322,6 +1339,7 @@ public final class ReadOptions {
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1391,6 +1409,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1459,6 +1478,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1524,6 +1544,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1588,6 +1609,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1659,6 +1681,7 @@ public final class ReadOptions {
       }
 
       private java.lang.Object rowRestriction_ = "";
+
       /**
        *
        *
@@ -1690,6 +1713,7 @@ public final class ReadOptions {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1721,6 +1745,7 @@ public final class ReadOptions {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1751,6 +1776,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1777,6 +1803,7 @@ public final class ReadOptions {
         onChanged();
         return this;
       }
+
       /**
        *
        *

@@ -130,7 +130,8 @@ public class BQTableSchemaToProtoDescriptor {
             default:
               throw new IllegalArgumentException(
                   String.format(
-                      "Error: %s of type RANGE requires range element type (DATE, DATETIME, TIMESTAMP)",
+                      "Error: %s of type RANGE requires range element type (DATE, DATETIME,"
+                          + " TIMESTAMP)",
                       currentScope));
           }
           // For RANGE type, expliclitly add the fields start and end of the same FieldElementType

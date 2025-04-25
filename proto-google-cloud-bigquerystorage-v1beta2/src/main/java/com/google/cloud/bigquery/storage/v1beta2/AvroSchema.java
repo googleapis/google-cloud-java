@@ -33,6 +33,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AvroSchema)
     AvroSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AvroSchema.newBuilder() to construct.
   private AvroSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object schema_ = "";
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -275,6 +278,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -459,6 +463,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object schema_ = "";
+
     /**
      *
      *
@@ -482,6 +487,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -505,6 +511,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -527,6 +534,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -545,6 +553,7 @@ public final class AvroSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

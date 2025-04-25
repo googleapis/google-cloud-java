@@ -33,6 +33,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions)
     ArrowSerializationOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArrowSerializationOptions.newBuilder() to construct.
   private ArrowSerializationOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -116,6 +117,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>FORMAT_UNSPECIFIED = 0;</code>
      */
     public static final int FORMAT_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -126,6 +128,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>ARROW_0_14 = 1;</code>
      */
     public static final int ARROW_0_14_VALUE = 1;
+
     /**
      *
      *
@@ -224,6 +227,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
 
   public static final int FORMAT_FIELD_NUMBER = 1;
   private int format_ = 0;
+
   /**
    *
    *
@@ -240,6 +244,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
   public int getFormatValue() {
     return format_;
   }
+
   /**
    *
    *
@@ -429,6 +434,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -618,6 +624,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int format_ = 0;
+
     /**
      *
      *
@@ -634,6 +641,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     public int getFormatValue() {
       return format_;
     }
+
     /**
      *
      *
@@ -653,6 +661,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +683,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
           ? com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Format.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -697,6 +707,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

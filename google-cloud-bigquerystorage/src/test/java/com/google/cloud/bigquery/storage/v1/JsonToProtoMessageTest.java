@@ -1230,7 +1230,8 @@ public class JsonToProtoMessageTest {
       assertTrue(
           e.getMessage()
               .contains(
-                  "JSONObject does not have a string field at root.test_field_type.test_field_type."));
+                  "JSONObject does not have a string field at"
+                      + " root.test_field_type.test_field_type."));
     }
   }
 
@@ -1480,7 +1481,8 @@ public class JsonToProtoMessageTest {
       assertTrue(
           e.getMessage()
               .contains(
-                  "JSONObject does not have a string field at root.repeated_string.test_repeated[0]."));
+                  "JSONObject does not have a string field at"
+                      + " root.repeated_string.test_repeated[0]."));
     }
   }
 

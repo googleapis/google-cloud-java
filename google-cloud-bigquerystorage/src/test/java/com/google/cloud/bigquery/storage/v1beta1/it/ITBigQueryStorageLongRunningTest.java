@@ -96,12 +96,13 @@ public class ITBigQueryStorageLongRunningTest {
 
     ReadSession session =
         client.createReadSession(
-            /* tableReference = */ tableReference,
-            /* parent = */ parentProjectId,
-            /* requestedStreams = */ 5);
+            /* tableReference= */ tableReference,
+            /* parent= */ parentProjectId,
+            /* requestedStreams= */ 5);
     assertEquals(
         String.format(
-            "Did not receive expected number of streams for table reference '%s' CreateReadSession response:%n%s",
+            "Did not receive expected number of streams for table reference '%s' CreateReadSession"
+                + " response:%n%s",
             TextFormat.printer().shortDebugString(tableReference), session.toString()),
         5,
         session.getStreamsCount());

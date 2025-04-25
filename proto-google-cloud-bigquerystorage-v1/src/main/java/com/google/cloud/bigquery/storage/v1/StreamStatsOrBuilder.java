@@ -36,6 +36,7 @@ public interface StreamStatsOrBuilder
    * @return Whether the progress field is set.
    */
   boolean hasProgress();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StreamStatsOrBuilder
    * @return The progress.
    */
   com.google.cloud.bigquery.storage.v1.StreamStats.Progress getProgress();
+
   /**
    *
    *

@@ -36,6 +36,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.StorageError)
     StorageErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageError.newBuilder() to construct.
   private StorageError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -164,6 +165,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>STORAGE_ERROR_CODE_UNSPECIFIED = 0;</code>
      */
     public static final int STORAGE_ERROR_CODE_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -174,6 +176,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>TABLE_NOT_FOUND = 1;</code>
      */
     public static final int TABLE_NOT_FOUND_VALUE = 1;
+
     /**
      *
      *
@@ -184,6 +187,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAM_ALREADY_COMMITTED = 2;</code>
      */
     public static final int STREAM_ALREADY_COMMITTED_VALUE = 2;
+
     /**
      *
      *
@@ -194,6 +198,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>STREAM_NOT_FOUND = 3;</code>
      */
     public static final int STREAM_NOT_FOUND_VALUE = 3;
+
     /**
      *
      *
@@ -205,6 +210,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID_STREAM_TYPE = 4;</code>
      */
     public static final int INVALID_STREAM_TYPE_VALUE = 4;
+
     /**
      *
      *
@@ -217,6 +223,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
      * <code>INVALID_STREAM_STATE = 5;</code>
      */
     public static final int INVALID_STREAM_STATE_VALUE = 5;
+
     /**
      *
      *
@@ -325,6 +332,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_ = 0;
+
   /**
    *
    *
@@ -340,6 +348,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
   public int getCodeValue() {
     return code_;
   }
+
   /**
    *
    *
@@ -364,6 +373,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object entity_ = "";
+
   /**
    *
    *
@@ -387,6 +397,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -415,6 +426,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -438,6 +450,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -646,6 +659,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -861,6 +875,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int code_ = 0;
+
     /**
      *
      *
@@ -876,6 +891,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     public int getCodeValue() {
       return code_;
     }
+
     /**
      *
      *
@@ -894,6 +910,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -913,6 +930,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.storage.v1beta2.StorageError.StorageErrorCode.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -935,6 +953,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -954,6 +973,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object entity_ = "";
+
     /**
      *
      *
@@ -976,6 +996,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -998,6 +1019,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1019,6 +1041,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1036,6 +1059,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1060,6 +1084,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -1082,6 +1107,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1104,6 +1130,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1125,6 +1152,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1142,6 +1170,7 @@ public final class StorageError extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

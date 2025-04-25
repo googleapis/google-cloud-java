@@ -58,7 +58,9 @@ public class JsonStreamWriter implements AutoCloseable {
    * @param builder The Builder object for the JsonStreamWriter
    */
   private JsonStreamWriter(Builder builder)
-      throws Descriptors.DescriptorValidationException, IllegalArgumentException, IOException,
+      throws Descriptors.DescriptorValidationException,
+          IllegalArgumentException,
+          IOException,
           InterruptedException {
     this.client = builder.client;
     this.descriptor =
@@ -331,7 +333,9 @@ public class JsonStreamWriter implements AutoCloseable {
      * @return JsonStreamWriter
      */
     public JsonStreamWriter build()
-        throws Descriptors.DescriptorValidationException, IllegalArgumentException, IOException,
+        throws Descriptors.DescriptorValidationException,
+            IllegalArgumentException,
+            IOException,
             InterruptedException {
       return new JsonStreamWriter(this);
     }

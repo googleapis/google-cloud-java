@@ -42,6 +42,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The writeStream.
    */
   java.lang.String getWriteStream();
+
   /**
    *
    *
@@ -76,6 +77,7 @@ public interface AppendRowsRequestOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
+
   /**
    *
    *
@@ -91,6 +93,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The offset.
    */
   com.google.protobuf.Int64Value getOffset();
+
   /**
    *
    *
@@ -117,6 +120,7 @@ public interface AppendRowsRequestOrBuilder
    * @return Whether the protoRows field is set.
    */
   boolean hasProtoRows();
+
   /**
    *
    *
@@ -129,6 +133,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The protoRows.
    */
   com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData getProtoRows();
+
   /**
    *
    *
@@ -154,6 +159,7 @@ public interface AppendRowsRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

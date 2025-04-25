@@ -40,6 +40,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues>
       getPartitionValuesList();
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues getPartitionValues(int index);
+
   /**
    *
    *
@@ -97,6 +100,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
    * </code>
    */
   int getPartitionValuesCount();
+
   /**
    *
    *
@@ -112,6 +116,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
   java.util.List<
           ? extends com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionValuesOrBuilder>
       getPartitionValuesOrBuilderList();
+
   /**
    *
    *
@@ -143,6 +148,7 @@ public interface BatchDeleteMetastorePartitionsRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

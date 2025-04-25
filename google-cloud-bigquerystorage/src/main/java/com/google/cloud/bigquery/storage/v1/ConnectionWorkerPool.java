@@ -413,7 +413,7 @@ public class ConnectionWorkerPool {
             retrySettings,
             enableRequestProfiler,
             enableOpenTelemetry,
-            /*isMultiplexing=*/ true);
+            /* isMultiplexing= */ true);
     connectionWorkerPool.add(connectionWorker);
     log.info(
         String.format(

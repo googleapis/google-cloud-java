@@ -87,22 +87,23 @@ public class ITBigQueryStorageLongRunningTest {
 
     String table =
         BigQueryResource.FormatTableResource(
-            /* projectId = */ "bigquery-public-data",
-            /* datasetId = */ "samples",
-            /* tableId = */ "wikipedia");
+            /* projectId= */ "bigquery-public-data",
+            /* datasetId= */ "samples",
+            /* tableId= */ "wikipedia");
 
     ReadSession session =
         client.createReadSession(
-            /* parent = */ parentProjectId,
-            /* readSession = */ ReadSession.newBuilder()
+            /* parent= */ parentProjectId,
+            /* readSession= */ ReadSession.newBuilder()
                 .setTable(table)
                 .setDataFormat(DataFormat.AVRO)
                 .build(),
-            /* maxStreamCount = */ 5);
+            /* maxStreamCount= */ 5);
 
     assertEquals(
         String.format(
-            "Did not receive expected number of streams for table '%s' CreateReadSession response:%n%s",
+            "Did not receive expected number of streams for table '%s' CreateReadSession"
+                + " response:%n%s",
             table, session.toString()),
         5,
         session.getStreamsCount());

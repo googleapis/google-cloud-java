@@ -36,6 +36,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the avroRows field is set.
    */
   boolean hasAvroRows();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The avroRows.
    */
   com.google.cloud.bigquery.storage.v1.AvroRows getAvroRows();
+
   /**
    *
    *
@@ -71,6 +73,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the arrowRecordBatch field is set.
    */
   boolean hasArrowRecordBatch();
+
   /**
    *
    *
@@ -83,6 +86,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The arrowRecordBatch.
    */
   com.google.cloud.bigquery.storage.v1.ArrowRecordBatch getArrowRecordBatch();
+
   /**
    *
    *
@@ -119,6 +123,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the stats field is set.
    */
   boolean hasStats();
+
   /**
    *
    *
@@ -131,6 +136,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The stats.
    */
   com.google.cloud.bigquery.storage.v1.StreamStats getStats();
+
   /**
    *
    *
@@ -155,6 +161,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the throttleState field is set.
    */
   boolean hasThrottleState();
+
   /**
    *
    *
@@ -168,6 +175,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The throttleState.
    */
   com.google.cloud.bigquery.storage.v1.ThrottleState getThrottleState();
+
   /**
    *
    *
@@ -194,6 +202,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the avroSchema field is set.
    */
   boolean hasAvroSchema();
+
   /**
    *
    *
@@ -208,6 +217,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The avroSchema.
    */
   com.google.cloud.bigquery.storage.v1.AvroSchema getAvroSchema();
+
   /**
    *
    *
@@ -235,6 +245,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the arrowSchema field is set.
    */
   boolean hasArrowSchema();
+
   /**
    *
    *
@@ -249,6 +260,7 @@ public interface ReadRowsResponseOrBuilder
    * @return The arrowSchema.
    */
   com.google.cloud.bigquery.storage.v1.ArrowSchema getArrowSchema();
+
   /**
    *
    *
@@ -288,6 +300,7 @@ public interface ReadRowsResponseOrBuilder
    * @return Whether the uncompressedByteSize field is set.
    */
   boolean hasUncompressedByteSize();
+
   /**
    *
    *

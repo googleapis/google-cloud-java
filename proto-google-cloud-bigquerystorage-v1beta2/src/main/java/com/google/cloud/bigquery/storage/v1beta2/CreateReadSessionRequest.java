@@ -33,6 +33,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.CreateReadSessionRequest)
     CreateReadSessionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateReadSessionRequest.newBuilder() to construct.
   private CreateReadSessionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
 
   public static final int READ_SESSION_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.storage.v1beta2.ReadSession readSession_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
   public boolean hasReadSession() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
         ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.getDefaultInstance()
         : readSession_;
   }
+
   /**
    *
    *
@@ -179,6 +185,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
 
   public static final int MAX_STREAM_COUNT_FIELD_NUMBER = 3;
   private int maxStreamCount_ = 0;
+
   /**
    *
    *
@@ -386,6 +393,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -620,6 +628,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -645,6 +654,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -670,6 +680,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -694,6 +705,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -714,6 +726,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -746,6 +759,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
             com.google.cloud.bigquery.storage.v1beta2.ReadSession.Builder,
             com.google.cloud.bigquery.storage.v1beta2.ReadSessionOrBuilder>
         readSessionBuilder_;
+
     /**
      *
      *
@@ -762,6 +776,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     public boolean hasReadSession() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
         return readSessionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -808,6 +824,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -830,6 +847,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +878,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -881,6 +900,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return getReadSessionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -918,6 +939,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
             : readSession_;
       }
     }
+
     /**
      *
      *
@@ -947,6 +969,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     }
 
     private int maxStreamCount_;
+
     /**
      *
      *
@@ -969,6 +992,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
     public int getMaxStreamCount() {
       return maxStreamCount_;
     }
+
     /**
      *
      *
@@ -995,6 +1019,7 @@ public final class CreateReadSessionRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -37,6 +37,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the appendResult field is set.
    */
   boolean hasAppendResult();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The appendResult.
    */
   com.google.cloud.bigquery.storage.v1.AppendRowsResponse.AppendResult getAppendResult();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the updatedSchema field is set.
    */
   boolean hasUpdatedSchema();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The updatedSchema.
    */
   com.google.cloud.bigquery.storage.v1.TableSchema getUpdatedSchema();
+
   /**
    *
    *
@@ -208,6 +214,7 @@ public interface AppendRowsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1.RowError> getRowErrorsList();
+
   /**
    *
    *
@@ -220,6 +227,7 @@ public interface AppendRowsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
    */
   com.google.cloud.bigquery.storage.v1.RowError getRowErrors(int index);
+
   /**
    *
    *
@@ -232,6 +240,7 @@ public interface AppendRowsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.RowError row_errors = 4;</code>
    */
   int getRowErrorsCount();
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public interface AppendRowsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1.RowErrorOrBuilder>
       getRowErrorsOrBuilderList();
+
   /**
    *
    *
@@ -271,6 +281,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The writeStream.
    */
   java.lang.String getWriteStream();
+
   /**
    *
    *

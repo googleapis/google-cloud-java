@@ -37,6 +37,7 @@ public interface ArrowSerializationOptionsOrBuilder
    * @return The enum numeric value on the wire for format.
    */
   int getFormatValue();
+
   /**
    *
    *

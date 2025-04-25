@@ -38,6 +38,7 @@ public interface StorageDescriptorOrBuilder
    * @return The locationUri.
    */
   java.lang.String getLocationUri();
+
   /**
    *
    *
@@ -67,6 +68,7 @@ public interface StorageDescriptorOrBuilder
    * @return The inputFormat.
    */
   java.lang.String getInputFormat();
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public interface StorageDescriptorOrBuilder
    * @return The outputFormat.
    */
   java.lang.String getOutputFormat();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface StorageDescriptorOrBuilder
    * @return Whether the serdeInfo field is set.
    */
   boolean hasSerdeInfo();
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public interface StorageDescriptorOrBuilder
    * @return The serdeInfo.
    */
   com.google.cloud.bigquery.storage.v1alpha.SerDeInfo getSerdeInfo();
+
   /**
    *
    *

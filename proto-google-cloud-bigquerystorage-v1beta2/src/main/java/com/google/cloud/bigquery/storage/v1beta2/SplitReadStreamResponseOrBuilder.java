@@ -38,6 +38,7 @@ public interface SplitReadStreamResponseOrBuilder
    * @return Whether the primaryStream field is set.
    */
   boolean hasPrimaryStream();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface SplitReadStreamResponseOrBuilder
    * @return The primaryStream.
    */
   com.google.cloud.bigquery.storage.v1beta2.ReadStream getPrimaryStream();
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public interface SplitReadStreamResponseOrBuilder
    * @return Whether the remainderStream field is set.
    */
   boolean hasRemainderStream();
+
   /**
    *
    *
@@ -91,6 +94,7 @@ public interface SplitReadStreamResponseOrBuilder
    * @return The remainderStream.
    */
   com.google.cloud.bigquery.storage.v1beta2.ReadStream getRemainderStream();
+
   /**
    *
    *

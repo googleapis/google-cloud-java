@@ -35,6 +35,7 @@ public final class BatchCreateMetastorePartitionsResponse
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.BatchCreateMetastorePartitionsResponse)
     BatchCreateMetastorePartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCreateMetastorePartitionsResponse.newBuilder() to construct.
   private BatchCreateMetastorePartitionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,6 +72,7 @@ public final class BatchCreateMetastorePartitionsResponse
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition> partitions_;
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public final class BatchCreateMetastorePartitionsResponse
       getPartitionsList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -100,6 +103,7 @@ public final class BatchCreateMetastorePartitionsResponse
       getPartitionsOrBuilderList() {
     return partitions_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class BatchCreateMetastorePartitionsResponse
   public int getPartitionsCount() {
     return partitions_.size();
   }
+
   /**
    *
    *
@@ -126,6 +131,7 @@ public final class BatchCreateMetastorePartitionsResponse
   public com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getPartitions(int index) {
     return partitions_.get(index);
   }
+
   /**
    *
    *
@@ -311,6 +317,7 @@ public final class BatchCreateMetastorePartitionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -594,6 +601,7 @@ public final class BatchCreateMetastorePartitionsResponse
         return partitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -611,6 +619,7 @@ public final class BatchCreateMetastorePartitionsResponse
         return partitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -628,6 +637,7 @@ public final class BatchCreateMetastorePartitionsResponse
         return partitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -652,6 +662,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -674,6 +685,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -698,6 +710,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -722,6 +735,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -743,6 +757,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -765,6 +780,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -787,6 +803,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -807,6 +824,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -827,6 +845,7 @@ public final class BatchCreateMetastorePartitionsResponse
       }
       return this;
     }
+
     /**
      *
      *
@@ -841,6 +860,7 @@ public final class BatchCreateMetastorePartitionsResponse
         getPartitionsBuilder(int index) {
       return getPartitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -859,6 +879,7 @@ public final class BatchCreateMetastorePartitionsResponse
         return partitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -878,6 +899,7 @@ public final class BatchCreateMetastorePartitionsResponse
         return java.util.Collections.unmodifiableList(partitions_);
       }
     }
+
     /**
      *
      *
@@ -894,6 +916,7 @@ public final class BatchCreateMetastorePartitionsResponse
           .addBuilder(
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -911,6 +934,7 @@ public final class BatchCreateMetastorePartitionsResponse
               index,
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *

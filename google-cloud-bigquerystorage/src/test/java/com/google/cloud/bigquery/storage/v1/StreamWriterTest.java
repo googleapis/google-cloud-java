@@ -432,12 +432,12 @@ public class StreamWriterTest {
 
   @Test
   public void testUpdatedSchemaFetch_multiplexing() throws Exception {
-    testUpdatedSchemaFetch(/*enableMultiplexing=*/ true);
+    testUpdatedSchemaFetch(/* enableMultiplexing= */ true);
   }
 
   @Test
   public void testUpdatedSchemaFetch_nonMultiplexing() throws Exception {
-    testUpdatedSchemaFetch(/*enableMultiplexing=*/ false);
+    testUpdatedSchemaFetch(/* enableMultiplexing= */ false);
   }
 
   private void testUpdatedSchemaFetch(boolean enableMultiplexing)
@@ -1187,7 +1187,8 @@ public class StreamWriterTest {
         ex.getStatus()
             .getDescription()
             .contains(
-                "Exceeds client side inflight buffer, consider add more buffer or open more connections"));
+                "Exceeds client side inflight buffer, consider add more buffer or open more"
+                    + " connections"));
 
     assertEquals(ex.getWriterId(), writer.getWriterId());
     assertEquals(1, ex.getCurrentLimit());
@@ -1244,7 +1245,8 @@ public class StreamWriterTest {
     assertTrue(
         ex.getMessage()
             .contains(
-                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is supported."));
+                "Compression of type \"not-gzip\" isn't supported, only \"gzip\" compression is"
+                    + " supported."));
   }
 
   @Test

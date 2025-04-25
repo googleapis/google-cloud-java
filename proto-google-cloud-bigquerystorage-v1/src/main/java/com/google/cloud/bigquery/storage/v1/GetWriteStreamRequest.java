@@ -33,6 +33,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.GetWriteStreamRequest)
     GetWriteStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use GetWriteStreamRequest.newBuilder() to construct.
   private GetWriteStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
 
   public static final int VIEW_FIELD_NUMBER = 3;
   private int view_ = 0;
+
   /**
    *
    *
@@ -139,6 +143,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
   public int getViewValue() {
     return view_;
   }
+
   /**
    *
    *
@@ -333,6 +338,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -530,6 +536,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -555,6 +562,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -580,6 +588,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -604,6 +613,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -624,6 +634,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -651,6 +662,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
     }
 
     private int view_ = 0;
+
     /**
      *
      *
@@ -667,6 +679,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
     public int getViewValue() {
       return view_;
     }
+
     /**
      *
      *
@@ -686,6 +699,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -706,6 +720,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
           ? com.google.cloud.bigquery.storage.v1.WriteStreamView.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -728,6 +743,7 @@ public final class GetWriteStreamRequest extends com.google.protobuf.GeneratedMe
       onChanged();
       return this;
     }
+
     /**
      *
      *

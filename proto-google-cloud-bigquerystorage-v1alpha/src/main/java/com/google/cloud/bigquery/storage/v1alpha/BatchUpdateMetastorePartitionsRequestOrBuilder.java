@@ -40,6 +40,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequest>
       getRequestsList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequest getRequests(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
    * </code>
    */
   int getRequestsCount();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
           ? extends
               com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequestOrBuilder>
       getRequestsOrBuilderList();
+
   /**
    *
    *
@@ -139,6 +144,7 @@ public interface BatchUpdateMetastorePartitionsRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

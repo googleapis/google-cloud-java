@@ -38,6 +38,7 @@ public interface UpdateMetastorePartitionRequestOrBuilder
    * @return Whether the metastorePartition field is set.
    */
   boolean hasMetastorePartition();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface UpdateMetastorePartitionRequestOrBuilder
    * @return The metastorePartition.
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getMetastorePartition();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface UpdateMetastorePartitionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
+
   /**
    *
    *
@@ -92,6 +95,7 @@ public interface UpdateMetastorePartitionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
+
   /**
    *
    *

@@ -167,7 +167,8 @@ public class TelemetryMetrics {
         .gaugeBuilder("inflight_queue_length")
         .ofLongs()
         .setDescription(
-            "Reports length of inflight queue. This queue contains sent append requests waiting for response from the server.")
+            "Reports length of inflight queue. This queue contains sent append requests waiting for"
+                + " response from the server.")
         .buildWithCallback(
             measurement -> {
               int length = connectionWorker.getInflightRequestQueueLength();
@@ -178,14 +179,16 @@ public class TelemetryMetrics {
             .histogramBuilder("network_response_latency")
             .ofLongs()
             .setDescription(
-                "Reports time taken in milliseconds for a response to arrive once a message has been sent over the network.")
+                "Reports time taken in milliseconds for a response to arrive once a message has"
+                    + " been sent over the network.")
             .setExplicitBucketBoundariesAdvice(METRICS_MILLISECONDS_LATENCY_BUCKETS)
             .build();
     openTelemetryMetrics.instrumentConnectionStartCount =
         writeMeter
             .counterBuilder("connection_start_count")
             .setDescription(
-                "Counts number of connection attempts made, regardless of whether these are initial or retry.")
+                "Counts number of connection attempts made, regardless of whether these are initial"
+                    + " or retry.")
             .build();
     openTelemetryMetrics.instrumentConnectionEndCount =
         writeMeter

@@ -46,6 +46,7 @@ public final class ArrowProto {
      */
     com.google.protobuf.ByteString getSerializedSchema();
   }
+
   /**
    *
    *
@@ -60,6 +61,7 @@ public final class ArrowProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.ArrowSchema)
       ArrowSchemaOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ArrowSchema.newBuilder() to construct.
     private ArrowSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -92,6 +94,7 @@ public final class ArrowProto {
 
     public static final int SERIALIZED_SCHEMA_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString serializedSchema_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -270,6 +273,7 @@ public final class ArrowProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -463,6 +467,7 @@ public final class ArrowProto {
 
       private com.google.protobuf.ByteString serializedSchema_ =
           com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -478,6 +483,7 @@ public final class ArrowProto {
       public com.google.protobuf.ByteString getSerializedSchema() {
         return serializedSchema_;
       }
+
       /**
        *
        *
@@ -499,6 +505,7 @@ public final class ArrowProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -615,6 +622,7 @@ public final class ArrowProto {
      */
     long getRowCount();
   }
+
   /**
    *
    *
@@ -629,6 +637,7 @@ public final class ArrowProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.ArrowRecordBatch)
       ArrowRecordBatchOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ArrowRecordBatch.newBuilder() to construct.
     private ArrowRecordBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -662,6 +671,7 @@ public final class ArrowProto {
     public static final int SERIALIZED_RECORD_BATCH_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString serializedRecordBatch_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -680,6 +690,7 @@ public final class ArrowProto {
 
     public static final int ROW_COUNT_FIELD_NUMBER = 2;
     private long rowCount_ = 0L;
+
     /**
      *
      *
@@ -867,6 +878,7 @@ public final class ArrowProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1076,6 +1088,7 @@ public final class ArrowProto {
 
       private com.google.protobuf.ByteString serializedRecordBatch_ =
           com.google.protobuf.ByteString.EMPTY;
+
       /**
        *
        *
@@ -1091,6 +1104,7 @@ public final class ArrowProto {
       public com.google.protobuf.ByteString getSerializedRecordBatch() {
         return serializedRecordBatch_;
       }
+
       /**
        *
        *
@@ -1112,6 +1126,7 @@ public final class ArrowProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1131,6 +1146,7 @@ public final class ArrowProto {
       }
 
       private long rowCount_;
+
       /**
        *
        *
@@ -1146,6 +1162,7 @@ public final class ArrowProto {
       public long getRowCount() {
         return rowCount_;
       }
+
       /**
        *
        *
@@ -1165,6 +1182,7 @@ public final class ArrowProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *

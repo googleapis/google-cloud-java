@@ -73,8 +73,7 @@ public class ResourceHeaderTest {
 
   private static final Pattern WRITE_STREAM_PATTERN =
       Pattern.compile(
-          ".*"
-              + "write_stream=projects%2Fproject%2Fdatasets%2Fdataset%2Ftables%2Ftable%2Fstreams%2Fstream"
+          ".*write_stream=projects%2Fproject%2Fdatasets%2Fdataset%2Ftables%2Ftable%2Fstreams%2Fstream"
               + ".*");
 
   private static final Pattern READ_STREAM_PATTERN =

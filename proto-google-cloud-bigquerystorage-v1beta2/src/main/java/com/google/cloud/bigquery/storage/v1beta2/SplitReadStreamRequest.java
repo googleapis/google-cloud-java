@@ -33,6 +33,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.SplitReadStreamRequest)
     SplitReadStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SplitReadStreamRequest.newBuilder() to construct.
   private SplitReadStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -92,6 +94,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -120,6 +123,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
 
   public static final int FRACTION_FIELD_NUMBER = 2;
   private double fraction_ = 0D;
+
   /**
    *
    *
@@ -315,6 +319,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -516,6 +521,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -540,6 +546,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -564,6 +571,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -587,6 +595,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -606,6 +615,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
     }
 
     private double fraction_;
+
     /**
      *
      *
@@ -653,6 +664,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
     public double getFraction() {
       return fraction_;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class SplitReadStreamRequest extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

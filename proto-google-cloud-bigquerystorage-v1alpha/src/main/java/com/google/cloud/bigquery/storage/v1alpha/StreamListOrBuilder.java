@@ -36,6 +36,7 @@ public interface StreamListOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.ReadStream> getStreamsList();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface StreamListOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.ReadStream getStreams(int index);
+
   /**
    *
    *
@@ -60,6 +62,7 @@ public interface StreamListOrBuilder
    * </code>
    */
   int getStreamsCount();
+
   /**
    *
    *
@@ -73,6 +76,7 @@ public interface StreamListOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1alpha.ReadStreamOrBuilder>
       getStreamsOrBuilderList();
+
   /**
    *
    *

@@ -33,6 +33,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ReadSession)
     ReadSessionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ReadSession.newBuilder() to construct.
   private ReadSession(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -83,6 +84,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the snapshotTime field is set.
      */
     boolean hasSnapshotTime();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return The snapshotTime.
      */
     com.google.protobuf.Timestamp getSnapshotTime();
+
     /**
      *
      *
@@ -106,6 +109,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -120,6 +124,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers)
       TableModifiersOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableModifiers.newBuilder() to construct.
     private TableModifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -151,6 +156,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
     public static final int SNAPSHOT_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp snapshotTime_;
+
     /**
      *
      *
@@ -166,6 +172,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -183,6 +190,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : snapshotTime_;
     }
+
     /**
      *
      *
@@ -366,6 +374,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -581,6 +590,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           snapshotTimeBuilder_;
+
       /**
        *
        *
@@ -595,6 +605,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public boolean hasSnapshotTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -615,6 +626,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           return snapshotTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -637,6 +649,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -656,6 +669,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -683,6 +697,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -702,6 +717,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -716,6 +732,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -734,6 +751,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               : snapshotTime_;
         }
       }
+
       /**
        *
        *
@@ -847,6 +865,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return A list containing the selectedFields.
      */
     java.util.List<java.lang.String> getSelectedFieldsList();
+
     /**
      *
      *
@@ -862,6 +881,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return The count of selectedFields.
      */
     int getSelectedFieldsCount();
+
     /**
      *
      *
@@ -878,6 +898,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return The selectedFields at the given index.
      */
     java.lang.String getSelectedFields(int index);
+
     /**
      *
      *
@@ -916,6 +937,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return The rowRestriction.
      */
     java.lang.String getRowRestriction();
+
     /**
      *
      *
@@ -952,6 +974,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the arrowSerializationOptions field is set.
      */
     boolean hasArrowSerializationOptions();
+
     /**
      *
      *
@@ -967,6 +990,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions
         getArrowSerializationOptions();
+
     /**
      *
      *
@@ -981,6 +1005,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptionsOrBuilder
         getArrowSerializationOptionsOrBuilder();
   }
+
   /**
    *
    *
@@ -995,6 +1020,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions)
       TableReadOptionsOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableReadOptions.newBuilder() to construct.
     private TableReadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1032,6 +1058,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList selectedFields_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
+
     /**
      *
      *
@@ -1049,6 +1076,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ProtocolStringList getSelectedFieldsList() {
       return selectedFields_;
     }
+
     /**
      *
      *
@@ -1066,6 +1094,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public int getSelectedFieldsCount() {
       return selectedFields_.size();
     }
+
     /**
      *
      *
@@ -1084,6 +1113,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public java.lang.String getSelectedFields(int index) {
       return selectedFields_.get(index);
     }
+
     /**
      *
      *
@@ -1107,6 +1137,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object rowRestriction_ = "";
+
     /**
      *
      *
@@ -1139,6 +1170,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return s;
       }
     }
+
     /**
      *
      *
@@ -1175,6 +1207,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public static final int ARROW_SERIALIZATION_OPTIONS_FIELD_NUMBER = 3;
     private com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions
         arrowSerializationOptions_;
+
     /**
      *
      *
@@ -1192,6 +1225,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrowSerializationOptions() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1212,6 +1246,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.getDefaultInstance()
           : arrowSerializationOptions_;
     }
+
     /**
      *
      *
@@ -1427,6 +1462,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1687,6 +1723,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
         bitField0_ |= 0x00000001;
       }
+
       /**
        *
        *
@@ -1705,6 +1742,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         selectedFields_.makeImmutable();
         return selectedFields_;
       }
+
       /**
        *
        *
@@ -1722,6 +1760,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public int getSelectedFieldsCount() {
         return selectedFields_.size();
       }
+
       /**
        *
        *
@@ -1740,6 +1779,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public java.lang.String getSelectedFields(int index) {
         return selectedFields_.get(index);
       }
+
       /**
        *
        *
@@ -1758,6 +1798,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public com.google.protobuf.ByteString getSelectedFieldsBytes(int index) {
         return selectedFields_.getByteString(index);
       }
+
       /**
        *
        *
@@ -1784,6 +1825,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1809,6 +1851,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1831,6 +1874,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1852,6 +1896,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1880,6 +1925,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
 
       private java.lang.Object rowRestriction_ = "";
+
       /**
        *
        *
@@ -1911,6 +1957,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -1942,6 +1989,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1972,6 +2020,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1998,6 +2047,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2037,6 +2087,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptions.Builder,
               com.google.cloud.bigquery.storage.v1beta2.ArrowSerializationOptionsOrBuilder>
           arrowSerializationOptionsBuilder_;
+
       /**
        *
        *
@@ -2053,6 +2104,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       public boolean hasArrowSerializationOptions() {
         return ((bitField0_ & 0x00000004) != 0);
       }
+
       /**
        *
        *
@@ -2077,6 +2129,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           return arrowSerializationOptionsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -2102,6 +2155,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2125,6 +2179,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2157,6 +2212,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
       /**
        *
        *
@@ -2178,6 +2234,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -2195,6 +2252,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return getArrowSerializationOptionsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -2217,6 +2275,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
               : arrowSerializationOptions_;
         }
       }
+
       /**
        *
        *
@@ -2331,6 +2390,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     private SchemaCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -2367,6 +2427,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -2391,6 +2452,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2418,6 +2480,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp expireTime_;
+
   /**
    *
    *
@@ -2436,6 +2499,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasExpireTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -2454,6 +2518,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public com.google.protobuf.Timestamp getExpireTime() {
     return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
   }
+
   /**
    *
    *
@@ -2473,6 +2538,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int DATA_FORMAT_FIELD_NUMBER = 3;
   private int dataFormat_ = 0;
+
   /**
    *
    *
@@ -2490,6 +2556,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public int getDataFormatValue() {
     return dataFormat_;
   }
+
   /**
    *
    *
@@ -2513,6 +2580,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int AVRO_SCHEMA_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -2530,6 +2598,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasAvroSchema() {
     return schemaCase_ == 4;
   }
+
   /**
    *
    *
@@ -2550,6 +2619,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.storage.v1beta2.AvroSchema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2570,6 +2640,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int ARROW_SCHEMA_FIELD_NUMBER = 5;
+
   /**
    *
    *
@@ -2587,6 +2658,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasArrowSchema() {
     return schemaCase_ == 5;
   }
+
   /**
    *
    *
@@ -2607,6 +2679,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
     return com.google.cloud.bigquery.storage.v1beta2.ArrowSchema.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -2630,6 +2703,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object table_ = "";
+
   /**
    *
    *
@@ -2656,6 +2730,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -2685,6 +2760,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int TABLE_MODIFIERS_FIELD_NUMBER = 7;
   private com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers tableModifiers_;
+
   /**
    *
    *
@@ -2702,6 +2778,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasTableModifiers() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -2721,6 +2798,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.getDefaultInstance()
         : tableModifiers_;
   }
+
   /**
    *
    *
@@ -2742,6 +2820,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   public static final int READ_OPTIONS_FIELD_NUMBER = 8;
   private com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions readOptions_;
+
   /**
    *
    *
@@ -2759,6 +2838,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public boolean hasReadOptions() {
     return ((bitField0_ & 0x00000004) != 0);
   }
+
   /**
    *
    *
@@ -2779,6 +2859,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             .getDefaultInstance()
         : readOptions_;
   }
+
   /**
    *
    *
@@ -2803,6 +2884,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1beta2.ReadStream> streams_;
+
   /**
    *
    *
@@ -2823,6 +2905,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.bigquery.storage.v1beta2.ReadStream> getStreamsList() {
     return streams_;
   }
+
   /**
    *
    *
@@ -2844,6 +2927,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       getStreamsOrBuilderList() {
     return streams_;
   }
+
   /**
    *
    *
@@ -2864,6 +2948,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public int getStreamsCount() {
     return streams_.size();
   }
+
   /**
    *
    *
@@ -2884,6 +2969,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.bigquery.storage.v1beta2.ReadStream getStreams(int index) {
     return streams_.get(index);
   }
+
   /**
    *
    *
@@ -3180,6 +3266,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -3586,6 +3673,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -3609,6 +3697,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -3632,6 +3721,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -3654,6 +3744,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3672,6 +3763,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3702,6 +3794,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         expireTimeBuilder_;
+
     /**
      *
      *
@@ -3720,6 +3813,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasExpireTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -3744,6 +3838,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return expireTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -3770,6 +3865,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3793,6 +3889,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3824,6 +3921,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -3847,6 +3945,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3865,6 +3964,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getExpireTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -3887,6 +3987,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             : expireTime_;
       }
     }
+
     /**
      *
      *
@@ -3918,6 +4019,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int dataFormat_ = 0;
+
     /**
      *
      *
@@ -3935,6 +4037,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public int getDataFormatValue() {
       return dataFormat_;
     }
+
     /**
      *
      *
@@ -3955,6 +4058,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -3976,6 +4080,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.bigquery.storage.v1beta2.DataFormat.UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -3999,6 +4104,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4024,6 +4130,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.storage.v1beta2.AvroSchema.Builder,
             com.google.cloud.bigquery.storage.v1beta2.AvroSchemaOrBuilder>
         avroSchemaBuilder_;
+
     /**
      *
      *
@@ -4041,6 +4148,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasAvroSchema() {
       return schemaCase_ == 4;
     }
+
     /**
      *
      *
@@ -4068,6 +4176,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.storage.v1beta2.AvroSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4092,6 +4201,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4114,6 +4224,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4149,6 +4260,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -4176,6 +4288,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4190,6 +4303,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.AvroSchema.Builder getAvroSchemaBuilder() {
       return getAvroSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4212,6 +4326,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.storage.v1beta2.AvroSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4252,6 +4367,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.storage.v1beta2.ArrowSchema.Builder,
             com.google.cloud.bigquery.storage.v1beta2.ArrowSchemaOrBuilder>
         arrowSchemaBuilder_;
+
     /**
      *
      *
@@ -4269,6 +4385,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasArrowSchema() {
       return schemaCase_ == 5;
     }
+
     /**
      *
      *
@@ -4296,6 +4413,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.storage.v1beta2.ArrowSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4320,6 +4438,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4342,6 +4461,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4377,6 +4497,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       schemaCase_ = 5;
       return this;
     }
+
     /**
      *
      *
@@ -4404,6 +4525,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4418,6 +4540,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.bigquery.storage.v1beta2.ArrowSchema.Builder getArrowSchemaBuilder() {
       return getArrowSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4441,6 +4564,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return com.google.cloud.bigquery.storage.v1beta2.ArrowSchema.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -4477,6 +4601,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object table_ = "";
+
     /**
      *
      *
@@ -4502,6 +4627,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -4527,6 +4653,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -4551,6 +4678,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4571,6 +4699,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4603,6 +4732,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiers.Builder,
             com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableModifiersOrBuilder>
         tableModifiersBuilder_;
+
     /**
      *
      *
@@ -4619,6 +4749,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasTableModifiers() {
       return ((bitField0_ & 0x00000040) != 0);
     }
+
     /**
      *
      *
@@ -4643,6 +4774,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return tableModifiersBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4668,6 +4800,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4691,6 +4824,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4723,6 +4857,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4744,6 +4879,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4761,6 +4897,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getTableModifiersFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4783,6 +4920,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             : tableModifiers_;
       }
     }
+
     /**
      *
      *
@@ -4817,6 +4955,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptions.Builder,
             com.google.cloud.bigquery.storage.v1beta2.ReadSession.TableReadOptionsOrBuilder>
         readOptionsBuilder_;
+
     /**
      *
      *
@@ -4833,6 +4972,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
     public boolean hasReadOptions() {
       return ((bitField0_ & 0x00000080) != 0);
     }
+
     /**
      *
      *
@@ -4856,6 +4996,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return readOptionsBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -4881,6 +5022,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4904,6 +5046,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4936,6 +5079,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -4957,6 +5101,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -4974,6 +5119,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getReadOptionsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -4996,6 +5142,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
             : readOptions_;
       }
     }
+
     /**
      *
      *
@@ -5064,6 +5211,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -5087,6 +5235,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -5110,6 +5259,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -5140,6 +5290,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5167,6 +5318,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5196,6 +5348,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5226,6 +5379,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5253,6 +5407,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5280,6 +5435,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5307,6 +5463,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5333,6 +5490,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5359,6 +5517,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -5379,6 +5538,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStreamsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -5403,6 +5563,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -5427,6 +5588,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(streams_);
       }
     }
+
     /**
      *
      *
@@ -5447,6 +5609,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
       return getStreamsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -5469,6 +5632,7 @@ public final class ReadSession extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.bigquery.storage.v1beta2.ReadStream.getDefaultInstance());
     }
+
     /**
      *
      *

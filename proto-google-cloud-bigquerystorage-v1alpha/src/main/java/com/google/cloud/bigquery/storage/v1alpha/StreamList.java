@@ -33,6 +33,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.StreamList)
     StreamListOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamList.newBuilder() to construct.
   private StreamList(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.ReadStream> streams_;
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.bigquery.storage.v1alpha.ReadStream> getStreamsList() {
     return streams_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       getStreamsOrBuilderList() {
     return streams_;
   }
+
   /**
    *
    *
@@ -113,6 +117,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
   public int getStreamsCount() {
     return streams_.size();
   }
+
   /**
    *
    *
@@ -128,6 +133,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.bigquery.storage.v1alpha.ReadStream getStreams(int index) {
     return streams_.get(index);
   }
+
   /**
    *
    *
@@ -306,6 +312,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -571,6 +578,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -589,6 +597,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -607,6 +616,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -632,6 +642,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +665,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -678,6 +690,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -703,6 +716,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -725,6 +739,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -747,6 +762,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -769,6 +785,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -790,6 +807,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +829,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -826,6 +845,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         int index) {
       return getStreamsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -845,6 +865,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         return streamsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -864,6 +885,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(streams_);
       }
     }
+
     /**
      *
      *
@@ -879,6 +901,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
       return getStreamsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.storage.v1alpha.ReadStream.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -896,6 +919,7 @@ public final class StreamList extends com.google.protobuf.GeneratedMessageV3
           .addBuilder(
               index, com.google.cloud.bigquery.storage.v1alpha.ReadStream.getDefaultInstance());
     }
+
     /**
      *
      *

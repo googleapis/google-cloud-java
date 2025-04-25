@@ -40,6 +40,7 @@ public interface CreateMetastorePartitionRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -71,6 +72,7 @@ public interface CreateMetastorePartitionRequestOrBuilder
    * @return Whether the metastorePartition field is set.
    */
   boolean hasMetastorePartition();
+
   /**
    *
    *
@@ -85,6 +87,7 @@ public interface CreateMetastorePartitionRequestOrBuilder
    * @return The metastorePartition.
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getMetastorePartition();
+
   /**
    *
    *

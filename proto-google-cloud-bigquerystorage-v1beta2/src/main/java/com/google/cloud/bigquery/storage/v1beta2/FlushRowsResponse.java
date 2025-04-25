@@ -33,6 +33,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.FlushRowsResponse)
     FlushRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FlushRowsResponse.newBuilder() to construct.
   private FlushRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
 
   public static final int OFFSET_FIELD_NUMBER = 1;
   private long offset_ = 0L;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -421,6 +424,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private long offset_;
+
     /**
      *
      *
@@ -436,6 +440,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
     public long getOffset() {
       return offset_;
     }
+
     /**
      *
      *
@@ -455,6 +460,7 @@ public final class FlushRowsResponse extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

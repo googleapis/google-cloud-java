@@ -37,6 +37,7 @@ public interface ReadStreamOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

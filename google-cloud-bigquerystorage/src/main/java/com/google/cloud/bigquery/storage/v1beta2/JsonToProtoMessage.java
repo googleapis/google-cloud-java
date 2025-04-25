@@ -66,7 +66,7 @@ public class JsonToProtoMessage {
     Preconditions.checkNotNull(protoSchema, "Protobuf descriptor is null.");
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
-    return convertJsonToProtoMessageImpl(protoSchema, null, json, "root", /*topLevel=*/ true);
+    return convertJsonToProtoMessageImpl(protoSchema, null, json, "root", /* topLevel= */ true);
   }
 
   /**
@@ -87,7 +87,7 @@ public class JsonToProtoMessage {
     Preconditions.checkState(json.length() != 0, "JSONObject is empty.");
 
     return convertJsonToProtoMessageImpl(
-        protoSchema, tableSchema.getFieldsList(), json, "root", /*topLevel=*/ true);
+        protoSchema, tableSchema.getFieldsList(), json, "root", /* topLevel= */ true);
   }
 
   /**
@@ -326,7 +326,7 @@ public class JsonToProtoMessage {
                   fieldSchema == null ? null : fieldSchema.getFieldsList(),
                   json.getJSONObject(exactJsonKeyName),
                   currentScope,
-                  /*topLevel =*/ false));
+                  /* topLevel= */ false));
           return;
         }
         break;
@@ -519,7 +519,7 @@ public class JsonToProtoMessage {
                     fieldSchema == null ? null : fieldSchema.getFieldsList(),
                     jsonArray.getJSONObject(i),
                     currentScope,
-                    /*topLevel =*/ false));
+                    /* topLevel= */ false));
           } else {
             fail = true;
           }

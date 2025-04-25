@@ -38,6 +38,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    * @return Whether the commitTime field is set.
    */
   boolean hasCommitTime();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    * @return The commitTime.
    */
   com.google.protobuf.Timestamp getCommitTime();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.StorageError stream_errors = 2;</code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1.StorageError> getStreamErrorsList();
+
   /**
    *
    *
@@ -93,6 +96,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.StorageError stream_errors = 2;</code>
    */
   com.google.cloud.bigquery.storage.v1.StorageError getStreamErrors(int index);
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    * <code>repeated .google.cloud.bigquery.storage.v1.StorageError stream_errors = 2;</code>
    */
   int getStreamErrorsCount();
+
   /**
    *
    *
@@ -122,6 +127,7 @@ public interface BatchCommitWriteStreamsResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1.StorageErrorOrBuilder>
       getStreamErrorsOrBuilderList();
+
   /**
    *
    *

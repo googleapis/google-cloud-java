@@ -33,6 +33,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.FlushRowsRequest)
     FlushRowsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FlushRowsRequest.newBuilder() to construct.
   private FlushRowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object writeStream_ = "";
+
   /**
    *
    *
@@ -93,6 +95,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       return s;
     }
   }
+
   /**
    *
    *
@@ -121,6 +124,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
 
   public static final int OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Int64Value offset_;
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
   public boolean hasOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
   public com.google.protobuf.Int64Value getOffset() {
     return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
   }
+
   /**
    *
    *
@@ -342,6 +348,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -555,6 +562,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
     private int bitField0_;
 
     private java.lang.Object writeStream_ = "";
+
     /**
      *
      *
@@ -579,6 +587,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -603,6 +612,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +656,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -676,6 +688,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         offsetBuilder_;
+
     /**
      *
      *
@@ -691,6 +704,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
     public boolean hasOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -710,6 +724,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
         return offsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -733,6 +748,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -753,6 +769,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -781,6 +798,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       }
       return this;
     }
+
     /**
      *
      *
@@ -801,6 +819,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -816,6 +835,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
       onChanged();
       return getOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -833,6 +853,7 @@ public final class FlushRowsRequest extends com.google.protobuf.GeneratedMessage
         return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
       }
     }
+
     /**
      *
      *

@@ -35,6 +35,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.BatchSizeTooLargeError)
     BatchSizeTooLargeErrorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchSizeTooLargeError.newBuilder() to construct.
   private BatchSizeTooLargeError(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -67,6 +68,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
 
   public static final int MAX_BATCH_SIZE_FIELD_NUMBER = 1;
   private long maxBatchSize_ = 0L;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object errorMessage_ = "";
+
   /**
    *
    *
@@ -111,6 +114,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
       return s;
     }
   }
+
   /**
    *
    *
@@ -304,6 +308,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -507,6 +512,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
     private int bitField0_;
 
     private long maxBatchSize_;
+
     /**
      *
      *
@@ -523,6 +529,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
     public long getMaxBatchSize() {
       return maxBatchSize_;
     }
+
     /**
      *
      *
@@ -543,6 +550,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -563,6 +571,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
     }
 
     private java.lang.Object errorMessage_ = "";
+
     /**
      *
      *
@@ -585,6 +594,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -607,6 +617,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -628,6 +639,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -645,6 +657,7 @@ public final class BatchSizeTooLargeError extends com.google.protobuf.GeneratedM
       onChanged();
       return this;
     }
+
     /**
      *
      *

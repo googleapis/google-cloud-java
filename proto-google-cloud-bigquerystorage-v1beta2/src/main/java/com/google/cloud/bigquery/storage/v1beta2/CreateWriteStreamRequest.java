@@ -33,6 +33,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.CreateWriteStreamRequest)
     CreateWriteStreamRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateWriteStreamRequest.newBuilder() to construct.
   private CreateWriteStreamRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       return s;
     }
   }
+
   /**
    *
    *
@@ -123,6 +126,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
 
   public static final int WRITE_STREAM_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.storage.v1beta2.WriteStream writeStream_;
+
   /**
    *
    *
@@ -140,6 +144,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
   public boolean hasWriteStream() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -159,6 +164,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
         ? com.google.cloud.bigquery.storage.v1beta2.WriteStream.getDefaultInstance()
         : writeStream_;
   }
+
   /**
    *
    *
@@ -352,6 +358,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -573,6 +580,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -598,6 +606,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -623,6 +632,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -647,6 +657,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -667,6 +678,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -699,6 +711,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
             com.google.cloud.bigquery.storage.v1beta2.WriteStream.Builder,
             com.google.cloud.bigquery.storage.v1beta2.WriteStreamOrBuilder>
         writeStreamBuilder_;
+
     /**
      *
      *
@@ -715,6 +728,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
     public boolean hasWriteStream() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -737,6 +751,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
         return writeStreamBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -761,6 +776,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -783,6 +799,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -813,6 +830,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       }
       return this;
     }
+
     /**
      *
      *
@@ -834,6 +852,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -850,6 +869,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
       onChanged();
       return getWriteStreamFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -871,6 +891,7 @@ public final class CreateWriteStreamRequest extends com.google.protobuf.Generate
             : writeStream_;
       }
     }
+
     /**
      *
      *

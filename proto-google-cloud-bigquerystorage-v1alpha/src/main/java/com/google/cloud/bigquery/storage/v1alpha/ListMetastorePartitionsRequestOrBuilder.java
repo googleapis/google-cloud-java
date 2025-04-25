@@ -40,6 +40,7 @@ public interface ListMetastorePartitionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -78,6 +79,7 @@ public interface ListMetastorePartitionsRequestOrBuilder
    * @return The filter.
    */
   java.lang.String getFilter();
+
   /**
    *
    *
@@ -116,6 +118,7 @@ public interface ListMetastorePartitionsRequestOrBuilder
    * @return The traceId.
    */
   java.lang.String getTraceId();
+
   /**
    *
    *

@@ -38,6 +38,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ArrowSchema)
     ArrowSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArrowSchema.newBuilder() to construct.
   private ArrowSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -70,6 +71,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SERIALIZED_SCHEMA_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString serializedSchema_ = com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -246,6 +248,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -433,6 +436,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private com.google.protobuf.ByteString serializedSchema_ = com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -448,6 +452,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSerializedSchema() {
       return serializedSchema_;
     }
+
     /**
      *
      *
@@ -469,6 +474,7 @@ public final class ArrowSchema extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

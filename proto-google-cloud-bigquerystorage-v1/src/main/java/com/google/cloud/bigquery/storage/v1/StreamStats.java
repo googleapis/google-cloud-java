@@ -33,6 +33,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.StreamStats)
     StreamStatsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamStats.newBuilder() to construct.
   private StreamStats(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -104,12 +105,14 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
      */
     double getAtResponseEnd();
   }
+
   /** Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats.Progress} */
   public static final class Progress extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.StreamStats.Progress)
       ProgressOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use Progress.newBuilder() to construct.
     private Progress(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -140,6 +143,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AT_RESPONSE_START_FIELD_NUMBER = 1;
     private double atResponseStart_ = 0D;
+
     /**
      *
      *
@@ -169,6 +173,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
 
     public static final int AT_RESPONSE_END_FIELD_NUMBER = 2;
     private double atResponseEnd_ = 0D;
+
     /**
      *
      *
@@ -364,6 +369,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /** Protobuf type {@code google.cloud.bigquery.storage.v1.StreamStats.Progress} */
     public static final class Builder
         extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
@@ -554,6 +560,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       private int bitField0_;
 
       private double atResponseStart_;
+
       /**
        *
        *
@@ -580,6 +587,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       public double getAtResponseStart() {
         return atResponseStart_;
       }
+
       /**
        *
        *
@@ -610,6 +618,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -640,6 +649,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       }
 
       private double atResponseEnd_;
+
       /**
        *
        *
@@ -656,6 +666,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       public double getAtResponseEnd() {
         return atResponseEnd_;
       }
+
       /**
        *
        *
@@ -676,6 +687,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -762,6 +774,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int PROGRESS_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.storage.v1.StreamStats.Progress progress_;
+
   /**
    *
    *
@@ -777,6 +790,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
   public boolean hasProgress() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -794,6 +808,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.bigquery.storage.v1.StreamStats.Progress.getDefaultInstance()
         : progress_;
   }
+
   /**
    *
    *
@@ -974,6 +989,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1177,6 +1193,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.bigquery.storage.v1.StreamStats.Progress.Builder,
             com.google.cloud.bigquery.storage.v1.StreamStats.ProgressOrBuilder>
         progressBuilder_;
+
     /**
      *
      *
@@ -1191,6 +1208,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
     public boolean hasProgress() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1211,6 +1229,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
         return progressBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1233,6 +1252,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1253,6 +1273,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1281,6 +1302,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
+
     /**
      *
      *
@@ -1300,6 +1322,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1314,6 +1337,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getProgressFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1333,6 +1357,7 @@ public final class StreamStats extends com.google.protobuf.GeneratedMessageV3
             : progress_;
       }
     }
+
     /**
      *
      *

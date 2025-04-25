@@ -33,6 +33,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.SerDeInfo)
     SerDeInfoOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use SerDeInfo.newBuilder() to construct.
   private SerDeInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -80,6 +81,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
+
   /**
    *
    *
@@ -104,6 +106,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -133,6 +136,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object serializationLibrary_ = "";
+
   /**
    *
    *
@@ -159,6 +163,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
+
   /**
    *
    *
@@ -212,6 +217,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -231,12 +237,14 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -253,6 +261,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -276,6 +285,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -485,6 +495,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -725,6 +736,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private java.lang.Object name_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -771,6 +784,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -793,6 +807,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -811,6 +826,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -836,6 +852,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object serializationLibrary_ = "";
+
     /**
      *
      *
@@ -861,6 +878,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -886,6 +904,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -910,6 +929,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -984,6 +1005,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -1003,12 +1025,14 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -1025,6 +1049,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -1048,6 +1073,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1096,12 +1123,14 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000004;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -1125,6 +1154,7 @@ public final class SerDeInfo extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000004;
       return this;
     }
+
     /**
      *
      *

@@ -67,7 +67,7 @@ public class ITBigQueryTimeEncoderTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET).setDescription(DESCRIPTION).build();
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
     bigquery.create(datasetInfo);
     tableInfo =
         TableInfo.newBuilder(
@@ -109,7 +109,9 @@ public class ITBigQueryTimeEncoderTest {
 
   @Test
   public void TestTimeEncoding()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     TableName parent = TableName.of(ServiceOptions.getDefaultProjectId(), DATASET, TABLE);
     TableFieldSchema TEST_STRING =

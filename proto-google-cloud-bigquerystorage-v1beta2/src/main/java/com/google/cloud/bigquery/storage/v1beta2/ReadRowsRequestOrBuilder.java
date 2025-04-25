@@ -38,6 +38,7 @@ public interface ReadRowsRequestOrBuilder
    * @return The readStream.
    */
   java.lang.String getReadStream();
+
   /**
    *
    *

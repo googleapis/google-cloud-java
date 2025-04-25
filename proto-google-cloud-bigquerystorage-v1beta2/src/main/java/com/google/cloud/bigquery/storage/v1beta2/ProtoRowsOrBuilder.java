@@ -39,6 +39,7 @@ public interface ProtoRowsOrBuilder
    * @return A list containing the serializedRows.
    */
   java.util.List<com.google.protobuf.ByteString> getSerializedRowsList();
+
   /**
    *
    *
@@ -54,6 +55,7 @@ public interface ProtoRowsOrBuilder
    * @return The count of serializedRows.
    */
   int getSerializedRowsCount();
+
   /**
    *
    *

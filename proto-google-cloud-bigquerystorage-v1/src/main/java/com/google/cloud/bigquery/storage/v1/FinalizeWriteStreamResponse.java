@@ -33,6 +33,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.FinalizeWriteStreamResponse)
     FinalizeWriteStreamResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use FinalizeWriteStreamResponse.newBuilder() to construct.
   private FinalizeWriteStreamResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
 
   public static final int ROW_COUNT_FIELD_NUMBER = 1;
   private long rowCount_ = 0L;
+
   /**
    *
    *
@@ -239,6 +241,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -425,6 +428,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     private int bitField0_;
 
     private long rowCount_;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
     public long getRowCount() {
       return rowCount_;
     }
+
     /**
      *
      *
@@ -459,6 +464,7 @@ public final class FinalizeWriteStreamResponse extends com.google.protobuf.Gener
       onChanged();
       return this;
     }
+
     /**
      *
      *

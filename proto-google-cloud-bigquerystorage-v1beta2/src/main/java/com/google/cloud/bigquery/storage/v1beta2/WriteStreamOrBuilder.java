@@ -37,6 +37,7 @@ public interface WriteStreamOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *
@@ -65,6 +66,7 @@ public interface WriteStreamOrBuilder
    * @return The enum numeric value on the wire for type.
    */
   int getTypeValue();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface WriteStreamOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -108,6 +111,7 @@ public interface WriteStreamOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -137,6 +141,7 @@ public interface WriteStreamOrBuilder
    * @return Whether the commitTime field is set.
    */
   boolean hasCommitTime();
+
   /**
    *
    *
@@ -153,6 +158,7 @@ public interface WriteStreamOrBuilder
    * @return The commitTime.
    */
   com.google.protobuf.Timestamp getCommitTime();
+
   /**
    *
    *
@@ -185,6 +191,7 @@ public interface WriteStreamOrBuilder
    * @return Whether the tableSchema field is set.
    */
   boolean hasTableSchema();
+
   /**
    *
    *
@@ -202,6 +209,7 @@ public interface WriteStreamOrBuilder
    * @return The tableSchema.
    */
   com.google.cloud.bigquery.storage.v1beta2.TableSchema getTableSchema();
+
   /**
    *
    *

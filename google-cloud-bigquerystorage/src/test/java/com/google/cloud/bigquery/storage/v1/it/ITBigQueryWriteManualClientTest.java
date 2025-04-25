@@ -118,7 +118,7 @@ public class ITBigQueryWriteManualClientTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET).setDescription(DESCRIPTION).build();
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
     tableInfo =
@@ -180,7 +180,7 @@ public class ITBigQueryWriteManualClientTest {
             "projects/%s/datasets/%s/tables/%s",
             ServiceOptions.getDefaultProjectId(), DATASET, TABLE2);
     DatasetInfo datasetInfoEU =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET_EU)
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET_EU)
             .setLocation("EU")
             .setDescription(DESCRIPTION)
             .build();
@@ -343,7 +343,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterCommittedStream()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTable";
     TableInfo tableInfo =
@@ -432,7 +434,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testRowErrors()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "TestBadRowsTable";
     TableInfo tableInfo =
@@ -577,7 +581,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterWithDefaultSchema()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTableDefaultSchema";
     TableInfo tableInfo =
@@ -717,7 +723,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterWithDefaultStream()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "JsonTableDefaultStream";
     TableFieldSchema TEST_STRING =
@@ -881,8 +889,11 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonDefaultStreamOnTableWithDefaultValue_SchemaNotGiven()
-      throws IOException, InterruptedException, ExecutionException,
-          Descriptors.DescriptorValidationException, ParseException {
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
+          Descriptors.DescriptorValidationException,
+          ParseException {
     String tableName = "defaultStreamDefaultValue";
     String defaultTableId =
         String.format(
@@ -901,8 +912,11 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonExclusiveStreamOnTableWithDefaultValue_GiveTableSchema()
-      throws IOException, InterruptedException, ExecutionException,
-          Descriptors.DescriptorValidationException, ParseException {
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
+          Descriptors.DescriptorValidationException,
+          ParseException {
     String tableName = "exclusiveStreamDefaultValue";
     String exclusiveTableId =
         String.format(
@@ -927,7 +941,10 @@ public class ITBigQueryWriteManualClientTest {
   }
 
   private void testJsonStreamWriterForDefaultValue(JsonStreamWriter jsonStreamWriter)
-      throws DescriptorValidationException, IOException, ExecutionException, InterruptedException,
+      throws DescriptorValidationException,
+          IOException,
+          ExecutionException,
+          InterruptedException,
           ParseException {
     // 1. row has both fields set.
     JSONArray jsonArr1 = new JSONArray();
@@ -1053,7 +1070,9 @@ public class ITBigQueryWriteManualClientTest {
   // This test runs about 1 min.
   @Test
   public void testJsonStreamWriterWithMessagesOver10M()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "TableLarge";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -1311,7 +1330,10 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterSchemaUpdateWithMissingValueInterpretationMap()
-      throws DescriptorValidationException, ExecutionException, IOException, InterruptedException,
+      throws DescriptorValidationException,
+          ExecutionException,
+          IOException,
+          InterruptedException,
           ParseException {
     String tableName = "SchemaUpdateMissingValueMapTestTable";
     TableId tableId = TableId.of(DATASET, tableName);
@@ -1434,7 +1456,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterWithFlexibleColumnName()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "FlexibleColumnTable";
     TableInfo tableInfo =
@@ -1523,7 +1547,9 @@ public class ITBigQueryWriteManualClientTest {
 
   @Test
   public void testJsonStreamWriterWithNestedFlexibleColumnName()
-      throws IOException, InterruptedException, ExecutionException,
+      throws IOException,
+          InterruptedException,
+          ExecutionException,
           Descriptors.DescriptorValidationException {
     String tableName = "NestedFlexibleColumnTable";
     TableInfo tableInfo =
@@ -1819,7 +1845,7 @@ public class ITBigQueryWriteManualClientTest {
       // Create a proto row that has extra fields than the table schema defined which should trigger
       // the SCHEMA_MISMATCH_EXTRA_FIELDS error
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       try {
         response.get();
         Assert.fail("Should fail");
@@ -1849,14 +1875,14 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append once before finalizing the stream
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       response.get();
       // Finalize the stream in order to trigger STREAM_FINALIZED error
       client.finalizeWriteStream(
           FinalizeWriteStreamRequest.newBuilder().setName(writeStream.getName()).build());
       // Try to append to a finalized stream
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 1);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 1);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -1887,11 +1913,11 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append once with correct offset
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       response.get();
       // Append again with the same offset
       ApiFuture<AppendRowsResponse> response2 =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 0);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 0);
       try {
         response2.get();
         Assert.fail("Should fail");
@@ -1923,7 +1949,7 @@ public class ITBigQueryWriteManualClientTest {
             .build()) {
       // Append with an out of range offset
       ApiFuture<AppendRowsResponse> response =
-          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /*offset=*/ 10);
+          streamWriter.append(CreateProtoRowsMultipleColumns(new String[] {"a"}), /* offset= */ 10);
       try {
         response.get();
         Assert.fail("Should fail");

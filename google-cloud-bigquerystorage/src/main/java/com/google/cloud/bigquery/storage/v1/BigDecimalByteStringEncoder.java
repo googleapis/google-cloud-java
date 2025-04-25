@@ -90,6 +90,7 @@ public class BigDecimalByteStringEncoder {
     }
     return decimalValue;
   }
+
   /** Returns a numeric Value that equals to {@code v}. */
   private static ByteString serializeBigDecimal(
       BigDecimal v, int scale, BigDecimal maxValue, BigDecimal minValue, String typeName) {

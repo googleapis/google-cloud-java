@@ -38,6 +38,7 @@ public interface MetastorePartitionOrBuilder
    * @return A list containing the values.
    */
   java.util.List<java.lang.String> getValuesList();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface MetastorePartitionOrBuilder
    * @return The count of values.
    */
   int getValuesCount();
+
   /**
    *
    *
@@ -67,6 +69,7 @@ public interface MetastorePartitionOrBuilder
    * @return The values at the given index.
    */
   java.lang.String getValues(int index);
+
   /**
    *
    *
@@ -96,6 +99,7 @@ public interface MetastorePartitionOrBuilder
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
+
   /**
    *
    *
@@ -109,6 +113,7 @@ public interface MetastorePartitionOrBuilder
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
+
   /**
    *
    *
@@ -136,6 +141,7 @@ public interface MetastorePartitionOrBuilder
    * @return Whether the storageDescriptor field is set.
    */
   boolean hasStorageDescriptor();
+
   /**
    *
    *
@@ -151,6 +157,7 @@ public interface MetastorePartitionOrBuilder
    * @return The storageDescriptor.
    */
   com.google.cloud.bigquery.storage.v1alpha.StorageDescriptor getStorageDescriptor();
+
   /**
    *
    *
@@ -178,6 +185,7 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   int getParametersCount();
+
   /**
    *
    *
@@ -190,9 +198,11 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   boolean containsParameters(java.lang.String key);
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Deprecated
   java.util.Map<java.lang.String, java.lang.String> getParameters();
+
   /**
    *
    *
@@ -205,6 +215,7 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getParametersMap();
+
   /**
    *
    *
@@ -221,6 +232,7 @@ public interface MetastorePartitionOrBuilder
       java.lang.String key,
       /* nullable */
       java.lang.String defaultValue);
+
   /**
    *
    *
@@ -246,6 +258,7 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.FieldSchema> getFieldsList();
+
   /**
    *
    *
@@ -258,6 +271,7 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.FieldSchema getFields(int index);
+
   /**
    *
    *
@@ -270,6 +284,7 @@ public interface MetastorePartitionOrBuilder
    * </code>
    */
   int getFieldsCount();
+
   /**
    *
    *
@@ -283,6 +298,7 @@ public interface MetastorePartitionOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1alpha.FieldSchemaOrBuilder>
       getFieldsOrBuilderList();
+
   /**
    *
    *

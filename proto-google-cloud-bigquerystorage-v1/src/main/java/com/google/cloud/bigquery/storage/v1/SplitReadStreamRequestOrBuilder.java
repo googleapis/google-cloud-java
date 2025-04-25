@@ -38,6 +38,7 @@ public interface SplitReadStreamRequestOrBuilder
    * @return The name.
    */
   java.lang.String getName();
+
   /**
    *
    *

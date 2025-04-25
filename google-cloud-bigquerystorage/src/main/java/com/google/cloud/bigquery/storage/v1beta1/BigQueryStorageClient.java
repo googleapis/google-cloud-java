@@ -160,6 +160,7 @@ public class BigQueryStorageClient implements BackgroundResource {
   public EnhancedBigQueryStorageStub getStub() {
     return stub;
   }
+
   /**
    * Creates a new read session. A read session divides the contents of a BigQuery table into one or
    * more streams, which can then be used to read data from the table. The read session also

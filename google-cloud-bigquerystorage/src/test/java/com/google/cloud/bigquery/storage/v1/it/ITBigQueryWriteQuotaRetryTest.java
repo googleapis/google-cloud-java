@@ -53,7 +53,7 @@ public class ITBigQueryWriteQuotaRetryTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     bigquery = bigqueryHelper.getOptions().getService();
     DatasetInfo datasetInfo =
-        DatasetInfo.newBuilder(/* datasetId = */ DATASET).setDescription(DESCRIPTION).build();
+        DatasetInfo.newBuilder(/* datasetId= */ DATASET).setDescription(DESCRIPTION).build();
     bigquery.create(datasetInfo);
     LOG.info("Created test dataset: " + DATASET);
     TableInfo tableInfo =
@@ -89,8 +89,8 @@ public class ITBigQueryWriteQuotaRetryTest {
         DATASET,
         QUOTA_RETRY_PROJECT_ID,
         WriteStream.Type.COMMITTED,
-        /* requestCount=*/ 901,
-        /* rowBatchSize=*/ 1);
+        /* requestCount= */ 901,
+        /* rowBatchSize= */ 1);
   }
 
   @Test
@@ -101,7 +101,7 @@ public class ITBigQueryWriteQuotaRetryTest {
         client,
         DATASET,
         QUOTA_RETRY_PROJECT_ID,
-        /* requestCount=*/ 901,
-        /* rowBatchSize=*/ 1);
+        /* requestCount= */ 901,
+        /* rowBatchSize= */ 1);
   }
 }

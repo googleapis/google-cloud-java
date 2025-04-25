@@ -38,6 +38,7 @@ public interface ProtoSchemaOrBuilder
    * @return Whether the protoDescriptor field is set.
    */
   boolean hasProtoDescriptor();
+
   /**
    *
    *
@@ -52,6 +53,7 @@ public interface ProtoSchemaOrBuilder
    * @return The protoDescriptor.
    */
   com.google.protobuf.DescriptorProtos.DescriptorProto getProtoDescriptor();
+
   /**
    *
    *

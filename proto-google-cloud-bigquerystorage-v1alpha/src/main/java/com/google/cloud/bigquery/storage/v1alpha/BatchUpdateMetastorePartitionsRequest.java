@@ -34,6 +34,7 @@ public final class BatchUpdateMetastorePartitionsRequest
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.BatchUpdateMetastorePartitionsRequest)
     BatchUpdateMetastorePartitionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchUpdateMetastorePartitionsRequest.newBuilder() to construct.
   private BatchUpdateMetastorePartitionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class BatchUpdateMetastorePartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class BatchUpdateMetastorePartitionsRequest
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequest>
       requests_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       getRequestsList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -166,6 +171,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       getRequestsOrBuilderList() {
     return requests_;
   }
+
   /**
    *
    *
@@ -181,6 +187,7 @@ public final class BatchUpdateMetastorePartitionsRequest
   public int getRequestsCount() {
     return requests_.size();
   }
+
   /**
    *
    *
@@ -197,6 +204,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       int index) {
     return requests_.get(index);
   }
+
   /**
    *
    *
@@ -218,6 +226,7 @@ public final class BatchUpdateMetastorePartitionsRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceId_ = "";
+
   /**
    *
    *
@@ -245,6 +254,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       return s;
     }
   }
+
   /**
    *
    *
@@ -461,6 +471,7 @@ public final class BatchUpdateMetastorePartitionsRequest
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -737,6 +748,7 @@ public final class BatchUpdateMetastorePartitionsRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -763,6 +775,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -789,6 +802,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -814,6 +828,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -835,6 +850,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -901,6 +917,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return requestsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -919,6 +936,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return requestsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -938,6 +956,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return requestsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -964,6 +983,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -988,6 +1008,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1013,6 +1034,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1039,6 +1061,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1085,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1110,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1135,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1131,6 +1157,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1152,6 +1179,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       }
       return this;
     }
+
     /**
      *
      *
@@ -1167,6 +1195,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         getRequestsBuilder(int index) {
       return getRequestsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1186,6 +1215,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return requestsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1207,6 +1237,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return java.util.Collections.unmodifiableList(requests_);
       }
     }
+
     /**
      *
      *
@@ -1225,6 +1256,7 @@ public final class BatchUpdateMetastorePartitionsRequest
               com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequest
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1244,6 +1276,7 @@ public final class BatchUpdateMetastorePartitionsRequest
               com.google.cloud.bigquery.storage.v1alpha.UpdateMetastorePartitionRequest
                   .getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1279,6 +1312,7 @@ public final class BatchUpdateMetastorePartitionsRequest
     }
 
     private java.lang.Object traceId_ = "";
+
     /**
      *
      *
@@ -1305,6 +1339,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1331,6 +1366,7 @@ public final class BatchUpdateMetastorePartitionsRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1356,6 +1392,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1377,6 +1414,7 @@ public final class BatchUpdateMetastorePartitionsRequest
       onChanged();
       return this;
     }
+
     /**
      *
      *

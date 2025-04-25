@@ -25,6 +25,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ProtoRows)
     ProtoRowsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ProtoRows.newBuilder() to construct.
   private ProtoRows(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -60,6 +61,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
   @SuppressWarnings("serial")
   private com.google.protobuf.Internal.ProtobufList<com.google.protobuf.ByteString>
       serializedRows_ = emptyList(com.google.protobuf.ByteString.class);
+
   /**
    *
    *
@@ -78,6 +80,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.protobuf.ByteString> getSerializedRowsList() {
     return serializedRows_;
   }
+
   /**
    *
    *
@@ -95,6 +98,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
   public int getSerializedRowsCount() {
     return serializedRows_.size();
   }
+
   /**
    *
    *
@@ -281,6 +285,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /** Protobuf type {@code google.cloud.bigquery.storage.v1beta2.ProtoRows} */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
@@ -473,6 +478,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -491,6 +497,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
       serializedRows_.makeImmutable();
       return serializedRows_;
     }
+
     /**
      *
      *
@@ -508,6 +515,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     public int getSerializedRowsCount() {
       return serializedRows_.size();
     }
+
     /**
      *
      *
@@ -526,6 +534,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSerializedRows(int index) {
       return serializedRows_.get(index);
     }
+
     /**
      *
      *
@@ -552,6 +561,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -577,6 +587,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -600,6 +611,7 @@ public final class ProtoRows extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

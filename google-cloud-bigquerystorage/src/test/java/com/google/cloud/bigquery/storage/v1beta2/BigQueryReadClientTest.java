@@ -201,7 +201,7 @@ public class BigQueryReadClientTest {
                 Status.INTERNAL.withDescription(
                     "Received unexpected EOS on DATA frame from server")),
             GrpcStatusCode.of(Code.INTERNAL),
-            /* retryable = */ false);
+            /* retryable= */ false);
     mockBigQueryRead.addException(exception);
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
@@ -228,7 +228,7 @@ public class BigQueryReadClientTest {
                 Status.INTERNAL.withDescription(
                     "HTTP/2 error code: INTERNAL_ERROR\nReceived Rst Stream")),
             GrpcStatusCode.of(Code.INTERNAL),
-            /* retryable = */ false);
+            /* retryable= */ false);
     mockBigQueryRead.addException(exception);
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
@@ -255,7 +255,7 @@ public class BigQueryReadClientTest {
             new StatusRuntimeException(
                 Status.RESOURCE_EXHAUSTED.withDescription("You are out of quota X")),
             GrpcStatusCode.of(Code.RESOURCE_EXHAUSTED),
-            /* retryable = */ false);
+            /* retryable= */ false);
     mockBigQueryRead.addException(exception);
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();
@@ -317,7 +317,7 @@ public class BigQueryReadClientTest {
             new StatusRuntimeException(
                 Status.RESOURCE_EXHAUSTED.withDescription("Try again in a bit"), metadata),
             GrpcStatusCode.of(Code.RESOURCE_EXHAUSTED),
-            /* retryable = */ false);
+            /* retryable= */ false);
     mockBigQueryRead.addException(exception);
     long rowCount = 1340416618L;
     ReadRowsResponse expectedResponse = ReadRowsResponse.newBuilder().setRowCount(rowCount).build();

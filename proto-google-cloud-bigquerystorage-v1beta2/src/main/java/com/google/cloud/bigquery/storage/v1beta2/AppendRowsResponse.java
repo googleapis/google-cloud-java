@@ -33,6 +33,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse)
     AppendRowsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AppendRowsResponse.newBuilder() to construct.
   private AppendRowsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -79,6 +80,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      * @return Whether the offset field is set.
      */
     boolean hasOffset();
+
     /**
      *
      *
@@ -92,6 +94,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      * @return The offset.
      */
     com.google.protobuf.Int64Value getOffset();
+
     /**
      *
      *
@@ -104,6 +107,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
      */
     com.google.protobuf.Int64ValueOrBuilder getOffsetOrBuilder();
   }
+
   /**
    *
    *
@@ -118,6 +122,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult)
       AppendResultOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use AppendResult.newBuilder() to construct.
     private AppendResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -150,6 +155,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     private int bitField0_;
     public static final int OFFSET_FIELD_NUMBER = 1;
     private com.google.protobuf.Int64Value offset_;
+
     /**
      *
      *
@@ -166,6 +172,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasOffset() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -182,6 +189,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.Int64Value getOffset() {
       return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
     }
+
     /**
      *
      *
@@ -370,6 +378,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -587,6 +596,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
               com.google.protobuf.Int64Value.Builder,
               com.google.protobuf.Int64ValueOrBuilder>
           offsetBuilder_;
+
       /**
        *
        *
@@ -602,6 +612,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       public boolean hasOffset() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -621,6 +632,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
           return offsetBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -644,6 +656,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -664,6 +677,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -692,6 +706,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         }
         return this;
       }
+
       /**
        *
        *
@@ -712,6 +727,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -727,6 +743,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         onChanged();
         return getOffsetFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -744,6 +761,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
           return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
         }
       }
+
       /**
        *
        *
@@ -857,6 +875,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     private ResponseCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -890,6 +909,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int APPEND_RESULT_FIELD_NUMBER = 1;
+
   /**
    *
    *
@@ -906,6 +926,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasAppendResult() {
     return responseCase_ == 1;
   }
+
   /**
    *
    *
@@ -927,6 +948,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -948,6 +970,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
+
   /**
    *
    *
@@ -982,6 +1005,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasError() {
     return responseCase_ == 2;
   }
+
   /**
    *
    *
@@ -1019,6 +1043,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     }
     return com.google.rpc.Status.getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1057,6 +1082,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
 
   public static final int UPDATED_SCHEMA_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.storage.v1beta2.TableSchema updatedSchema_;
+
   /**
    *
    *
@@ -1074,6 +1100,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
   public boolean hasUpdatedSchema() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1093,6 +1120,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.bigquery.storage.v1beta2.TableSchema.getDefaultInstance()
         : updatedSchema_;
   }
+
   /**
    *
    *
@@ -1319,6 +1347,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1588,6 +1617,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult.Builder,
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResultOrBuilder>
         appendResultBuilder_;
+
     /**
      *
      *
@@ -1605,6 +1635,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasAppendResult() {
       return responseCase_ == 1;
     }
+
     /**
      *
      *
@@ -1636,6 +1667,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1661,6 +1693,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1684,6 +1717,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1722,6 +1756,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 1;
       return this;
     }
+
     /**
      *
      *
@@ -1749,6 +1784,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1764,6 +1800,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         getAppendResultBuilder() {
       return getAppendResultFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1789,6 +1826,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1830,6 +1868,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         errorBuilder_;
+
     /**
      *
      *
@@ -1864,6 +1903,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasError() {
       return responseCase_ == 2;
     }
+
     /**
      *
      *
@@ -1908,6 +1948,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -1949,6 +1990,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -1987,6 +2029,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2036,6 +2079,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       responseCase_ = 2;
       return this;
     }
+
     /**
      *
      *
@@ -2080,6 +2124,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2111,6 +2156,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public com.google.rpc.Status.Builder getErrorBuilder() {
       return getErrorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2150,6 +2196,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         return com.google.rpc.Status.getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2204,6 +2251,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.storage.v1beta2.TableSchema.Builder,
             com.google.cloud.bigquery.storage.v1beta2.TableSchemaOrBuilder>
         updatedSchemaBuilder_;
+
     /**
      *
      *
@@ -2220,6 +2268,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
     public boolean hasUpdatedSchema() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -2242,6 +2291,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
         return updatedSchemaBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2266,6 +2316,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2288,6 +2339,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2318,6 +2370,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2339,6 +2392,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2355,6 +2409,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getUpdatedSchemaFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2376,6 +2431,7 @@ public final class AppendRowsResponse extends com.google.protobuf.GeneratedMessa
             : updatedSchema_;
       }
     }
+
     /**
      *
      *

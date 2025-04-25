@@ -37,6 +37,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the appendResult field is set.
    */
   boolean hasAppendResult();
+
   /**
    *
    *
@@ -50,6 +51,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The appendResult.
    */
   com.google.cloud.bigquery.storage.v1beta2.AppendRowsResponse.AppendResult getAppendResult();
+
   /**
    *
    *
@@ -94,6 +96,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the error field is set.
    */
   boolean hasError();
+
   /**
    *
    *
@@ -125,6 +128,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The error.
    */
   com.google.rpc.Status getError();
+
   /**
    *
    *
@@ -169,6 +173,7 @@ public interface AppendRowsResponseOrBuilder
    * @return Whether the updatedSchema field is set.
    */
   boolean hasUpdatedSchema();
+
   /**
    *
    *
@@ -183,6 +188,7 @@ public interface AppendRowsResponseOrBuilder
    * @return The updatedSchema.
    */
   com.google.cloud.bigquery.storage.v1beta2.TableSchema getUpdatedSchema();
+
   /**
    *
    *

@@ -35,6 +35,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.StreamMetastorePartitionsRequest)
     StreamMetastorePartitionsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamMetastorePartitionsRequest.newBuilder() to construct.
   private StreamMetastorePartitionsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       return s;
     }
   }
+
   /**
    *
    *
@@ -132,6 +135,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition>
       metastorePartitions_;
+
   /**
    *
    *
@@ -148,6 +152,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       getMetastorePartitionsList() {
     return metastorePartitions_;
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       getMetastorePartitionsOrBuilderList() {
     return metastorePartitions_;
   }
+
   /**
    *
    *
@@ -180,6 +186,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
   public int getMetastorePartitionsCount() {
     return metastorePartitions_.size();
   }
+
   /**
    *
    *
@@ -196,6 +203,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       int index) {
     return metastorePartitions_.get(index);
   }
+
   /**
    *
    *
@@ -215,6 +223,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
 
   public static final int SKIP_EXISTING_PARTITIONS_FIELD_NUMBER = 3;
   private boolean skipExistingPartitions_ = false;
+
   /**
    *
    *
@@ -426,6 +435,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -698,6 +708,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -724,6 +735,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -750,6 +762,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -775,6 +788,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -796,6 +810,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -860,6 +875,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return metastorePartitionsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -878,6 +894,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return metastorePartitionsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -897,6 +914,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return metastorePartitionsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -922,6 +940,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -945,6 +964,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -970,6 +990,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -995,6 +1016,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1017,6 +1039,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1040,6 +1063,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1063,6 +1087,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1084,6 +1109,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1105,6 +1131,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       }
       return this;
     }
+
     /**
      *
      *
@@ -1120,6 +1147,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         getMetastorePartitionsBuilder(int index) {
       return getMetastorePartitionsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1139,6 +1167,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return metastorePartitionsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1159,6 +1188,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
         return java.util.Collections.unmodifiableList(metastorePartitions_);
       }
     }
+
     /**
      *
      *
@@ -1176,6 +1206,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
           .addBuilder(
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1194,6 +1225,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
               index,
               com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1231,6 +1263,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
     }
 
     private boolean skipExistingPartitions_;
+
     /**
      *
      *
@@ -1253,6 +1286,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
     public boolean getSkipExistingPartitions() {
       return skipExistingPartitions_;
     }
+
     /**
      *
      *
@@ -1279,6 +1313,7 @@ public final class StreamMetastorePartitionsRequest extends com.google.protobuf.
       onChanged();
       return this;
     }
+
     /**
      *
      *

@@ -163,7 +163,8 @@ public class ProtoSchemaConverterTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       Assert.assertEquals(
-          "Recursive type is not supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
+          "Recursive type is not"
+              + " supported:com.google.cloud.bigquery.storage.test.RecursiveTypeTopMessage",
           e.getMessage());
     }
   }

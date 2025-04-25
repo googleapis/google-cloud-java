@@ -39,6 +39,7 @@ public interface CreateWriteStreamRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -69,6 +70,7 @@ public interface CreateWriteStreamRequestOrBuilder
    * @return Whether the writeStream field is set.
    */
   boolean hasWriteStream();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public interface CreateWriteStreamRequestOrBuilder
    * @return The writeStream.
    */
   com.google.cloud.bigquery.storage.v1beta2.WriteStream getWriteStream();
+
   /**
    *
    *

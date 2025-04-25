@@ -33,6 +33,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.ArrowSerializationOptions)
     ArrowSerializationOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArrowSerializationOptions.newBuilder() to construct.
   private ArrowSerializationOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -117,6 +118,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>COMPRESSION_UNSPECIFIED = 0;</code>
      */
     public static final int COMPRESSION_UNSPECIFIED_VALUE = 0;
+
     /**
      *
      *
@@ -127,6 +129,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
      * <code>LZ4_FRAME = 1;</code>
      */
     public static final int LZ4_FRAME_VALUE = 1;
+
     /**
      *
      *
@@ -227,6 +230,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
 
   public static final int BUFFER_COMPRESSION_FIELD_NUMBER = 2;
   private int bufferCompression_ = 0;
+
   /**
    *
    *
@@ -245,6 +249,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
   public int getBufferCompressionValue() {
     return bufferCompression_;
   }
+
   /**
    *
    *
@@ -437,6 +442,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -622,6 +628,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     private int bitField0_;
 
     private int bufferCompression_ = 0;
+
     /**
      *
      *
@@ -640,6 +647,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
     public int getBufferCompressionValue() {
       return bufferCompression_;
     }
+
     /**
      *
      *
@@ -661,6 +669,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -686,6 +695,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
               .UNRECOGNIZED
           : result;
     }
+
     /**
      *
      *
@@ -711,6 +721,7 @@ public final class ArrowSerializationOptions extends com.google.protobuf.Generat
       onChanged();
       return this;
     }
+
     /**
      *
      *

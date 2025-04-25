@@ -113,9 +113,9 @@ public class RequestProfiler {
         if (idToIndividualOperation.size() > MAX_CACHED_REQUEST) {
           log.warning(
               String.format(
-                  "startOperation is triggered for request_id: %s that's hasn't "
-                      + "seen before, this is possible when "
-                      + "we are recording too much ongoing requests. So far we has dropped %s operations.",
+                  "startOperation is triggered for request_id: %s that's hasn't seen before, this"
+                      + " is possible when we are recording too much ongoing requests. So far we"
+                      + " has dropped %s operations.",
                   requestUniqueId, droppedOperationCount));
           droppedOperationCount.incrementAndGet();
           return;
@@ -144,9 +144,9 @@ public class RequestProfiler {
       if (!idToIndividualOperation.containsKey(requestUniqueId)) {
         log.warning(
             String.format(
-                "endOperation is triggered for request_id: %s that's hasn't "
-                    + "seen before, this is possible when "
-                    + "we are recording too much ongoing requests. So far we has dropped %s operations.",
+                "endOperation is triggered for request_id: %s that's hasn't seen before, this is"
+                    + " possible when we are recording too much ongoing requests. So far we has"
+                    + " dropped %s operations.",
                 requestUniqueId, droppedOperationCount));
         return;
       }
@@ -235,8 +235,9 @@ public class RequestProfiler {
     // Generate report for the TOP_K longest requests.
     String reportText =
         String.format(
-            "During the last %s milliseconds at system time %s, in total %s requests finished. Total dropped "
-                + "request is %s. The top %s long latency requests details report:\n",
+            "During the last %s milliseconds at system time %s, in total %s requests finished."
+                + " Total dropped request is %s. The top %s long latency requests details"
+                + " report:\n",
             FLUSH_PERIOD.toMillis(),
             System.currentTimeMillis(),
             finishedRequestCount,
@@ -316,8 +317,8 @@ public class RequestProfiler {
       if (timeRecorderMap.get(operationName).isEmpty()) {
         String warningMessage =
             String.format(
-                "Operation %s ignored for request %s due to no previous startOperation() triggered for "
-                    + "this operation",
+                "Operation %s ignored for request %s due to no previous startOperation() triggered"
+                    + " for this operation",
                 operationName, requestUniqueId);
         log.warning(warningMessage);
         return;

@@ -33,6 +33,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsResponse)
     BatchCommitWriteStreamsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCommitWriteStreamsResponse.newBuilder() to construct.
   private BatchCommitWriteStreamsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -67,6 +68,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   private int bitField0_;
   public static final int COMMIT_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Timestamp commitTime_;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   public boolean hasCommitTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -101,6 +104,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   public com.google.protobuf.Timestamp getCommitTime() {
     return commitTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : commitTime_;
   }
+
   /**
    *
    *
@@ -121,6 +125,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1.StorageError> streamErrors_;
+
   /**
    *
    *
@@ -138,6 +143,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   public java.util.List<com.google.cloud.bigquery.storage.v1.StorageError> getStreamErrorsList() {
     return streamErrors_;
   }
+
   /**
    *
    *
@@ -156,6 +162,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       getStreamErrorsOrBuilderList() {
     return streamErrors_;
   }
+
   /**
    *
    *
@@ -173,6 +180,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   public int getStreamErrorsCount() {
     return streamErrors_.size();
   }
+
   /**
    *
    *
@@ -190,6 +198,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
   public com.google.cloud.bigquery.storage.v1.StorageError getStreamErrors(int index) {
     return streamErrors_.get(index);
   }
+
   /**
    *
    *
@@ -386,6 +395,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -659,6 +669,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         commitTimeBuilder_;
+
     /**
      *
      *
@@ -675,6 +686,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
     public boolean hasCommitTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -697,6 +709,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return commitTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -721,6 +734,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -742,6 +756,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -771,6 +786,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -792,6 +808,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -808,6 +825,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       onChanged();
       return getCommitTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -828,6 +846,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
             : commitTime_;
       }
     }
+
     /**
      *
      *
@@ -894,6 +913,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return streamErrorsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -914,6 +934,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return streamErrorsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -934,6 +955,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return streamErrorsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -961,6 +983,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -985,6 +1008,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1011,6 +1035,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1038,6 +1063,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1062,6 +1088,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1086,6 +1113,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1110,6 +1138,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1133,6 +1162,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1156,6 +1186,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -1173,6 +1204,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         int index) {
       return getStreamErrorsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -1194,6 +1226,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return streamErrorsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -1215,6 +1248,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
         return java.util.Collections.unmodifiableList(streamErrors_);
       }
     }
+
     /**
      *
      *
@@ -1232,6 +1266,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
       return getStreamErrorsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.storage.v1.StorageError.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -1251,6 +1286,7 @@ public final class BatchCommitWriteStreamsResponse extends com.google.protobuf.G
           .addBuilder(
               index, com.google.cloud.bigquery.storage.v1.StorageError.getDefaultInstance());
     }
+
     /**
      *
      *

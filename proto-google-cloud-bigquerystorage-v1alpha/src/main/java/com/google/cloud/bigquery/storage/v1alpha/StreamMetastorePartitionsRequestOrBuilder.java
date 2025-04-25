@@ -40,6 +40,7 @@ public interface StreamMetastorePartitionsRequestOrBuilder
    * @return The parent.
    */
   java.lang.String getParent();
+
   /**
    *
    *
@@ -70,6 +71,7 @@ public interface StreamMetastorePartitionsRequestOrBuilder
    */
   java.util.List<com.google.cloud.bigquery.storage.v1alpha.MetastorePartition>
       getMetastorePartitionsList();
+
   /**
    *
    *
@@ -82,6 +84,7 @@ public interface StreamMetastorePartitionsRequestOrBuilder
    * </code>
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartition getMetastorePartitions(int index);
+
   /**
    *
    *
@@ -94,6 +97,7 @@ public interface StreamMetastorePartitionsRequestOrBuilder
    * </code>
    */
   int getMetastorePartitionsCount();
+
   /**
    *
    *
@@ -107,6 +111,7 @@ public interface StreamMetastorePartitionsRequestOrBuilder
    */
   java.util.List<? extends com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionOrBuilder>
       getMetastorePartitionsOrBuilderList();
+
   /**
    *
    *

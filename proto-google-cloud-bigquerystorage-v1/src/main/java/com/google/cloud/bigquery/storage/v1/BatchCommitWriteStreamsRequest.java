@@ -33,6 +33,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.BatchCommitWriteStreamsRequest)
     BatchCommitWriteStreamsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use BatchCommitWriteStreamsRequest.newBuilder() to construct.
   private BatchCommitWriteStreamsRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -69,6 +70,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -95,6 +97,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       return s;
     }
   }
+
   /**
    *
    *
@@ -127,6 +130,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList writeStreams_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -141,6 +145,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
   public com.google.protobuf.ProtocolStringList getWriteStreamsList() {
     return writeStreams_;
   }
+
   /**
    *
    *
@@ -155,6 +160,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
   public int getWriteStreamsCount() {
     return writeStreams_.size();
   }
+
   /**
    *
    *
@@ -170,6 +176,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
   public java.lang.String getWriteStreams(int index) {
     return writeStreams_.get(index);
   }
+
   /**
    *
    *
@@ -363,6 +370,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -576,6 +584,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -601,6 +610,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -626,6 +636,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -650,6 +661,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -670,6 +682,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -705,6 +718,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       }
       bitField0_ |= 0x00000002;
     }
+
     /**
      *
      *
@@ -720,6 +734,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       writeStreams_.makeImmutable();
       return writeStreams_;
     }
+
     /**
      *
      *
@@ -734,6 +749,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     public int getWriteStreamsCount() {
       return writeStreams_.size();
     }
+
     /**
      *
      *
@@ -749,6 +765,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     public java.lang.String getWriteStreams(int index) {
       return writeStreams_.get(index);
     }
+
     /**
      *
      *
@@ -764,6 +781,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
     public com.google.protobuf.ByteString getWriteStreamsBytes(int index) {
       return writeStreams_.getByteString(index);
     }
+
     /**
      *
      *
@@ -787,6 +805,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -809,6 +828,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -828,6 +848,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -846,6 +867,7 @@ public final class BatchCommitWriteStreamsRequest extends com.google.protobuf.Ge
       onChanged();
       return this;
     }
+
     /**
      *
      *

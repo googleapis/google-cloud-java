@@ -38,6 +38,7 @@ public interface FlushRowsRequestOrBuilder
    * @return The writeStream.
    */
   java.lang.String getWriteStream();
+
   /**
    *
    *
@@ -66,6 +67,7 @@ public interface FlushRowsRequestOrBuilder
    * @return Whether the offset field is set.
    */
   boolean hasOffset();
+
   /**
    *
    *
@@ -79,6 +81,7 @@ public interface FlushRowsRequestOrBuilder
    * @return The offset.
    */
   com.google.protobuf.Int64Value getOffset();
+
   /**
    *
    *

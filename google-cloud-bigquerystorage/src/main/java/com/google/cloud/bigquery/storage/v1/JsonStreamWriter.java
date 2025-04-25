@@ -45,7 +45,9 @@ public class JsonStreamWriter implements AutoCloseable {
    * @param builder The Builder object for the JsonStreamWriter
    */
   private JsonStreamWriter(SchemaAwareStreamWriter.Builder<Object> builder)
-      throws Descriptors.DescriptorValidationException, IllegalArgumentException, IOException,
+      throws Descriptors.DescriptorValidationException,
+          IllegalArgumentException,
+          IOException,
           InterruptedException {
     this.schemaAwareStreamWriter = builder.build();
   }
@@ -85,7 +87,9 @@ public class JsonStreamWriter implements AutoCloseable {
     return this.schemaAwareStreamWriter.getStreamName();
   }
 
-  /** @return A unique Id for this writer. */
+  /**
+   * @return A unique Id for this writer.
+   */
   public String getWriterId() {
     return this.schemaAwareStreamWriter.getWriterId();
   }
@@ -119,7 +123,9 @@ public class JsonStreamWriter implements AutoCloseable {
     return this.schemaAwareStreamWriter.getInflightWaitSeconds();
   }
 
-  /** @return the missing value interpretation map used for the writer. */
+  /**
+   * @return the missing value interpretation map used for the writer.
+   */
   public Map<String, AppendRowsRequest.MissingValueInterpretation>
       getMissingValueInterpretationMap() {
     return this.schemaAwareStreamWriter.getMissingValueInterpretationMap();
@@ -207,7 +213,9 @@ public class JsonStreamWriter implements AutoCloseable {
     return this.schemaAwareStreamWriter.isClosed();
   }
 
-  /** @return if user explicitly closed the writer. */
+  /**
+   * @return if user explicitly closed the writer.
+   */
   public boolean isUserClosed() {
     return this.schemaAwareStreamWriter.isUserClosed();
   }
@@ -436,7 +444,9 @@ public class JsonStreamWriter implements AutoCloseable {
      * @return JsonStreamWriter
      */
     public JsonStreamWriter build()
-        throws Descriptors.DescriptorValidationException, IllegalArgumentException, IOException,
+        throws Descriptors.DescriptorValidationException,
+            IllegalArgumentException,
+            IOException,
             InterruptedException {
       return new JsonStreamWriter(this.schemaAwareStreamWriterBuilder);
     }

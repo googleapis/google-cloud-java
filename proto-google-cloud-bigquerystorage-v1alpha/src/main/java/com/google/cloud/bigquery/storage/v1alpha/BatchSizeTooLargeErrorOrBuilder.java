@@ -50,6 +50,7 @@ public interface BatchSizeTooLargeErrorOrBuilder
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
+
   /**
    *
    *

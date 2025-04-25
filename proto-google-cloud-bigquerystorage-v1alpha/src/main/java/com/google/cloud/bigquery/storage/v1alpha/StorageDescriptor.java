@@ -34,6 +34,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.StorageDescriptor)
     StorageDescriptorOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StorageDescriptor.newBuilder() to construct.
   private StorageDescriptor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -71,6 +72,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object locationUri_ = "";
+
   /**
    *
    *
@@ -96,6 +98,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -126,6 +129,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object inputFormat_ = "";
+
   /**
    *
    *
@@ -151,6 +155,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -181,6 +186,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object outputFormat_ = "";
+
   /**
    *
    *
@@ -206,6 +212,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -234,6 +241,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
 
   public static final int SERDE_INFO_FIELD_NUMBER = 4;
   private com.google.cloud.bigquery.storage.v1alpha.SerDeInfo serdeInfo_;
+
   /**
    *
    *
@@ -251,6 +259,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
   public boolean hasSerdeInfo() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -270,6 +279,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         ? com.google.cloud.bigquery.storage.v1alpha.SerDeInfo.getDefaultInstance()
         : serdeInfo_;
   }
+
   /**
    *
    *
@@ -480,6 +490,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -724,6 +735,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object locationUri_ = "";
+
     /**
      *
      *
@@ -748,6 +760,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -772,6 +785,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -795,6 +809,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -814,6 +829,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -840,6 +856,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object inputFormat_ = "";
+
     /**
      *
      *
@@ -864,6 +881,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -888,6 +906,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -911,6 +930,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -930,6 +950,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -956,6 +977,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object outputFormat_ = "";
+
     /**
      *
      *
@@ -980,6 +1002,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1004,6 +1027,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1027,6 +1051,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1046,6 +1071,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1077,6 +1103,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.storage.v1alpha.SerDeInfo.Builder,
             com.google.cloud.bigquery.storage.v1alpha.SerDeInfoOrBuilder>
         serdeInfoBuilder_;
+
     /**
      *
      *
@@ -1093,6 +1120,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
     public boolean hasSerdeInfo() {
       return ((bitField0_ & 0x00000008) != 0);
     }
+
     /**
      *
      *
@@ -1115,6 +1143,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
         return serdeInfoBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1139,6 +1168,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1161,6 +1191,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1191,6 +1222,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -1212,6 +1244,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getSerdeInfoFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1248,6 +1282,7 @@ public final class StorageDescriptor extends com.google.protobuf.GeneratedMessag
             : serdeInfo_;
       }
     }
+
     /**
      *
      *

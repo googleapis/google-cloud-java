@@ -128,6 +128,7 @@ class ConnectionWorker implements AutoCloseable {
    * Enables compression on the wire.
    */
   private String compressorName = null;
+
   /*
    * Tracks current inflight requests in the stream.
    */
@@ -256,6 +257,7 @@ class ConnectionWorker implements AutoCloseable {
 
   private static String tableMatching = "(projects/[^/]+/datasets/[^/]+/tables/[^/]+)/";
   private static Pattern streamPatternTable = Pattern.compile(tableMatching);
+
   // Latency buckets are based on a list of 1.5 ^ n
 
   public static Boolean isDefaultStreamName(String streamName) {
@@ -370,8 +372,7 @@ class ConnectionWorker implements AutoCloseable {
           "write_location=" + getRoutingHeader(this.streamName, this.location));
     }
     BigQueryWriteSettings stubSettings =
-        clientSettings
-            .toBuilder()
+        clientSettings.toBuilder()
             .setHeaderProvider(FixedHeaderProvider.create(newHeaders))
             .build();
     this.client = BigQueryWriteClient.create(clientSettings);
@@ -678,7 +679,9 @@ class ConnectionWorker implements AutoCloseable {
     return inflightWaitSec.longValue();
   }
 
-  /** @return a unique Id for the writer. */
+  /**
+   * @return a unique Id for the writer.
+   */
   public String getWriterId() {
     return writerId;
   }
@@ -1079,15 +1082,15 @@ class ConnectionWorker implements AutoCloseable {
         if (isDefaultStreamName(streamName) || offset == -1) {
           log.info(
               String.format(
-                  "Retrying default stream message in stream %s for in-stream error: %s, retry count:"
-                      + " %s",
+                  "Retrying default stream message in stream %s for in-stream error: %s, retry"
+                      + " count: %s",
                   streamName, errorCode, requestWrapper.retryCount));
           addMessageToFrontOfWaitingQueue(requestWrapper);
         } else {
           log.info(
               String.format(
-                  "Retrying exclusive message in stream %s at offset %d for in-stream error: %s, retry"
-                      + " count: %s",
+                  "Retrying exclusive message in stream %s at offset %d for in-stream error: %s,"
+                      + " retry count: %s",
                   streamName,
                   requestWrapper.message.getOffset().getValue(),
                   errorCode,

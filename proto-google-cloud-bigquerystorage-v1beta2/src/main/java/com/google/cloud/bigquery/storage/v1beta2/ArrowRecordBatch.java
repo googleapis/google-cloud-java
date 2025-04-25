@@ -33,6 +33,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.ArrowRecordBatch)
     ArrowRecordBatchOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use ArrowRecordBatch.newBuilder() to construct.
   private ArrowRecordBatch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
   public static final int SERIALIZED_RECORD_BATCH_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString serializedRecordBatch_ =
       com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -242,6 +244,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -425,6 +428,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
 
     private com.google.protobuf.ByteString serializedRecordBatch_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -440,6 +444,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
     public com.google.protobuf.ByteString getSerializedRecordBatch() {
       return serializedRecordBatch_;
     }
+
     /**
      *
      *
@@ -461,6 +466,7 @@ public final class ArrowRecordBatch extends com.google.protobuf.GeneratedMessage
       onChanged();
       return this;
     }
+
     /**
      *
      *

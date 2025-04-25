@@ -46,6 +46,7 @@ public class BigDecimalByteStringEncoder {
             byteString, NumericScale, MAX_NUMERIC_VALUE, MIN_NUMERIC_VALUE, "BigDecimal");
     return bigDecimal;
   }
+
   // Make these private and make public wrapper that internalizes these min/max/scale/type
   private static BigDecimal deserializeBigDecimal(
       ByteString serializedValue,
@@ -65,6 +66,7 @@ public class BigDecimalByteStringEncoder {
     }
     return decimalValue;
   }
+
   /** Returns a numeric Value that equals to {@code v}. */
   private static ByteString serializeBigDecimal(
       BigDecimal v, int scale, BigDecimal maxValue, BigDecimal minValue, String typeName) {

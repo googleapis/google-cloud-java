@@ -36,6 +36,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.StreamMetastorePartitionsResponse)
     StreamMetastorePartitionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use StreamMetastorePartitionsResponse.newBuilder() to construct.
   private StreamMetastorePartitionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -68,6 +69,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
 
   public static final int TOTAL_PARTITIONS_STREAMED_COUNT_FIELD_NUMBER = 2;
   private long totalPartitionsStreamedCount_ = 0L;
+
   /**
    *
    *
@@ -88,6 +90,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
 
   public static final int TOTAL_PARTITIONS_INSERTED_COUNT_FIELD_NUMBER = 3;
   private long totalPartitionsInsertedCount_ = 0L;
+
   /**
    *
    *
@@ -284,6 +287,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -493,6 +497,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     private int bitField0_;
 
     private long totalPartitionsStreamedCount_;
+
     /**
      *
      *
@@ -510,6 +515,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     public long getTotalPartitionsStreamedCount() {
       return totalPartitionsStreamedCount_;
     }
+
     /**
      *
      *
@@ -531,6 +537,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -552,6 +559,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     }
 
     private long totalPartitionsInsertedCount_;
+
     /**
      *
      *
@@ -569,6 +577,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
     public long getTotalPartitionsInsertedCount() {
       return totalPartitionsInsertedCount_;
     }
+
     /**
      *
      *
@@ -590,6 +599,7 @@ public final class StreamMetastorePartitionsResponse extends com.google.protobuf
       onChanged();
       return this;
     }
+
     /**
      *
      *

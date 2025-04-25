@@ -301,6 +301,19 @@ public final class BigQueryStorageGrpc {
     return BigQueryStorageStub.newStub(factory, channel);
   }
 
+  /** Creates a new blocking-style stub that supports all types of calls on the service */
+  public static BigQueryStorageBlockingV2Stub newBlockingV2Stub(io.grpc.Channel channel) {
+    io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageBlockingV2Stub> factory =
+        new io.grpc.stub.AbstractStub.StubFactory<BigQueryStorageBlockingV2Stub>() {
+          @java.lang.Override
+          public BigQueryStorageBlockingV2Stub newStub(
+              io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+            return new BigQueryStorageBlockingV2Stub(channel, callOptions);
+          }
+        };
+    return BigQueryStorageBlockingV2Stub.newStub(factory, channel);
+  }
+
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
@@ -634,6 +647,141 @@ public final class BigQueryStorageGrpc {
 
   /**
    * A stub to allow clients to do synchronous rpc calls to service BigQueryStorage.
+   *
+   * <pre>
+   * BigQuery storage API.
+   * The BigQuery storage API can be used to read data stored in BigQuery.
+   * The v1beta1 API is not yet officially deprecated, and will go through a full
+   * deprecation cycle (https://cloud.google.com/products#product-launch-stages)
+   * before the service is turned down. However, new code should use the v1 API
+   * going forward.
+   * </pre>
+   */
+  public static final class BigQueryStorageBlockingV2Stub
+      extends io.grpc.stub.AbstractBlockingStub<BigQueryStorageBlockingV2Stub> {
+    private BigQueryStorageBlockingV2Stub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      super(channel, callOptions);
+    }
+
+    @java.lang.Override
+    protected BigQueryStorageBlockingV2Stub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
+      return new BigQueryStorageBlockingV2Stub(channel, callOptions);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new read session. A read session divides the contents of a
+     * BigQuery table into one or more streams, which can then be used to read
+     * data from the table. The read session also specifies properties of the
+     * data to be read, such as a list of columns or a push-down filter describing
+     * the rows to be returned.
+     * A particular row can be read by at most one stream. When the caller has
+     * reached the end of each stream in the session, then all the data in the
+     * table has been read.
+     * Read sessions automatically expire 6 hours after they are created and do
+     * not require manual clean-up by the caller.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.ReadSession createReadSession(
+        com.google.cloud.bigquery.storage.v1beta1.Storage.CreateReadSessionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateReadSessionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Reads rows from the table in the format prescribed by the read session.
+     * Each response contains one or more table rows, up to a maximum of 10 MiB
+     * per response; read requests which attempt to read individual rows larger
+     * than this will fail.
+     * Each request also returns a set of stream statistics reflecting the
+     * estimated total number of rows in the read stream. This number is computed
+     * based on the total table size and the number of active streams in the read
+     * session, and may change as other streams continue to read data.
+     * </pre>
+     */
+    @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
+    public io.grpc.stub.BlockingClientCall<
+            ?, com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsResponse>
+        readRows(com.google.cloud.bigquery.storage.v1beta1.Storage.ReadRowsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingV2ServerStreamingCall(
+          getChannel(), getReadRowsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates additional streams for a ReadSession. This API can be used to
+     * dynamically adjust the parallelism of a batch processing task upwards by
+     * adding additional workers.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsResponse
+        batchCreateReadSessionStreams(
+            com.google.cloud.bigquery.storage.v1beta1.Storage.BatchCreateReadSessionStreamsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateReadSessionStreamsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Causes a single stream in a ReadSession to gracefully stop. This
+     * API can be used to dynamically adjust the parallelism of a batch processing
+     * task downwards without losing data.
+     * This API does not delete the stream -- it remains visible in the
+     * ReadSession, and any data processed by the stream is not released to other
+     * streams. However, no additional data will be assigned to the stream once
+     * this call completes. Callers must continue reading data on the stream until
+     * the end of the stream is reached so that data which has already been
+     * assigned to the stream will be processed.
+     * This method will return an error if there are no other live streams
+     * in the Session, or if SplitReadStream() has been called on the given
+     * Stream.
+     * </pre>
+     */
+    public com.google.protobuf.Empty finalizeStream(
+        com.google.cloud.bigquery.storage.v1beta1.Storage.FinalizeStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFinalizeStreamMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Splits a given read stream into two Streams. These streams are referred to
+     * as the primary and the residual of the split. The original stream can still
+     * be read from in the same manner as before. Both of the returned streams can
+     * also be read from, and the total rows return by both child streams will be
+     * the same as the rows read from the original stream.
+     * Moreover, the two child streams will be allocated back to back in the
+     * original Stream. Concretely, it is guaranteed that for streams Original,
+     * Primary, and Residual, that Original[0-j] = Primary[0-j] and
+     * Original[j-n] = Residual[0-m] once the streams have been read to
+     * completion.
+     * This method is guaranteed to be idempotent.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamResponse
+        splitReadStream(
+            com.google.cloud.bigquery.storage.v1beta1.Storage.SplitReadStreamRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSplitReadStreamMethod(), getCallOptions(), request);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do limited synchronous rpc calls to service BigQueryStorage.
    *
    * <pre>
    * BigQuery storage API.

@@ -33,6 +33,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.MetastorePartition)
     MetastorePartitionOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetastorePartition.newBuilder() to construct.
   private MetastorePartition(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -82,6 +83,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -98,6 +100,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -114,6 +117,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -131,6 +135,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -151,6 +156,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
 
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
+
   /**
    *
    *
@@ -167,6 +173,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public boolean hasCreateTime() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -183,6 +190,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public com.google.protobuf.Timestamp getCreateTime() {
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
+
   /**
    *
    *
@@ -200,6 +208,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
 
   public static final int STORAGE_DESCRIPTOR_FIELD_NUMBER = 3;
   private com.google.cloud.bigquery.storage.v1alpha.StorageDescriptor storageDescriptor_;
+
   /**
    *
    *
@@ -218,6 +227,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public boolean hasStorageDescriptor() {
     return ((bitField0_ & 0x00000002) != 0);
   }
+
   /**
    *
    *
@@ -238,6 +248,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         ? com.google.cloud.bigquery.storage.v1alpha.StorageDescriptor.getDefaultInstance()
         : storageDescriptor_;
   }
+
   /**
    *
    *
@@ -284,6 +295,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public int getParametersCount() {
     return internalGetParameters().getMap().size();
   }
+
   /**
    *
    *
@@ -302,12 +314,14 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     }
     return internalGetParameters().getMap().containsKey(key);
   }
+
   /** Use {@link #getParametersMap()} instead. */
   @java.lang.Override
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getParameters() {
     return getParametersMap();
   }
+
   /**
    *
    *
@@ -323,6 +337,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
     return internalGetParameters().getMap();
   }
+
   /**
    *
    *
@@ -345,6 +360,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
+
   /**
    *
    *
@@ -372,6 +388,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.bigquery.storage.v1alpha.FieldSchema> fields_;
+
   /**
    *
    *
@@ -387,6 +404,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public java.util.List<com.google.cloud.bigquery.storage.v1alpha.FieldSchema> getFieldsList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -403,6 +421,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       getFieldsOrBuilderList() {
     return fields_;
   }
+
   /**
    *
    *
@@ -418,6 +437,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public int getFieldsCount() {
     return fields_.size();
   }
+
   /**
    *
    *
@@ -433,6 +453,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
   public com.google.cloud.bigquery.storage.v1alpha.FieldSchema getFields(int index) {
     return fields_.get(index);
   }
+
   /**
    *
    *
@@ -673,6 +694,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1031,6 +1053,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -1048,6 +1071,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       values_.makeImmutable();
       return values_;
     }
+
     /**
      *
      *
@@ -1064,6 +1088,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -1081,6 +1106,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -1098,6 +1124,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
+
     /**
      *
      *
@@ -1123,6 +1150,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1147,6 +1175,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1168,6 +1197,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1188,6 +1218,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1220,6 +1251,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
             com.google.protobuf.Timestamp.Builder,
             com.google.protobuf.TimestampOrBuilder>
         createTimeBuilder_;
+
     /**
      *
      *
@@ -1236,6 +1268,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public boolean hasCreateTime() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -1258,6 +1291,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return createTimeBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1282,6 +1316,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1303,6 +1338,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1332,6 +1368,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1353,6 +1390,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1369,6 +1407,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1389,6 +1428,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
             : createTime_;
       }
     }
+
     /**
      *
      *
@@ -1423,6 +1463,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
             com.google.cloud.bigquery.storage.v1alpha.StorageDescriptor.Builder,
             com.google.cloud.bigquery.storage.v1alpha.StorageDescriptorOrBuilder>
         storageDescriptorBuilder_;
+
     /**
      *
      *
@@ -1440,6 +1481,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public boolean hasStorageDescriptor() {
       return ((bitField0_ & 0x00000004) != 0);
     }
+
     /**
      *
      *
@@ -1463,6 +1505,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return storageDescriptorBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -1489,6 +1532,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1512,6 +1556,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1545,6 +1590,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1567,6 +1613,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -1585,6 +1632,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       onChanged();
       return getStorageDescriptorFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -1607,6 +1655,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
             : storageDescriptor_;
       }
     }
+
     /**
      *
      *
@@ -1664,6 +1713,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public int getParametersCount() {
       return internalGetParameters().getMap().size();
     }
+
     /**
      *
      *
@@ -1682,12 +1732,14 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return internalGetParameters().getMap().containsKey(key);
     }
+
     /** Use {@link #getParametersMap()} instead. */
     @java.lang.Override
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getParameters() {
       return getParametersMap();
     }
+
     /**
      *
      *
@@ -1703,6 +1755,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
     public java.util.Map<java.lang.String, java.lang.String> getParametersMap() {
       return internalGetParameters().getMap();
     }
+
     /**
      *
      *
@@ -1725,6 +1778,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       java.util.Map<java.lang.String, java.lang.String> map = internalGetParameters().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
+
     /**
      *
      *
@@ -1753,6 +1807,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       internalGetMutableParameters().getMutableMap().clear();
       return this;
     }
+
     /**
      *
      *
@@ -1771,12 +1826,14 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       internalGetMutableParameters().getMutableMap().remove(key);
       return this;
     }
+
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableParameters() {
       bitField0_ |= 0x00000008;
       return internalGetMutableParameters().getMutableMap();
     }
+
     /**
      *
      *
@@ -1799,6 +1856,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000008;
       return this;
     }
+
     /**
      *
      *
@@ -1851,6 +1909,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return fieldsBuilder_.getMessageList();
       }
     }
+
     /**
      *
      *
@@ -1869,6 +1928,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return fieldsBuilder_.getCount();
       }
     }
+
     /**
      *
      *
@@ -1887,6 +1947,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return fieldsBuilder_.getMessage(index);
       }
     }
+
     /**
      *
      *
@@ -1912,6 +1973,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1934,6 +1996,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1958,6 +2021,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -1983,6 +2047,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2005,6 +2070,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2027,6 +2093,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2050,6 +2117,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2071,6 +2139,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2092,6 +2161,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       }
       return this;
     }
+
     /**
      *
      *
@@ -2107,6 +2177,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         int index) {
       return getFieldsFieldBuilder().getBuilder(index);
     }
+
     /**
      *
      *
@@ -2126,6 +2197,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return fieldsBuilder_.getMessageOrBuilder(index);
       }
     }
+
     /**
      *
      *
@@ -2145,6 +2217,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
         return java.util.Collections.unmodifiableList(fields_);
       }
     }
+
     /**
      *
      *
@@ -2160,6 +2233,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
       return getFieldsFieldBuilder()
           .addBuilder(com.google.cloud.bigquery.storage.v1alpha.FieldSchema.getDefaultInstance());
     }
+
     /**
      *
      *
@@ -2177,6 +2251,7 @@ public final class MetastorePartition extends com.google.protobuf.GeneratedMessa
           .addBuilder(
               index, com.google.cloud.bigquery.storage.v1alpha.FieldSchema.getDefaultInstance());
     }
+
     /**
      *
      *

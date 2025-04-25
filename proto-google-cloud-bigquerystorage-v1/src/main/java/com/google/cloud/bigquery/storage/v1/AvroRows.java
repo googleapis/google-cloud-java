@@ -33,6 +33,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.AvroRows)
     AvroRowsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AvroRows.newBuilder() to construct.
   private AvroRows(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -66,6 +67,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
   public static final int SERIALIZED_BINARY_ROWS_FIELD_NUMBER = 1;
   private com.google.protobuf.ByteString serializedBinaryRows_ =
       com.google.protobuf.ByteString.EMPTY;
+
   /**
    *
    *
@@ -84,6 +86,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
 
   public static final int ROW_COUNT_FIELD_NUMBER = 2;
   private long rowCount_ = 0L;
+
   /**
    *
    *
@@ -272,6 +275,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -467,6 +471,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
 
     private com.google.protobuf.ByteString serializedBinaryRows_ =
         com.google.protobuf.ByteString.EMPTY;
+
     /**
      *
      *
@@ -482,6 +487,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     public com.google.protobuf.ByteString getSerializedBinaryRows() {
       return serializedBinaryRows_;
     }
+
     /**
      *
      *
@@ -503,6 +509,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -522,6 +529,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     }
 
     private long rowCount_;
+
     /**
      *
      *
@@ -541,6 +549,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
     public long getRowCount() {
       return rowCount_;
     }
+
     /**
      *
      *
@@ -564,6 +573,7 @@ public final class AvroRows extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
     /**
      *
      *

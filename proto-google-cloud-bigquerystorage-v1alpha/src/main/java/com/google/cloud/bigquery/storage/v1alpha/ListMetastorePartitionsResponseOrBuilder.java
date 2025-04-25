@@ -36,6 +36,7 @@ public interface ListMetastorePartitionsResponseOrBuilder
    * @return Whether the partitions field is set.
    */
   boolean hasPartitions();
+
   /**
    *
    *
@@ -48,6 +49,7 @@ public interface ListMetastorePartitionsResponseOrBuilder
    * @return The partitions.
    */
   com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionList getPartitions();
+
   /**
    *
    *
@@ -72,6 +74,7 @@ public interface ListMetastorePartitionsResponseOrBuilder
    * @return Whether the streams field is set.
    */
   boolean hasStreams();
+
   /**
    *
    *
@@ -84,6 +87,7 @@ public interface ListMetastorePartitionsResponseOrBuilder
    * @return The streams.
    */
   com.google.cloud.bigquery.storage.v1alpha.StreamList getStreams();
+
   /**
    *
    *

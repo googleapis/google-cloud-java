@@ -33,6 +33,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1.AvroSerializationOptions)
     AvroSerializationOptionsOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AvroSerializationOptions.newBuilder() to construct.
   private AvroSerializationOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -63,6 +64,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
 
   public static final int ENABLE_DISPLAY_NAME_ATTRIBUTE_FIELD_NUMBER = 1;
   private boolean enableDisplayNameAttribute_ = false;
+
   /**
    *
    *
@@ -248,6 +250,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -433,6 +436,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
     private int bitField0_;
 
     private boolean enableDisplayNameAttribute_;
+
     /**
      *
      *
@@ -457,6 +461,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
     public boolean getEnableDisplayNameAttribute() {
       return enableDisplayNameAttribute_;
     }
+
     /**
      *
      *
@@ -485,6 +490,7 @@ public final class AvroSerializationOptions extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

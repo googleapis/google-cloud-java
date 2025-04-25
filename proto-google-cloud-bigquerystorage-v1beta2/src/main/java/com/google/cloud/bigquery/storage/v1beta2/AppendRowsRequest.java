@@ -33,6 +33,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsRequest)
     AppendRowsRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use AppendRowsRequest.newBuilder() to construct.
   private AppendRowsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -81,6 +82,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the writerSchema field is set.
      */
     boolean hasWriterSchema();
+
     /**
      *
      *
@@ -93,6 +95,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return The writerSchema.
      */
     com.google.cloud.bigquery.storage.v1beta2.ProtoSchema getWriterSchema();
+
     /**
      *
      *
@@ -116,6 +119,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the rows field is set.
      */
     boolean hasRows();
+
     /**
      *
      *
@@ -128,6 +132,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      * @return The rows.
      */
     com.google.cloud.bigquery.storage.v1beta2.ProtoRows getRows();
+
     /**
      *
      *
@@ -139,6 +144,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
      */
     com.google.cloud.bigquery.storage.v1beta2.ProtoRowsOrBuilder getRowsOrBuilder();
   }
+
   /**
    *
    *
@@ -153,6 +159,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData)
       ProtoDataOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use ProtoData.newBuilder() to construct.
     private ProtoData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -184,6 +191,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
     public static final int WRITER_SCHEMA_FIELD_NUMBER = 1;
     private com.google.cloud.bigquery.storage.v1beta2.ProtoSchema writerSchema_;
+
     /**
      *
      *
@@ -199,6 +207,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasWriterSchema() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -216,6 +225,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.getDefaultInstance()
           : writerSchema_;
     }
+
     /**
      *
      *
@@ -235,6 +245,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
     public static final int ROWS_FIELD_NUMBER = 2;
     private com.google.cloud.bigquery.storage.v1beta2.ProtoRows rows_;
+
     /**
      *
      *
@@ -250,6 +261,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasRows() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -267,6 +279,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           ? com.google.cloud.bigquery.storage.v1beta2.ProtoRows.getDefaultInstance()
           : rows_;
     }
+
     /**
      *
      *
@@ -470,6 +483,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -711,6 +725,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               com.google.cloud.bigquery.storage.v1beta2.ProtoSchema.Builder,
               com.google.cloud.bigquery.storage.v1beta2.ProtoSchemaOrBuilder>
           writerSchemaBuilder_;
+
       /**
        *
        *
@@ -725,6 +740,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasWriterSchema() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -745,6 +761,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           return writerSchemaBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -767,6 +784,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -787,6 +805,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -816,6 +835,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -835,6 +855,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -850,6 +871,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getWriterSchemaFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -869,6 +891,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               : writerSchema_;
         }
       }
+
       /**
        *
        *
@@ -901,6 +924,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               com.google.cloud.bigquery.storage.v1beta2.ProtoRows.Builder,
               com.google.cloud.bigquery.storage.v1beta2.ProtoRowsOrBuilder>
           rowsBuilder_;
+
       /**
        *
        *
@@ -915,6 +939,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       public boolean hasRows() {
         return ((bitField0_ & 0x00000002) != 0);
       }
+
       /**
        *
        *
@@ -935,6 +960,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
           return rowsBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -957,6 +983,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -977,6 +1004,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1005,6 +1033,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         }
         return this;
       }
+
       /**
        *
        *
@@ -1024,6 +1053,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1038,6 +1068,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         onChanged();
         return getRowsFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1056,6 +1087,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
               : rows_;
         }
       }
+
       /**
        *
        *
@@ -1167,6 +1199,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     private RowsCase(int value) {
       this.value = value;
     }
+
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -1201,6 +1234,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object writeStream_ = "";
+
   /**
    *
    *
@@ -1230,6 +1264,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1262,6 +1297,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
   public static final int OFFSET_FIELD_NUMBER = 2;
   private com.google.protobuf.Int64Value offset_;
+
   /**
    *
    *
@@ -1280,6 +1316,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasOffset() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -1298,6 +1335,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   public com.google.protobuf.Int64Value getOffset() {
     return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
   }
+
   /**
    *
    *
@@ -1316,6 +1354,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   }
 
   public static final int PROTO_ROWS_FIELD_NUMBER = 4;
+
   /**
    *
    *
@@ -1331,6 +1370,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
   public boolean hasProtoRows() {
     return rowsCase_ == 4;
   }
+
   /**
    *
    *
@@ -1350,6 +1390,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     return com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData
         .getDefaultInstance();
   }
+
   /**
    *
    *
@@ -1373,6 +1414,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object traceId_ = "";
+
   /**
    *
    *
@@ -1397,6 +1439,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       return s;
     }
   }
+
   /**
    *
    *
@@ -1636,6 +1679,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -1915,6 +1959,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     private int bitField0_;
 
     private java.lang.Object writeStream_ = "";
+
     /**
      *
      *
@@ -1943,6 +1988,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -1971,6 +2017,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -1998,6 +2045,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2021,6 +2069,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2056,6 +2105,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             com.google.protobuf.Int64Value.Builder,
             com.google.protobuf.Int64ValueOrBuilder>
         offsetBuilder_;
+
     /**
      *
      *
@@ -2073,6 +2123,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasOffset() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -2094,6 +2145,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return offsetBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -2119,6 +2171,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2141,6 +2194,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2171,6 +2225,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2193,6 +2248,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2210,6 +2266,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return getOffsetFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2229,6 +2286,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return offset_ == null ? com.google.protobuf.Int64Value.getDefaultInstance() : offset_;
       }
     }
+
     /**
      *
      *
@@ -2263,6 +2321,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoData.Builder,
             com.google.cloud.bigquery.storage.v1beta2.AppendRowsRequest.ProtoDataOrBuilder>
         protoRowsBuilder_;
+
     /**
      *
      *
@@ -2279,6 +2338,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     public boolean hasProtoRows() {
       return rowsCase_ == 4;
     }
+
     /**
      *
      *
@@ -2307,6 +2367,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2331,6 +2392,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2353,6 +2415,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2389,6 +2452,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       rowsCase_ = 4;
       return this;
     }
+
     /**
      *
      *
@@ -2415,6 +2479,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
+
     /**
      *
      *
@@ -2429,6 +2494,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         getProtoRowsBuilder() {
       return getProtoRowsFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -2452,6 +2518,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
             .getDefaultInstance();
       }
     }
+
     /**
      *
      *
@@ -2489,6 +2556,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
     }
 
     private java.lang.Object traceId_ = "";
+
     /**
      *
      *
@@ -2512,6 +2580,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -2535,6 +2604,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -2557,6 +2627,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -2575,6 +2646,7 @@ public final class AppendRowsRequest extends com.google.protobuf.GeneratedMessag
       onChanged();
       return this;
     }
+
     /**
      *
      *

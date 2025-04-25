@@ -33,6 +33,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.MetastorePartitionValues)
     MetastorePartitionValuesOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use MetastorePartitionValues.newBuilder() to construct.
   private MetastorePartitionValues(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -68,6 +69,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList values_ =
       com.google.protobuf.LazyStringArrayList.emptyList();
+
   /**
    *
    *
@@ -83,6 +85,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
   public com.google.protobuf.ProtocolStringList getValuesList() {
     return values_;
   }
+
   /**
    *
    *
@@ -98,6 +101,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
   public int getValuesCount() {
     return values_.size();
   }
+
   /**
    *
    *
@@ -114,6 +118,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
   public java.lang.String getValues(int index) {
     return values_.get(index);
   }
+
   /**
    *
    *
@@ -299,6 +304,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -505,6 +511,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       }
       bitField0_ |= 0x00000001;
     }
+
     /**
      *
      *
@@ -521,6 +528,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       values_.makeImmutable();
       return values_;
     }
+
     /**
      *
      *
@@ -536,6 +544,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
     public int getValuesCount() {
       return values_.size();
     }
+
     /**
      *
      *
@@ -552,6 +561,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
     public java.lang.String getValues(int index) {
       return values_.get(index);
     }
+
     /**
      *
      *
@@ -568,6 +578,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
     public com.google.protobuf.ByteString getValuesBytes(int index) {
       return values_.getByteString(index);
     }
+
     /**
      *
      *
@@ -592,6 +603,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -615,6 +627,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -635,6 +648,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -654,6 +668,7 @@ public final class MetastorePartitionValues extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
+
     /**
      *
      *

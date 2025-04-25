@@ -45,6 +45,7 @@ public final class TableReferenceProto {
      * @return The projectId.
      */
     java.lang.String getProjectId();
+
     /**
      *
      *
@@ -70,6 +71,7 @@ public final class TableReferenceProto {
      * @return The datasetId.
      */
     java.lang.String getDatasetId();
+
     /**
      *
      *
@@ -95,6 +97,7 @@ public final class TableReferenceProto {
      * @return The tableId.
      */
     java.lang.String getTableId();
+
     /**
      *
      *
@@ -108,6 +111,7 @@ public final class TableReferenceProto {
      */
     com.google.protobuf.ByteString getTableIdBytes();
   }
+
   /**
    *
    *
@@ -122,6 +126,7 @@ public final class TableReferenceProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableReference)
       TableReferenceOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableReference.newBuilder() to construct.
     private TableReference(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -159,6 +164,7 @@ public final class TableReferenceProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object projectId_ = "";
+
     /**
      *
      *
@@ -182,6 +188,7 @@ public final class TableReferenceProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -210,6 +217,7 @@ public final class TableReferenceProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object datasetId_ = "";
+
     /**
      *
      *
@@ -233,6 +241,7 @@ public final class TableReferenceProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -261,6 +270,7 @@ public final class TableReferenceProto {
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object tableId_ = "";
+
     /**
      *
      *
@@ -284,6 +294,7 @@ public final class TableReferenceProto {
         return s;
       }
     }
+
     /**
      *
      *
@@ -495,6 +506,7 @@ public final class TableReferenceProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -724,6 +736,7 @@ public final class TableReferenceProto {
       private int bitField0_;
 
       private java.lang.Object projectId_ = "";
+
       /**
        *
        *
@@ -746,6 +759,7 @@ public final class TableReferenceProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -768,6 +782,7 @@ public final class TableReferenceProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -789,6 +804,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -806,6 +822,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -830,6 +847,7 @@ public final class TableReferenceProto {
       }
 
       private java.lang.Object datasetId_ = "";
+
       /**
        *
        *
@@ -852,6 +870,7 @@ public final class TableReferenceProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -874,6 +893,7 @@ public final class TableReferenceProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -895,6 +915,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -912,6 +933,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -936,6 +958,7 @@ public final class TableReferenceProto {
       }
 
       private java.lang.Object tableId_ = "";
+
       /**
        *
        *
@@ -958,6 +981,7 @@ public final class TableReferenceProto {
           return (java.lang.String) ref;
         }
       }
+
       /**
        *
        *
@@ -980,6 +1004,7 @@ public final class TableReferenceProto {
           return (com.google.protobuf.ByteString) ref;
         }
       }
+
       /**
        *
        *
@@ -1001,6 +1026,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1018,6 +1044,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1127,6 +1154,7 @@ public final class TableReferenceProto {
      * @return Whether the snapshotTime field is set.
      */
     boolean hasSnapshotTime();
+
     /**
      *
      *
@@ -1139,6 +1167,7 @@ public final class TableReferenceProto {
      * @return The snapshotTime.
      */
     com.google.protobuf.Timestamp getSnapshotTime();
+
     /**
      *
      *
@@ -1150,6 +1179,7 @@ public final class TableReferenceProto {
      */
     com.google.protobuf.TimestampOrBuilder getSnapshotTimeOrBuilder();
   }
+
   /**
    *
    *
@@ -1164,6 +1194,7 @@ public final class TableReferenceProto {
       // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1beta1.TableModifiers)
       TableModifiersOrBuilder {
     private static final long serialVersionUID = 0L;
+
     // Use TableModifiers.newBuilder() to construct.
     private TableModifiers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1196,6 +1227,7 @@ public final class TableReferenceProto {
     private int bitField0_;
     public static final int SNAPSHOT_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp snapshotTime_;
+
     /**
      *
      *
@@ -1211,6 +1243,7 @@ public final class TableReferenceProto {
     public boolean hasSnapshotTime() {
       return ((bitField0_ & 0x00000001) != 0);
     }
+
     /**
      *
      *
@@ -1228,6 +1261,7 @@ public final class TableReferenceProto {
           ? com.google.protobuf.Timestamp.getDefaultInstance()
           : snapshotTime_;
     }
+
     /**
      *
      *
@@ -1418,6 +1452,7 @@ public final class TableReferenceProto {
       Builder builder = new Builder(parent);
       return builder;
     }
+
     /**
      *
      *
@@ -1637,6 +1672,7 @@ public final class TableReferenceProto {
               com.google.protobuf.Timestamp.Builder,
               com.google.protobuf.TimestampOrBuilder>
           snapshotTimeBuilder_;
+
       /**
        *
        *
@@ -1651,6 +1687,7 @@ public final class TableReferenceProto {
       public boolean hasSnapshotTime() {
         return ((bitField0_ & 0x00000001) != 0);
       }
+
       /**
        *
        *
@@ -1671,6 +1708,7 @@ public final class TableReferenceProto {
           return snapshotTimeBuilder_.getMessage();
         }
       }
+
       /**
        *
        *
@@ -1693,6 +1731,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1712,6 +1751,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1739,6 +1779,7 @@ public final class TableReferenceProto {
         }
         return this;
       }
+
       /**
        *
        *
@@ -1758,6 +1799,7 @@ public final class TableReferenceProto {
         onChanged();
         return this;
       }
+
       /**
        *
        *
@@ -1772,6 +1814,7 @@ public final class TableReferenceProto {
         onChanged();
         return getSnapshotTimeFieldBuilder().getBuilder();
       }
+
       /**
        *
        *
@@ -1790,6 +1833,7 @@ public final class TableReferenceProto {
               : snapshotTime_;
         }
       }
+
       /**
        *
        *

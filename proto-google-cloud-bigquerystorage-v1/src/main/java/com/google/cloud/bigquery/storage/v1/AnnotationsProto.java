@@ -31,6 +31,7 @@ public final class AnnotationsProto {
   }
 
   public static final int COLUMN_NAME_FIELD_NUMBER = 454943157;
+
   /**
    *
    *

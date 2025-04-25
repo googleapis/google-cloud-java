@@ -35,6 +35,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.storage.v1alpha.CreateMetastorePartitionRequest)
     CreateMetastorePartitionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
+
   // Use CreateMetastorePartitionRequest.newBuilder() to construct.
   private CreateMetastorePartitionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -72,6 +73,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
+
   /**
    *
    *
@@ -99,6 +101,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       return s;
     }
   }
+
   /**
    *
    *
@@ -129,6 +132,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
 
   public static final int METASTORE_PARTITION_FIELD_NUMBER = 2;
   private com.google.cloud.bigquery.storage.v1alpha.MetastorePartition metastorePartition_;
+
   /**
    *
    *
@@ -146,6 +150,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
   public boolean hasMetastorePartition() {
     return ((bitField0_ & 0x00000001) != 0);
   }
+
   /**
    *
    *
@@ -165,6 +170,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
         ? com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.getDefaultInstance()
         : metastorePartition_;
   }
+
   /**
    *
    *
@@ -360,6 +366,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
     Builder builder = new Builder(parent);
     return builder;
   }
+
   /**
    *
    *
@@ -590,6 +597,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
+
     /**
      *
      *
@@ -616,6 +624,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
         return (java.lang.String) ref;
       }
     }
+
     /**
      *
      *
@@ -642,6 +651,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
         return (com.google.protobuf.ByteString) ref;
       }
     }
+
     /**
      *
      *
@@ -667,6 +677,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -688,6 +699,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -721,6 +733,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
             com.google.cloud.bigquery.storage.v1alpha.MetastorePartition.Builder,
             com.google.cloud.bigquery.storage.v1alpha.MetastorePartitionOrBuilder>
         metastorePartitionBuilder_;
+
     /**
      *
      *
@@ -737,6 +750,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
     public boolean hasMetastorePartition() {
       return ((bitField0_ & 0x00000002) != 0);
     }
+
     /**
      *
      *
@@ -759,6 +773,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
         return metastorePartitionBuilder_.getMessage();
       }
     }
+
     /**
      *
      *
@@ -784,6 +799,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -806,6 +822,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -838,6 +855,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       }
       return this;
     }
+
     /**
      *
      *
@@ -859,6 +877,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return this;
     }
+
     /**
      *
      *
@@ -876,6 +895,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
       onChanged();
       return getMetastorePartitionFieldBuilder().getBuilder();
     }
+
     /**
      *
      *
@@ -897,6 +917,7 @@ public final class CreateMetastorePartitionRequest extends com.google.protobuf.G
             : metastorePartition_;
       }
     }
+
     /**
      *
      *
