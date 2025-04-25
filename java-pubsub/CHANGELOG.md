@@ -1,5 +1,32 @@
 # Changelog
 
+## [1.139.0](https://github.com/googleapis/java-pubsub/compare/v1.138.0...v1.139.0) (2025-04-25)
+
+
+### Features
+
+* Generate renamed go pubsub admin clients ([4472d7b](https://github.com/googleapis/java-pubsub/commit/4472d7baff4894a7c5cf0efc7eadd83ec8801d7a))
+
+
+### Bug Fixes
+
+* Add retries for ack and modack operations that don't return with a metadata map ([#2385](https://github.com/googleapis/java-pubsub/issues/2385)) ([00070b7](https://github.com/googleapis/java-pubsub/commit/00070b74e54fcb62b91a4d72a88d3b20b2425a94))
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.56.2 ([4472d7b](https://github.com/googleapis/java-pubsub/commit/4472d7baff4894a7c5cf0efc7eadd83ec8801d7a))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.49.0 ([#2380](https://github.com/googleapis/java-pubsub/issues/2380)) ([405e485](https://github.com/googleapis/java-pubsub/commit/405e485bbe503357a0616ec72de8fea00cb91c9c))
+* Update dependency com.google.cloud:google-cloud-core to v2.53.1 ([#2365](https://github.com/googleapis/java-pubsub/issues/2365)) ([748058f](https://github.com/googleapis/java-pubsub/commit/748058fc018e3a36dedd576404037bf8c016c794))
+* Update dependency com.google.cloud:google-cloud-storage to v2.50.0 ([#2372](https://github.com/googleapis/java-pubsub/issues/2372)) ([b81164a](https://github.com/googleapis/java-pubsub/commit/b81164aa5682c8046ebfa44e1e47579e4c3fcd28))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.30.1 ([#2364](https://github.com/googleapis/java-pubsub/issues/2364)) ([05eb9c0](https://github.com/googleapis/java-pubsub/commit/05eb9c0ce5179ff9e8656544258adc02a59336e5))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.30.2 ([#2383](https://github.com/googleapis/java-pubsub/issues/2383)) ([4119cc0](https://github.com/googleapis/java-pubsub/commit/4119cc03895873f94ddef10850753fb59384a8fc))
+
+
+### Documentation
+
+* Update documentation for JavaScriptUDF to indicate that the `message_id` metadata field is optional instead of required ([f904786](https://github.com/googleapis/java-pubsub/commit/f904786f87e80cdc09bba947cd53e42dffb7132e))
+
 ## [1.138.0](https://github.com/googleapis/java-pubsub/compare/v1.137.1...v1.138.0) (2025-03-14)
 
 
