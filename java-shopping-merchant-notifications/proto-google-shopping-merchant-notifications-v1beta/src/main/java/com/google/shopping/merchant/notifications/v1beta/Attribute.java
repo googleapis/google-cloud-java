@@ -63,7 +63,6 @@ public enum Attribute implements com.google.protobuf.ProtocolMessageEnum {
    * <code>ATTRIBUTE_UNSPECIFIED = 0;</code>
    */
   public static final int ATTRIBUTE_UNSPECIFIED_VALUE = 0;
-
   /**
    *
    *

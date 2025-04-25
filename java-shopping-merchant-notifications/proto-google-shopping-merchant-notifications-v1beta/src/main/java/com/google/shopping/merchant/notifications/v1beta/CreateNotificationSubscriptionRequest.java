@@ -35,7 +35,6 @@ public final class CreateNotificationSubscriptionRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.CreateNotificationSubscriptionRequest)
     CreateNotificationSubscriptionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use CreateNotificationSubscriptionRequest.newBuilder() to construct.
   private CreateNotificationSubscriptionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -74,7 +73,6 @@ public final class CreateNotificationSubscriptionRequest
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
-
   /**
    *
    *
@@ -101,7 +99,6 @@ public final class CreateNotificationSubscriptionRequest
       return s;
     }
   }
-
   /**
    *
    *
@@ -132,7 +129,6 @@ public final class CreateNotificationSubscriptionRequest
   public static final int NOTIFICATION_SUBSCRIPTION_FIELD_NUMBER = 2;
   private com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
       notificationSubscription_;
-
   /**
    *
    *
@@ -150,7 +146,6 @@ public final class CreateNotificationSubscriptionRequest
   public boolean hasNotificationSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -172,7 +167,6 @@ public final class CreateNotificationSubscriptionRequest
             .getDefaultInstance()
         : notificationSubscription_;
   }
-
   /**
    *
    *
@@ -391,7 +385,6 @@ public final class CreateNotificationSubscriptionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -631,7 +624,6 @@ public final class CreateNotificationSubscriptionRequest
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
-
     /**
      *
      *
@@ -657,7 +649,6 @@ public final class CreateNotificationSubscriptionRequest
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -683,7 +674,6 @@ public final class CreateNotificationSubscriptionRequest
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -708,7 +698,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -729,7 +718,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -763,7 +751,6 @@ public final class CreateNotificationSubscriptionRequest
             com.google.shopping.merchant.notifications.v1beta.NotificationSubscription.Builder,
             com.google.shopping.merchant.notifications.v1beta.NotificationSubscriptionOrBuilder>
         notificationSubscriptionBuilder_;
-
     /**
      *
      *
@@ -780,7 +767,6 @@ public final class CreateNotificationSubscriptionRequest
     public boolean hasNotificationSubscription() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -805,7 +791,6 @@ public final class CreateNotificationSubscriptionRequest
         return notificationSubscriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -831,7 +816,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -855,7 +839,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -888,7 +871,6 @@ public final class CreateNotificationSubscriptionRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -910,7 +892,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -928,7 +909,6 @@ public final class CreateNotificationSubscriptionRequest
       onChanged();
       return getNotificationSubscriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -951,7 +931,6 @@ public final class CreateNotificationSubscriptionRequest
             : notificationSubscription_;
       }
     }
-
     /**
      *
      *

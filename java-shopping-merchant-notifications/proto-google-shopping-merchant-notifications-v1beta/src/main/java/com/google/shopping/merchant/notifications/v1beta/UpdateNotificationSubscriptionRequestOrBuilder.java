@@ -39,7 +39,6 @@ public interface UpdateNotificationSubscriptionRequestOrBuilder
    * @return Whether the notificationSubscription field is set.
    */
   boolean hasNotificationSubscription();
-
   /**
    *
    *
@@ -56,7 +55,6 @@ public interface UpdateNotificationSubscriptionRequestOrBuilder
    */
   com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
       getNotificationSubscription();
-
   /**
    *
    *
@@ -84,7 +82,6 @@ public interface UpdateNotificationSubscriptionRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -97,7 +94,6 @@ public interface UpdateNotificationSubscriptionRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

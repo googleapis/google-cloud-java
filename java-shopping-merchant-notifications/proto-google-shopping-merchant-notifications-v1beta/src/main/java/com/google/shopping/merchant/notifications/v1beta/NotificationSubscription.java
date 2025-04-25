@@ -33,7 +33,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.NotificationSubscription)
     NotificationSubscriptionOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use NotificationSubscription.newBuilder() to construct.
   private NotificationSubscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -113,7 +112,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
      * <code>NOTIFICATION_EVENT_TYPE_UNSPECIFIED = 0;</code>
      */
     public static final int NOTIFICATION_EVENT_TYPE_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -230,7 +228,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     private InterestedInCase(int value) {
       this.value = value;
     }
-
     /**
      * @param value The number of the enum to look for.
      * @return The enum associated with the given number.
@@ -264,7 +261,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
   }
 
   public static final int ALL_MANAGED_ACCOUNTS_FIELD_NUMBER = 3;
-
   /**
    *
    *
@@ -282,7 +278,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
   public boolean hasAllManagedAccounts() {
     return interestedInCase_ == 3;
   }
-
   /**
    *
    *
@@ -305,7 +300,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
   }
 
   public static final int TARGET_ACCOUNT_FIELD_NUMBER = 4;
-
   /**
    *
    *
@@ -321,7 +315,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
   public boolean hasTargetAccount() {
     return interestedInCase_ == 4;
   }
-
   /**
    *
    *
@@ -350,7 +343,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -384,7 +376,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
-
   /**
    *
    *
@@ -412,7 +403,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -443,7 +433,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
 
   public static final int REGISTERED_EVENT_FIELD_NUMBER = 2;
   private int registeredEvent_ = 0;
-
   /**
    *
    *
@@ -461,7 +450,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
   public int getRegisteredEventValue() {
     return registeredEvent_;
   }
-
   /**
    *
    *
@@ -493,7 +481,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object callBackUri_ = "";
-
   /**
    *
    *
@@ -517,7 +504,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       return s;
     }
   }
-
   /**
    *
    *
@@ -770,7 +756,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1063,7 +1048,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     public boolean hasAllManagedAccounts() {
       return interestedInCase_ == 3;
     }
-
     /**
      *
      *
@@ -1083,7 +1067,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       }
       return false;
     }
-
     /**
      *
      *
@@ -1105,7 +1088,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1144,7 +1126,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     public boolean hasTargetAccount() {
       return interestedInCase_ == 4;
     }
-
     /**
      *
      *
@@ -1174,7 +1155,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1204,7 +1184,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1227,7 +1206,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1248,7 +1226,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       }
       return this;
     }
-
     /**
      *
      *
@@ -1274,7 +1251,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     }
 
     private java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -1301,7 +1277,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1328,7 +1303,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1354,7 +1328,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1376,7 +1349,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1405,7 +1377,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     }
 
     private int registeredEvent_ = 0;
-
     /**
      *
      *
@@ -1423,7 +1394,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     public int getRegisteredEventValue() {
       return registeredEvent_;
     }
-
     /**
      *
      *
@@ -1444,7 +1414,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1472,7 +1441,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
               .NotificationEventType.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -1499,7 +1467,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1521,7 +1488,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
     }
 
     private java.lang.Object callBackUri_ = "";
-
     /**
      *
      *
@@ -1544,7 +1510,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1567,7 +1532,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1589,7 +1553,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1607,7 +1570,6 @@ public final class NotificationSubscription extends com.google.protobuf.Generate
       onChanged();
       return this;
     }
-
     /**
      *
      *

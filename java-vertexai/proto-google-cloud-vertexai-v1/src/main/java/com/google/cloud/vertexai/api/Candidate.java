@@ -33,7 +33,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.Candidate)
     CandidateOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use Candidate.newBuilder() to construct.
   private Candidate(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -196,7 +195,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>FINISH_REASON_UNSPECIFIED = 0;</code>
      */
     public static final int FINISH_REASON_UNSPECIFIED_VALUE = 0;
-
     /**
      *
      *
@@ -208,7 +206,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>STOP = 1;</code>
      */
     public static final int STOP_VALUE = 1;
-
     /**
      *
      *
@@ -219,7 +216,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>MAX_TOKENS = 2;</code>
      */
     public static final int MAX_TOKENS_VALUE = 2;
-
     /**
      *
      *
@@ -233,7 +229,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>SAFETY = 3;</code>
      */
     public static final int SAFETY_VALUE = 3;
-
     /**
      *
      *
@@ -245,7 +240,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>RECITATION = 4;</code>
      */
     public static final int RECITATION_VALUE = 4;
-
     /**
      *
      *
@@ -256,7 +250,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>OTHER = 5;</code>
      */
     public static final int OTHER_VALUE = 5;
-
     /**
      *
      *
@@ -267,7 +260,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>BLOCKLIST = 6;</code>
      */
     public static final int BLOCKLIST_VALUE = 6;
-
     /**
      *
      *
@@ -278,7 +270,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>PROHIBITED_CONTENT = 7;</code>
      */
     public static final int PROHIBITED_CONTENT_VALUE = 7;
-
     /**
      *
      *
@@ -290,7 +281,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>SPII = 8;</code>
      */
     public static final int SPII_VALUE = 8;
-
     /**
      *
      *
@@ -402,7 +392,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   private int bitField0_;
   public static final int INDEX_FIELD_NUMBER = 1;
   private int index_ = 0;
-
   /**
    *
    *
@@ -421,7 +410,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CONTENT_FIELD_NUMBER = 2;
   private com.google.cloud.vertexai.api.Content content_;
-
   /**
    *
    *
@@ -439,7 +427,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasContent() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -457,7 +444,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.Content getContent() {
     return content_ == null ? com.google.cloud.vertexai.api.Content.getDefaultInstance() : content_;
   }
-
   /**
    *
    *
@@ -476,7 +462,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int SCORE_FIELD_NUMBER = 8;
   private double score_ = 0D;
-
   /**
    *
    *
@@ -495,7 +480,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int AVG_LOGPROBS_FIELD_NUMBER = 9;
   private double avgLogprobs_ = 0D;
-
   /**
    *
    *
@@ -514,7 +498,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int LOGPROBS_RESULT_FIELD_NUMBER = 10;
   private com.google.cloud.vertexai.api.LogprobsResult logprobsResult_;
-
   /**
    *
    *
@@ -532,7 +515,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasLogprobsResult() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -552,7 +534,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.LogprobsResult.getDefaultInstance()
         : logprobsResult_;
   }
-
   /**
    *
    *
@@ -573,7 +554,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int FINISH_REASON_FIELD_NUMBER = 3;
   private int finishReason_ = 0;
-
   /**
    *
    *
@@ -592,7 +572,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public int getFinishReasonValue() {
     return finishReason_;
   }
-
   /**
    *
    *
@@ -620,7 +599,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.SafetyRating> safetyRatings_;
-
   /**
    *
    *
@@ -638,7 +616,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public java.util.List<com.google.cloud.vertexai.api.SafetyRating> getSafetyRatingsList() {
     return safetyRatings_;
   }
-
   /**
    *
    *
@@ -657,7 +634,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       getSafetyRatingsOrBuilderList() {
     return safetyRatings_;
   }
-
   /**
    *
    *
@@ -675,7 +651,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public int getSafetyRatingsCount() {
     return safetyRatings_.size();
   }
-
   /**
    *
    *
@@ -693,7 +668,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public com.google.cloud.vertexai.api.SafetyRating getSafetyRatings(int index) {
     return safetyRatings_.get(index);
   }
-
   /**
    *
    *
@@ -716,7 +690,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object finishMessage_ = "";
-
   /**
    *
    *
@@ -733,7 +706,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasFinishMessage() {
     return ((bitField0_ & 0x00000004) != 0);
   }
-
   /**
    *
    *
@@ -758,7 +730,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       return s;
     }
   }
-
   /**
    *
    *
@@ -786,7 +757,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int CITATION_METADATA_FIELD_NUMBER = 6;
   private com.google.cloud.vertexai.api.CitationMetadata citationMetadata_;
-
   /**
    *
    *
@@ -804,7 +774,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasCitationMetadata() {
     return ((bitField0_ & 0x00000008) != 0);
   }
-
   /**
    *
    *
@@ -824,7 +793,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.CitationMetadata.getDefaultInstance()
         : citationMetadata_;
   }
-
   /**
    *
    *
@@ -845,7 +813,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
 
   public static final int GROUNDING_METADATA_FIELD_NUMBER = 7;
   private com.google.cloud.vertexai.api.GroundingMetadata groundingMetadata_;
-
   /**
    *
    *
@@ -863,7 +830,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
   public boolean hasGroundingMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
-
   /**
    *
    *
@@ -883,7 +849,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         ? com.google.cloud.vertexai.api.GroundingMetadata.getDefaultInstance()
         : groundingMetadata_;
   }
-
   /**
    *
    *
@@ -1179,7 +1144,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1570,7 +1534,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     private int bitField0_;
 
     private int index_;
-
     /**
      *
      *
@@ -1586,7 +1549,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public int getIndex() {
       return index_;
     }
-
     /**
      *
      *
@@ -1606,7 +1568,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1631,7 +1592,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.Content.Builder,
             com.google.cloud.vertexai.api.ContentOrBuilder>
         contentBuilder_;
-
     /**
      *
      *
@@ -1648,7 +1608,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasContent() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -1671,7 +1630,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return contentBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -1696,7 +1654,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1718,7 +1675,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1748,7 +1704,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -1770,7 +1725,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1787,7 +1741,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getContentFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1808,7 +1761,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             : content_;
       }
     }
-
     /**
      *
      *
@@ -1838,7 +1790,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double score_;
-
     /**
      *
      *
@@ -1854,7 +1805,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public double getScore() {
       return score_;
     }
-
     /**
      *
      *
@@ -1874,7 +1824,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1894,7 +1843,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private double avgLogprobs_;
-
     /**
      *
      *
@@ -1910,7 +1858,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public double getAvgLogprobs() {
       return avgLogprobs_;
     }
-
     /**
      *
      *
@@ -1930,7 +1877,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1955,7 +1901,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.LogprobsResult.Builder,
             com.google.cloud.vertexai.api.LogprobsResultOrBuilder>
         logprobsResultBuilder_;
-
     /**
      *
      *
@@ -1972,7 +1917,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasLogprobsResult() {
       return ((bitField0_ & 0x00000010) != 0);
     }
-
     /**
      *
      *
@@ -1995,7 +1939,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return logprobsResultBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2020,7 +1963,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2043,7 +1985,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2074,7 +2015,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2096,7 +2036,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2113,7 +2052,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getLogprobsResultFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -2134,7 +2072,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             : logprobsResult_;
       }
     }
-
     /**
      *
      *
@@ -2164,7 +2101,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private int finishReason_ = 0;
-
     /**
      *
      *
@@ -2183,7 +2119,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public int getFinishReasonValue() {
       return finishReason_;
     }
-
     /**
      *
      *
@@ -2205,7 +2140,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2228,7 +2162,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
           ? com.google.cloud.vertexai.api.Candidate.FinishReason.UNRECOGNIZED
           : result;
     }
-
     /**
      *
      *
@@ -2253,7 +2186,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2312,7 +2244,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return safetyRatingsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -2333,7 +2264,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return safetyRatingsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -2354,7 +2284,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return safetyRatingsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -2381,7 +2310,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2406,7 +2334,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2433,7 +2360,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2460,7 +2386,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2485,7 +2410,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2510,7 +2434,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2535,7 +2458,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2559,7 +2481,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2583,7 +2504,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2600,7 +2520,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.vertexai.api.SafetyRating.Builder getSafetyRatingsBuilder(int index) {
       return getSafetyRatingsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -2622,7 +2541,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return safetyRatingsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -2644,7 +2562,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return java.util.Collections.unmodifiableList(safetyRatings_);
       }
     }
-
     /**
      *
      *
@@ -2662,7 +2579,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       return getSafetyRatingsFieldBuilder()
           .addBuilder(com.google.cloud.vertexai.api.SafetyRating.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2680,7 +2596,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       return getSafetyRatingsFieldBuilder()
           .addBuilder(index, com.google.cloud.vertexai.api.SafetyRating.getDefaultInstance());
     }
-
     /**
      *
      *
@@ -2720,7 +2635,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
 
     private java.lang.Object finishMessage_ = "";
-
     /**
      *
      *
@@ -2736,7 +2650,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasFinishMessage() {
       return ((bitField0_ & 0x00000080) != 0);
     }
-
     /**
      *
      *
@@ -2760,7 +2673,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -2784,7 +2696,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -2807,7 +2718,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2826,7 +2736,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2857,7 +2766,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.CitationMetadata.Builder,
             com.google.cloud.vertexai.api.CitationMetadataOrBuilder>
         citationMetadataBuilder_;
-
     /**
      *
      *
@@ -2874,7 +2782,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasCitationMetadata() {
       return ((bitField0_ & 0x00000100) != 0);
     }
-
     /**
      *
      *
@@ -2897,7 +2804,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return citationMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -2922,7 +2828,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2945,7 +2850,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -2976,7 +2880,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -2998,7 +2901,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3015,7 +2917,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getCitationMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3036,7 +2937,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             : citationMetadata_;
       }
     }
-
     /**
      *
      *
@@ -3071,7 +2971,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.vertexai.api.GroundingMetadata.Builder,
             com.google.cloud.vertexai.api.GroundingMetadataOrBuilder>
         groundingMetadataBuilder_;
-
     /**
      *
      *
@@ -3088,7 +2987,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     public boolean hasGroundingMetadata() {
       return ((bitField0_ & 0x00000200) != 0);
     }
-
     /**
      *
      *
@@ -3111,7 +3009,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         return groundingMetadataBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -3136,7 +3033,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3159,7 +3055,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3190,7 +3085,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       }
       return this;
     }
-
     /**
      *
      *
@@ -3212,7 +3106,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -3229,7 +3122,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return getGroundingMetadataFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -3251,7 +3143,6 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
             : groundingMetadata_;
       }
     }
-
     /**
      *
      *

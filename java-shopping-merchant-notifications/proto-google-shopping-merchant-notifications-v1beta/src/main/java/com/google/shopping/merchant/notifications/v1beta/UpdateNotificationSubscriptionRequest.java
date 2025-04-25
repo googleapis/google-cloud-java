@@ -35,7 +35,6 @@ public final class UpdateNotificationSubscriptionRequest
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.UpdateNotificationSubscriptionRequest)
     UpdateNotificationSubscriptionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use UpdateNotificationSubscriptionRequest.newBuilder() to construct.
   private UpdateNotificationSubscriptionRequest(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -71,7 +70,6 @@ public final class UpdateNotificationSubscriptionRequest
   public static final int NOTIFICATION_SUBSCRIPTION_FIELD_NUMBER = 1;
   private com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
       notificationSubscription_;
-
   /**
    *
    *
@@ -90,7 +88,6 @@ public final class UpdateNotificationSubscriptionRequest
   public boolean hasNotificationSubscription() {
     return ((bitField0_ & 0x00000001) != 0);
   }
-
   /**
    *
    *
@@ -113,7 +110,6 @@ public final class UpdateNotificationSubscriptionRequest
             .getDefaultInstance()
         : notificationSubscription_;
   }
-
   /**
    *
    *
@@ -137,7 +133,6 @@ public final class UpdateNotificationSubscriptionRequest
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
-
   /**
    *
    *
@@ -153,7 +148,6 @@ public final class UpdateNotificationSubscriptionRequest
   public boolean hasUpdateMask() {
     return ((bitField0_ & 0x00000002) != 0);
   }
-
   /**
    *
    *
@@ -169,7 +163,6 @@ public final class UpdateNotificationSubscriptionRequest
   public com.google.protobuf.FieldMask getUpdateMask() {
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
-
   /**
    *
    *
@@ -387,7 +380,6 @@ public final class UpdateNotificationSubscriptionRequest
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -637,7 +629,6 @@ public final class UpdateNotificationSubscriptionRequest
             com.google.shopping.merchant.notifications.v1beta.NotificationSubscription.Builder,
             com.google.shopping.merchant.notifications.v1beta.NotificationSubscriptionOrBuilder>
         notificationSubscriptionBuilder_;
-
     /**
      *
      *
@@ -655,7 +646,6 @@ public final class UpdateNotificationSubscriptionRequest
     public boolean hasNotificationSubscription() {
       return ((bitField0_ & 0x00000001) != 0);
     }
-
     /**
      *
      *
@@ -681,7 +671,6 @@ public final class UpdateNotificationSubscriptionRequest
         return notificationSubscriptionBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -708,7 +697,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -733,7 +721,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -767,7 +754,6 @@ public final class UpdateNotificationSubscriptionRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -790,7 +776,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -809,7 +794,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return getNotificationSubscriptionFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -833,7 +817,6 @@ public final class UpdateNotificationSubscriptionRequest
             : notificationSubscription_;
       }
     }
-
     /**
      *
      *
@@ -870,7 +853,6 @@ public final class UpdateNotificationSubscriptionRequest
             com.google.protobuf.FieldMask.Builder,
             com.google.protobuf.FieldMaskOrBuilder>
         updateMaskBuilder_;
-
     /**
      *
      *
@@ -885,7 +867,6 @@ public final class UpdateNotificationSubscriptionRequest
     public boolean hasUpdateMask() {
       return ((bitField0_ & 0x00000002) != 0);
     }
-
     /**
      *
      *
@@ -906,7 +887,6 @@ public final class UpdateNotificationSubscriptionRequest
         return updateMaskBuilder_.getMessage();
       }
     }
-
     /**
      *
      *
@@ -929,7 +909,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -949,7 +928,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -977,7 +955,6 @@ public final class UpdateNotificationSubscriptionRequest
       }
       return this;
     }
-
     /**
      *
      *
@@ -997,7 +974,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1012,7 +988,6 @@ public final class UpdateNotificationSubscriptionRequest
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
-
     /**
      *
      *
@@ -1031,7 +1006,6 @@ public final class UpdateNotificationSubscriptionRequest
             : updateMask_;
       }
     }
-
     /**
      *
      *

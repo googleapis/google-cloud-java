@@ -37,7 +37,6 @@ public interface SearchEntryPointOrBuilder
    * @return The renderedContent.
    */
   java.lang.String getRenderedContent();
-
   /**
    *
    *

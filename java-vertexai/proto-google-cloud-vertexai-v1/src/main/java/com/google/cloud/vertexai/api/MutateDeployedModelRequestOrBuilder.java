@@ -40,7 +40,6 @@ public interface MutateDeployedModelRequestOrBuilder
    * @return The endpoint.
    */
   java.lang.String getEndpoint();
-
   /**
    *
    *
@@ -83,7 +82,6 @@ public interface MutateDeployedModelRequestOrBuilder
    * @return Whether the deployedModel field is set.
    */
   boolean hasDeployedModel();
-
   /**
    *
    *
@@ -109,7 +107,6 @@ public interface MutateDeployedModelRequestOrBuilder
    * @return The deployedModel.
    */
   com.google.cloud.vertexai.api.DeployedModel getDeployedModel();
-
   /**
    *
    *
@@ -148,7 +145,6 @@ public interface MutateDeployedModelRequestOrBuilder
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
-
   /**
    *
    *
@@ -163,7 +159,6 @@ public interface MutateDeployedModelRequestOrBuilder
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
-
   /**
    *
    *

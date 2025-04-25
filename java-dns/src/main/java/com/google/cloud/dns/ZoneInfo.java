@@ -370,7 +370,6 @@ public class ZoneInfo implements Serializable {
      * servers that all host the same zones. Most users will not need to specify this value.
      */
     abstract Builder setNameServerSet(String nameServerSet);
-
     // this should not be included in tooling as per the service owners
 
     /**

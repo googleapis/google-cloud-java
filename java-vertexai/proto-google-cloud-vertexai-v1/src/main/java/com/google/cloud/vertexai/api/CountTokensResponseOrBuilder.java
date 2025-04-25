@@ -63,7 +63,6 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   java.util.List<com.google.cloud.vertexai.api.ModalityTokenCount> getPromptTokensDetailsList();
-
   /**
    *
    *
@@ -76,7 +75,6 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   com.google.cloud.vertexai.api.ModalityTokenCount getPromptTokensDetails(int index);
-
   /**
    *
    *
@@ -89,7 +87,6 @@ public interface CountTokensResponseOrBuilder
    * </code>
    */
   int getPromptTokensDetailsCount();
-
   /**
    *
    *
@@ -103,7 +100,6 @@ public interface CountTokensResponseOrBuilder
    */
   java.util.List<? extends com.google.cloud.vertexai.api.ModalityTokenCountOrBuilder>
       getPromptTokensDetailsOrBuilderList();
-
   /**
    *
    *

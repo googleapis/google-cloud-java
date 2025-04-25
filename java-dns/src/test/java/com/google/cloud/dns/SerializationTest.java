@@ -28,7 +28,8 @@ import java.util.concurrent.TimeUnit;
 public class SerializationTest extends BaseSerializationTest {
 
   private static final ZoneInfo FULL_ZONE_INFO =
-      Zone.of("some zone name", "www.example.com", "some descriptions").toBuilder()
+      Zone.of("some zone name", "www.example.com", "some descriptions")
+          .toBuilder()
           .setCreationTimeMillis(132L)
           .setGeneratedId("123333")
           .setNameServers(ImmutableList.of("server 1", "server 2"))

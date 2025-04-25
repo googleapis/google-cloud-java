@@ -86,7 +86,8 @@ public class NotificationInfoTest {
   public void testToPbAndFromPb() {
     compareBuckets(NOTIFICATION_INFO, NotificationInfo.fromPb(NOTIFICATION_INFO.toPb()));
     NotificationInfo bucketInfo =
-        NotificationInfo.of(ProjectTopicName.of("myProject", "topic1")).toBuilder()
+        NotificationInfo.of(ProjectTopicName.of("myProject", "topic1"))
+            .toBuilder()
             .setPayloadFormat(PayloadFormat.NONE)
             .build();
     compareBuckets(bucketInfo, NotificationInfo.fromPb(bucketInfo.toPb()));

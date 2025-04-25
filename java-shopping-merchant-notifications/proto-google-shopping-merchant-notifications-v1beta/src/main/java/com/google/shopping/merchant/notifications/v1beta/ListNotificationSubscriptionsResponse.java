@@ -35,7 +35,6 @@ public final class ListNotificationSubscriptionsResponse
     // @@protoc_insertion_point(message_implements:google.shopping.merchant.notifications.v1beta.ListNotificationSubscriptionsResponse)
     ListNotificationSubscriptionsResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use ListNotificationSubscriptionsResponse.newBuilder() to construct.
   private ListNotificationSubscriptionsResponse(
       com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
@@ -75,7 +74,6 @@ public final class ListNotificationSubscriptionsResponse
   @SuppressWarnings("serial")
   private java.util.List<com.google.shopping.merchant.notifications.v1beta.NotificationSubscription>
       notificationSubscriptions_;
-
   /**
    *
    *
@@ -92,7 +90,6 @@ public final class ListNotificationSubscriptionsResponse
       getNotificationSubscriptionsList() {
     return notificationSubscriptions_;
   }
-
   /**
    *
    *
@@ -111,7 +108,6 @@ public final class ListNotificationSubscriptionsResponse
       getNotificationSubscriptionsOrBuilderList() {
     return notificationSubscriptions_;
   }
-
   /**
    *
    *
@@ -127,7 +123,6 @@ public final class ListNotificationSubscriptionsResponse
   public int getNotificationSubscriptionsCount() {
     return notificationSubscriptions_.size();
   }
-
   /**
    *
    *
@@ -144,7 +139,6 @@ public final class ListNotificationSubscriptionsResponse
       getNotificationSubscriptions(int index) {
     return notificationSubscriptions_.get(index);
   }
-
   /**
    *
    *
@@ -166,7 +160,6 @@ public final class ListNotificationSubscriptionsResponse
 
   @SuppressWarnings("serial")
   private volatile java.lang.Object nextPageToken_ = "";
-
   /**
    *
    *
@@ -191,7 +184,6 @@ public final class ListNotificationSubscriptionsResponse
       return s;
     }
   }
-
   /**
    *
    *
@@ -413,7 +405,6 @@ public final class ListNotificationSubscriptionsResponse
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -724,7 +715,6 @@ public final class ListNotificationSubscriptionsResponse
         return notificationSubscriptionsBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -743,7 +733,6 @@ public final class ListNotificationSubscriptionsResponse
         return notificationSubscriptionsBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -763,7 +752,6 @@ public final class ListNotificationSubscriptionsResponse
         return notificationSubscriptionsBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -790,7 +778,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -815,7 +802,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -841,7 +827,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -868,7 +853,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -892,7 +876,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -917,7 +900,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -943,7 +925,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -965,7 +946,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -987,7 +967,6 @@ public final class ListNotificationSubscriptionsResponse
       }
       return this;
     }
-
     /**
      *
      *
@@ -1003,7 +982,6 @@ public final class ListNotificationSubscriptionsResponse
         getNotificationSubscriptionsBuilder(int index) {
       return getNotificationSubscriptionsFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1023,7 +1001,6 @@ public final class ListNotificationSubscriptionsResponse
         return notificationSubscriptionsBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1045,7 +1022,6 @@ public final class ListNotificationSubscriptionsResponse
         return java.util.Collections.unmodifiableList(notificationSubscriptions_);
       }
     }
-
     /**
      *
      *
@@ -1064,7 +1040,6 @@ public final class ListNotificationSubscriptionsResponse
               com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1084,7 +1059,6 @@ public final class ListNotificationSubscriptionsResponse
               com.google.shopping.merchant.notifications.v1beta.NotificationSubscription
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1124,7 +1098,6 @@ public final class ListNotificationSubscriptionsResponse
     }
 
     private java.lang.Object nextPageToken_ = "";
-
     /**
      *
      *
@@ -1148,7 +1121,6 @@ public final class ListNotificationSubscriptionsResponse
         return (java.lang.String) ref;
       }
     }
-
     /**
      *
      *
@@ -1172,7 +1144,6 @@ public final class ListNotificationSubscriptionsResponse
         return (com.google.protobuf.ByteString) ref;
       }
     }
-
     /**
      *
      *
@@ -1195,7 +1166,6 @@ public final class ListNotificationSubscriptionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *
@@ -1214,7 +1184,6 @@ public final class ListNotificationSubscriptionsResponse
       onChanged();
       return this;
     }
-
     /**
      *
      *

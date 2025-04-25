@@ -36,7 +36,6 @@ public interface ProductChangeOrBuilder
    * @return Whether the oldValue field is set.
    */
   boolean hasOldValue();
-
   /**
    *
    *
@@ -49,7 +48,6 @@ public interface ProductChangeOrBuilder
    * @return The oldValue.
    */
   java.lang.String getOldValue();
-
   /**
    *
    *
@@ -75,7 +73,6 @@ public interface ProductChangeOrBuilder
    * @return Whether the newValue field is set.
    */
   boolean hasNewValue();
-
   /**
    *
    *
@@ -88,7 +85,6 @@ public interface ProductChangeOrBuilder
    * @return The newValue.
    */
   java.lang.String getNewValue();
-
   /**
    *
    *
@@ -114,7 +110,6 @@ public interface ProductChangeOrBuilder
    * @return Whether the regionCode field is set.
    */
   boolean hasRegionCode();
-
   /**
    *
    *
@@ -127,7 +122,6 @@ public interface ProductChangeOrBuilder
    * @return The regionCode.
    */
   java.lang.String getRegionCode();
-
   /**
    *
    *
@@ -155,7 +149,6 @@ public interface ProductChangeOrBuilder
    * @return Whether the reportingContext field is set.
    */
   boolean hasReportingContext();
-
   /**
    *
    *
@@ -170,7 +163,6 @@ public interface ProductChangeOrBuilder
    * @return The enum numeric value on the wire for reportingContext.
    */
   int getReportingContextValue();
-
   /**
    *
    *

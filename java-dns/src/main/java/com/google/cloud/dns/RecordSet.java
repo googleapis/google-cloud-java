@@ -91,43 +91,32 @@ public final class RecordSet implements Serializable {
 
     /** Address record, which is used to map host names to their IPv4 address. */
     public static final Type A = type.createAndRegister("A");
-
     /** IPv6 Address record, which is used to map host names to their IPv6 address. */
     public static final Type AAAA = type.createAndRegister("AAAA");
-
     /**
      * Certificate Authority (CA) Authorization, which specifies which CAs are allowed to create
      * certificates for a domain.
      */
     public static final Type CAA = type.createAndRegister("CAA");
-
     /** Canonical name record, which is used to alias names. */
     public static final Type CNAME = type.createAndRegister("CNAME");
-
     /** Mail exchange record, which is used in routing requests to mail servers. */
     public static final Type MX = type.createAndRegister("MX");
-
     /** Naming authority pointer record, defined by RFC3403. */
     public static final Type NAPTR = type.createAndRegister("NAPTR");
-
     /** Name server record, which delegates a DNS zone to an authoritative server. */
     public static final Type NS = type.createAndRegister("NS");
-
     /** Pointer record, which is often used for reverse DNS lookups. */
     public static final Type PTR = type.createAndRegister("PTR");
-
     /** Start of authority record, which specifies authoritative information about a DNS zone. */
     public static final Type SOA = type.createAndRegister("SOA");
-
     /** Sender policy framework record, which is used in email validation systems. */
     public static final Type SPF = type.createAndRegister("SPF");
-
     /**
      * Service locator record, which is used by some voice over IP, instant messaging protocols and
      * other applications.
      */
     public static final Type SRV = type.createAndRegister("SRV");
-
     /**
      * Text record, which can contain arbitrary text and can also be used to define machine readable
      * data such as security or abuse prevention information.

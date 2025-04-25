@@ -35,7 +35,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.FeatureNoiseSigma)
     FeatureNoiseSigmaOrBuilder {
   private static final long serialVersionUID = 0L;
-
   // Use FeatureNoiseSigma.newBuilder() to construct.
   private FeatureNoiseSigma(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -86,7 +85,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      *
      *
@@ -119,7 +117,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
      */
     float getSigma();
   }
-
   /**
    *
    *
@@ -134,7 +131,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       // @@protoc_insertion_point(message_implements:google.cloud.vertexai.v1.FeatureNoiseSigma.NoiseSigmaForFeature)
       NoiseSigmaForFeatureOrBuilder {
     private static final long serialVersionUID = 0L;
-
     // Use NoiseSigmaForFeature.newBuilder() to construct.
     private NoiseSigmaForFeature(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -169,7 +165,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
 
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
-
     /**
      *
      *
@@ -196,7 +191,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return s;
       }
     }
-
     /**
      *
      *
@@ -226,7 +220,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
 
     public static final int SIGMA_FIELD_NUMBER = 2;
     private float sigma_ = 0F;
-
     /**
      *
      *
@@ -418,7 +411,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      *
      *
@@ -627,7 +619,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       private int bitField0_;
 
       private java.lang.Object name_ = "";
-
       /**
        *
        *
@@ -653,7 +644,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
           return (java.lang.String) ref;
         }
       }
-
       /**
        *
        *
@@ -679,7 +669,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        *
        *
@@ -704,7 +693,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -725,7 +713,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -753,7 +740,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
 
       private float sigma_;
-
       /**
        *
        *
@@ -772,7 +758,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       public float getSigma() {
         return sigma_;
       }
-
       /**
        *
        *
@@ -795,7 +780,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         onChanged();
         return this;
       }
-
       /**
        *
        *
@@ -889,7 +873,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
   @SuppressWarnings("serial")
   private java.util.List<com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeature>
       noiseSigma_;
-
   /**
    *
    *
@@ -906,7 +889,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       getNoiseSigmaList() {
     return noiseSigma_;
   }
-
   /**
    *
    *
@@ -924,7 +906,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       getNoiseSigmaOrBuilderList() {
     return noiseSigma_;
   }
-
   /**
    *
    *
@@ -940,7 +921,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
   public int getNoiseSigmaCount() {
     return noiseSigma_.size();
   }
-
   /**
    *
    *
@@ -957,7 +937,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       int index) {
     return noiseSigma_.get(index);
   }
-
   /**
    *
    *
@@ -1136,7 +1115,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
     Builder builder = new Builder(parent);
     return builder;
   }
-
   /**
    *
    *
@@ -1407,7 +1385,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return noiseSigmaBuilder_.getMessageList();
       }
     }
-
     /**
      *
      *
@@ -1426,7 +1403,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return noiseSigmaBuilder_.getCount();
       }
     }
-
     /**
      *
      *
@@ -1446,7 +1422,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return noiseSigmaBuilder_.getMessage(index);
       }
     }
-
     /**
      *
      *
@@ -1472,7 +1447,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1497,7 +1471,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1523,7 +1496,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1549,7 +1521,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1573,7 +1544,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1598,7 +1568,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1623,7 +1592,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1645,7 +1613,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1667,7 +1634,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
       }
       return this;
     }
-
     /**
      *
      *
@@ -1683,7 +1649,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         getNoiseSigmaBuilder(int index) {
       return getNoiseSigmaFieldBuilder().getBuilder(index);
     }
-
     /**
      *
      *
@@ -1703,7 +1668,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return noiseSigmaBuilder_.getMessageOrBuilder(index);
       }
     }
-
     /**
      *
      *
@@ -1724,7 +1688,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
         return java.util.Collections.unmodifiableList(noiseSigma_);
       }
     }
-
     /**
      *
      *
@@ -1743,7 +1706,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
               com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeature
                   .getDefaultInstance());
     }
-
     /**
      *
      *
@@ -1763,7 +1725,6 @@ public final class FeatureNoiseSigma extends com.google.protobuf.GeneratedMessag
               com.google.cloud.vertexai.api.FeatureNoiseSigma.NoiseSigmaForFeature
                   .getDefaultInstance());
     }
-
     /**
      *
      *
